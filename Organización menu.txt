@@ -1,0 +1,14 @@
+﻿-Pestaña Inicio
+ABM Cliente
+ABM Alojamiento
+ABM Servicio
+ABM Consumo
+
+-Pestaña Estadísticas
+Listado de alojamientos actuales
+Listado de stock de artículos
+Listado de alojamientos con servicio
+
+-Pestaña Administración
+Informe de ocupación
+Informe de consumos de clientes
