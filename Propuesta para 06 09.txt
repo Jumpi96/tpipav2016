@@ -1,0 +1,8 @@
+Base de Datos
+	-Crear tablas TiposDocumento, Clientes, Alojamientos, HabitacionesXPiso
+		CREADA TiposDocumento
+	
+Menu
+
+ABMs
+	-Crear ABM Alojamientos, Clientes, TiposDocumento
