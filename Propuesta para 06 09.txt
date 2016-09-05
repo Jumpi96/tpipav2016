@@ -1,6 +1,6 @@
 Base de Datos
 	-Crear tablas TiposDocumento, Clientes, Alojamientos, HabitacionesXPiso
-		CREADA TiposDocumento
+		CREADA TiposDocumento, HabitacionesXPiso, TiposHabitacion, Clientes,
 	
 Menu
 
