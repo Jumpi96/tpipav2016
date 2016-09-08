@@ -22,7 +22,7 @@ Partial Class ABM_Alojamientos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvAlojamientos = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -31,31 +31,32 @@ Partial Class ABM_Alojamientos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnRegistrar = New System.Windows.Forms.Button()
+        Me.cmbTipoDoc = New System.Windows.Forms.ComboBox()
+        Me.txtNroDoc = New System.Windows.Forms.TextBox()
+        Me.txtHabitacion = New System.Windows.Forms.MaskedTextBox()
+        Me.txtAlojados = New System.Windows.Forms.TextBox()
+        Me.dtpIngreso = New System.Windows.Forms.DateTimePicker()
+        Me.dtpEstimada = New System.Windows.Forms.DateTimePicker()
+        Me.dtpSalida = New System.Windows.Forms.DateTimePicker()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnLimpiar = New System.Windows.Forms.Button()
+        Me.btnBuscarPorDoc = New System.Windows.Forms.Button()
+        CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'dgvAlojamientos
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(360, 12)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(240, 224)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvAlojamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAlojamientos.Location = New System.Drawing.Point(360, 12)
+        Me.dgvAlojamientos.Name = "dgvAlojamientos"
+        Me.dgvAlojamientos.Size = New System.Drawing.Size(240, 224)
+        Me.dgvAlojamientos.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 7)
+        Me.Label1.Location = New System.Drawing.Point(10, 22)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(54, 13)
         Me.Label1.TabIndex = 1
@@ -64,7 +65,7 @@ Partial Class ABM_Alojamientos
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 31)
+        Me.Label2.Location = New System.Drawing.Point(11, 46)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(53, 13)
         Me.Label2.TabIndex = 2
@@ -73,7 +74,7 @@ Partial Class ABM_Alojamientos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 60)
+        Me.Label3.Location = New System.Drawing.Point(11, 75)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(58, 13)
         Me.Label3.TabIndex = 3
@@ -90,7 +91,7 @@ Partial Class ABM_Alojamientos
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(164, 60)
+        Me.Label5.Location = New System.Drawing.Point(162, 75)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(101, 13)
         Me.Label5.TabIndex = 5
@@ -99,7 +100,7 @@ Partial Class ABM_Alojamientos
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(13, 89)
+        Me.Label6.Location = New System.Drawing.Point(11, 104)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(89, 13)
         Me.Label6.TabIndex = 6
@@ -108,7 +109,7 @@ Partial Class ABM_Alojamientos
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(13, 112)
+        Me.Label7.Location = New System.Drawing.Point(11, 127)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(127, 13)
         Me.Label7.TabIndex = 7
@@ -117,105 +118,115 @@ Partial Class ABM_Alojamientos
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(13, 137)
+        Me.Label8.Location = New System.Drawing.Point(11, 152)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(82, 13)
         Me.Label8.TabIndex = 8
         Me.Label8.Text = "Fecha de salida"
         '
-        'Button1
+        'btnRegistrar
         '
-        Me.Button1.Location = New System.Drawing.Point(190, 174)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Registrar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnRegistrar.Location = New System.Drawing.Point(188, 189)
+        Me.btnRegistrar.Name = "btnRegistrar"
+        Me.btnRegistrar.Size = New System.Drawing.Size(75, 23)
+        Me.btnRegistrar.TabIndex = 9
+        Me.btnRegistrar.Text = "Registrar"
+        Me.btnRegistrar.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'cmbTipoDoc
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(71, 4)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(139, 21)
-        Me.ComboBox1.TabIndex = 11
+        Me.cmbTipoDoc.FormattingEnabled = True
+        Me.cmbTipoDoc.Location = New System.Drawing.Point(69, 19)
+        Me.cmbTipoDoc.Name = "cmbTipoDoc"
+        Me.cmbTipoDoc.Size = New System.Drawing.Size(139, 21)
+        Me.cmbTipoDoc.TabIndex = 11
         '
-        'TextBox1
+        'txtNroDoc
         '
-        Me.TextBox1.Location = New System.Drawing.Point(72, 31)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(138, 20)
-        Me.TextBox1.TabIndex = 12
+        Me.txtNroDoc.Location = New System.Drawing.Point(70, 46)
+        Me.txtNroDoc.Name = "txtNroDoc"
+        Me.txtNroDoc.Size = New System.Drawing.Size(138, 20)
+        Me.txtNroDoc.TabIndex = 12
         '
-        'MaskedTextBox1
+        'txtHabitacion
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(77, 57)
-        Me.MaskedTextBox1.Mask = "999"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(30, 20)
-        Me.MaskedTextBox1.TabIndex = 13
+        Me.txtHabitacion.Location = New System.Drawing.Point(75, 72)
+        Me.txtHabitacion.Mask = "999"
+        Me.txtHabitacion.Name = "txtHabitacion"
+        Me.txtHabitacion.Size = New System.Drawing.Size(30, 20)
+        Me.txtHabitacion.TabIndex = 13
         '
-        'TextBox2
+        'txtAlojados
         '
-        Me.TextBox2.Location = New System.Drawing.Point(271, 57)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(30, 20)
-        Me.TextBox2.TabIndex = 14
+        Me.txtAlojados.Location = New System.Drawing.Point(269, 72)
+        Me.txtAlojados.Name = "txtAlojados"
+        Me.txtAlojados.Size = New System.Drawing.Size(30, 20)
+        Me.txtAlojados.TabIndex = 14
         '
-        'DateTimePicker1
+        'dtpIngreso
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(147, 85)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 15
+        Me.dtpIngreso.Location = New System.Drawing.Point(145, 100)
+        Me.dtpIngreso.Name = "dtpIngreso"
+        Me.dtpIngreso.Size = New System.Drawing.Size(200, 20)
+        Me.dtpIngreso.TabIndex = 15
         '
-        'DateTimePicker2
+        'dtpEstimada
         '
-        Me.DateTimePicker2.Location = New System.Drawing.Point(147, 112)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker2.TabIndex = 16
+        Me.dtpEstimada.Location = New System.Drawing.Point(145, 127)
+        Me.dtpEstimada.Name = "dtpEstimada"
+        Me.dtpEstimada.Size = New System.Drawing.Size(200, 20)
+        Me.dtpEstimada.TabIndex = 16
         '
-        'DateTimePicker3
+        'dtpSalida
         '
-        Me.DateTimePicker3.Location = New System.Drawing.Point(147, 137)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker3.TabIndex = 17
+        Me.dtpSalida.Location = New System.Drawing.Point(145, 152)
+        Me.dtpSalida.Name = "dtpSalida"
+        Me.dtpSalida.Size = New System.Drawing.Size(200, 20)
+        Me.dtpSalida.TabIndex = 17
         '
-        'Button2
+        'btnCancelar
         '
-        Me.Button2.Location = New System.Drawing.Point(271, 174)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Cancelar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnCancelar.Location = New System.Drawing.Point(269, 189)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.TabIndex = 18
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnLimpiar
         '
-        Me.Button3.Location = New System.Drawing.Point(16, 213)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(75, 23)
-        Me.Button3.TabIndex = 19
-        Me.Button3.Text = "Limpiar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnLimpiar.Location = New System.Drawing.Point(16, 213)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(75, 23)
+        Me.btnLimpiar.TabIndex = 19
+        Me.btnLimpiar.Text = "Limpiar"
+        Me.btnLimpiar.UseVisualStyleBackColor = True
+        '
+        'btnBuscarPorDoc
+        '
+        Me.btnBuscarPorDoc.Location = New System.Drawing.Point(233, 22)
+        Me.btnBuscarPorDoc.Name = "btnBuscarPorDoc"
+        Me.btnBuscarPorDoc.Size = New System.Drawing.Size(111, 37)
+        Me.btnBuscarPorDoc.TabIndex = 20
+        Me.btnBuscarPorDoc.Text = "Buscar por Documento"
+        Me.btnBuscarPorDoc.UseVisualStyleBackColor = True
         '
         'ABM_Alojamientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(612, 251)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.DateTimePicker3)
-        Me.Controls.Add(Me.DateTimePicker2)
-        Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.MaskedTextBox1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnBuscarPorDoc)
+        Me.Controls.Add(Me.btnLimpiar)
+        Me.Controls.Add(Me.btnCancelar)
+        Me.Controls.Add(Me.dtpSalida)
+        Me.Controls.Add(Me.dtpEstimada)
+        Me.Controls.Add(Me.dtpIngreso)
+        Me.Controls.Add(Me.txtAlojados)
+        Me.Controls.Add(Me.txtHabitacion)
+        Me.Controls.Add(Me.txtNroDoc)
+        Me.Controls.Add(Me.cmbTipoDoc)
+        Me.Controls.Add(Me.btnRegistrar)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
@@ -224,15 +235,15 @@ Partial Class ABM_Alojamientos
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.dgvAlojamientos)
         Me.Name = "ABM_Alojamientos"
         Me.Text = "Alojamientos"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvAlojamientos As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -241,14 +252,15 @@ Partial Class ABM_Alojamientos
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents btnRegistrar As System.Windows.Forms.Button
+    Friend WithEvents cmbTipoDoc As System.Windows.Forms.ComboBox
+    Friend WithEvents txtNroDoc As System.Windows.Forms.TextBox
+    Friend WithEvents txtHabitacion As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txtAlojados As System.Windows.Forms.TextBox
+    Friend WithEvents dtpIngreso As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpEstimada As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpSalida As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiar As System.Windows.Forms.Button
+    Friend WithEvents btnBuscarPorDoc As System.Windows.Forms.Button
 End Class
