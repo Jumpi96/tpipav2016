@@ -91,6 +91,12 @@
     <Compile Include="ABM Alojamientos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ABM Tipos Documentos.Designer.vb">
+      <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Tipos Documentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ABM Alojamientos.resx">
       <DependentUpon>ABM Alojamientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tipos Documentos.resx">
+      <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
