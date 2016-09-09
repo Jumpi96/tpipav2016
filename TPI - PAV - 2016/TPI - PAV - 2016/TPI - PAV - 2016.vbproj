@@ -127,6 +127,9 @@
     <EmbeddedResource Include="ABM Tipos Documentos.resx">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
