@@ -1,8 +1,8 @@
 ﻿Public Class ABM_Alojamientos
-    Dim string_conexion As String = "Data Source=(LocalDB)\v11.0;AttachDbFilename=" + "D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\BD.mdf" + ";Integrated Security=True;Connect Timeout=30"
+    Dim string_conexion As String = "Provider=SQLNCLI11;Data Source=DESKTOP-2BQ04QL;Integrated Security=SSPI;Initial Catalog=BD"
 
     Private Sub ABM_Alojamientos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        carga_combo(Me.cmbTipoDoc, Me.leo_tabla("TiposDocumentos"), "idTipoDocumento", "nombre") 'completar cuando BD
+        carga_combo(Me.cmbTipoDoc, Me.leo_tabla("TiposDocumento"), "idTipoDocumento", "nombre")
         'carga_lista(Me.leo_alojamientos(null))
         'blanqueo fecha salida
         dtpSalida.Format = DateTimePickerFormat.Custom
@@ -24,7 +24,7 @@
         conexion.Open()
         cmd.Connection = conexion
         cmd.CommandType = CommandType.Text
-        cmd.CommandText = "select * from" + nombre_tabla
+        cmd.CommandText = "select * from " + nombre_tabla
         tabla.Load(cmd.ExecuteReader())
 
         Return tabla
