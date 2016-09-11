@@ -1,5 +1,5 @@
 ﻿Public Class ABM_Alojamientos
-    Dim string_conexion As String = "Provider=SQLNCLI11;Data Source=DESKTOP-2BQ04QL;Integrated Security=SSPI;Initial Catalog=BD"
+    Dim string_conexion As String = ConexionBD.Instancia.StringConexion
 
     Private Sub ABM_Alojamientos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         carga_combo(Me.cmbTipoDoc, Me.leo_tabla("TiposDocumento"), "idTipoDocumento", "nombre")

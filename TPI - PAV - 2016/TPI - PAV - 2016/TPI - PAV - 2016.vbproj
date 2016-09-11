@@ -97,6 +97,7 @@
     <Compile Include="ABM Tipos Documentos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConexionBD.vb" />
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
