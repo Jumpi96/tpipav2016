@@ -19,6 +19,7 @@
     Private Sub carga_lista(ByVal tabla As Data.DataTable)
 
         Dim fechaSalida As String
+        dgvAlojamientos.Rows.Clear()
         For Each row As DataRow In tabla.Rows
             If row(2).GetType <> GetType(DateTime) Then
                 fechaSalida = ""
@@ -41,7 +42,7 @@
         cmd.CommandType = CommandType.Text
         If porDoc Then
             cmd.CommandText = "select idAlojamiento, fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
-                        "from Alojamientos where tipoDoc=" & cmbTipoDoc.SelectedValue & " AND numeroDoc=" & txtNroDoc.Text
+                        "from Alojamientos where tipoDoc=" & cmbTipoDoc.SelectedValue & " AND nroDoc=" & txtNroDoc.Text
         Else
             cmd.CommandText = "select idAlojamiento, fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
                 "from Alojamientos order by fechaInicioAlojamiento DESC"
@@ -96,12 +97,11 @@
     End Sub
 
     Private Sub btnBuscarPorDoc_Click(sender As Object, e As EventArgs) Handles btnBuscarPorDoc.Click
-        Dim existe As Boolean = False
-        'BUSCAR SI EXISTE
-        If existe Then
+        If existeCliente() Then
             carga_lista(Me.leo_alojamientos(True))
+            flagBusqDocumento = True
         Else
-            'Dar mensaje de error
+            MessageBox.Show("No existe cliente.", "Error")
         End If
     End Sub
 
@@ -174,13 +174,16 @@
         conexion.ConnectionString = Me.string_conexion
         conexion.Open()
 
-        consulta = "select * from Clientes where tipoDoc=" & cmbTipoDoc.SelectedValue & " AND numeroDoc=" & txtNroDoc.Text
+        If txtNroDoc.Text <> "" Then
+            consulta = "select * from Clientes where tipoDocumento =" & cmbTipoDoc.SelectedValue & " AND nroDocumento=" & txtNroDoc.Text
 
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = consulta
-        cmd.Connection = conexion
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = consulta
+            cmd.Connection = conexion
 
-        tabla.Load(cmd.ExecuteReader())
+            tabla.Load(cmd.ExecuteReader())
+        End If
+        
 
         If (tabla.Rows.Count = 0) Then
             Return False
@@ -201,19 +204,18 @@
         cmd.CommandType = CommandType.Text
         cmd.Connection = conexion
 
-        tabla.Load(cmd.ExecuteReader())
-
-        If (existeCliente()=False) Then
+        If (existeCliente() = False) Then
             MessageBox.Show("El documento ingresado no existe.", "Error", MessageBoxButtons.OK)
             Return False
         End If
         'verificar habitacion y alojados
-        consulta = "select cantMaxPersonas from HabitacionesXPiso where nroHabitacion = " & txtHabitacion.Text
-        cmd.CommandText = consulta
+        If txtHabitacion.Text <> "" Then
+            consulta = "select cantMaxPersonas from HabitacionesXPiso where nroHabitacion = " & txtHabitacion.Text
+            cmd.CommandText = consulta
 
-        tabla.Load(cmd.ExecuteReader())
-        conexion.Close()
-
+            tabla.Load(cmd.ExecuteReader())
+            conexion.Close()
+        End If
 
         If (tabla.Rows.Count = 0) Then
             MessageBox.Show("La habitación ingresada no existe.", "Error", MessageBoxButtons.OK)
@@ -238,8 +240,9 @@
         Return True
     End Function
 
-    Private Sub dgvAlojamientos_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAlojamientos.CellContentDoubleClick
-        Dim a As Integer = dgvAlojamientos.Item(dgvAlojamientos.CurrentRow.Index, 0).Value
+    Private Sub dgvAlojamientos_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAlojamientos.CellContentDoubleClick, dgvAlojamientos.CellDoubleClick
+        Dim a As Integer = dgvAlojamientos.Rows(dgvAlojamientos.CurrentRow.Index).Cells(0).Value
+
         cargar(a)
     End Sub
 
