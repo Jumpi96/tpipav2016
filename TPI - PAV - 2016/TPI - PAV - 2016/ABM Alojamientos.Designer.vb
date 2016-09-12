@@ -48,6 +48,7 @@ Partial Class ABM_Alojamientos
         'dgvAlojamientos
         '
         Me.dgvAlojamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvAlojamientos.ColumnHeadersVisible = False
         Me.dgvAlojamientos.Location = New System.Drawing.Point(360, 12)
         Me.dgvAlojamientos.Name = "dgvAlojamientos"
         Me.dgvAlojamientos.Size = New System.Drawing.Size(240, 224)
