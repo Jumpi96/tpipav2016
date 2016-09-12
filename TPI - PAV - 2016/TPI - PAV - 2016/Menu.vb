@@ -1,4 +1,4 @@
-﻿Public Class Menu
+﻿Public Class menu
 
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
@@ -10,6 +10,10 @@
         Me.pnl_nueOrdCom.Visible = False
         Me.pnl_nueOrdCom.Enabled = False
         Me.pnl_nueOrdCom.SendToBack()
+
+        Me.pnl_busOrdCom.Visible = False
+        Me.pnl_busOrdCom.Enabled = False
+        Me.pnl_busOrdCom.SendToBack()
 
         Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
         Me.pnl_nueAlo.Visible = True
@@ -53,6 +57,10 @@
         Me.pnl_nueOrdCom.Visible = False
         Me.pnl_nueOrdCom.Enabled = False
         Me.pnl_nueOrdCom.SendToBack()
+
+        Me.pnl_busOrdCom.Visible = False
+        Me.pnl_busOrdCom.Enabled = False
+        Me.pnl_busOrdCom.SendToBack()
 
         Me.tab_busAlo.SelectedTab = tab_busAloDatCli
         Me.pnl_busAlo.Visible = True
@@ -179,6 +187,10 @@
         Me.pnl_nueAlo.Enabled = False
         Me.pnl_nueAlo.SendToBack()
 
+        Me.pnl_busOrdCom.Visible = False
+        Me.pnl_busOrdCom.Enabled = False
+        Me.pnl_busOrdCom.SendToBack()
+
         Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComDatPro
         Me.pnl_nueOrdCom.Visible = True
         Me.pnl_nueOrdCom.Enabled = True
@@ -206,6 +218,7 @@
 
     End Sub
 
+<<<<<<< HEAD
     Private Sub ABMAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAlojamientosToolStripMenuItem.Click
         ABM_Alojamientos.Show()
     End Sub
@@ -216,5 +229,57 @@
 
     Private Sub ABMTiposDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposDocumentosToolStripMenuItem.Click
         ABM_TiposDocumentos.Show()
+=======
+    Private Sub BuscarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem1.Click
+        Me.menu_Menu.Enabled = False
+
+        Me.pnl_busAlo.Visible = False
+        Me.pnl_busAlo.Enabled = False
+        Me.pnl_busAlo.SendToBack()
+
+        Me.pnl_nueAlo.Visible = False
+        Me.pnl_nueAlo.Enabled = False
+        Me.pnl_nueAlo.SendToBack()
+
+        Me.pnl_nueOrdCom.Visible = False
+        Me.pnl_nueOrdCom.Enabled = False
+        Me.pnl_nueOrdCom.SendToBack()
+
+        Me.tab_busOrdCom.SelectedTab = tab_busOrdComDatPro
+        Me.pnl_busOrdCom.Visible = True
+        Me.pnl_busOrdCom.Enabled = True
+        Me.cmb_IDProBusOrdCom.Focus()
+        Me.pnl_busOrdCom.BringToFront()
+    End Sub
+
+    Private Sub cmd_busOrdComCan_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComCan.Click
+        Me.cmb_IDProBusOrdCom.Text = ""
+        Me.txt_corProBusOrdCom.Text = ""
+        Me.txt_telProBusOrdCom.Text = ""
+        Me.txt_nomProBusOrdCom.Text = ""
+
+        Me.pnl_busOrdCom.Visible = False
+        Me.pnl_busOrdCom.Enabled = False
+        Me.menu_Menu.Enabled = True
+    End Sub
+
+    Private Sub cmd_busOrdComSig_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComSig.Click
+        Me.tab_busOrdCom.SelectedTab = tab_busOrdComOrdCom
+    End Sub
+
+    Private Sub cmd_busOrdComAtr_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComAtr.Click
+        Me.tab_busOrdCom.SelectedTab = Me.tab_busOrdComDatPro
+    End Sub
+
+    Private Sub cmd_busOrdComFin_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComFin.Click
+        Me.cmb_IDProBusOrdCom.Text = ""
+        Me.txt_corProBusOrdCom.Text = ""
+        Me.txt_telProBusOrdCom.Text = ""
+        Me.txt_nomProBusOrdCom.Text = ""
+
+        Me.pnl_busOrdCom.Visible = False
+        Me.pnl_busOrdCom.Enabled = False
+        Me.menu_Menu.Enabled = True
+>>>>>>> origin/nueva
     End Sub
 End Class
