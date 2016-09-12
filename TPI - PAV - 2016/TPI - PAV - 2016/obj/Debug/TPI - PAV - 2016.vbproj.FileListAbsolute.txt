@@ -44,3 +44,5 @@ C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\tpipav2016\t
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\tpipav2016\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Menu.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\tpipav2016\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Resources.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\tpipav2016\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbproj.GenerateResource.Cache
+D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbprojResolveAssemblyReference.cache
+D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Menu.resources

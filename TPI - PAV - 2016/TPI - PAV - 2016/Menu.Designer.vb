@@ -31,6 +31,7 @@ Partial Class Menu
         Me.NuevaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionesAdministrativasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMAlojamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
@@ -111,6 +112,8 @@ Partial Class Menu
         Me.clm_preTot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_nueOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
+        Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -149,13 +152,13 @@ Partial Class Menu
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'ArtículosServiciosToolStripMenuItem
@@ -174,20 +177,27 @@ Partial Class Menu
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(114, 22)
         Me.BuscarToolStripMenuItem1.Text = "Buscar"
         '
         'FuncionesAdministrativasToolStripMenuItem
         '
+        Me.FuncionesAdministrativasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem})
         Me.FuncionesAdministrativasToolStripMenuItem.Name = "FuncionesAdministrativasToolStripMenuItem"
         Me.FuncionesAdministrativasToolStripMenuItem.Size = New System.Drawing.Size(169, 21)
         Me.FuncionesAdministrativasToolStripMenuItem.Text = "Funciones Administrativas"
+        '
+        'ABMAlojamientosToolStripMenuItem
+        '
+        Me.ABMAlojamientosToolStripMenuItem.Name = "ABMAlojamientosToolStripMenuItem"
+        Me.ABMAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMAlojamientosToolStripMenuItem.Text = "ABM Alojamientos"
         '
         'pnl_nueAlo
         '
@@ -950,6 +960,18 @@ Partial Class Menu
         Me.cmd_nueOrdComFin.Text = "Finalizar"
         Me.cmd_nueOrdComFin.UseVisualStyleBackColor = True
         '
+        'ABMClientesToolStripMenuItem
+        '
+        Me.ABMClientesToolStripMenuItem.Name = "ABMClientesToolStripMenuItem"
+        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMClientesToolStripMenuItem.Text = "ABM Clientes"
+        '
+        'ABMTiposDocumentosToolStripMenuItem
+        '
+        Me.ABMTiposDocumentosToolStripMenuItem.Name = "ABMTiposDocumentosToolStripMenuItem"
+        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
+        '
         'Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1080,4 +1102,7 @@ Partial Class Menu
     Friend WithEvents clm_cant As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_preTot As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmd_busPro As System.Windows.Forms.Button
+    Friend WithEvents ABMAlojamientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ABMClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ABMTiposDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
