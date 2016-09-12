@@ -250,4 +250,23 @@
         Me.pnl_busOrdCom.Enabled = False
         Me.menu_Menu.Enabled = True
     End Sub
+
+    Private Sub cmd_busOrdComSig_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComSig.Click
+        Me.tab_busOrdCom.SelectedTab = tab_busOrdComOrdCom
+    End Sub
+
+    Private Sub cmd_busOrdComAtr_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComAtr.Click
+        Me.tab_busOrdCom.SelectedTab = Me.tab_busOrdComDatPro
+    End Sub
+
+    Private Sub cmd_busOrdComFin_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComFin.Click
+        Me.cmb_IDProBusOrdCom.Text = ""
+        Me.txt_corProBusOrdCom.Text = ""
+        Me.txt_telProBusOrdCom.Text = ""
+        Me.txt_nomProBusOrdCom.Text = ""
+
+        Me.pnl_busOrdCom.Visible = False
+        Me.pnl_busOrdCom.Enabled = False
+        Me.menu_Menu.Enabled = True
+    End Sub
 End Class

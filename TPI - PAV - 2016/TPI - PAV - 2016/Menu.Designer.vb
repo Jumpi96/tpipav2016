@@ -112,10 +112,10 @@ Partial Class menu
         Me.cmd_nueOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
         Me.pnl_busOrdCom = New System.Windows.Forms.Panel()
-        Me.lbl_busOrdCom = New System.Windows.Forms.Label()
         Me.tab_busOrdCom = New System.Windows.Forms.TabControl()
         Me.tab_busOrdComDatPro = New System.Windows.Forms.TabPage()
-        Me.tab_busOrdComOrdCom = New System.Windows.Forms.TabPage()
+        Me.cmd_busOrdComSig = New System.Windows.Forms.Button()
+        Me.cmd_busOrdComCan = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txt_telProBusOrdCom = New System.Windows.Forms.TextBox()
         Me.txt_corProBusOrdCom = New System.Windows.Forms.TextBox()
@@ -125,8 +125,10 @@ Partial Class menu
         Me.lbl_corProBusOrdCom = New System.Windows.Forms.Label()
         Me.lbl_nomProBusOrdCom = New System.Windows.Forms.Label()
         Me.lbl_IDProBusOrdCom = New System.Windows.Forms.Label()
-        Me.cmd_busOrdComCan = New System.Windows.Forms.Button()
-        Me.cmd_busOrdComSig = New System.Windows.Forms.Button()
+        Me.tab_busOrdComOrdCom = New System.Windows.Forms.TabPage()
+        Me.lbl_busOrdCom = New System.Windows.Forms.Label()
+        Me.cmd_busOrdComFin = New System.Windows.Forms.Button()
+        Me.cmd_busOrdComAtr = New System.Windows.Forms.Button()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -146,6 +148,7 @@ Partial Class menu
         Me.pnl_busOrdCom.SuspendLayout()
         Me.tab_busOrdCom.SuspendLayout()
         Me.tab_busOrdComDatPro.SuspendLayout()
+        Me.tab_busOrdComOrdCom.SuspendLayout()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -168,13 +171,13 @@ Partial Class menu
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'ArtículosServiciosToolStripMenuItem
@@ -193,13 +196,13 @@ Partial Class menu
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(114, 22)
         Me.BuscarToolStripMenuItem1.Text = "Buscar"
         '
         'FuncionesAdministrativasToolStripMenuItem
@@ -980,16 +983,6 @@ Partial Class menu
         Me.pnl_busOrdCom.TabIndex = 0
         Me.pnl_busOrdCom.Visible = False
         '
-        'lbl_busOrdCom
-        '
-        Me.lbl_busOrdCom.AutoSize = True
-        Me.lbl_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_busOrdCom.Location = New System.Drawing.Point(3, 3)
-        Me.lbl_busOrdCom.Name = "lbl_busOrdCom"
-        Me.lbl_busOrdCom.Size = New System.Drawing.Size(182, 16)
-        Me.lbl_busOrdCom.TabIndex = 0
-        Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
-        '
         'tab_busOrdCom
         '
         Me.tab_busOrdCom.Controls.Add(Me.tab_busOrdComDatPro)
@@ -1022,15 +1015,23 @@ Partial Class menu
         Me.tab_busOrdComDatPro.Text = "Datos del Proveedor"
         Me.tab_busOrdComDatPro.UseVisualStyleBackColor = True
         '
-        'tab_busOrdComOrdCom
+        'cmd_busOrdComSig
         '
-        Me.tab_busOrdComOrdCom.Location = New System.Drawing.Point(4, 25)
-        Me.tab_busOrdComOrdCom.Name = "tab_busOrdComOrdCom"
-        Me.tab_busOrdComOrdCom.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_busOrdComOrdCom.Size = New System.Drawing.Size(514, 185)
-        Me.tab_busOrdComOrdCom.TabIndex = 1
-        Me.tab_busOrdComOrdCom.Text = "Ordenes de Compra"
-        Me.tab_busOrdComOrdCom.UseVisualStyleBackColor = True
+        Me.cmd_busOrdComSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busOrdComSig.Name = "cmd_busOrdComSig"
+        Me.cmd_busOrdComSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComSig.TabIndex = 32
+        Me.cmd_busOrdComSig.Text = "Siguiente"
+        Me.cmd_busOrdComSig.UseVisualStyleBackColor = True
+        '
+        'cmd_busOrdComCan
+        '
+        Me.cmd_busOrdComCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busOrdComCan.Name = "cmd_busOrdComCan"
+        Me.cmd_busOrdComCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComCan.TabIndex = 31
+        Me.cmd_busOrdComCan.Text = "Cancelar"
+        Me.cmd_busOrdComCan.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -1118,23 +1119,45 @@ Partial Class menu
         Me.lbl_IDProBusOrdCom.TabIndex = 30
         Me.lbl_IDProBusOrdCom.Text = "ID"
         '
-        'cmd_busOrdComCan
+        'tab_busOrdComOrdCom
         '
-        Me.cmd_busOrdComCan.Location = New System.Drawing.Point(331, 146)
-        Me.cmd_busOrdComCan.Name = "cmd_busOrdComCan"
-        Me.cmd_busOrdComCan.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busOrdComCan.TabIndex = 31
-        Me.cmd_busOrdComCan.Text = "Cancelar"
-        Me.cmd_busOrdComCan.UseVisualStyleBackColor = True
+        Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComAtr)
+        Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComFin)
+        Me.tab_busOrdComOrdCom.Location = New System.Drawing.Point(4, 25)
+        Me.tab_busOrdComOrdCom.Name = "tab_busOrdComOrdCom"
+        Me.tab_busOrdComOrdCom.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_busOrdComOrdCom.Size = New System.Drawing.Size(514, 185)
+        Me.tab_busOrdComOrdCom.TabIndex = 1
+        Me.tab_busOrdComOrdCom.Text = "Ordenes de Compra"
+        Me.tab_busOrdComOrdCom.UseVisualStyleBackColor = True
         '
-        'cmd_busOrdComSig
+        'lbl_busOrdCom
         '
-        Me.cmd_busOrdComSig.Location = New System.Drawing.Point(409, 146)
-        Me.cmd_busOrdComSig.Name = "cmd_busOrdComSig"
-        Me.cmd_busOrdComSig.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busOrdComSig.TabIndex = 32
-        Me.cmd_busOrdComSig.Text = "Siguiente"
-        Me.cmd_busOrdComSig.UseVisualStyleBackColor = True
+        Me.lbl_busOrdCom.AutoSize = True
+        Me.lbl_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_busOrdCom.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_busOrdCom.Name = "lbl_busOrdCom"
+        Me.lbl_busOrdCom.Size = New System.Drawing.Size(182, 16)
+        Me.lbl_busOrdCom.TabIndex = 0
+        Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
+        '
+        'cmd_busOrdComFin
+        '
+        Me.cmd_busOrdComFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busOrdComFin.Name = "cmd_busOrdComFin"
+        Me.cmd_busOrdComFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComFin.TabIndex = 0
+        Me.cmd_busOrdComFin.Text = "Finalizar"
+        Me.cmd_busOrdComFin.UseVisualStyleBackColor = True
+        '
+        'cmd_busOrdComAtr
+        '
+        Me.cmd_busOrdComAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busOrdComAtr.Name = "cmd_busOrdComAtr"
+        Me.cmd_busOrdComAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComAtr.TabIndex = 1
+        Me.cmd_busOrdComAtr.Text = "Atrás"
+        Me.cmd_busOrdComAtr.UseVisualStyleBackColor = True
         '
         'menu
         '
@@ -1179,6 +1202,7 @@ Partial Class menu
         Me.tab_busOrdCom.ResumeLayout(False)
         Me.tab_busOrdComDatPro.ResumeLayout(False)
         Me.tab_busOrdComDatPro.PerformLayout()
+        Me.tab_busOrdComOrdCom.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1288,4 +1312,6 @@ Partial Class menu
     Friend WithEvents tab_busOrdComOrdCom As System.Windows.Forms.TabPage
     Friend WithEvents cmd_busOrdComSig As System.Windows.Forms.Button
     Friend WithEvents cmd_busOrdComCan As System.Windows.Forms.Button
+    Friend WithEvents cmd_busOrdComAtr As System.Windows.Forms.Button
+    Friend WithEvents cmd_busOrdComFin As System.Windows.Forms.Button
 End Class
