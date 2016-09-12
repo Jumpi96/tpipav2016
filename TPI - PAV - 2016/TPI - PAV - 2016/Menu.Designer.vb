@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Menu
+Partial Class menu
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -111,6 +111,22 @@ Partial Class Menu
         Me.clm_preTot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_nueOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
+        Me.pnl_busOrdCom = New System.Windows.Forms.Panel()
+        Me.lbl_busOrdCom = New System.Windows.Forms.Label()
+        Me.tab_busOrdCom = New System.Windows.Forms.TabControl()
+        Me.tab_busOrdComDatPro = New System.Windows.Forms.TabPage()
+        Me.tab_busOrdComOrdCom = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.txt_telProBusOrdCom = New System.Windows.Forms.TextBox()
+        Me.txt_corProBusOrdCom = New System.Windows.Forms.TextBox()
+        Me.txt_nomProBusOrdCom = New System.Windows.Forms.TextBox()
+        Me.cmb_IDProBusOrdCom = New System.Windows.Forms.ComboBox()
+        Me.lbl_telProBusOrdCom = New System.Windows.Forms.Label()
+        Me.lbl_corProBusOrdCom = New System.Windows.Forms.Label()
+        Me.lbl_nomProBusOrdCom = New System.Windows.Forms.Label()
+        Me.lbl_IDProBusOrdCom = New System.Windows.Forms.Label()
+        Me.cmd_busOrdComCan = New System.Windows.Forms.Button()
+        Me.cmd_busOrdComSig = New System.Windows.Forms.Button()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -127,6 +143,9 @@ Partial Class Menu
         Me.tab_nueOrdComDatPro.SuspendLayout()
         Me.tab_nueOrdComArt.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_busOrdCom.SuspendLayout()
+        Me.tab_busOrdCom.SuspendLayout()
+        Me.tab_busOrdComDatPro.SuspendLayout()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -950,18 +969,186 @@ Partial Class Menu
         Me.cmd_nueOrdComFin.Text = "Finalizar"
         Me.cmd_nueOrdComFin.UseVisualStyleBackColor = True
         '
-        'Menu
+        'pnl_busOrdCom
+        '
+        Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
+        Me.pnl_busOrdCom.Controls.Add(Me.lbl_busOrdCom)
+        Me.pnl_busOrdCom.Enabled = False
+        Me.pnl_busOrdCom.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_busOrdCom.Name = "pnl_busOrdCom"
+        Me.pnl_busOrdCom.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_busOrdCom.TabIndex = 0
+        Me.pnl_busOrdCom.Visible = False
+        '
+        'lbl_busOrdCom
+        '
+        Me.lbl_busOrdCom.AutoSize = True
+        Me.lbl_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_busOrdCom.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_busOrdCom.Name = "lbl_busOrdCom"
+        Me.lbl_busOrdCom.Size = New System.Drawing.Size(182, 16)
+        Me.lbl_busOrdCom.TabIndex = 0
+        Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
+        '
+        'tab_busOrdCom
+        '
+        Me.tab_busOrdCom.Controls.Add(Me.tab_busOrdComDatPro)
+        Me.tab_busOrdCom.Controls.Add(Me.tab_busOrdComOrdCom)
+        Me.tab_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tab_busOrdCom.Location = New System.Drawing.Point(6, 22)
+        Me.tab_busOrdCom.Name = "tab_busOrdCom"
+        Me.tab_busOrdCom.SelectedIndex = 0
+        Me.tab_busOrdCom.Size = New System.Drawing.Size(522, 214)
+        Me.tab_busOrdCom.TabIndex = 0
+        '
+        'tab_busOrdComDatPro
+        '
+        Me.tab_busOrdComDatPro.Controls.Add(Me.cmd_busOrdComSig)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.cmd_busOrdComCan)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.Button1)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.txt_telProBusOrdCom)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.txt_corProBusOrdCom)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.txt_nomProBusOrdCom)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.cmb_IDProBusOrdCom)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.lbl_telProBusOrdCom)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.lbl_corProBusOrdCom)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.lbl_nomProBusOrdCom)
+        Me.tab_busOrdComDatPro.Controls.Add(Me.lbl_IDProBusOrdCom)
+        Me.tab_busOrdComDatPro.Location = New System.Drawing.Point(4, 25)
+        Me.tab_busOrdComDatPro.Name = "tab_busOrdComDatPro"
+        Me.tab_busOrdComDatPro.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_busOrdComDatPro.Size = New System.Drawing.Size(514, 185)
+        Me.tab_busOrdComDatPro.TabIndex = 0
+        Me.tab_busOrdComDatPro.Text = "Datos del Proveedor"
+        Me.tab_busOrdComDatPro.UseVisualStyleBackColor = True
+        '
+        'tab_busOrdComOrdCom
+        '
+        Me.tab_busOrdComOrdCom.Location = New System.Drawing.Point(4, 25)
+        Me.tab_busOrdComOrdCom.Name = "tab_busOrdComOrdCom"
+        Me.tab_busOrdComOrdCom.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_busOrdComOrdCom.Size = New System.Drawing.Size(514, 185)
+        Me.tab_busOrdComOrdCom.TabIndex = 1
+        Me.tab_busOrdComOrdCom.Text = "Ordenes de Compra"
+        Me.tab_busOrdComOrdCom.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(178, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(58, 22)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'txt_telProBusOrdCom
+        '
+        Me.txt_telProBusOrdCom.Enabled = False
+        Me.txt_telProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_telProBusOrdCom.Location = New System.Drawing.Point(100, 92)
+        Me.txt_telProBusOrdCom.Name = "txt_telProBusOrdCom"
+        Me.txt_telProBusOrdCom.Size = New System.Drawing.Size(100, 22)
+        Me.txt_telProBusOrdCom.TabIndex = 5
+        '
+        'txt_corProBusOrdCom
+        '
+        Me.txt_corProBusOrdCom.Enabled = False
+        Me.txt_corProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_corProBusOrdCom.Location = New System.Drawing.Point(100, 64)
+        Me.txt_corProBusOrdCom.Name = "txt_corProBusOrdCom"
+        Me.txt_corProBusOrdCom.Size = New System.Drawing.Size(180, 22)
+        Me.txt_corProBusOrdCom.TabIndex = 4
+        '
+        'txt_nomProBusOrdCom
+        '
+        Me.txt_nomProBusOrdCom.Enabled = False
+        Me.txt_nomProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_nomProBusOrdCom.Location = New System.Drawing.Point(100, 36)
+        Me.txt_nomProBusOrdCom.Name = "txt_nomProBusOrdCom"
+        Me.txt_nomProBusOrdCom.Size = New System.Drawing.Size(272, 22)
+        Me.txt_nomProBusOrdCom.TabIndex = 3
+        '
+        'cmb_IDProBusOrdCom
+        '
+        Me.cmb_IDProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_IDProBusOrdCom.FormattingEnabled = True
+        Me.cmb_IDProBusOrdCom.Location = New System.Drawing.Point(100, 6)
+        Me.cmb_IDProBusOrdCom.Name = "cmb_IDProBusOrdCom"
+        Me.cmb_IDProBusOrdCom.Size = New System.Drawing.Size(72, 24)
+        Me.cmb_IDProBusOrdCom.TabIndex = 1
+        '
+        'lbl_telProBusOrdCom
+        '
+        Me.lbl_telProBusOrdCom.AutoSize = True
+        Me.lbl_telProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_telProBusOrdCom.Location = New System.Drawing.Point(32, 95)
+        Me.lbl_telProBusOrdCom.Name = "lbl_telProBusOrdCom"
+        Me.lbl_telProBusOrdCom.Size = New System.Drawing.Size(62, 16)
+        Me.lbl_telProBusOrdCom.TabIndex = 30
+        Me.lbl_telProBusOrdCom.Text = "Teléfono"
+        '
+        'lbl_corProBusOrdCom
+        '
+        Me.lbl_corProBusOrdCom.AutoSize = True
+        Me.lbl_corProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_corProBusOrdCom.Location = New System.Drawing.Point(45, 67)
+        Me.lbl_corProBusOrdCom.Name = "lbl_corProBusOrdCom"
+        Me.lbl_corProBusOrdCom.Size = New System.Drawing.Size(49, 16)
+        Me.lbl_corProBusOrdCom.TabIndex = 30
+        Me.lbl_corProBusOrdCom.Text = "Correo"
+        '
+        'lbl_nomProBusOrdCom
+        '
+        Me.lbl_nomProBusOrdCom.AutoSize = True
+        Me.lbl_nomProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_nomProBusOrdCom.Location = New System.Drawing.Point(6, 39)
+        Me.lbl_nomProBusOrdCom.Name = "lbl_nomProBusOrdCom"
+        Me.lbl_nomProBusOrdCom.Size = New System.Drawing.Size(88, 16)
+        Me.lbl_nomProBusOrdCom.TabIndex = 30
+        Me.lbl_nomProBusOrdCom.Text = "Razón Social"
+        '
+        'lbl_IDProBusOrdCom
+        '
+        Me.lbl_IDProBusOrdCom.AutoSize = True
+        Me.lbl_IDProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_IDProBusOrdCom.Location = New System.Drawing.Point(73, 9)
+        Me.lbl_IDProBusOrdCom.Name = "lbl_IDProBusOrdCom"
+        Me.lbl_IDProBusOrdCom.Size = New System.Drawing.Size(21, 16)
+        Me.lbl_IDProBusOrdCom.TabIndex = 30
+        Me.lbl_IDProBusOrdCom.Text = "ID"
+        '
+        'cmd_busOrdComCan
+        '
+        Me.cmd_busOrdComCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busOrdComCan.Name = "cmd_busOrdComCan"
+        Me.cmd_busOrdComCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComCan.TabIndex = 31
+        Me.cmd_busOrdComCan.Text = "Cancelar"
+        Me.cmd_busOrdComCan.UseVisualStyleBackColor = True
+        '
+        'cmd_busOrdComSig
+        '
+        Me.cmd_busOrdComSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busOrdComSig.Name = "cmd_busOrdComSig"
+        Me.cmd_busOrdComSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComSig.TabIndex = 32
+        Me.cmd_busOrdComSig.Text = "Siguiente"
+        Me.cmd_busOrdComSig.UseVisualStyleBackColor = True
+        '
+        'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(581, 308)
         Me.Controls.Add(Me.menu_Menu)
+        Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
         Me.Controls.Add(Me.pnl_nueAlo)
         Me.Controls.Add(Me.pnl_busAlo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
-        Me.Name = "Menu"
+        Me.Name = "menu"
         Me.Text = "Menu"
         Me.menu_Menu.ResumeLayout(False)
         Me.menu_Menu.PerformLayout()
@@ -987,6 +1174,11 @@ Partial Class Menu
         Me.tab_nueOrdComDatPro.PerformLayout()
         Me.tab_nueOrdComArt.ResumeLayout(False)
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_busOrdCom.ResumeLayout(False)
+        Me.pnl_busOrdCom.PerformLayout()
+        Me.tab_busOrdCom.ResumeLayout(False)
+        Me.tab_busOrdComDatPro.ResumeLayout(False)
+        Me.tab_busOrdComDatPro.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1080,4 +1272,20 @@ Partial Class Menu
     Friend WithEvents clm_cant As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_preTot As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmd_busPro As System.Windows.Forms.Button
+    Friend WithEvents pnl_busOrdCom As System.Windows.Forms.Panel
+    Friend WithEvents lbl_busOrdCom As System.Windows.Forms.Label
+    Friend WithEvents tab_busOrdCom As System.Windows.Forms.TabControl
+    Friend WithEvents tab_busOrdComDatPro As System.Windows.Forms.TabPage
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents txt_telProBusOrdCom As System.Windows.Forms.TextBox
+    Friend WithEvents txt_corProBusOrdCom As System.Windows.Forms.TextBox
+    Friend WithEvents txt_nomProBusOrdCom As System.Windows.Forms.TextBox
+    Friend WithEvents cmb_IDProBusOrdCom As System.Windows.Forms.ComboBox
+    Friend WithEvents lbl_telProBusOrdCom As System.Windows.Forms.Label
+    Friend WithEvents lbl_corProBusOrdCom As System.Windows.Forms.Label
+    Friend WithEvents lbl_nomProBusOrdCom As System.Windows.Forms.Label
+    Friend WithEvents lbl_IDProBusOrdCom As System.Windows.Forms.Label
+    Friend WithEvents tab_busOrdComOrdCom As System.Windows.Forms.TabPage
+    Friend WithEvents cmd_busOrdComSig As System.Windows.Forms.Button
+    Friend WithEvents cmd_busOrdComCan As System.Windows.Forms.Button
 End Class
