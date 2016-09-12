@@ -1,6 +1,4 @@
-﻿Public Class ABMClientes
-
-
+﻿Public Class ABM_Clientes
     Private Function Validar() As Boolean
         If txt_apellido.Text = "" Then
             MessageBox.Show("Debe completar el campo Apellido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -33,4 +31,15 @@
         Me.Validar()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
+
+    End Sub
+
+    Private Sub lbl_telefono_Click(sender As Object, e As EventArgs) Handles lbl_telefono.Click
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

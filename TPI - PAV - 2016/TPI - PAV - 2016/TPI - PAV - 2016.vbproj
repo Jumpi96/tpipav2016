@@ -91,6 +91,12 @@
     <Compile Include="ABM Alojamientos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ABM Clientes.Designer.vb">
+      <DependentUpon>ABM Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ABM Tipos Documentos.Designer.vb">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
     </Compile>
@@ -98,12 +104,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConexionBD.vb" />
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -131,11 +131,11 @@
     <EmbeddedResource Include="ABM Alojamientos.resx">
       <DependentUpon>ABM Alojamientos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABM Clientes.resx">
+      <DependentUpon>ABM Clientes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABM Tipos Documentos.resx">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>

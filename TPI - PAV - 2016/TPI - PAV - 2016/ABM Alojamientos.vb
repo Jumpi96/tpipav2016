@@ -4,7 +4,7 @@
 
     Private Sub ABM_Alojamientos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         carga_combo(Me.cmbTipoDoc, Me.leo_tabla("TiposDocumento"), "idTipoDocumento", "nombre")
-        'carga_lista(Me.leo_alojamientos(False)) COMPLETAR
+        carga_lista(Me.leo_alojamientos(False))
         dtpSalida.Format = DateTimePickerFormat.Custom
         dtpSalida.CustomFormat = "    "
     End Sub
@@ -16,8 +16,20 @@
     End Sub
 
     Private Sub carga_lista(ByVal tabla As Data.DataTable)
-        Me.dgvAlojamientos.DataSource = tabla
-        'COMPLETAR
+
+        Dim fechaSalida As String
+        For Each row As DataRow In tabla.Rows
+            If row(1).GetType <> GetType(DateTime) Then
+                fechaSalida = ""
+            Else
+                fechaSalida = CType(row(1), DateTime).ToShortDateString
+            End If
+            dgvAlojamientos.Rows.Add(CType(row(0), DateTime).ToShortDateString, fechaSalida, row(2))
+        Next row
+
+
+
+
     End Sub
 
     Private Function leo_alojamientos(ByVal porDoc As Boolean)
@@ -30,10 +42,10 @@
         cmd.Connection = conexion
         cmd.CommandType = CommandType.Text
         If porDoc Then
-            cmd.CommandText = "select fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion" &
+            cmd.CommandText = "select fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
                         "from Alojamientos where tipoDoc=" & cmbTipoDoc.SelectedValue & " AND numeroDoc=" & txtNroDoc.Text
         Else
-            cmd.CommandText = "select fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion" &
+            cmd.CommandText = "select fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
                 "from Alojamientos order by fechaInicioAlojamiento DESC"
         End If
         tabla.Load(cmd.ExecuteReader())
@@ -90,14 +102,14 @@
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        'registrar()
+        registrar()
         carga_lista(Me.leo_alojamientos(False))
         limpiar()
     End Sub
 
     Private Sub registrar()
         If validar() Then
-            'instertar()
+            insertar()
         End If
     End Sub
 
@@ -114,9 +126,64 @@
         "," & dtpIngreso.Value & "," & dtpEstimada.Value & "," & dtpSalida.Value & "," &
         txtPrecio.Text & ")"
 
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conexion
+        cmd.CommandText = consulta
+        cmd.ExecuteNonQuery()
+        conexion.Close()
+        Return True
     End Function
 
     Private Function validar() As Boolean
+        'verificar Documento
+        Dim conexion As New OleDb.OleDbConnection
+        Dim consulta As String
+        Dim cmd As New OleDb.OleDbCommand
+        Dim tabla As New DataTable
 
+        conexion.ConnectionString = Me.string_conexion
+        conexion.Open()
+
+        consulta = "select * from Clientes where tipoDoc=" & cmbTipoDoc.SelectedValue & " AND numeroDoc=" & txtNroDoc.Text
+
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = consulta
+        cmd.Connection = conexion
+
+        tabla.Load(cmd.ExecuteReader())
+
+        If (tabla.Rows.Count = 0) Then
+            MessageBox.Show("El documento ingresado no existe.", "Error", MessageBoxButtons.OK)
+            Return False
+        End If
+        'verificar habitacion y alojados
+        consulta = "select cantMaxPersonas from HabitacionesXPiso where nroHabitacion = " & txtHabitacion.Text
+        cmd.CommandText = consulta
+
+        tabla.Load(cmd.ExecuteReader())
+        conexion.Close()
+
+
+        If (tabla.Rows.Count = 0) Then
+            MessageBox.Show("La habitación ingresada no existe.", "Error", MessageBoxButtons.OK)
+            Return False
+        Else
+            If (CType(tabla.Rows(0).ItemArray(0).ToString, Integer) < txtAlojados.Text Or txtAlojados.Text < 1) Then
+                MessageBox.Show("El número de alojados no es válido.", "Error", MessageBoxButtons.OK)
+                Return False
+            End If
+        End If
+        'controlar fechas
+        If (dtpIngreso.Value > Today Or dtpEstimada.Value <= dtpIngreso.Value Or dtpSalida.Value <= dtpIngreso.Value Or dtpSalida.Value < dtpEstimada.Value) Then
+            MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
+            Return False
+        End If
+        'controlar precio
+        If (txtPrecio.Text < 0) Then
+            MessageBox.Show("El precio por día no puede ser negativo.", "Error", MessageBoxButtons.OK)
+            Return False
+        End If
+
+        Return True
     End Function
 End Class

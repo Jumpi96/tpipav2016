@@ -42,17 +42,24 @@ Partial Class ABM_Alojamientos
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnBuscarPorDoc = New System.Windows.Forms.Button()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.txtPrecio = New System.Windows.Forms.MaskedTextBox()
+        Me.fechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'dgvAlojamientos
         '
+        Me.dgvAlojamientos.AllowUserToAddRows = False
+        Me.dgvAlojamientos.AllowUserToDeleteRows = False
         Me.dgvAlojamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAlojamientos.ColumnHeadersVisible = False
-        Me.dgvAlojamientos.Location = New System.Drawing.Point(360, 12)
+        Me.dgvAlojamientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fechaIngreso, Me.fechaFin, Me.Habitacion})
+        Me.dgvAlojamientos.Location = New System.Drawing.Point(11, 204)
         Me.dgvAlojamientos.Name = "dgvAlojamientos"
-        Me.dgvAlojamientos.Size = New System.Drawing.Size(240, 224)
+        Me.dgvAlojamientos.ReadOnly = True
+        Me.dgvAlojamientos.Size = New System.Drawing.Size(350, 186)
         Me.dgvAlojamientos.TabIndex = 11
         '
         'Label1
@@ -128,7 +135,7 @@ Partial Class ABM_Alojamientos
         '
         'btnRegistrar
         '
-        Me.btnRegistrar.Location = New System.Drawing.Point(188, 189)
+        Me.btnRegistrar.Location = New System.Drawing.Point(205, 396)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(75, 23)
         Me.btnRegistrar.TabIndex = 7
@@ -189,7 +196,7 @@ Partial Class ABM_Alojamientos
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(269, 189)
+        Me.btnCancelar.Location = New System.Drawing.Point(286, 396)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 8
@@ -198,7 +205,7 @@ Partial Class ABM_Alojamientos
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(16, 213)
+        Me.btnLimpiar.Location = New System.Drawing.Point(11, 420)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(75, 23)
         Me.btnLimpiar.TabIndex = 10
@@ -214,19 +221,48 @@ Partial Class ABM_Alojamientos
         Me.btnBuscarPorDoc.Text = "Buscar por Documento"
         Me.btnBuscarPorDoc.UseVisualStyleBackColor = True
         '
-        'MaskedTextBox1
+        'txtPrecio
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(69, 179)
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox1.TabIndex = 12
+        Me.txtPrecio.Location = New System.Drawing.Point(104, 178)
+        Me.txtPrecio.Mask = "9999,99"
+        Me.txtPrecio.Name = "txtPrecio"
+        Me.txtPrecio.Size = New System.Drawing.Size(100, 20)
+        Me.txtPrecio.TabIndex = 12
+        '
+        'fechaIngreso
+        '
+        Me.fechaIngreso.HeaderText = "Ingreso"
+        Me.fechaIngreso.Name = "fechaIngreso"
+        Me.fechaIngreso.ReadOnly = True
+        '
+        'fechaFin
+        '
+        Me.fechaFin.HeaderText = "Salida"
+        Me.fechaFin.Name = "fechaFin"
+        Me.fechaFin.ReadOnly = True
+        '
+        'Habitacion
+        '
+        Me.Habitacion.HeaderText = "Habitación"
+        Me.Habitacion.Name = "Habitacion"
+        Me.Habitacion.ReadOnly = True
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(12, 181)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(74, 13)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Precio por día"
         '
         'ABM_Alojamientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(612, 251)
-        Me.Controls.Add(Me.MaskedTextBox1)
+        Me.ClientSize = New System.Drawing.Size(373, 455)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txtPrecio)
         Me.Controls.Add(Me.btnBuscarPorDoc)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnCancelar)
@@ -249,11 +285,11 @@ Partial Class ABM_Alojamientos
         Me.Controls.Add(Me.dgvAlojamientos)
         Me.Name = "ABM_Alojamientos"
         Me.Text = "Alojamientos"
-        CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        CType(Me.dgvAlojamientos,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents dgvAlojamientos As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
@@ -274,5 +310,9 @@ Partial Class ABM_Alojamientos
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents btnBuscarPorDoc As System.Windows.Forms.Button
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txtPrecio As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents fechaIngreso As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents fechaFin As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Habitacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class
