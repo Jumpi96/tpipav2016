@@ -22,9 +22,12 @@ Partial Class ABM_TiposDocumentos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.cmd_registrar = New System.Windows.Forms.Button()
+        Me.cmd_guardar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
         Me.grid_tipoDoc = New System.Windows.Forms.DataGridView()
+        Me.c_idDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.c_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.c_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_tipoDocumento = New System.Windows.Forms.Label()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.lbl_descripcion = New System.Windows.Forms.Label()
@@ -32,20 +35,17 @@ Partial Class ABM_TiposDocumentos
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
-        Me.c_idDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.c_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.c_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.grid_tipoDoc, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'cmd_registrar
+        'cmd_guardar
         '
-        Me.cmd_registrar.Location = New System.Drawing.Point(198, 322)
-        Me.cmd_registrar.Name = "cmd_registrar"
-        Me.cmd_registrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_registrar.TabIndex = 20
-        Me.cmd_registrar.Text = "Registrar"
-        Me.cmd_registrar.UseVisualStyleBackColor = True
+        Me.cmd_guardar.Location = New System.Drawing.Point(198, 322)
+        Me.cmd_guardar.Name = "cmd_guardar"
+        Me.cmd_guardar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_guardar.TabIndex = 20
+        Me.cmd_guardar.Text = "Guardar"
+        Me.cmd_guardar.UseVisualStyleBackColor = True
         '
         'cmd_cancelar
         '
@@ -64,6 +64,24 @@ Partial Class ABM_TiposDocumentos
         Me.grid_tipoDoc.Name = "grid_tipoDoc"
         Me.grid_tipoDoc.Size = New System.Drawing.Size(365, 216)
         Me.grid_tipoDoc.TabIndex = 23
+        '
+        'c_idDoc
+        '
+        Me.c_idDoc.HeaderText = "ID Documento"
+        Me.c_idDoc.Name = "c_idDoc"
+        Me.c_idDoc.Width = 50
+        '
+        'c_nombre
+        '
+        Me.c_nombre.HeaderText = "Nombre"
+        Me.c_nombre.Name = "c_nombre"
+        Me.c_nombre.Width = 70
+        '
+        'c_descripcion
+        '
+        Me.c_descripcion.HeaderText = "Descripcion"
+        Me.c_descripcion.Name = "c_descripcion"
+        Me.c_descripcion.Width = 200
         '
         'lbl_tipoDocumento
         '
@@ -122,24 +140,6 @@ Partial Class ABM_TiposDocumentos
         Me.cmd_limpiar.Text = "Limpiar"
         Me.cmd_limpiar.UseVisualStyleBackColor = True
         '
-        'c_idDoc
-        '
-        Me.c_idDoc.HeaderText = "ID Documento"
-        Me.c_idDoc.Name = "c_idDoc"
-        Me.c_idDoc.Width = 50
-        '
-        'c_nombre
-        '
-        Me.c_nombre.HeaderText = "Nombre"
-        Me.c_nombre.Name = "c_nombre"
-        Me.c_nombre.Width = 70
-        '
-        'c_descripcion
-        '
-        Me.c_descripcion.HeaderText = "Descripcion"
-        Me.c_descripcion.Name = "c_descripcion"
-        Me.c_descripcion.Width = 200
-        '
         'ABM_TiposDocumentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -154,7 +154,7 @@ Partial Class ABM_TiposDocumentos
         Me.Controls.Add(Me.lbl_tipoDocumento)
         Me.Controls.Add(Me.grid_tipoDoc)
         Me.Controls.Add(Me.cmd_cancelar)
-        Me.Controls.Add(Me.cmd_registrar)
+        Me.Controls.Add(Me.cmd_guardar)
         Me.Name = "ABM_TiposDocumentos"
         Me.Text = "Tipos Documentos"
         CType(Me.grid_tipoDoc, System.ComponentModel.ISupportInitialize).EndInit()
@@ -162,7 +162,7 @@ Partial Class ABM_TiposDocumentos
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents cmd_registrar As System.Windows.Forms.Button
+    Friend WithEvents cmd_guardar As System.Windows.Forms.Button
     Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
     Friend WithEvents grid_tipoDoc As System.Windows.Forms.DataGridView
     Friend WithEvents lbl_tipoDocumento As System.Windows.Forms.Label
