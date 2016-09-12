@@ -19,16 +19,13 @@
 
         Dim fechaSalida As String
         For Each row As DataRow In tabla.Rows
-            If row(1).GetType <> GetType(DateTime) Then
+            If row(2).GetType <> GetType(DateTime) Then
                 fechaSalida = ""
             Else
                 fechaSalida = CType(row(1), DateTime).ToShortDateString
             End If
-            dgvAlojamientos.Rows.Add(CType(row(0), DateTime).ToShortDateString, fechaSalida, row(2))
+            dgvAlojamientos.Rows.Add(CType(row(1), DateTime).ToShortDateString, fechaSalida, row(3))
         Next row
-
-
-
 
     End Sub
 
@@ -42,10 +39,10 @@
         cmd.Connection = conexion
         cmd.CommandType = CommandType.Text
         If porDoc Then
-            cmd.CommandText = "select fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
+            cmd.CommandText = "select idAlojamiento, fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
                         "from Alojamientos where tipoDoc=" & cmbTipoDoc.SelectedValue & " AND numeroDoc=" & txtNroDoc.Text
         Else
-            cmd.CommandText = "select fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
+            cmd.CommandText = "select idAlojamiento, fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
                 "from Alojamientos order by fechaInicioAlojamiento DESC"
         End If
         tabla.Load(cmd.ExecuteReader())
@@ -86,7 +83,7 @@
         dtpSalida.CustomFormat = "    "
 
         If flagBusqDocumento Then
-            'carga_lista(Me.leo_alojamientos(False)) COMPLETAR
+            carga_lista(Me.leo_alojamientos(False))
             flagBusqDocumento = False
         End If
     End Sub
@@ -208,6 +205,31 @@
     End Function
 
     Private Sub dgvAlojamientos_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAlojamientos.CellContentDoubleClick
-        'cargar()
+        Dim a As Integer = dgvAlojamientos.Item(dgvAlojamientos.CurrentRow.Index, 0).Value
+        cargar(a)
+    End Sub
+
+    Private Sub cargar(ByVal idAlojamiento As Integer)
+        Dim conexion As New OleDb.OleDbConnection
+        Dim cmd As New OleDb.OleDbCommand
+        Dim consulta As String
+
+        conexion.ConnectionString = string_conexion
+        consulta = "select * from Alojamientos where idAlojamiento=" + a
+
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = consulta
+
+        Dim tabla As New DataTable
+        tabla.Load(cmd.ExecuteReader())
+
+        Dim row As DataRow = tabla.Rows(0)
+
+        cmbTipoDoc.SelectedValue = row(2)
+        txtNroDoc.Text = row(1)
+        'nroPiso.Text = 
+
+
+
     End Sub
 End Class
