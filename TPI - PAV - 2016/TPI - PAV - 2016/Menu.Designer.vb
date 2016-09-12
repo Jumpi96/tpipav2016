@@ -112,10 +112,10 @@ Partial Class menu
         Me.clm_preTot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_nueOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
-<<<<<<< HEAD
+
         Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-=======
+
         Me.pnl_busOrdCom = New System.Windows.Forms.Panel()
         Me.tab_busOrdCom = New System.Windows.Forms.TabControl()
         Me.tab_busOrdComDatPro = New System.Windows.Forms.TabPage()
@@ -134,7 +134,6 @@ Partial Class menu
         Me.lbl_busOrdCom = New System.Windows.Forms.Label()
         Me.cmd_busOrdComFin = New System.Windows.Forms.Button()
         Me.cmd_busOrdComAtr = New System.Windows.Forms.Button()
->>>>>>> origin/nueva
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -985,7 +984,7 @@ Partial Class menu
         Me.cmd_nueOrdComFin.Text = "Finalizar"
         Me.cmd_nueOrdComFin.UseVisualStyleBackColor = True
         '
-<<<<<<< HEAD
+
         'ABMClientesToolStripMenuItem
         '
         Me.ABMClientesToolStripMenuItem.Name = "ABMClientesToolStripMenuItem"
@@ -999,7 +998,7 @@ Partial Class menu
         Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
         '
         'Menu
-=======
+
         'pnl_busOrdCom
         '
         Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
@@ -1188,7 +1187,6 @@ Partial Class menu
         Me.cmd_busOrdComAtr.UseVisualStyleBackColor = True
         '
         'menu
->>>>>>> origin/nueva
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1325,11 +1323,11 @@ Partial Class menu
     Friend WithEvents clm_cant As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_preTot As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmd_busPro As System.Windows.Forms.Button
-<<<<<<< HEAD
+
     Friend WithEvents ABMAlojamientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMTiposDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-=======
+
     Friend WithEvents pnl_busOrdCom As System.Windows.Forms.Panel
     Friend WithEvents lbl_busOrdCom As System.Windows.Forms.Label
     Friend WithEvents tab_busOrdCom As System.Windows.Forms.TabControl
@@ -1348,5 +1346,5 @@ Partial Class menu
     Friend WithEvents cmd_busOrdComCan As System.Windows.Forms.Button
     Friend WithEvents cmd_busOrdComAtr As System.Windows.Forms.Button
     Friend WithEvents cmd_busOrdComFin As System.Windows.Forms.Button
->>>>>>> origin/nueva
+
 End Class

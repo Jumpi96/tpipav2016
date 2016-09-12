@@ -218,7 +218,7 @@
 
     End Sub
 
-<<<<<<< HEAD
+
     Private Sub ABMAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAlojamientosToolStripMenuItem.Click
         ABM_Alojamientos.Show()
     End Sub
@@ -229,7 +229,9 @@
 
     Private Sub ABMTiposDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposDocumentosToolStripMenuItem.Click
         ABM_TiposDocumentos.Show()
-=======
+    End Sub
+
+
     Private Sub BuscarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem1.Click
         Me.menu_Menu.Enabled = False
 
@@ -280,6 +282,6 @@
         Me.pnl_busOrdCom.Visible = False
         Me.pnl_busOrdCom.Enabled = False
         Me.menu_Menu.Enabled = True
->>>>>>> origin/nueva
+
     End Sub
 End Class
