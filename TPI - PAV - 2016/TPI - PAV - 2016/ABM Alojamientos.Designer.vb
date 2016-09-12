@@ -55,12 +55,17 @@ Partial Class ABM_Alojamientos
         '
         Me.dgvAlojamientos.AllowUserToAddRows = False
         Me.dgvAlojamientos.AllowUserToDeleteRows = False
+        Me.dgvAlojamientos.AllowUserToResizeColumns = False
+        Me.dgvAlojamientos.AllowUserToResizeRows = False
         Me.dgvAlojamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvAlojamientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idAlojamiento, Me.fechaIngreso, Me.fechaFin, Me.Habitacion})
         Me.dgvAlojamientos.Location = New System.Drawing.Point(11, 204)
+        Me.dgvAlojamientos.MultiSelect = False
         Me.dgvAlojamientos.Name = "dgvAlojamientos"
         Me.dgvAlojamientos.ReadOnly = True
-        Me.dgvAlojamientos.Size = New System.Drawing.Size(350, 186)
+        Me.dgvAlojamientos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgvAlojamientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvAlojamientos.Size = New System.Drawing.Size(381, 186)
         Me.dgvAlojamientos.TabIndex = 11
         '
         'Label1
@@ -136,10 +141,10 @@ Partial Class ABM_Alojamientos
         '
         'btnRegistrar
         '
-        Me.btnRegistrar.Location = New System.Drawing.Point(205, 396)
+        Me.btnRegistrar.Location = New System.Drawing.Point(234, 396)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnRegistrar.TabIndex = 7
+        Me.btnRegistrar.TabIndex = 8
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = True
         '
@@ -197,10 +202,10 @@ Partial Class ABM_Alojamientos
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(286, 396)
+        Me.btnCancelar.Location = New System.Drawing.Point(317, 396)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 8
+        Me.btnCancelar.TabIndex = 9
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -209,7 +214,7 @@ Partial Class ABM_Alojamientos
         Me.btnLimpiar.Location = New System.Drawing.Point(11, 420)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.btnLimpiar.TabIndex = 10
+        Me.btnLimpiar.TabIndex = 11
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -218,17 +223,17 @@ Partial Class ABM_Alojamientos
         Me.btnBuscarPorDoc.Location = New System.Drawing.Point(234, 22)
         Me.btnBuscarPorDoc.Name = "btnBuscarPorDoc"
         Me.btnBuscarPorDoc.Size = New System.Drawing.Size(111, 37)
-        Me.btnBuscarPorDoc.TabIndex = 9
+        Me.btnBuscarPorDoc.TabIndex = 10
         Me.btnBuscarPorDoc.Text = "Buscar por Documento"
         Me.btnBuscarPorDoc.UseVisualStyleBackColor = True
         '
         'txtPrecio
         '
         Me.txtPrecio.Location = New System.Drawing.Point(104, 178)
-        Me.txtPrecio.Mask = "9999,99"
+        Me.txtPrecio.Mask = "99999"
         Me.txtPrecio.Name = "txtPrecio"
-        Me.txtPrecio.Size = New System.Drawing.Size(100, 20)
-        Me.txtPrecio.TabIndex = 12
+        Me.txtPrecio.Size = New System.Drawing.Size(83, 20)
+        Me.txtPrecio.TabIndex = 7
         '
         'Label9
         '
@@ -241,9 +246,10 @@ Partial Class ABM_Alojamientos
         '
         'idAlojamiento
         '
-        Me.idAlojamiento.HeaderText = "idAlojamiento"
+        Me.idAlojamiento.HeaderText = "id"
         Me.idAlojamiento.Name = "idAlojamiento"
         Me.idAlojamiento.ReadOnly = True
+        Me.idAlojamiento.Width = 25
         '
         'fechaIngreso
         '
@@ -267,7 +273,7 @@ Partial Class ABM_Alojamientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(373, 455)
+        Me.ClientSize = New System.Drawing.Size(409, 455)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.txtPrecio)
         Me.Controls.Add(Me.btnBuscarPorDoc)
@@ -290,8 +296,11 @@ Partial Class ABM_Alojamientos
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgvAlojamientos)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(425, 494)
+        Me.MinimumSize = New System.Drawing.Size(425, 494)
         Me.Name = "ABM_Alojamientos"
-        Me.Text = "Alojamientos"
+        Me.Text = "ABM Alojamientos"
         CType(Me.dgvAlojamientos,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
