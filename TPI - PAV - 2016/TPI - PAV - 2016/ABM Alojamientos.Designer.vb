@@ -42,6 +42,7 @@ Partial Class ABM_Alojamientos
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnBuscarPorDoc = New System.Windows.Forms.Button()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -51,7 +52,7 @@ Partial Class ABM_Alojamientos
         Me.dgvAlojamientos.Location = New System.Drawing.Point(360, 12)
         Me.dgvAlojamientos.Name = "dgvAlojamientos"
         Me.dgvAlojamientos.Size = New System.Drawing.Size(240, 224)
-        Me.dgvAlojamientos.TabIndex = 0
+        Me.dgvAlojamientos.TabIndex = 11
         '
         'Label1
         '
@@ -129,24 +130,25 @@ Partial Class ABM_Alojamientos
         Me.btnRegistrar.Location = New System.Drawing.Point(188, 189)
         Me.btnRegistrar.Name = "btnRegistrar"
         Me.btnRegistrar.Size = New System.Drawing.Size(75, 23)
-        Me.btnRegistrar.TabIndex = 9
+        Me.btnRegistrar.TabIndex = 7
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = True
         '
         'cmbTipoDoc
         '
+        Me.cmbTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTipoDoc.FormattingEnabled = True
         Me.cmbTipoDoc.Location = New System.Drawing.Point(69, 19)
         Me.cmbTipoDoc.Name = "cmbTipoDoc"
         Me.cmbTipoDoc.Size = New System.Drawing.Size(139, 21)
-        Me.cmbTipoDoc.TabIndex = 11
+        Me.cmbTipoDoc.TabIndex = 0
         '
         'txtNroDoc
         '
         Me.txtNroDoc.Location = New System.Drawing.Point(70, 46)
         Me.txtNroDoc.Name = "txtNroDoc"
         Me.txtNroDoc.Size = New System.Drawing.Size(138, 20)
-        Me.txtNroDoc.TabIndex = 12
+        Me.txtNroDoc.TabIndex = 1
         '
         'txtHabitacion
         '
@@ -154,42 +156,42 @@ Partial Class ABM_Alojamientos
         Me.txtHabitacion.Mask = "999"
         Me.txtHabitacion.Name = "txtHabitacion"
         Me.txtHabitacion.Size = New System.Drawing.Size(30, 20)
-        Me.txtHabitacion.TabIndex = 13
+        Me.txtHabitacion.TabIndex = 2
         '
         'txtAlojados
         '
         Me.txtAlojados.Location = New System.Drawing.Point(269, 72)
         Me.txtAlojados.Name = "txtAlojados"
         Me.txtAlojados.Size = New System.Drawing.Size(30, 20)
-        Me.txtAlojados.TabIndex = 14
+        Me.txtAlojados.TabIndex = 3
         '
         'dtpIngreso
         '
         Me.dtpIngreso.Location = New System.Drawing.Point(145, 100)
         Me.dtpIngreso.Name = "dtpIngreso"
         Me.dtpIngreso.Size = New System.Drawing.Size(200, 20)
-        Me.dtpIngreso.TabIndex = 15
+        Me.dtpIngreso.TabIndex = 4
         '
         'dtpEstimada
         '
         Me.dtpEstimada.Location = New System.Drawing.Point(145, 127)
         Me.dtpEstimada.Name = "dtpEstimada"
         Me.dtpEstimada.Size = New System.Drawing.Size(200, 20)
-        Me.dtpEstimada.TabIndex = 16
+        Me.dtpEstimada.TabIndex = 5
         '
         'dtpSalida
         '
         Me.dtpSalida.Location = New System.Drawing.Point(145, 152)
         Me.dtpSalida.Name = "dtpSalida"
         Me.dtpSalida.Size = New System.Drawing.Size(200, 20)
-        Me.dtpSalida.TabIndex = 17
+        Me.dtpSalida.TabIndex = 6
         '
         'btnCancelar
         '
         Me.btnCancelar.Location = New System.Drawing.Point(269, 189)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 18
+        Me.btnCancelar.TabIndex = 8
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -198,7 +200,7 @@ Partial Class ABM_Alojamientos
         Me.btnLimpiar.Location = New System.Drawing.Point(16, 213)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(75, 23)
-        Me.btnLimpiar.TabIndex = 19
+        Me.btnLimpiar.TabIndex = 10
         Me.btnLimpiar.Text = "Limpiar"
         Me.btnLimpiar.UseVisualStyleBackColor = True
         '
@@ -207,15 +209,23 @@ Partial Class ABM_Alojamientos
         Me.btnBuscarPorDoc.Location = New System.Drawing.Point(233, 22)
         Me.btnBuscarPorDoc.Name = "btnBuscarPorDoc"
         Me.btnBuscarPorDoc.Size = New System.Drawing.Size(111, 37)
-        Me.btnBuscarPorDoc.TabIndex = 20
+        Me.btnBuscarPorDoc.TabIndex = 9
         Me.btnBuscarPorDoc.Text = "Buscar por Documento"
         Me.btnBuscarPorDoc.UseVisualStyleBackColor = True
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(69, 179)
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBox1.TabIndex = 12
         '
         'ABM_Alojamientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(612, 251)
+        Me.Controls.Add(Me.MaskedTextBox1)
         Me.Controls.Add(Me.btnBuscarPorDoc)
         Me.Controls.Add(Me.btnLimpiar)
         Me.Controls.Add(Me.btnCancelar)
@@ -263,4 +273,5 @@ Partial Class ABM_Alojamientos
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents btnBuscarPorDoc As System.Windows.Forms.Button
+    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
 End Class
