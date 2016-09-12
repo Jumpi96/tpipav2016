@@ -1,20 +1,24 @@
 ﻿Public Class Menu
 
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+        Me.menu_Menu.Enabled = False
+
         Me.pnl_busAlo.Visible = False
         Me.pnl_busAlo.Enabled = False
         Me.pnl_busAlo.SendToBack()
+
+        Me.pnl_nueOrdCom.Visible = False
+        Me.pnl_nueOrdCom.Enabled = False
+        Me.pnl_nueOrdCom.SendToBack()
+
+        Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
         Me.pnl_nueAlo.Visible = True
         Me.pnl_nueAlo.Enabled = True
         Me.pnl_nueAlo.BringToFront()
-        Me.menu_Menu.Enabled = False
+
     End Sub
 
     Private Sub txt_doc_Click(sender As Object, e As EventArgs) Handles txt_doc.Click
-
-    End Sub
-
-    Private Sub txt_doc_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_doc.MouseClick, txt_docBusAlo.MouseClick
         If Me.txt_doc.Text = "" Then
             Me.txt_doc.SelectionStart = 0
         End If
@@ -40,9 +44,18 @@
 
     Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
+
+        Me.tab_busAlo.SelectedTab = tab_busAloDatCli
+
         Me.pnl_nueAlo.Visible = False
         Me.pnl_nueAlo.Enabled = False
         Me.pnl_nueAlo.SendToBack()
+
+        Me.pnl_nueOrdCom.Visible = False
+        Me.pnl_nueOrdCom.Enabled = False
+        Me.pnl_nueOrdCom.SendToBack()
+
+        Me.tab_busAlo.SelectedTab = tab_busAloDatCli
         Me.pnl_busAlo.Visible = True
         Me.pnl_busAlo.Enabled = True
         Me.pnl_busAlo.BringToFront()
@@ -52,6 +65,7 @@
         Me.pnl_nueAlo.Visible = False
         Me.pnl_nueAlo.Enabled = False
         Me.menu_Menu.Enabled = True
+
         Me.txt_ape.Text = ""
         Me.txt_doc.Text = ""
         Me.txt_fecNac.Text = ""
@@ -73,8 +87,6 @@
         Me.pnl_nueAlo.Enabled = False
         Me.menu_Menu.Enabled = True
 
-
-
         Me.txt_fecDes.Text = ""
         Me.txt_fecHas.Text = ""
         Me.cmb_canPer.Text = ""
@@ -85,7 +97,6 @@
         Me.txt_nom.Text = ""
         Me.txt_tel.Text = ""
         Me.cmb_tipoDoc.Text = ""
-
 
     End Sub
 
@@ -101,14 +112,6 @@
         Me.tab_aloNue.SelectedTab = tab_aloNueDatHos
     End Sub
 
-    Private Sub txt_doc_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_doc.MaskInputRejected
-
-    End Sub
-
-    Private Sub cmb_tipoDoc_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_tipoDoc.SelectedIndexChanged
-
-    End Sub
-
     Private Sub cmd_busAloDatCliSig_Click(sender As Object, e As EventArgs) Handles cmd_busAloDatCliSig.Click
         Me.tab_busAlo.SelectedTab = tab_busAloAlo
     End Sub
@@ -118,19 +121,22 @@
         Me.txt_apeBusAlo.Text = ""
         Me.txt_nomBusAlo.Text = ""
         Me.cmb_tipDocBusAlo.Text = ""
+
+        Me.pnl_busAlo.Visible = False
+        Me.pnl_busAlo.Enabled = False
+        Me.pnl_busAlo.SendToBack()
+
         Me.menu_Menu.Enabled = True
     End Sub
 
-    Private Sub txt_docBusAlo_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_docBusAlo.MaskInputRejected
-
+    Private Sub txt_docBusAlo_Click(sender As Object, e As EventArgs) Handles txt_docBusAlo.Click
+        If Me.txt_docBusAlo.Text = "" Then
+            Me.txt_docBusAlo.SelectionStart = 0
+        End If
     End Sub
 
     Private Sub cmd_busAloAtr_Click(sender As Object, e As EventArgs) Handles cmd_busAloAtr.Click
         Me.tab_busAlo.SelectedTab = tab_busAloDatCli
-    End Sub
-
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
     End Sub
 
     Private Sub cmd_busAloFin_Click(sender As Object, e As EventArgs) Handles cmd_busAloFin.Click
@@ -138,9 +144,60 @@
         Me.txt_apeBusAlo.Text = ""
         Me.txt_nomBusAlo.Text = ""
         Me.cmb_tipDocBusAlo.Text = ""
+
         Me.menu_Menu.Enabled = True
         Me.pnl_busAlo.Visible = False
         Me.pnl_busAlo.Enabled = False
         Me.pnl_busAlo.SendToBack()
+    End Sub
+
+    Private Sub cmd_nueOrdComCan_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComCan.Click
+        Me.cmb_IDPro.Text = ""
+        Me.txt_nomPro.Text = ""
+        Me.txt_telPro.Text = ""
+        Me.txt_corPro.Text = ""
+
+        Me.pnl_nueOrdCom.Visible = False
+        Me.pnl_nueOrdCom.Enabled = False
+        Me.pnl_nueOrdCom.SendToBack()
+
+        Me.menu_Menu.Enabled = True
+    End Sub
+
+    Private Sub cmd_nueOrdComSig_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComSig.Click
+        tab_nueOrdCom.SelectedTab = tab_nueOrdComArt
+    End Sub
+
+    Private Sub NuevaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaToolStripMenuItem.Click
+        Me.menu_Menu.Enabled = False
+
+        Me.pnl_busAlo.Visible = False
+        Me.pnl_busAlo.Enabled = False
+        Me.pnl_busAlo.SendToBack()
+
+        Me.pnl_nueAlo.Visible = False
+        Me.pnl_nueAlo.Enabled = False
+        Me.pnl_nueAlo.SendToBack()
+
+        Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComDatPro
+        Me.pnl_nueOrdCom.Visible = True
+        Me.pnl_nueOrdCom.Enabled = True
+        Me.pnl_nueOrdCom.BringToFront()
+    End Sub
+
+    Private Sub cmd_nueOrdComAtr_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComAtr.Click
+        Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComDatPro
+    End Sub
+
+    Private Sub cmd_nueOrdComFin_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComFin.Click
+        Me.cmb_IDPro.Text = ""
+        Me.txt_nomPro.Text = ""
+        Me.txt_telPro.Text = ""
+        Me.txt_corPro.Text = ""
+
+        Me.pnl_nueOrdCom.Visible = False
+        Me.pnl_nueOrdCom.Enabled = False
+
+        Me.menu_Menu.Enabled = True
     End Sub
 End Class
