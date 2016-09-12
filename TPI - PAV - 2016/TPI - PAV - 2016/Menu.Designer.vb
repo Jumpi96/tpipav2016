@@ -91,6 +91,7 @@ Partial Class Menu
         Me.lbl_ordCom = New System.Windows.Forms.Label()
         Me.tab_nueOrdCom = New System.Windows.Forms.TabControl()
         Me.tab_nueOrdComDatPro = New System.Windows.Forms.TabPage()
+        Me.cmd_busPro = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComSig = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComCan = New System.Windows.Forms.Button()
         Me.txt_telPro = New System.Windows.Forms.TextBox()
@@ -110,7 +111,6 @@ Partial Class Menu
         Me.clm_preTot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_nueOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
-        Me.cmd_busPro = New System.Windows.Forms.Button()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -149,13 +149,13 @@ Partial Class Menu
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'ArtículosServiciosToolStripMenuItem
@@ -174,13 +174,13 @@ Partial Class Menu
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(114, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem1.Text = "Buscar"
         '
         'FuncionesAdministrativasToolStripMenuItem
@@ -207,7 +207,7 @@ Partial Class Menu
         Me.Label1.Location = New System.Drawing.Point(3, 3)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(139, 16)
-        Me.Label1.TabIndex = 1
+        Me.Label1.TabIndex = 0
         Me.Label1.Text = "Nuevo Alojamiento"
         '
         'tab_aloNue
@@ -252,14 +252,14 @@ Partial Class Menu
         Me.txt_tel.Location = New System.Drawing.Point(145, 120)
         Me.txt_tel.Name = "txt_tel"
         Me.txt_tel.Size = New System.Drawing.Size(100, 22)
-        Me.txt_tel.TabIndex = 27
+        Me.txt_tel.TabIndex = 7
         '
         'cmd_canCli
         '
         Me.cmd_canCli.Location = New System.Drawing.Point(331, 146)
         Me.cmd_canCli.Name = "cmd_canCli"
         Me.cmd_canCli.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_canCli.TabIndex = 28
+        Me.cmd_canCli.TabIndex = 8
         Me.cmd_canCli.Text = "Cancelar"
         Me.cmd_canCli.UseVisualStyleBackColor = True
         '
@@ -268,7 +268,7 @@ Partial Class Menu
         Me.cmd_sigCli.Location = New System.Drawing.Point(409, 146)
         Me.cmd_sigCli.Name = "cmd_sigCli"
         Me.cmd_sigCli.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_sigCli.TabIndex = 29
+        Me.cmd_sigCli.TabIndex = 9
         Me.cmd_sigCli.Text = "Siguiente"
         Me.cmd_sigCli.UseVisualStyleBackColor = True
         '
@@ -277,7 +277,7 @@ Partial Class Menu
         Me.cmd_busCli.Location = New System.Drawing.Point(423, 6)
         Me.cmd_busCli.Name = "cmd_busCli"
         Me.cmd_busCli.Size = New System.Drawing.Size(58, 22)
-        Me.cmd_busCli.TabIndex = 23
+        Me.cmd_busCli.TabIndex = 3
         Me.cmd_busCli.Text = "Buscar"
         Me.cmd_busCli.UseVisualStyleBackColor = True
         '
@@ -287,7 +287,7 @@ Partial Class Menu
         Me.txt_fecNac.Mask = "00/00/0000"
         Me.txt_fecNac.Name = "txt_fecNac"
         Me.txt_fecNac.Size = New System.Drawing.Size(66, 22)
-        Me.txt_fecNac.TabIndex = 26
+        Me.txt_fecNac.TabIndex = 6
         Me.txt_fecNac.ValidatingType = GetType(Date)
         '
         'txt_nom
@@ -295,14 +295,14 @@ Partial Class Menu
         Me.txt_nom.Location = New System.Drawing.Point(145, 64)
         Me.txt_nom.Name = "txt_nom"
         Me.txt_nom.Size = New System.Drawing.Size(272, 22)
-        Me.txt_nom.TabIndex = 25
+        Me.txt_nom.TabIndex = 5
         '
         'txt_ape
         '
         Me.txt_ape.Location = New System.Drawing.Point(145, 36)
         Me.txt_ape.Name = "txt_ape"
         Me.txt_ape.Size = New System.Drawing.Size(272, 22)
-        Me.txt_ape.TabIndex = 24
+        Me.txt_ape.TabIndex = 4
         '
         'txt_doc
         '
@@ -310,7 +310,7 @@ Partial Class Menu
         Me.txt_doc.Mask = "99999999"
         Me.txt_doc.Name = "txt_doc"
         Me.txt_doc.Size = New System.Drawing.Size(62, 22)
-        Me.txt_doc.TabIndex = 22
+        Me.txt_doc.TabIndex = 2
         '
         'lbl_fecNac
         '
@@ -372,7 +372,7 @@ Partial Class Menu
         Me.cmb_tipoDoc.Location = New System.Drawing.Point(145, 6)
         Me.cmb_tipoDoc.Name = "cmb_tipoDoc"
         Me.cmb_tipoDoc.Size = New System.Drawing.Size(121, 24)
-        Me.cmb_tipoDoc.TabIndex = 21
+        Me.cmb_tipoDoc.TabIndex = 1
         '
         'tab_aloNueDatHos
         '
@@ -399,7 +399,7 @@ Partial Class Menu
         Me.cmd_atrHos.Location = New System.Drawing.Point(331, 146)
         Me.cmd_atrHos.Name = "cmd_atrHos"
         Me.cmd_atrHos.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_atrHos.TabIndex = 16
+        Me.cmd_atrHos.TabIndex = 5
         Me.cmd_atrHos.Text = "Atrás"
         Me.cmd_atrHos.UseVisualStyleBackColor = True
         '
@@ -408,7 +408,7 @@ Partial Class Menu
         Me.cmd_sigHos.Location = New System.Drawing.Point(409, 146)
         Me.cmd_sigHos.Name = "cmd_sigHos"
         Me.cmd_sigHos.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_sigHos.TabIndex = 17
+        Me.cmd_sigHos.TabIndex = 6
         Me.cmd_sigHos.Text = "Siguiente"
         Me.cmd_sigHos.UseVisualStyleBackColor = True
         '
@@ -418,7 +418,7 @@ Partial Class Menu
         Me.cmb_tipHab.Location = New System.Drawing.Point(153, 92)
         Me.cmb_tipHab.Name = "cmb_tipHab"
         Me.cmb_tipHab.Size = New System.Drawing.Size(111, 24)
-        Me.cmb_tipHab.TabIndex = 15
+        Me.cmb_tipHab.TabIndex = 4
         '
         'cmb_canPer
         '
@@ -426,7 +426,7 @@ Partial Class Menu
         Me.cmb_canPer.Location = New System.Drawing.Point(153, 62)
         Me.cmb_canPer.Name = "cmb_canPer"
         Me.cmb_canPer.Size = New System.Drawing.Size(40, 24)
-        Me.cmb_canPer.TabIndex = 14
+        Me.cmb_canPer.TabIndex = 3
         '
         'txt_fecHas
         '
@@ -434,7 +434,7 @@ Partial Class Menu
         Me.txt_fecHas.Mask = "00/00/0000"
         Me.txt_fecHas.Name = "txt_fecHas"
         Me.txt_fecHas.Size = New System.Drawing.Size(71, 22)
-        Me.txt_fecHas.TabIndex = 12
+        Me.txt_fecHas.TabIndex = 2
         Me.txt_fecHas.ValidatingType = GetType(Date)
         '
         'txt_fecDes
@@ -443,7 +443,7 @@ Partial Class Menu
         Me.txt_fecDes.Mask = "00/00/0000"
         Me.txt_fecDes.Name = "txt_fecDes"
         Me.txt_fecDes.Size = New System.Drawing.Size(71, 22)
-        Me.txt_fecDes.TabIndex = 10
+        Me.txt_fecDes.TabIndex = 1
         Me.txt_fecDes.ValidatingType = GetType(Date)
         '
         'lbl_tipHab
@@ -508,7 +508,7 @@ Partial Class Menu
         Me.cmd_aceHab.Location = New System.Drawing.Point(409, 146)
         Me.cmd_aceHab.Name = "cmd_aceHab"
         Me.cmd_aceHab.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_aceHab.TabIndex = 0
+        Me.cmd_aceHab.TabIndex = 2
         Me.cmd_aceHab.Text = "Aceptar"
         Me.cmd_aceHab.UseVisualStyleBackColor = True
         '
@@ -520,7 +520,7 @@ Partial Class Menu
         Me.pnl_busAlo.Location = New System.Drawing.Point(12, 28)
         Me.pnl_busAlo.Name = "pnl_busAlo"
         Me.pnl_busAlo.Size = New System.Drawing.Size(532, 240)
-        Me.pnl_busAlo.TabIndex = 1
+        Me.pnl_busAlo.TabIndex = 0
         Me.pnl_busAlo.Visible = False
         '
         'tab_busAlo
@@ -532,7 +532,7 @@ Partial Class Menu
         Me.tab_busAlo.Name = "tab_busAlo"
         Me.tab_busAlo.SelectedIndex = 0
         Me.tab_busAlo.Size = New System.Drawing.Size(522, 214)
-        Me.tab_busAlo.TabIndex = 3
+        Me.tab_busAlo.TabIndex = 0
         '
         'tab_busAloDatCli
         '
@@ -560,7 +560,7 @@ Partial Class Menu
         Me.cmd_busAloCan.Location = New System.Drawing.Point(331, 146)
         Me.cmd_busAloCan.Name = "cmd_busAloCan"
         Me.cmd_busAloCan.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloCan.TabIndex = 44
+        Me.cmd_busAloCan.TabIndex = 6
         Me.cmd_busAloCan.Text = "Cancelar"
         Me.cmd_busAloCan.UseVisualStyleBackColor = True
         '
@@ -569,7 +569,7 @@ Partial Class Menu
         Me.cmd_busAloDatCliSig.Location = New System.Drawing.Point(409, 146)
         Me.cmd_busAloDatCliSig.Name = "cmd_busAloDatCliSig"
         Me.cmd_busAloDatCliSig.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloDatCliSig.TabIndex = 43
+        Me.cmd_busAloDatCliSig.TabIndex = 7
         Me.cmd_busAloDatCliSig.Text = "Siguiente"
         Me.cmd_busAloDatCliSig.UseVisualStyleBackColor = True
         '
@@ -578,7 +578,7 @@ Partial Class Menu
         Me.cmd_busCliBusAlo.Location = New System.Drawing.Point(423, 6)
         Me.cmd_busCliBusAlo.Name = "cmd_busCliBusAlo"
         Me.cmd_busCliBusAlo.Size = New System.Drawing.Size(58, 22)
-        Me.cmd_busCliBusAlo.TabIndex = 36
+        Me.cmd_busCliBusAlo.TabIndex = 3
         Me.cmd_busCliBusAlo.Text = "Buscar"
         Me.cmd_busCliBusAlo.UseVisualStyleBackColor = True
         '
@@ -588,7 +588,7 @@ Partial Class Menu
         Me.txt_nomBusAlo.Location = New System.Drawing.Point(145, 64)
         Me.txt_nomBusAlo.Name = "txt_nomBusAlo"
         Me.txt_nomBusAlo.Size = New System.Drawing.Size(272, 22)
-        Me.txt_nomBusAlo.TabIndex = 38
+        Me.txt_nomBusAlo.TabIndex = 5
         '
         'txt_apeBusAlo
         '
@@ -596,7 +596,7 @@ Partial Class Menu
         Me.txt_apeBusAlo.Location = New System.Drawing.Point(145, 36)
         Me.txt_apeBusAlo.Name = "txt_apeBusAlo"
         Me.txt_apeBusAlo.Size = New System.Drawing.Size(272, 22)
-        Me.txt_apeBusAlo.TabIndex = 37
+        Me.txt_apeBusAlo.TabIndex = 4
         '
         'txt_docBusAlo
         '
@@ -604,7 +604,7 @@ Partial Class Menu
         Me.txt_docBusAlo.Mask = "99999999"
         Me.txt_docBusAlo.Name = "txt_docBusAlo"
         Me.txt_docBusAlo.Size = New System.Drawing.Size(62, 22)
-        Me.txt_docBusAlo.TabIndex = 35
+        Me.txt_docBusAlo.TabIndex = 2
         '
         'lbl_apeBusAlo
         '
@@ -648,7 +648,7 @@ Partial Class Menu
         Me.cmb_tipDocBusAlo.Location = New System.Drawing.Point(145, 6)
         Me.cmb_tipDocBusAlo.Name = "cmb_tipDocBusAlo"
         Me.cmb_tipDocBusAlo.Size = New System.Drawing.Size(121, 24)
-        Me.cmb_tipDocBusAlo.TabIndex = 34
+        Me.cmb_tipDocBusAlo.TabIndex = 1
         '
         'tab_busAloAlo
         '
@@ -668,7 +668,7 @@ Partial Class Menu
         Me.cmd_busAloAtr.Location = New System.Drawing.Point(331, 146)
         Me.cmd_busAloAtr.Name = "cmd_busAloAtr"
         Me.cmd_busAloAtr.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloAtr.TabIndex = 2
+        Me.cmd_busAloAtr.TabIndex = 1
         Me.cmd_busAloAtr.Text = "Atrás"
         Me.cmd_busAloAtr.UseVisualStyleBackColor = True
         '
@@ -714,7 +714,7 @@ Partial Class Menu
         Me.cmd_busAloFin.Location = New System.Drawing.Point(409, 146)
         Me.cmd_busAloFin.Name = "cmd_busAloFin"
         Me.cmd_busAloFin.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloFin.TabIndex = 0
+        Me.cmd_busAloFin.TabIndex = 2
         Me.cmd_busAloFin.Text = "Finalizar"
         Me.cmd_busAloFin.UseVisualStyleBackColor = True
         '
@@ -725,7 +725,7 @@ Partial Class Menu
         Me.lbl_busAlo.Location = New System.Drawing.Point(3, 3)
         Me.lbl_busAlo.Name = "lbl_busAlo"
         Me.lbl_busAlo.Size = New System.Drawing.Size(142, 16)
-        Me.lbl_busAlo.TabIndex = 2
+        Me.lbl_busAlo.TabIndex = 0
         Me.lbl_busAlo.Text = "Buscar Alojamiento"
         '
         'pnl_nueOrdCom
@@ -737,7 +737,7 @@ Partial Class Menu
         Me.pnl_nueOrdCom.Location = New System.Drawing.Point(12, 28)
         Me.pnl_nueOrdCom.Name = "pnl_nueOrdCom"
         Me.pnl_nueOrdCom.Size = New System.Drawing.Size(532, 240)
-        Me.pnl_nueOrdCom.TabIndex = 2
+        Me.pnl_nueOrdCom.TabIndex = 0
         Me.pnl_nueOrdCom.Visible = False
         '
         'lbl_ordCom
@@ -747,7 +747,7 @@ Partial Class Menu
         Me.lbl_ordCom.Location = New System.Drawing.Point(3, 3)
         Me.lbl_ordCom.Name = "lbl_ordCom"
         Me.lbl_ordCom.Size = New System.Drawing.Size(179, 16)
-        Me.lbl_ordCom.TabIndex = 2
+        Me.lbl_ordCom.TabIndex = 0
         Me.lbl_ordCom.Text = "Nueva Orden de Compra"
         '
         'tab_nueOrdCom
@@ -758,7 +758,7 @@ Partial Class Menu
         Me.tab_nueOrdCom.Name = "tab_nueOrdCom"
         Me.tab_nueOrdCom.SelectedIndex = 0
         Me.tab_nueOrdCom.Size = New System.Drawing.Size(522, 214)
-        Me.tab_nueOrdCom.TabIndex = 3
+        Me.tab_nueOrdCom.TabIndex = 0
         '
         'tab_nueOrdComDatPro
         '
@@ -781,12 +781,21 @@ Partial Class Menu
         Me.tab_nueOrdComDatPro.Text = "Datos del Proveedor"
         Me.tab_nueOrdComDatPro.UseVisualStyleBackColor = True
         '
+        'cmd_busPro
+        '
+        Me.cmd_busPro.Location = New System.Drawing.Point(178, 6)
+        Me.cmd_busPro.Name = "cmd_busPro"
+        Me.cmd_busPro.Size = New System.Drawing.Size(58, 22)
+        Me.cmd_busPro.TabIndex = 2
+        Me.cmd_busPro.Text = "Buscar"
+        Me.cmd_busPro.UseVisualStyleBackColor = True
+        '
         'cmd_nueOrdComSig
         '
         Me.cmd_nueOrdComSig.Location = New System.Drawing.Point(409, 146)
         Me.cmd_nueOrdComSig.Name = "cmd_nueOrdComSig"
         Me.cmd_nueOrdComSig.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComSig.TabIndex = 9
+        Me.cmd_nueOrdComSig.TabIndex = 7
         Me.cmd_nueOrdComSig.Text = "Siguiente"
         Me.cmd_nueOrdComSig.UseVisualStyleBackColor = True
         '
@@ -795,7 +804,7 @@ Partial Class Menu
         Me.cmd_nueOrdComCan.Location = New System.Drawing.Point(331, 146)
         Me.cmd_nueOrdComCan.Name = "cmd_nueOrdComCan"
         Me.cmd_nueOrdComCan.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComCan.TabIndex = 8
+        Me.cmd_nueOrdComCan.TabIndex = 6
         Me.cmd_nueOrdComCan.Text = "Cancelar"
         Me.cmd_nueOrdComCan.UseVisualStyleBackColor = True
         '
@@ -805,7 +814,7 @@ Partial Class Menu
         Me.txt_telPro.Location = New System.Drawing.Point(100, 92)
         Me.txt_telPro.Name = "txt_telPro"
         Me.txt_telPro.Size = New System.Drawing.Size(100, 22)
-        Me.txt_telPro.TabIndex = 7
+        Me.txt_telPro.TabIndex = 5
         '
         'txt_corPro
         '
@@ -813,7 +822,7 @@ Partial Class Menu
         Me.txt_corPro.Location = New System.Drawing.Point(100, 64)
         Me.txt_corPro.Name = "txt_corPro"
         Me.txt_corPro.Size = New System.Drawing.Size(180, 22)
-        Me.txt_corPro.TabIndex = 6
+        Me.txt_corPro.TabIndex = 4
         '
         'txt_nomPro
         '
@@ -821,7 +830,7 @@ Partial Class Menu
         Me.txt_nomPro.Location = New System.Drawing.Point(100, 36)
         Me.txt_nomPro.Name = "txt_nomPro"
         Me.txt_nomPro.Size = New System.Drawing.Size(272, 22)
-        Me.txt_nomPro.TabIndex = 5
+        Me.txt_nomPro.TabIndex = 3
         '
         'cmb_IDPro
         '
@@ -829,7 +838,7 @@ Partial Class Menu
         Me.cmb_IDPro.Location = New System.Drawing.Point(100, 6)
         Me.cmb_IDPro.Name = "cmb_IDPro"
         Me.cmb_IDPro.Size = New System.Drawing.Size(72, 24)
-        Me.cmb_IDPro.TabIndex = 4
+        Me.cmb_IDPro.TabIndex = 1
         '
         'lbl_telPro
         '
@@ -937,18 +946,9 @@ Partial Class Menu
         Me.cmd_nueOrdComFin.Location = New System.Drawing.Point(409, 146)
         Me.cmd_nueOrdComFin.Name = "cmd_nueOrdComFin"
         Me.cmd_nueOrdComFin.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComFin.TabIndex = 0
+        Me.cmd_nueOrdComFin.TabIndex = 2
         Me.cmd_nueOrdComFin.Text = "Finalizar"
         Me.cmd_nueOrdComFin.UseVisualStyleBackColor = True
-        '
-        'cmd_busPro
-        '
-        Me.cmd_busPro.Location = New System.Drawing.Point(178, 6)
-        Me.cmd_busPro.Name = "cmd_busPro"
-        Me.cmd_busPro.Size = New System.Drawing.Size(58, 22)
-        Me.cmd_busPro.TabIndex = 10
-        Me.cmd_busPro.Text = "Buscar"
-        Me.cmd_busPro.UseVisualStyleBackColor = True
         '
         'Menu
         '
@@ -956,9 +956,9 @@ Partial Class Menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(581, 308)
         Me.Controls.Add(Me.menu_Menu)
-        Me.Controls.Add(Me.pnl_busAlo)
         Me.Controls.Add(Me.pnl_nueOrdCom)
         Me.Controls.Add(Me.pnl_nueAlo)
+        Me.Controls.Add(Me.pnl_busAlo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.Name = "Menu"

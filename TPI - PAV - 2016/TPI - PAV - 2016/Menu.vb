@@ -14,6 +14,7 @@
         Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
         Me.pnl_nueAlo.Visible = True
         Me.pnl_nueAlo.Enabled = True
+        Me.cmb_tipoDoc.Focus()
         Me.pnl_nueAlo.BringToFront()
 
     End Sub
@@ -45,8 +46,6 @@
     Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
 
-        Me.tab_busAlo.SelectedTab = tab_busAloDatCli
-
         Me.pnl_nueAlo.Visible = False
         Me.pnl_nueAlo.Enabled = False
         Me.pnl_nueAlo.SendToBack()
@@ -58,6 +57,7 @@
         Me.tab_busAlo.SelectedTab = tab_busAloDatCli
         Me.pnl_busAlo.Visible = True
         Me.pnl_busAlo.Enabled = True
+        Me.cmb_tipDocBusAlo.Focus()
         Me.pnl_busAlo.BringToFront()
     End Sub
 
@@ -182,6 +182,7 @@
         Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComDatPro
         Me.pnl_nueOrdCom.Visible = True
         Me.pnl_nueOrdCom.Enabled = True
+        Me.cmb_IDPro.Focus()
         Me.pnl_nueOrdCom.BringToFront()
     End Sub
 
