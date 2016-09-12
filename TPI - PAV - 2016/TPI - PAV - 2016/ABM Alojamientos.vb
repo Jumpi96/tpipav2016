@@ -25,7 +25,7 @@
             Else
                 fechaSalida = CType(row(1), DateTime).ToShortDateString
             End If
-            dgvAlojamientos.Rows.Add(CType(row(1), DateTime).ToShortDateString, fechaSalida, row(3))
+            dgvAlojamientos.Rows.Add(row(0), CType(row(1), DateTime).ToShortDateString, fechaSalida, row(3))
         Next row
 
     End Sub
@@ -249,10 +249,12 @@
         Dim consulta As String
 
         conexion.ConnectionString = string_conexion
-        consulta = "select * from Alojamientos where idAlojamiento=" + idAlojamiento
+        conexion.Open()
+        consulta = "select * from Alojamientos where idAlojamiento=" & idAlojamiento
 
         cmd.CommandType = CommandType.Text
         cmd.CommandText = consulta
+        cmd.Connection = conexion
 
         Dim tabla As New DataTable
         tabla.Load(cmd.ExecuteReader())

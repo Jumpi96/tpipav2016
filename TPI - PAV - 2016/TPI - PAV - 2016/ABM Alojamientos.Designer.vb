@@ -23,9 +23,6 @@ Partial Class ABM_Alojamientos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.dgvAlojamientos = New System.Windows.Forms.DataGridView()
-        Me.fechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -47,6 +44,10 @@ Partial Class ABM_Alojamientos
         Me.btnBuscarPorDoc = New System.Windows.Forms.Button()
         Me.txtPrecio = New System.Windows.Forms.MaskedTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.idAlojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -55,30 +56,12 @@ Partial Class ABM_Alojamientos
         Me.dgvAlojamientos.AllowUserToAddRows = False
         Me.dgvAlojamientos.AllowUserToDeleteRows = False
         Me.dgvAlojamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvAlojamientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.fechaIngreso, Me.fechaFin, Me.Habitacion})
+        Me.dgvAlojamientos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idAlojamiento, Me.fechaIngreso, Me.fechaFin, Me.Habitacion})
         Me.dgvAlojamientos.Location = New System.Drawing.Point(11, 204)
         Me.dgvAlojamientos.Name = "dgvAlojamientos"
         Me.dgvAlojamientos.ReadOnly = True
         Me.dgvAlojamientos.Size = New System.Drawing.Size(350, 186)
         Me.dgvAlojamientos.TabIndex = 11
-        '
-        'fechaIngreso
-        '
-        Me.fechaIngreso.HeaderText = "Ingreso"
-        Me.fechaIngreso.Name = "fechaIngreso"
-        Me.fechaIngreso.ReadOnly = True
-        '
-        'fechaFin
-        '
-        Me.fechaFin.HeaderText = "Salida"
-        Me.fechaFin.Name = "fechaFin"
-        Me.fechaFin.ReadOnly = True
-        '
-        'Habitacion
-        '
-        Me.Habitacion.HeaderText = "Habitación"
-        Me.Habitacion.Name = "Habitacion"
-        Me.Habitacion.ReadOnly = True
         '
         'Label1
         '
@@ -256,6 +239,30 @@ Partial Class ABM_Alojamientos
         Me.Label9.TabIndex = 13
         Me.Label9.Text = "Precio por día"
         '
+        'idAlojamiento
+        '
+        Me.idAlojamiento.HeaderText = "idAlojamiento"
+        Me.idAlojamiento.Name = "idAlojamiento"
+        Me.idAlojamiento.ReadOnly = True
+        '
+        'fechaIngreso
+        '
+        Me.fechaIngreso.HeaderText = "Ingreso"
+        Me.fechaIngreso.Name = "fechaIngreso"
+        Me.fechaIngreso.ReadOnly = True
+        '
+        'fechaFin
+        '
+        Me.fechaFin.HeaderText = "Salida"
+        Me.fechaFin.Name = "fechaFin"
+        Me.fechaFin.ReadOnly = True
+        '
+        'Habitacion
+        '
+        Me.Habitacion.HeaderText = "Habitación"
+        Me.Habitacion.Name = "Habitacion"
+        Me.Habitacion.ReadOnly = True
+        '
         'ABM_Alojamientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -311,8 +318,9 @@ End Sub
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
     Friend WithEvents btnBuscarPorDoc As System.Windows.Forms.Button
     Friend WithEvents txtPrecio As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents idAlojamiento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents fechaIngreso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents fechaFin As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Habitacion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class
