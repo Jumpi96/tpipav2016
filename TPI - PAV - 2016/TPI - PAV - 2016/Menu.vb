@@ -200,4 +200,8 @@
 
         Me.menu_Menu.Enabled = True
     End Sub
+
+    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
+
+    End Sub
 End Class
