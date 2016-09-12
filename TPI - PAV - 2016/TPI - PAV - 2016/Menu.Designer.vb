@@ -65,6 +65,8 @@ Partial Class Menu
         Me.pnl_busAlo = New System.Windows.Forms.Panel()
         Me.tab_busAlo = New System.Windows.Forms.TabControl()
         Me.tab_busAloDatCli = New System.Windows.Forms.TabPage()
+        Me.cmd_busAloCan = New System.Windows.Forms.Button()
+        Me.cmd_busAloDatCliSig = New System.Windows.Forms.Button()
         Me.cmd_busCliBusAlo = New System.Windows.Forms.Button()
         Me.txt_nomBusAlo = New System.Windows.Forms.TextBox()
         Me.txt_apeBusAlo = New System.Windows.Forms.TextBox()
@@ -75,15 +77,14 @@ Partial Class Menu
         Me.lbl_tipDocBusAlo = New System.Windows.Forms.Label()
         Me.cmb_tipDocBusAlo = New System.Windows.Forms.ComboBox()
         Me.tab_busAloAlo = New System.Windows.Forms.TabPage()
-        Me.lbl_busAlo = New System.Windows.Forms.Label()
-        Me.cmd_busAloDatCliSig = New System.Windows.Forms.Button()
-        Me.cmd_busAloCan = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.clm_piso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_hab = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_fecIni = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_fecHas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmd_busAloFin = New System.Windows.Forms.Button()
+        Me.lbl_busAlo = New System.Windows.Forms.Label()
+        Me.cmd_busAloAtr = New System.Windows.Forms.Button()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -117,13 +118,13 @@ Partial Class Menu
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'ArtículosServiciosToolStripMenuItem
@@ -510,6 +511,24 @@ Partial Class Menu
         Me.tab_busAloDatCli.Text = "Datos del Cliente"
         Me.tab_busAloDatCli.UseVisualStyleBackColor = True
         '
+        'cmd_busAloCan
+        '
+        Me.cmd_busAloCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busAloCan.Name = "cmd_busAloCan"
+        Me.cmd_busAloCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloCan.TabIndex = 44
+        Me.cmd_busAloCan.Text = "Cancelar"
+        Me.cmd_busAloCan.UseVisualStyleBackColor = True
+        '
+        'cmd_busAloDatCliSig
+        '
+        Me.cmd_busAloDatCliSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busAloDatCliSig.Name = "cmd_busAloDatCliSig"
+        Me.cmd_busAloDatCliSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloDatCliSig.TabIndex = 43
+        Me.cmd_busAloDatCliSig.Text = "Siguiente"
+        Me.cmd_busAloDatCliSig.UseVisualStyleBackColor = True
+        '
         'cmd_busCliBusAlo
         '
         Me.cmd_busCliBusAlo.Location = New System.Drawing.Point(423, 6)
@@ -587,8 +606,9 @@ Partial Class Menu
         '
         'tab_busAloAlo
         '
+        Me.tab_busAloAlo.Controls.Add(Me.cmd_busAloAtr)
         Me.tab_busAloAlo.Controls.Add(Me.DataGridView1)
-        Me.tab_busAloAlo.Controls.Add(Me.Button1)
+        Me.tab_busAloAlo.Controls.Add(Me.cmd_busAloFin)
         Me.tab_busAloAlo.Location = New System.Drawing.Point(4, 25)
         Me.tab_busAloAlo.Name = "tab_busAloAlo"
         Me.tab_busAloAlo.Padding = New System.Windows.Forms.Padding(3)
@@ -596,43 +616,6 @@ Partial Class Menu
         Me.tab_busAloAlo.TabIndex = 1
         Me.tab_busAloAlo.Text = "Alojamientos"
         Me.tab_busAloAlo.UseVisualStyleBackColor = True
-        '
-        'lbl_busAlo
-        '
-        Me.lbl_busAlo.AutoSize = True
-        Me.lbl_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_busAlo.Location = New System.Drawing.Point(3, 3)
-        Me.lbl_busAlo.Name = "lbl_busAlo"
-        Me.lbl_busAlo.Size = New System.Drawing.Size(142, 16)
-        Me.lbl_busAlo.TabIndex = 2
-        Me.lbl_busAlo.Text = "Buscar Alojamiento"
-        '
-        'cmd_busAloDatCliSig
-        '
-        Me.cmd_busAloDatCliSig.Location = New System.Drawing.Point(409, 146)
-        Me.cmd_busAloDatCliSig.Name = "cmd_busAloDatCliSig"
-        Me.cmd_busAloDatCliSig.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloDatCliSig.TabIndex = 43
-        Me.cmd_busAloDatCliSig.Text = "Siguiente"
-        Me.cmd_busAloDatCliSig.UseVisualStyleBackColor = True
-        '
-        'cmd_busAloCan
-        '
-        Me.cmd_busAloCan.Location = New System.Drawing.Point(331, 146)
-        Me.cmd_busAloCan.Name = "cmd_busAloCan"
-        Me.cmd_busAloCan.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloCan.TabIndex = 44
-        Me.cmd_busAloCan.Text = "Cancelar"
-        Me.cmd_busAloCan.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(409, 146)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(72, 28)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -671,14 +654,42 @@ Partial Class Menu
         Me.clm_fecHas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.clm_fecHas.Width = 110
         '
+        'cmd_busAloFin
+        '
+        Me.cmd_busAloFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busAloFin.Name = "cmd_busAloFin"
+        Me.cmd_busAloFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloFin.TabIndex = 0
+        Me.cmd_busAloFin.Text = "Finalizar"
+        Me.cmd_busAloFin.UseVisualStyleBackColor = True
+        '
+        'lbl_busAlo
+        '
+        Me.lbl_busAlo.AutoSize = True
+        Me.lbl_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_busAlo.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_busAlo.Name = "lbl_busAlo"
+        Me.lbl_busAlo.Size = New System.Drawing.Size(142, 16)
+        Me.lbl_busAlo.TabIndex = 2
+        Me.lbl_busAlo.Text = "Buscar Alojamiento"
+        '
+        'cmd_busAloAtr
+        '
+        Me.cmd_busAloAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busAloAtr.Name = "cmd_busAloAtr"
+        Me.cmd_busAloAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloAtr.TabIndex = 2
+        Me.cmd_busAloAtr.Text = "Atrás"
+        Me.cmd_busAloAtr.UseVisualStyleBackColor = True
+        '
         'Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(591, 293)
         Me.Controls.Add(Me.menu_Menu)
-        Me.Controls.Add(Me.pnl_busAlo)
         Me.Controls.Add(Me.pnl_nueAlo)
+        Me.Controls.Add(Me.pnl_busAlo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.Name = "Menu"
@@ -761,9 +772,10 @@ Partial Class Menu
     Friend WithEvents cmd_busAloCan As System.Windows.Forms.Button
     Friend WithEvents cmd_busAloDatCliSig As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents cmd_busAloFin As System.Windows.Forms.Button
     Friend WithEvents clm_piso As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_hab As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_fecIni As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_fecHas As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cmd_busAloAtr As System.Windows.Forms.Button
 End Class

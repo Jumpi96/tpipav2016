@@ -72,6 +72,21 @@
         Me.pnl_nueAlo.Visible = False
         Me.pnl_nueAlo.Enabled = False
         Me.menu_Menu.Enabled = True
+
+
+
+        Me.txt_fecDes.Text = ""
+        Me.txt_fecHas.Text = ""
+        Me.cmb_canPer.Text = ""
+        Me.cmb_tipHab.Text = ""
+        Me.txt_ape.Text = ""
+        Me.txt_doc.Text = ""
+        Me.txt_fecNac.Text = ""
+        Me.txt_nom.Text = ""
+        Me.txt_tel.Text = ""
+        Me.cmb_tipoDoc.Text = ""
+
+
     End Sub
 
     Private Sub cmd_sigHos_Click(sender As Object, e As EventArgs) Handles cmd_sigHos.Click
@@ -104,5 +119,28 @@
         Me.txt_nomBusAlo.Text = ""
         Me.cmb_tipDocBusAlo.Text = ""
         Me.menu_Menu.Enabled = True
+    End Sub
+
+    Private Sub txt_docBusAlo_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_docBusAlo.MaskInputRejected
+
+    End Sub
+
+    Private Sub cmd_busAloAtr_Click(sender As Object, e As EventArgs) Handles cmd_busAloAtr.Click
+        Me.tab_busAlo.SelectedTab = tab_busAloDatCli
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub cmd_busAloFin_Click(sender As Object, e As EventArgs) Handles cmd_busAloFin.Click
+        Me.txt_docBusAlo.Text = ""
+        Me.txt_apeBusAlo.Text = ""
+        Me.txt_nomBusAlo.Text = ""
+        Me.cmb_tipDocBusAlo.Text = ""
+        Me.menu_Menu.Enabled = True
+        Me.pnl_busAlo.Visible = False
+        Me.pnl_busAlo.Enabled = False
+        Me.pnl_busAlo.SendToBack()
     End Sub
 End Class
