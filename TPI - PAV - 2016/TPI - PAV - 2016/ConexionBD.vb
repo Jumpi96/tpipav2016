@@ -7,7 +7,7 @@ Public NotInheritable Class ConexionBD
     Private Shared _instancia As ConexionBD = Nothing
     Private Shared ReadOnly sync As New Object
 
-    Private conexion As String = "Provider=SQLNCLI11;Data Source=DESKTOP-2BQ04QL;Integrated Security=SSPI;Initial Catalog=BD"
+    Private conexion As String = "Provider=SQLNCLI11;Data Source=DESKTOP-2BQ04QL;Integrated Security=SSPI;Initial Catalog=hotelShaky"
     Public Property StringConexion() As String
         Get
             Return Me.conexion

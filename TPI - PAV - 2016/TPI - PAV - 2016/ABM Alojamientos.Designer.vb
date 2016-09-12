@@ -23,6 +23,9 @@ Partial Class ABM_Alojamientos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.dgvAlojamientos = New System.Windows.Forms.DataGridView()
+        Me.fechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -43,9 +46,6 @@ Partial Class ABM_Alojamientos
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.btnBuscarPorDoc = New System.Windows.Forms.Button()
         Me.txtPrecio = New System.Windows.Forms.MaskedTextBox()
-        Me.fechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label9 = New System.Windows.Forms.Label()
         CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -61,6 +61,24 @@ Partial Class ABM_Alojamientos
         Me.dgvAlojamientos.ReadOnly = True
         Me.dgvAlojamientos.Size = New System.Drawing.Size(350, 186)
         Me.dgvAlojamientos.TabIndex = 11
+        '
+        'fechaIngreso
+        '
+        Me.fechaIngreso.HeaderText = "Ingreso"
+        Me.fechaIngreso.Name = "fechaIngreso"
+        Me.fechaIngreso.ReadOnly = True
+        '
+        'fechaFin
+        '
+        Me.fechaFin.HeaderText = "Salida"
+        Me.fechaFin.Name = "fechaFin"
+        Me.fechaFin.ReadOnly = True
+        '
+        'Habitacion
+        '
+        Me.Habitacion.HeaderText = "Habitación"
+        Me.Habitacion.Name = "Habitacion"
+        Me.Habitacion.ReadOnly = True
         '
         'Label1
         '
@@ -214,7 +232,7 @@ Partial Class ABM_Alojamientos
         '
         'btnBuscarPorDoc
         '
-        Me.btnBuscarPorDoc.Location = New System.Drawing.Point(233, 22)
+        Me.btnBuscarPorDoc.Location = New System.Drawing.Point(234, 22)
         Me.btnBuscarPorDoc.Name = "btnBuscarPorDoc"
         Me.btnBuscarPorDoc.Size = New System.Drawing.Size(111, 37)
         Me.btnBuscarPorDoc.TabIndex = 9
@@ -228,24 +246,6 @@ Partial Class ABM_Alojamientos
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(100, 20)
         Me.txtPrecio.TabIndex = 12
-        '
-        'fechaIngreso
-        '
-        Me.fechaIngreso.HeaderText = "Ingreso"
-        Me.fechaIngreso.Name = "fechaIngreso"
-        Me.fechaIngreso.ReadOnly = True
-        '
-        'fechaFin
-        '
-        Me.fechaFin.HeaderText = "Salida"
-        Me.fechaFin.Name = "fechaFin"
-        Me.fechaFin.ReadOnly = True
-        '
-        'Habitacion
-        '
-        Me.Habitacion.HeaderText = "Habitación"
-        Me.Habitacion.Name = "Habitacion"
-        Me.Habitacion.ReadOnly = True
         '
         'Label9
         '

@@ -134,8 +134,7 @@
         Return True
     End Function
 
-    Private Function validar() As Boolean
-        'verificar Documento
+    Private Function existeCliente() As Boolean
         Dim conexion As New OleDb.OleDbConnection
         Dim consulta As String
         Dim cmd As New OleDb.OleDbCommand
@@ -153,6 +152,27 @@
         tabla.Load(cmd.ExecuteReader())
 
         If (tabla.Rows.Count = 0) Then
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Function validar() As Boolean
+        'verificar Documento
+        Dim conexion As New OleDb.OleDbConnection
+        Dim consulta As String
+        Dim cmd As New OleDb.OleDbCommand
+        Dim tabla As New DataTable
+
+        conexion.ConnectionString = Me.string_conexion
+        conexion.Open()
+
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conexion
+
+        tabla.Load(cmd.ExecuteReader())
+
+        If (existeCliente()=False) Then
             MessageBox.Show("El documento ingresado no existe.", "Error", MessageBoxButtons.OK)
             Return False
         End If
@@ -186,4 +206,8 @@
 
         Return True
     End Function
+
+    Private Sub dgvAlojamientos_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvAlojamientos.CellContentDoubleClick
+        'cargar()
+    End Sub
 End Class
