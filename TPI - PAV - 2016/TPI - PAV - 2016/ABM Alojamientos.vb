@@ -1,6 +1,7 @@
 ﻿Public Class ABM_Alojamientos
     Dim string_conexion As String = ConexionBD.Instancia.StringConexion
     Dim flagBusqDocumento As Boolean = False
+    Dim idAlojamientoModificacion As Integer = 0
 
     Private Sub ABM_Alojamientos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         carga_combo(Me.cmbTipoDoc, Me.leo_tabla("TiposDocumento"), "idTipoDocumento", "nombre")
@@ -86,6 +87,12 @@
             carga_lista(Me.leo_alojamientos(False))
             flagBusqDocumento = False
         End If
+
+        dtpIngreso.Enabled = True
+        cmbTipoDoc.Enabled = True
+        txtNroDoc.Enabled = True
+        flagBusqDocumento = False
+        idAlojamientoModificacion = 0
     End Sub
 
     Private Sub btnBuscarPorDoc_Click(sender As Object, e As EventArgs) Handles btnBuscarPorDoc.Click
@@ -106,9 +113,36 @@
 
     Private Sub registrar()
         If validar() Then
-            insertar()
+            If idAlojamientoModificacion <> 0 Then
+                guardar()
+            Else
+                insertar()
+            End If
         End If
+
     End Sub
+
+    Private Function guardar()
+        Dim conexion As New OleDb.OleDbConnection
+        Dim cmd As New OleDb.OleDbCommand
+        Dim consulta As String = ""
+
+        conexion.ConnectionString = Me.string_conexion
+        conexion.Open()
+
+        consulta = "update alojamientos where idAlojamiento=" & idAlojamientoModificacion &
+            "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" &
+            cmbTipoDoc.SelectedValue & ", nroHabitacion=" & txtHabitacion.Text & ", cantPersonas=" & txtAlojados &
+        ", fechaInicioAlojamiento=" & dtpIngreso.Value & ",fechaFinEstimadaalojamiento=" & dtpEstimada.Value & ", fechaFinAlojamiento=" & dtpSalida.Value & ", precioPorDia=" &
+        txtPrecio.Text
+
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conexion
+        cmd.CommandText = consulta
+        cmd.ExecuteNonQuery()
+        conexion.Close()
+        Return True
+    End Function
 
     Private Function insertar() As Boolean
         Dim conexion As New OleDb.OleDbConnection
@@ -215,7 +249,7 @@
         Dim consulta As String
 
         conexion.ConnectionString = string_conexion
-        consulta = "select * from Alojamientos where idAlojamiento=" + a
+        consulta = "select * from Alojamientos where idAlojamiento=" + idAlojamiento
 
         cmd.CommandType = CommandType.Text
         cmd.CommandText = consulta
@@ -227,9 +261,18 @@
 
         cmbTipoDoc.SelectedValue = row(2)
         txtNroDoc.Text = row(1)
-        'nroPiso.Text = 
+        txtHabitacion.Text = row(3)
+        txtAlojados.Text = row(4)
+        dtpIngreso.Value = row(5)
+        dtpEstimada.Value = row(6)
+        dtpSalida.Value = row(7)
+        txtPrecio.Text = row(8)
 
+        dtpIngreso.Enabled = False
+        cmbTipoDoc.Enabled = False
+        txtNroDoc.Enabled = False
 
+        idAlojamientoModificacion = idAlojamiento
 
     End Sub
 End Class
