@@ -126,12 +126,17 @@
         Return True
     End Function
     Private Sub ABM_TiposDocumentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.cmd_borrar.Enabled = False
+        Me.cmd_borrar.Visible = False
         Me.cargar_grilla()
         Me.txt_nombre.Focus()
 
     End Sub
 
     Private Sub cmd_limpiar_Click(sender As Object, e As EventArgs) Handles cmd_limpiar.Click
+        Me.cmd_borrar.Enabled = False
+        Me.cmd_borrar.Visible = False
+
         Me.condicion_estado = estado.insertar
         Me.txt_descripcion.Text = ""
         Me.txt_nombre.Text = ""
@@ -164,6 +169,9 @@
             MessageBox.Show("Este tipo de Documento fue eliminado.")
             Exit Sub
         End If
+
+        Me.cmd_borrar.Enabled = True
+        Me.cmd_borrar.Visible = True
 
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
         Me.txt_descripcion.Text = tabla.Rows(0)("descripcion")
@@ -207,4 +215,23 @@
         Me.Close()
     End Sub
 
+    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+        Dim conexion As New OleDb.OleDbConnection
+        Dim cmd As New OleDb.OleDbCommand
+        Dim tabla As New DataTable
+        Dim sql As String =  "DELETE FROM TiposDocumento WHERE idTipoDocumento = " & Me.grid_tipoDoc.Rows(0).Cells("c_idDoc").Value()
+
+        MessageBox.Show("Se ha eliminado el tipo de Documento Satisfactoriamente")
+
+        conexion.ConnectionString = cadena_conexion
+        conexion.Open()
+        cmd.Connection = conexion
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = sql
+        tabla.Load(cmd.ExecuteReader())
+        conexion.Close()
+        Me.cargar_grilla()
+        Me.cmd_limpiar.PerformClick()
+
+    End Sub
 End Class

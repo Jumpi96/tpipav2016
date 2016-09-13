@@ -25,14 +25,15 @@ Partial Class ABM_TiposDocumentos
         Me.cmd_guardar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
         Me.grid_tipoDoc = New System.Windows.Forms.DataGridView()
+        Me.c_idDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.c_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.c_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.lbl_descripcion = New System.Windows.Forms.Label()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
-        Me.c_idDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.c_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.c_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmd_borrar = New System.Windows.Forms.Button()
         CType(Me.grid_tipoDoc, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,6 +66,30 @@ Partial Class ABM_TiposDocumentos
         Me.grid_tipoDoc.ReadOnly = True
         Me.grid_tipoDoc.Size = New System.Drawing.Size(365, 216)
         Me.grid_tipoDoc.TabIndex = 6
+        '
+        'c_idDoc
+        '
+        Me.c_idDoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.c_idDoc.FillWeight = 200.0!
+        Me.c_idDoc.HeaderText = "ID Documento"
+        Me.c_idDoc.Name = "c_idDoc"
+        Me.c_idDoc.ReadOnly = True
+        Me.c_idDoc.Width = 101
+        '
+        'c_nombre
+        '
+        Me.c_nombre.HeaderText = "Nombre"
+        Me.c_nombre.Name = "c_nombre"
+        Me.c_nombre.ReadOnly = True
+        Me.c_nombre.Width = 70
+        '
+        'c_descripcion
+        '
+        Me.c_descripcion.FillWeight = 90.0!
+        Me.c_descripcion.HeaderText = "Descripcion"
+        Me.c_descripcion.Name = "c_descripcion"
+        Me.c_descripcion.ReadOnly = True
+        Me.c_descripcion.Width = 150
         '
         'lbl_nombre
         '
@@ -107,32 +132,22 @@ Partial Class ABM_TiposDocumentos
         Me.cmd_limpiar.Text = "Limpiar"
         Me.cmd_limpiar.UseVisualStyleBackColor = True
         '
-        'c_idDoc
+        'cmd_borrar
         '
-        Me.c_idDoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.c_idDoc.FillWeight = 200.0!
-        Me.c_idDoc.HeaderText = "ID Documento"
-        Me.c_idDoc.Name = "c_idDoc"
-        Me.c_idDoc.Width = 101
-        '
-        'c_nombre
-        '
-        Me.c_nombre.HeaderText = "Nombre"
-        Me.c_nombre.Name = "c_nombre"
-        Me.c_nombre.Width = 70
-        '
-        'c_descripcion
-        '
-        Me.c_descripcion.FillWeight = 90.0!
-        Me.c_descripcion.HeaderText = "Descripcion"
-        Me.c_descripcion.Name = "c_descripcion"
-        Me.c_descripcion.Width = 150
+        Me.cmd_borrar.Location = New System.Drawing.Point(12, 293)
+        Me.cmd_borrar.Name = "cmd_borrar"
+        Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_borrar.TabIndex = 27
+        Me.cmd_borrar.Text = "Borrar"
+        Me.cmd_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.cmd_borrar.UseVisualStyleBackColor = True
         '
         'ABM_TiposDocumentos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(389, 329)
+        Me.Controls.Add(Me.cmd_borrar)
         Me.Controls.Add(Me.cmd_limpiar)
         Me.Controls.Add(Me.txt_descripcion)
         Me.Controls.Add(Me.txt_nombre)
@@ -159,5 +174,6 @@ Partial Class ABM_TiposDocumentos
     Friend WithEvents c_idDoc As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents c_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents c_descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cmd_borrar As System.Windows.Forms.Button
 
 End Class

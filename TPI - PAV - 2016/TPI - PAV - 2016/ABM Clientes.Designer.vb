@@ -43,6 +43,7 @@ Partial Class ABM_Clientes
         Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_tipoDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nroDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmd_borrar = New System.Windows.Forms.Button()
         CType(Me.grid_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -216,11 +217,23 @@ Partial Class ABM_Clientes
         Me.col_nroDocumento.Name = "col_nroDocumento"
         Me.col_nroDocumento.ReadOnly = True
         '
+        'cmd_borrar
+        '
+        Me.cmd_borrar.Enabled = False
+        Me.cmd_borrar.Location = New System.Drawing.Point(8, 411)
+        Me.cmd_borrar.Name = "cmd_borrar"
+        Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_borrar.TabIndex = 25
+        Me.cmd_borrar.Text = "Borrar"
+        Me.cmd_borrar.UseVisualStyleBackColor = True
+        Me.cmd_borrar.Visible = False
+        '
         'ABM_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(484, 439)
+        Me.Controls.Add(Me.cmd_borrar)
         Me.Controls.Add(Me.grid_clientes)
         Me.Controls.Add(Me.cmd_limpiar)
         Me.Controls.Add(Me.cmd_cancelar)
@@ -266,4 +279,5 @@ Partial Class ABM_Clientes
     Friend WithEvents col_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_tipoDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_nroDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cmd_borrar As System.Windows.Forms.Button
 End Class

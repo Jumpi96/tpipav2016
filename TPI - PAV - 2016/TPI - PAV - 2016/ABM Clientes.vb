@@ -178,6 +178,9 @@
         Me.cmb_tipoDoc.Enabled = True
         Me.cargar_grilla(estadoBusqueda.todo)
         Me.cmd_registrar.Text = "Registrar"
+        Me.cmd_borrar.Enabled = False
+        Me.cmd_borrar.Visible = False
+
     End Sub
 
     Private Sub cmd_buscar_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
@@ -211,12 +214,17 @@
             Exit Sub
         End If
 
+        Me.cmd_borrar.Enabled = True
+        Me.cmd_borrar.Visible = True
+        Me.cmd_registrar.Text = "Modificar"
+
+
         Me.txt_nroDoc.Text = tabla.Rows(0)("nroDocumento")
         Me.txt_apellido.Text = tabla.Rows(0)("apellido")
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
         Me.cmb_tipoDoc.SelectedValue = tabla.Rows(0)("idTipoDocumento")
         Me.txt_telefono.Text = tabla.Rows(0)("telefono")
-        Me.cmd_registrar.Text = "Modificar"
+
 
         Me.cmb_tipoDoc.Enabled = False
         Me.txt_nroDoc.Enabled = False
@@ -257,4 +265,23 @@
         Me.Close()
     End Sub
 
+    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+        Dim conexion As New OleDb.OleDbConnection
+        Dim cmd As New OleDb.OleDbCommand
+        Dim tabla As New DataTable
+        Dim sql As String = "DELETE FROM Clientes WHERE nroDocumento = " & Me.txt_nroDoc.Text
+        sql &= " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
+
+        conexion.ConnectionString = cadena_conexion
+        conexion.Open()
+        cmd.Connection = conexion
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = sql
+        tabla.Load(cmd.ExecuteReader())
+        conexion.Close()
+        Me.cargar_grilla(estadoBusqueda.todo)
+        Me.cmd_limpiar.PerformClick()
+
+        MessageBox.Show("Se ha eliminado el tipo de Documento Satisfactoriamente")
+    End Sub
 End Class
