@@ -1,6 +1,6 @@
 ﻿Public Class ABM_TiposDocumentos
 
-    Dim cadena_conexion As String = ""
+    Dim cadena_conexion As String = "Provider=SQLNCLI11;Data Source=LAWEBSTORE-PC\SQLSERVER2014;Integrated Security=SSPI;Initial Catalog=hotelShaky"
     Enum analizar_existencia
         existe
         no_existe
@@ -31,7 +31,7 @@
         Dim cmd As New OleDb.OleDbCommand
         Dim sql As String = ""
 
-        sql &= "UPDATE TIPOSDOCUMENTO "
+        sql &= "UPDATE TiposDocumento "
         sql &= "SET nombre = '" & Me.txt_nombre.Text & "'"
         sql &= ", descripcion = '" & Me.txt_descripcion.Text & "'"
         sql &= " WHERE idTipoDocumento = " & Me.txt_idDoc.Text
@@ -59,7 +59,7 @@
         Dim conexion As New OleDb.OleDbConnection
         Dim cmd As New OleDb.OleDbCommand
         Dim tabla As New DataTable
-        Dim sql As String = "SELECT * FROM TIPOSDOCUMENTO"
+        Dim sql As String = "SELECT * FROM TiposDocumento "
 
         conexion.ConnectionString = cadena_conexion
         conexion.Open()
@@ -76,7 +76,7 @@
         Dim c As Integer = 0
         For c = 0 To tabla.Rows.Count() - 1
             Me.grid_tipoDoc.Rows.Add()
-            Me.grid_tipoDoc.Rows(c).Cells("c_idDoc").Value = tabla.Rows(c)("idTiposDocumento")
+            Me.grid_tipoDoc.Rows(c).Cells("c_idDoc").Value = tabla.Rows(c)("idTipoDocumento")
             Me.grid_tipoDoc.Rows(c).Cells("c_nombre").Value = tabla.Rows(c)("nombre")
             Me.grid_tipoDoc.Rows(c).Cells("c_descripcion").Value = tabla.Rows(c)("descripcion")
         Next
@@ -89,7 +89,7 @@
         Dim tabla As New DataTable
         Dim sql As String = ""
         sql = "SELECT * FROM TIPOSDOCUMENTO " _
-            & "WHERE idTiposDocumento = " & Me.txt_idDoc.Text
+            & "WHERE idTipoDocumento = " & Me.txt_idDoc.Text
 
 
         conexion.ConnectionString = cadena_conexion
@@ -113,8 +113,8 @@
         Dim cmd As New OleDb.OleDbCommand
 
         Dim sql As String = ""
-        sql = "INSERT INTO TIPOSDOCUMENTOS (idTiposDocumento, nombre, descripcion) " _
-            & "VALUES (" & txt_idDoc.Text & ", " & txt_nombre.Text & ", '" & txt_descripcion.Text & "')"
+        sql = "SET IDENTITY_INSERT TiposDocumento ON INSERT INTO TiposDocumento (idTipoDocumento, nombre, descripcion) " _
+            & "VALUES (" & txt_idDoc.Text & ", '" & txt_nombre.Text & "', '" & txt_descripcion.Text & "')"
 
 
         conexion.ConnectionString = cadena_conexion
@@ -172,8 +172,8 @@
         Dim tabla As New DataTable
         Dim sql As String = ""
 
-        sql = "SELECT * FROM TIPOSDOCUMENTO " _
-            & "WHERE idTiposDocumento = " & Me.grid_tipoDoc.CurrentRow.Cells(0).Value & "'"
+        sql = "SELECT * FROM TiposDdocumento " _
+            & "WHERE idTipoDocumento = " & Me.grid_tipoDoc.CurrentRow.Cells(0).Value & "'"
 
         conexion.ConnectionString = cadena_conexion
         conexion.Open()
