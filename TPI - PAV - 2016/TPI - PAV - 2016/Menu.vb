@@ -245,15 +245,8 @@
         Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComDatPro
     End Sub
 
-    Private Sub cmd_nueOrdComFin_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComFin.Click
-        Me.cmb_IDPro.Text = ""
-        Me.txt_nomPro.Text = ""
-        Me.txt_telPro.Text = ""
-        Me.txt_corPro.Text = ""
-
-        Me.ocultarNuevaOrdenCompra()
-
-        Me.menu_Menu.Enabled = True
+    Private Sub cmd_nueOrdComFin_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComArtSig.Click
+        Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComRes
     End Sub
 
     Private Sub BuscarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem1.Click
@@ -493,5 +486,22 @@
 
     Private Sub ABMTiposDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposDocumentosToolStripMenuItem.Click
         ABM_TiposDocumentos.Show()
+    End Sub
+
+    Private Sub cmd_nueOrdComFin_Click_1(sender As Object, e As EventArgs) Handles cmd_nueOrdComFin.Click
+        Me.cmb_IDPro.Text = ""
+        Me.txt_nomPro.Text = ""
+        Me.txt_telPro.Text = ""
+        Me.txt_corPro.Text = ""
+        Me.txt_nueOrdComArtFilDes.Text = ""
+        Me.txt_nueOrdComArtFilID.Text = ""
+
+        Me.ocultarNuevaOrdenCompra()
+
+        Me.menu_Menu.Enabled = True
+    End Sub
+
+    Private Sub cmd_nueOrdComResAtr_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComResAtr.Click
+        Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComArt
     End Sub
 End Class
