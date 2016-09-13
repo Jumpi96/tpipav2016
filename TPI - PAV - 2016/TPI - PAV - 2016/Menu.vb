@@ -15,6 +15,14 @@
         Me.pnl_busOrdCom.Enabled = False
         Me.pnl_busOrdCom.SendToBack()
 
+        Me.pnl_agrServ.Visible = False
+        Me.pnl_agrServ.Enabled = False
+        Me.pnl_agrServ.SendToBack()
+
+        Me.pnl_agrArt.Visible = False
+        Me.pnl_agrArt.Enabled = False
+        Me.pnl_agrArt.SendToBack()
+
         Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
         Me.pnl_nueAlo.Visible = True
         Me.pnl_nueAlo.Enabled = True
@@ -61,6 +69,14 @@
         Me.pnl_busOrdCom.Visible = False
         Me.pnl_busOrdCom.Enabled = False
         Me.pnl_busOrdCom.SendToBack()
+
+        Me.pnl_agrServ.Visible = False
+        Me.pnl_agrServ.Enabled = False
+        Me.pnl_agrServ.SendToBack()
+
+        Me.pnl_agrArt.Visible = False
+        Me.pnl_agrArt.Enabled = False
+        Me.pnl_agrArt.SendToBack()
 
         Me.tab_busAlo.SelectedTab = tab_busAloDatCli
         Me.pnl_busAlo.Visible = True
@@ -191,6 +207,14 @@
         Me.pnl_busOrdCom.Enabled = False
         Me.pnl_busOrdCom.SendToBack()
 
+        Me.pnl_agrServ.Visible = False
+        Me.pnl_agrServ.Enabled = False
+        Me.pnl_agrServ.SendToBack()
+
+        Me.pnl_agrArt.Visible = False
+        Me.pnl_agrArt.Enabled = False
+        Me.pnl_agrArt.SendToBack()
+
         Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComDatPro
         Me.pnl_nueOrdCom.Visible = True
         Me.pnl_nueOrdCom.Enabled = True
@@ -218,7 +242,6 @@
 
     End Sub
 
-
     Private Sub ABMAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAlojamientosToolStripMenuItem.Click
         ABM_Alojamientos.Show()
     End Sub
@@ -230,7 +253,6 @@
     Private Sub ABMTiposDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposDocumentosToolStripMenuItem.Click
         ABM_TiposDocumentos.Show()
     End Sub
-
 
     Private Sub BuscarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem1.Click
         Me.menu_Menu.Enabled = False
@@ -246,6 +268,14 @@
         Me.pnl_nueOrdCom.Visible = False
         Me.pnl_nueOrdCom.Enabled = False
         Me.pnl_nueOrdCom.SendToBack()
+
+        Me.pnl_agrServ.Visible = False
+        Me.pnl_agrServ.Enabled = False
+        Me.pnl_agrServ.SendToBack()
+
+        Me.pnl_agrArt.Visible = False
+        Me.pnl_agrArt.Enabled = False
+        Me.pnl_agrArt.SendToBack()
 
         Me.tab_busOrdCom.SelectedTab = tab_busOrdComDatPro
         Me.pnl_busOrdCom.Visible = True
@@ -284,4 +314,65 @@
         Me.menu_Menu.Enabled = True
 
     End Sub
+
+    Private Sub AgrearArtículoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgrearArtículoToolStripMenuItem.Click
+        Me.menu_Menu.Enabled = False
+
+        Me.pnl_busAlo.Visible = False
+        Me.pnl_busAlo.Enabled = False
+        Me.pnl_busAlo.SendToBack()
+
+        Me.pnl_nueAlo.Visible = False
+        Me.pnl_nueAlo.Enabled = False
+        Me.pnl_nueAlo.SendToBack()
+
+        Me.pnl_nueOrdCom.Visible = False
+        Me.pnl_nueOrdCom.Enabled = False
+        Me.pnl_nueOrdCom.SendToBack()
+
+        Me.pnl_busOrdCom.Visible = False
+        Me.pnl_busOrdCom.Enabled = False
+        Me.pnl_busOrdCom.SendToBack()
+
+        Me.pnl_agrServ.Visible = False
+        Me.pnl_agrServ.Enabled = False
+        Me.pnl_agrServ.SendToBack()
+
+        'Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
+        Me.pnl_agrArt.Visible = True
+        Me.pnl_agrArt.Enabled = True
+        ' Me.cmb_tipoDoc.Focus()
+        Me.pnl_agrArt.BringToFront()
+    End Sub
+
+    Private Sub AgregarServicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarServicioToolStripMenuItem.Click
+        Me.menu_Menu.Enabled = False
+
+        Me.pnl_busAlo.Visible = False
+        Me.pnl_busAlo.Enabled = False
+        Me.pnl_busAlo.SendToBack()
+
+        Me.pnl_nueAlo.Visible = False
+        Me.pnl_nueAlo.Enabled = False
+        Me.pnl_nueAlo.SendToBack()
+
+        Me.pnl_nueOrdCom.Visible = False
+        Me.pnl_nueOrdCom.Enabled = False
+        Me.pnl_nueOrdCom.SendToBack()
+
+        Me.pnl_busOrdCom.Visible = False
+        Me.pnl_busOrdCom.Enabled = False
+        Me.pnl_busOrdCom.SendToBack()
+
+        Me.pnl_agrArt.Visible = False
+        Me.pnl_agrArt.Enabled = False
+        Me.pnl_agrArt.SendToBack()
+
+        'Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
+        Me.pnl_agrServ.Visible = True
+        Me.pnl_agrServ.Enabled = True
+        ' Me.cmb_tipoDoc.Focus()
+        Me.pnl_agrServ.BringToFront()
+    End Sub
+
 End Class

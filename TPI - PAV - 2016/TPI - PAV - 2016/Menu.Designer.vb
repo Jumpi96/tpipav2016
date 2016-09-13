@@ -27,13 +27,17 @@ Partial Class menu
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ArtículosServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgrearArtículoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgregarServicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ÓrdenesDeComprasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionesAdministrativasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMAlojamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbl_nueAlo = New System.Windows.Forms.Label()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
         Me.tab_aloNueDatCli = New System.Windows.Forms.TabPage()
         Me.txt_tel = New System.Windows.Forms.TextBox()
@@ -112,10 +116,6 @@ Partial Class menu
         Me.clm_preTot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_nueOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
-
-        Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-
         Me.pnl_busOrdCom = New System.Windows.Forms.Panel()
         Me.tab_busOrdCom = New System.Windows.Forms.TabControl()
         Me.tab_busOrdComDatPro = New System.Windows.Forms.TabPage()
@@ -131,9 +131,27 @@ Partial Class menu
         Me.lbl_nomProBusOrdCom = New System.Windows.Forms.Label()
         Me.lbl_IDProBusOrdCom = New System.Windows.Forms.Label()
         Me.tab_busOrdComOrdCom = New System.Windows.Forms.TabPage()
-        Me.lbl_busOrdCom = New System.Windows.Forms.Label()
-        Me.cmd_busOrdComFin = New System.Windows.Forms.Button()
+        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.clm_IDOrdCom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_IDPro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_fecEmi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_fecRec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_busOrdComAtr = New System.Windows.Forms.Button()
+        Me.cmd_busOrdComFin = New System.Windows.Forms.Button()
+        Me.lbl_busOrdCom = New System.Windows.Forms.Label()
+        Me.pnl_agrArt = New System.Windows.Forms.Panel()
+        Me.lbl_agrArt = New System.Windows.Forms.Label()
+        Me.pnl_agrServ = New System.Windows.Forms.Panel()
+        Me.tab_carServ = New System.Windows.Forms.TabControl()
+        Me.tab_carServHab = New System.Windows.Forms.TabPage()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.cmb_nroHab = New System.Windows.Forms.ComboBox()
+        Me.cmb_nroPiso = New System.Windows.Forms.ComboBox()
+        Me.lbl_cliAso = New System.Windows.Forms.Label()
+        Me.lbl_nroHab = New System.Windows.Forms.Label()
+        Me.lbl_nroPiso = New System.Windows.Forms.Label()
+        Me.tab_carServServ = New System.Windows.Forms.TabPage()
+        Me.lbl_agrSer = New System.Windows.Forms.Label()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -154,6 +172,11 @@ Partial Class menu
         Me.tab_busOrdCom.SuspendLayout()
         Me.tab_busOrdComDatPro.SuspendLayout()
         Me.tab_busOrdComOrdCom.SuspendLayout()
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_agrArt.SuspendLayout()
+        Me.pnl_agrServ.SuspendLayout()
+        Me.tab_carServ.SuspendLayout()
+        Me.tab_carServHab.SuspendLayout()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -187,9 +210,22 @@ Partial Class menu
         '
         'ArtículosServiciosToolStripMenuItem
         '
+        Me.ArtículosServiciosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgrearArtículoToolStripMenuItem, Me.AgregarServicioToolStripMenuItem})
         Me.ArtículosServiciosToolStripMenuItem.Name = "ArtículosServiciosToolStripMenuItem"
         Me.ArtículosServiciosToolStripMenuItem.Size = New System.Drawing.Size(126, 21)
         Me.ArtículosServiciosToolStripMenuItem.Text = "Artículos/Servicios"
+        '
+        'AgrearArtículoToolStripMenuItem
+        '
+        Me.AgrearArtículoToolStripMenuItem.Name = "AgrearArtículoToolStripMenuItem"
+        Me.AgrearArtículoToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.AgrearArtículoToolStripMenuItem.Text = "Cargar Artículo"
+        '
+        'AgregarServicioToolStripMenuItem
+        '
+        Me.AgregarServicioToolStripMenuItem.Name = "AgregarServicioToolStripMenuItem"
+        Me.AgregarServicioToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.AgregarServicioToolStripMenuItem.Text = "Cargar Servicio"
         '
         'ÓrdenesDeComprasToolStripMenuItem
         '
@@ -223,9 +259,21 @@ Partial Class menu
         Me.ABMAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.ABMAlojamientosToolStripMenuItem.Text = "ABM Alojamientos"
         '
+        'ABMClientesToolStripMenuItem
+        '
+        Me.ABMClientesToolStripMenuItem.Name = "ABMClientesToolStripMenuItem"
+        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMClientesToolStripMenuItem.Text = "ABM Clientes"
+        '
+        'ABMTiposDocumentosToolStripMenuItem
+        '
+        Me.ABMTiposDocumentosToolStripMenuItem.Name = "ABMTiposDocumentosToolStripMenuItem"
+        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
+        '
         'pnl_nueAlo
         '
-        Me.pnl_nueAlo.Controls.Add(Me.Label1)
+        Me.pnl_nueAlo.Controls.Add(Me.lbl_nueAlo)
         Me.pnl_nueAlo.Controls.Add(Me.tab_aloNue)
         Me.pnl_nueAlo.Enabled = False
         Me.pnl_nueAlo.Location = New System.Drawing.Point(12, 28)
@@ -234,15 +282,15 @@ Partial Class menu
         Me.pnl_nueAlo.TabIndex = 0
         Me.pnl_nueAlo.Visible = False
         '
-        'Label1
+        'lbl_nueAlo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 3)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(139, 16)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Nuevo Alojamiento"
+        Me.lbl_nueAlo.AutoSize = True
+        Me.lbl_nueAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_nueAlo.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_nueAlo.Name = "lbl_nueAlo"
+        Me.lbl_nueAlo.Size = New System.Drawing.Size(139, 16)
+        Me.lbl_nueAlo.TabIndex = 0
+        Me.lbl_nueAlo.Text = "Nuevo Alojamiento"
         '
         'tab_aloNue
         '
@@ -984,21 +1032,6 @@ Partial Class menu
         Me.cmd_nueOrdComFin.Text = "Finalizar"
         Me.cmd_nueOrdComFin.UseVisualStyleBackColor = True
         '
-
-        'ABMClientesToolStripMenuItem
-        '
-        Me.ABMClientesToolStripMenuItem.Name = "ABMClientesToolStripMenuItem"
-        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMClientesToolStripMenuItem.Text = "ABM Clientes"
-        '
-        'ABMTiposDocumentosToolStripMenuItem
-        '
-        Me.ABMTiposDocumentosToolStripMenuItem.Name = "ABMTiposDocumentosToolStripMenuItem"
-        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
-        '
-        'Menu
-
         'pnl_busOrdCom
         '
         Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
@@ -1047,7 +1080,7 @@ Partial Class menu
         Me.cmd_busOrdComSig.Location = New System.Drawing.Point(409, 146)
         Me.cmd_busOrdComSig.Name = "cmd_busOrdComSig"
         Me.cmd_busOrdComSig.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busOrdComSig.TabIndex = 32
+        Me.cmd_busOrdComSig.TabIndex = 7
         Me.cmd_busOrdComSig.Text = "Siguiente"
         Me.cmd_busOrdComSig.UseVisualStyleBackColor = True
         '
@@ -1056,7 +1089,7 @@ Partial Class menu
         Me.cmd_busOrdComCan.Location = New System.Drawing.Point(331, 146)
         Me.cmd_busOrdComCan.Name = "cmd_busOrdComCan"
         Me.cmd_busOrdComCan.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busOrdComCan.TabIndex = 31
+        Me.cmd_busOrdComCan.TabIndex = 6
         Me.cmd_busOrdComCan.Text = "Cancelar"
         Me.cmd_busOrdComCan.UseVisualStyleBackColor = True
         '
@@ -1148,6 +1181,7 @@ Partial Class menu
         '
         'tab_busOrdComOrdCom
         '
+        Me.tab_busOrdComOrdCom.Controls.Add(Me.DataGridView3)
         Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComAtr)
         Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComFin)
         Me.tab_busOrdComOrdCom.Location = New System.Drawing.Point(4, 25)
@@ -1157,6 +1191,61 @@ Partial Class menu
         Me.tab_busOrdComOrdCom.TabIndex = 1
         Me.tab_busOrdComOrdCom.Text = "Ordenes de Compra"
         Me.tab_busOrdComOrdCom.UseVisualStyleBackColor = True
+        '
+        'DataGridView3
+        '
+        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_IDOrdCom, Me.clm_IDPro, Me.clm_fecEmi, Me.clm_fecRec})
+        Me.DataGridView3.Location = New System.Drawing.Point(7, 6)
+        Me.DataGridView3.Name = "DataGridView3"
+        Me.DataGridView3.Size = New System.Drawing.Size(501, 136)
+        Me.DataGridView3.TabIndex = 2
+        '
+        'clm_IDOrdCom
+        '
+        Me.clm_IDOrdCom.HeaderText = "ID"
+        Me.clm_IDOrdCom.Name = "clm_IDOrdCom"
+        Me.clm_IDOrdCom.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_IDOrdCom.Width = 60
+        '
+        'clm_IDPro
+        '
+        Me.clm_IDPro.HeaderText = "ID Proveedor"
+        Me.clm_IDPro.Name = "clm_IDPro"
+        Me.clm_IDPro.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_IDPro.Width = 115
+        '
+        'clm_fecEmi
+        '
+        Me.clm_fecEmi.HeaderText = "Fecha Emisión"
+        Me.clm_fecEmi.Name = "clm_fecEmi"
+        Me.clm_fecEmi.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_fecEmi.Width = 140
+        '
+        'clm_fecRec
+        '
+        Me.clm_fecRec.HeaderText = "Fecha Recepción"
+        Me.clm_fecRec.Name = "clm_fecRec"
+        Me.clm_fecRec.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_fecRec.Width = 140
+        '
+        'cmd_busOrdComAtr
+        '
+        Me.cmd_busOrdComAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busOrdComAtr.Name = "cmd_busOrdComAtr"
+        Me.cmd_busOrdComAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComAtr.TabIndex = 1
+        Me.cmd_busOrdComAtr.Text = "Atrás"
+        Me.cmd_busOrdComAtr.UseVisualStyleBackColor = True
+        '
+        'cmd_busOrdComFin
+        '
+        Me.cmd_busOrdComFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busOrdComFin.Name = "cmd_busOrdComFin"
+        Me.cmd_busOrdComFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComFin.TabIndex = 2
+        Me.cmd_busOrdComFin.Text = "Finalizar"
+        Me.cmd_busOrdComFin.UseVisualStyleBackColor = True
         '
         'lbl_busOrdCom
         '
@@ -1168,23 +1257,133 @@ Partial Class menu
         Me.lbl_busOrdCom.TabIndex = 0
         Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
         '
-        'cmd_busOrdComFin
+        'pnl_agrArt
         '
-        Me.cmd_busOrdComFin.Location = New System.Drawing.Point(409, 146)
-        Me.cmd_busOrdComFin.Name = "cmd_busOrdComFin"
-        Me.cmd_busOrdComFin.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busOrdComFin.TabIndex = 0
-        Me.cmd_busOrdComFin.Text = "Finalizar"
-        Me.cmd_busOrdComFin.UseVisualStyleBackColor = True
+        Me.pnl_agrArt.Controls.Add(Me.lbl_agrArt)
+        Me.pnl_agrArt.Enabled = False
+        Me.pnl_agrArt.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_agrArt.Name = "pnl_agrArt"
+        Me.pnl_agrArt.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_agrArt.TabIndex = 0
+        Me.pnl_agrArt.Visible = False
         '
-        'cmd_busOrdComAtr
+        'lbl_agrArt
         '
-        Me.cmd_busOrdComAtr.Location = New System.Drawing.Point(331, 146)
-        Me.cmd_busOrdComAtr.Name = "cmd_busOrdComAtr"
-        Me.cmd_busOrdComAtr.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busOrdComAtr.TabIndex = 1
-        Me.cmd_busOrdComAtr.Text = "Atrás"
-        Me.cmd_busOrdComAtr.UseVisualStyleBackColor = True
+        Me.lbl_agrArt.AutoSize = True
+        Me.lbl_agrArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_agrArt.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_agrArt.Name = "lbl_agrArt"
+        Me.lbl_agrArt.Size = New System.Drawing.Size(111, 16)
+        Me.lbl_agrArt.TabIndex = 0
+        Me.lbl_agrArt.Text = "Cargar Artículo"
+        '
+        'pnl_agrServ
+        '
+        Me.pnl_agrServ.Controls.Add(Me.tab_carServ)
+        Me.pnl_agrServ.Controls.Add(Me.lbl_agrSer)
+        Me.pnl_agrServ.Enabled = False
+        Me.pnl_agrServ.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_agrServ.Name = "pnl_agrServ"
+        Me.pnl_agrServ.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_agrServ.TabIndex = 0
+        Me.pnl_agrServ.Visible = False
+        '
+        'tab_carServ
+        '
+        Me.tab_carServ.Controls.Add(Me.tab_carServHab)
+        Me.tab_carServ.Controls.Add(Me.tab_carServServ)
+        Me.tab_carServ.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tab_carServ.Location = New System.Drawing.Point(6, 22)
+        Me.tab_carServ.Name = "tab_carServ"
+        Me.tab_carServ.SelectedIndex = 0
+        Me.tab_carServ.Size = New System.Drawing.Size(522, 214)
+        Me.tab_carServ.TabIndex = 0
+        '
+        'tab_carServHab
+        '
+        Me.tab_carServHab.Controls.Add(Me.TextBox1)
+        Me.tab_carServHab.Controls.Add(Me.cmb_nroHab)
+        Me.tab_carServHab.Controls.Add(Me.cmb_nroPiso)
+        Me.tab_carServHab.Controls.Add(Me.lbl_cliAso)
+        Me.tab_carServHab.Controls.Add(Me.lbl_nroHab)
+        Me.tab_carServHab.Controls.Add(Me.lbl_nroPiso)
+        Me.tab_carServHab.Location = New System.Drawing.Point(4, 25)
+        Me.tab_carServHab.Name = "tab_carServHab"
+        Me.tab_carServHab.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_carServHab.Size = New System.Drawing.Size(514, 185)
+        Me.tab_carServHab.TabIndex = 0
+        Me.tab_carServHab.Text = "Habitación"
+        Me.tab_carServHab.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(129, 66)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(288, 22)
+        Me.TextBox1.TabIndex = 5
+        '
+        'cmb_nroHab
+        '
+        Me.cmb_nroHab.FormattingEnabled = True
+        Me.cmb_nroHab.Location = New System.Drawing.Point(129, 36)
+        Me.cmb_nroHab.Name = "cmb_nroHab"
+        Me.cmb_nroHab.Size = New System.Drawing.Size(61, 24)
+        Me.cmb_nroHab.TabIndex = 4
+        '
+        'cmb_nroPiso
+        '
+        Me.cmb_nroPiso.FormattingEnabled = True
+        Me.cmb_nroPiso.Location = New System.Drawing.Point(129, 6)
+        Me.cmb_nroPiso.Name = "cmb_nroPiso"
+        Me.cmb_nroPiso.Size = New System.Drawing.Size(61, 24)
+        Me.cmb_nroPiso.TabIndex = 3
+        '
+        'lbl_cliAso
+        '
+        Me.lbl_cliAso.AutoSize = True
+        Me.lbl_cliAso.Location = New System.Drawing.Point(13, 69)
+        Me.lbl_cliAso.Name = "lbl_cliAso"
+        Me.lbl_cliAso.Size = New System.Drawing.Size(110, 16)
+        Me.lbl_cliAso.TabIndex = 2
+        Me.lbl_cliAso.Text = "Cliente Asociado"
+        '
+        'lbl_nroHab
+        '
+        Me.lbl_nroHab.AutoSize = True
+        Me.lbl_nroHab.Location = New System.Drawing.Point(6, 39)
+        Me.lbl_nroHab.Name = "lbl_nroHab"
+        Me.lbl_nroHab.Size = New System.Drawing.Size(117, 16)
+        Me.lbl_nroHab.TabIndex = 1
+        Me.lbl_nroHab.Text = "Nro de Habitación"
+        '
+        'lbl_nroPiso
+        '
+        Me.lbl_nroPiso.AutoSize = True
+        Me.lbl_nroPiso.Location = New System.Drawing.Point(44, 9)
+        Me.lbl_nroPiso.Name = "lbl_nroPiso"
+        Me.lbl_nroPiso.Size = New System.Drawing.Size(79, 16)
+        Me.lbl_nroPiso.TabIndex = 0
+        Me.lbl_nroPiso.Text = "Nro de Piso"
+        '
+        'tab_carServServ
+        '
+        Me.tab_carServServ.Location = New System.Drawing.Point(4, 25)
+        Me.tab_carServServ.Name = "tab_carServServ"
+        Me.tab_carServServ.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_carServServ.Size = New System.Drawing.Size(514, 185)
+        Me.tab_carServServ.TabIndex = 1
+        Me.tab_carServServ.Text = "Servicios"
+        Me.tab_carServServ.UseVisualStyleBackColor = True
+        '
+        'lbl_agrSer
+        '
+        Me.lbl_agrSer.AutoSize = True
+        Me.lbl_agrSer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_agrSer.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_agrSer.Name = "lbl_agrSer"
+        Me.lbl_agrSer.Size = New System.Drawing.Size(116, 16)
+        Me.lbl_agrSer.TabIndex = 1
+        Me.lbl_agrSer.Text = "Cargar Servicio"
         '
         'menu
         '
@@ -1192,6 +1391,8 @@ Partial Class menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(581, 308)
         Me.Controls.Add(Me.menu_Menu)
+        Me.Controls.Add(Me.pnl_agrServ)
+        Me.Controls.Add(Me.pnl_agrArt)
         Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
         Me.Controls.Add(Me.pnl_nueAlo)
@@ -1230,6 +1431,14 @@ Partial Class menu
         Me.tab_busOrdComDatPro.ResumeLayout(False)
         Me.tab_busOrdComDatPro.PerformLayout()
         Me.tab_busOrdComOrdCom.ResumeLayout(False)
+        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_agrArt.ResumeLayout(False)
+        Me.pnl_agrArt.PerformLayout()
+        Me.pnl_agrServ.ResumeLayout(False)
+        Me.pnl_agrServ.PerformLayout()
+        Me.tab_carServ.ResumeLayout(False)
+        Me.tab_carServHab.ResumeLayout(False)
+        Me.tab_carServHab.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1261,7 +1470,7 @@ Partial Class menu
     Friend WithEvents lbl_nom As System.Windows.Forms.Label
     Friend WithEvents lbl_doc As System.Windows.Forms.Label
     Friend WithEvents lbl_tipoDoc As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lbl_nueAlo As System.Windows.Forms.Label
     Friend WithEvents cmd_atrHos As System.Windows.Forms.Button
     Friend WithEvents cmd_sigHos As System.Windows.Forms.Button
     Friend WithEvents cmb_tipHab As System.Windows.Forms.ComboBox
@@ -1346,5 +1555,25 @@ Partial Class menu
     Friend WithEvents cmd_busOrdComCan As System.Windows.Forms.Button
     Friend WithEvents cmd_busOrdComAtr As System.Windows.Forms.Button
     Friend WithEvents cmd_busOrdComFin As System.Windows.Forms.Button
+    Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
+    Friend WithEvents clm_IDOrdCom As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_IDPro As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_fecEmi As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_fecRec As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents AgrearArtículoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents AgregarServicioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents pnl_agrArt As System.Windows.Forms.Panel
+    Friend WithEvents lbl_agrArt As System.Windows.Forms.Label
+    Friend WithEvents pnl_agrServ As System.Windows.Forms.Panel
+    Friend WithEvents lbl_agrSer As System.Windows.Forms.Label
+    Friend WithEvents tab_carServ As System.Windows.Forms.TabControl
+    Friend WithEvents tab_carServHab As System.Windows.Forms.TabPage
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents cmb_nroHab As System.Windows.Forms.ComboBox
+    Friend WithEvents cmb_nroPiso As System.Windows.Forms.ComboBox
+    Friend WithEvents lbl_cliAso As System.Windows.Forms.Label
+    Friend WithEvents lbl_nroHab As System.Windows.Forms.Label
+    Friend WithEvents lbl_nroPiso As System.Windows.Forms.Label
+    Friend WithEvents tab_carServServ As System.Windows.Forms.TabPage
 
 End Class
