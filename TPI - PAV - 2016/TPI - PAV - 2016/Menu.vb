@@ -1,19 +1,69 @@
 ﻿Public Class menu
 
-    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
-        Me.menu_Menu.Enabled = False
+    Private Sub ocultarNuevoAlojamiento()
+        Me.pnl_nueAlo.Visible = False
+        Me.pnl_nueAlo.Enabled = False
+        Me.pnl_nueAlo.SendToBack()
+    End Sub
 
+    Private Sub mostrarNuevoAlojamiento()
+        Me.pnl_nueAlo.Visible = True
+        Me.pnl_nueAlo.Enabled = True
+        Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
+        Me.cmb_tipoDoc.Focus()
+        Me.pnl_nueAlo.BringToFront()
+    End Sub
+
+    Private Sub ocultarBuscarAlojamiento()
         Me.pnl_busAlo.Visible = False
         Me.pnl_busAlo.Enabled = False
         Me.pnl_busAlo.SendToBack()
+    End Sub
 
+    Private Sub mostrarBuscarAlojamiento()
+        Me.pnl_busAlo.Visible = True
+        Me.pnl_busAlo.Enabled = True
+        Me.tab_busAlo.SelectedTab = tab_busAloDatCli
+        Me.cmb_tipDocBusAlo.Focus()
+        Me.pnl_busAlo.BringToFront()
+    End Sub
+
+    Private Sub ocultarNuevaOrdenCompra()
         Me.pnl_nueOrdCom.Visible = False
         Me.pnl_nueOrdCom.Enabled = False
         Me.pnl_nueOrdCom.SendToBack()
+    End Sub
 
+    Private Sub mostrarNuevaOrdenCompra()
+        Me.pnl_nueOrdCom.Visible = True
+        Me.pnl_nueOrdCom.Enabled = True
+        Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComDatPro
+        Me.cmb_IDPro.Focus()
+        Me.pnl_nueOrdCom.BringToFront()
+    End Sub
+
+    Private Sub ocultarBuscarOrdenCompra()
         Me.pnl_busOrdCom.Visible = False
         Me.pnl_busOrdCom.Enabled = False
         Me.pnl_busOrdCom.SendToBack()
+    End Sub
+
+    Private Sub mostrarBuscarOrdenCompra()
+        Me.pnl_busOrdCom.Visible = True
+        Me.pnl_busOrdCom.Enabled = True
+        Me.tab_busOrdCom.SelectedTab = tab_busOrdComDatPro
+        Me.cmb_IDProBusOrdCom.Focus()
+        Me.pnl_busOrdCom.BringToFront()
+    End Sub
+
+    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+        Me.menu_Menu.Enabled = False
+
+        Me.ocultarBuscarAlojamiento()
+
+        Me.ocultarNuevaOrdenCompra()
+
+        Me.ocultarBuscarOrdenCompra()
 
         Me.pnl_agrServ.Visible = False
         Me.pnl_agrServ.Enabled = False
@@ -23,12 +73,7 @@
         Me.pnl_agrArt.Enabled = False
         Me.pnl_agrArt.SendToBack()
 
-        Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
-        Me.pnl_nueAlo.Visible = True
-        Me.pnl_nueAlo.Enabled = True
-        Me.cmb_tipoDoc.Focus()
-        Me.pnl_nueAlo.BringToFront()
-
+        Me.mostrarNuevoAlojamiento()
     End Sub
 
     Private Sub txt_doc_Click(sender As Object, e As EventArgs) Handles txt_doc.Click
@@ -58,17 +103,11 @@
     Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
 
-        Me.pnl_nueAlo.Visible = False
-        Me.pnl_nueAlo.Enabled = False
-        Me.pnl_nueAlo.SendToBack()
+        Me.ocultarNuevoAlojamiento()
 
-        Me.pnl_nueOrdCom.Visible = False
-        Me.pnl_nueOrdCom.Enabled = False
-        Me.pnl_nueOrdCom.SendToBack()
+        Me.ocultarNuevaOrdenCompra()
 
-        Me.pnl_busOrdCom.Visible = False
-        Me.pnl_busOrdCom.Enabled = False
-        Me.pnl_busOrdCom.SendToBack()
+        Me.ocultarBuscarOrdenCompra()
 
         Me.pnl_agrServ.Visible = False
         Me.pnl_agrServ.Enabled = False
@@ -78,16 +117,11 @@
         Me.pnl_agrArt.Enabled = False
         Me.pnl_agrArt.SendToBack()
 
-        Me.tab_busAlo.SelectedTab = tab_busAloDatCli
-        Me.pnl_busAlo.Visible = True
-        Me.pnl_busAlo.Enabled = True
-        Me.cmb_tipDocBusAlo.Focus()
-        Me.pnl_busAlo.BringToFront()
+        Me.mostrarBuscarAlojamiento()
     End Sub
 
     Private Sub cmd_canCli_Click(sender As Object, e As EventArgs) Handles cmd_canCli.Click
-        Me.pnl_nueAlo.Visible = False
-        Me.pnl_nueAlo.Enabled = False
+        Me.ocultarNuevoAlojamiento()
         Me.menu_Menu.Enabled = True
 
         Me.txt_ape.Text = ""
@@ -107,8 +141,7 @@
     End Sub
 
     Private Sub cmd_aceHab_Click(sender As Object, e As EventArgs) Handles cmd_aceHab.Click
-        Me.pnl_nueAlo.Visible = False
-        Me.pnl_nueAlo.Enabled = False
+        Me.ocultarNuevoAlojamiento()
         Me.menu_Menu.Enabled = True
 
         Me.txt_fecDes.Text = ""
@@ -146,9 +179,7 @@
         Me.txt_nomBusAlo.Text = ""
         Me.cmb_tipDocBusAlo.Text = ""
 
-        Me.pnl_busAlo.Visible = False
-        Me.pnl_busAlo.Enabled = False
-        Me.pnl_busAlo.SendToBack()
+        Me.ocultarBuscarAlojamiento()
 
         Me.menu_Menu.Enabled = True
     End Sub
@@ -169,10 +200,10 @@
         Me.txt_nomBusAlo.Text = ""
         Me.cmb_tipDocBusAlo.Text = ""
 
+
+        Me.ocultarBuscarAlojamiento()
+
         Me.menu_Menu.Enabled = True
-        Me.pnl_busAlo.Visible = False
-        Me.pnl_busAlo.Enabled = False
-        Me.pnl_busAlo.SendToBack()
     End Sub
 
     Private Sub cmd_nueOrdComCan_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComCan.Click
@@ -181,9 +212,7 @@
         Me.txt_telPro.Text = ""
         Me.txt_corPro.Text = ""
 
-        Me.pnl_nueOrdCom.Visible = False
-        Me.pnl_nueOrdCom.Enabled = False
-        Me.pnl_nueOrdCom.SendToBack()
+        Me.ocultarNuevaOrdenCompra()
 
         Me.menu_Menu.Enabled = True
     End Sub
@@ -195,17 +224,11 @@
     Private Sub NuevaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
 
-        Me.pnl_busAlo.Visible = False
-        Me.pnl_busAlo.Enabled = False
-        Me.pnl_busAlo.SendToBack()
+        Me.ocultarNuevoAlojamiento()
 
-        Me.pnl_nueAlo.Visible = False
-        Me.pnl_nueAlo.Enabled = False
-        Me.pnl_nueAlo.SendToBack()
+        Me.ocultarBuscarAlojamiento()
 
-        Me.pnl_busOrdCom.Visible = False
-        Me.pnl_busOrdCom.Enabled = False
-        Me.pnl_busOrdCom.SendToBack()
+        Me.ocultarBuscarOrdenCompra()
 
         Me.pnl_agrServ.Visible = False
         Me.pnl_agrServ.Enabled = False
@@ -215,11 +238,7 @@
         Me.pnl_agrArt.Enabled = False
         Me.pnl_agrArt.SendToBack()
 
-        Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComDatPro
-        Me.pnl_nueOrdCom.Visible = True
-        Me.pnl_nueOrdCom.Enabled = True
-        Me.cmb_IDPro.Focus()
-        Me.pnl_nueOrdCom.BringToFront()
+        Me.mostrarNuevaOrdenCompra()
     End Sub
 
     Private Sub cmd_nueOrdComAtr_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComAtr.Click
@@ -232,14 +251,9 @@
         Me.txt_telPro.Text = ""
         Me.txt_corPro.Text = ""
 
-        Me.pnl_nueOrdCom.Visible = False
-        Me.pnl_nueOrdCom.Enabled = False
+        Me.ocultarNuevaOrdenCompra()
 
         Me.menu_Menu.Enabled = True
-    End Sub
-
-    Private Sub DataGridView1_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentDoubleClick
-
     End Sub
 
     Private Sub ABMAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAlojamientosToolStripMenuItem.Click
@@ -257,17 +271,11 @@
     Private Sub BuscarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem1.Click
         Me.menu_Menu.Enabled = False
 
-        Me.pnl_busAlo.Visible = False
-        Me.pnl_busAlo.Enabled = False
-        Me.pnl_busAlo.SendToBack()
+        Me.ocultarNuevoAlojamiento()
 
-        Me.pnl_nueAlo.Visible = False
-        Me.pnl_nueAlo.Enabled = False
-        Me.pnl_nueAlo.SendToBack()
+        Me.ocultarBuscarAlojamiento()
 
-        Me.pnl_nueOrdCom.Visible = False
-        Me.pnl_nueOrdCom.Enabled = False
-        Me.pnl_nueOrdCom.SendToBack()
+        Me.ocultarNuevaOrdenCompra()
 
         Me.pnl_agrServ.Visible = False
         Me.pnl_agrServ.Enabled = False
@@ -277,11 +285,7 @@
         Me.pnl_agrArt.Enabled = False
         Me.pnl_agrArt.SendToBack()
 
-        Me.tab_busOrdCom.SelectedTab = tab_busOrdComDatPro
-        Me.pnl_busOrdCom.Visible = True
-        Me.pnl_busOrdCom.Enabled = True
-        Me.cmb_IDProBusOrdCom.Focus()
-        Me.pnl_busOrdCom.BringToFront()
+        Me.mostrarBuscarOrdenCompra()
     End Sub
 
     Private Sub cmd_busOrdComCan_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComCan.Click
@@ -290,8 +294,8 @@
         Me.txt_telProBusOrdCom.Text = ""
         Me.txt_nomProBusOrdCom.Text = ""
 
-        Me.pnl_busOrdCom.Visible = False
-        Me.pnl_busOrdCom.Enabled = False
+        Me.ocultarBuscarOrdenCompra()
+
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -309,30 +313,21 @@
         Me.txt_telProBusOrdCom.Text = ""
         Me.txt_nomProBusOrdCom.Text = ""
 
-        Me.pnl_busOrdCom.Visible = False
-        Me.pnl_busOrdCom.Enabled = False
-        Me.menu_Menu.Enabled = True
+        Me.ocultarBuscarOrdenCompra()
 
+        Me.menu_Menu.Enabled = True
     End Sub
 
     Private Sub AgrearArtículoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgrearArtículoToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
 
-        Me.pnl_busAlo.Visible = False
-        Me.pnl_busAlo.Enabled = False
-        Me.pnl_busAlo.SendToBack()
+        Me.ocultarNuevoAlojamiento()
 
-        Me.pnl_nueAlo.Visible = False
-        Me.pnl_nueAlo.Enabled = False
-        Me.pnl_nueAlo.SendToBack()
+        Me.ocultarBuscarAlojamiento()
 
-        Me.pnl_nueOrdCom.Visible = False
-        Me.pnl_nueOrdCom.Enabled = False
-        Me.pnl_nueOrdCom.SendToBack()
+        Me.ocultarNuevaOrdenCompra()
 
-        Me.pnl_busOrdCom.Visible = False
-        Me.pnl_busOrdCom.Enabled = False
-        Me.pnl_busOrdCom.SendToBack()
+        Me.ocultarBuscarOrdenCompra()
 
         Me.pnl_agrServ.Visible = False
         Me.pnl_agrServ.Enabled = False
@@ -348,21 +343,13 @@
     Private Sub AgregarServicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarServicioToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
 
-        Me.pnl_busAlo.Visible = False
-        Me.pnl_busAlo.Enabled = False
-        Me.pnl_busAlo.SendToBack()
+        Me.ocultarNuevoAlojamiento()
 
-        Me.pnl_nueAlo.Visible = False
-        Me.pnl_nueAlo.Enabled = False
-        Me.pnl_nueAlo.SendToBack()
+        Me.ocultarBuscarAlojamiento()
 
-        Me.pnl_nueOrdCom.Visible = False
-        Me.pnl_nueOrdCom.Enabled = False
-        Me.pnl_nueOrdCom.SendToBack()
+        Me.ocultarNuevaOrdenCompra()
 
-        Me.pnl_busOrdCom.Visible = False
-        Me.pnl_busOrdCom.Enabled = False
-        Me.pnl_busOrdCom.SendToBack()
+        Me.ocultarBuscarOrdenCompra()
 
         Me.pnl_agrArt.Visible = False
         Me.pnl_agrArt.Enabled = False
@@ -483,4 +470,17 @@
         Me.txt_apeBusAlo.Text = ""
         Me.txt_nomBusAlo.Text = ""
     End Sub
+
+    Private Sub cmd_atrAloSel_Click(sender As Object, e As EventArgs) Handles cmd_atrAloSel.Click
+        pnl_busAloSel.Enabled = False
+        pnl_busAloSel.Visible = False
+        pnl_busAloSel.SendToBack()
+    End Sub
+
+    Private Sub cmd_clickEnGrilla_Click(sender As Object, e As EventArgs) Handles cmd_clickEnGrilla.Click
+        pnl_busAloSel.Enabled = True
+        pnl_busAloSel.Visible = True
+        pnl_busAloSel.BringToFront()
+    End Sub
+
 End Class
