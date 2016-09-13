@@ -40,6 +40,7 @@ Partial Class menu
         Me.lbl_nueAlo = New System.Windows.Forms.Label()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
         Me.tab_aloNueDatCli = New System.Windows.Forms.TabPage()
+        Me.cmd_nueAloDatCliLim = New System.Windows.Forms.Button()
         Me.txt_tel = New System.Windows.Forms.TextBox()
         Me.cmd_canCli = New System.Windows.Forms.Button()
         Me.cmd_sigCli = New System.Windows.Forms.Button()
@@ -56,6 +57,7 @@ Partial Class menu
         Me.lbl_tipoDoc = New System.Windows.Forms.Label()
         Me.cmb_tipoDoc = New System.Windows.Forms.ComboBox()
         Me.tab_aloNueDatHos = New System.Windows.Forms.TabPage()
+        Me.cmd_nueAloDatHosLim = New System.Windows.Forms.Button()
         Me.cmd_atrHos = New System.Windows.Forms.Button()
         Me.cmd_sigHos = New System.Windows.Forms.Button()
         Me.cmb_tipHab = New System.Windows.Forms.ComboBox()
@@ -72,6 +74,7 @@ Partial Class menu
         Me.pnl_busAlo = New System.Windows.Forms.Panel()
         Me.tab_busAlo = New System.Windows.Forms.TabControl()
         Me.tab_busAloDatCli = New System.Windows.Forms.TabPage()
+        Me.cmd_busAloLim = New System.Windows.Forms.Button()
         Me.cmd_busAloCan = New System.Windows.Forms.Button()
         Me.cmd_busAloDatCliSig = New System.Windows.Forms.Button()
         Me.cmd_busCliBusAlo = New System.Windows.Forms.Button()
@@ -96,6 +99,7 @@ Partial Class menu
         Me.lbl_ordCom = New System.Windows.Forms.Label()
         Me.tab_nueOrdCom = New System.Windows.Forms.TabControl()
         Me.tab_nueOrdComDatPro = New System.Windows.Forms.TabPage()
+        Me.cmd_nueOrdComLim = New System.Windows.Forms.Button()
         Me.cmd_busPro = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComSig = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComCan = New System.Windows.Forms.Button()
@@ -119,6 +123,7 @@ Partial Class menu
         Me.pnl_busOrdCom = New System.Windows.Forms.Panel()
         Me.tab_busOrdCom = New System.Windows.Forms.TabControl()
         Me.tab_busOrdComDatPro = New System.Windows.Forms.TabPage()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.cmd_busOrdComSig = New System.Windows.Forms.Button()
         Me.cmd_busOrdComCan = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -142,6 +147,7 @@ Partial Class menu
         Me.pnl_agrArt = New System.Windows.Forms.Panel()
         Me.tab_carArt = New System.Windows.Forms.TabControl()
         Me.tab_carArtHab = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.cmd_carArtCan = New System.Windows.Forms.Button()
         Me.cmd_carArtSig = New System.Windows.Forms.Button()
         Me.txt_cliAsoCarArt = New System.Windows.Forms.TextBox()
@@ -170,12 +176,6 @@ Partial Class menu
         Me.cmd_carServAtr = New System.Windows.Forms.Button()
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.cmd_nueOrdComLim = New System.Windows.Forms.Button()
-        Me.cmd_nueAloDatCliLim = New System.Windows.Forms.Button()
-        Me.cmd_nueAloDatHosLim = New System.Windows.Forms.Button()
-        Me.cmd_busAloLim = New System.Windows.Forms.Button()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -358,6 +358,15 @@ Partial Class menu
         Me.tab_aloNueDatCli.Text = "Datos del Cliente"
         Me.tab_aloNueDatCli.UseVisualStyleBackColor = True
         '
+        'cmd_nueAloDatCliLim
+        '
+        Me.cmd_nueAloDatCliLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_nueAloDatCliLim.Name = "cmd_nueAloDatCliLim"
+        Me.cmd_nueAloDatCliLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueAloDatCliLim.TabIndex = 8
+        Me.cmd_nueAloDatCliLim.Text = "Limpiar"
+        Me.cmd_nueAloDatCliLim.UseVisualStyleBackColor = True
+        '
         'txt_tel
         '
         Me.txt_tel.Location = New System.Drawing.Point(145, 120)
@@ -505,6 +514,15 @@ Partial Class menu
         Me.tab_aloNueDatHos.TabIndex = 1
         Me.tab_aloNueDatHos.Text = "Datos del Hospedaje"
         Me.tab_aloNueDatHos.UseVisualStyleBackColor = True
+        '
+        'cmd_nueAloDatHosLim
+        '
+        Me.cmd_nueAloDatHosLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_nueAloDatHosLim.Name = "cmd_nueAloDatHosLim"
+        Me.cmd_nueAloDatHosLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueAloDatHosLim.TabIndex = 5
+        Me.cmd_nueAloDatHosLim.Text = "Limpiar"
+        Me.cmd_nueAloDatHosLim.UseVisualStyleBackColor = True
         '
         'cmd_atrHos
         '
@@ -667,6 +685,15 @@ Partial Class menu
         Me.tab_busAloDatCli.TabIndex = 0
         Me.tab_busAloDatCli.Text = "Datos del Cliente"
         Me.tab_busAloDatCli.UseVisualStyleBackColor = True
+        '
+        'cmd_busAloLim
+        '
+        Me.cmd_busAloLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_busAloLim.Name = "cmd_busAloLim"
+        Me.cmd_busAloLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloLim.TabIndex = 4
+        Me.cmd_busAloLim.Text = "Limpiar"
+        Me.cmd_busAloLim.UseVisualStyleBackColor = True
         '
         'cmd_busAloCan
         '
@@ -895,6 +922,15 @@ Partial Class menu
         Me.tab_nueOrdComDatPro.Text = "Datos del Proveedor"
         Me.tab_nueOrdComDatPro.UseVisualStyleBackColor = True
         '
+        'cmd_nueOrdComLim
+        '
+        Me.cmd_nueOrdComLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_nueOrdComLim.Name = "cmd_nueOrdComLim"
+        Me.cmd_nueOrdComLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComLim.TabIndex = 3
+        Me.cmd_nueOrdComLim.Text = "Limpiar"
+        Me.cmd_nueOrdComLim.UseVisualStyleBackColor = True
+        '
         'cmd_busPro
         '
         Me.cmd_busPro.Location = New System.Drawing.Point(178, 6)
@@ -1107,6 +1143,15 @@ Partial Class menu
         Me.tab_busOrdComDatPro.TabIndex = 0
         Me.tab_busOrdComDatPro.Text = "Datos del Proveedor"
         Me.tab_busOrdComDatPro.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(9, 146)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(72, 28)
+        Me.Button3.TabIndex = 5
+        Me.Button3.Text = "Limpiar"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'cmd_busOrdComSig
         '
@@ -1330,6 +1375,15 @@ Partial Class menu
         Me.tab_carArtHab.TabIndex = 0
         Me.tab_carArtHab.Text = "Habitación"
         Me.tab_carArtHab.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(9, 146)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(72, 28)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Limpiar"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'cmd_carArtCan
         '
@@ -1599,65 +1653,11 @@ Partial Class menu
         Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(9, 146)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(72, 28)
-        Me.Button2.TabIndex = 3
-        Me.Button2.Text = "Limpiar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(9, 146)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(72, 28)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Limpiar"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'cmd_nueOrdComLim
-        '
-        Me.cmd_nueOrdComLim.Location = New System.Drawing.Point(9, 146)
-        Me.cmd_nueOrdComLim.Name = "cmd_nueOrdComLim"
-        Me.cmd_nueOrdComLim.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComLim.TabIndex = 3
-        Me.cmd_nueOrdComLim.Text = "Limpiar"
-        Me.cmd_nueOrdComLim.UseVisualStyleBackColor = True
-        '
-        'cmd_nueAloDatCliLim
-        '
-        Me.cmd_nueAloDatCliLim.Location = New System.Drawing.Point(9, 146)
-        Me.cmd_nueAloDatCliLim.Name = "cmd_nueAloDatCliLim"
-        Me.cmd_nueAloDatCliLim.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueAloDatCliLim.TabIndex = 8
-        Me.cmd_nueAloDatCliLim.Text = "Limpiar"
-        Me.cmd_nueAloDatCliLim.UseVisualStyleBackColor = True
-        '
-        'cmd_nueAloDatHosLim
-        '
-        Me.cmd_nueAloDatHosLim.Location = New System.Drawing.Point(9, 146)
-        Me.cmd_nueAloDatHosLim.Name = "cmd_nueAloDatHosLim"
-        Me.cmd_nueAloDatHosLim.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueAloDatHosLim.TabIndex = 5
-        Me.cmd_nueAloDatHosLim.Text = "Limpiar"
-        Me.cmd_nueAloDatHosLim.UseVisualStyleBackColor = True
-        '
-        'cmd_busAloLim
-        '
-        Me.cmd_busAloLim.Location = New System.Drawing.Point(9, 146)
-        Me.cmd_busAloLim.Name = "cmd_busAloLim"
-        Me.cmd_busAloLim.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloLim.TabIndex = 4
-        Me.cmd_busAloLim.Text = "Limpiar"
-        Me.cmd_busAloLim.UseVisualStyleBackColor = True
-        '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(581, 308)
+        Me.ClientSize = New System.Drawing.Size(581, 335)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnl_agrServ)
         Me.Controls.Add(Me.pnl_agrArt)
