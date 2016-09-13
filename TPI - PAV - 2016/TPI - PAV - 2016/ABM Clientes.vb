@@ -48,7 +48,6 @@
             If condicion_estado = estado.insertar Then
                 If Me.validar_existencia() = False Then
                     Me.insertar()
-                    Me.cmd_limpiar.PerformClick()
                 Else
                     MessageBox.Show("Ya existe este Cliente")
                     Exit Sub
@@ -57,6 +56,8 @@
                 Me.modificar()
             End If
         End If
+
+        Me.cmd_limpiar.PerformClick()
     End Sub
 
 
@@ -178,6 +179,7 @@
         Me.txt_nroDoc.Enabled = True
         Me.cmb_tipoDoc.Enabled = True
         Me.cargar_grilla(False, estadoBusqueda.todo)
+        Me.cmd_registrar.Text = "Registrar"
     End Sub
 
     Private Sub cmd_buscar_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
@@ -216,6 +218,7 @@
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
         Me.cmb_tipoDoc.SelectedValue = tabla.Rows(0)("idTipoDocumento")
         Me.txt_telefono.Text = tabla.Rows(0)("telefono")
+        Me.cmd_registrar.Text = "Modificar"
 
         Me.cmb_tipoDoc.Enabled = False
         Me.txt_nroDoc.Enabled = False
@@ -252,4 +255,7 @@
 
 
 
+    Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
+        Me.Close()
+    End Sub
 End Class
