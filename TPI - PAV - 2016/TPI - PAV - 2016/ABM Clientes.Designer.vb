@@ -182,11 +182,13 @@ Partial Class ABM_Clientes
         '
         'grid_clientes
         '
-        Me.grid_clientes.AllowUserToOrderColumns = True
+        Me.grid_clientes.AllowUserToAddRows = False
+        Me.grid_clientes.AllowUserToDeleteRows = False
         Me.grid_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_apellido, Me.col_nombre, Me.col_tipoDocumento, Me.col_nroDocumento})
         Me.grid_clientes.Location = New System.Drawing.Point(9, 140)
         Me.grid_clientes.Name = "grid_clientes"
+        Me.grid_clientes.ReadOnly = True
         Me.grid_clientes.Size = New System.Drawing.Size(463, 265)
         Me.grid_clientes.TabIndex = 24
         '
