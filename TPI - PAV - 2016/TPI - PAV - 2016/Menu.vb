@@ -375,4 +375,33 @@
         Me.pnl_agrServ.BringToFront()
     End Sub
 
+    Private Sub cmd_carServCan_Click(sender As Object, e As EventArgs) Handles cmd_carServCan.Click
+        Me.cmb_nroHab.Text = ""
+        Me.cmb_nroPiso.Text = ""
+        Me.txt_cliAso.Text = ""
+
+        Me.pnl_agrServ.Visible = False
+        Me.pnl_agrServ.Enabled = False
+
+        Me.menu_Menu.Enabled = True
+    End Sub
+
+    Private Sub cmd_carServSig_Click(sender As Object, e As EventArgs) Handles cmd_carServSig.Click
+        Me.tab_carServ.SelectedTab = tab_carServServ
+    End Sub
+
+    Private Sub cmd_carSerFin_Click(sender As Object, e As EventArgs) Handles cmd_carSerFin.Click
+        Me.cmb_nroHab.Text = ""
+        Me.cmb_nroPiso.Text = ""
+        Me.txt_cliAso.Text = ""
+
+        Me.pnl_agrServ.Visible = False
+        Me.pnl_agrServ.Enabled = False
+
+        Me.menu_Menu.Enabled = True
+    End Sub
+
+    Private Sub cmd_carServAtr_Click(sender As Object, e As EventArgs) Handles cmd_carServAtr.Click
+        Me.tab_carServ.SelectedTab = tab_carServHab
+    End Sub
 End Class

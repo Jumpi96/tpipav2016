@@ -144,7 +144,9 @@ Partial Class menu
         Me.pnl_agrServ = New System.Windows.Forms.Panel()
         Me.tab_carServ = New System.Windows.Forms.TabControl()
         Me.tab_carServHab = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.cmd_carServCan = New System.Windows.Forms.Button()
+        Me.cmd_carServSig = New System.Windows.Forms.Button()
+        Me.txt_cliAso = New System.Windows.Forms.TextBox()
         Me.cmb_nroHab = New System.Windows.Forms.ComboBox()
         Me.cmb_nroPiso = New System.Windows.Forms.ComboBox()
         Me.lbl_cliAso = New System.Windows.Forms.Label()
@@ -152,8 +154,9 @@ Partial Class menu
         Me.lbl_nroPiso = New System.Windows.Forms.Label()
         Me.tab_carServServ = New System.Windows.Forms.TabPage()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
-        Me.cmd_carServSig = New System.Windows.Forms.Button()
-        Me.cmd_carServCan = New System.Windows.Forms.Button()
+        Me.cmd_carSerFin = New System.Windows.Forms.Button()
+        Me.cmd_carServAtr = New System.Windows.Forms.Button()
+        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -179,6 +182,8 @@ Partial Class menu
         Me.pnl_agrServ.SuspendLayout()
         Me.tab_carServ.SuspendLayout()
         Me.tab_carServHab.SuspendLayout()
+        Me.tab_carServServ.SuspendLayout()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -1305,7 +1310,7 @@ Partial Class menu
         '
         Me.tab_carServHab.Controls.Add(Me.cmd_carServCan)
         Me.tab_carServHab.Controls.Add(Me.cmd_carServSig)
-        Me.tab_carServHab.Controls.Add(Me.TextBox1)
+        Me.tab_carServHab.Controls.Add(Me.txt_cliAso)
         Me.tab_carServHab.Controls.Add(Me.cmb_nroHab)
         Me.tab_carServHab.Controls.Add(Me.cmb_nroPiso)
         Me.tab_carServHab.Controls.Add(Me.lbl_cliAso)
@@ -1319,13 +1324,31 @@ Partial Class menu
         Me.tab_carServHab.Text = "Habitación"
         Me.tab_carServHab.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'cmd_carServCan
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(129, 66)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(272, 22)
-        Me.TextBox1.TabIndex = 5
+        Me.cmd_carServCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carServCan.Name = "cmd_carServCan"
+        Me.cmd_carServCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServCan.TabIndex = 3
+        Me.cmd_carServCan.Text = "Cancelar"
+        Me.cmd_carServCan.UseVisualStyleBackColor = True
+        '
+        'cmd_carServSig
+        '
+        Me.cmd_carServSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carServSig.Name = "cmd_carServSig"
+        Me.cmd_carServSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServSig.TabIndex = 4
+        Me.cmd_carServSig.Text = "Siguiente"
+        Me.cmd_carServSig.UseVisualStyleBackColor = True
+        '
+        'txt_cliAso
+        '
+        Me.txt_cliAso.Enabled = False
+        Me.txt_cliAso.Location = New System.Drawing.Point(129, 66)
+        Me.txt_cliAso.Name = "txt_cliAso"
+        Me.txt_cliAso.Size = New System.Drawing.Size(272, 22)
+        Me.txt_cliAso.TabIndex = 40
         '
         'cmb_nroHab
         '
@@ -1372,6 +1395,9 @@ Partial Class menu
         '
         'tab_carServServ
         '
+        Me.tab_carServServ.Controls.Add(Me.DataGridView4)
+        Me.tab_carServServ.Controls.Add(Me.cmd_carServAtr)
+        Me.tab_carServServ.Controls.Add(Me.cmd_carSerFin)
         Me.tab_carServServ.Location = New System.Drawing.Point(4, 25)
         Me.tab_carServServ.Name = "tab_carServServ"
         Me.tab_carServServ.Padding = New System.Windows.Forms.Padding(3)
@@ -1387,26 +1413,34 @@ Partial Class menu
         Me.lbl_agrSer.Location = New System.Drawing.Point(3, 3)
         Me.lbl_agrSer.Name = "lbl_agrSer"
         Me.lbl_agrSer.Size = New System.Drawing.Size(116, 16)
-        Me.lbl_agrSer.TabIndex = 1
+        Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
-        'cmd_carServSig
+        'cmd_carSerFin
         '
-        Me.cmd_carServSig.Location = New System.Drawing.Point(409, 146)
-        Me.cmd_carServSig.Name = "cmd_carServSig"
-        Me.cmd_carServSig.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_carServSig.TabIndex = 4
-        Me.cmd_carServSig.Text = "Siguiente"
-        Me.cmd_carServSig.UseVisualStyleBackColor = True
+        Me.cmd_carSerFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carSerFin.Name = "cmd_carSerFin"
+        Me.cmd_carSerFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carSerFin.TabIndex = 2
+        Me.cmd_carSerFin.Text = "Finalizar"
+        Me.cmd_carSerFin.UseVisualStyleBackColor = True
         '
-        'cmd_carServCan
+        'cmd_carServAtr
         '
-        Me.cmd_carServCan.Location = New System.Drawing.Point(331, 146)
-        Me.cmd_carServCan.Name = "cmd_carServCan"
-        Me.cmd_carServCan.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_carServCan.TabIndex = 3
-        Me.cmd_carServCan.Text = "Cancelar"
-        Me.cmd_carServCan.UseVisualStyleBackColor = True
+        Me.cmd_carServAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carServAtr.Name = "cmd_carServAtr"
+        Me.cmd_carServAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServAtr.TabIndex = 1
+        Me.cmd_carServAtr.Text = "Atrás"
+        Me.cmd_carServAtr.UseVisualStyleBackColor = True
+        '
+        'DataGridView4
+        '
+        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.Location = New System.Drawing.Point(119, 51)
+        Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.Size = New System.Drawing.Size(240, 150)
+        Me.DataGridView4.TabIndex = 3
         '
         'menu
         '
@@ -1414,12 +1448,12 @@ Partial Class menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(581, 308)
         Me.Controls.Add(Me.menu_Menu)
-        Me.Controls.Add(Me.pnl_agrServ)
         Me.Controls.Add(Me.pnl_agrArt)
         Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
         Me.Controls.Add(Me.pnl_nueAlo)
         Me.Controls.Add(Me.pnl_busAlo)
+        Me.Controls.Add(Me.pnl_agrServ)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.Name = "menu"
@@ -1462,6 +1496,8 @@ Partial Class menu
         Me.tab_carServ.ResumeLayout(False)
         Me.tab_carServHab.ResumeLayout(False)
         Me.tab_carServHab.PerformLayout()
+        Me.tab_carServServ.ResumeLayout(False)
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1591,7 +1627,7 @@ Partial Class menu
     Friend WithEvents lbl_agrSer As System.Windows.Forms.Label
     Friend WithEvents tab_carServ As System.Windows.Forms.TabControl
     Friend WithEvents tab_carServHab As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_cliAso As System.Windows.Forms.TextBox
     Friend WithEvents cmb_nroHab As System.Windows.Forms.ComboBox
     Friend WithEvents cmb_nroPiso As System.Windows.Forms.ComboBox
     Friend WithEvents lbl_cliAso As System.Windows.Forms.Label
@@ -1600,5 +1636,8 @@ Partial Class menu
     Friend WithEvents tab_carServServ As System.Windows.Forms.TabPage
     Friend WithEvents cmd_carServCan As System.Windows.Forms.Button
     Friend WithEvents cmd_carServSig As System.Windows.Forms.Button
+    Friend WithEvents cmd_carServAtr As System.Windows.Forms.Button
+    Friend WithEvents cmd_carSerFin As System.Windows.Forms.Button
+    Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
 
 End Class
