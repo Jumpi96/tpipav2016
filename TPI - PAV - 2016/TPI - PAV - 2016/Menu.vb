@@ -338,10 +338,10 @@
         Me.pnl_agrServ.Enabled = False
         Me.pnl_agrServ.SendToBack()
 
-        'Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
+        Me.tab_carArt.SelectedTab = tab_carArtHab
         Me.pnl_agrArt.Visible = True
         Me.pnl_agrArt.Enabled = True
-        ' Me.cmb_tipoDoc.Focus()
+        Me.cmb_nroPisoCarArt.Focus()
         Me.pnl_agrArt.BringToFront()
     End Sub
 
@@ -368,10 +368,10 @@
         Me.pnl_agrArt.Enabled = False
         Me.pnl_agrArt.SendToBack()
 
-        'Me.tab_aloNue.SelectedTab = tab_aloNueDatCli
+        Me.tab_carServ.SelectedTab = tab_carServHab
         Me.pnl_agrServ.Visible = True
         Me.pnl_agrServ.Enabled = True
-        ' Me.cmb_tipoDoc.Focus()
+        Me.cmb_nroPiso.Focus()
         Me.pnl_agrServ.BringToFront()
     End Sub
 
@@ -403,5 +403,35 @@
 
     Private Sub cmd_carServAtr_Click(sender As Object, e As EventArgs) Handles cmd_carServAtr.Click
         Me.tab_carServ.SelectedTab = tab_carServHab
+    End Sub
+
+    Private Sub cmd_carArtCan_Click(sender As Object, e As EventArgs) Handles cmd_carArtCan.Click
+        Me.cmb_nroHabCarArt.Text = ""
+        Me.cmb_nroPisoCarArt.Text = ""
+        Me.txt_cliAsoCarArt.Text = ""
+
+        Me.pnl_agrArt.Visible = False
+        Me.pnl_agrArt.Enabled = False
+
+        Me.menu_Menu.Enabled = True
+    End Sub
+
+    Private Sub cmd_carArtSig_Click(sender As Object, e As EventArgs) Handles cmd_carArtSig.Click
+        Me.tab_carArt.SelectedTab = tab_carArtArt
+    End Sub
+
+    Private Sub cmd_carArtAtr_Click(sender As Object, e As EventArgs) Handles cmd_carArtAtr.Click
+        Me.tab_carArt.SelectedTab = tab_carArtHab
+    End Sub
+
+    Private Sub cmd_carArtFin_Click(sender As Object, e As EventArgs) Handles cmd_carArtFin.Click
+        Me.cmb_nroHabCarArt.Text = ""
+        Me.cmb_nroPisoCarArt.Text = ""
+        Me.txt_cliAsoCarArt.Text = ""
+
+        Me.pnl_agrArt.Visible = False
+        Me.pnl_agrArt.Enabled = False
+
+        Me.menu_Menu.Enabled = True
     End Sub
 End Class

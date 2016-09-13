@@ -153,10 +153,22 @@ Partial Class menu
         Me.lbl_nroHab = New System.Windows.Forms.Label()
         Me.lbl_nroPiso = New System.Windows.Forms.Label()
         Me.tab_carServServ = New System.Windows.Forms.TabPage()
-        Me.lbl_agrSer = New System.Windows.Forms.Label()
-        Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.cmd_carServAtr = New System.Windows.Forms.Button()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.cmd_carSerFin = New System.Windows.Forms.Button()
+        Me.lbl_agrSer = New System.Windows.Forms.Label()
+        Me.tab_carArt = New System.Windows.Forms.TabControl()
+        Me.tab_carArtHab = New System.Windows.Forms.TabPage()
+        Me.tab_carArtArt = New System.Windows.Forms.TabPage()
+        Me.cmd_carArtCan = New System.Windows.Forms.Button()
+        Me.cmd_carArtSig = New System.Windows.Forms.Button()
+        Me.txt_cliAsoCarArt = New System.Windows.Forms.TextBox()
+        Me.cmb_nroHabCarArt = New System.Windows.Forms.ComboBox()
+        Me.cmb_nroPisoCarArt = New System.Windows.Forms.ComboBox()
+        Me.lbl_cliAsoCarArt = New System.Windows.Forms.Label()
+        Me.lbl_nroHabCarArt = New System.Windows.Forms.Label()
+        Me.lbl_nroPisoCarArt = New System.Windows.Forms.Label()
+        Me.cmd_carArtAtr = New System.Windows.Forms.Button()
+        Me.cmd_carArtFin = New System.Windows.Forms.Button()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -183,7 +195,9 @@ Partial Class menu
         Me.tab_carServ.SuspendLayout()
         Me.tab_carServHab.SuspendLayout()
         Me.tab_carServServ.SuspendLayout()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab_carArt.SuspendLayout()
+        Me.tab_carArtHab.SuspendLayout()
+        Me.tab_carArtArt.SuspendLayout()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -1266,6 +1280,7 @@ Partial Class menu
         '
         'pnl_agrArt
         '
+        Me.pnl_agrArt.Controls.Add(Me.tab_carArt)
         Me.pnl_agrArt.Controls.Add(Me.lbl_agrArt)
         Me.pnl_agrArt.Enabled = False
         Me.pnl_agrArt.Location = New System.Drawing.Point(12, 28)
@@ -1395,7 +1410,6 @@ Partial Class menu
         '
         'tab_carServServ
         '
-        Me.tab_carServServ.Controls.Add(Me.DataGridView4)
         Me.tab_carServServ.Controls.Add(Me.cmd_carServAtr)
         Me.tab_carServServ.Controls.Add(Me.cmd_carSerFin)
         Me.tab_carServServ.Location = New System.Drawing.Point(4, 25)
@@ -1405,6 +1419,24 @@ Partial Class menu
         Me.tab_carServServ.TabIndex = 1
         Me.tab_carServServ.Text = "Servicios"
         Me.tab_carServServ.UseVisualStyleBackColor = True
+        '
+        'cmd_carServAtr
+        '
+        Me.cmd_carServAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carServAtr.Name = "cmd_carServAtr"
+        Me.cmd_carServAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServAtr.TabIndex = 1
+        Me.cmd_carServAtr.Text = "Atrás"
+        Me.cmd_carServAtr.UseVisualStyleBackColor = True
+        '
+        'cmd_carSerFin
+        '
+        Me.cmd_carSerFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carSerFin.Name = "cmd_carSerFin"
+        Me.cmd_carSerFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carSerFin.TabIndex = 2
+        Me.cmd_carSerFin.Text = "Finalizar"
+        Me.cmd_carSerFin.UseVisualStyleBackColor = True
         '
         'lbl_agrSer
         '
@@ -1416,31 +1448,133 @@ Partial Class menu
         Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
-        'cmd_carSerFin
+        'tab_carArt
         '
-        Me.cmd_carSerFin.Location = New System.Drawing.Point(409, 146)
-        Me.cmd_carSerFin.Name = "cmd_carSerFin"
-        Me.cmd_carSerFin.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_carSerFin.TabIndex = 2
-        Me.cmd_carSerFin.Text = "Finalizar"
-        Me.cmd_carSerFin.UseVisualStyleBackColor = True
+        Me.tab_carArt.Controls.Add(Me.tab_carArtHab)
+        Me.tab_carArt.Controls.Add(Me.tab_carArtArt)
+        Me.tab_carArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tab_carArt.Location = New System.Drawing.Point(6, 22)
+        Me.tab_carArt.Name = "tab_carArt"
+        Me.tab_carArt.SelectedIndex = 0
+        Me.tab_carArt.Size = New System.Drawing.Size(522, 214)
+        Me.tab_carArt.TabIndex = 1
         '
-        'cmd_carServAtr
+        'tab_carArtHab
         '
-        Me.cmd_carServAtr.Location = New System.Drawing.Point(331, 146)
-        Me.cmd_carServAtr.Name = "cmd_carServAtr"
-        Me.cmd_carServAtr.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_carServAtr.TabIndex = 1
-        Me.cmd_carServAtr.Text = "Atrás"
-        Me.cmd_carServAtr.UseVisualStyleBackColor = True
+        Me.tab_carArtHab.Controls.Add(Me.cmd_carArtCan)
+        Me.tab_carArtHab.Controls.Add(Me.cmd_carArtSig)
+        Me.tab_carArtHab.Controls.Add(Me.txt_cliAsoCarArt)
+        Me.tab_carArtHab.Controls.Add(Me.cmb_nroHabCarArt)
+        Me.tab_carArtHab.Controls.Add(Me.cmb_nroPisoCarArt)
+        Me.tab_carArtHab.Controls.Add(Me.lbl_cliAsoCarArt)
+        Me.tab_carArtHab.Controls.Add(Me.lbl_nroHabCarArt)
+        Me.tab_carArtHab.Controls.Add(Me.lbl_nroPisoCarArt)
+        Me.tab_carArtHab.Location = New System.Drawing.Point(4, 25)
+        Me.tab_carArtHab.Name = "tab_carArtHab"
+        Me.tab_carArtHab.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_carArtHab.Size = New System.Drawing.Size(514, 185)
+        Me.tab_carArtHab.TabIndex = 0
+        Me.tab_carArtHab.Text = "Habitación"
+        Me.tab_carArtHab.UseVisualStyleBackColor = True
         '
-        'DataGridView4
+        'tab_carArtArt
         '
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Location = New System.Drawing.Point(119, 51)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.Size = New System.Drawing.Size(240, 150)
-        Me.DataGridView4.TabIndex = 3
+        Me.tab_carArtArt.Controls.Add(Me.cmd_carArtFin)
+        Me.tab_carArtArt.Controls.Add(Me.cmd_carArtAtr)
+        Me.tab_carArtArt.Location = New System.Drawing.Point(4, 25)
+        Me.tab_carArtArt.Name = "tab_carArtArt"
+        Me.tab_carArtArt.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_carArtArt.Size = New System.Drawing.Size(514, 185)
+        Me.tab_carArtArt.TabIndex = 1
+        Me.tab_carArtArt.Text = "Artículos"
+        Me.tab_carArtArt.UseVisualStyleBackColor = True
+        '
+        'cmd_carArtCan
+        '
+        Me.cmd_carArtCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carArtCan.Name = "cmd_carArtCan"
+        Me.cmd_carArtCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carArtCan.TabIndex = 3
+        Me.cmd_carArtCan.Text = "Cancelar"
+        Me.cmd_carArtCan.UseVisualStyleBackColor = True
+        '
+        'cmd_carArtSig
+        '
+        Me.cmd_carArtSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carArtSig.Name = "cmd_carArtSig"
+        Me.cmd_carArtSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carArtSig.TabIndex = 4
+        Me.cmd_carArtSig.Text = "Siguiente"
+        Me.cmd_carArtSig.UseVisualStyleBackColor = True
+        '
+        'txt_cliAsoCarArt
+        '
+        Me.txt_cliAsoCarArt.Enabled = False
+        Me.txt_cliAsoCarArt.Location = New System.Drawing.Point(129, 66)
+        Me.txt_cliAsoCarArt.Name = "txt_cliAsoCarArt"
+        Me.txt_cliAsoCarArt.Size = New System.Drawing.Size(272, 22)
+        Me.txt_cliAsoCarArt.TabIndex = 40
+        '
+        'cmb_nroHabCarArt
+        '
+        Me.cmb_nroHabCarArt.FormattingEnabled = True
+        Me.cmb_nroHabCarArt.Location = New System.Drawing.Point(129, 36)
+        Me.cmb_nroHabCarArt.Name = "cmb_nroHabCarArt"
+        Me.cmb_nroHabCarArt.Size = New System.Drawing.Size(61, 24)
+        Me.cmb_nroHabCarArt.TabIndex = 2
+        '
+        'cmb_nroPisoCarArt
+        '
+        Me.cmb_nroPisoCarArt.FormattingEnabled = True
+        Me.cmb_nroPisoCarArt.Location = New System.Drawing.Point(129, 6)
+        Me.cmb_nroPisoCarArt.Name = "cmb_nroPisoCarArt"
+        Me.cmb_nroPisoCarArt.Size = New System.Drawing.Size(61, 24)
+        Me.cmb_nroPisoCarArt.TabIndex = 1
+        '
+        'lbl_cliAsoCarArt
+        '
+        Me.lbl_cliAsoCarArt.AutoSize = True
+        Me.lbl_cliAsoCarArt.Location = New System.Drawing.Point(13, 69)
+        Me.lbl_cliAsoCarArt.Name = "lbl_cliAsoCarArt"
+        Me.lbl_cliAsoCarArt.Size = New System.Drawing.Size(110, 16)
+        Me.lbl_cliAsoCarArt.TabIndex = 45
+        Me.lbl_cliAsoCarArt.Text = "Cliente Asociado"
+        '
+        'lbl_nroHabCarArt
+        '
+        Me.lbl_nroHabCarArt.AutoSize = True
+        Me.lbl_nroHabCarArt.Location = New System.Drawing.Point(6, 39)
+        Me.lbl_nroHabCarArt.Name = "lbl_nroHabCarArt"
+        Me.lbl_nroHabCarArt.Size = New System.Drawing.Size(117, 16)
+        Me.lbl_nroHabCarArt.TabIndex = 43
+        Me.lbl_nroHabCarArt.Text = "Nro de Habitación"
+        '
+        'lbl_nroPisoCarArt
+        '
+        Me.lbl_nroPisoCarArt.AutoSize = True
+        Me.lbl_nroPisoCarArt.Location = New System.Drawing.Point(44, 9)
+        Me.lbl_nroPisoCarArt.Name = "lbl_nroPisoCarArt"
+        Me.lbl_nroPisoCarArt.Size = New System.Drawing.Size(79, 16)
+        Me.lbl_nroPisoCarArt.TabIndex = 41
+        Me.lbl_nroPisoCarArt.Text = "Nro de Piso"
+        '
+        'cmd_carArtAtr
+        '
+        Me.cmd_carArtAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carArtAtr.Name = "cmd_carArtAtr"
+        Me.cmd_carArtAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carArtAtr.TabIndex = 1
+        Me.cmd_carArtAtr.Text = "Atrás"
+        Me.cmd_carArtAtr.UseVisualStyleBackColor = True
+        '
+        'cmd_carArtFin
+        '
+        Me.cmd_carArtFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carArtFin.Name = "cmd_carArtFin"
+        Me.cmd_carArtFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carArtFin.TabIndex = 2
+        Me.cmd_carArtFin.Text = "Finalizar"
+        Me.cmd_carArtFin.UseVisualStyleBackColor = True
         '
         'menu
         '
@@ -1448,12 +1582,12 @@ Partial Class menu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(581, 308)
         Me.Controls.Add(Me.menu_Menu)
-        Me.Controls.Add(Me.pnl_agrArt)
         Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
         Me.Controls.Add(Me.pnl_nueAlo)
         Me.Controls.Add(Me.pnl_busAlo)
         Me.Controls.Add(Me.pnl_agrServ)
+        Me.Controls.Add(Me.pnl_agrArt)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.Name = "menu"
@@ -1497,7 +1631,10 @@ Partial Class menu
         Me.tab_carServHab.ResumeLayout(False)
         Me.tab_carServHab.PerformLayout()
         Me.tab_carServServ.ResumeLayout(False)
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab_carArt.ResumeLayout(False)
+        Me.tab_carArtHab.ResumeLayout(False)
+        Me.tab_carArtHab.PerformLayout()
+        Me.tab_carArtArt.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1638,6 +1775,18 @@ Partial Class menu
     Friend WithEvents cmd_carServSig As System.Windows.Forms.Button
     Friend WithEvents cmd_carServAtr As System.Windows.Forms.Button
     Friend WithEvents cmd_carSerFin As System.Windows.Forms.Button
-    Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
+    Friend WithEvents tab_carArt As System.Windows.Forms.TabControl
+    Friend WithEvents tab_carArtHab As System.Windows.Forms.TabPage
+    Friend WithEvents cmd_carArtCan As System.Windows.Forms.Button
+    Friend WithEvents cmd_carArtSig As System.Windows.Forms.Button
+    Friend WithEvents txt_cliAsoCarArt As System.Windows.Forms.TextBox
+    Friend WithEvents cmb_nroHabCarArt As System.Windows.Forms.ComboBox
+    Friend WithEvents cmb_nroPisoCarArt As System.Windows.Forms.ComboBox
+    Friend WithEvents lbl_cliAsoCarArt As System.Windows.Forms.Label
+    Friend WithEvents lbl_nroHabCarArt As System.Windows.Forms.Label
+    Friend WithEvents lbl_nroPisoCarArt As System.Windows.Forms.Label
+    Friend WithEvents tab_carArtArt As System.Windows.Forms.TabPage
+    Friend WithEvents cmd_carArtFin As System.Windows.Forms.Button
+    Friend WithEvents cmd_carArtAtr As System.Windows.Forms.Button
 
 End Class
