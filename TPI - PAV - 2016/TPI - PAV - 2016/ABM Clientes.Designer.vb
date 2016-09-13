@@ -58,7 +58,7 @@ Partial Class ABM_Clientes
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(219, 13)
+        Me.Label1.Location = New System.Drawing.Point(219, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 13)
         Me.Label1.TabIndex = 2
@@ -82,7 +82,7 @@ Partial Class ABM_Clientes
         '
         'cmd_buscar
         '
-        Me.cmd_buscar.Location = New System.Drawing.Point(397, 7)
+        Me.cmd_buscar.Location = New System.Drawing.Point(396, 8)
         Me.cmd_buscar.Name = "cmd_buscar"
         Me.cmd_buscar.Size = New System.Drawing.Size(75, 23)
         Me.cmd_buscar.TabIndex = 5
@@ -92,7 +92,7 @@ Partial Class ABM_Clientes
         'lbl_apellido
         '
         Me.lbl_apellido.AutoSize = True
-        Me.lbl_apellido.Location = New System.Drawing.Point(74, 41)
+        Me.lbl_apellido.Location = New System.Drawing.Point(70, 39)
         Me.lbl_apellido.Name = "lbl_apellido"
         Me.lbl_apellido.Size = New System.Drawing.Size(44, 13)
         Me.lbl_apellido.TabIndex = 6
@@ -117,7 +117,7 @@ Partial Class ABM_Clientes
         'lbl_fecha
         '
         Me.lbl_fecha.AutoSize = True
-        Me.lbl_fecha.Location = New System.Drawing.Point(6, 88)
+        Me.lbl_fecha.Location = New System.Drawing.Point(6, 91)
         Me.lbl_fecha.Name = "lbl_fecha"
         Me.lbl_fecha.Size = New System.Drawing.Size(108, 13)
         Me.lbl_fecha.TabIndex = 9
@@ -125,7 +125,7 @@ Partial Class ABM_Clientes
         '
         'txt_nombre
         '
-        Me.txt_nombre.Location = New System.Drawing.Point(121, 62)
+        Me.txt_nombre.Location = New System.Drawing.Point(120, 62)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(351, 20)
         Me.txt_nombre.TabIndex = 10
@@ -140,7 +140,7 @@ Partial Class ABM_Clientes
         'lbl_telefono
         '
         Me.lbl_telefono.AutoSize = True
-        Me.lbl_telefono.Location = New System.Drawing.Point(65, 119)
+        Me.lbl_telefono.Location = New System.Drawing.Point(65, 115)
         Me.lbl_telefono.Name = "lbl_telefono"
         Me.lbl_telefono.Size = New System.Drawing.Size(49, 13)
         Me.lbl_telefono.TabIndex = 18
@@ -148,7 +148,7 @@ Partial Class ABM_Clientes
         '
         'txt_telefono
         '
-        Me.txt_telefono.Location = New System.Drawing.Point(120, 114)
+        Me.txt_telefono.Location = New System.Drawing.Point(120, 112)
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(100, 20)
         Me.txt_telefono.TabIndex = 19
