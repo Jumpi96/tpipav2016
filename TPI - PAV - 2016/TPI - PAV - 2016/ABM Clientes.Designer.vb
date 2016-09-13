@@ -35,10 +35,14 @@ Partial Class ABM_Clientes
         Me.dtpEstimada = New System.Windows.Forms.DateTimePicker()
         Me.lbl_telefono = New System.Windows.Forms.Label()
         Me.txt_telefono = New System.Windows.Forms.TextBox()
-        Me.grid_clientes = New System.Windows.Forms.DataGridView()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
         Me.cmd_registrar = New System.Windows.Forms.Button()
+        Me.grid_clientes = New System.Windows.Forms.DataGridView()
+        Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_tipoDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nroDocumento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.grid_clientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -149,14 +153,6 @@ Partial Class ABM_Clientes
         Me.txt_telefono.Size = New System.Drawing.Size(100, 20)
         Me.txt_telefono.TabIndex = 19
         '
-        'grid_clientes
-        '
-        Me.grid_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_clientes.Location = New System.Drawing.Point(9, 140)
-        Me.grid_clientes.Name = "grid_clientes"
-        Me.grid_clientes.Size = New System.Drawing.Size(463, 265)
-        Me.grid_clientes.TabIndex = 20
-        '
         'cmd_limpiar
         '
         Me.cmd_limpiar.Location = New System.Drawing.Point(236, 411)
@@ -184,15 +180,48 @@ Partial Class ABM_Clientes
         Me.cmd_registrar.Text = "Registrar"
         Me.cmd_registrar.UseVisualStyleBackColor = True
         '
-        'Form1
+        'grid_clientes
+        '
+        Me.grid_clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_clientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_apellido, Me.col_nombre, Me.col_tipoDocumento, Me.col_nroDocumento})
+        Me.grid_clientes.Location = New System.Drawing.Point(9, 140)
+        Me.grid_clientes.Name = "grid_clientes"
+        Me.grid_clientes.Size = New System.Drawing.Size(463, 265)
+        Me.grid_clientes.TabIndex = 24
+        '
+        'col_apellido
+        '
+        Me.col_apellido.HeaderText = "Apellido"
+        Me.col_apellido.Name = "col_apellido"
+        Me.col_apellido.ReadOnly = True
+        '
+        'col_nombre
+        '
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
+        Me.col_nombre.ReadOnly = True
+        '
+        'col_tipoDocumento
+        '
+        Me.col_tipoDocumento.HeaderText = "Tipo Documento"
+        Me.col_tipoDocumento.Name = "col_tipoDocumento"
+        Me.col_tipoDocumento.ReadOnly = True
+        '
+        'col_nroDocumento
+        '
+        Me.col_nroDocumento.HeaderText = "Número Documento"
+        Me.col_nroDocumento.Name = "col_nroDocumento"
+        Me.col_nroDocumento.ReadOnly = True
+        '
+        'ABM_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(484, 439)
+        Me.Controls.Add(Me.grid_clientes)
         Me.Controls.Add(Me.cmd_limpiar)
         Me.Controls.Add(Me.cmd_cancelar)
         Me.Controls.Add(Me.cmd_registrar)
-        Me.Controls.Add(Me.grid_clientes)
         Me.Controls.Add(Me.txt_telefono)
         Me.Controls.Add(Me.lbl_telefono)
         Me.Controls.Add(Me.dtpEstimada)
@@ -226,8 +255,12 @@ Partial Class ABM_Clientes
     Friend WithEvents dtpEstimada As System.Windows.Forms.DateTimePicker
     Friend WithEvents lbl_telefono As System.Windows.Forms.Label
     Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
-    Friend WithEvents grid_clientes As System.Windows.Forms.DataGridView
     Friend WithEvents cmd_limpiar As System.Windows.Forms.Button
     Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
     Friend WithEvents cmd_registrar As System.Windows.Forms.Button
+    Friend WithEvents grid_clientes As System.Windows.Forms.DataGridView
+    Friend WithEvents col_apellido As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_tipoDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_nroDocumento As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
