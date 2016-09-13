@@ -456,4 +456,8 @@
     Private Sub cmd_nueOrdComResAtr_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComResAtr.Click
         Me.tab_nueOrdCom.SelectedTab = tab_nueOrdComArt
     End Sub
+
+    Private Sub cmd_modOrdComSel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.lbl_fechahora.Text = Today.Day & "/" & Today.Month & "/" & Today.Year
+    End Sub
 End Class

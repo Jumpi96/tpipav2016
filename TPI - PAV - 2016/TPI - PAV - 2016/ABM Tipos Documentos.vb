@@ -1,6 +1,6 @@
 ﻿Public Class ABM_TiposDocumentos
 
-    Dim cadena_conexion As String = "Provider=SQLNCLI11;Data Source=LAWEBSTORE-PC\SQLSERVER2014;Integrated Security=SSPI;Initial Catalog=hotelShaky"
+    Dim cadena_conexion As String = ConexionBD.Instancia.StringConexion
     Enum analizar_existencia
         existe
         no_existe

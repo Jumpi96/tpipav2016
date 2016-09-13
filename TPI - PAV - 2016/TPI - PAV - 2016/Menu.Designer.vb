@@ -195,6 +195,10 @@ Partial Class cmd_modOrdComSel
         Me.cmd_busOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_busOrdComFin = New System.Windows.Forms.Button()
         Me.pnl_ordComSel = New System.Windows.Forms.Panel()
+        Me.grid_ordComSel = New System.Windows.Forms.DataGridView()
+        Me.cln_renOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_artOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_canArtOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_atrOrdComSel = New System.Windows.Forms.Button()
         Me.cmd_anuOrdComSel = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
@@ -247,11 +251,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_carServAtr = New System.Windows.Forms.Button()
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
-        Me.lbl_concha = New System.Windows.Forms.Label()
-        Me.grid_ordComSel = New System.Windows.Forms.DataGridView()
-        Me.cln_renOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_artOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_canArtOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbl_fechahora = New System.Windows.Forms.Label()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -277,6 +277,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_busOrdComOrdCom.SuspendLayout()
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_ordComSel.SuspendLayout()
+        CType(Me.grid_ordComSel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_agrArt.SuspendLayout()
         Me.tab_carArt.SuspendLayout()
         Me.tab_carArtHab.SuspendLayout()
@@ -285,7 +286,6 @@ Partial Class cmd_modOrdComSel
         Me.tab_carServ.SuspendLayout()
         Me.tab_carServHab.SuspendLayout()
         Me.tab_carServServ.SuspendLayout()
-        CType(Me.grid_ordComSel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -1950,6 +1950,39 @@ Partial Class cmd_modOrdComSel
         Me.pnl_ordComSel.Size = New System.Drawing.Size(522, 218)
         Me.pnl_ordComSel.TabIndex = 2
         '
+        'grid_ordComSel
+        '
+        Me.grid_ordComSel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_ordComSel.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cln_renOrdComSel, Me.clm_artOrdComSel, Me.clm_canArtOrdComSel})
+        Me.grid_ordComSel.Location = New System.Drawing.Point(206, 23)
+        Me.grid_ordComSel.Name = "grid_ordComSel"
+        Me.grid_ordComSel.Size = New System.Drawing.Size(215, 96)
+        Me.grid_ordComSel.TabIndex = 23
+        '
+        'cln_renOrdComSel
+        '
+        Me.cln_renOrdComSel.HeaderText = "Renglón"
+        Me.cln_renOrdComSel.Name = "cln_renOrdComSel"
+        Me.cln_renOrdComSel.ReadOnly = True
+        Me.cln_renOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.cln_renOrdComSel.Width = 65
+        '
+        'clm_artOrdComSel
+        '
+        Me.clm_artOrdComSel.HeaderText = "Artículo"
+        Me.clm_artOrdComSel.Name = "clm_artOrdComSel"
+        Me.clm_artOrdComSel.ReadOnly = True
+        Me.clm_artOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_artOrdComSel.Width = 65
+        '
+        'clm_canArtOrdComSel
+        '
+        Me.clm_canArtOrdComSel.HeaderText = "Cantidad"
+        Me.clm_canArtOrdComSel.Name = "clm_canArtOrdComSel"
+        Me.clm_canArtOrdComSel.ReadOnly = True
+        Me.clm_canArtOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_canArtOrdComSel.Width = 65
+        '
         'cmd_atrOrdComSel
         '
         Me.cmd_atrOrdComSel.Location = New System.Drawing.Point(427, 91)
@@ -2455,47 +2488,13 @@ Partial Class cmd_modOrdComSel
         Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
-        'lbl_concha
+        'lbl_fechahora
         '
-        Me.lbl_concha.AutoSize = True
-        Me.lbl_concha.Location = New System.Drawing.Point(351, 271)
-        Me.lbl_concha.Name = "lbl_concha"
-        Me.lbl_concha.Size = New System.Drawing.Size(195, 13)
-        Me.lbl_concha.TabIndex = 1
-        Me.lbl_concha.Text = "Fecha, Hora y la concha de tu hermana"
-        '
-        'grid_ordComSel
-        '
-        Me.grid_ordComSel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_ordComSel.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cln_renOrdComSel, Me.clm_artOrdComSel, Me.clm_canArtOrdComSel})
-        Me.grid_ordComSel.Location = New System.Drawing.Point(206, 23)
-        Me.grid_ordComSel.Name = "grid_ordComSel"
-        Me.grid_ordComSel.Size = New System.Drawing.Size(215, 96)
-        Me.grid_ordComSel.TabIndex = 23
-        '
-        'cln_renOrdComSel
-        '
-        Me.cln_renOrdComSel.HeaderText = "Renglón"
-        Me.cln_renOrdComSel.Name = "cln_renOrdComSel"
-        Me.cln_renOrdComSel.ReadOnly = True
-        Me.cln_renOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.cln_renOrdComSel.Width = 65
-        '
-        'clm_artOrdComSel
-        '
-        Me.clm_artOrdComSel.HeaderText = "Artículo"
-        Me.clm_artOrdComSel.Name = "clm_artOrdComSel"
-        Me.clm_artOrdComSel.ReadOnly = True
-        Me.clm_artOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_artOrdComSel.Width = 65
-        '
-        'clm_canArtOrdComSel
-        '
-        Me.clm_canArtOrdComSel.HeaderText = "Cantidad"
-        Me.clm_canArtOrdComSel.Name = "clm_canArtOrdComSel"
-        Me.clm_canArtOrdComSel.ReadOnly = True
-        Me.clm_canArtOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_canArtOrdComSel.Width = 65
+        Me.lbl_fechahora.AutoSize = True
+        Me.lbl_fechahora.Location = New System.Drawing.Point(351, 271)
+        Me.lbl_fechahora.Name = "lbl_fechahora"
+        Me.lbl_fechahora.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_fechahora.TabIndex = 1
         '
         'cmd_modOrdComSel
         '
@@ -2503,7 +2502,7 @@ Partial Class cmd_modOrdComSel
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(546, 287)
-        Me.Controls.Add(Me.lbl_concha)
+        Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
@@ -2554,6 +2553,7 @@ Partial Class cmd_modOrdComSel
         CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_ordComSel.ResumeLayout(False)
         Me.pnl_ordComSel.PerformLayout()
+        CType(Me.grid_ordComSel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_agrArt.ResumeLayout(False)
         Me.pnl_agrArt.PerformLayout()
         Me.tab_carArt.ResumeLayout(False)
@@ -2566,7 +2566,6 @@ Partial Class cmd_modOrdComSel
         Me.tab_carServHab.ResumeLayout(False)
         Me.tab_carServHab.PerformLayout()
         Me.tab_carServServ.ResumeLayout(False)
-        CType(Me.grid_ordComSel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2790,7 +2789,7 @@ Partial Class cmd_modOrdComSel
     Friend WithEvents clm_fecRec As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmd_nueOrdComFin As System.Windows.Forms.Button
     Friend WithEvents cmd_nueOrdComResAtr As System.Windows.Forms.Button
-    Friend WithEvents lbl_concha As System.Windows.Forms.Label
+    Friend WithEvents lbl_fechahora As System.Windows.Forms.Label
     Friend WithEvents chx_frigobar As System.Windows.Forms.CheckBox
     Friend WithEvents chx_airAco As System.Windows.Forms.CheckBox
     Friend WithEvents Label1 As System.Windows.Forms.Label

@@ -1,5 +1,5 @@
 ﻿Public Class ABM_Clientes
-    Dim cadena_conexion As String = "Provider=SQLNCLI11;Data Source=LAWEBSTORE-PC\SQLSERVER2014;Integrated Security=SSPI;Initial Catalog=hotelShaky"
+    Dim cadena_conexion As String = ConexionBD.Instancia.StringConexion
     Enum estado
         insertar
         modificar
@@ -130,7 +130,7 @@
         Dim conexion As New OleDb.OleDbConnection
         Dim cmd As New OleDb.OleDbCommand
         Dim sql As String = "INSERT INTO Clientes (apellido, nombre, nroDocumento, tipoDocumento, fechaNacimiento, telefono) " _
-           & "VALUES ('" & txt_apellido.Text & "', '" & txt_nombre.Text & "', " & txt_nroDoc.Text & ", '" & cmb_tipoDoc.SelectedValue & "',  getDate() , " & txt_telefono.Text & ")"
+           & "VALUES ('" & txt_apellido.Text & "', '" & txt_nombre.Text & "', " & txt_nroDoc.Text & ", '" & cmb_tipoDoc.SelectedValue & "','" & dtpEstimada.Value.Date & "', " & txt_telefono.Text & ")"
 
 
         conexion.ConnectionString = cadena_conexion
@@ -174,6 +174,7 @@
         Me.txt_nombre.Text = ""
         Me.txt_nroDoc.Text = ""
         Me.txt_telefono.Text = ""
+        Me.dtpEstimada.Value = Today
         Me.txt_nroDoc.Enabled = True
         Me.cmb_tipoDoc.Enabled = True
         Me.cargar_grilla(estadoBusqueda.todo)
@@ -215,7 +216,7 @@
         End If
 
         Me.cmd_borrar.Enabled = True
-        Me.cmd_borrar.Visible = True
+        'Me.cmd_borrar.Visible = True
         Me.cmd_registrar.Text = "Modificar"
 
 
@@ -224,6 +225,7 @@
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
         Me.cmb_tipoDoc.SelectedValue = tabla.Rows(0)("idTipoDocumento")
         Me.txt_telefono.Text = tabla.Rows(0)("telefono")
+        Me.dtpEstimada.Value = tabla.Rows(0)("fechaNacimiento")
 
 
         Me.cmb_tipoDoc.Enabled = False
@@ -242,6 +244,7 @@
         sql &= "SET nombre = '" & Me.txt_nombre.Text & "'"
         sql &= " , apellido = '" & Me.txt_apellido.Text & "'"
         sql &= " , telefono = '" & Me.txt_telefono.Text & "'"
+        sql &= " , fechaNacimiento = '" & Me.dtpEstimada.Value.Date & "'"
         sql &= " WHERE nroDocumento = " & Me.txt_nroDoc.Text
         sql &= " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
 
