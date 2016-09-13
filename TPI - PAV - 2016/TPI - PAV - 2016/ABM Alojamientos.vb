@@ -27,7 +27,7 @@
             If row(2).GetType <> GetType(DateTime) Then
                 fechaSalida = ""
             Else
-                fechaSalida = CType(row(1), DateTime).ToShortDateString
+                fechaSalida = CType(row(2), DateTime).ToShortDateString
             End If
             dgvAlojamientos.Rows.Add(row(0), CType(row(1), DateTime).ToShortDateString, fechaSalida, row(3))
         Next row
@@ -86,6 +86,7 @@
         dtpIngreso.Value = Today
         dtpEstimada.Value = Today.AddDays(1)
         flagFechaSalida = False
+        txtPrecio.Text = ""
         dtpSalida.Format = DateTimePickerFormat.Custom
         dtpSalida.CustomFormat = "    "
 
@@ -108,6 +109,7 @@
             flagBusqDocumento = True
         Else
             MessageBox.Show("No existe cliente.", "Error")
+            carga_lista(leo_alojamientos(False))
         End If
     End Sub
 
@@ -131,7 +133,6 @@
         Else
             Return False
         End If
-
     End Function
 
     Private Function guardar()
@@ -144,19 +145,16 @@
 
         Dim valueSalida As String
         If flagFechaSalida = False Then
-            consulta = "update alojamientos " &
-            "SET nroDoc=" + txtNroDoc.Text + ", tipoDoc=" &
-            cmbTipoDoc.SelectedValue & ", nroHabitacion=" + txtHabitacion.Text + ", cantPersonas=" & txtAlojados.Text &
-            ", fechaInicioAlojamiento=" & dtpIngreso.Value & ",fechaFinEstimadaalojamiento=" & dtpEstimada.Value & ", precioPorDia=" &
-            txtPrecio.Text & "where idAlojamiento=" &
-            idAlojamientoModificacion
+            consulta = "update alojamientos " & "SET nroDoc=" + txtNroDoc.Text + ", tipoDoc=" _
+            & cmbTipoDoc.SelectedValue & ", nroHabitacion=" + txtHabitacion.Text + ", cantPersonas=" & txtAlojados.Text _
+            & ", fechaInicioAlojamiento='" & dtpIngreso.Value & "',fechaFinEstimadaalojamiento='" & dtpEstimada.Value _
+            & "', precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
         Else
             valueSalida = dtpSalida.Value
-            consulta = "update alojamientos" &
-            "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" &
-            cmbTipoDoc.SelectedValue & ", nroHabitacion=" & txtHabitacion.Text & ", cantPersonas=" & txtAlojados &
-            ", fechaInicioAlojamiento=" & dtpIngreso.Value & ",fechaFinEstimadaalojamiento=" & dtpEstimada.Value & ", fechaFinAlojamiento=" & valueSalida & ", precioPorDia=" &
-            txtPrecio.Text & "where idAlojamiento=" & idAlojamientoModificacion
+            consulta = "update alojamientos" & "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" _
+            & cmbTipoDoc.SelectedValue & ", nroHabitacion=" & txtHabitacion.Text & ", cantPersonas=" & txtAlojados _
+            & ", fechaInicioAlojamiento='" & dtpIngreso.Value & "',fechaFinEstimadaalojamiento='" & dtpEstimada.Value & "', fechaFinAlojamiento='" _
+             & valueSalida & "', precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
         End If
 
 
@@ -177,17 +175,14 @@
         conexion.Open()
 
         If flagFechaSalida = False Then
-            consulta = "insert into alojamientos(nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) " +
-            "values(" + txtNroDoc.Text + "," &
-            cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text + "," & txtAlojados.Text &
-            "," & dtpIngreso.Value & "," & dtpEstimada.Value & "," &
-            txtPrecio.Text & ")"
+            consulta = "insert into alojamientos(nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) " _
+            & " values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text _
+            + "," & txtAlojados.Text & ",'" & dtpIngreso.Value.Date & "','" & dtpEstimada.Value.Date & "'," _
+            & txtPrecio.Text & ")"
         Else
-            consulta = "insert into alojamientos" +
-            "values(" + txtNroDoc.Text + "," &
-            cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text + "," & txtAlojados.Text &
-            "," & dtpIngreso.Value & "," & dtpEstimada.Value & "," & dtpSalida.Value & "," &
-            txtPrecio.Text & ")"
+            consulta = "insert into alojamientos " +
+            "values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text + "," & txtAlojados.Text _
+            & ",'" & dtpIngreso.Value.Date & "','" & dtpEstimada.Value.Date & "','" & dtpSalida.Value.Date & "'," & txtPrecio.Text & ")"
         End If
 
 
@@ -320,7 +315,12 @@
 
     End Sub
 
+    Private Sub dtpSalida_Enter(sender As Object, e As EventArgs) Handles dtpSalida.Enter
+        dtpSalida.Format = DateTimePickerFormat.Long
+    End Sub
+
     Private Sub dtpSalida_ValueChanged(sender As Object, e As EventArgs) Handles dtpSalida.ValueChanged
         dtpSalida.Format = DateTimePickerFormat.Long
+        flagFechaSalida = True
     End Sub
 End Class

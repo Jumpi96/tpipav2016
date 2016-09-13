@@ -104,13 +104,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConexionBD.vb" />
-    <Compile Include="Inicio.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Inicio.Designer.vb">
-      <DependentUpon>Inicio.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Menu.Designer.vb">
       <DependentUpon>Menu.vb</DependentUpon>
     </Compile>
@@ -142,9 +135,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Tipos Documentos.resx">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inicio.resx">
-      <DependentUpon>Inicio.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>

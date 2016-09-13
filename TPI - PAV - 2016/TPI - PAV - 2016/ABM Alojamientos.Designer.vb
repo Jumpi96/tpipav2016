@@ -23,6 +23,10 @@ Partial Class ABM_Alojamientos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.dgvAlojamientos = New System.Windows.Forms.DataGridView()
+        Me.idAlojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.fechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -44,10 +48,6 @@ Partial Class ABM_Alojamientos
         Me.btnBuscarPorDoc = New System.Windows.Forms.Button()
         Me.txtPrecio = New System.Windows.Forms.MaskedTextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.idAlojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaIngreso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fechaFin = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -67,6 +67,31 @@ Partial Class ABM_Alojamientos
         Me.dgvAlojamientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvAlojamientos.Size = New System.Drawing.Size(381, 186)
         Me.dgvAlojamientos.TabIndex = 11
+        '
+        'idAlojamiento
+        '
+        Me.idAlojamiento.HeaderText = "id"
+        Me.idAlojamiento.Name = "idAlojamiento"
+        Me.idAlojamiento.ReadOnly = True
+        Me.idAlojamiento.Width = 25
+        '
+        'fechaIngreso
+        '
+        Me.fechaIngreso.HeaderText = "Ingreso"
+        Me.fechaIngreso.Name = "fechaIngreso"
+        Me.fechaIngreso.ReadOnly = True
+        '
+        'fechaFin
+        '
+        Me.fechaFin.HeaderText = "Salida"
+        Me.fechaFin.Name = "fechaFin"
+        Me.fechaFin.ReadOnly = True
+        '
+        'Habitacion
+        '
+        Me.Habitacion.HeaderText = "Habitación"
+        Me.Habitacion.Name = "Habitacion"
+        Me.Habitacion.ReadOnly = True
         '
         'Label1
         '
@@ -244,31 +269,6 @@ Partial Class ABM_Alojamientos
         Me.Label9.TabIndex = 13
         Me.Label9.Text = "Precio por día"
         '
-        'idAlojamiento
-        '
-        Me.idAlojamiento.HeaderText = "id"
-        Me.idAlojamiento.Name = "idAlojamiento"
-        Me.idAlojamiento.ReadOnly = True
-        Me.idAlojamiento.Width = 25
-        '
-        'fechaIngreso
-        '
-        Me.fechaIngreso.HeaderText = "Ingreso"
-        Me.fechaIngreso.Name = "fechaIngreso"
-        Me.fechaIngreso.ReadOnly = True
-        '
-        'fechaFin
-        '
-        Me.fechaFin.HeaderText = "Salida"
-        Me.fechaFin.Name = "fechaFin"
-        Me.fechaFin.ReadOnly = True
-        '
-        'Habitacion
-        '
-        Me.Habitacion.HeaderText = "Habitación"
-        Me.Habitacion.Name = "Habitacion"
-        Me.Habitacion.ReadOnly = True
-        '
         'ABM_Alojamientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -301,11 +301,11 @@ Partial Class ABM_Alojamientos
         Me.MinimumSize = New System.Drawing.Size(425, 494)
         Me.Name = "ABM_Alojamientos"
         Me.Text = "ABM Alojamientos"
-        CType(Me.dgvAlojamientos,System.ComponentModel.ISupportInitialize).EndInit
-        Me.ResumeLayout(false)
-        Me.PerformLayout
+        CType(Me.dgvAlojamientos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-End Sub
+    End Sub
     Friend WithEvents dgvAlojamientos As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
