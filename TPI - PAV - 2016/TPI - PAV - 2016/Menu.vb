@@ -1,4 +1,4 @@
-﻿Public Class menu
+﻿Public Class cmd_modOrdComSel
 
     Private Sub ocultarNuevoAlojamiento()
         Me.pnl_nueAlo.Visible = False
@@ -256,18 +256,6 @@
         Me.menu_Menu.Enabled = True
     End Sub
 
-    Private Sub ABMAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAlojamientosToolStripMenuItem.Click
-        ABM_Alojamientos.Show()
-    End Sub
-
-    Private Sub ABMClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMClientesToolStripMenuItem.Click
-        ABM_Clientes.Show()
-    End Sub
-
-    Private Sub ABMTiposDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposDocumentosToolStripMenuItem.Click
-        ABM_TiposDocumentos.Show()
-    End Sub
-
     Private Sub BuscarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem1.Click
         Me.menu_Menu.Enabled = False
 
@@ -483,4 +471,27 @@
         pnl_busAloSel.BringToFront()
     End Sub
 
+    Private Sub cmd_atrOrdComSel_Click(sender As Object, e As EventArgs) Handles cmd_atrOrdComSel.Click
+        pnl_ordComSel.Enabled = False
+        pnl_ordComSel.Visible = False
+        pnl_ordComSel.SendToBack()
+    End Sub
+
+    Private Sub cmd_clickEnGrillaOrdenDeCompra_Click(sender As Object, e As EventArgs) Handles cmd_clickEnGrillaOrdenDeCompra.Click
+        pnl_ordComSel.Enabled = True
+        pnl_ordComSel.Visible = True
+        pnl_ordComSel.BringToFront()
+    End Sub
+
+    Private Sub ABMAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAlojamientosToolStripMenuItem.Click
+        ABM_Alojamientos.Show()
+    End Sub
+
+    Private Sub ABMClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMClientesToolStripMenuItem.Click
+        ABM_Clientes.Show()
+    End Sub
+
+    Private Sub ABMTiposDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposDocumentosToolStripMenuItem.Click
+        ABM_TiposDocumentos.Show()
+    End Sub
 End Class

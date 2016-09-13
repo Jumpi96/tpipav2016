@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class menu
+Partial Class cmd_modOrdComSel
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -33,9 +33,6 @@ Partial Class menu
         Me.NuevaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionesAdministrativasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ABMAlojamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.lbl_nueAlo = New System.Windows.Forms.Label()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
@@ -72,6 +69,7 @@ Partial Class menu
         Me.cam_atrHab = New System.Windows.Forms.Button()
         Me.cmd_aceHab = New System.Windows.Forms.Button()
         Me.pnl_busAlo = New System.Windows.Forms.Panel()
+        Me.lbl_busAlo = New System.Windows.Forms.Label()
         Me.pnl_busAloSel = New System.Windows.Forms.Panel()
         Me.cmd_atrAloSel = New System.Windows.Forms.Button()
         Me.cmd_anuAloSel = New System.Windows.Forms.Button()
@@ -116,6 +114,7 @@ Partial Class menu
         Me.lbl_tipDocBusAlo = New System.Windows.Forms.Label()
         Me.cmb_tipDocBusAlo = New System.Windows.Forms.ComboBox()
         Me.tab_busAloAlo = New System.Windows.Forms.TabPage()
+        Me.cmd_clickEnGrilla = New System.Windows.Forms.Button()
         Me.cmd_busAloAtr = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.clm_piso = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -123,7 +122,6 @@ Partial Class menu
         Me.clm_fecIni = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_fecHas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_busAloFin = New System.Windows.Forms.Button()
-        Me.lbl_busAlo = New System.Windows.Forms.Label()
         Me.pnl_nueOrdCom = New System.Windows.Forms.Panel()
         Me.lbl_ordCom = New System.Windows.Forms.Label()
         Me.tab_nueOrdCom = New System.Windows.Forms.TabControl()
@@ -209,7 +207,42 @@ Partial Class menu
         Me.cmd_carServAtr = New System.Windows.Forms.Button()
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
-        Me.cmd_clickEnGrilla = New System.Windows.Forms.Button()
+        Me.cmd_clickEnGrillaOrdenDeCompra = New System.Windows.Forms.Button()
+        Me.pnl_ordComSel = New System.Windows.Forms.Panel()
+        Me.cmd_atrOrdComSel = New System.Windows.Forms.Button()
+        Me.cmd_anuOrdComSel = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.lbl_nomProAsoOrdComSel = New System.Windows.Forms.Label()
+        Me.lbl_corProAsoOrdComSel = New System.Windows.Forms.Label()
+        Me.lbl_telProAsoOrdComSel = New System.Windows.Forms.Label()
+        Me.lbl_IDProAsoOrdComSel = New System.Windows.Forms.Label()
+        Me.pnl_sepOrdComSel = New System.Windows.Forms.Panel()
+        Me.lbl_proAsoOrdComSel = New System.Windows.Forms.Label()
+        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.lbl_ordComSel = New System.Windows.Forms.Label()
+        Me.ABMsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMAlojamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -240,6 +273,7 @@ Partial Class menu
         Me.tab_carServ.SuspendLayout()
         Me.tab_carServHab.SuspendLayout()
         Me.tab_carServServ.SuspendLayout()
+        Me.pnl_ordComSel.SuspendLayout()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -248,7 +282,7 @@ Partial Class menu
         Me.menu_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ArtículosServiciosToolStripMenuItem, Me.ÓrdenesDeComprasToolStripMenuItem, Me.FuncionesAdministrativasToolStripMenuItem})
         Me.menu_Menu.Location = New System.Drawing.Point(0, 0)
         Me.menu_Menu.Name = "menu_Menu"
-        Me.menu_Menu.Size = New System.Drawing.Size(661, 25)
+        Me.menu_Menu.Size = New System.Drawing.Size(585, 25)
         Me.menu_Menu.TabIndex = 0
         Me.menu_Menu.Text = "menu"
         '
@@ -300,39 +334,21 @@ Partial Class menu
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(114, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem1.Text = "Buscar"
         '
         'FuncionesAdministrativasToolStripMenuItem
         '
-        Me.FuncionesAdministrativasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem})
+        Me.FuncionesAdministrativasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMsToolStripMenuItem, Me.InformesToolStripMenuItem, Me.EstadísticasToolStripMenuItem})
         Me.FuncionesAdministrativasToolStripMenuItem.Name = "FuncionesAdministrativasToolStripMenuItem"
         Me.FuncionesAdministrativasToolStripMenuItem.Size = New System.Drawing.Size(169, 21)
         Me.FuncionesAdministrativasToolStripMenuItem.Text = "Funciones Administrativas"
-        '
-        'ABMAlojamientosToolStripMenuItem
-        '
-        Me.ABMAlojamientosToolStripMenuItem.Name = "ABMAlojamientosToolStripMenuItem"
-        Me.ABMAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMAlojamientosToolStripMenuItem.Text = "ABM Alojamientos"
-        '
-        'ABMClientesToolStripMenuItem
-        '
-        Me.ABMClientesToolStripMenuItem.Name = "ABMClientesToolStripMenuItem"
-        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMClientesToolStripMenuItem.Text = "ABM Clientes"
-        '
-        'ABMTiposDocumentosToolStripMenuItem
-        '
-        Me.ABMTiposDocumentosToolStripMenuItem.Name = "ABMTiposDocumentosToolStripMenuItem"
-        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
         '
         'pnl_nueAlo
         '
@@ -679,8 +695,8 @@ Partial Class menu
         '
         'pnl_busAlo
         '
-        Me.pnl_busAlo.Controls.Add(Me.tab_busAlo)
         Me.pnl_busAlo.Controls.Add(Me.lbl_busAlo)
+        Me.pnl_busAlo.Controls.Add(Me.tab_busAlo)
         Me.pnl_busAlo.Controls.Add(Me.pnl_busAloSel)
         Me.pnl_busAlo.Enabled = False
         Me.pnl_busAlo.Location = New System.Drawing.Point(12, 28)
@@ -688,6 +704,16 @@ Partial Class menu
         Me.pnl_busAlo.Size = New System.Drawing.Size(532, 240)
         Me.pnl_busAlo.TabIndex = 0
         Me.pnl_busAlo.Visible = False
+        '
+        'lbl_busAlo
+        '
+        Me.lbl_busAlo.AutoSize = True
+        Me.lbl_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_busAlo.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_busAlo.Name = "lbl_busAlo"
+        Me.lbl_busAlo.Size = New System.Drawing.Size(142, 16)
+        Me.lbl_busAlo.TabIndex = 0
+        Me.lbl_busAlo.Text = "Buscar Alojamiento"
         '
         'pnl_busAloSel
         '
@@ -1132,6 +1158,15 @@ Partial Class menu
         Me.tab_busAloAlo.Text = "Alojamientos"
         Me.tab_busAloAlo.UseVisualStyleBackColor = True
         '
+        'cmd_clickEnGrilla
+        '
+        Me.cmd_clickEnGrilla.Location = New System.Drawing.Point(7, 151)
+        Me.cmd_clickEnGrilla.Name = "cmd_clickEnGrilla"
+        Me.cmd_clickEnGrilla.Size = New System.Drawing.Size(115, 23)
+        Me.cmd_clickEnGrilla.TabIndex = 51
+        Me.cmd_clickEnGrilla.Text = "Click en Grilla"
+        Me.cmd_clickEnGrilla.UseVisualStyleBackColor = True
+        '
         'cmd_busAloAtr
         '
         Me.cmd_busAloAtr.Location = New System.Drawing.Point(331, 146)
@@ -1186,16 +1221,6 @@ Partial Class menu
         Me.cmd_busAloFin.TabIndex = 2
         Me.cmd_busAloFin.Text = "Finalizar"
         Me.cmd_busAloFin.UseVisualStyleBackColor = True
-        '
-        'lbl_busAlo
-        '
-        Me.lbl_busAlo.AutoSize = True
-        Me.lbl_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_busAlo.Location = New System.Drawing.Point(3, 3)
-        Me.lbl_busAlo.Name = "lbl_busAlo"
-        Me.lbl_busAlo.Size = New System.Drawing.Size(142, 16)
-        Me.lbl_busAlo.TabIndex = 0
-        Me.lbl_busAlo.Text = "Buscar Alojamiento"
         '
         'pnl_nueOrdCom
         '
@@ -1473,6 +1498,7 @@ Partial Class menu
         '
         Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
         Me.pnl_busOrdCom.Controls.Add(Me.lbl_busOrdCom)
+        Me.pnl_busOrdCom.Controls.Add(Me.pnl_ordComSel)
         Me.pnl_busOrdCom.Enabled = False
         Me.pnl_busOrdCom.Location = New System.Drawing.Point(12, 28)
         Me.pnl_busOrdCom.Name = "pnl_busOrdCom"
@@ -1628,6 +1654,7 @@ Partial Class menu
         '
         'tab_busOrdComOrdCom
         '
+        Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_clickEnGrillaOrdenDeCompra)
         Me.tab_busOrdComOrdCom.Controls.Add(Me.DataGridView3)
         Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComAtr)
         Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComFin)
@@ -2022,30 +2049,359 @@ Partial Class menu
         Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
-        'cmd_clickEnGrilla
+        'cmd_clickEnGrillaOrdenDeCompra
         '
-        Me.cmd_clickEnGrilla.Location = New System.Drawing.Point(7, 151)
-        Me.cmd_clickEnGrilla.Name = "cmd_clickEnGrilla"
-        Me.cmd_clickEnGrilla.Size = New System.Drawing.Size(115, 23)
-        Me.cmd_clickEnGrilla.TabIndex = 51
-        Me.cmd_clickEnGrilla.Text = "Click en Grilla"
-        Me.cmd_clickEnGrilla.UseVisualStyleBackColor = True
+        Me.cmd_clickEnGrillaOrdenDeCompra.Location = New System.Drawing.Point(7, 151)
+        Me.cmd_clickEnGrillaOrdenDeCompra.Name = "cmd_clickEnGrillaOrdenDeCompra"
+        Me.cmd_clickEnGrillaOrdenDeCompra.Size = New System.Drawing.Size(115, 23)
+        Me.cmd_clickEnGrillaOrdenDeCompra.TabIndex = 3
+        Me.cmd_clickEnGrillaOrdenDeCompra.Text = "Click en grilla"
+        Me.cmd_clickEnGrillaOrdenDeCompra.UseVisualStyleBackColor = True
         '
-        'menu
+        'pnl_ordComSel
+        '
+        Me.pnl_ordComSel.BackColor = System.Drawing.Color.White
+        Me.pnl_ordComSel.Controls.Add(Me.cmd_atrOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.cmd_anuOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.Button6)
+        Me.pnl_ordComSel.Controls.Add(Me.TextBox3)
+        Me.pnl_ordComSel.Controls.Add(Me.TextBox4)
+        Me.pnl_ordComSel.Controls.Add(Me.TextBox5)
+        Me.pnl_ordComSel.Controls.Add(Me.MaskedTextBox1)
+        Me.pnl_ordComSel.Controls.Add(Me.lbl_nomProAsoOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.lbl_corProAsoOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.lbl_telProAsoOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.lbl_IDProAsoOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.pnl_sepOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.lbl_proAsoOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.MaskedTextBox2)
+        Me.pnl_ordComSel.Controls.Add(Me.MaskedTextBox3)
+        Me.pnl_ordComSel.Controls.Add(Me.TextBox6)
+        Me.pnl_ordComSel.Controls.Add(Me.TextBox7)
+        Me.pnl_ordComSel.Controls.Add(Me.TextBox8)
+        Me.pnl_ordComSel.Controls.Add(Me.TextBox9)
+        Me.pnl_ordComSel.Controls.Add(Me.TextBox10)
+        Me.pnl_ordComSel.Controls.Add(Me.Label6)
+        Me.pnl_ordComSel.Controls.Add(Me.Label7)
+        Me.pnl_ordComSel.Controls.Add(Me.Label8)
+        Me.pnl_ordComSel.Controls.Add(Me.Label9)
+        Me.pnl_ordComSel.Controls.Add(Me.Label10)
+        Me.pnl_ordComSel.Controls.Add(Me.Label11)
+        Me.pnl_ordComSel.Controls.Add(Me.Label12)
+        Me.pnl_ordComSel.Controls.Add(Me.lbl_ordComSel)
+        Me.pnl_ordComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pnl_ordComSel.Location = New System.Drawing.Point(6, 22)
+        Me.pnl_ordComSel.Name = "pnl_ordComSel"
+        Me.pnl_ordComSel.Size = New System.Drawing.Size(522, 218)
+        Me.pnl_ordComSel.TabIndex = 2
+        '
+        'cmd_atrOrdComSel
+        '
+        Me.cmd_atrOrdComSel.Location = New System.Drawing.Point(427, 91)
+        Me.cmd_atrOrdComSel.Name = "cmd_atrOrdComSel"
+        Me.cmd_atrOrdComSel.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_atrOrdComSel.TabIndex = 10
+        Me.cmd_atrOrdComSel.Text = "Atrás"
+        Me.cmd_atrOrdComSel.UseVisualStyleBackColor = True
+        '
+        'cmd_anuOrdComSel
+        '
+        Me.cmd_anuOrdComSel.Location = New System.Drawing.Point(427, 57)
+        Me.cmd_anuOrdComSel.Name = "cmd_anuOrdComSel"
+        Me.cmd_anuOrdComSel.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_anuOrdComSel.TabIndex = 9
+        Me.cmd_anuOrdComSel.Text = "Anular"
+        Me.cmd_anuOrdComSel.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(427, 23)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(72, 28)
+        Me.Button6.TabIndex = 8
+        Me.Button6.Text = "Modificar"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(65, 168)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(87, 20)
+        Me.TextBox3.TabIndex = 11
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(240, 194)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
+        Me.TextBox4.Size = New System.Drawing.Size(140, 20)
+        Me.TextBox4.TabIndex = 14
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(240, 168)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
+        Me.TextBox5.Size = New System.Drawing.Size(259, 20)
+        Me.TextBox5.TabIndex = 13
+        '
+        'MaskedTextBox1
+        '
+        Me.MaskedTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MaskedTextBox1.Location = New System.Drawing.Point(65, 194)
+        Me.MaskedTextBox1.Mask = "99999999"
+        Me.MaskedTextBox1.Name = "MaskedTextBox1"
+        Me.MaskedTextBox1.ReadOnly = True
+        Me.MaskedTextBox1.Size = New System.Drawing.Size(87, 20)
+        Me.MaskedTextBox1.TabIndex = 12
+        '
+        'lbl_nomProAsoOrdComSel
+        '
+        Me.lbl_nomProAsoOrdComSel.AutoSize = True
+        Me.lbl_nomProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_nomProAsoOrdComSel.Location = New System.Drawing.Point(164, 171)
+        Me.lbl_nomProAsoOrdComSel.Name = "lbl_nomProAsoOrdComSel"
+        Me.lbl_nomProAsoOrdComSel.Size = New System.Drawing.Size(70, 13)
+        Me.lbl_nomProAsoOrdComSel.TabIndex = 22
+        Me.lbl_nomProAsoOrdComSel.Text = "Razón Social"
+        '
+        'lbl_corProAsoOrdComSel
+        '
+        Me.lbl_corProAsoOrdComSel.AutoSize = True
+        Me.lbl_corProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_corProAsoOrdComSel.Location = New System.Drawing.Point(196, 198)
+        Me.lbl_corProAsoOrdComSel.Name = "lbl_corProAsoOrdComSel"
+        Me.lbl_corProAsoOrdComSel.Size = New System.Drawing.Size(38, 13)
+        Me.lbl_corProAsoOrdComSel.TabIndex = 21
+        Me.lbl_corProAsoOrdComSel.Text = "Correo"
+        '
+        'lbl_telProAsoOrdComSel
+        '
+        Me.lbl_telProAsoOrdComSel.AutoSize = True
+        Me.lbl_telProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_telProAsoOrdComSel.Location = New System.Drawing.Point(10, 198)
+        Me.lbl_telProAsoOrdComSel.Name = "lbl_telProAsoOrdComSel"
+        Me.lbl_telProAsoOrdComSel.Size = New System.Drawing.Size(49, 13)
+        Me.lbl_telProAsoOrdComSel.TabIndex = 20
+        Me.lbl_telProAsoOrdComSel.Text = "Teléfono"
+        '
+        'lbl_IDProAsoOrdComSel
+        '
+        Me.lbl_IDProAsoOrdComSel.AutoSize = True
+        Me.lbl_IDProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_IDProAsoOrdComSel.Location = New System.Drawing.Point(41, 171)
+        Me.lbl_IDProAsoOrdComSel.Name = "lbl_IDProAsoOrdComSel"
+        Me.lbl_IDProAsoOrdComSel.Size = New System.Drawing.Size(18, 13)
+        Me.lbl_IDProAsoOrdComSel.TabIndex = 19
+        Me.lbl_IDProAsoOrdComSel.Text = "ID"
+        '
+        'pnl_sepOrdComSel
+        '
+        Me.pnl_sepOrdComSel.BackColor = System.Drawing.Color.DimGray
+        Me.pnl_sepOrdComSel.Location = New System.Drawing.Point(0, 135)
+        Me.pnl_sepOrdComSel.Name = "pnl_sepOrdComSel"
+        Me.pnl_sepOrdComSel.Size = New System.Drawing.Size(522, 10)
+        Me.pnl_sepOrdComSel.TabIndex = 18
+        '
+        'lbl_proAsoOrdComSel
+        '
+        Me.lbl_proAsoOrdComSel.AutoSize = True
+        Me.lbl_proAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_proAsoOrdComSel.Location = New System.Drawing.Point(3, 148)
+        Me.lbl_proAsoOrdComSel.Name = "lbl_proAsoOrdComSel"
+        Me.lbl_proAsoOrdComSel.Size = New System.Drawing.Size(133, 16)
+        Me.lbl_proAsoOrdComSel.TabIndex = 17
+        Me.lbl_proAsoOrdComSel.Text = "Proveedor Asociado"
+        '
+        'MaskedTextBox2
+        '
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(311, 51)
+        Me.MaskedTextBox2.Mask = "00/00/0000"
+        Me.MaskedTextBox2.Name = "MaskedTextBox2"
+        Me.MaskedTextBox2.ReadOnly = True
+        Me.MaskedTextBox2.Size = New System.Drawing.Size(70, 22)
+        Me.MaskedTextBox2.TabIndex = 6
+        Me.MaskedTextBox2.ValidatingType = GetType(Date)
+        '
+        'MaskedTextBox3
+        '
+        Me.MaskedTextBox3.Location = New System.Drawing.Point(311, 23)
+        Me.MaskedTextBox3.Mask = "00/00/0000"
+        Me.MaskedTextBox3.Name = "MaskedTextBox3"
+        Me.MaskedTextBox3.ReadOnly = True
+        Me.MaskedTextBox3.Size = New System.Drawing.Size(70, 22)
+        Me.MaskedTextBox3.TabIndex = 5
+        Me.MaskedTextBox3.ValidatingType = GetType(Date)
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(158, 23)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.Size = New System.Drawing.Size(51, 22)
+        Me.TextBox6.TabIndex = 1
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(311, 79)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.ReadOnly = True
+        Me.TextBox7.Size = New System.Drawing.Size(70, 22)
+        Me.TextBox7.TabIndex = 7
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(158, 79)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.ReadOnly = True
+        Me.TextBox8.Size = New System.Drawing.Size(51, 22)
+        Me.TextBox8.TabIndex = 3
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(158, 107)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.ReadOnly = True
+        Me.TextBox9.Size = New System.Drawing.Size(51, 22)
+        Me.TextBox9.TabIndex = 4
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(158, 51)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = True
+        Me.TextBox10.Size = New System.Drawing.Size(51, 22)
+        Me.TextBox10.TabIndex = 2
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(215, 82)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(91, 16)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "Precio porDía"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(220, 54)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(85, 16)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Fecha Hasta"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(215, 26)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(90, 16)
+        Me.Label8.TabIndex = 5
+        Me.Label8.Text = "Fecha Desde"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(10, 110)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(142, 16)
+        Me.Label9.TabIndex = 4
+        Me.Label9.Text = "Cantidad de Personas"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(35, 82)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(117, 16)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "Nro de Habitación"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(73, 54)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(79, 16)
+        Me.Label11.TabIndex = 2
+        Me.Label11.Text = "Nro de Piso"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(131, 26)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(21, 16)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "ID"
+        '
+        'lbl_ordComSel
+        '
+        Me.lbl_ordComSel.AutoSize = True
+        Me.lbl_ordComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_ordComSel.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_ordComSel.Name = "lbl_ordComSel"
+        Me.lbl_ordComSel.Size = New System.Drawing.Size(200, 16)
+        Me.lbl_ordComSel.TabIndex = 0
+        Me.lbl_ordComSel.Text = "Orden de compra Seleccionada"
+        '
+        'ABMsToolStripMenuItem
+        '
+        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem})
+        Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ABMsToolStripMenuItem.Text = "ABMs"
+        '
+        'InformesToolStripMenuItem
+        '
+        Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InformesToolStripMenuItem.Text = "Informes"
+        '
+        'EstadísticasToolStripMenuItem
+        '
+        Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
+        '
+        'ABMAlojamientosToolStripMenuItem
+        '
+        Me.ABMAlojamientosToolStripMenuItem.Name = "ABMAlojamientosToolStripMenuItem"
+        Me.ABMAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMAlojamientosToolStripMenuItem.Text = "ABM Alojamientos"
+        '
+        'ABMClientesToolStripMenuItem
+        '
+        Me.ABMClientesToolStripMenuItem.Name = "ABMClientesToolStripMenuItem"
+        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMClientesToolStripMenuItem.Text = "ABM Clientes"
+        '
+        'ABMTiposDocumentosToolStripMenuItem
+        '
+        Me.ABMTiposDocumentosToolStripMenuItem.Name = "ABMTiposDocumentosToolStripMenuItem"
+        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
+        '
+        'cmd_modOrdComSel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(661, 438)
+        Me.ClientSize = New System.Drawing.Size(585, 302)
         Me.Controls.Add(Me.menu_Menu)
-        Me.Controls.Add(Me.pnl_busAlo)
-        Me.Controls.Add(Me.pnl_agrServ)
-        Me.Controls.Add(Me.pnl_agrArt)
         Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
         Me.Controls.Add(Me.pnl_nueAlo)
+        Me.Controls.Add(Me.pnl_busAlo)
+        Me.Controls.Add(Me.pnl_agrServ)
+        Me.Controls.Add(Me.pnl_agrArt)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
-        Me.Name = "menu"
+        Me.Name = "cmd_modOrdComSel"
         Me.Text = "Menu"
         Me.menu_Menu.ResumeLayout(False)
         Me.menu_Menu.PerformLayout()
@@ -2093,6 +2449,8 @@ Partial Class menu
         Me.tab_carServHab.ResumeLayout(False)
         Me.tab_carServHab.PerformLayout()
         Me.tab_carServServ.ResumeLayout(False)
+        Me.pnl_ordComSel.ResumeLayout(False)
+        Me.pnl_ordComSel.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2187,9 +2545,6 @@ Partial Class menu
     Friend WithEvents clm_preTot As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmd_busPro As System.Windows.Forms.Button
 
-    Friend WithEvents ABMAlojamientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ABMClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ABMTiposDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
     Friend WithEvents pnl_busOrdCom As System.Windows.Forms.Panel
     Friend WithEvents lbl_busOrdCom As System.Windows.Forms.Label
@@ -2287,5 +2642,41 @@ Partial Class menu
     Friend WithEvents lbl_tipoDocAloSel As System.Windows.Forms.Label
     Friend WithEvents cmd_atrAloSel As System.Windows.Forms.Button
     Friend WithEvents cmd_clickEnGrilla As System.Windows.Forms.Button
+    Friend WithEvents pnl_ordComSel As System.Windows.Forms.Panel
+    Friend WithEvents cmd_atrOrdComSel As System.Windows.Forms.Button
+    Friend WithEvents cmd_anuOrdComSel As System.Windows.Forms.Button
+    Friend WithEvents Button6 As System.Windows.Forms.Button
+    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents lbl_nomProAsoOrdComSel As System.Windows.Forms.Label
+    Friend WithEvents lbl_corProAsoOrdComSel As System.Windows.Forms.Label
+    Friend WithEvents lbl_telProAsoOrdComSel As System.Windows.Forms.Label
+    Friend WithEvents lbl_IDProAsoOrdComSel As System.Windows.Forms.Label
+    Friend WithEvents pnl_sepOrdComSel As System.Windows.Forms.Panel
+    Friend WithEvents lbl_proAsoOrdComSel As System.Windows.Forms.Label
+    Friend WithEvents MaskedTextBox2 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents MaskedTextBox3 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents lbl_ordComSel As System.Windows.Forms.Label
+    Friend WithEvents cmd_clickEnGrillaOrdenDeCompra As System.Windows.Forms.Button
+    Friend WithEvents ABMsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ABMAlojamientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ABMClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ABMTiposDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents InformesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EstadísticasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
