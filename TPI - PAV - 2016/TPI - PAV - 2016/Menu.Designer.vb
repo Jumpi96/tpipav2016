@@ -914,7 +914,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_clickEnGrilla.Location = New System.Drawing.Point(7, 151)
         Me.cmd_clickEnGrilla.Name = "cmd_clickEnGrilla"
         Me.cmd_clickEnGrilla.Size = New System.Drawing.Size(115, 23)
-        Me.cmd_clickEnGrilla.TabIndex = 51
+        Me.cmd_clickEnGrilla.TabIndex = 1
         Me.cmd_clickEnGrilla.Text = "Click en Grilla"
         Me.cmd_clickEnGrilla.UseVisualStyleBackColor = True
         '
@@ -923,7 +923,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_busAloAtr.Location = New System.Drawing.Point(331, 146)
         Me.cmd_busAloAtr.Name = "cmd_busAloAtr"
         Me.cmd_busAloAtr.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloAtr.TabIndex = 1
+        Me.cmd_busAloAtr.TabIndex = 2
         Me.cmd_busAloAtr.Text = "Atrás"
         Me.cmd_busAloAtr.UseVisualStyleBackColor = True
         '
@@ -973,7 +973,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_busAloFin.Location = New System.Drawing.Point(409, 146)
         Me.cmd_busAloFin.Name = "cmd_busAloFin"
         Me.cmd_busAloFin.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloFin.TabIndex = 2
+        Me.cmd_busAloFin.TabIndex = 3
         Me.cmd_busAloFin.Text = "Finalizar"
         Me.cmd_busAloFin.UseVisualStyleBackColor = True
         '
@@ -1329,7 +1329,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueOrdComLim.Location = New System.Drawing.Point(9, 146)
         Me.cmd_nueOrdComLim.Name = "cmd_nueOrdComLim"
         Me.cmd_nueOrdComLim.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComLim.TabIndex = 3
+        Me.cmd_nueOrdComLim.TabIndex = 6
         Me.cmd_nueOrdComLim.Text = "Limpiar"
         Me.cmd_nueOrdComLim.UseVisualStyleBackColor = True
         '
@@ -1347,7 +1347,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueOrdComSig.Location = New System.Drawing.Point(409, 146)
         Me.cmd_nueOrdComSig.Name = "cmd_nueOrdComSig"
         Me.cmd_nueOrdComSig.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComSig.TabIndex = 7
+        Me.cmd_nueOrdComSig.TabIndex = 8
         Me.cmd_nueOrdComSig.Text = "Siguiente"
         Me.cmd_nueOrdComSig.UseVisualStyleBackColor = True
         '
@@ -1356,7 +1356,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueOrdComCan.Location = New System.Drawing.Point(331, 146)
         Me.cmd_nueOrdComCan.Name = "cmd_nueOrdComCan"
         Me.cmd_nueOrdComCan.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComCan.TabIndex = 6
+        Me.cmd_nueOrdComCan.TabIndex = 7
         Me.cmd_nueOrdComCan.Text = "Cancelar"
         Me.cmd_nueOrdComCan.UseVisualStyleBackColor = True
         '
@@ -1498,7 +1498,7 @@ Partial Class cmd_modOrdComSel
         Me.DataGridView2.Location = New System.Drawing.Point(7, 6)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(501, 121)
-        Me.DataGridView2.TabIndex = 2
+        Me.DataGridView2.TabIndex = 0
         '
         'clm_ID
         '
@@ -2462,12 +2462,12 @@ Partial Class cmd_modOrdComSel
         Me.ClientSize = New System.Drawing.Size(546, 287)
         Me.Controls.Add(Me.lbl_concha)
         Me.Controls.Add(Me.menu_Menu)
-        Me.Controls.Add(Me.pnl_nueOrdCom)
-        Me.Controls.Add(Me.pnl_nueAlo)
         Me.Controls.Add(Me.pnl_busAlo)
         Me.Controls.Add(Me.pnl_agrServ)
         Me.Controls.Add(Me.pnl_agrArt)
         Me.Controls.Add(Me.pnl_busOrdCom)
+        Me.Controls.Add(Me.pnl_nueOrdCom)
+        Me.Controls.Add(Me.pnl_nueAlo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.Name = "cmd_modOrdComSel"
