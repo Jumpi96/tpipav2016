@@ -248,6 +248,14 @@ Partial Class cmd_modOrdComSel
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
         Me.lbl_concha = New System.Windows.Forms.Label()
+        Me.chx_airAco = New System.Windows.Forms.CheckBox()
+        Me.chx_frigobar = New System.Windows.Forms.CheckBox()
+        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -280,6 +288,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_carServ.SuspendLayout()
         Me.tab_carServHab.SuspendLayout()
         Me.tab_carServServ.SuspendLayout()
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -302,13 +311,13 @@ Partial Class cmd_modOrdComSel
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'ArtículosServiciosToolStripMenuItem
@@ -590,6 +599,8 @@ Partial Class cmd_modOrdComSel
         '
         'tab_aloNueDatHos
         '
+        Me.tab_aloNueDatHos.Controls.Add(Me.chx_frigobar)
+        Me.tab_aloNueDatHos.Controls.Add(Me.chx_airAco)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmd_nueAloDatHosLim)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmd_atrHos)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmd_sigHos)
@@ -614,7 +625,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueAloDatHosLim.Location = New System.Drawing.Point(9, 146)
         Me.cmd_nueAloDatHosLim.Name = "cmd_nueAloDatHosLim"
         Me.cmd_nueAloDatHosLim.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueAloDatHosLim.TabIndex = 5
+        Me.cmd_nueAloDatHosLim.TabIndex = 7
         Me.cmd_nueAloDatHosLim.Text = "Limpiar"
         Me.cmd_nueAloDatHosLim.UseVisualStyleBackColor = True
         '
@@ -623,7 +634,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_atrHos.Location = New System.Drawing.Point(331, 146)
         Me.cmd_atrHos.Name = "cmd_atrHos"
         Me.cmd_atrHos.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_atrHos.TabIndex = 6
+        Me.cmd_atrHos.TabIndex = 8
         Me.cmd_atrHos.Text = "Atrás"
         Me.cmd_atrHos.UseVisualStyleBackColor = True
         '
@@ -632,7 +643,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_sigHos.Location = New System.Drawing.Point(409, 146)
         Me.cmd_sigHos.Name = "cmd_sigHos"
         Me.cmd_sigHos.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_sigHos.TabIndex = 7
+        Me.cmd_sigHos.TabIndex = 9
         Me.cmd_sigHos.Text = "Siguiente"
         Me.cmd_sigHos.UseVisualStyleBackColor = True
         '
@@ -708,6 +719,8 @@ Partial Class cmd_modOrdComSel
         '
         'tab_aloNueSelHab
         '
+        Me.tab_aloNueSelHab.Controls.Add(Me.Label1)
+        Me.tab_aloNueSelHab.Controls.Add(Me.DataGridView4)
         Me.tab_aloNueSelHab.Controls.Add(Me.cam_atrHab)
         Me.tab_aloNueSelHab.Controls.Add(Me.cmd_aceHab)
         Me.tab_aloNueSelHab.Location = New System.Drawing.Point(4, 25)
@@ -899,8 +912,8 @@ Partial Class cmd_modOrdComSel
         '
         Me.tab_busAloAlo.Controls.Add(Me.cmd_clickEnGrilla)
         Me.tab_busAloAlo.Controls.Add(Me.cmd_busAloAtr)
-        Me.tab_busAloAlo.Controls.Add(Me.DataGridView1)
         Me.tab_busAloAlo.Controls.Add(Me.cmd_busAloFin)
+        Me.tab_busAloAlo.Controls.Add(Me.DataGridView1)
         Me.tab_busAloAlo.Location = New System.Drawing.Point(4, 25)
         Me.tab_busAloAlo.Name = "tab_busAloAlo"
         Me.tab_busAloAlo.Padding = New System.Windows.Forms.Padding(3)
@@ -1588,8 +1601,8 @@ Partial Class cmd_modOrdComSel
         '
         'pnl_busOrdCom
         '
-        Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
         Me.pnl_busOrdCom.Controls.Add(Me.lbl_busOrdCom)
+        Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
         Me.pnl_busOrdCom.Controls.Add(Me.pnl_ordComSel)
         Me.pnl_busOrdCom.Enabled = False
         Me.pnl_busOrdCom.Location = New System.Drawing.Point(12, 28)
@@ -2455,10 +2468,85 @@ Partial Class cmd_modOrdComSel
         Me.lbl_concha.TabIndex = 1
         Me.lbl_concha.Text = "Fecha, Hora y la concha de tu hermana"
         '
+        'chx_airAco
+        '
+        Me.chx_airAco.AutoSize = True
+        Me.chx_airAco.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chx_airAco.Location = New System.Drawing.Point(270, 8)
+        Me.chx_airAco.Name = "chx_airAco"
+        Me.chx_airAco.Size = New System.Drawing.Size(145, 20)
+        Me.chx_airAco.TabIndex = 5
+        Me.chx_airAco.Text = "Aire Acondicionado"
+        Me.chx_airAco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chx_airAco.UseVisualStyleBackColor = True
+        '
+        'chx_frigobar
+        '
+        Me.chx_frigobar.AutoSize = True
+        Me.chx_frigobar.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chx_frigobar.Location = New System.Drawing.Point(337, 36)
+        Me.chx_frigobar.Name = "chx_frigobar"
+        Me.chx_frigobar.Size = New System.Drawing.Size(78, 20)
+        Me.chx_frigobar.TabIndex = 6
+        Me.chx_frigobar.Text = "Frigobar"
+        Me.chx_frigobar.UseVisualStyleBackColor = True
+        '
+        'DataGridView4
+        '
+        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView4.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cln_nroPisoHabSel, Me.clm_nroHabSel, Me.clm_cantCamas, Me.clm_capacidad})
+        Me.DataGridView4.Location = New System.Drawing.Point(6, 22)
+        Me.DataGridView4.Name = "DataGridView4"
+        Me.DataGridView4.Size = New System.Drawing.Size(502, 118)
+        Me.DataGridView4.TabIndex = 3
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(161, 16)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Habitaciones disponibles"
+        '
+        'cln_nroPisoHabSel
+        '
+        Me.cln_nroPisoHabSel.HeaderText = "Nro de Piso"
+        Me.cln_nroPisoHabSel.Name = "cln_nroPisoHabSel"
+        Me.cln_nroPisoHabSel.ReadOnly = True
+        Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.cln_nroPisoHabSel.Width = 120
+        '
+        'clm_nroHabSel
+        '
+        Me.clm_nroHabSel.HeaderText = "Nro de Habitación"
+        Me.clm_nroHabSel.Name = "clm_nroHabSel"
+        Me.clm_nroHabSel.ReadOnly = True
+        Me.clm_nroHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_nroHabSel.Width = 140
+        '
+        'clm_cantCamas
+        '
+        Me.clm_cantCamas.HeaderText = "Camas"
+        Me.clm_cantCamas.Name = "clm_cantCamas"
+        Me.clm_cantCamas.ReadOnly = True
+        Me.clm_cantCamas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_cantCamas.Width = 90
+        '
+        'clm_capacidad
+        '
+        Me.clm_capacidad.HeaderText = "Capacidad"
+        Me.clm_capacidad.Name = "clm_capacidad"
+        Me.clm_capacidad.ReadOnly = True
+        Me.clm_capacidad.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_capacidad.Width = 90
+        '
         'cmd_modOrdComSel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(546, 287)
         Me.Controls.Add(Me.lbl_concha)
         Me.Controls.Add(Me.menu_Menu)
@@ -2482,6 +2570,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_aloNueDatHos.ResumeLayout(False)
         Me.tab_aloNueDatHos.PerformLayout()
         Me.tab_aloNueSelHab.ResumeLayout(False)
+        Me.tab_aloNueSelHab.PerformLayout()
         Me.pnl_busAlo.ResumeLayout(False)
         Me.pnl_busAlo.PerformLayout()
         Me.tab_busAlo.ResumeLayout(False)
@@ -2521,6 +2610,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_carServHab.ResumeLayout(False)
         Me.tab_carServHab.PerformLayout()
         Me.tab_carServServ.ResumeLayout(False)
+        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2753,5 +2843,13 @@ Partial Class cmd_modOrdComSel
     Friend WithEvents cmd_nueOrdComFin As System.Windows.Forms.Button
     Friend WithEvents cmd_nueOrdComResAtr As System.Windows.Forms.Button
     Friend WithEvents lbl_concha As System.Windows.Forms.Label
+    Friend WithEvents chx_frigobar As System.Windows.Forms.CheckBox
+    Friend WithEvents chx_airAco As System.Windows.Forms.CheckBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
+    Friend WithEvents cln_nroPisoHabSel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_nroHabSel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_cantCamas As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_capacidad As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
