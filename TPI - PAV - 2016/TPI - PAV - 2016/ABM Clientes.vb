@@ -6,6 +6,14 @@
     End Enum
     Dim condicion_estado As estado = estado.insertar
 
+    Enum estadoBusqueda
+        todo
+        tipoDocumento
+        nroDocumento
+    End Enum
+
+
+
     Private Function Validar() As Boolean
         If txt_apellido.Text = "" Then
             MessageBox.Show("Debe completar el campo Apellido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
@@ -51,9 +59,6 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
-
-    End Sub
 
     Private Sub lbl_telefono_Click(sender As Object, e As EventArgs) Handles lbl_telefono.Click
 
@@ -61,7 +66,7 @@
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargar_combo("TiposDocumento", "idTipoDocumento", "nombre", Me.cmb_tipoDoc)
-        Me.cargar_grilla()
+        Me.cargar_grilla(False, estadoBusqueda.todo)
 
     End Sub
 
@@ -84,13 +89,21 @@
         combo.ValueMember = pk
     End Sub
 
-    Private Sub cargar_grilla()
+    Private Sub cargar_grilla(ByVal comparar As Boolean, ByVal buscarEn As estadoBusqueda)
         Me.grid_clientes.Rows.Clear()
         Dim conexion As New Data.OleDb.OleDbConnection
         Dim comando As New Data.OleDb.OleDbCommand
         Dim tabla As New Data.DataTable
 
-        Dim sql As String = "SELECT * FROM Clientes C JOIN TiposDocumento T ON  C.tipoDocumento = T.idTipoDocumento"
+        Dim sql As String = "SELECT * FROM Clientes C JOIN TiposDocumento T ON  C.tipoDocumento = T.idTipoDocumento "
+
+        If buscarEn = estadoBusqueda.tipoDocumento Then
+            sql = sql & " WHERE tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
+
+        ElseIf buscarEn = estadoBusqueda.nroDocumento Then
+            sql = sql & " WHERE nroDocumento = " & Me.txt_nroDoc.Text & " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
+        End If
+
 
 
         conexion.ConnectionString = cadena_conexion
@@ -128,8 +141,8 @@
         cmd.CommandText = sql
         cmd.ExecuteNonQuery()
         conexion.Close()
-        MessageBox.Show("Se guardó exitosamente")
-        Me.cargar_grilla()
+        MessageBox.Show("Se registró exitosamente.")
+        Me.cargar_grilla(False, estadoBusqueda.todo)
     End Sub
 
     Private Function validar_existencia() As Boolean
@@ -166,5 +179,46 @@
         Me.txt_nombre.Text = ""
         Me.txt_nroDoc.Text = ""
         Me.txt_telefono.Text = ""
+    End Sub
+
+    Private Sub cmd_buscar_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
+        If Me.txt_nroDoc.Text = "" Then
+            Me.cargar_grilla(True, estadoBusqueda.tipoDocumento)
+        Else
+            Me.cargar_grilla(True, estadoBusqueda.nroDocumento)
+        End If
+
+    End Sub
+
+    Private Sub grid_clientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_clientes.CellContentDoubleClick
+        Dim conexion As New OleDb.OleDbConnection
+        Dim cmd As New OleDb.OleDbCommand
+        Dim tabla As New DataTable
+        Dim sql As String = ""
+
+        sql = "SELECT * FROM Clientes C JOIN TiposDocumento T ON  C.tipoDocumento = T.idTipoDocumento " _
+            & "WHERE T.nombre = '" & Me.grid_clientes.CurrentRow.Cells("col_tipoDocumento").Value & "' AND C.nroDocumento = " & Me.grid_clientes.CurrentRow.Cells("col_nroDocumento").Value
+
+
+        conexion.ConnectionString = cadena_conexion
+        conexion.Open()
+        cmd.Connection = conexion
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = sql
+        tabla.Load(cmd.ExecuteReader())
+        conexion.Close()
+        If tabla.Rows.Count() = 0 Then
+            MessageBox.Show("El cliente requerido no existe.")
+            Exit Sub
+        End If
+
+        Me.txt_nroDoc.Text = tabla.Rows(0)("nroDocumento")
+        Me.txt_apellido.Text = tabla.Rows(0)("apellido")
+        Me.txt_nombre.Text = tabla.Rows(0)("nombre")
+        Me.cmb_tipoDoc.SelectedValue = tabla.Rows(0)("idTipoDocumento")
+
+        Me.cmb_tipoDoc.Enabled = False
+        Me.txt_nroDoc.Enabled = False
+        Me.condicion_estado = estado.modificar
     End Sub
 End Class

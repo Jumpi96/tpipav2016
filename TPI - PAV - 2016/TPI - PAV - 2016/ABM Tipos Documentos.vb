@@ -162,9 +162,7 @@
         Me.txt_idDoc.Focus()
     End Sub
 
-    Private Sub grid_tipoDoc_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tipoDoc.CellContentClick
 
-    End Sub
 
     Private Sub grid_tipoDoc_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tipoDoc.CellContentDoubleClick
         Dim conexion As New OleDb.OleDbConnection
