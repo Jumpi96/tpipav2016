@@ -137,6 +137,14 @@
         Me.txt_nom.Text = ""
         Me.txt_tel.Text = ""
         Me.cmb_tipoDoc.Text = ""
+        Me.txt_fecDes.Text = ""
+        Me.txt_fecHas.Text = ""
+        Me.cmb_canPer.Text = ""
+        Me.cmb_tipHab.Text = ""
+        Me.chx_airAco.Checked = False
+        Me.chx_airAco.CheckState = CheckState.Unchecked
+        Me.chx_frigobar.Checked = False
+        Me.chx_frigobar.CheckState = CheckState.Unchecked
     End Sub
 
     Private Sub cmd_atrHos_Click(sender As Object, e As EventArgs) Handles cmd_atrHos.Click
@@ -150,16 +158,20 @@
     Private Sub cmd_aceHab_Click(sender As Object, e As EventArgs) Handles cmd_aceHab.Click
         Me.ocultarNuevoAlojamiento()
         Me.menu_Menu.Enabled = True
-        Me.txt_fecDes.Text = ""
-        Me.txt_fecHas.Text = ""
-        Me.cmb_canPer.Text = ""
-        Me.cmb_tipHab.Text = ""
         Me.txt_ape.Text = ""
         Me.txt_doc.Text = ""
         Me.txt_fecNac.Text = ""
         Me.txt_nom.Text = ""
         Me.txt_tel.Text = ""
         Me.cmb_tipoDoc.Text = ""
+        Me.txt_fecDes.Text = ""
+        Me.txt_fecHas.Text = ""
+        Me.cmb_canPer.Text = ""
+        Me.cmb_tipHab.Text = ""
+        Me.chx_airAco.Checked = False
+        Me.chx_airAco.CheckState = CheckState.Unchecked
+        Me.chx_frigobar.Checked = False
+        Me.chx_frigobar.CheckState = CheckState.Unchecked
     End Sub
 
     Private Sub cmd_sigHos_Click(sender As Object, e As EventArgs) Handles cmd_sigHos.Click
@@ -381,6 +393,10 @@
         Me.txt_fecHas.Text = ""
         Me.cmb_canPer.Text = ""
         Me.cmb_tipHab.Text = ""
+        Me.chx_airAco.Checked = False
+        Me.chx_airAco.CheckState = CheckState.Unchecked
+        Me.chx_frigobar.Checked = False
+        Me.chx_frigobar.CheckState = CheckState.Unchecked
     End Sub
 
     Private Sub cmd_busAloLim_Click(sender As Object, e As EventArgs) Handles cmd_busAloLim.Click

@@ -60,6 +60,8 @@ Partial Class cmd_modOrdComSel
         Me.lbl_tipoDoc = New System.Windows.Forms.Label()
         Me.cmb_tipoDoc = New System.Windows.Forms.ComboBox()
         Me.tab_aloNueDatHos = New System.Windows.Forms.TabPage()
+        Me.chx_frigobar = New System.Windows.Forms.CheckBox()
+        Me.chx_airAco = New System.Windows.Forms.CheckBox()
         Me.cmd_nueAloDatHosLim = New System.Windows.Forms.Button()
         Me.cmd_atrHos = New System.Windows.Forms.Button()
         Me.cmd_sigHos = New System.Windows.Forms.Button()
@@ -72,6 +74,12 @@ Partial Class cmd_modOrdComSel
         Me.lbl_fecHas = New System.Windows.Forms.Label()
         Me.lbl_fecDes = New System.Windows.Forms.Label()
         Me.tab_aloNueSelHab = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.grid_nueAlo = New System.Windows.Forms.DataGridView()
+        Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cam_atrHab = New System.Windows.Forms.Button()
         Me.cmd_aceHab = New System.Windows.Forms.Button()
         Me.pnl_busAlo = New System.Windows.Forms.Panel()
@@ -93,12 +101,12 @@ Partial Class cmd_modOrdComSel
         Me.tab_busAloAlo = New System.Windows.Forms.TabPage()
         Me.cmd_clickEnGrilla = New System.Windows.Forms.Button()
         Me.cmd_busAloAtr = New System.Windows.Forms.Button()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.cmd_busAloFin = New System.Windows.Forms.Button()
+        Me.grid_busAlo = New System.Windows.Forms.DataGridView()
         Me.clm_piso = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_hab = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_fecIni = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_fecHas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cmd_busAloFin = New System.Windows.Forms.Button()
         Me.pnl_busAloSel = New System.Windows.Forms.Panel()
         Me.cmd_atrAloSel = New System.Windows.Forms.Button()
         Me.cmd_anuAloSel = New System.Windows.Forms.Button()
@@ -150,7 +158,7 @@ Partial Class cmd_modOrdComSel
         Me.lbl_nueOrdComArtFilDes = New System.Windows.Forms.Label()
         Me.txt_nueOrdComArtFilID = New System.Windows.Forms.TextBox()
         Me.lbl_nueOrdComArtFilID = New System.Windows.Forms.Label()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.grid_nueOrdCom = New System.Windows.Forms.DataGridView()
         Me.clm_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_des = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_preUni = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -162,6 +170,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueOrdComResAtr = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
         Me.pnl_busOrdCom = New System.Windows.Forms.Panel()
+        Me.lbl_busOrdCom = New System.Windows.Forms.Label()
         Me.tab_busOrdCom = New System.Windows.Forms.TabControl()
         Me.tab_busOrdComDatPro = New System.Windows.Forms.TabPage()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -185,7 +194,6 @@ Partial Class cmd_modOrdComSel
         Me.clm_fecRec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_busOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_busOrdComFin = New System.Windows.Forms.Button()
-        Me.lbl_busOrdCom = New System.Windows.Forms.Label()
         Me.pnl_ordComSel = New System.Windows.Forms.Panel()
         Me.cmd_atrOrdComSel = New System.Windows.Forms.Button()
         Me.cmd_anuOrdComSel = New System.Windows.Forms.Button()
@@ -203,16 +211,8 @@ Partial Class cmd_modOrdComSel
         Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBox3 = New System.Windows.Forms.MaskedTextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.lbl_fecRecOrdComSel = New System.Windows.Forms.Label()
+        Me.lbl_fecEmiOrdComSel = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.lbl_ordComSel = New System.Windows.Forms.Label()
         Me.pnl_agrArt = New System.Windows.Forms.Panel()
@@ -248,23 +248,28 @@ Partial Class cmd_modOrdComSel
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
         Me.lbl_concha = New System.Windows.Forms.Label()
+        Me.grid_ordComSel = New System.Windows.Forms.DataGridView()
+        Me.cln_renOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_artOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_canArtOrdComSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
         Me.tab_aloNueDatCli.SuspendLayout()
         Me.tab_aloNueDatHos.SuspendLayout()
         Me.tab_aloNueSelHab.SuspendLayout()
+        CType(Me.grid_nueAlo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_busAlo.SuspendLayout()
         Me.tab_busAlo.SuspendLayout()
         Me.tab_busAloDatCli.SuspendLayout()
         Me.tab_busAloAlo.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_busAlo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_busAloSel.SuspendLayout()
         Me.pnl_nueOrdCom.SuspendLayout()
         Me.tab_nueOrdCom.SuspendLayout()
         Me.tab_nueOrdComDatPro.SuspendLayout()
         Me.tab_nueOrdComArt.SuspendLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid_nueOrdCom, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tab_nueOrdComRes.SuspendLayout()
         Me.pnl_busOrdCom.SuspendLayout()
         Me.tab_busOrdCom.SuspendLayout()
@@ -280,6 +285,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_carServ.SuspendLayout()
         Me.tab_carServHab.SuspendLayout()
         Me.tab_carServServ.SuspendLayout()
+        CType(Me.grid_ordComSel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -590,6 +596,8 @@ Partial Class cmd_modOrdComSel
         '
         'tab_aloNueDatHos
         '
+        Me.tab_aloNueDatHos.Controls.Add(Me.chx_frigobar)
+        Me.tab_aloNueDatHos.Controls.Add(Me.chx_airAco)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmd_nueAloDatHosLim)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmd_atrHos)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmd_sigHos)
@@ -609,12 +617,35 @@ Partial Class cmd_modOrdComSel
         Me.tab_aloNueDatHos.Text = "Datos del Hospedaje"
         Me.tab_aloNueDatHos.UseVisualStyleBackColor = True
         '
+        'chx_frigobar
+        '
+        Me.chx_frigobar.AutoSize = True
+        Me.chx_frigobar.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chx_frigobar.Location = New System.Drawing.Point(337, 36)
+        Me.chx_frigobar.Name = "chx_frigobar"
+        Me.chx_frigobar.Size = New System.Drawing.Size(78, 20)
+        Me.chx_frigobar.TabIndex = 6
+        Me.chx_frigobar.Text = "Frigobar"
+        Me.chx_frigobar.UseVisualStyleBackColor = True
+        '
+        'chx_airAco
+        '
+        Me.chx_airAco.AutoSize = True
+        Me.chx_airAco.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.chx_airAco.Location = New System.Drawing.Point(270, 8)
+        Me.chx_airAco.Name = "chx_airAco"
+        Me.chx_airAco.Size = New System.Drawing.Size(145, 20)
+        Me.chx_airAco.TabIndex = 5
+        Me.chx_airAco.Text = "Aire Acondicionado"
+        Me.chx_airAco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.chx_airAco.UseVisualStyleBackColor = True
+        '
         'cmd_nueAloDatHosLim
         '
         Me.cmd_nueAloDatHosLim.Location = New System.Drawing.Point(9, 146)
         Me.cmd_nueAloDatHosLim.Name = "cmd_nueAloDatHosLim"
         Me.cmd_nueAloDatHosLim.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueAloDatHosLim.TabIndex = 5
+        Me.cmd_nueAloDatHosLim.TabIndex = 7
         Me.cmd_nueAloDatHosLim.Text = "Limpiar"
         Me.cmd_nueAloDatHosLim.UseVisualStyleBackColor = True
         '
@@ -623,7 +654,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_atrHos.Location = New System.Drawing.Point(331, 146)
         Me.cmd_atrHos.Name = "cmd_atrHos"
         Me.cmd_atrHos.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_atrHos.TabIndex = 6
+        Me.cmd_atrHos.TabIndex = 8
         Me.cmd_atrHos.Text = "Atrás"
         Me.cmd_atrHos.UseVisualStyleBackColor = True
         '
@@ -632,7 +663,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_sigHos.Location = New System.Drawing.Point(409, 146)
         Me.cmd_sigHos.Name = "cmd_sigHos"
         Me.cmd_sigHos.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_sigHos.TabIndex = 7
+        Me.cmd_sigHos.TabIndex = 9
         Me.cmd_sigHos.Text = "Siguiente"
         Me.cmd_sigHos.UseVisualStyleBackColor = True
         '
@@ -708,6 +739,8 @@ Partial Class cmd_modOrdComSel
         '
         'tab_aloNueSelHab
         '
+        Me.tab_aloNueSelHab.Controls.Add(Me.Label1)
+        Me.tab_aloNueSelHab.Controls.Add(Me.grid_nueAlo)
         Me.tab_aloNueSelHab.Controls.Add(Me.cam_atrHab)
         Me.tab_aloNueSelHab.Controls.Add(Me.cmd_aceHab)
         Me.tab_aloNueSelHab.Location = New System.Drawing.Point(4, 25)
@@ -717,6 +750,57 @@ Partial Class cmd_modOrdComSel
         Me.tab_aloNueSelHab.TabIndex = 2
         Me.tab_aloNueSelHab.Text = "Selección de Habitación"
         Me.tab_aloNueSelHab.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(3, 3)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(161, 16)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "Habitaciones disponibles"
+        '
+        'grid_nueAlo
+        '
+        Me.grid_nueAlo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_nueAlo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cln_nroPisoHabSel, Me.clm_nroHabSel, Me.clm_cantCamas, Me.clm_capacidad})
+        Me.grid_nueAlo.Location = New System.Drawing.Point(6, 22)
+        Me.grid_nueAlo.Name = "grid_nueAlo"
+        Me.grid_nueAlo.Size = New System.Drawing.Size(502, 118)
+        Me.grid_nueAlo.TabIndex = 3
+        '
+        'cln_nroPisoHabSel
+        '
+        Me.cln_nroPisoHabSel.HeaderText = "Nro de Piso"
+        Me.cln_nroPisoHabSel.Name = "cln_nroPisoHabSel"
+        Me.cln_nroPisoHabSel.ReadOnly = True
+        Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.cln_nroPisoHabSel.Width = 120
+        '
+        'clm_nroHabSel
+        '
+        Me.clm_nroHabSel.HeaderText = "Nro de Habitación"
+        Me.clm_nroHabSel.Name = "clm_nroHabSel"
+        Me.clm_nroHabSel.ReadOnly = True
+        Me.clm_nroHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_nroHabSel.Width = 140
+        '
+        'clm_cantCamas
+        '
+        Me.clm_cantCamas.HeaderText = "Camas"
+        Me.clm_cantCamas.Name = "clm_cantCamas"
+        Me.clm_cantCamas.ReadOnly = True
+        Me.clm_cantCamas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_cantCamas.Width = 90
+        '
+        'clm_capacidad
+        '
+        Me.clm_capacidad.HeaderText = "Capacidad"
+        Me.clm_capacidad.Name = "clm_capacidad"
+        Me.clm_capacidad.ReadOnly = True
+        Me.clm_capacidad.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_capacidad.Width = 90
         '
         'cam_atrHab
         '
@@ -899,8 +983,8 @@ Partial Class cmd_modOrdComSel
         '
         Me.tab_busAloAlo.Controls.Add(Me.cmd_clickEnGrilla)
         Me.tab_busAloAlo.Controls.Add(Me.cmd_busAloAtr)
-        Me.tab_busAloAlo.Controls.Add(Me.DataGridView1)
         Me.tab_busAloAlo.Controls.Add(Me.cmd_busAloFin)
+        Me.tab_busAloAlo.Controls.Add(Me.grid_busAlo)
         Me.tab_busAloAlo.Location = New System.Drawing.Point(4, 25)
         Me.tab_busAloAlo.Name = "tab_busAloAlo"
         Me.tab_busAloAlo.Padding = New System.Windows.Forms.Padding(3)
@@ -914,7 +998,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_clickEnGrilla.Location = New System.Drawing.Point(7, 151)
         Me.cmd_clickEnGrilla.Name = "cmd_clickEnGrilla"
         Me.cmd_clickEnGrilla.Size = New System.Drawing.Size(115, 23)
-        Me.cmd_clickEnGrilla.TabIndex = 51
+        Me.cmd_clickEnGrilla.TabIndex = 1
         Me.cmd_clickEnGrilla.Text = "Click en Grilla"
         Me.cmd_clickEnGrilla.UseVisualStyleBackColor = True
         '
@@ -923,18 +1007,27 @@ Partial Class cmd_modOrdComSel
         Me.cmd_busAloAtr.Location = New System.Drawing.Point(331, 146)
         Me.cmd_busAloAtr.Name = "cmd_busAloAtr"
         Me.cmd_busAloAtr.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloAtr.TabIndex = 1
+        Me.cmd_busAloAtr.TabIndex = 2
         Me.cmd_busAloAtr.Text = "Atrás"
         Me.cmd_busAloAtr.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'cmd_busAloFin
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_piso, Me.clm_hab, Me.clm_fecIni, Me.clm_fecHas})
-        Me.DataGridView1.Location = New System.Drawing.Point(7, 6)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(501, 136)
-        Me.DataGridView1.TabIndex = 0
+        Me.cmd_busAloFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busAloFin.Name = "cmd_busAloFin"
+        Me.cmd_busAloFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloFin.TabIndex = 3
+        Me.cmd_busAloFin.Text = "Finalizar"
+        Me.cmd_busAloFin.UseVisualStyleBackColor = True
+        '
+        'grid_busAlo
+        '
+        Me.grid_busAlo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_busAlo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_piso, Me.clm_hab, Me.clm_fecIni, Me.clm_fecHas})
+        Me.grid_busAlo.Location = New System.Drawing.Point(7, 6)
+        Me.grid_busAlo.Name = "grid_busAlo"
+        Me.grid_busAlo.Size = New System.Drawing.Size(501, 136)
+        Me.grid_busAlo.TabIndex = 0
         '
         'clm_piso
         '
@@ -967,15 +1060,6 @@ Partial Class cmd_modOrdComSel
         Me.clm_fecHas.ReadOnly = True
         Me.clm_fecHas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.clm_fecHas.Width = 110
-        '
-        'cmd_busAloFin
-        '
-        Me.cmd_busAloFin.Location = New System.Drawing.Point(409, 146)
-        Me.cmd_busAloFin.Name = "cmd_busAloFin"
-        Me.cmd_busAloFin.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_busAloFin.TabIndex = 2
-        Me.cmd_busAloFin.Text = "Finalizar"
-        Me.cmd_busAloFin.UseVisualStyleBackColor = True
         '
         'pnl_busAloSel
         '
@@ -1329,7 +1413,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueOrdComLim.Location = New System.Drawing.Point(9, 146)
         Me.cmd_nueOrdComLim.Name = "cmd_nueOrdComLim"
         Me.cmd_nueOrdComLim.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComLim.TabIndex = 3
+        Me.cmd_nueOrdComLim.TabIndex = 6
         Me.cmd_nueOrdComLim.Text = "Limpiar"
         Me.cmd_nueOrdComLim.UseVisualStyleBackColor = True
         '
@@ -1347,7 +1431,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueOrdComSig.Location = New System.Drawing.Point(409, 146)
         Me.cmd_nueOrdComSig.Name = "cmd_nueOrdComSig"
         Me.cmd_nueOrdComSig.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComSig.TabIndex = 7
+        Me.cmd_nueOrdComSig.TabIndex = 8
         Me.cmd_nueOrdComSig.Text = "Siguiente"
         Me.cmd_nueOrdComSig.UseVisualStyleBackColor = True
         '
@@ -1356,7 +1440,7 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueOrdComCan.Location = New System.Drawing.Point(331, 146)
         Me.cmd_nueOrdComCan.Name = "cmd_nueOrdComCan"
         Me.cmd_nueOrdComCan.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComCan.TabIndex = 6
+        Me.cmd_nueOrdComCan.TabIndex = 7
         Me.cmd_nueOrdComCan.Text = "Cancelar"
         Me.cmd_nueOrdComCan.UseVisualStyleBackColor = True
         '
@@ -1435,7 +1519,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_nueOrdComArt.Controls.Add(Me.lbl_nueOrdComArtFilDes)
         Me.tab_nueOrdComArt.Controls.Add(Me.txt_nueOrdComArtFilID)
         Me.tab_nueOrdComArt.Controls.Add(Me.lbl_nueOrdComArtFilID)
-        Me.tab_nueOrdComArt.Controls.Add(Me.DataGridView2)
+        Me.tab_nueOrdComArt.Controls.Add(Me.grid_nueOrdCom)
         Me.tab_nueOrdComArt.Controls.Add(Me.cmd_nueOrdComAtr)
         Me.tab_nueOrdComArt.Controls.Add(Me.cmd_nueOrdComArtSig)
         Me.tab_nueOrdComArt.Location = New System.Drawing.Point(4, 25)
@@ -1491,14 +1575,14 @@ Partial Class cmd_modOrdComSel
         Me.lbl_nueOrdComArtFilID.TabIndex = 20
         Me.lbl_nueOrdComArtFilID.Text = "Filtrar por ID"
         '
-        'DataGridView2
+        'grid_nueOrdCom
         '
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_ID, Me.clm_des, Me.clm_preUni, Me.clm_cant, Me.clm_preTot})
-        Me.DataGridView2.Location = New System.Drawing.Point(7, 6)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(501, 121)
-        Me.DataGridView2.TabIndex = 2
+        Me.grid_nueOrdCom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_nueOrdCom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_ID, Me.clm_des, Me.clm_preUni, Me.clm_cant, Me.clm_preTot})
+        Me.grid_nueOrdCom.Location = New System.Drawing.Point(7, 6)
+        Me.grid_nueOrdCom.Name = "grid_nueOrdCom"
+        Me.grid_nueOrdCom.Size = New System.Drawing.Size(501, 121)
+        Me.grid_nueOrdCom.TabIndex = 0
         '
         'clm_ID
         '
@@ -1588,8 +1672,8 @@ Partial Class cmd_modOrdComSel
         '
         'pnl_busOrdCom
         '
-        Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
         Me.pnl_busOrdCom.Controls.Add(Me.lbl_busOrdCom)
+        Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
         Me.pnl_busOrdCom.Controls.Add(Me.pnl_ordComSel)
         Me.pnl_busOrdCom.Enabled = False
         Me.pnl_busOrdCom.Location = New System.Drawing.Point(12, 28)
@@ -1597,6 +1681,16 @@ Partial Class cmd_modOrdComSel
         Me.pnl_busOrdCom.Size = New System.Drawing.Size(532, 240)
         Me.pnl_busOrdCom.TabIndex = 0
         Me.pnl_busOrdCom.Visible = False
+        '
+        'lbl_busOrdCom
+        '
+        Me.lbl_busOrdCom.AutoSize = True
+        Me.lbl_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_busOrdCom.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_busOrdCom.Name = "lbl_busOrdCom"
+        Me.lbl_busOrdCom.Size = New System.Drawing.Size(182, 16)
+        Me.lbl_busOrdCom.TabIndex = 0
+        Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
         '
         'tab_busOrdCom
         '
@@ -1826,19 +1920,10 @@ Partial Class cmd_modOrdComSel
         Me.cmd_busOrdComFin.Text = "Finalizar"
         Me.cmd_busOrdComFin.UseVisualStyleBackColor = True
         '
-        'lbl_busOrdCom
-        '
-        Me.lbl_busOrdCom.AutoSize = True
-        Me.lbl_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_busOrdCom.Location = New System.Drawing.Point(3, 3)
-        Me.lbl_busOrdCom.Name = "lbl_busOrdCom"
-        Me.lbl_busOrdCom.Size = New System.Drawing.Size(182, 16)
-        Me.lbl_busOrdCom.TabIndex = 0
-        Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
-        '
         'pnl_ordComSel
         '
         Me.pnl_ordComSel.BackColor = System.Drawing.Color.White
+        Me.pnl_ordComSel.Controls.Add(Me.grid_ordComSel)
         Me.pnl_ordComSel.Controls.Add(Me.cmd_atrOrdComSel)
         Me.pnl_ordComSel.Controls.Add(Me.cmd_anuOrdComSel)
         Me.pnl_ordComSel.Controls.Add(Me.Button6)
@@ -1855,16 +1940,8 @@ Partial Class cmd_modOrdComSel
         Me.pnl_ordComSel.Controls.Add(Me.MaskedTextBox2)
         Me.pnl_ordComSel.Controls.Add(Me.MaskedTextBox3)
         Me.pnl_ordComSel.Controls.Add(Me.TextBox6)
-        Me.pnl_ordComSel.Controls.Add(Me.TextBox7)
-        Me.pnl_ordComSel.Controls.Add(Me.TextBox8)
-        Me.pnl_ordComSel.Controls.Add(Me.TextBox9)
-        Me.pnl_ordComSel.Controls.Add(Me.TextBox10)
-        Me.pnl_ordComSel.Controls.Add(Me.Label6)
-        Me.pnl_ordComSel.Controls.Add(Me.Label7)
-        Me.pnl_ordComSel.Controls.Add(Me.Label8)
-        Me.pnl_ordComSel.Controls.Add(Me.Label9)
-        Me.pnl_ordComSel.Controls.Add(Me.Label10)
-        Me.pnl_ordComSel.Controls.Add(Me.Label11)
+        Me.pnl_ordComSel.Controls.Add(Me.lbl_fecRecOrdComSel)
+        Me.pnl_ordComSel.Controls.Add(Me.lbl_fecEmiOrdComSel)
         Me.pnl_ordComSel.Controls.Add(Me.Label12)
         Me.pnl_ordComSel.Controls.Add(Me.lbl_ordComSel)
         Me.pnl_ordComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1997,7 +2074,7 @@ Partial Class cmd_modOrdComSel
         '
         'MaskedTextBox2
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(311, 51)
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(128, 79)
         Me.MaskedTextBox2.Mask = "00/00/0000"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
         Me.MaskedTextBox2.ReadOnly = True
@@ -2007,7 +2084,7 @@ Partial Class cmd_modOrdComSel
         '
         'MaskedTextBox3
         '
-        Me.MaskedTextBox3.Location = New System.Drawing.Point(311, 23)
+        Me.MaskedTextBox3.Location = New System.Drawing.Point(127, 51)
         Me.MaskedTextBox3.Mask = "00/00/0000"
         Me.MaskedTextBox3.Name = "MaskedTextBox3"
         Me.MaskedTextBox3.ReadOnly = True
@@ -2017,102 +2094,34 @@ Partial Class cmd_modOrdComSel
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(158, 23)
+        Me.TextBox6.Location = New System.Drawing.Point(128, 23)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ReadOnly = True
         Me.TextBox6.Size = New System.Drawing.Size(51, 22)
         Me.TextBox6.TabIndex = 1
         '
-        'TextBox7
+        'lbl_fecRecOrdComSel
         '
-        Me.TextBox7.Location = New System.Drawing.Point(311, 79)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(70, 22)
-        Me.TextBox7.TabIndex = 7
+        Me.lbl_fecRecOrdComSel.AutoSize = True
+        Me.lbl_fecRecOrdComSel.Location = New System.Drawing.Point(7, 82)
+        Me.lbl_fecRecOrdComSel.Name = "lbl_fecRecOrdComSel"
+        Me.lbl_fecRecOrdComSel.Size = New System.Drawing.Size(115, 16)
+        Me.lbl_fecRecOrdComSel.TabIndex = 6
+        Me.lbl_fecRecOrdComSel.Text = "Fecha Recepción"
         '
-        'TextBox8
+        'lbl_fecEmiOrdComSel
         '
-        Me.TextBox8.Location = New System.Drawing.Point(158, 79)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(51, 22)
-        Me.TextBox8.TabIndex = 3
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(158, 107)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(51, 22)
-        Me.TextBox9.TabIndex = 4
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Location = New System.Drawing.Point(158, 51)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(51, 22)
-        Me.TextBox10.TabIndex = 2
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(215, 82)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(91, 16)
-        Me.Label6.TabIndex = 7
-        Me.Label6.Text = "Precio porDía"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(220, 54)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(85, 16)
-        Me.Label7.TabIndex = 6
-        Me.Label7.Text = "Fecha Hasta"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(215, 26)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(90, 16)
-        Me.Label8.TabIndex = 5
-        Me.Label8.Text = "Fecha Desde"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(10, 110)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(142, 16)
-        Me.Label9.TabIndex = 4
-        Me.Label9.Text = "Cantidad de Personas"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(35, 82)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(117, 16)
-        Me.Label10.TabIndex = 3
-        Me.Label10.Text = "Nro de Habitación"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(73, 54)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(79, 16)
-        Me.Label11.TabIndex = 2
-        Me.Label11.Text = "Nro de Piso"
+        Me.lbl_fecEmiOrdComSel.AutoSize = True
+        Me.lbl_fecEmiOrdComSel.Location = New System.Drawing.Point(25, 54)
+        Me.lbl_fecEmiOrdComSel.Name = "lbl_fecEmiOrdComSel"
+        Me.lbl_fecEmiOrdComSel.Size = New System.Drawing.Size(97, 16)
+        Me.lbl_fecEmiOrdComSel.TabIndex = 5
+        Me.lbl_fecEmiOrdComSel.Text = "Fecha Emisión"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(131, 26)
+        Me.Label12.Location = New System.Drawing.Point(101, 26)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(21, 16)
         Me.Label12.TabIndex = 1
@@ -2455,19 +2464,53 @@ Partial Class cmd_modOrdComSel
         Me.lbl_concha.TabIndex = 1
         Me.lbl_concha.Text = "Fecha, Hora y la concha de tu hermana"
         '
+        'grid_ordComSel
+        '
+        Me.grid_ordComSel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid_ordComSel.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cln_renOrdComSel, Me.clm_artOrdComSel, Me.clm_canArtOrdComSel})
+        Me.grid_ordComSel.Location = New System.Drawing.Point(206, 23)
+        Me.grid_ordComSel.Name = "grid_ordComSel"
+        Me.grid_ordComSel.Size = New System.Drawing.Size(215, 96)
+        Me.grid_ordComSel.TabIndex = 23
+        '
+        'cln_renOrdComSel
+        '
+        Me.cln_renOrdComSel.HeaderText = "Renglón"
+        Me.cln_renOrdComSel.Name = "cln_renOrdComSel"
+        Me.cln_renOrdComSel.ReadOnly = True
+        Me.cln_renOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.cln_renOrdComSel.Width = 65
+        '
+        'clm_artOrdComSel
+        '
+        Me.clm_artOrdComSel.HeaderText = "Artículo"
+        Me.clm_artOrdComSel.Name = "clm_artOrdComSel"
+        Me.clm_artOrdComSel.ReadOnly = True
+        Me.clm_artOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_artOrdComSel.Width = 65
+        '
+        'clm_canArtOrdComSel
+        '
+        Me.clm_canArtOrdComSel.HeaderText = "Cantidad"
+        Me.clm_canArtOrdComSel.Name = "clm_canArtOrdComSel"
+        Me.clm_canArtOrdComSel.ReadOnly = True
+        Me.clm_canArtOrdComSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_canArtOrdComSel.Width = 65
+        '
         'cmd_modOrdComSel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(546, 287)
         Me.Controls.Add(Me.lbl_concha)
         Me.Controls.Add(Me.menu_Menu)
+        Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
         Me.Controls.Add(Me.pnl_nueAlo)
         Me.Controls.Add(Me.pnl_busAlo)
         Me.Controls.Add(Me.pnl_agrServ)
         Me.Controls.Add(Me.pnl_agrArt)
-        Me.Controls.Add(Me.pnl_busOrdCom)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.Name = "cmd_modOrdComSel"
@@ -2482,13 +2525,15 @@ Partial Class cmd_modOrdComSel
         Me.tab_aloNueDatHos.ResumeLayout(False)
         Me.tab_aloNueDatHos.PerformLayout()
         Me.tab_aloNueSelHab.ResumeLayout(False)
+        Me.tab_aloNueSelHab.PerformLayout()
+        CType(Me.grid_nueAlo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_busAlo.ResumeLayout(False)
         Me.pnl_busAlo.PerformLayout()
         Me.tab_busAlo.ResumeLayout(False)
         Me.tab_busAloDatCli.ResumeLayout(False)
         Me.tab_busAloDatCli.PerformLayout()
         Me.tab_busAloAlo.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_busAlo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_busAloSel.ResumeLayout(False)
         Me.pnl_busAloSel.PerformLayout()
         Me.pnl_nueOrdCom.ResumeLayout(False)
@@ -2498,7 +2543,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_nueOrdComDatPro.PerformLayout()
         Me.tab_nueOrdComArt.ResumeLayout(False)
         Me.tab_nueOrdComArt.PerformLayout()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid_nueOrdCom, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tab_nueOrdComRes.ResumeLayout(False)
         Me.pnl_busOrdCom.ResumeLayout(False)
         Me.pnl_busOrdCom.PerformLayout()
@@ -2521,6 +2566,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_carServHab.ResumeLayout(False)
         Me.tab_carServHab.PerformLayout()
         Me.tab_carServServ.ResumeLayout(False)
+        CType(Me.grid_ordComSel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2581,7 +2627,7 @@ Partial Class cmd_modOrdComSel
     Friend WithEvents tab_busAloAlo As System.Windows.Forms.TabPage
     Friend WithEvents cmd_busAloCan As System.Windows.Forms.Button
     Friend WithEvents cmd_busAloDatCliSig As System.Windows.Forms.Button
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents grid_busAlo As System.Windows.Forms.DataGridView
     Friend WithEvents cmd_busAloFin As System.Windows.Forms.Button
     Friend WithEvents cmd_busAloAtr As System.Windows.Forms.Button
     Friend WithEvents NuevaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -2603,7 +2649,7 @@ Partial Class cmd_modOrdComSel
     Friend WithEvents lbl_IDPro As System.Windows.Forms.Label
     Friend WithEvents cmd_nueOrdComAtr As System.Windows.Forms.Button
     Friend WithEvents cmd_nueOrdComArtSig As System.Windows.Forms.Button
-    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
+    Friend WithEvents grid_nueOrdCom As System.Windows.Forms.DataGridView
     Friend WithEvents cmd_busPro As System.Windows.Forms.Button
 
 
@@ -2716,16 +2762,8 @@ Partial Class cmd_modOrdComSel
     Friend WithEvents MaskedTextBox2 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents MaskedTextBox3 As System.Windows.Forms.MaskedTextBox
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents lbl_fecRecOrdComSel As System.Windows.Forms.Label
+    Friend WithEvents lbl_fecEmiOrdComSel As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents lbl_ordComSel As System.Windows.Forms.Label
     Friend WithEvents cmd_clickEnGrillaOrdenDeCompra As System.Windows.Forms.Button
@@ -2753,5 +2791,17 @@ Partial Class cmd_modOrdComSel
     Friend WithEvents cmd_nueOrdComFin As System.Windows.Forms.Button
     Friend WithEvents cmd_nueOrdComResAtr As System.Windows.Forms.Button
     Friend WithEvents lbl_concha As System.Windows.Forms.Label
+    Friend WithEvents chx_frigobar As System.Windows.Forms.CheckBox
+    Friend WithEvents chx_airAco As System.Windows.Forms.CheckBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents grid_nueAlo As System.Windows.Forms.DataGridView
+    Friend WithEvents cln_nroPisoHabSel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_nroHabSel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_cantCamas As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_capacidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents grid_ordComSel As System.Windows.Forms.DataGridView
+    Friend WithEvents cln_renOrdComSel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_artOrdComSel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_canArtOrdComSel As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
