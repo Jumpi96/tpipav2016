@@ -94,6 +94,10 @@ Partial Class cmd_modOrdComSel
         Me.cmd_clickEnGrilla = New System.Windows.Forms.Button()
         Me.cmd_busAloAtr = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.clm_piso = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_hab = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_fecIni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_fecHas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_busAloFin = New System.Windows.Forms.Button()
         Me.pnl_busAloSel = New System.Windows.Forms.Panel()
         Me.cmd_atrAloSel = New System.Windows.Forms.Button()
@@ -141,13 +145,22 @@ Partial Class cmd_modOrdComSel
         Me.lbl_nomPro = New System.Windows.Forms.Label()
         Me.lbl_IDPro = New System.Windows.Forms.Label()
         Me.tab_nueOrdComArt = New System.Windows.Forms.TabPage()
+        Me.cmd_nueOrdComAgr = New System.Windows.Forms.Button()
         Me.txt_nueOrdComArtFilDes = New System.Windows.Forms.TextBox()
         Me.lbl_nueOrdComArtFilDes = New System.Windows.Forms.Label()
         Me.txt_nueOrdComArtFilID = New System.Windows.Forms.TextBox()
         Me.lbl_nueOrdComArtFilID = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.clm_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_des = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_preUni = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_preTot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_nueOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_nueOrdComArtSig = New System.Windows.Forms.Button()
+        Me.tab_nueOrdComRes = New System.Windows.Forms.TabPage()
+        Me.cmd_nueOrdComResAtr = New System.Windows.Forms.Button()
+        Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
         Me.pnl_busOrdCom = New System.Windows.Forms.Panel()
         Me.tab_busOrdCom = New System.Windows.Forms.TabControl()
         Me.tab_busOrdComDatPro = New System.Windows.Forms.TabPage()
@@ -166,6 +179,10 @@ Partial Class cmd_modOrdComSel
         Me.tab_busOrdComOrdCom = New System.Windows.Forms.TabPage()
         Me.cmd_clickEnGrillaOrdenDeCompra = New System.Windows.Forms.Button()
         Me.DataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.clm_IDOrdCom = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_IDPro = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_fecEmi = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_fecRec = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmd_busOrdComAtr = New System.Windows.Forms.Button()
         Me.cmd_busOrdComFin = New System.Windows.Forms.Button()
         Me.lbl_busOrdCom = New System.Windows.Forms.Label()
@@ -230,23 +247,6 @@ Partial Class cmd_modOrdComSel
         Me.cmd_carServAtr = New System.Windows.Forms.Button()
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
-        Me.clm_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_des = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_preUni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_cant = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_preTot = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_piso = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_hab = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_fecIni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_fecHas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_IDOrdCom = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_IDPro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_fecEmi = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_fecRec = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.tab_nueOrdComRes = New System.Windows.Forms.TabPage()
-        Me.cmd_nueOrdComAgr = New System.Windows.Forms.Button()
-        Me.cmd_nueOrdComFin = New System.Windows.Forms.Button()
-        Me.cmd_nueOrdComResAtr = New System.Windows.Forms.Button()
         Me.lbl_concha = New System.Windows.Forms.Label()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
@@ -265,6 +265,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_nueOrdComDatPro.SuspendLayout()
         Me.tab_nueOrdComArt.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab_nueOrdComRes.SuspendLayout()
         Me.pnl_busOrdCom.SuspendLayout()
         Me.tab_busOrdCom.SuspendLayout()
         Me.tab_busOrdComDatPro.SuspendLayout()
@@ -279,7 +280,6 @@ Partial Class cmd_modOrdComSel
         Me.tab_carServ.SuspendLayout()
         Me.tab_carServHab.SuspendLayout()
         Me.tab_carServServ.SuspendLayout()
-        Me.tab_nueOrdComRes.SuspendLayout()
         Me.SuspendLayout()
         '
         'menu_Menu
@@ -360,7 +360,7 @@ Partial Class cmd_modOrdComSel
         '
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
-        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
         'ABMAlojamientosToolStripMenuItem
@@ -384,13 +384,13 @@ Partial Class cmd_modOrdComSel
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'EstadísticasToolStripMenuItem
         '
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
-        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
         '
         'pnl_nueAlo
@@ -934,7 +934,39 @@ Partial Class cmd_modOrdComSel
         Me.DataGridView1.Location = New System.Drawing.Point(7, 6)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(501, 136)
-        Me.DataGridView1.TabIndex = 1
+        Me.DataGridView1.TabIndex = 0
+        '
+        'clm_piso
+        '
+        Me.clm_piso.HeaderText = "Piso"
+        Me.clm_piso.Name = "clm_piso"
+        Me.clm_piso.ReadOnly = True
+        Me.clm_piso.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_piso.Width = 50
+        '
+        'clm_hab
+        '
+        Me.clm_hab.HeaderText = "Habitación"
+        Me.clm_hab.Name = "clm_hab"
+        Me.clm_hab.ReadOnly = True
+        Me.clm_hab.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_hab.Width = 80
+        '
+        'clm_fecIni
+        '
+        Me.clm_fecIni.HeaderText = "Fecha inicio"
+        Me.clm_fecIni.Name = "clm_fecIni"
+        Me.clm_fecIni.ReadOnly = True
+        Me.clm_fecIni.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_fecIni.Width = 110
+        '
+        'clm_fecHas
+        '
+        Me.clm_fecHas.HeaderText = "Fecha fin"
+        Me.clm_fecHas.Name = "clm_fecHas"
+        Me.clm_fecHas.ReadOnly = True
+        Me.clm_fecHas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_fecHas.Width = 110
         '
         'cmd_busAloFin
         '
@@ -1414,6 +1446,15 @@ Partial Class cmd_modOrdComSel
         Me.tab_nueOrdComArt.Text = "Selección de Artículos"
         Me.tab_nueOrdComArt.UseVisualStyleBackColor = True
         '
+        'cmd_nueOrdComAgr
+        '
+        Me.cmd_nueOrdComAgr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_nueOrdComAgr.Name = "cmd_nueOrdComAgr"
+        Me.cmd_nueOrdComAgr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComAgr.TabIndex = 4
+        Me.cmd_nueOrdComAgr.Text = "Agregar"
+        Me.cmd_nueOrdComAgr.UseVisualStyleBackColor = True
+        '
         'txt_nueOrdComArtFilDes
         '
         Me.txt_nueOrdComArtFilDes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1459,6 +1500,44 @@ Partial Class cmd_modOrdComSel
         Me.DataGridView2.Size = New System.Drawing.Size(501, 121)
         Me.DataGridView2.TabIndex = 2
         '
+        'clm_ID
+        '
+        Me.clm_ID.HeaderText = "ID"
+        Me.clm_ID.Name = "clm_ID"
+        Me.clm_ID.ReadOnly = True
+        Me.clm_ID.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_ID.Width = 50
+        '
+        'clm_des
+        '
+        Me.clm_des.HeaderText = "Descripción"
+        Me.clm_des.Name = "clm_des"
+        Me.clm_des.ReadOnly = True
+        Me.clm_des.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_des.Width = 105
+        '
+        'clm_preUni
+        '
+        Me.clm_preUni.HeaderText = "Precio unitario"
+        Me.clm_preUni.Name = "clm_preUni"
+        Me.clm_preUni.ReadOnly = True
+        Me.clm_preUni.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_preUni.Width = 120
+        '
+        'clm_cant
+        '
+        Me.clm_cant.HeaderText = "Cantidad"
+        Me.clm_cant.Name = "clm_cant"
+        Me.clm_cant.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_cant.Width = 80
+        '
+        'clm_preTot
+        '
+        Me.clm_preTot.HeaderText = "Precio total"
+        Me.clm_preTot.Name = "clm_preTot"
+        Me.clm_preTot.ReadOnly = True
+        Me.clm_preTot.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
         'cmd_nueOrdComAtr
         '
         Me.cmd_nueOrdComAtr.Location = New System.Drawing.Point(253, 146)
@@ -1476,6 +1555,36 @@ Partial Class cmd_modOrdComSel
         Me.cmd_nueOrdComArtSig.TabIndex = 5
         Me.cmd_nueOrdComArtSig.Text = "Siguiente"
         Me.cmd_nueOrdComArtSig.UseVisualStyleBackColor = True
+        '
+        'tab_nueOrdComRes
+        '
+        Me.tab_nueOrdComRes.Controls.Add(Me.cmd_nueOrdComResAtr)
+        Me.tab_nueOrdComRes.Controls.Add(Me.cmd_nueOrdComFin)
+        Me.tab_nueOrdComRes.Location = New System.Drawing.Point(4, 25)
+        Me.tab_nueOrdComRes.Name = "tab_nueOrdComRes"
+        Me.tab_nueOrdComRes.Padding = New System.Windows.Forms.Padding(3)
+        Me.tab_nueOrdComRes.Size = New System.Drawing.Size(514, 185)
+        Me.tab_nueOrdComRes.TabIndex = 2
+        Me.tab_nueOrdComRes.Text = "Resumen"
+        Me.tab_nueOrdComRes.UseVisualStyleBackColor = True
+        '
+        'cmd_nueOrdComResAtr
+        '
+        Me.cmd_nueOrdComResAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_nueOrdComResAtr.Name = "cmd_nueOrdComResAtr"
+        Me.cmd_nueOrdComResAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComResAtr.TabIndex = 1
+        Me.cmd_nueOrdComResAtr.Text = "Atrás"
+        Me.cmd_nueOrdComResAtr.UseVisualStyleBackColor = True
+        '
+        'cmd_nueOrdComFin
+        '
+        Me.cmd_nueOrdComFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_nueOrdComFin.Name = "cmd_nueOrdComFin"
+        Me.cmd_nueOrdComFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComFin.TabIndex = 2
+        Me.cmd_nueOrdComFin.Text = "Finalizar"
+        Me.cmd_nueOrdComFin.UseVisualStyleBackColor = True
         '
         'pnl_busOrdCom
         '
@@ -1665,7 +1774,39 @@ Partial Class cmd_modOrdComSel
         Me.DataGridView3.Location = New System.Drawing.Point(7, 6)
         Me.DataGridView3.Name = "DataGridView3"
         Me.DataGridView3.Size = New System.Drawing.Size(501, 136)
-        Me.DataGridView3.TabIndex = 2
+        Me.DataGridView3.TabIndex = 0
+        '
+        'clm_IDOrdCom
+        '
+        Me.clm_IDOrdCom.HeaderText = "ID"
+        Me.clm_IDOrdCom.Name = "clm_IDOrdCom"
+        Me.clm_IDOrdCom.ReadOnly = True
+        Me.clm_IDOrdCom.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_IDOrdCom.Width = 60
+        '
+        'clm_IDPro
+        '
+        Me.clm_IDPro.HeaderText = "ID Proveedor"
+        Me.clm_IDPro.Name = "clm_IDPro"
+        Me.clm_IDPro.ReadOnly = True
+        Me.clm_IDPro.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_IDPro.Width = 115
+        '
+        'clm_fecEmi
+        '
+        Me.clm_fecEmi.HeaderText = "Fecha Emisión"
+        Me.clm_fecEmi.Name = "clm_fecEmi"
+        Me.clm_fecEmi.ReadOnly = True
+        Me.clm_fecEmi.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_fecEmi.Width = 140
+        '
+        'clm_fecRec
+        '
+        Me.clm_fecRec.HeaderText = "Fecha Recepción"
+        Me.clm_fecRec.Name = "clm_fecRec"
+        Me.clm_fecRec.ReadOnly = True
+        Me.clm_fecRec.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_fecRec.Width = 140
         '
         'cmd_busOrdComAtr
         '
@@ -2305,147 +2446,6 @@ Partial Class cmd_modOrdComSel
         Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
-        'clm_ID
-        '
-        Me.clm_ID.HeaderText = "ID"
-        Me.clm_ID.Name = "clm_ID"
-        Me.clm_ID.ReadOnly = True
-        Me.clm_ID.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_ID.Width = 50
-        '
-        'clm_des
-        '
-        Me.clm_des.HeaderText = "Descripción"
-        Me.clm_des.Name = "clm_des"
-        Me.clm_des.ReadOnly = True
-        Me.clm_des.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_des.Width = 105
-        '
-        'clm_preUni
-        '
-        Me.clm_preUni.HeaderText = "Precio unitario"
-        Me.clm_preUni.Name = "clm_preUni"
-        Me.clm_preUni.ReadOnly = True
-        Me.clm_preUni.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_preUni.Width = 120
-        '
-        'clm_cant
-        '
-        Me.clm_cant.HeaderText = "Cantidad"
-        Me.clm_cant.Name = "clm_cant"
-        Me.clm_cant.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_cant.Width = 80
-        '
-        'clm_preTot
-        '
-        Me.clm_preTot.HeaderText = "Precio total"
-        Me.clm_preTot.Name = "clm_preTot"
-        Me.clm_preTot.ReadOnly = True
-        Me.clm_preTot.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'clm_piso
-        '
-        Me.clm_piso.HeaderText = "Piso"
-        Me.clm_piso.Name = "clm_piso"
-        Me.clm_piso.ReadOnly = True
-        Me.clm_piso.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_piso.Width = 50
-        '
-        'clm_hab
-        '
-        Me.clm_hab.HeaderText = "Habitación"
-        Me.clm_hab.Name = "clm_hab"
-        Me.clm_hab.ReadOnly = True
-        Me.clm_hab.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_hab.Width = 80
-        '
-        'clm_fecIni
-        '
-        Me.clm_fecIni.HeaderText = "Fecha inicio"
-        Me.clm_fecIni.Name = "clm_fecIni"
-        Me.clm_fecIni.ReadOnly = True
-        Me.clm_fecIni.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_fecIni.Width = 110
-        '
-        'clm_fecHas
-        '
-        Me.clm_fecHas.HeaderText = "Fecha fin"
-        Me.clm_fecHas.Name = "clm_fecHas"
-        Me.clm_fecHas.ReadOnly = True
-        Me.clm_fecHas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_fecHas.Width = 110
-        '
-        'clm_IDOrdCom
-        '
-        Me.clm_IDOrdCom.HeaderText = "ID"
-        Me.clm_IDOrdCom.Name = "clm_IDOrdCom"
-        Me.clm_IDOrdCom.ReadOnly = True
-        Me.clm_IDOrdCom.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_IDOrdCom.Width = 60
-        '
-        'clm_IDPro
-        '
-        Me.clm_IDPro.HeaderText = "ID Proveedor"
-        Me.clm_IDPro.Name = "clm_IDPro"
-        Me.clm_IDPro.ReadOnly = True
-        Me.clm_IDPro.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_IDPro.Width = 115
-        '
-        'clm_fecEmi
-        '
-        Me.clm_fecEmi.HeaderText = "Fecha Emisión"
-        Me.clm_fecEmi.Name = "clm_fecEmi"
-        Me.clm_fecEmi.ReadOnly = True
-        Me.clm_fecEmi.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_fecEmi.Width = 140
-        '
-        'clm_fecRec
-        '
-        Me.clm_fecRec.HeaderText = "Fecha Recepción"
-        Me.clm_fecRec.Name = "clm_fecRec"
-        Me.clm_fecRec.ReadOnly = True
-        Me.clm_fecRec.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_fecRec.Width = 140
-        '
-        'tab_nueOrdComRes
-        '
-        Me.tab_nueOrdComRes.Controls.Add(Me.cmd_nueOrdComResAtr)
-        Me.tab_nueOrdComRes.Controls.Add(Me.cmd_nueOrdComFin)
-        Me.tab_nueOrdComRes.Location = New System.Drawing.Point(4, 25)
-        Me.tab_nueOrdComRes.Name = "tab_nueOrdComRes"
-        Me.tab_nueOrdComRes.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_nueOrdComRes.Size = New System.Drawing.Size(514, 185)
-        Me.tab_nueOrdComRes.TabIndex = 2
-        Me.tab_nueOrdComRes.Text = "Resumen"
-        Me.tab_nueOrdComRes.UseVisualStyleBackColor = True
-        '
-        'cmd_nueOrdComAgr
-        '
-        Me.cmd_nueOrdComAgr.Location = New System.Drawing.Point(331, 146)
-        Me.cmd_nueOrdComAgr.Name = "cmd_nueOrdComAgr"
-        Me.cmd_nueOrdComAgr.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComAgr.TabIndex = 4
-        Me.cmd_nueOrdComAgr.Text = "Agregar"
-        Me.cmd_nueOrdComAgr.UseVisualStyleBackColor = True
-        '
-        'cmd_nueOrdComFin
-        '
-        Me.cmd_nueOrdComFin.Location = New System.Drawing.Point(409, 146)
-        Me.cmd_nueOrdComFin.Name = "cmd_nueOrdComFin"
-        Me.cmd_nueOrdComFin.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComFin.TabIndex = 0
-        Me.cmd_nueOrdComFin.Text = "Finalizar"
-        Me.cmd_nueOrdComFin.UseVisualStyleBackColor = True
-        '
-        'cmd_nueOrdComResAtr
-        '
-        Me.cmd_nueOrdComResAtr.Location = New System.Drawing.Point(331, 146)
-        Me.cmd_nueOrdComResAtr.Name = "cmd_nueOrdComResAtr"
-        Me.cmd_nueOrdComResAtr.Size = New System.Drawing.Size(72, 28)
-        Me.cmd_nueOrdComResAtr.TabIndex = 1
-        Me.cmd_nueOrdComResAtr.Text = "Atrás"
-        Me.cmd_nueOrdComResAtr.UseVisualStyleBackColor = True
-        '
         'lbl_concha
         '
         Me.lbl_concha.AutoSize = True
@@ -2499,6 +2499,7 @@ Partial Class cmd_modOrdComSel
         Me.tab_nueOrdComArt.ResumeLayout(False)
         Me.tab_nueOrdComArt.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tab_nueOrdComRes.ResumeLayout(False)
         Me.pnl_busOrdCom.ResumeLayout(False)
         Me.pnl_busOrdCom.PerformLayout()
         Me.tab_busOrdCom.ResumeLayout(False)
@@ -2520,7 +2521,6 @@ Partial Class cmd_modOrdComSel
         Me.tab_carServHab.ResumeLayout(False)
         Me.tab_carServHab.PerformLayout()
         Me.tab_carServServ.ResumeLayout(False)
-        Me.tab_nueOrdComRes.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -56,23 +56,41 @@
         Me.pnl_busOrdCom.BringToFront()
     End Sub
 
-    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
-        Me.menu_Menu.Enabled = False
-
-        Me.ocultarBuscarAlojamiento()
-
-        Me.ocultarNuevaOrdenCompra()
-
-        Me.ocultarBuscarOrdenCompra()
-
-        Me.pnl_agrServ.Visible = False
-        Me.pnl_agrServ.Enabled = False
-        Me.pnl_agrServ.SendToBack()
-
+    Private Sub ocultarAgregarArticulo()
         Me.pnl_agrArt.Visible = False
         Me.pnl_agrArt.Enabled = False
         Me.pnl_agrArt.SendToBack()
+    End Sub
 
+    Private Sub mostrarAgregarArticulo()
+        Me.pnl_agrArt.Visible = True
+        Me.pnl_agrArt.Enabled = True
+        Me.tab_carArt.SelectedTab = tab_carArtHab
+        Me.cmb_nroPisoCarArt.Focus()
+        Me.pnl_agrArt.BringToFront()
+    End Sub
+
+    Private Sub ocultarAgregarServicio()
+        Me.pnl_agrServ.Visible = False
+        Me.pnl_agrServ.Enabled = False
+        Me.pnl_agrServ.SendToBack()
+    End Sub
+
+    Private Sub mostrarAgregarServicio()
+        Me.pnl_agrServ.Visible = True
+        Me.pnl_agrServ.Enabled = True
+        Me.tab_carServ.SelectedTab = tab_carServHab
+        Me.cmb_nroPiso.Focus()
+        Me.pnl_agrServ.BringToFront()
+    End Sub
+
+    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+        Me.menu_Menu.Enabled = False
+        Me.ocultarBuscarAlojamiento()
+        Me.ocultarNuevaOrdenCompra()
+        Me.ocultarBuscarOrdenCompra()
+        Me.ocultarAgregarArticulo()
+        Me.ocultarAgregarServicio()
         Me.mostrarNuevoAlojamiento()
     End Sub
 
@@ -102,28 +120,17 @@
 
     Private Sub BuscarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
-
         Me.ocultarNuevoAlojamiento()
-
         Me.ocultarNuevaOrdenCompra()
-
         Me.ocultarBuscarOrdenCompra()
-
-        Me.pnl_agrServ.Visible = False
-        Me.pnl_agrServ.Enabled = False
-        Me.pnl_agrServ.SendToBack()
-
-        Me.pnl_agrArt.Visible = False
-        Me.pnl_agrArt.Enabled = False
-        Me.pnl_agrArt.SendToBack()
-
+        Me.ocultarAgregarServicio()
+        Me.ocultarAgregarArticulo()
         Me.mostrarBuscarAlojamiento()
     End Sub
 
     Private Sub cmd_canCli_Click(sender As Object, e As EventArgs) Handles cmd_canCli.Click
         Me.ocultarNuevoAlojamiento()
         Me.menu_Menu.Enabled = True
-
         Me.txt_ape.Text = ""
         Me.txt_doc.Text = ""
         Me.txt_fecNac.Text = ""
@@ -143,7 +150,6 @@
     Private Sub cmd_aceHab_Click(sender As Object, e As EventArgs) Handles cmd_aceHab.Click
         Me.ocultarNuevoAlojamiento()
         Me.menu_Menu.Enabled = True
-
         Me.txt_fecDes.Text = ""
         Me.txt_fecHas.Text = ""
         Me.cmb_canPer.Text = ""
@@ -154,7 +160,6 @@
         Me.txt_nom.Text = ""
         Me.txt_tel.Text = ""
         Me.cmb_tipoDoc.Text = ""
-
     End Sub
 
     Private Sub cmd_sigHos_Click(sender As Object, e As EventArgs) Handles cmd_sigHos.Click
@@ -178,9 +183,7 @@
         Me.txt_apeBusAlo.Text = ""
         Me.txt_nomBusAlo.Text = ""
         Me.cmb_tipDocBusAlo.Text = ""
-
         Me.ocultarBuscarAlojamiento()
-
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -199,10 +202,7 @@
         Me.txt_apeBusAlo.Text = ""
         Me.txt_nomBusAlo.Text = ""
         Me.cmb_tipDocBusAlo.Text = ""
-
-
         Me.ocultarBuscarAlojamiento()
-
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -211,9 +211,7 @@
         Me.txt_nomPro.Text = ""
         Me.txt_telPro.Text = ""
         Me.txt_corPro.Text = ""
-
         Me.ocultarNuevaOrdenCompra()
-
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -223,21 +221,11 @@
 
     Private Sub NuevaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
-
         Me.ocultarNuevoAlojamiento()
-
         Me.ocultarBuscarAlojamiento()
-
         Me.ocultarBuscarOrdenCompra()
-
-        Me.pnl_agrServ.Visible = False
-        Me.pnl_agrServ.Enabled = False
-        Me.pnl_agrServ.SendToBack()
-
-        Me.pnl_agrArt.Visible = False
-        Me.pnl_agrArt.Enabled = False
-        Me.pnl_agrArt.SendToBack()
-
+        Me.ocultarAgregarServicio()
+        Me.ocultarAgregarArticulo()
         Me.mostrarNuevaOrdenCompra()
     End Sub
 
@@ -251,21 +239,11 @@
 
     Private Sub BuscarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem1.Click
         Me.menu_Menu.Enabled = False
-
         Me.ocultarNuevoAlojamiento()
-
         Me.ocultarBuscarAlojamiento()
-
         Me.ocultarNuevaOrdenCompra()
-
-        Me.pnl_agrServ.Visible = False
-        Me.pnl_agrServ.Enabled = False
-        Me.pnl_agrServ.SendToBack()
-
-        Me.pnl_agrArt.Visible = False
-        Me.pnl_agrArt.Enabled = False
-        Me.pnl_agrArt.SendToBack()
-
+        Me.ocultarAgregarArticulo()
+        Me.ocultarAgregarServicio()
         Me.mostrarBuscarOrdenCompra()
     End Sub
 
@@ -274,9 +252,7 @@
         Me.txt_corProBusOrdCom.Text = ""
         Me.txt_telProBusOrdCom.Text = ""
         Me.txt_nomProBusOrdCom.Text = ""
-
         Me.ocultarBuscarOrdenCompra()
-
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -293,64 +269,35 @@
         Me.txt_corProBusOrdCom.Text = ""
         Me.txt_telProBusOrdCom.Text = ""
         Me.txt_nomProBusOrdCom.Text = ""
-
         Me.ocultarBuscarOrdenCompra()
-
         Me.menu_Menu.Enabled = True
     End Sub
 
     Private Sub AgrearArtículoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgrearArtículoToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
-
         Me.ocultarNuevoAlojamiento()
-
         Me.ocultarBuscarAlojamiento()
-
         Me.ocultarNuevaOrdenCompra()
-
         Me.ocultarBuscarOrdenCompra()
-
-        Me.pnl_agrServ.Visible = False
-        Me.pnl_agrServ.Enabled = False
-        Me.pnl_agrServ.SendToBack()
-
-        Me.tab_carArt.SelectedTab = tab_carArtHab
-        Me.pnl_agrArt.Visible = True
-        Me.pnl_agrArt.Enabled = True
-        Me.cmb_nroPisoCarArt.Focus()
-        Me.pnl_agrArt.BringToFront()
+        Me.ocultarAgregarServicio()
+        Me.mostrarAgregarArticulo()
     End Sub
 
     Private Sub AgregarServicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgregarServicioToolStripMenuItem.Click
         Me.menu_Menu.Enabled = False
-
         Me.ocultarNuevoAlojamiento()
-
         Me.ocultarBuscarAlojamiento()
-
         Me.ocultarNuevaOrdenCompra()
-
         Me.ocultarBuscarOrdenCompra()
-
-        Me.pnl_agrArt.Visible = False
-        Me.pnl_agrArt.Enabled = False
-        Me.pnl_agrArt.SendToBack()
-
-        Me.tab_carServ.SelectedTab = tab_carServHab
-        Me.pnl_agrServ.Visible = True
-        Me.pnl_agrServ.Enabled = True
-        Me.cmb_nroPiso.Focus()
-        Me.pnl_agrServ.BringToFront()
+        Me.ocultarAgregarArticulo()
+        Me.mostrarAgregarServicio()
     End Sub
 
     Private Sub cmd_carServCan_Click(sender As Object, e As EventArgs) Handles cmd_carServCan.Click
         Me.cmb_nroHab.Text = ""
         Me.cmb_nroPiso.Text = ""
         Me.txt_cliAso.Text = ""
-
-        Me.pnl_agrServ.Visible = False
-        Me.pnl_agrServ.Enabled = False
-
+        Me.ocultarAgregarServicio()
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -362,10 +309,7 @@
         Me.cmb_nroHab.Text = ""
         Me.cmb_nroPiso.Text = ""
         Me.txt_cliAso.Text = ""
-
-        Me.pnl_agrServ.Visible = False
-        Me.pnl_agrServ.Enabled = False
-
+        Me.ocultarAgregarServicio()
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -377,10 +321,7 @@
         Me.cmb_nroHabCarArt.Text = ""
         Me.cmb_nroPisoCarArt.Text = ""
         Me.txt_cliAsoCarArt.Text = ""
-
-        Me.pnl_agrArt.Visible = False
-        Me.pnl_agrArt.Enabled = False
-
+        Me.ocultarAgregarArticulo()
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -396,10 +337,7 @@
         Me.cmb_nroHabCarArt.Text = ""
         Me.cmb_nroPisoCarArt.Text = ""
         Me.txt_cliAsoCarArt.Text = ""
-
-        Me.pnl_agrArt.Visible = False
-        Me.pnl_agrArt.Enabled = False
-
+        Me.ocultarAgregarArticulo()
         Me.menu_Menu.Enabled = True
     End Sub
 
@@ -495,9 +433,7 @@
         Me.txt_corPro.Text = ""
         Me.txt_nueOrdComArtFilDes.Text = ""
         Me.txt_nueOrdComArtFilID.Text = ""
-
         Me.ocultarNuevaOrdenCompra()
-
         Me.menu_Menu.Enabled = True
     End Sub
 
