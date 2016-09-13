@@ -48,13 +48,13 @@
             If condicion_estado = estado.insertar Then
                 If Me.validar_existencia() = False Then
                     Me.insertar()
-                    Me.limpiar()
+                    Me.cmd_limpiar.PerformClick()
                 Else
                     MessageBox.Show("Ya existe este Cliente")
                     Exit Sub
                 End If
             Else
-                'Me.modificar()
+                Me.modificar()
             End If
         End If
     End Sub
@@ -170,15 +170,14 @@
     End Function
 
     Private Sub cmd_limpiar_Click(sender As Object, e As EventArgs) Handles cmd_limpiar.Click
-        Me.limpiar()
-    End Sub
-
-    Private Sub limpiar()
         Me.condicion_estado = estado.insertar
         Me.txt_apellido.Text = ""
         Me.txt_nombre.Text = ""
         Me.txt_nroDoc.Text = ""
         Me.txt_telefono.Text = ""
+        Me.txt_nroDoc.Enabled = True
+        Me.cmb_tipoDoc.Enabled = True
+        Me.cargar_grilla(False, estadoBusqueda.todo)
     End Sub
 
     Private Sub cmd_buscar_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
@@ -216,9 +215,41 @@
         Me.txt_apellido.Text = tabla.Rows(0)("apellido")
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
         Me.cmb_tipoDoc.SelectedValue = tabla.Rows(0)("idTipoDocumento")
+        Me.txt_telefono.Text = tabla.Rows(0)("telefono")
 
         Me.cmb_tipoDoc.Enabled = False
         Me.txt_nroDoc.Enabled = False
         Me.condicion_estado = estado.modificar
+        Me.cmd_buscar.PerformClick()
     End Sub
+
+    Private Sub modificar()
+
+        Dim conexion As New OleDb.OleDbConnection
+        Dim cmd As New OleDb.OleDbCommand
+        Dim sql As String = ""
+
+        sql &= "UPDATE Clientes "
+        sql &= "SET nombre = '" & Me.txt_nombre.Text & "'"
+        sql &= " , apellido = '" & Me.txt_apellido.Text & "'"
+        sql &= " , telefono = '" & Me.txt_telefono.Text & "'"
+        sql &= " WHERE nroDocumento = " & Me.txt_nroDoc.Text
+        sql &= " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
+
+        conexion.ConnectionString = cadena_conexion
+        conexion.Open()
+        cmd.Connection = conexion
+        cmd.CommandType = CommandType.Text
+        cmd.CommandText = sql
+
+        cmd.ExecuteNonQuery()
+
+        conexion.Close()
+        MessageBox.Show("Se modificó correctamente.")
+        Me.cargar_grilla(False, estadoBusqueda.todo)
+
+    End Sub
+
+
+
 End Class
