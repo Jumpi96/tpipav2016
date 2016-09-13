@@ -152,6 +152,8 @@ Partial Class menu
         Me.lbl_nroPiso = New System.Windows.Forms.Label()
         Me.tab_carServServ = New System.Windows.Forms.TabPage()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
+        Me.cmd_carServSig = New System.Windows.Forms.Button()
+        Me.cmd_carServCan = New System.Windows.Forms.Button()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -1301,6 +1303,8 @@ Partial Class menu
         '
         'tab_carServHab
         '
+        Me.tab_carServHab.Controls.Add(Me.cmd_carServCan)
+        Me.tab_carServHab.Controls.Add(Me.cmd_carServSig)
         Me.tab_carServHab.Controls.Add(Me.TextBox1)
         Me.tab_carServHab.Controls.Add(Me.cmb_nroHab)
         Me.tab_carServHab.Controls.Add(Me.cmb_nroPiso)
@@ -1317,9 +1321,10 @@ Partial Class menu
         '
         'TextBox1
         '
+        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(129, 66)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(288, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(272, 22)
         Me.TextBox1.TabIndex = 5
         '
         'cmb_nroHab
@@ -1328,7 +1333,7 @@ Partial Class menu
         Me.cmb_nroHab.Location = New System.Drawing.Point(129, 36)
         Me.cmb_nroHab.Name = "cmb_nroHab"
         Me.cmb_nroHab.Size = New System.Drawing.Size(61, 24)
-        Me.cmb_nroHab.TabIndex = 4
+        Me.cmb_nroHab.TabIndex = 2
         '
         'cmb_nroPiso
         '
@@ -1336,7 +1341,7 @@ Partial Class menu
         Me.cmb_nroPiso.Location = New System.Drawing.Point(129, 6)
         Me.cmb_nroPiso.Name = "cmb_nroPiso"
         Me.cmb_nroPiso.Size = New System.Drawing.Size(61, 24)
-        Me.cmb_nroPiso.TabIndex = 3
+        Me.cmb_nroPiso.TabIndex = 1
         '
         'lbl_cliAso
         '
@@ -1384,6 +1389,24 @@ Partial Class menu
         Me.lbl_agrSer.Size = New System.Drawing.Size(116, 16)
         Me.lbl_agrSer.TabIndex = 1
         Me.lbl_agrSer.Text = "Cargar Servicio"
+        '
+        'cmd_carServSig
+        '
+        Me.cmd_carServSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carServSig.Name = "cmd_carServSig"
+        Me.cmd_carServSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServSig.TabIndex = 4
+        Me.cmd_carServSig.Text = "Siguiente"
+        Me.cmd_carServSig.UseVisualStyleBackColor = True
+        '
+        'cmd_carServCan
+        '
+        Me.cmd_carServCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carServCan.Name = "cmd_carServCan"
+        Me.cmd_carServCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServCan.TabIndex = 3
+        Me.cmd_carServCan.Text = "Cancelar"
+        Me.cmd_carServCan.UseVisualStyleBackColor = True
         '
         'menu
         '
@@ -1575,5 +1598,7 @@ Partial Class menu
     Friend WithEvents lbl_nroHab As System.Windows.Forms.Label
     Friend WithEvents lbl_nroPiso As System.Windows.Forms.Label
     Friend WithEvents tab_carServServ As System.Windows.Forms.TabPage
+    Friend WithEvents cmd_carServCan As System.Windows.Forms.Button
+    Friend WithEvents cmd_carServSig As System.Windows.Forms.Button
 
 End Class
