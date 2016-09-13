@@ -434,4 +434,53 @@
 
         Me.menu_Menu.Enabled = True
     End Sub
+
+    Private Sub cmd_carSerHabLim_Click(sender As Object, e As EventArgs) Handles cmd_carSerHabLim.Click
+        Me.cmb_nroPiso.Text = ""
+        Me.cmb_nroHab.Text = ""
+        Me.txt_cliAso.Text = ""
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.cmb_nroHabCarArt.Text = ""
+        Me.cmb_nroPisoCarArt.Text = ""
+        Me.txt_cliAsoCarArt.Text = ""
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.cmb_IDProBusOrdCom.Text = ""
+        Me.txt_corProBusOrdCom.Text = ""
+        Me.txt_nomProBusOrdCom.Text = ""
+        Me.txt_telProBusOrdCom.Text = ""
+    End Sub
+
+    Private Sub cmd_nueOrdComLim_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComLim.Click
+        Me.cmb_IDPro.Text = ""
+        Me.txt_nomPro.Text = ""
+        Me.txt_corPro.Text = ""
+        Me.txt_telPro.Text = ""
+    End Sub
+
+    Private Sub cmd_nueAloDatCliLim_Click(sender As Object, e As EventArgs) Handles cmd_nueAloDatCliLim.Click
+        Me.cmb_tipoDoc.Text = ""
+        Me.txt_doc.Text = ""
+        Me.txt_ape.Text = ""
+        Me.txt_nom.Text = ""
+        Me.txt_fecNac.Text = ""
+        Me.txt_tel.Text = ""
+    End Sub
+
+    Private Sub cmd_nueAloDatHosLim_Click(sender As Object, e As EventArgs) Handles cmd_nueAloDatHosLim.Click
+        Me.txt_fecDes.Text = ""
+        Me.txt_fecHas.Text = ""
+        Me.cmb_canPer.Text = ""
+        Me.cmb_tipHab.Text = ""
+    End Sub
+
+    Private Sub cmd_busAloLim_Click(sender As Object, e As EventArgs) Handles cmd_busAloLim.Click
+        Me.cmb_tipDocBusAlo.Text = ""
+        Me.txt_docBusAlo.Text = ""
+        Me.txt_apeBusAlo.Text = ""
+        Me.txt_nomBusAlo.Text = ""
+    End Sub
 End Class
