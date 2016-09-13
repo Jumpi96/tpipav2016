@@ -54,20 +54,18 @@
                 End If
             Else
                 Me.modificar()
+
             End If
+            Me.cmd_limpiar.PerformClick()
         End If
 
-        Me.cmd_limpiar.PerformClick()
-    End Sub
-
-
-    Private Sub lbl_telefono_Click(sender As Object, e As EventArgs) Handles lbl_telefono.Click
 
     End Sub
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargar_combo("TiposDocumento", "idTipoDocumento", "nombre", Me.cmb_tipoDoc)
-        Me.cargar_grilla(False, estadoBusqueda.todo)
+        Me.cargar_grilla(estadoBusqueda.todo)
 
     End Sub
 
@@ -90,7 +88,7 @@
         combo.ValueMember = pk
     End Sub
 
-    Private Sub cargar_grilla(ByVal comparar As Boolean, ByVal buscarEn As estadoBusqueda)
+    Private Sub cargar_grilla(ByVal buscarEn As estadoBusqueda)
         Me.grid_clientes.Rows.Clear()
         Dim conexion As New Data.OleDb.OleDbConnection
         Dim comando As New Data.OleDb.OleDbCommand
@@ -143,7 +141,7 @@
         cmd.ExecuteNonQuery()
         conexion.Close()
         MessageBox.Show("Se registró exitosamente.")
-        Me.cargar_grilla(False, estadoBusqueda.todo)
+        Me.cargar_grilla(estadoBusqueda.todo)
     End Sub
 
     Private Function validar_existencia() As Boolean
@@ -178,15 +176,15 @@
         Me.txt_telefono.Text = ""
         Me.txt_nroDoc.Enabled = True
         Me.cmb_tipoDoc.Enabled = True
-        Me.cargar_grilla(False, estadoBusqueda.todo)
+        Me.cargar_grilla(estadoBusqueda.todo)
         Me.cmd_registrar.Text = "Registrar"
     End Sub
 
     Private Sub cmd_buscar_Click(sender As Object, e As EventArgs) Handles cmd_buscar.Click
         If Me.txt_nroDoc.Text = "" Then
-            Me.cargar_grilla(True, estadoBusqueda.tipoDocumento)
+            Me.cargar_grilla(estadoBusqueda.tipoDocumento)
         Else
-            Me.cargar_grilla(True, estadoBusqueda.nroDocumento)
+            Me.cargar_grilla(estadoBusqueda.nroDocumento)
         End If
 
     End Sub
@@ -249,7 +247,7 @@
 
         conexion.Close()
         MessageBox.Show("Se modificó correctamente.")
-        Me.cargar_grilla(False, estadoBusqueda.todo)
+        Me.cargar_grilla(estadoBusqueda.todo)
 
     End Sub
 
@@ -258,4 +256,5 @@
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
         Me.Close()
     End Sub
+
 End Class
