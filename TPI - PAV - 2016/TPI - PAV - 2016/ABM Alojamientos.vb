@@ -2,10 +2,13 @@
     Dim string_conexion As String = ConexionBD.Instancia.StringConexion
     Dim flagBusqDocumento As Boolean = False
     Dim idAlojamientoModificacion As Integer = 0
+    Dim flagFechaSalida As Boolean = False
 
     Private Sub ABM_Alojamientos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         carga_combo(Me.cmbTipoDoc, Me.leo_tabla("TiposDocumento"), "idTipoDocumento", "nombre")
         carga_lista(Me.leo_alojamientos(False))
+        flagFechaSalida = False
+        dtpEstimada.Value = Today.AddDays(1)
         dtpSalida.Format = DateTimePickerFormat.Custom
         dtpSalida.CustomFormat = "    "
     End Sub
@@ -81,8 +84,11 @@
         txtHabitacion.Text = ""
         txtAlojados.Text = ""
         dtpIngreso.Value = Today
-        dtpEstimada.Value = Today
+        dtpEstimada.Value = Today.AddDays(1)
+        flagFechaSalida = False
+        dtpSalida.Format = DateTimePickerFormat.Custom
         dtpSalida.CustomFormat = "    "
+
 
         If flagBusqDocumento Then
             carga_lista(Me.leo_alojamientos(False))
@@ -106,21 +112,27 @@
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        registrar()
+        If registrar() Then
+            limpiar()
+        End If
         carga_lista(Me.leo_alojamientos(False))
-        limpiar()
+
     End Sub
 
-    Private Sub registrar()
+    Private Function registrar() As Boolean
         If validar() Then
             If idAlojamientoModificacion <> 0 Then
                 guardar()
+                Return True
             Else
                 insertar()
+                Return True
             End If
+        Else
+            Return False
         End If
 
-    End Sub
+    End Function
 
     Private Function guardar()
         Dim conexion As New OleDb.OleDbConnection
@@ -130,11 +142,23 @@
         conexion.ConnectionString = Me.string_conexion
         conexion.Open()
 
-        consulta = "update alojamientos where idAlojamiento=" & idAlojamientoModificacion &
+        Dim valueSalida As String
+        If flagFechaSalida = False Then
+            consulta = "update alojamientos " &
+            "SET nroDoc=" + txtNroDoc.Text + ", tipoDoc=" &
+            cmbTipoDoc.SelectedValue & ", nroHabitacion=" + txtHabitacion.Text + ", cantPersonas=" & txtAlojados.Text &
+            ", fechaInicioAlojamiento=" & dtpIngreso.Value & ",fechaFinEstimadaalojamiento=" & dtpEstimada.Value & ", precioPorDia=" &
+            txtPrecio.Text & "where idAlojamiento=" &
+            idAlojamientoModificacion
+        Else
+            valueSalida = dtpSalida.Value
+            consulta = "update alojamientos" &
             "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" &
             cmbTipoDoc.SelectedValue & ", nroHabitacion=" & txtHabitacion.Text & ", cantPersonas=" & txtAlojados &
-        ", fechaInicioAlojamiento=" & dtpIngreso.Value & ",fechaFinEstimadaalojamiento=" & dtpEstimada.Value & ", fechaFinAlojamiento=" & dtpSalida.Value & ", precioPorDia=" &
-        txtPrecio.Text
+            ", fechaInicioAlojamiento=" & dtpIngreso.Value & ",fechaFinEstimadaalojamiento=" & dtpEstimada.Value & ", fechaFinAlojamiento=" & valueSalida & ", precioPorDia=" &
+            txtPrecio.Text & "where idAlojamiento=" & idAlojamientoModificacion
+        End If
+
 
         cmd.CommandType = CommandType.Text
         cmd.Connection = conexion
@@ -152,10 +176,20 @@
         conexion.ConnectionString = Me.string_conexion
         conexion.Open()
 
-        consulta = "insertar into alojamientos values(" & txtNroDoc.Text & "," &
-            cmbTipoDoc.SelectedValue & "," & txtHabitacion.Text & "," & txtAlojados &
-        "," & dtpIngreso.Value & "," & dtpEstimada.Value & "," & dtpSalida.Value & "," &
-        txtPrecio.Text & ")"
+        If flagFechaSalida = False Then
+            consulta = "insert into alojamientos(nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) " +
+            "values(" + txtNroDoc.Text + "," &
+            cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text + "," & txtAlojados.Text &
+            "," & dtpIngreso.Value & "," & dtpEstimada.Value & "," &
+            txtPrecio.Text & ")"
+        Else
+            consulta = "insert into alojamientos" +
+            "values(" + txtNroDoc.Text + "," &
+            cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text + "," & txtAlojados.Text &
+            "," & dtpIngreso.Value & "," & dtpEstimada.Value & "," & dtpSalida.Value & "," &
+            txtPrecio.Text & ")"
+        End If
+
 
         cmd.CommandType = CommandType.Text
         cmd.Connection = conexion
@@ -206,6 +240,7 @@
 
         If (existeCliente() = False) Then
             MessageBox.Show("El documento ingresado no existe.", "Error", MessageBoxButtons.OK)
+            txtNroDoc.Focus()
             Return False
         End If
         'verificar habitacion y alojados
@@ -219,21 +254,25 @@
 
         If (tabla.Rows.Count = 0) Then
             MessageBox.Show("La habitación ingresada no existe.", "Error", MessageBoxButtons.OK)
+            txtHabitacion.Focus()
             Return False
         Else
             If (CType(tabla.Rows(0).ItemArray(0).ToString, Integer) < txtAlojados.Text Or txtAlojados.Text < 1) Then
                 MessageBox.Show("El número de alojados no es válido.", "Error", MessageBoxButtons.OK)
+                txtAlojados.Focus()
                 Return False
             End If
         End If
         'controlar fechas
         If (dtpIngreso.Value > Today Or dtpEstimada.Value <= dtpIngreso.Value Or dtpSalida.Value <= dtpIngreso.Value Or dtpSalida.Value < dtpEstimada.Value) Then
             MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
+            dtpIngreso.Focus()
             Return False
         End If
         'controlar precio
         If (txtPrecio.Text < 0) Then
             MessageBox.Show("El precio por día no puede ser negativo.", "Error", MessageBoxButtons.OK)
+            txtPrecio.Focus()
             Return False
         End If
 
@@ -279,5 +318,9 @@
 
         idAlojamientoModificacion = idAlojamiento
 
+    End Sub
+
+    Private Sub dtpSalida_ValueChanged(sender As Object, e As EventArgs) Handles dtpSalida.ValueChanged
+        dtpSalida.Format = DateTimePickerFormat.Long
     End Sub
 End Class
