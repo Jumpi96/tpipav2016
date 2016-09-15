@@ -1,4 +1,4 @@
-﻿Public Class cmd_modOrdComSel
+﻿Public Class menu
 
     Private Sub ocultarNuevoAlojamiento()
         Me.pnl_nueAlo.Visible = False
@@ -359,13 +359,13 @@
         Me.txt_cliAso.Text = ""
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles cmd_busArtLim.Click
         Me.cmb_nroHabCarArt.Text = ""
         Me.cmb_nroPisoCarArt.Text = ""
         Me.txt_cliAsoCarArt.Text = ""
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComLim.Click
         Me.cmb_IDProBusOrdCom.Text = ""
         Me.txt_corProBusOrdCom.Text = ""
         Me.txt_nomProBusOrdCom.Text = ""
