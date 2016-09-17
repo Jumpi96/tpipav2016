@@ -460,4 +460,8 @@
     Private Sub cmd_modOrdComSel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.lbl_fechahora.Text = Today.Day & "/" & Today.Month & "/" & Today.Year
     End Sub
+
+    Private Sub ABMTiposHabitaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposHabitaciónToolStripMenuItem.Click
+        ABM_TiposHabitacion.Show()
+    End Sub
 End Class

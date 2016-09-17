@@ -72,4 +72,5 @@ C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipa
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbproj.GenerateResource.Cache
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.cmd_modOrdComSel.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.cmd_modOrdComSel.resources
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.cmd_modOrdComSel.resources
+D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposHabitacion.resources
+D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.menu.resources

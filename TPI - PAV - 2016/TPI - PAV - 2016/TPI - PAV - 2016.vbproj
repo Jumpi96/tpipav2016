@@ -97,6 +97,12 @@
     <Compile Include="ABM Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ABM Tipos Habitacion.Designer.vb">
+      <DependentUpon>ABM Tipos Habitacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ABM Tipos Habitacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ABM Tipos Documentos.Designer.vb">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Clientes.resx">
       <DependentUpon>ABM Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ABM Tipos Habitacion.resx">
+      <DependentUpon>ABM Tipos Habitacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Tipos Documentos.resx">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
