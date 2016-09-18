@@ -8,22 +8,19 @@
     End Enum
     Dim condicion_estado As estado = estado.insertar
 
- 
-    Private Sub modificar()
-
-        Dim sentenciaSQL As String = ""
-        sentenciaSQL &= "UPDATE TiposDocumento "
-        sentenciaSQL &= "SET descripcion = '" & Me.txt_descripcion.Text & "'"
-        sentenciaSQL &= " WHERE nombre = '" & Me.txt_nombre.Text & "'"
-
-        accesoBD.nonQuery(sentenciaSQL)
-
-        MessageBox.Show("Se modifico correctamente")
+    'LOAD FORM
+    Private Sub ABM_TiposDocumentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.cmd_borrar.Enabled = False
+        Me.cmd_borrar.Visible = False
         Me.cargar_grilla()
+        Me.txt_nombre.Focus()
+
     End Sub
 
 
+#Region "SUBRUTINAS"
 
+    'CARGAR GRILLA
     Private Sub cargar_grilla()
         Me.grid_tipoDoc.Rows.Clear()
 
@@ -40,21 +37,7 @@
         Next
     End Sub
 
-
-    Private Function validarExistencia() As Boolean
-        Dim sentenciaSQL As String = ""
-        sentenciaSQL = "SELECT * FROM TiposDocumento " _
-            & "WHERE nombre = '" & Me.txt_nombre.Text & "'"
-
-        Dim tabla As DataTable = accesoBD.query(sentenciaSQL)
-
-        If tabla.Rows.Count() = 0 Then
-            Return False
-        Else
-            Return True
-        End If
-    End Function
-
+    'INSERTAR TIPO DOCUMENTO
     Private Sub insertar()
         Dim sentenciaSQL As String = "INSERT INTO TiposDocumento (nombre, descripcion) " _
                           & "VALUES ('" & txt_nombre.Text & "', '" & txt_descripcion.Text & "')"
@@ -65,6 +48,26 @@
         Me.cargar_grilla()
     End Sub
 
+
+    'MODIFICAR TIPO DOCUMENTO
+    Private Sub modificar()
+
+        Dim sentenciaSQL As String = ""
+        sentenciaSQL &= "UPDATE TiposDocumento "
+        sentenciaSQL &= "SET descripcion = '" & Me.txt_descripcion.Text & "'"
+        sentenciaSQL &= " WHERE nombre = '" & Me.txt_nombre.Text & "'"
+
+        accesoBD.nonQuery(sentenciaSQL)
+
+        MessageBox.Show("Se modifico correctamente")
+        Me.cargar_grilla()
+    End Sub
+
+#End Region
+
+#Region "FUNCIONES"
+
+    'VALIDAR CAMPOS
     Private Function validar() As Boolean
 
         If txt_nombre.Text = "" Then
@@ -79,14 +82,45 @@
         End If
         Return True
     End Function
-    Private Sub ABM_TiposDocumentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.cmd_borrar.Enabled = False
-        Me.cmd_borrar.Visible = False
-        Me.cargar_grilla()
-        Me.txt_nombre.Focus()
 
+    'VALIDAR EXISTENCIA DE ELEMENTO
+    Private Function validarExistencia() As Boolean
+        Dim sentenciaSQL As String = ""
+        sentenciaSQL = "SELECT * FROM TiposDocumento " _
+            & "WHERE nombre = '" & Me.txt_nombre.Text & "'"
+
+        Dim tabla As DataTable = accesoBD.query(sentenciaSQL)
+
+        If tabla.Rows.Count() = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+#End Region
+
+#Region "BOTONES"
+
+    'CLICK EN GUARDAR
+    Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
+        If Me.validar = True Then
+            If condicion_estado = estado.insertar Then
+                If Me.validarExistencia() = False Then
+                    Me.insertar()
+                Else
+                    MessageBox.Show("Ya existe este Tipo de Documento")
+                    Exit Sub
+                End If
+            Else
+                Me.modificar()
+            End If
+
+            Me.cmd_limpiar.PerformClick()
+        End If
     End Sub
 
+    'CLICK EN LIMPIAR
     Private Sub cmd_limpiar_Click(sender As Object, e As EventArgs) Handles cmd_limpiar.Click
         Me.cmd_borrar.Enabled = False
         Me.cmd_borrar.Visible = False
@@ -101,8 +135,7 @@
         Me.cmd_guardar.Text = "Registrar"
     End Sub
 
-
-
+    'DOBLECLICK EN GRILLA
     Private Sub grid_tipoDoc_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tipoDoc.CellContentDoubleClick
         Dim sentenciaSQL As String = ""
 
@@ -134,32 +167,16 @@
             Me.grid_tipoDoc.Rows(c).Cells("c_nombre").Value = tabla.Rows(c)("nombre")
             Me.grid_tipoDoc.Rows(c).Cells("c_descripcion").Value = tabla.Rows(c)("descripcion")
         Next
-
-
     End Sub
 
-    Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
-        If Me.validar = True Then
-            If condicion_estado = estado.insertar Then
-                If Me.validarExistencia() = False Then
-                    Me.insertar()
-                Else
-                    MessageBox.Show("Ya existe este Tipo de Documento")
-                    Exit Sub
-                End If
-            Else
-                Me.modificar()
-            End If
-
-            Me.cmd_limpiar.PerformClick()
-        End If
-
-
-    End Sub
-
+    'CLICK EN CANCELAR
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
         Me.Close()
     End Sub
+
+#End Region
+
+
 
     'Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
     '    Dim conexion As New OleDb.OleDbConnection
