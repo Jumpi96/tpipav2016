@@ -77,8 +77,17 @@ Partial Class menu
         Me.lbl_fecHas = New System.Windows.Forms.Label()
         Me.lbl_fecDes = New System.Windows.Forms.Label()
         Me.tab_aloNueSelHab = New System.Windows.Forms.TabPage()
+        Me.txt_preDia = New System.Windows.Forms.MaskedTextBox()
+        Me.lbl_preDia = New System.Windows.Forms.Label()
+        Me.lbl_nroHabSel = New System.Windows.Forms.Label()
+        Me.txt_habSelNro = New System.Windows.Forms.TextBox()
+        Me.lbl_habSel = New System.Windows.Forms.Label()
+        Me.lbl_selHab = New System.Windows.Forms.Label()
         Me.lbl_habDis = New System.Windows.Forms.Label()
         Me.grid_nueAlo = New System.Windows.Forms.DataGridView()
+        Me.clm_nroHabitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_cantCamasNuevoAlojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_cantBaños = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cam_atrHab = New System.Windows.Forms.Button()
         Me.cmd_aceHab = New System.Windows.Forms.Button()
         Me.pnl_busAlo = New System.Windows.Forms.Panel()
@@ -255,15 +264,6 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lbl_selHab = New System.Windows.Forms.Label()
-        Me.lbl_habSel = New System.Windows.Forms.Label()
-        Me.txt_habSelNro = New System.Windows.Forms.TextBox()
-        Me.lbl_nroHabSel = New System.Windows.Forms.Label()
-        Me.lbl_preDia = New System.Windows.Forms.Label()
-        Me.txt_preDia = New System.Windows.Forms.MaskedTextBox()
-        Me.clm_nroHabitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_cantCamasNuevoAlojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_cantBaños = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -493,7 +493,7 @@ Partial Class menu
         Me.dtp_fecNac.Location = New System.Drawing.Point(145, 92)
         Me.dtp_fecNac.Name = "dtp_fecNac"
         Me.dtp_fecNac.Size = New System.Drawing.Size(200, 22)
-        Me.dtp_fecNac.TabIndex = 36
+        Me.dtp_fecNac.TabIndex = 6
         '
         'cmd_nueAloDatCliLim
         '
@@ -781,6 +781,63 @@ Partial Class menu
         Me.tab_aloNueSelHab.Text = "Selección de Habitación"
         Me.tab_aloNueSelHab.UseVisualStyleBackColor = True
         '
+        'txt_preDia
+        '
+        Me.txt_preDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_preDia.Location = New System.Drawing.Point(189, 162)
+        Me.txt_preDia.Mask = "9999"
+        Me.txt_preDia.Name = "txt_preDia"
+        Me.txt_preDia.Size = New System.Drawing.Size(35, 20)
+        Me.txt_preDia.TabIndex = 10
+        '
+        'lbl_preDia
+        '
+        Me.lbl_preDia.AutoSize = True
+        Me.lbl_preDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_preDia.Location = New System.Drawing.Point(109, 165)
+        Me.lbl_preDia.Name = "lbl_preDia"
+        Me.lbl_preDia.Size = New System.Drawing.Size(74, 13)
+        Me.lbl_preDia.TabIndex = 9
+        Me.lbl_preDia.Text = "Precio por día"
+        '
+        'lbl_nroHabSel
+        '
+        Me.lbl_nroHabSel.AutoSize = True
+        Me.lbl_nroHabSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_nroHabSel.Location = New System.Drawing.Point(3, 165)
+        Me.lbl_nroHabSel.Name = "lbl_nroHabSel"
+        Me.lbl_nroHabSel.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_nroHabSel.TabIndex = 8
+        Me.lbl_nroHabSel.Text = "Número"
+        '
+        'txt_habSelNro
+        '
+        Me.txt_habSelNro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_habSelNro.Location = New System.Drawing.Point(53, 162)
+        Me.txt_habSelNro.Name = "txt_habSelNro"
+        Me.txt_habSelNro.ReadOnly = True
+        Me.txt_habSelNro.Size = New System.Drawing.Size(50, 20)
+        Me.txt_habSelNro.TabIndex = 7
+        '
+        'lbl_habSel
+        '
+        Me.lbl_habSel.AutoSize = True
+        Me.lbl_habSel.Location = New System.Drawing.Point(3, 143)
+        Me.lbl_habSel.Name = "lbl_habSel"
+        Me.lbl_habSel.Size = New System.Drawing.Size(160, 16)
+        Me.lbl_habSel.TabIndex = 6
+        Me.lbl_habSel.Text = "Habitación Seleccionada"
+        '
+        'lbl_selHab
+        '
+        Me.lbl_selHab.AutoSize = True
+        Me.lbl_selHab.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_selHab.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_selHab.Name = "lbl_selHab"
+        Me.lbl_selHab.Size = New System.Drawing.Size(155, 16)
+        Me.lbl_selHab.TabIndex = 5
+        Me.lbl_selHab.Text = "Selección de Habitación"
+        '
         'lbl_habDis
         '
         Me.lbl_habDis.AutoSize = True
@@ -798,6 +855,30 @@ Partial Class menu
         Me.grid_nueAlo.Name = "grid_nueAlo"
         Me.grid_nueAlo.Size = New System.Drawing.Size(502, 118)
         Me.grid_nueAlo.TabIndex = 3
+        '
+        'clm_nroHabitacion
+        '
+        Me.clm_nroHabitacion.HeaderText = "Nro de Habitación"
+        Me.clm_nroHabitacion.Name = "clm_nroHabitacion"
+        Me.clm_nroHabitacion.ReadOnly = True
+        Me.clm_nroHabitacion.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_nroHabitacion.Width = 150
+        '
+        'clm_cantCamasNuevoAlojamiento
+        '
+        Me.clm_cantCamasNuevoAlojamiento.HeaderText = "Cantidad de Camas"
+        Me.clm_cantCamasNuevoAlojamiento.Name = "clm_cantCamasNuevoAlojamiento"
+        Me.clm_cantCamasNuevoAlojamiento.ReadOnly = True
+        Me.clm_cantCamasNuevoAlojamiento.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_cantCamasNuevoAlojamiento.Width = 150
+        '
+        'clm_cantBaños
+        '
+        Me.clm_cantBaños.HeaderText = "Cantidad de Baños"
+        Me.clm_cantBaños.Name = "clm_cantBaños"
+        Me.clm_cantBaños.ReadOnly = True
+        Me.clm_cantBaños.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_cantBaños.Width = 150
         '
         'cam_atrHab
         '
@@ -2524,87 +2605,6 @@ Partial Class menu
         Me.cln_nroPisoHabSel.ReadOnly = True
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
-        '
-        'lbl_selHab
-        '
-        Me.lbl_selHab.AutoSize = True
-        Me.lbl_selHab.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_selHab.Location = New System.Drawing.Point(3, 3)
-        Me.lbl_selHab.Name = "lbl_selHab"
-        Me.lbl_selHab.Size = New System.Drawing.Size(155, 16)
-        Me.lbl_selHab.TabIndex = 5
-        Me.lbl_selHab.Text = "Selección de Habitación"
-        '
-        'lbl_habSel
-        '
-        Me.lbl_habSel.AutoSize = True
-        Me.lbl_habSel.Location = New System.Drawing.Point(3, 143)
-        Me.lbl_habSel.Name = "lbl_habSel"
-        Me.lbl_habSel.Size = New System.Drawing.Size(160, 16)
-        Me.lbl_habSel.TabIndex = 6
-        Me.lbl_habSel.Text = "Habitación Seleccionada"
-        '
-        'txt_habSelNro
-        '
-        Me.txt_habSelNro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_habSelNro.Location = New System.Drawing.Point(53, 162)
-        Me.txt_habSelNro.Name = "txt_habSelNro"
-        Me.txt_habSelNro.ReadOnly = True
-        Me.txt_habSelNro.Size = New System.Drawing.Size(50, 20)
-        Me.txt_habSelNro.TabIndex = 7
-        '
-        'lbl_nroHabSel
-        '
-        Me.lbl_nroHabSel.AutoSize = True
-        Me.lbl_nroHabSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nroHabSel.Location = New System.Drawing.Point(3, 165)
-        Me.lbl_nroHabSel.Name = "lbl_nroHabSel"
-        Me.lbl_nroHabSel.Size = New System.Drawing.Size(44, 13)
-        Me.lbl_nroHabSel.TabIndex = 8
-        Me.lbl_nroHabSel.Text = "Número"
-        '
-        'lbl_preDia
-        '
-        Me.lbl_preDia.AutoSize = True
-        Me.lbl_preDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_preDia.Location = New System.Drawing.Point(109, 165)
-        Me.lbl_preDia.Name = "lbl_preDia"
-        Me.lbl_preDia.Size = New System.Drawing.Size(74, 13)
-        Me.lbl_preDia.TabIndex = 9
-        Me.lbl_preDia.Text = "Precio por día"
-        '
-        'txt_preDia
-        '
-        Me.txt_preDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_preDia.Location = New System.Drawing.Point(189, 162)
-        Me.txt_preDia.Mask = "9999"
-        Me.txt_preDia.Name = "txt_preDia"
-        Me.txt_preDia.Size = New System.Drawing.Size(35, 20)
-        Me.txt_preDia.TabIndex = 10
-        '
-        'clm_nroHabitacion
-        '
-        Me.clm_nroHabitacion.HeaderText = "Nro de Habitación"
-        Me.clm_nroHabitacion.Name = "clm_nroHabitacion"
-        Me.clm_nroHabitacion.ReadOnly = True
-        Me.clm_nroHabitacion.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_nroHabitacion.Width = 150
-        '
-        'clm_cantCamasNuevoAlojamiento
-        '
-        Me.clm_cantCamasNuevoAlojamiento.HeaderText = "Cantidad de Camas"
-        Me.clm_cantCamasNuevoAlojamiento.Name = "clm_cantCamasNuevoAlojamiento"
-        Me.clm_cantCamasNuevoAlojamiento.ReadOnly = True
-        Me.clm_cantCamasNuevoAlojamiento.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_cantCamasNuevoAlojamiento.Width = 150
-        '
-        'clm_cantBaños
-        '
-        Me.clm_cantBaños.HeaderText = "Cantidad de Baños"
-        Me.clm_cantBaños.Name = "clm_cantBaños"
-        Me.clm_cantBaños.ReadOnly = True
-        Me.clm_cantBaños.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_cantBaños.Width = 150
         '
         'menu
         '

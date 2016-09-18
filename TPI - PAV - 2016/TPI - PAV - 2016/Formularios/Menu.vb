@@ -1,5 +1,10 @@
 ﻿Public Class menu
     Dim acceso As AccesoBD = AccesoBD.instancia
+    Enum estadoNuevoAlojamiento
+        nuevoCliente
+        clienteExistente
+    End Enum
+    Dim estado As estadoNuevoAlojamiento = estadoNuevoAlojamiento.nuevoCliente
 
 
     Private Sub cargarGrillaSeleccionHabitacion()
@@ -7,17 +12,17 @@
         Dim tabla As New Data.DataTable
 
         sqlCargarGrilla &= "SELECT HP.nroHabitacion, HP.cantCamas, HP.cantBaños "
-        sqlCargarGrilla &= "FROM HabitacionesXPiso HP JOIN Alojamientos A"
-        sqlCargarGrilla &= "ON HP.nroHabitacion = A.nroHabitacion"
-        sqlCargarGrilla &= "WHERE (HP.cantMaxPersonas >= " & Me.cmb_canPer.SelectedText & ") "
-        sqlCargarGrilla &= "AND A.fechaInicioAlojamiento NOT BETWEEN " & Me.dtp_fecDes.Value & " AND " & Me.dtp_fecHas.Value & " "
-        sqlCargarGrilla &= "AND A.fechaFinEstimadaalojamiento NOT BETWEEN " & Me.dtp_fecDes.Value & " AND " & Me.dtp_fecHas.Value & " "
-        sqlCargarGrilla &= "AND HP.idTipoHabitacion = " & Me.cmb_tipHab.SelectedValue & " "
+        sqlCargarGrilla &= "FROM HabitacionesXPiso HP JOIN Alojamientos A "
+        sqlCargarGrilla &= "ON HP.nroHabitacion = A.nroHabitacion "
+        sqlCargarGrilla &= "WHERE HP.cantMaxPersonas >= " & Me.cmb_canPer.SelectedText & " "
+        sqlCargarGrilla &= "AND A.fechaInicioAlojamiento NOT BETWEEN '" & Me.dtp_fecDes.Value.Date & "' AND '" & Me.dtp_fecHas.Value.Date & "' "
+        sqlCargarGrilla &= "AND A.fechaFinEstimadaalojamiento NOT BETWEEN '" & Me.dtp_fecDes.Value.Date & "' AND '" & Me.dtp_fecHas.Value.Date & "' "
+        sqlCargarGrilla &= "AND HP.idTipoHabitacion = '" & Me.cmb_tipHab.SelectedValue & "'"
         If Me.chx_airAco.CheckState = CheckState.Checked Then
-            sqlCargarGrilla &= "AND HP.aireAcondicionado = 1 "
+            sqlCargarGrilla &= " AND HP.aireAcondicionado = 1"
         End If
         If Me.chx_frigobar.CheckState = CheckState.Checked Then
-            sqlCargarGrilla &= "AND HP.frigobar = 1 "
+            sqlCargarGrilla &= " AND HP.frigobar = 1"
         End If
 
         tabla = acceso.query(sqlCargarGrilla)
@@ -35,15 +40,15 @@
     Private Function consultaClientes() As String
         Dim sqlClientes As String = ""
 
-        sqlCLientes &= "INSERT INTO Clientes (apellido, nombre, nroDocumento, tipoDocumento, fechaNacimiento, telefono) "
-        sqlCLientes &= "VALUES ('" & txt_ape.Text & "'"
-        sqlCLientes &= ", '" & txt_nom.Text & "'"
-        sqlCLientes &= ", '" & txt_doc.Text & "'"
-        sqlCLientes &= ", '" & cmb_tipoDoc.SelectedValue & "'"
-        sqlCLientes &= ", '" & dtp_fecNac.Value.Date & "'"
-        sqlCLientes &= ", '" & txt_tel.Text & "')"
+        sqlClientes &= "INSERT INTO Clientes (apellido, nombre, nroDocumento, tipoDocumento, fechaNacimiento, telefono) "
+        sqlClientes &= "VALUES ('" & txt_ape.Text & "'"
+        sqlClientes &= ", '" & txt_nom.Text & "'"
+        sqlClientes &= ", '" & txt_doc.Text & "'"
+        sqlClientes &= ", '" & cmb_tipoDoc.SelectedValue & "'"
+        sqlClientes &= ", '" & dtp_fecNac.Value.Date & "'"
+        sqlClientes &= ", '" & txt_tel.Text & "')"
 
-        Return sqlCLientes
+        Return sqlClientes
     End Function
 
     Private Function consultaHospedaje() As String
@@ -125,8 +130,7 @@
 
         Dim i As Integer
         For i = 0 To tabla.Rows(0)("maxPersonas")
-            cmb_canPer.ValueMember = i
-            cmb_tipHab.DisplayMember = i
+            cmb_canPer.Items.Add(i)
         Next
     End Sub
 
@@ -145,10 +149,13 @@
             Exit Sub
         End If
 
+        Me.cmb_tipoDoc.SelectedValue = tabla.Rows(0)("tipoDocumento")
         Me.txt_ape.Text = tabla.Rows(0)("apellido")
         Me.txt_nom.Text = tabla.Rows(0)("nombre")
         Me.txt_tel.Text = tabla.Rows(0)("telefono")
         Me.dtp_fecNac.Value = tabla.Rows(0)("fechaNacimiento")
+
+        estado = estadoNuevoAlojamiento.clienteExistente
     End Sub
 
     Private Function validarCamposClienteNuevoAlojamiento() As Boolean
@@ -191,17 +198,22 @@
         tabla = acceso.query(sql)
 
         If tabla.Rows.Count() <> 0 Then
-            dr = MessageBox.Show("Cliente ya existente. ¿Desea completar el formulario con los datos de éste?", "Error", MessageBoxButtons.YesNo)
-            If DialogResult = DialogResult.Yes Then
-                Me.txt_ape.Text = tabla.Rows(0)("apellido")
-                Me.txt_nom.Text = tabla.Rows(0)("nombre")
-                Me.txt_tel.Text = tabla.Rows(0)("telefono")
-                Me.dtp_fecNac.Value = tabla.Rows(0)("fechaNacimiento")
-            ElseIf DialogResult = DialogResult.No Then
-                Me.txt_doc.Text = ""
-                Me.txt_doc.Focus()
+            If estado = estadoNuevoAlojamiento.nuevoCliente Then
+                dr = MessageBox.Show("Cliente ya existente. ¿Desea completar el formulario con los datos de éste?", "Error", MessageBoxButtons.YesNo)
+                If dr = DialogResult.Yes Then
+                    Me.txt_ape.Text = tabla.Rows(0)("apellido")
+                    Me.txt_nom.Text = tabla.Rows(0)("nombre")
+                    Me.txt_tel.Text = tabla.Rows(0)("telefono")
+                    Me.dtp_fecNac.Value = tabla.Rows(0)("fechaNacimiento")
+                    estado = estadoNuevoAlojamiento.clienteExistente
+                    Return True
+                ElseIf dr = DialogResult.No Then
+                    Me.txt_doc.Text = ""
+                    Me.txt_doc.Focus()
+                    estado = estadoNuevoAlojamiento.nuevoCliente
+                    Return False
+                End If
             End If
-            Return False
         End If
         Return True
     End Function
@@ -347,6 +359,7 @@
         Me.chx_airAco.CheckState = CheckState.Unchecked
         Me.chx_frigobar.Checked = False
         Me.chx_frigobar.CheckState = CheckState.Unchecked
+        estado = estadoNuevoAlojamiento.nuevoCliente
     End Sub
 
     Private Sub cmd_atrHos_Click(sender As Object, e As EventArgs) Handles cmd_atrHos.Click
@@ -377,13 +390,28 @@
     End Sub
 
     Private Sub cmd_sigHos_Click(sender As Object, e As EventArgs) Handles cmd_sigHos.Click
-        Me.tab_aloNue.SelectedTab = tab_aloNueSelHab
+        If Me.validarCamposHospedajeNuevoAlojamiento Then
+            Me.tab_aloNue.SelectedTab = tab_aloNueSelHab
+            Me.dtp_fecDes.Enabled = False
+            Me.dtp_fecHas.Enabled = False
+            Me.cmb_canPer.Enabled = False
+            Me.cmb_tipHab.Enabled = False
+            Me.chx_airAco.Enabled = False
+            Me.chx_frigobar.Enabled = False
+            Me.cargarGrillaSeleccionHabitacion()
+        End If
     End Sub
 
     Private Sub cmd_sigCli_Click(sender As Object, e As EventArgs) Handles cmd_sigCli.Click
-        If Me.validarExistenciaClienteNuevoAlojamiento = False Then
-            If Me.validarCamposClienteNuevoAlojamiento = True Then
+        If Me.validarCamposClienteNuevoAlojamiento = True Then
+            If Me.validarExistenciaClienteNuevoAlojamiento = True Then
                 Me.tab_aloNue.SelectedTab = tab_aloNueDatHos
+                Me.cmb_tipoDoc.Enabled = False
+                Me.txt_doc.ReadOnly = True
+                Me.txt_ape.ReadOnly = True
+                Me.txt_nom.ReadOnly = True
+                Me.dtp_fecNac.Enabled = False
+                Me.txt_tel.ReadOnly = True
             End If
         End If
     End Sub
@@ -586,18 +614,27 @@
     End Sub
 
     Private Sub cmd_nueAloDatCliLim_Click(sender As Object, e As EventArgs) Handles cmd_nueAloDatCliLim.Click
-        Me.cmb_tipoDoc.Text = ""
+        Me.cmb_tipoDoc.Enabled = True
+        Me.txt_doc.ReadOnly = False
+        Me.txt_ape.ReadOnly = False
+        Me.txt_nom.ReadOnly = False
+        Me.dtp_fecNac.Enabled = True
+        Me.txt_tel.ReadOnly = False
+        Me.cmb_tipoDoc.SelectedIndex = -1
         Me.txt_doc.Text = ""
         Me.txt_ape.Text = ""
         Me.txt_nom.Text = ""
         Me.txt_tel.Text = ""
-
-        Me.txt_ape.Enabled = False
-        MessageBox.Show("HOLA GATO")
-
+        estado = estadoNuevoAlojamiento.nuevoCliente
     End Sub
 
     Private Sub cmd_nueAloDatHosLim_Click(sender As Object, e As EventArgs) Handles cmd_nueAloDatHosLim.Click
+        Me.dtp_fecDes.Enabled = True
+        Me.dtp_fecHas.Enabled = True
+        Me.cmb_canPer.Enabled = True
+        Me.cmb_tipHab.Enabled = True
+        Me.chx_airAco.Enabled = True
+        Me.chx_frigobar.Enabled = True
         Me.dtp_fecDes.Value = Today.Date
         Me.dtp_fecHas.Value = Today.Date
         Me.cmb_canPer.Text = ""
