@@ -85,36 +85,36 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABM Alojamientos.Designer.vb">
+    <Compile Include="Formularios\ABM Alojamientos.Designer.vb">
       <DependentUpon>ABM Alojamientos.vb</DependentUpon>
     </Compile>
-    <Compile Include="ABM Alojamientos.vb">
+    <Compile Include="Formularios\ABM Alojamientos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Clientes.Designer.vb">
+    <Compile Include="Formularios\ABM Clientes.Designer.vb">
       <DependentUpon>ABM Clientes.vb</DependentUpon>
     </Compile>
-    <Compile Include="ABM Clientes.vb">
+    <Compile Include="Formularios\ABM Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Tipos Habitacion.Designer.vb">
+    <Compile Include="Formularios\ABM Tipos Habitacion.Designer.vb">
       <DependentUpon>ABM Tipos Habitacion.vb</DependentUpon>
     </Compile>
-    <Compile Include="ABM Tipos Habitacion.vb">
+    <Compile Include="Formularios\ABM Tipos Habitacion.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Tipos Documentos.Designer.vb">
+    <Compile Include="Formularios\ABM Tipos Documentos.Designer.vb">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
     </Compile>
-    <Compile Include="ABM Tipos Documentos.vb">
+    <Compile Include="Formularios\ABM Tipos Documentos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AccesoBD.vb" />
-    <Compile Include="ConexionBD.vb" />
-    <Compile Include="Menu.Designer.vb">
+    <Compile Include="Clases\AccesoBD.vb" />
+    <Compile Include="Clases\ConexionBD.vb" />
+    <Compile Include="Formularios\Menu.Designer.vb">
       <DependentUpon>Menu.vb</DependentUpon>
     </Compile>
-    <Compile Include="Menu.vb">
+    <Compile Include="Formularios\Menu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -134,19 +134,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ABM Alojamientos.resx">
+    <EmbeddedResource Include="Formularios\ABM Alojamientos.resx">
       <DependentUpon>ABM Alojamientos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Clientes.resx">
+    <EmbeddedResource Include="Formularios\ABM Clientes.resx">
       <DependentUpon>ABM Clientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Tipos Habitacion.resx">
+    <EmbeddedResource Include="Formularios\ABM Tipos Habitacion.resx">
       <DependentUpon>ABM Tipos Habitacion.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Tipos Documentos.resx">
+    <EmbeddedResource Include="Formularios\ABM Tipos Documentos.resx">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">

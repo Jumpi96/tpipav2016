@@ -37,7 +37,24 @@
     Private Sub New()
         Me.conexion = New OleDb.OleDbConnection
         Me.comando = New OleDb.OleDbCommand()
-        Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=LAWEBSTORE-PC\SQLSERVER2014;Integrated Security=SSPI;Initial Catalog=hotelShaky"
+
+        Select Case Environment.MachineName
+            Case "LAWEBSTORE-PC"
+                Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=LAWEBSTORE-PC\SQLSERVER2014;Integrated Security=SSPI;Initial Catalog=hotelShaky"
+
+                'Case "NOMBRE-COMPU-JUAMPI"
+                'Me.pCadenaConexion = "CADENA CONEXION MARCE"
+
+                'Case "NOMBRE-COMPU-JULI"
+                'Me.pCadenaConexion = "CADENA CONEXION JULI"
+
+                'Case "NOMBRE-COMPU-MARCE"
+                'Me.pCadenaConexion = "CADENA CONEXION MARCE"
+
+
+        End Select
+
+
     End Sub
 
 
