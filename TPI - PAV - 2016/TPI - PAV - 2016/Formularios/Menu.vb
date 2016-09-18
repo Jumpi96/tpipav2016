@@ -465,4 +465,9 @@
     Private Sub ABMTiposHabitaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposHabitaciónToolStripMenuItem.Click
         ABM_TiposHabitacion.Show()
     End Sub
+
+    Private Sub ABMProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMProveedoresToolStripMenuItem.Click
+        ABM_Proveedores.Show()
+
+    End Sub
 End Class

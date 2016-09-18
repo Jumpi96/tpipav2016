@@ -37,6 +37,7 @@ Partial Class menu
         Me.ABMAlojamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMTiposHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
@@ -252,7 +253,7 @@ Partial Class menu
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
         Me.lbl_fechahora = New System.Windows.Forms.Label()
-        Me.ABMTiposHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -365,7 +366,7 @@ Partial Class menu
         '
         'ABMsToolStripMenuItem
         '
-        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem})
+        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
         Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
@@ -387,6 +388,12 @@ Partial Class menu
         Me.ABMTiposDocumentosToolStripMenuItem.Name = "ABMTiposDocumentosToolStripMenuItem"
         Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
+        '
+        'ABMTiposHabitaciónToolStripMenuItem
+        '
+        Me.ABMTiposHabitaciónToolStripMenuItem.Name = "ABMTiposHabitaciónToolStripMenuItem"
+        Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMTiposHabitaciónToolStripMenuItem.Text = "ABM Tipos Habitación"
         '
         'InformesToolStripMenuItem
         '
@@ -2497,11 +2504,11 @@ Partial Class menu
         Me.lbl_fechahora.Size = New System.Drawing.Size(0, 13)
         Me.lbl_fechahora.TabIndex = 1
         '
-        'ABMTiposHabitaciónToolStripMenuItem
+        'ABMProveedoresToolStripMenuItem
         '
-        Me.ABMTiposHabitaciónToolStripMenuItem.Name = "ABMTiposHabitaciónToolStripMenuItem"
-        Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMTiposHabitaciónToolStripMenuItem.Text = "ABM Tipos Habitación"
+        Me.ABMProveedoresToolStripMenuItem.Name = "ABMProveedoresToolStripMenuItem"
+        Me.ABMProveedoresToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMProveedoresToolStripMenuItem.Text = "ABM Proveedores"
         '
         'menu
         '
@@ -2810,5 +2817,6 @@ Partial Class menu
     Friend WithEvents clm_artOrdComSel As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_canArtOrdComSel As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ABMTiposHabitaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ABMProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
