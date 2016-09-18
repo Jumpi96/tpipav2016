@@ -178,25 +178,7 @@
 
 
 
-    'Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-    '    Dim conexion As New OleDb.OleDbConnection
-    '    Dim cmd As New OleDb.OleDbCommand
-    '    Dim tabla As New DataTable
-    '    Dim sql As String =  "DELETE FROM TiposDocumento WHERE idTipoDocumento = " & Me.grid_tipoDoc.Rows(0).Cells("c_idDoc").Value()
 
-    '    MessageBox.Show("Se ha eliminado el tipo de Documento Satisfactoriamente")
-
-    '    conexion.ConnectionString = cadena_conexion
-    '    conexion.Open()
-    '    cmd.Connection = conexion
-    '    cmd.CommandType = CommandType.Text
-    '    cmd.CommandText = sql
-    '    tabla.Load(cmd.ExecuteReader())
-    '    conexion.Close()
-    '    Me.cargar_grilla()
-    '    Me.cmd_limpiar.PerformClick()
-
-    'End Sub
 
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
         Try
