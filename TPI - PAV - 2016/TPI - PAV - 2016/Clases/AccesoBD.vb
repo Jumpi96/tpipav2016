@@ -35,7 +35,6 @@
 
     'CONSTRUCTOR
     Private Sub New()
-        Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=LAWEBSTORE-PC\SQLSERVER2014;Integrated Security=SSPI;Initial Catalog=hotelShaky"
         Me.conexion = New OleDb.OleDbConnection
         Me.comando = New OleDb.OleDbCommand()
 

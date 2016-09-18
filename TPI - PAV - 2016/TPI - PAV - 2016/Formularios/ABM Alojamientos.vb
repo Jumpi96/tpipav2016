@@ -1,5 +1,6 @@
 ﻿Public Class ABM_Alojamientos
-    Dim string_conexion As String = ConexionBD.Instancia.StringConexion
+    Dim accesoBD As AccesoBD = AccesoBD.instancia
+
     Dim flagBusqDocumento As Boolean = False
     Dim idAlojamientoModificacion As Integer = 0
     Dim flagFechaSalida As Boolean = False
@@ -35,39 +36,21 @@
     End Sub
 
     Private Function leo_alojamientos(ByVal porDoc As Boolean)
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim tabla As New Data.DataTable
+        Dim sentenciaSQL As String = ""
 
-        conexion.ConnectionString = Me.string_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
         If porDoc Then
-            cmd.CommandText = "select idAlojamiento, fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
+            sentenciaSQL = "select idAlojamiento, fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
                         "from Alojamientos where tipoDoc=" & cmbTipoDoc.SelectedValue & " AND nroDoc=" & txtNroDoc.Text
         Else
-            cmd.CommandText = "select idAlojamiento, fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
+            sentenciaSQL = "select idAlojamiento, fechaInicioAlojamiento, fechaFinAlojamiento, nroHabitacion " &
                 "from Alojamientos order by fechaInicioAlojamiento DESC"
         End If
-        tabla.Load(cmd.ExecuteReader())
 
-        Return tabla
+        Return accesoBD.query(sentenciaSQL)
     End Function
 
     Private Function leo_tabla(ByVal nombre_tabla As String) As Data.DataTable
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim tabla As New Data.DataTable
-
-        conexion.ConnectionString = Me.string_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = "select * from " + nombre_tabla
-        tabla.Load(cmd.ExecuteReader())
-
-        Return tabla
+        Return accesoBD.query("select * from " + nombre_tabla)
     End Function
 
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
@@ -135,85 +118,55 @@
         End If
     End Function
 
-    Private Function guardar()
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim consulta As String = ""
-
-        conexion.ConnectionString = Me.string_conexion
-        conexion.Open()
-
+    Private Function guardar() As Boolean
+        Dim sentenciaSQL As String = ""
         Dim valueSalida As String
+
         If flagFechaSalida = False Then
-            consulta = "update alojamientos " & "SET nroDoc=" + txtNroDoc.Text + ", tipoDoc=" _
+            sentenciaSQL = "update alojamientos " & "SET nroDoc=" + txtNroDoc.Text + ", tipoDoc=" _
             & cmbTipoDoc.SelectedValue & ", nroHabitacion=" + txtHabitacion.Text + ", cantPersonas=" & txtAlojados.Text _
             & ", fechaInicioAlojamiento='" & dtpIngreso.Value & "',fechaFinEstimadaalojamiento='" & dtpEstimada.Value _
             & "', precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
         Else
             valueSalida = dtpSalida.Value
-            consulta = "update alojamientos" & "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" _
+            sentenciaSQL = "update alojamientos" & "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" _
             & cmbTipoDoc.SelectedValue & ", nroHabitacion=" & txtHabitacion.Text & ", cantPersonas=" & txtAlojados _
             & ", fechaInicioAlojamiento='" & dtpIngreso.Value & "',fechaFinEstimadaalojamiento='" & dtpEstimada.Value & "', fechaFinAlojamiento='" _
              & valueSalida & "', precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
         End If
 
-
-        cmd.CommandType = CommandType.Text
-        cmd.Connection = conexion
-        cmd.CommandText = consulta
-        cmd.ExecuteNonQuery()
-        conexion.Close()
+        accesoBD.nonQuery(sentenciaSQL)
         Return True
     End Function
 
     Private Function insertar() As Boolean
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim consulta As String = ""
-
-        conexion.ConnectionString = Me.string_conexion
-        conexion.Open()
+        Dim sentenciaSQL As String = ""
 
         If flagFechaSalida = False Then
-            consulta = "insert into alojamientos(nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) " _
+            sentenciaSQL = "insert into alojamientos(nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) " _
             & " values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text _
             + "," & txtAlojados.Text & ",'" & dtpIngreso.Value.Date & "','" & dtpEstimada.Value.Date & "'," _
             & txtPrecio.Text & ")"
         Else
-            consulta = "insert into alojamientos " +
+            sentenciaSQL = "insert into alojamientos " +
             "values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text + "," & txtAlojados.Text _
             & ",'" & dtpIngreso.Value.Date & "','" & dtpEstimada.Value.Date & "','" & dtpSalida.Value.Date & "'," & txtPrecio.Text & ")"
         End If
 
+        accesoBD.nonQuery(sentenciaSQL)
 
-        cmd.CommandType = CommandType.Text
-        cmd.Connection = conexion
-        cmd.CommandText = consulta
-        cmd.ExecuteNonQuery()
-        conexion.Close()
         Return True
     End Function
 
     Private Function existeCliente() As Boolean
-        Dim conexion As New OleDb.OleDbConnection
-        Dim consulta As String
-        Dim cmd As New OleDb.OleDbCommand
+        Dim sentenciaSQL As String
         Dim tabla As New DataTable
 
-        conexion.ConnectionString = Me.string_conexion
-        conexion.Open()
-
         If txtNroDoc.Text <> "" Then
-            consulta = "select * from Clientes where tipoDocumento =" & cmbTipoDoc.SelectedValue & " AND nroDocumento=" & txtNroDoc.Text
-
-            cmd.CommandType = CommandType.Text
-            cmd.CommandText = consulta
-            cmd.Connection = conexion
-
-            tabla.Load(cmd.ExecuteReader())
+            sentenciaSQL = "select * from Clientes where tipoDocumento =" & cmbTipoDoc.SelectedValue & " AND nroDocumento=" & txtNroDoc.Text
+            tabla = accesoBD.query(sentenciaSQL)
         End If
         
-
         If (tabla.Rows.Count = 0) Then
             Return False
         End If
@@ -221,17 +174,8 @@
     End Function
 
     Private Function validar() As Boolean
-        'verificar Documento
-        Dim conexion As New OleDb.OleDbConnection
-        Dim consulta As String
-        Dim cmd As New OleDb.OleDbCommand
+        Dim sentenciaSQL As String
         Dim tabla As New DataTable
-
-        conexion.ConnectionString = Me.string_conexion
-        conexion.Open()
-
-        cmd.CommandType = CommandType.Text
-        cmd.Connection = conexion
 
         If (existeCliente() = False) Then
             MessageBox.Show("El documento ingresado no existe.", "Error", MessageBoxButtons.OK)
@@ -240,11 +184,8 @@
         End If
         'verificar habitacion y alojados
         If txtHabitacion.Text <> "" Then
-            consulta = "select cantMaxPersonas from HabitacionesXPiso where nroHabitacion = " & txtHabitacion.Text
-            cmd.CommandText = consulta
-
-            tabla.Load(cmd.ExecuteReader())
-            conexion.Close()
+            sentenciaSQL = "select cantMaxPersonas from HabitacionesXPiso where nroHabitacion = " & txtHabitacion.Text
+            tabla = accesoBD.query(sentenciaSQL)
         End If
 
         If (tabla.Rows.Count = 0) Then
@@ -281,20 +222,11 @@
     End Sub
 
     Private Sub cargar(ByVal idAlojamiento As Integer)
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim consulta As String
+        Dim sentenciaSQL As String
 
-        conexion.ConnectionString = string_conexion
-        conexion.Open()
-        consulta = "select * from Alojamientos where idAlojamiento=" & idAlojamiento
+        sentenciaSQL = "select * from Alojamientos where idAlojamiento=" & idAlojamiento
 
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = consulta
-        cmd.Connection = conexion
-
-        Dim tabla As New DataTable
-        tabla.Load(cmd.ExecuteReader())
+        Dim tabla As DataTable = accesoBD.query(sentenciaSQL)
 
         Dim row As DataRow = tabla.Rows(0)
 
