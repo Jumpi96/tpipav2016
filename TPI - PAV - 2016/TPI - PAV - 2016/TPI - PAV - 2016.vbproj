@@ -109,6 +109,7 @@
     <Compile Include="ABM Tipos Documentos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AccesoBD.vb" />
     <Compile Include="ConexionBD.vb" />
     <Compile Include="Menu.Designer.vb">
       <DependentUpon>Menu.vb</DependentUpon>
@@ -156,6 +157,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
