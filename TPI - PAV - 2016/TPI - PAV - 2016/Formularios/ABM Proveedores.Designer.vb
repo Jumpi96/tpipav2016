@@ -127,10 +127,13 @@ Partial Class ABM_Proveedores
         '
         'grid_proveedores
         '
+        Me.grid_proveedores.AllowUserToAddRows = False
+        Me.grid_proveedores.AllowUserToDeleteRows = False
         Me.grid_proveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_proveedores.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.c_idProveedor, Me.c_nombre, Me.c_correo, Me.c_telefono})
         Me.grid_proveedores.Location = New System.Drawing.Point(12, 94)
         Me.grid_proveedores.Name = "grid_proveedores"
+        Me.grid_proveedores.ReadOnly = True
         Me.grid_proveedores.Size = New System.Drawing.Size(365, 212)
         Me.grid_proveedores.TabIndex = 32
         '

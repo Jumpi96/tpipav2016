@@ -60,8 +60,8 @@
     'INSERTAR CLIENTE
     Private Sub insertar()
         Dim sentenciaSQL As String = "INSERT INTO Clientes (apellido, nombre, nroDocumento, tipoDocumento, fechaNacimiento, telefono) " _
-           & "VALUES ('" & txt_apellido.Text & "', '" & txt_nombre.Text & "', " & txt_nroDoc.Text & ", '" & cmb_tipoDoc.SelectedValue & "', getDate() , " & txt_telefono.Text & ")"
-        '& dtpEstimada.Value.Date &
+           & "VALUES ('" & txt_apellido.Text & "', '" & txt_nombre.Text & "', " & txt_nroDoc.Text & ", '" & cmb_tipoDoc.SelectedValue & "', '" & dtpEstimada.Value.Date & "' , " & txt_telefono.Text & ")"
+
         acceso.nonQuery(sentenciaSQL)
         MessageBox.Show("Se registró exitosamente.")
         Me.cargarGrilla(estadoBusqueda.todo)

@@ -1,48 +1,21 @@
 ﻿Public Class ABM_Proveedores
     Dim acceso As AccesoBD = AccesoBD.instancia
-    Enum analizar_existencia
-        existe
-        no_existe
-    End Enum
+
     Enum estado
         insertar
         modificar
     End Enum
-    Dim condicion_estado As estado = estado.insertar
-
-    Private Function Validar() As Boolean
-        If txt_nombre.Text = "" Then
-            MessageBox.Show("Debe completar el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-            txt_nombre.Focus()
-            Return False
-        End If
-        If txt_correo.Text = "" Then
-            MessageBox.Show("Debe completar el campo correo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-            txt_correo.Focus()
-            Return False
-        End If
-        If txt_telefono.Text = "" Then
-            MessageBox.Show("Debe completar el campo telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
-            txt_telefono.Focus()
-            Return False
-        End If
-        Return True
-    End Function
-    Private Function validar_Existencia() As Boolean
-        Dim sentenciaSQL As String = "SELECT * FROM Proveedores "
-        sentenciaSQL &= "WHERE nombre = '" & Me.txt_nombre.Text & "'"
-
-        Dim tabla As DataTable = acceso.query(sentenciaSQL)
+    Dim estadoInsercion As estado = estado.insertar
 
 
-        If tabla.Rows.Count() = 0 Then
-            Return analizar_existencia.no_existe
-        Else
-            Return analizar_existencia.existe
-        End If
-    End Function
+    Private Sub ABM_Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarGrilla()
+    End Sub
 
 
+#Region "Subrutinas"
+
+    'CARGAR GRILLA
     Private Sub cargarGrilla()
         Me.grid_proveedores.Rows.Clear()
 
@@ -61,41 +34,85 @@
         Next
     End Sub
 
+    'INSERTAR
     Private Sub insertar()
-        Dim sentenciaSQL As String = "INSERT INTO Proveedores (idProveedor, nombre, correo, telefono) " _
-           & "VALUES (1,'" & txt_nombre.Text & "', '" & txt_correo.Text & "', '" & txt_telefono.Text & "')"
+        Dim sentenciaSQL As String = "INSERT INTO Proveedores (nombre, correo, telefono) "
+        sentenciaSQL &= "VALUES ('" & txt_nombre.Text & "'"
+        sentenciaSQL &= " , '" & txt_correo.Text & "'"
+        sentenciaSQL &= " , " & txt_telefono.Text & ")"
 
         acceso.nonQuery(sentenciaSQL)
         MessageBox.Show("Se registró exitosamente.")
         Me.cargarGrilla()
     End Sub
 
-
-
-
+    'MODIFICAR
     Private Sub modificar()
         Dim sentenciaSQL As String = ""
         sentenciaSQL &= "UPDATE Proveedores "
-        sentenciaSQL &= "SET nombre = '" & Me.txt_nombre.Text & "'"
-        sentenciaSQL &= " , correo = '" & Me.txt_correo.Text & "'"
-        sentenciaSQL &= " , telefono = '" & Me.txt_telefono.Text
+        sentenciaSQL &= "SET correo = '" & Me.txt_correo.Text & "'"
+        sentenciaSQL &= " , telefono = " & Me.txt_telefono.Text
+        sentenciaSQL &= " WHERE nombre = '" & Me.txt_nombre.Text & "'"
 
         acceso.nonQuery(sentenciaSQL)
 
         MessageBox.Show("Se modificó correctamente.")
     End Sub
 
-    Private Sub ABM_Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Validar()
-        cargarGrilla()
-    End Sub
+
+
+#End Region
+
+#Region "Funciones"
+
+    'VALIDAR CAMPOS
+    Private Function Validar() As Boolean
+        If txt_nombre.Text = "" Then
+            MessageBox.Show("Debe completar el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            txt_nombre.Focus()
+            Return False
+        End If
+        If txt_correo.Text = "" Then
+            MessageBox.Show("Debe completar el campo correo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            txt_correo.Focus()
+            Return False
+        End If
+        If txt_telefono.Text = "" Then
+            MessageBox.Show("Debe completar el campo telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            txt_telefono.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
+    'VALIDAR EXISTENCIA DE UN ELEMENTO
+    Private Function validar_Existencia() As Boolean
+        Dim sentenciaSQL As String = "SELECT * FROM Proveedores "
+        sentenciaSQL &= "WHERE nombre = '" & Me.txt_nombre.Text & "'"
+
+        Dim tabla As DataTable = acceso.query(sentenciaSQL)
+
+        If tabla.Rows.Count() = 0 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+
+
+#End Region
+
+#Region "Eventos"
+
+    'CLICK EN GUARDAR
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
         If Me.Validar = True Then
-            If condicion_estado = estado.insertar Then
-                If Me.validar_Existencia() = analizar_existencia.no_existe Then
+            If estadoInsercion = estado.insertar Then
+                If Me.validar_Existencia() = False Then
                     Me.insertar()
                 Else
-                    MessageBox.Show("Ya existe este Tipo de Documento")
+                    MessageBox.Show("Ya existe este Proveedor")
                     Exit Sub
                 End If
             Else
@@ -104,49 +121,54 @@
 
             Me.cmd_limpiar.PerformClick()
         End If
-
-
     End Sub
+
+    'DOBLECLICK EN ELEMENTO DE LA GRILLA
+    Private Sub grid_proveedores_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_proveedores.CellContentDoubleClick
+        Dim sentenciaSQL As String = ""
+
+        sentenciaSQL = "SELECT * FROM Proveedores WHERE nombre = '" & Me.grid_proveedores.CurrentRow.Cells("c_nombre").Value & "'"
+        Dim tabla As DataTable = acceso.query(sentenciaSQL)
+
+        If tabla.Rows.Count() = 0 Then
+            MessageBox.Show("El Proveedor requerido no existe.")
+            Exit Sub
+        End If
+
+        Me.cmd_borrar.Enabled = True
+        Me.cmd_borrar.Visible = True
+        Me.cmd_guardar.Text = "Modificar"
+        Me.txt_nombre.Enabled = False
+
+        Me.txt_nombre.Text = tabla.Rows(0)("nombre")
+        Me.txt_correo.Text = tabla.Rows(0)("correo")
+        Me.txt_telefono.Text = tabla.Rows(0)("telefono")
+
+        Me.estadoInsercion = estado.modificar
+    End Sub
+
+
+    'CLICK EN LIMPIAR
     Private Sub cmd_limpiar_Click(sender As Object, e As EventArgs) Handles cmd_limpiar.Click
-        Me.condicion_estado = estado.insertar
-
-        txt_correo.Text = ""
-        txt_nombre.Text = ""
-        txt_telefono.Text = ""
+        Me.estadoInsercion = estado.insertar
+        Me.txt_correo.Text = ""
+        Me.txt_nombre.Text = ""
+        Me.txt_telefono.Text = ""
+        Me.cmd_guardar.Text = "Guardar"
+        Me.txt_nombre.Enabled = True
+        Me.cargarGrilla()
     End Sub
 
+    'CLICK EN CANCELAR
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
         Me.Close()
     End Sub
-    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-        Dim sql As String = "DELETE FROM Proveedores WHERE nombre = " & Me.txt_nombre.Text
+#End Region
 
-        Dim tabla As DataTable = acceso.query(sql)
-        MessageBox.Show("Se ha eliminado el proveedor Satisfactoriamente")
-        Me.cmd_limpiar.PerformClick()
-    End Sub
-    'Private Sub grid_proveedores_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_proveedores.CellContentDoubleClick
-    '    Dim sentenciaSQL As String = ""
+    'Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+    '    Dim sentenciaSQL As String = "DELETE FROM Proveedores DBCC CHECKIDENT (Proveedores, RESEED, 0)"
 
-    '    sentenciaSQL = "SELECT * FROM Proveedores WHERE nombre = '" & Me.grid_proveedores.CurrentRow.Cells("c_nombre").Value & "'"
-
-    '    Dim tabla As DataTable = acceso.query(sentenciaSQL)
-
-    '    If tabla.Rows.Count() = 0 Then
-    '        MessageBox.Show("El Proveedor requerido no existe.")
-    '        Exit Sub
-    '    End If
-
-    '    Me.cmd_borrar.Enabled = True
-    '    'Me.cmd_borrar.Visible = True
-    '    Me.cmd_guardar.Text = "Modificar"
-
-
-    '    Me.txt_nombre.Text = tabla.Rows(0)("nombre")
-    '    Me.txt_correo.Text = tabla.Rows(0)("correo")
-    '    Me.txt_telefono.Text = tabla.Rows(0)("telefono")
-
-    '    Me.condicion_estado = estado.modificar
-
+    '    acceso.nonQuery(sentenciaSQL)
+    '    Me.cargarGrilla()
     'End Sub
 End Class
