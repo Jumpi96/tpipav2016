@@ -1,4 +1,5 @@
 ﻿Public Class menu
+    Dim acceso As AccesoBD = AccesoBD.instancia
 
     Private Sub ocultarNuevoAlojamiento()
         Me.pnl_nueAlo.Visible = False

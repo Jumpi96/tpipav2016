@@ -53,8 +53,6 @@
 
 
         End Select
-
-
     End Sub
 
 
@@ -64,7 +62,7 @@
         Me.comando.CommandText = sentenciaSQL
 
         retorno.Load(comando.ExecuteReader())
-        cerrar()
+        Me.cerrar()
 
         Return retorno
     End Function
