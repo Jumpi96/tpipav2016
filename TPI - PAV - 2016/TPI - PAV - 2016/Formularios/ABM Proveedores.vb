@@ -7,7 +7,7 @@
     End Enum
     Dim estadoInsercion As estado = estado.insertar
 
-
+    'LOAD FORM
     Private Sub ABM_Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarGrilla()
     End Sub
@@ -103,7 +103,7 @@
 
 #End Region
 
-#Region "Eventos"
+#Region "BOTONES"
 
     'CLICK EN GUARDAR
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click

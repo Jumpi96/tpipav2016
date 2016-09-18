@@ -387,6 +387,10 @@
         Me.txt_nom.Text = ""
         Me.txt_fecNac.Text = ""
         Me.txt_tel.Text = ""
+
+        Me.txt_ape.Enabled = False
+        MessageBox.Show("HOLA GATO")
+
     End Sub
 
     Private Sub cmd_nueAloDatHosLim_Click(sender As Object, e As EventArgs) Handles cmd_nueAloDatHosLim.Click
@@ -470,4 +474,5 @@
         ABM_Proveedores.Show()
 
     End Sub
+
 End Class

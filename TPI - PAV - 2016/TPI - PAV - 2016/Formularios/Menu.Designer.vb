@@ -38,6 +38,7 @@ Partial Class menu
         Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
@@ -253,7 +254,6 @@ Partial Class menu
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
         Me.lbl_fechahora = New System.Windows.Forms.Label()
-        Me.ABMProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -368,7 +368,7 @@ Partial Class menu
         '
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
-        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
         'ABMAlojamientosToolStripMenuItem
@@ -395,16 +395,22 @@ Partial Class menu
         Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.ABMTiposHabitaciónToolStripMenuItem.Text = "ABM Tipos Habitación"
         '
+        'ABMProveedoresToolStripMenuItem
+        '
+        Me.ABMProveedoresToolStripMenuItem.Name = "ABMProveedoresToolStripMenuItem"
+        Me.ABMProveedoresToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMProveedoresToolStripMenuItem.Text = "ABM Proveedores"
+        '
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'EstadísticasToolStripMenuItem
         '
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
-        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
         '
         'pnl_nueAlo
@@ -831,8 +837,8 @@ Partial Class menu
         'pnl_busAlo
         '
         Me.pnl_busAlo.Controls.Add(Me.lbl_busAlo)
-        Me.pnl_busAlo.Controls.Add(Me.pnl_busAloSel)
         Me.pnl_busAlo.Controls.Add(Me.tab_busAlo)
+        Me.pnl_busAlo.Controls.Add(Me.pnl_busAloSel)
         Me.pnl_busAlo.Enabled = False
         Me.pnl_busAlo.Location = New System.Drawing.Point(12, 28)
         Me.pnl_busAlo.Name = "pnl_busAlo"
@@ -1144,8 +1150,8 @@ Partial Class menu
         '
         'tab_busAlo
         '
-        Me.tab_busAlo.Controls.Add(Me.tab_busAloDatCli)
         Me.tab_busAlo.Controls.Add(Me.tab_busAloAlo)
+        Me.tab_busAlo.Controls.Add(Me.tab_busAloDatCli)
         Me.tab_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tab_busAlo.Location = New System.Drawing.Point(6, 22)
         Me.tab_busAlo.Name = "tab_busAlo"
@@ -2504,12 +2510,6 @@ Partial Class menu
         Me.lbl_fechahora.Size = New System.Drawing.Size(0, 13)
         Me.lbl_fechahora.TabIndex = 1
         '
-        'ABMProveedoresToolStripMenuItem
-        '
-        Me.ABMProveedoresToolStripMenuItem.Name = "ABMProveedoresToolStripMenuItem"
-        Me.ABMProveedoresToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMProveedoresToolStripMenuItem.Text = "ABM Proveedores"
-        '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2518,12 +2518,12 @@ Partial Class menu
         Me.ClientSize = New System.Drawing.Size(546, 287)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
+        Me.Controls.Add(Me.pnl_nueOrdCom)
+        Me.Controls.Add(Me.pnl_nueAlo)
         Me.Controls.Add(Me.pnl_busAlo)
         Me.Controls.Add(Me.pnl_agrServ)
         Me.Controls.Add(Me.pnl_agrArt)
         Me.Controls.Add(Me.pnl_busOrdCom)
-        Me.Controls.Add(Me.pnl_nueOrdCom)
-        Me.Controls.Add(Me.pnl_nueAlo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.Name = "menu"

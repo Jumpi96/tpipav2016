@@ -14,7 +14,7 @@
         nroDocumento
     End Enum
 
-
+    'LOAD FORM
     Private Sub ABM_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargarCombo("TiposDocumento", "idTipoDocumento", "nombre", Me.cmb_tipoDoc)
         Me.cargarGrilla(estadoBusqueda.todo)
@@ -147,7 +147,7 @@
 #End Region
 
 
-#Region "Eventos"
+#Region "BOTONES"
 
     ' CLICK EN REGISTRAR
     Private Sub cmd_registrar_Click(sender As Object, e As EventArgs) Handles cmd_registrar.Click
@@ -234,4 +234,5 @@
         Me.cmd_buscar.PerformClick()
     End Sub
 #End Region
+
 End Class
