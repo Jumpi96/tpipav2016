@@ -197,4 +197,19 @@
     '    Me.cmd_limpiar.PerformClick()
 
     'End Sub
+
+    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+        Try
+            Dim sentenciaSQL As String = "DELETE FROM TiposDocumento WHERE idTipoDocumento = " & Me.grid_tipoDoc.Rows(0).Cells("c_idDoc").Value()
+
+            accesoBD.nonQuery(sentenciaSQL)
+
+            MessageBox.Show("Se ha eliminado el tipo de documento satisfactoriamente")
+
+            Me.cargar_grilla()
+            Me.cmd_limpiar.PerformClick()
+        Catch ex As OleDb.OleDbException
+            MessageBox.Show("El registro no puede eliminarse por tener otros registros relacionados.")
+        End Try
+    End Sub
 End Class
