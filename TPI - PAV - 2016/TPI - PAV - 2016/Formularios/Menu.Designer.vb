@@ -39,18 +39,19 @@ Partial Class menu
         Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMHabitaciónXPisoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.lbl_nueAlo = New System.Windows.Forms.Label()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
         Me.tab_aloNueDatCli = New System.Windows.Forms.TabPage()
+        Me.dtp_fecNac = New System.Windows.Forms.DateTimePicker()
         Me.cmd_nueAloDatCliLim = New System.Windows.Forms.Button()
         Me.txt_tel = New System.Windows.Forms.TextBox()
         Me.cmd_canCli = New System.Windows.Forms.Button()
         Me.cmd_sigCli = New System.Windows.Forms.Button()
         Me.cmd_busCli = New System.Windows.Forms.Button()
-        Me.txt_fecNac = New System.Windows.Forms.MaskedTextBox()
         Me.txt_nom = New System.Windows.Forms.TextBox()
         Me.txt_ape = New System.Windows.Forms.TextBox()
         Me.txt_doc = New System.Windows.Forms.MaskedTextBox()
@@ -62,6 +63,8 @@ Partial Class menu
         Me.lbl_tipoDoc = New System.Windows.Forms.Label()
         Me.cmb_tipoDoc = New System.Windows.Forms.ComboBox()
         Me.tab_aloNueDatHos = New System.Windows.Forms.TabPage()
+        Me.dtp_fecHas = New System.Windows.Forms.DateTimePicker()
+        Me.dtp_fecDes = New System.Windows.Forms.DateTimePicker()
         Me.chx_frigobar = New System.Windows.Forms.CheckBox()
         Me.chx_airAco = New System.Windows.Forms.CheckBox()
         Me.cmd_nueAloDatHosLim = New System.Windows.Forms.Button()
@@ -69,8 +72,6 @@ Partial Class menu
         Me.cmd_sigHos = New System.Windows.Forms.Button()
         Me.cmb_tipHab = New System.Windows.Forms.ComboBox()
         Me.cmb_canPer = New System.Windows.Forms.ComboBox()
-        Me.txt_fecHas = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_fecDes = New System.Windows.Forms.MaskedTextBox()
         Me.lbl_tipHab = New System.Windows.Forms.Label()
         Me.lbl_canPer = New System.Windows.Forms.Label()
         Me.lbl_fecHas = New System.Windows.Forms.Label()
@@ -78,10 +79,6 @@ Partial Class menu
         Me.tab_aloNueSelHab = New System.Windows.Forms.TabPage()
         Me.lbl_habDis = New System.Windows.Forms.Label()
         Me.grid_nueAlo = New System.Windows.Forms.DataGridView()
-        Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.clm_capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cam_atrHab = New System.Windows.Forms.Button()
         Me.cmd_aceHab = New System.Windows.Forms.Button()
         Me.pnl_busAlo = New System.Windows.Forms.Panel()
@@ -254,7 +251,19 @@ Partial Class menu
         Me.cmd_carSerFin = New System.Windows.Forms.Button()
         Me.lbl_agrSer = New System.Windows.Forms.Label()
         Me.lbl_fechahora = New System.Windows.Forms.Label()
-        Me.ABMHabitaciónXPisoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.clm_capacidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbl_selHab = New System.Windows.Forms.Label()
+        Me.lbl_habSel = New System.Windows.Forms.Label()
+        Me.txt_habSelNro = New System.Windows.Forms.TextBox()
+        Me.lbl_nroHabSel = New System.Windows.Forms.Label()
+        Me.lbl_preDia = New System.Windows.Forms.Label()
+        Me.txt_preDia = New System.Windows.Forms.MaskedTextBox()
+        Me.clm_nroHabitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_cantCamasNuevoAlojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.clm_cantBaños = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -369,7 +378,7 @@ Partial Class menu
         '
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
-        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
         'ABMAlojamientosToolStripMenuItem
@@ -402,16 +411,22 @@ Partial Class menu
         Me.ABMProveedoresToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
         Me.ABMProveedoresToolStripMenuItem.Text = "ABM Proveedores"
         '
+        'ABMHabitaciónXPisoToolStripMenuItem
+        '
+        Me.ABMHabitaciónXPisoToolStripMenuItem.Name = "ABMHabitaciónXPisoToolStripMenuItem"
+        Me.ABMHabitaciónXPisoToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMHabitaciónXPisoToolStripMenuItem.Text = "ABM Habitación X Piso"
+        '
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'EstadísticasToolStripMenuItem
         '
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
-        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
         '
         'pnl_nueAlo
@@ -449,12 +464,12 @@ Partial Class menu
         '
         'tab_aloNueDatCli
         '
+        Me.tab_aloNueDatCli.Controls.Add(Me.dtp_fecNac)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmd_nueAloDatCliLim)
         Me.tab_aloNueDatCli.Controls.Add(Me.txt_tel)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmd_canCli)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmd_sigCli)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmd_busCli)
-        Me.tab_aloNueDatCli.Controls.Add(Me.txt_fecNac)
         Me.tab_aloNueDatCli.Controls.Add(Me.txt_nom)
         Me.tab_aloNueDatCli.Controls.Add(Me.txt_ape)
         Me.tab_aloNueDatCli.Controls.Add(Me.txt_doc)
@@ -472,6 +487,13 @@ Partial Class menu
         Me.tab_aloNueDatCli.TabIndex = 0
         Me.tab_aloNueDatCli.Text = "Datos del Cliente"
         Me.tab_aloNueDatCli.UseVisualStyleBackColor = True
+        '
+        'dtp_fecNac
+        '
+        Me.dtp_fecNac.Location = New System.Drawing.Point(145, 92)
+        Me.dtp_fecNac.Name = "dtp_fecNac"
+        Me.dtp_fecNac.Size = New System.Drawing.Size(200, 22)
+        Me.dtp_fecNac.TabIndex = 36
         '
         'cmd_nueAloDatCliLim
         '
@@ -515,15 +537,6 @@ Partial Class menu
         Me.cmd_busCli.TabIndex = 3
         Me.cmd_busCli.Text = "Buscar"
         Me.cmd_busCli.UseVisualStyleBackColor = True
-        '
-        'txt_fecNac
-        '
-        Me.txt_fecNac.Location = New System.Drawing.Point(145, 92)
-        Me.txt_fecNac.Mask = "00/00/0000"
-        Me.txt_fecNac.Name = "txt_fecNac"
-        Me.txt_fecNac.Size = New System.Drawing.Size(66, 22)
-        Me.txt_fecNac.TabIndex = 6
-        Me.txt_fecNac.ValidatingType = GetType(Date)
         '
         'txt_nom
         '
@@ -611,6 +624,8 @@ Partial Class menu
         '
         'tab_aloNueDatHos
         '
+        Me.tab_aloNueDatHos.Controls.Add(Me.dtp_fecHas)
+        Me.tab_aloNueDatHos.Controls.Add(Me.dtp_fecDes)
         Me.tab_aloNueDatHos.Controls.Add(Me.chx_frigobar)
         Me.tab_aloNueDatHos.Controls.Add(Me.chx_airAco)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmd_nueAloDatHosLim)
@@ -618,8 +633,6 @@ Partial Class menu
         Me.tab_aloNueDatHos.Controls.Add(Me.cmd_sigHos)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmb_tipHab)
         Me.tab_aloNueDatHos.Controls.Add(Me.cmb_canPer)
-        Me.tab_aloNueDatHos.Controls.Add(Me.txt_fecHas)
-        Me.tab_aloNueDatHos.Controls.Add(Me.txt_fecDes)
         Me.tab_aloNueDatHos.Controls.Add(Me.lbl_tipHab)
         Me.tab_aloNueDatHos.Controls.Add(Me.lbl_canPer)
         Me.tab_aloNueDatHos.Controls.Add(Me.lbl_fecHas)
@@ -632,11 +645,25 @@ Partial Class menu
         Me.tab_aloNueDatHos.Text = "Datos del Hospedaje"
         Me.tab_aloNueDatHos.UseVisualStyleBackColor = True
         '
+        'dtp_fecHas
+        '
+        Me.dtp_fecHas.Location = New System.Drawing.Point(153, 34)
+        Me.dtp_fecHas.Name = "dtp_fecHas"
+        Me.dtp_fecHas.Size = New System.Drawing.Size(200, 22)
+        Me.dtp_fecHas.TabIndex = 15
+        '
+        'dtp_fecDes
+        '
+        Me.dtp_fecDes.Location = New System.Drawing.Point(153, 4)
+        Me.dtp_fecDes.Name = "dtp_fecDes"
+        Me.dtp_fecDes.Size = New System.Drawing.Size(200, 22)
+        Me.dtp_fecDes.TabIndex = 14
+        '
         'chx_frigobar
         '
         Me.chx_frigobar.AutoSize = True
         Me.chx_frigobar.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chx_frigobar.Location = New System.Drawing.Point(337, 36)
+        Me.chx_frigobar.Location = New System.Drawing.Point(359, 34)
         Me.chx_frigobar.Name = "chx_frigobar"
         Me.chx_frigobar.Size = New System.Drawing.Size(78, 20)
         Me.chx_frigobar.TabIndex = 6
@@ -647,7 +674,7 @@ Partial Class menu
         '
         Me.chx_airAco.AutoSize = True
         Me.chx_airAco.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chx_airAco.Location = New System.Drawing.Point(270, 8)
+        Me.chx_airAco.Location = New System.Drawing.Point(359, 6)
         Me.chx_airAco.Name = "chx_airAco"
         Me.chx_airAco.Size = New System.Drawing.Size(145, 20)
         Me.chx_airAco.TabIndex = 5
@@ -695,26 +722,8 @@ Partial Class menu
         Me.cmb_canPer.FormattingEnabled = True
         Me.cmb_canPer.Location = New System.Drawing.Point(153, 62)
         Me.cmb_canPer.Name = "cmb_canPer"
-        Me.cmb_canPer.Size = New System.Drawing.Size(40, 24)
+        Me.cmb_canPer.Size = New System.Drawing.Size(50, 24)
         Me.cmb_canPer.TabIndex = 3
-        '
-        'txt_fecHas
-        '
-        Me.txt_fecHas.Location = New System.Drawing.Point(153, 34)
-        Me.txt_fecHas.Mask = "00/00/0000"
-        Me.txt_fecHas.Name = "txt_fecHas"
-        Me.txt_fecHas.Size = New System.Drawing.Size(71, 22)
-        Me.txt_fecHas.TabIndex = 2
-        Me.txt_fecHas.ValidatingType = GetType(Date)
-        '
-        'txt_fecDes
-        '
-        Me.txt_fecDes.Location = New System.Drawing.Point(153, 6)
-        Me.txt_fecDes.Mask = "00/00/0000"
-        Me.txt_fecDes.Name = "txt_fecDes"
-        Me.txt_fecDes.Size = New System.Drawing.Size(71, 22)
-        Me.txt_fecDes.TabIndex = 1
-        Me.txt_fecDes.ValidatingType = GetType(Date)
         '
         'lbl_tipHab
         '
@@ -754,6 +763,12 @@ Partial Class menu
         '
         'tab_aloNueSelHab
         '
+        Me.tab_aloNueSelHab.Controls.Add(Me.txt_preDia)
+        Me.tab_aloNueSelHab.Controls.Add(Me.lbl_preDia)
+        Me.tab_aloNueSelHab.Controls.Add(Me.lbl_nroHabSel)
+        Me.tab_aloNueSelHab.Controls.Add(Me.txt_habSelNro)
+        Me.tab_aloNueSelHab.Controls.Add(Me.lbl_habSel)
+        Me.tab_aloNueSelHab.Controls.Add(Me.lbl_selHab)
         Me.tab_aloNueSelHab.Controls.Add(Me.lbl_habDis)
         Me.tab_aloNueSelHab.Controls.Add(Me.grid_nueAlo)
         Me.tab_aloNueSelHab.Controls.Add(Me.cam_atrHab)
@@ -772,50 +787,17 @@ Partial Class menu
         Me.lbl_habDis.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_habDis.Location = New System.Drawing.Point(3, 3)
         Me.lbl_habDis.Name = "lbl_habDis"
-        Me.lbl_habDis.Size = New System.Drawing.Size(161, 16)
+        Me.lbl_habDis.Size = New System.Drawing.Size(0, 16)
         Me.lbl_habDis.TabIndex = 4
-        Me.lbl_habDis.Text = "Habitaciones disponibles"
         '
         'grid_nueAlo
         '
         Me.grid_nueAlo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid_nueAlo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cln_nroPisoHabSel, Me.clm_nroHabSel, Me.clm_cantCamas, Me.clm_capacidad})
+        Me.grid_nueAlo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_nroHabitacion, Me.clm_cantCamasNuevoAlojamiento, Me.clm_cantBaños})
         Me.grid_nueAlo.Location = New System.Drawing.Point(6, 22)
         Me.grid_nueAlo.Name = "grid_nueAlo"
         Me.grid_nueAlo.Size = New System.Drawing.Size(502, 118)
         Me.grid_nueAlo.TabIndex = 3
-        '
-        'cln_nroPisoHabSel
-        '
-        Me.cln_nroPisoHabSel.HeaderText = "Nro de Piso"
-        Me.cln_nroPisoHabSel.Name = "cln_nroPisoHabSel"
-        Me.cln_nroPisoHabSel.ReadOnly = True
-        Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.cln_nroPisoHabSel.Width = 120
-        '
-        'clm_nroHabSel
-        '
-        Me.clm_nroHabSel.HeaderText = "Nro de Habitación"
-        Me.clm_nroHabSel.Name = "clm_nroHabSel"
-        Me.clm_nroHabSel.ReadOnly = True
-        Me.clm_nroHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_nroHabSel.Width = 140
-        '
-        'clm_cantCamas
-        '
-        Me.clm_cantCamas.HeaderText = "Camas"
-        Me.clm_cantCamas.Name = "clm_cantCamas"
-        Me.clm_cantCamas.ReadOnly = True
-        Me.clm_cantCamas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_cantCamas.Width = 90
-        '
-        'clm_capacidad
-        '
-        Me.clm_capacidad.HeaderText = "Capacidad"
-        Me.clm_capacidad.Name = "clm_capacidad"
-        Me.clm_capacidad.ReadOnly = True
-        Me.clm_capacidad.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.clm_capacidad.Width = 90
         '
         'cam_atrHab
         '
@@ -2511,11 +2493,118 @@ Partial Class menu
         Me.lbl_fechahora.Size = New System.Drawing.Size(0, 13)
         Me.lbl_fechahora.TabIndex = 1
         '
-        'ABMHabitaciónXPisoToolStripMenuItem
+        'clm_capacidad
         '
-        Me.ABMHabitaciónXPisoToolStripMenuItem.Name = "ABMHabitaciónXPisoToolStripMenuItem"
-        Me.ABMHabitaciónXPisoToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMHabitaciónXPisoToolStripMenuItem.Text = "ABM Habitación X Piso"
+        Me.clm_capacidad.HeaderText = "Capacidad"
+        Me.clm_capacidad.Name = "clm_capacidad"
+        Me.clm_capacidad.ReadOnly = True
+        Me.clm_capacidad.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_capacidad.Width = 90
+        '
+        'clm_cantCamas
+        '
+        Me.clm_cantCamas.HeaderText = "Camas"
+        Me.clm_cantCamas.Name = "clm_cantCamas"
+        Me.clm_cantCamas.ReadOnly = True
+        Me.clm_cantCamas.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_cantCamas.Width = 90
+        '
+        'clm_nroHabSel
+        '
+        Me.clm_nroHabSel.HeaderText = "Nro de Habitación"
+        Me.clm_nroHabSel.Name = "clm_nroHabSel"
+        Me.clm_nroHabSel.ReadOnly = True
+        Me.clm_nroHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_nroHabSel.Width = 140
+        '
+        'cln_nroPisoHabSel
+        '
+        Me.cln_nroPisoHabSel.HeaderText = "Nro de Piso"
+        Me.cln_nroPisoHabSel.Name = "cln_nroPisoHabSel"
+        Me.cln_nroPisoHabSel.ReadOnly = True
+        Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.cln_nroPisoHabSel.Width = 120
+        '
+        'lbl_selHab
+        '
+        Me.lbl_selHab.AutoSize = True
+        Me.lbl_selHab.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_selHab.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_selHab.Name = "lbl_selHab"
+        Me.lbl_selHab.Size = New System.Drawing.Size(155, 16)
+        Me.lbl_selHab.TabIndex = 5
+        Me.lbl_selHab.Text = "Selección de Habitación"
+        '
+        'lbl_habSel
+        '
+        Me.lbl_habSel.AutoSize = True
+        Me.lbl_habSel.Location = New System.Drawing.Point(3, 143)
+        Me.lbl_habSel.Name = "lbl_habSel"
+        Me.lbl_habSel.Size = New System.Drawing.Size(160, 16)
+        Me.lbl_habSel.TabIndex = 6
+        Me.lbl_habSel.Text = "Habitación Seleccionada"
+        '
+        'txt_habSelNro
+        '
+        Me.txt_habSelNro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_habSelNro.Location = New System.Drawing.Point(53, 162)
+        Me.txt_habSelNro.Name = "txt_habSelNro"
+        Me.txt_habSelNro.ReadOnly = True
+        Me.txt_habSelNro.Size = New System.Drawing.Size(50, 20)
+        Me.txt_habSelNro.TabIndex = 7
+        '
+        'lbl_nroHabSel
+        '
+        Me.lbl_nroHabSel.AutoSize = True
+        Me.lbl_nroHabSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_nroHabSel.Location = New System.Drawing.Point(3, 165)
+        Me.lbl_nroHabSel.Name = "lbl_nroHabSel"
+        Me.lbl_nroHabSel.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_nroHabSel.TabIndex = 8
+        Me.lbl_nroHabSel.Text = "Número"
+        '
+        'lbl_preDia
+        '
+        Me.lbl_preDia.AutoSize = True
+        Me.lbl_preDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_preDia.Location = New System.Drawing.Point(109, 165)
+        Me.lbl_preDia.Name = "lbl_preDia"
+        Me.lbl_preDia.Size = New System.Drawing.Size(74, 13)
+        Me.lbl_preDia.TabIndex = 9
+        Me.lbl_preDia.Text = "Precio por día"
+        '
+        'txt_preDia
+        '
+        Me.txt_preDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_preDia.Location = New System.Drawing.Point(189, 162)
+        Me.txt_preDia.Mask = "9999"
+        Me.txt_preDia.Name = "txt_preDia"
+        Me.txt_preDia.Size = New System.Drawing.Size(35, 20)
+        Me.txt_preDia.TabIndex = 10
+        '
+        'clm_nroHabitacion
+        '
+        Me.clm_nroHabitacion.HeaderText = "Nro de Habitación"
+        Me.clm_nroHabitacion.Name = "clm_nroHabitacion"
+        Me.clm_nroHabitacion.ReadOnly = True
+        Me.clm_nroHabitacion.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_nroHabitacion.Width = 150
+        '
+        'clm_cantCamasNuevoAlojamiento
+        '
+        Me.clm_cantCamasNuevoAlojamiento.HeaderText = "Cantidad de Camas"
+        Me.clm_cantCamasNuevoAlojamiento.Name = "clm_cantCamasNuevoAlojamiento"
+        Me.clm_cantCamasNuevoAlojamiento.ReadOnly = True
+        Me.clm_cantCamasNuevoAlojamiento.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_cantCamasNuevoAlojamiento.Width = 150
+        '
+        'clm_cantBaños
+        '
+        Me.clm_cantBaños.HeaderText = "Cantidad de Baños"
+        Me.clm_cantBaños.Name = "clm_cantBaños"
+        Me.clm_cantBaños.ReadOnly = True
+        Me.clm_cantBaños.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.clm_cantBaños.Width = 150
         '
         'menu
         '
@@ -2525,12 +2614,12 @@ Partial Class menu
         Me.ClientSize = New System.Drawing.Size(546, 287)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
+        Me.Controls.Add(Me.pnl_nueAlo)
+        Me.Controls.Add(Me.pnl_busAlo)
         Me.Controls.Add(Me.pnl_agrServ)
         Me.Controls.Add(Me.pnl_agrArt)
         Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
-        Me.Controls.Add(Me.pnl_nueAlo)
-        Me.Controls.Add(Me.pnl_busAlo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.Name = "menu"
@@ -2602,12 +2691,10 @@ Partial Class menu
     Friend WithEvents tab_aloNue As System.Windows.Forms.TabControl
     Friend WithEvents tab_aloNueDatCli As System.Windows.Forms.TabPage
     Friend WithEvents tab_aloNueDatHos As System.Windows.Forms.TabPage
-    Friend WithEvents tab_aloNueSelHab As System.Windows.Forms.TabPage
     Friend WithEvents txt_tel As System.Windows.Forms.TextBox
     Friend WithEvents cmd_canCli As System.Windows.Forms.Button
     Friend WithEvents cmd_sigCli As System.Windows.Forms.Button
     Friend WithEvents cmd_busCli As System.Windows.Forms.Button
-    Friend WithEvents txt_fecNac As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txt_nom As System.Windows.Forms.TextBox
     Friend WithEvents txt_ape As System.Windows.Forms.TextBox
     Friend WithEvents txt_doc As System.Windows.Forms.MaskedTextBox
@@ -2623,14 +2710,10 @@ Partial Class menu
     Friend WithEvents cmd_sigHos As System.Windows.Forms.Button
     Friend WithEvents cmb_tipHab As System.Windows.Forms.ComboBox
     Friend WithEvents cmb_canPer As System.Windows.Forms.ComboBox
-    Friend WithEvents txt_fecHas As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents txt_fecDes As System.Windows.Forms.MaskedTextBox
     Friend WithEvents lbl_tipHab As System.Windows.Forms.Label
     Friend WithEvents lbl_canPer As System.Windows.Forms.Label
     Friend WithEvents lbl_fecHas As System.Windows.Forms.Label
     Friend WithEvents lbl_fecDes As System.Windows.Forms.Label
-    Friend WithEvents cam_atrHab As System.Windows.Forms.Button
-    Friend WithEvents cmd_aceHab As System.Windows.Forms.Button
     Friend WithEvents pnl_busAlo As System.Windows.Forms.Panel
     Friend WithEvents lbl_busAlo As System.Windows.Forms.Label
     Friend WithEvents tab_busAlo As System.Windows.Forms.TabControl
@@ -2813,12 +2896,6 @@ Partial Class menu
     Friend WithEvents lbl_fechahora As System.Windows.Forms.Label
     Friend WithEvents chx_frigobar As System.Windows.Forms.CheckBox
     Friend WithEvents chx_airAco As System.Windows.Forms.CheckBox
-    Friend WithEvents lbl_habDis As System.Windows.Forms.Label
-    Friend WithEvents grid_nueAlo As System.Windows.Forms.DataGridView
-    Friend WithEvents cln_nroPisoHabSel As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents clm_nroHabSel As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents clm_cantCamas As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents clm_capacidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents grid_ordComSel As System.Windows.Forms.DataGridView
     Friend WithEvents cln_renOrdComSel As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_artOrdComSel As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -2826,5 +2903,26 @@ Partial Class menu
     Friend WithEvents ABMTiposHabitaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMHabitaciónXPisoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents dtp_fecNac As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtp_fecHas As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtp_fecDes As System.Windows.Forms.DateTimePicker
+    Friend WithEvents tab_aloNueSelHab As System.Windows.Forms.TabPage
+    Friend WithEvents lbl_habDis As System.Windows.Forms.Label
+    Friend WithEvents grid_nueAlo As System.Windows.Forms.DataGridView
+    Friend WithEvents cam_atrHab As System.Windows.Forms.Button
+    Friend WithEvents cmd_aceHab As System.Windows.Forms.Button
+    Friend WithEvents clm_capacidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_cantCamas As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_nroHabSel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cln_nroPisoHabSel As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lbl_nroHabSel As System.Windows.Forms.Label
+    Friend WithEvents txt_habSelNro As System.Windows.Forms.TextBox
+    Friend WithEvents lbl_habSel As System.Windows.Forms.Label
+    Friend WithEvents lbl_selHab As System.Windows.Forms.Label
+    Friend WithEvents txt_preDia As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents lbl_preDia As System.Windows.Forms.Label
+    Friend WithEvents clm_nroHabitacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_cantCamasNuevoAlojamiento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents clm_cantBaños As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
