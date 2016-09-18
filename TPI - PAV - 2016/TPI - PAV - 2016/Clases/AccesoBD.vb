@@ -50,8 +50,8 @@
                 'Case "NOMBRE-COMPU-JULI"
                 'Me.pCadenaConexion = "CADENA CONEXION JULI"
 
-                'Case "NOMBRE-COMPU-MARCE"
-                'Me.pCadenaConexion = "CADENA CONEXION MARCE"
+            Case "USUARIO-PC"
+                Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=USUARIO-PC\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=hotelShaky;Initial File Name=C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\BasedeDatosJu\hotelShaky.mdf"
 
 
         End Select

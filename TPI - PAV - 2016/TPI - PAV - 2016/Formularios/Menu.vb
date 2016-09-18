@@ -475,4 +475,7 @@
 
     End Sub
 
+    Private Sub ABMHabitaciónXPisoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMHabitaciónXPisoToolStripMenuItem.Click
+        ABM_Habitación_X_Piso.Show()
+    End Sub
 End Class
