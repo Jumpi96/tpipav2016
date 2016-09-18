@@ -1,10 +1,7 @@
 ﻿Public Class ABM_TiposDocumentos
 
-    Dim cadena_conexion As String = ConexionBD.Instancia.StringConexion
-    Enum analizar_existencia
-        existe
-        no_existe
-    End Enum
+    Dim accesoBD As AccesoBD = AccesoBD.instancia
+
     Enum estado
         insertar
         modificar
@@ -14,26 +11,15 @@
  
     Private Sub modificar()
 
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim sql As String = ""
+        Dim sentenciaSQL As String = ""
+        sentenciaSQL &= "UPDATE TiposDocumento "
+        sentenciaSQL &= "SET descripcion = '" & Me.txt_descripcion.Text & "'"
+        sentenciaSQL &= " WHERE nombre = '" & Me.txt_nombre.Text & "'"
 
-        sql &= "UPDATE TiposDocumento "
-        sql &= "SET descripcion = '" & Me.txt_descripcion.Text & "'"
-        sql &= " WHERE nombre = '" & Me.txt_nombre.Text & "'"
+        accesoBD.nonQuery(sentenciaSQL)
 
-        conexion.ConnectionString = cadena_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = sql
-
-        cmd.ExecuteNonQuery()
-
-        conexion.Close()
         MessageBox.Show("Se modifico correctamente")
         Me.cargar_grilla()
-
     End Sub
 
 
@@ -41,20 +27,9 @@
     Private Sub cargar_grilla()
         Me.grid_tipoDoc.Rows.Clear()
 
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim tabla As New DataTable
-        Dim sql As String = "SELECT * FROM TiposDocumento "
+        Dim sentenciaSQL As String = "SELECT * FROM TiposDocumento "
 
-        conexion.ConnectionString = cadena_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = sql
-
-        tabla.Load(cmd.ExecuteReader)
-        conexion.Close()
-
+        Dim tabla As DataTable = accesoBD.query(sentenciaSQL)
 
         Dim c As Integer = 0
         For c = 0 To tabla.Rows.Count() - 1
@@ -66,53 +41,32 @@
     End Sub
 
 
-    Private Function validar_existencia() As analizar_existencia
-
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim tabla As New DataTable
-        Dim sql As String = ""
-        sql = "SELECT * FROM TiposDocumento " _
+    Private Function validarExistencia() As Boolean
+        Dim sentenciaSQL As String = ""
+        sentenciaSQL = "SELECT * FROM TiposDocumento " _
             & "WHERE nombre = '" & Me.txt_nombre.Text & "'"
 
-
-        conexion.ConnectionString = cadena_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = sql
-
-        tabla.Load(cmd.ExecuteReader())
-        conexion.Close()
+        Dim tabla As DataTable = accesoBD.query(sentenciaSQL)
 
         If tabla.Rows.Count() = 0 Then
-            Return analizar_existencia.no_existe
+            Return False
         Else
-            Return analizar_existencia.existe
+            Return True
         End If
     End Function
 
     Private Sub insertar()
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-
-        Dim sql As String = "INSERT INTO TiposDocumento (nombre, descripcion) " _
+        Dim sentenciaSQL As String = "INSERT INTO TiposDocumento (nombre, descripcion) " _
                           & "VALUES ('" & txt_nombre.Text & "', '" & txt_descripcion.Text & "')"
 
+        accesoBD.nonQuery(sentenciaSQL)
 
-        conexion.ConnectionString = cadena_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = sql
-        cmd.ExecuteNonQuery()
-        conexion.Close()
         MessageBox.Show("Se guardó exitosamente")
         Me.cargar_grilla()
     End Sub
 
     Private Function validar() As Boolean
-        
+
         If txt_nombre.Text = "" Then
             MessageBox.Show("Debe completar el campo Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             txt_nombre.Focus()
@@ -150,21 +104,13 @@
 
 
     Private Sub grid_tipoDoc_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tipoDoc.CellContentDoubleClick
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim tabla As New DataTable
-        Dim sql As String = ""
+        Dim sentenciaSQL As String = ""
 
-        sql = "SELECT * FROM TiposDocumento " _
+        sentenciaSQL = "SELECT * FROM TiposDocumento " _
             & "WHERE idTipoDocumento = " & Me.grid_tipoDoc.CurrentRow.Cells(0).Value
 
-        conexion.ConnectionString = cadena_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = sql
-        tabla.Load(cmd.ExecuteReader())
-        conexion.Close()
+        Dim tabla As DataTable = accesoBD.query(sentenciaSQL)
+
         If tabla.Rows.Count() = 0 Then
             MessageBox.Show("Este tipo de Documento fue eliminado.")
             Exit Sub
@@ -195,7 +141,7 @@
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
         If Me.validar = True Then
             If condicion_estado = estado.insertar Then
-                If Me.validar_existencia() = analizar_existencia.no_existe Then
+                If Me.validarExistencia() = False Then
                     Me.insertar()
                 Else
                     MessageBox.Show("Ya existe este Tipo de Documento")
@@ -215,23 +161,23 @@
         Me.Close()
     End Sub
 
-    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-        Dim conexion As New OleDb.OleDbConnection
-        Dim cmd As New OleDb.OleDbCommand
-        Dim tabla As New DataTable
-        Dim sql As String =  "DELETE FROM TiposDocumento WHERE idTipoDocumento = " & Me.grid_tipoDoc.Rows(0).Cells("c_idDoc").Value()
+    'Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+    '    Dim conexion As New OleDb.OleDbConnection
+    '    Dim cmd As New OleDb.OleDbCommand
+    '    Dim tabla As New DataTable
+    '    Dim sql As String =  "DELETE FROM TiposDocumento WHERE idTipoDocumento = " & Me.grid_tipoDoc.Rows(0).Cells("c_idDoc").Value()
 
-        MessageBox.Show("Se ha eliminado el tipo de Documento Satisfactoriamente")
+    '    MessageBox.Show("Se ha eliminado el tipo de Documento Satisfactoriamente")
 
-        conexion.ConnectionString = cadena_conexion
-        conexion.Open()
-        cmd.Connection = conexion
-        cmd.CommandType = CommandType.Text
-        cmd.CommandText = sql
-        tabla.Load(cmd.ExecuteReader())
-        conexion.Close()
-        Me.cargar_grilla()
-        Me.cmd_limpiar.PerformClick()
+    '    conexion.ConnectionString = cadena_conexion
+    '    conexion.Open()
+    '    cmd.Connection = conexion
+    '    cmd.CommandType = CommandType.Text
+    '    cmd.CommandText = sql
+    '    tabla.Load(cmd.ExecuteReader())
+    '    conexion.Close()
+    '    Me.cargar_grilla()
+    '    Me.cmd_limpiar.PerformClick()
 
-    End Sub
+    'End Sub
 End Class
