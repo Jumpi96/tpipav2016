@@ -50,7 +50,6 @@ F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.exe
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.pdb
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.xml
-F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbprojResolveAssemblyReference.cache
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Alojamientos.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Clientes.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposDocumentos.resources
@@ -77,3 +76,4 @@ F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Proveedores.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposHabitacion.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.menu.resources
+F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Proveedores.resources

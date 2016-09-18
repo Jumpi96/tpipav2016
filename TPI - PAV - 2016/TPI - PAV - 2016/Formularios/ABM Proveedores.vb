@@ -30,7 +30,7 @@
     End Function
     Private Function validar_Existencia() As Boolean
         Dim sentenciaSQL As String = "SELECT * FROM Proveedores "
-        sentenciaSQL &= "WHERE nombre = " & Me.txt_nombre.Text
+        sentenciaSQL &= "WHERE nombre = '" & Me.txt_nombre.Text & "'"
 
         Dim tabla As DataTable = acceso.query(sentenciaSQL)
 
@@ -41,6 +41,8 @@
             Return analizar_existencia.existe
         End If
     End Function
+
+
     Private Sub cargarGrilla()
         Me.grid_proveedores.Rows.Clear()
 
@@ -60,12 +62,17 @@
     End Sub
 
     Private Sub insertar()
-        Dim sentenciaSQL As String = "INSERT INTO Proveedores (nombre, correo, telefono) " _
-           & "VALUES ('" & txt_nombre.Text & "', " & txt_correo.Text & ", '" & txt_telefono.Text & ")"
+        Dim sentenciaSQL As String = "INSERT INTO Proveedores (idProveedor, nombre, correo, telefono) " _
+           & "VALUES (1,'" & txt_nombre.Text & "', '" & txt_correo.Text & "', '" & txt_telefono.Text & "')"
 
         acceso.nonQuery(sentenciaSQL)
         MessageBox.Show("Se registró exitosamente.")
+        Me.cargarGrilla()
     End Sub
+
+
+
+
     Private Sub modificar()
         Dim sentenciaSQL As String = ""
         sentenciaSQL &= "UPDATE Proveedores "
@@ -83,9 +90,9 @@
         cargarGrilla()
     End Sub
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
-        If Me.validar = True Then
+        If Me.Validar = True Then
             If condicion_estado = estado.insertar Then
-                If Me.validar_existencia() = analizar_existencia.no_existe Then
+                If Me.validar_Existencia() = analizar_existencia.no_existe Then
                     Me.insertar()
                 Else
                     MessageBox.Show("Ya existe este Tipo de Documento")
@@ -118,28 +125,28 @@
         MessageBox.Show("Se ha eliminado el proveedor Satisfactoriamente")
         Me.cmd_limpiar.PerformClick()
     End Sub
-    Private Sub grid_proveedores_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_proveedores.CellContentDoubleClick
-        Dim sentenciaSQL As String = ""
+    'Private Sub grid_proveedores_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_proveedores.CellContentDoubleClick
+    '    Dim sentenciaSQL As String = ""
 
-        sentenciaSQL = "SELECT * FROM Proveedores WHERE nombre = '" & Me.grid_proveedores.CurrentRow.Cells("c_nombre").Value
+    '    sentenciaSQL = "SELECT * FROM Proveedores WHERE nombre = '" & Me.grid_proveedores.CurrentRow.Cells("c_nombre").Value & "'"
 
-        Dim tabla As DataTable = acceso.query(sentenciaSQL)
+    '    Dim tabla As DataTable = acceso.query(sentenciaSQL)
 
-        If tabla.Rows.Count() = 0 Then
-            MessageBox.Show("El Proveedor requerido no existe.")
-            Exit Sub
-        End If
+    '    If tabla.Rows.Count() = 0 Then
+    '        MessageBox.Show("El Proveedor requerido no existe.")
+    '        Exit Sub
+    '    End If
 
-        Me.cmd_borrar.Enabled = True
-        'Me.cmd_borrar.Visible = True
-        Me.cmd_guardar.Text = "Modificar"
+    '    Me.cmd_borrar.Enabled = True
+    '    'Me.cmd_borrar.Visible = True
+    '    Me.cmd_guardar.Text = "Modificar"
 
 
-        Me.txt_nombre.Text = tabla.Rows(0)("nombre")
-        Me.txt_correo.Text = tabla.Rows(0)("correo")
-        Me.txt_telefono.Text = tabla.Rows(0)("telefono")
+    '    Me.txt_nombre.Text = tabla.Rows(0)("nombre")
+    '    Me.txt_correo.Text = tabla.Rows(0)("correo")
+    '    Me.txt_telefono.Text = tabla.Rows(0)("telefono")
 
-        Me.condicion_estado = estado.modificar
+    '    Me.condicion_estado = estado.modificar
 
-    End Sub
+    'End Sub
 End Class

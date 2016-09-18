@@ -35,8 +35,10 @@
 
     'CONSTRUCTOR
     Private Sub New()
+        Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=LAWEBSTORE-PC\SQLSERVER2014;Integrated Security=SSPI;Initial Catalog=hotelShaky"
         Me.conexion = New OleDb.OleDbConnection
         Me.comando = New OleDb.OleDbCommand()
+
 
         Select Case Environment.MachineName
             Case "LAWEBSTORE-PC"
@@ -59,6 +61,7 @@
     Public Function query(ByVal sentenciaSQL As String) As DataTable
         Dim retorno As New DataTable
         Me.conectar()
+        Me.comando.CommandType = CommandType.Text
         Me.comando.CommandText = sentenciaSQL
 
         retorno.Load(comando.ExecuteReader())
@@ -69,6 +72,7 @@
 
     Public Sub nonQuery(ByVal sentenciaSQL As String)
         Me.conectar()
+        Me.comando.CommandType = CommandType.Text
         Me.comando.CommandText = sentenciaSQL
         Me.comando.ExecuteNonQuery()
         Me.cerrar()
