@@ -120,6 +120,12 @@
     <Compile Include="Formularios\ABM Servicios.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\ABM ServiciosXAlojamiento.Designer.vb">
+      <DependentUpon>ABM ServiciosXAlojamiento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM ServiciosXAlojamiento.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\ABM Tipos Cama.Designer.vb">
       <DependentUpon>ABM Tipos Cama.vb</DependentUpon>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Servicios.resx">
       <DependentUpon>ABM Servicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM ServiciosXAlojamiento.resx">
+      <DependentUpon>ABM ServiciosXAlojamiento.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Tipos Cama.resx">
       <DependentUpon>ABM Tipos Cama.vb</DependentUpon>
