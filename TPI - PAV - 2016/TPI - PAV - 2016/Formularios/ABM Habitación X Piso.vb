@@ -10,21 +10,23 @@
     Private Sub insertarHabitacionPiso()
         Dim sql As String = ""
         sql &= "INSERT INTO HabitacionesXPiso (nroHabitacion, cantCamas, aireAcondicionado, frigobar, fechaEmision, cantBaños, idTipoHabitacion, cantMaxPersonas) "
-        sql &= "VALUES ('" & Me.txt_nroHabitacion.Text & "', '" & Me.txt_camas.Text & "'"
+        sql &= "VALUES (" & Me.txt_nroHabitacion.Text & " , " & Me.txt_camas.Text
         If Me.chb_aireAcondicionado.CheckState = CheckState.Unchecked Then
-            sql &= ", '" & 0 & "'"
+        sql &= ", " & 0
         Else
-            sql &= ", '" & 1 & "'"
+        sql &= ", " & 1
         End If
         If Me.chb_frigoBar.CheckState = CheckState.Unchecked Then
-            sql &= ", '" & 0 & "'"
+            sql &= ", " & 0
         Else
-            sql &= ", '" & 1 & "'"
+            sql &= ", " & 1
         End If
-        sql &= ", '" & Me.dtp_fechaEmision.Value.Date & "'"
-        sql &= ", '" & Me.txt_baños.Text & "'"
-        sql &= ", '" & Me.cmb_tipoHabitacion.SelectedValue & "'"
-        sql &= ", '" & Me.txt_personas.Text & "')"
+
+        sql &= ", CONVERT(datetime,'" & dtp_fechaEmision.Value.Date & "',103)"
+        sql &= ", " & Me.txt_baños.Text
+        sql &= ", " & Me.cmb_tipoHabitacion.SelectedValue
+        sql &= ", " & Me.txt_personas.Text & ")"
+
 
         acceso.nonQuery(sql)
 
@@ -239,7 +241,8 @@
         ElseIf Me.chb_frigoBar.CheckState = CheckState.Checked Then
             sql &= ", frigobar = '" & 1 & "'"
         End If
-        sql &= ", fechaEmision = '" & Me.dtp_fechaEmision.Value.Date & "'"
+
+        sql &= ", fechaEmision = CONVERT(datetime,'" & dtp_fechaEmision.Value.Date & "',103)"
         sql &= ", cantBaños = '" & Me.txt_baños.Text & "'"
         sql &= ", idTipoHabitacion = '" & Me.cmb_tipoHabitacion.SelectedValue & "'"
         sql &= ", cantMaxPersonas = '" & Me.txt_personas.Text & "'"
