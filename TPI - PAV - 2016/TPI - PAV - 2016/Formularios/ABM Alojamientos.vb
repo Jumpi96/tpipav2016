@@ -236,7 +236,14 @@
         txtAlojados.Text = row(4)
         dtpIngreso.Value = row(5)
         dtpEstimada.Value = row(6)
-        dtpSalida.Value = row(7)
+        If row(7).ToString = "" Then
+            flagFechaSalida = False
+            dtpSalida.Format = DateTimePickerFormat.Custom
+            dtpSalida.CustomFormat = "    "
+        Else
+            dtpSalida.Value = row(7)
+            flagFechaSalida = True
+        End If
         txtPrecio.Text = row(8)
 
         dtpIngreso.Enabled = False
