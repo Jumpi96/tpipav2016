@@ -144,10 +144,13 @@ Partial Class ABM_Habitación_X_Piso
         '
         'grid_habitacionPiso
         '
+        Me.grid_habitacionPiso.AllowUserToAddRows = False
+        Me.grid_habitacionPiso.AllowUserToDeleteRows = False
         Me.grid_habitacionPiso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_habitacionPiso.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_nroHabitacion, Me.clm_tipoHabitacion, Me.clm_fechaEmision})
         Me.grid_habitacionPiso.Location = New System.Drawing.Point(12, 116)
         Me.grid_habitacionPiso.Name = "grid_habitacionPiso"
+        Me.grid_habitacionPiso.ReadOnly = True
         Me.grid_habitacionPiso.Size = New System.Drawing.Size(462, 274)
         Me.grid_habitacionPiso.TabIndex = 10
         '
@@ -282,13 +285,13 @@ Partial Class ABM_Habitación_X_Piso
         Me.Controls.Add(Me.chb_aireAcondicionado)
         Me.Controls.Add(Me.chb_frigoBar)
         Me.Controls.Add(Me.dtp_fechaEmision)
-        Me.Controls.Add(Me.cmb_tipoHabitacion)
         Me.Controls.Add(Me.lbl_personas)
         Me.Controls.Add(Me.lbl_tipoHabitacion)
         Me.Controls.Add(Me.lbl_fechaEmision)
         Me.Controls.Add(Me.lbl_baños)
         Me.Controls.Add(Me.lbl_camas)
         Me.Controls.Add(Me.lbl_nroHabitacion)
+        Me.Controls.Add(Me.cmb_tipoHabitacion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "ABM_Habitación_X_Piso"
         Me.Text = "ABM_Habitación_X_Piso"

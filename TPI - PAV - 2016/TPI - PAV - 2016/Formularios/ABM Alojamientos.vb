@@ -122,12 +122,11 @@
         Dim sentenciaSQL As String = ""
         Dim valueSalida As String
 
-
         If flagFechaSalida = False Then
             sentenciaSQL = "update alojamientos " & "SET nroDoc=" + txtNroDoc.Text + ", tipoDoc=" _
             & cmbTipoDoc.SelectedValue & ", nroHabitacion=" + txtHabitacion.Text + ", cantPersonas=" & txtAlojados.Text _
-            & ", fechaInicioAlojamiento= CONVERT(datetime,'" & dtpIngreso.Value & "',103), fechaFinEstimadaalojamiento= CONVERT(datetime,'" & dtpEstimada.Value & "',103)" _
-            & ", precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
+            & ", fechaInicioAlojamiento='" & dtpIngreso.Value & "',fechaFinEstimadaalojamiento='" & dtpEstimada.Value _
+            & "', precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
         Else
             valueSalida = dtpSalida.Value
             sentenciaSQL = "update alojamientos" & "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" _
@@ -142,11 +141,11 @@
 
     Private Function insertar() As Boolean
         Dim sentenciaSQL As String = ""
-        'CONVERT(datetime,'" & dtpEstimada.Value.Date & "',103)
+
         If flagFechaSalida = False Then
             sentenciaSQL = "insert into alojamientos(nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) " _
             & " values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text _
-            + ", " & txtAlojados.Text & ", CONVERT(datetime,'" & dtpIngreso.Value.Date & "',103), CONVERT(datetime,'" & dtpEstimada.Value.Date & "',103), " _
+            + "," & txtAlojados.Text & ",'" & dtpIngreso.Value.Date & "','" & dtpEstimada.Value.Date & "'," _
             & txtPrecio.Text & ")"
         Else
             sentenciaSQL = "insert into alojamientos " +

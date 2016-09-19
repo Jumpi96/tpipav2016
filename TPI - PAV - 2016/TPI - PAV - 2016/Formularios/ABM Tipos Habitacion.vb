@@ -14,7 +14,6 @@
         Me.cmd_borrar.Visible = False
         Me.cargar_grilla()
         Me.txt_nombre.Focus()
-
     End Sub
 
 
@@ -191,5 +190,6 @@
     End Sub
 
 #End Region
+
 
 End Class

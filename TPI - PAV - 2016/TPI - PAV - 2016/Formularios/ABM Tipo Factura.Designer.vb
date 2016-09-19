@@ -71,10 +71,17 @@ Partial Class ABM_Tipo_Factura
         '
         'grid_tiposFactura
         '
+        Me.grid_tiposFactura.AllowUserToAddRows = False
+        Me.grid_tiposFactura.AllowUserToDeleteRows = False
+        Me.grid_tiposFactura.AllowUserToResizeColumns = False
+        Me.grid_tiposFactura.AllowUserToResizeRows = False
         Me.grid_tiposFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_tiposFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.c_idTipoFactura, Me.c_nombre, Me.c_descripcion})
         Me.grid_tiposFactura.Location = New System.Drawing.Point(12, 84)
+        Me.grid_tiposFactura.MultiSelect = False
         Me.grid_tiposFactura.Name = "grid_tiposFactura"
+        Me.grid_tiposFactura.ReadOnly = True
+        Me.grid_tiposFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.grid_tiposFactura.Size = New System.Drawing.Size(354, 246)
         Me.grid_tiposFactura.TabIndex = 4
         '
@@ -82,18 +89,21 @@ Partial Class ABM_Tipo_Factura
         '
         Me.c_idTipoFactura.HeaderText = "ID "
         Me.c_idTipoFactura.Name = "c_idTipoFactura"
+        Me.c_idTipoFactura.ReadOnly = True
         Me.c_idTipoFactura.Width = 50
         '
         'c_nombre
         '
         Me.c_nombre.HeaderText = "Nombre"
         Me.c_nombre.Name = "c_nombre"
+        Me.c_nombre.ReadOnly = True
         Me.c_nombre.Width = 130
         '
         'c_descripcion
         '
         Me.c_descripcion.HeaderText = "Descripcion"
         Me.c_descripcion.Name = "c_descripcion"
+        Me.c_descripcion.ReadOnly = True
         Me.c_descripcion.Width = 130
         '
         'cmd_borrar
