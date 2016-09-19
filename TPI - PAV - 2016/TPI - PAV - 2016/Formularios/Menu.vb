@@ -774,7 +774,12 @@
         ABM_Tipos_Cama.Show()
     End Sub
 
+<<<<<<< HEAD
     Private Sub ABMServiciosXAlojamientoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMServiciosXAlojamientoToolStripMenuItem.Click
         ABM_ServiciosXAlojamiento.Show()
+=======
+    Private Sub ABMArtículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMArtículosToolStripMenuItem.Click
+        ABM_Articulos.Show()
+>>>>>>> origin/nueva
     End Sub
 End Class

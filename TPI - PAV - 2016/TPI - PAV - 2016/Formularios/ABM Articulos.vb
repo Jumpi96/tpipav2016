@@ -1,4 +1,4 @@
-﻿Public Class Articulos
+﻿Public Class ABM_Articulos
     Dim accesoBD As AccesoBD = accesoBD.instancia
     Enum estado
         insertar
@@ -6,7 +6,7 @@
     End Enum
     Dim condicion_estado As estado = estado.insertar
 
-    Private Sub Articulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ABM_Articulos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cmd_borrar.Enabled = False
         Me.cmd_borrar.Visible = False
         Me.cargar_combo()
@@ -219,6 +219,16 @@
         Me.cargar_grilla()
         Me.cmd_limpiar.PerformClick()
     End Sub
+
+    'CLICK PRECIO UNITARIO
+    Private Sub txt_precioUnitario_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_precioUnitario.MouseClick
+        If Me.txt_precioUnitario.Text = "" Then
+            Me.txt_precioUnitario.SelectionStart = 0
+        End If
+    End Sub
 #End Region
+
+
+
 
 End Class

@@ -59,8 +59,8 @@
     'INSERTAR CLIENTE
     Private Sub insertar()
         Dim sentenciaSQL As String = "INSERT INTO Clientes (apellido, nombre, nroDocumento, tipoDocumento, fechaNacimiento, telefono) " _
-           & "VALUES ('" & txt_apellido.Text & "', '" & txt_nombre.Text & "', " & txt_nroDoc.Text & ", '" & cmb_tipoDoc.SelectedValue & "', '" & dtpEstimada.Value.Date & "' , " & txt_telefono.Text & ")"
-
+           & "VALUES ('" & txt_apellido.Text & "', '" & txt_nombre.Text & "', " & txt_nroDoc.Text & ", '" & cmb_tipoDoc.SelectedValue & "', getDate(), " & txt_telefono.Text & ")"
+        '" & dtpEstimada.Value.Date & "' 
         acceso.nonQuery(sentenciaSQL)
         MessageBox.Show("Se registró exitosamente.")
         Me.cargarGrilla(estadoBusqueda.todo)
@@ -146,7 +146,7 @@
 #End Region
 
 
-#Region "BOTONES"
+#Region "CLICK"
 
     ' CLICK EN REGISTRAR
     Private Sub cmd_registrar_Click(sender As Object, e As EventArgs) Handles cmd_registrar.Click
@@ -232,6 +232,22 @@
         Me.condicion_estado = estado.modificar
         Me.cmd_buscar.PerformClick()
     End Sub
+
+    'CLICK EN NRODOCUMENTO
+    Private Sub txt_nroDoc_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_nroDoc.MouseClick
+        If Me.txt_nroDoc.Text = "" Then
+            Me.txt_nroDoc.SelectionStart = 0
+        End If
+    End Sub
+
+    'CLICK EN NRODOCUMENTO
+    Private Sub txt_telefono_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_telefono.MouseClick
+        If Me.txt_telefono.Text = "" Then
+            Me.txt_telefono.SelectionStart = 0
+        End If
+    End Sub
+
 #End Region
+
 
 End Class
