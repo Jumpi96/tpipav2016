@@ -32,7 +32,7 @@ Partial Class ABM_Clientes
         Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.lbl_fecha = New System.Windows.Forms.Label()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.dtpEstimada = New System.Windows.Forms.DateTimePicker()
+        Me.date_fechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.lbl_telefono = New System.Windows.Forms.Label()
         Me.txt_telefono = New System.Windows.Forms.MaskedTextBox()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
@@ -131,12 +131,12 @@ Partial Class ABM_Clientes
         Me.txt_nombre.Size = New System.Drawing.Size(351, 20)
         Me.txt_nombre.TabIndex = 10
         '
-        'dtpEstimada
+        'date_fechaNacimiento
         '
-        Me.dtpEstimada.Location = New System.Drawing.Point(120, 88)
-        Me.dtpEstimada.Name = "dtpEstimada"
-        Me.dtpEstimada.Size = New System.Drawing.Size(200, 20)
-        Me.dtpEstimada.TabIndex = 17
+        Me.date_fechaNacimiento.Location = New System.Drawing.Point(120, 88)
+        Me.date_fechaNacimiento.Name = "date_fechaNacimiento"
+        Me.date_fechaNacimiento.Size = New System.Drawing.Size(200, 20)
+        Me.date_fechaNacimiento.TabIndex = 17
         '
         'lbl_telefono
         '
@@ -241,7 +241,7 @@ Partial Class ABM_Clientes
         Me.Controls.Add(Me.cmd_registrar)
         Me.Controls.Add(Me.txt_telefono)
         Me.Controls.Add(Me.lbl_telefono)
-        Me.Controls.Add(Me.dtpEstimada)
+        Me.Controls.Add(Me.date_fechaNacimiento)
         Me.Controls.Add(Me.txt_nombre)
         Me.Controls.Add(Me.lbl_fecha)
         Me.Controls.Add(Me.txt_apellido)
@@ -269,7 +269,7 @@ Partial Class ABM_Clientes
     Friend WithEvents txt_apellido As System.Windows.Forms.TextBox
     Friend WithEvents lbl_fecha As System.Windows.Forms.Label
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
-    Friend WithEvents dtpEstimada As System.Windows.Forms.DateTimePicker
+    Friend WithEvents date_fechaNacimiento As System.Windows.Forms.DateTimePicker
     Friend WithEvents lbl_telefono As System.Windows.Forms.Label
     Friend WithEvents txt_telefono As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cmd_limpiar As System.Windows.Forms.Button
