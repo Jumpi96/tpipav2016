@@ -1,14 +1,3 @@
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Alojamientos.resources
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Resources.resources
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbproj.GenerateResource.Cache
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.exe.config
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.exe
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.pdb
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.xml
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposDocumentos.resources
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.exe
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.xml
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.pdb
 C:\Users\juli1_000\Documents\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.exe.config
 C:\Users\juli1_000\Documents\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.exe
 C:\Users\juli1_000\Documents\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.xml
@@ -24,7 +13,6 @@ C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - 
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposDocumentos.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Resources.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbproj.GenerateResource.Cache
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Clientes.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbprojResolveAssemblyReference.cache
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Clientes.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\tpipav2016\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.exe.config
@@ -66,8 +54,6 @@ C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipa
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposDocumentos.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Resources.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbproj.GenerateResource.Cache
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposHabitacion.resources
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.menu.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposHabitacion.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.menu.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Proveedores.resources
@@ -78,7 +64,6 @@ C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipa
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Proveedores.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposHabitacion.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.menu.resources
-<<<<<<< HEAD
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.exe.config
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.exe
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.xml
@@ -98,7 +83,3 @@ C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbpro
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Servicios.resources
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipos_Cama.resources
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Articulos.resources
-=======
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Habitación_X_Piso.resources
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Proveedores.resources
->>>>>>> origin/nueva
