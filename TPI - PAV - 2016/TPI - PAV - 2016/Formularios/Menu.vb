@@ -123,7 +123,7 @@
         cmb_tipHab.ValueMember = "idTipoHabitacion"
         cmb_tipHab.DisplayMember = "nombre"
 
-        cmb_tipHab.Items.Add("Cualquiera")
+        'cmb_tipHab.Items.Add("Cualquiera")
     End Sub
 
     Private Sub cargarComboCantidadPersonas()
