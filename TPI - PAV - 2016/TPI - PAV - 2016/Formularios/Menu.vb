@@ -11,39 +11,26 @@
         Dim sqlCargarGrilla As String = ""
         Dim tabla As New Data.DataTable
 
-        
-        'If cmb_tipHab.SelectedText <> "Cualquiera" Then
-        '    sqlCargarGrilla &= " AND HP.idTipoHabitacion = '" & Me.cmb_tipHab.SelectedValue & "'"
-        'End If
-        'If Me.chx_airAco.CheckState = CheckState.Checked Then
-        '    sqlCargarGrilla &= " AND HP.aireAcondicionado = 1"
-        'End If
-        'If Me.chx_frigobar.CheckState = CheckState.Checked Then
-        '    sqlCargarGrilla &= " AND HP.frigobar = 1"
-        'End If
-        'sqlCargarGrilla &= " UNION "
-        sqlCargarGrilla &= "SELECT DISTINCT HP.nroHabitacion, HP.cantCamas, HP.cantBaños "
-        sqlCargarGrilla &= "FROM HabitacionesXPiso HP "
-        sqlCargarGrilla &= "WHERE HP.cantMaxPersonas >= '" & Me.cmb_canPer.SelectedItem & "'"
+        sqlCargarGrilla &= "SELECT DISTINCT nroHabitacion, cantCamas, cantBaños "
+        sqlCargarGrilla &= "FROM HabitacionesXPiso "
+        sqlCargarGrilla &= "WHERE cantMaxPersonas >= '" & Me.cmb_canPer.SelectedItem & "'"
         If cmb_tipHab.SelectedText <> "Cualquiera" Then
-            sqlCargarGrilla &= " AND HP.idTipoHabitacion = '" & Me.cmb_tipHab.SelectedValue & "'"
+            sqlCargarGrilla &= " AND idTipoHabitacion = '" & Me.cmb_tipHab.SelectedValue & "'"
         End If
         If Me.chx_airAco.CheckState = CheckState.Checked Then
-            sqlCargarGrilla &= " AND HP.aireAcondicionado = 1"
+            sqlCargarGrilla &= " AND aireAcondicionado = 1"
         End If
         If Me.chx_frigobar.CheckState = CheckState.Checked Then
-            sqlCargarGrilla &= " AND HP.frigobar = 1"
+            sqlCargarGrilla &= " AND frigobar = 1"
         End If
         sqlCargarGrilla &= " EXCEPT "
         sqlCargarGrilla &= "SELECT DISTINCT HP.nroHabitacion, HP.cantCamas, HP.cantBaños "
         sqlCargarGrilla &= "FROM HabitacionesXPiso HP JOIN Alojamientos A "
         sqlCargarGrilla &= "ON HP.nroHabitacion = A.nroHabitacion "
-        sqlCargarGrilla &= "WHERE 'A.fechaInicioAlojamiento' BETWEEN '" & Me.dtp_fecDes.Value.Date & "' AND '" & Me.dtp_fecHas.Value.Date & "' "
-        sqlCargarGrilla &= "AND 'A.fechaFinEstimadaalojamiento' BETWEEN '" & Me.dtp_fecDes.Value.Date & "' AND '" & Me.dtp_fecHas.Value.Date & "'"
-        'sqlCargarGrilla &= "AND (('A.fechaInicioAlojamiento' < '" & Me.dtp_fecDes.Value.Date & "' AND 'A.fechaFinEstimadaalojamiento' < '" & Me.dtp_fecDes.Value.Date & "') "
-        'sqlCargarGrilla &= "OR ('A.fechaInicioAlojamiento' > '" & Me.dtp_fecHas.Value.Date & "' AND 'A.fechaFinEstimadaalojamiento' > '" & Me.dtp_fecHas.Value.Date & "')) "
-        'sqlCargarGrilla &= "AND '" & Me.dtp_fecDes.Value.Date & "' BETWEEN 'A.fechaInicioAlojamiento' AND 'A.fechaFinEstimadaalojamiento' "
-        'sqlCargarGrilla &= "AND '" & Me.dtp_fecHas.Value.Date & "' BETWEEN 'A.fechaInicioAlojamiento' AND 'A.fechaFinEstimadaalojamiento'"
+        sqlCargarGrilla &= "WHERE A.fechaInicioAlojamiento BETWEEN convert(date,'" & Me.dtp_fecDes.Text & "',103) AND convert(date,'" & Me.dtp_fecHas.Text & "',103) "
+        sqlCargarGrilla &= "OR A.fechaFinEstimadaalojamiento BETWEEN convert(date,'" & Me.dtp_fecDes.Text & "',103) AND convert(date,'" & Me.dtp_fecHas.Text & "',103) "
+        sqlCargarGrilla &= "OR convert(date,'" & Me.dtp_fecDes.Text & "',103) BETWEEN  A.fechaInicioAlojamiento AND  A.fechaFinEstimadaalojamiento "
+        sqlCargarGrilla &= "OR convert(date,'" & Me.dtp_fecHas.Text & "',103) BETWEEN  A.fechaInicioAlojamiento AND  A.fechaFinEstimadaalojamiento "
 
         tabla = acceso.query(sqlCargarGrilla)
 
@@ -90,21 +77,19 @@
             Dim i As Integer
             For i = 0 To tabla.Rows.Count() - 1
                 If tabla.Rows(i)("idAlojamiento") > idAlojamiento Then
-                    idAlojamiento = tabla.Rows(i)("idAlojamiento") + 1
+                    idAlojamiento = (tabla.Rows(i)("idAlojamiento") + 1)
                 End If
             Next
         End If
 
-        sqlHospedaje &= "INSERT INTO Alojamientos (idAlojamiento, nroDoc, tipoDoc, nroHabitacion, cantPersonas, fechaInicioAlojamiento, fechaFinEstimadaalojamiento, fechaFinAlojamiento) "
-        sqlHospedaje &= "VALUES ('" & idAlojamiento & "'"
-        sqlHospedaje &= ", '" & txt_doc.Text & "'"
-        sqlHospedaje &= ", '" & cmb_tipoDoc.SelectedValue & "'"
-        sqlHospedaje &= ", '" & txt_habSelNro.Text & "'"
-        sqlHospedaje &= ", '" & cmb_canPer.SelectedText & "'"
-        sqlHospedaje &= ", '" & dtp_fecDes.Value.Date & "'"
-        sqlHospedaje &= ", '" & dtp_fecHas.Value.Date & "'"
-        sqlHospedaje &= ", '" & System.DBNull.Value & "'"
-        sqlHospedaje &= ", '" & txt_preDia.Text & "'"
+        sqlHospedaje &= "INSERT INTO Alojamientos (nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) "
+        sqlHospedaje &= "VALUES (" & txt_doc.Text
+        sqlHospedaje &= ",'" & cmb_tipoDoc.SelectedValue & "'"
+        sqlHospedaje &= ",'" & txt_habSelNro.Text & "'"
+        sqlHospedaje &= ",'" & cmb_canPer.SelectedText & "'"
+        sqlHospedaje &= ",'" & dtp_fecDes.Value.Date & "'"
+        sqlHospedaje &= ",'" & dtp_fecHas.Value.Date & "'"
+        sqlHospedaje &= ",'" & txt_preDia.Text & "')"
 
         Return sqlHospedaje
     End Function
@@ -195,14 +180,14 @@
             txt_doc.Focus()
             Return False
         End If
-        If txt_nom.Text = "" Then
-            MessageBox.Show("Nombre del cliente no ingresado", "Error", MessageBoxButtons.OK)
-            txt_nom.Focus()
-            Return False
-        End If
         If txt_ape.Text = "" Then
             MessageBox.Show("Apellido del cliente no ingresado", "Error", MessageBoxButtons.OK)
             txt_ape.Focus()
+            Return False
+        End If
+        If txt_nom.Text = "" Then
+            MessageBox.Show("Nombre del cliente no ingresado", "Error", MessageBoxButtons.OK)
+            txt_nom.Focus()
             Return False
         End If
         If txt_tel.Text = "" Then
@@ -219,7 +204,7 @@
         Dim dr As New DialogResult
         sql &= "SELECT * FROM Clientes "
         sql &= "WHERE tipoDocumento = '" & Me.cmb_tipoDoc.SelectedValue & "' "
-        sql &= "AND nroDocumento = " & Me.txt_doc.Text
+        sql &= "AND nroDocumento = '" & Me.txt_doc.Text & "'"
 
         tabla = acceso.query(sql)
 
@@ -245,6 +230,11 @@
     End Function
 
     Private Function validarCamposHospedajeNuevoAlojamiento() As Boolean
+        If Me.dtp_fecDes.Value.Date > Me.dtp_fecHas.Value.Date Or Me.dtp_fecDes.Value.Date < Today.Date Then
+            MessageBox.Show("Campos de fechas no válidos", "Error", MessageBoxButtons.OK)
+            dtp_fecDes.Focus()
+            Return False
+        End If
         If cmb_canPer.SelectedIndex = -1 Then
             MessageBox.Show("Cantidad de personas a hospedarse no seleccionada", "Error", MessageBoxButtons.OK)
             cmb_canPer.Focus()
@@ -253,6 +243,19 @@
         If cmb_tipHab.SelectedIndex = -1 Then
             MessageBox.Show("Tipo habitación del hospedaje no seleccionada", "Error", MessageBoxButtons.OK)
             cmb_tipHab.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Function validarCamposHabitacionNuevoAlojamiento() As Boolean
+        If Me.txt_habSelNro.Text = "" Then
+            MessageBox.Show("Habitación no seleccionada", "Error", MessageBoxButtons.OK)
+            Return False
+        End If
+        If Me.txt_preDia.Text = "" Then
+            MessageBox.Show("Precio por día no ingresado", "Error", MessageBoxButtons.OK)
+            Me.txt_preDia.Focus()
             Return False
         End If
         Return True
@@ -371,21 +374,8 @@
     Private Sub cmd_canCli_Click(sender As Object, e As EventArgs) Handles cmd_canCli.Click
         Me.ocultarNuevoAlojamiento()
         Me.menu_Menu.Enabled = True
-        Me.txt_ape.Text = ""
-        Me.txt_doc.Text = ""
-        Me.dtp_fecNac.Value = Today.Date
-        Me.txt_nom.Text = ""
-        Me.txt_tel.Text = ""
-        Me.cmb_tipoDoc.Text = ""
-        Me.dtp_fecDes.Value = Today.Date
-        Me.dtp_fecHas.Value = Today.Date
-        Me.cmb_canPer.Text = ""
-        Me.cmb_tipHab.Text = ""
-        Me.chx_airAco.Checked = False
-        Me.chx_airAco.CheckState = CheckState.Unchecked
-        Me.chx_frigobar.Checked = False
-        Me.chx_frigobar.CheckState = CheckState.Unchecked
-        estado = estadoNuevoAlojamiento.nuevoCliente
+        Me.cmd_nueAloDatCliLim_Click(sender, e)
+        Me.cmd_nueAloDatHosLim_Click(sender, e)
     End Sub
 
     Private Sub cmd_atrHos_Click(sender As Object, e As EventArgs) Handles cmd_atrHos.Click
@@ -397,22 +387,22 @@
     End Sub
 
     Private Sub cmd_aceHab_Click(sender As Object, e As EventArgs) Handles cmd_aceHab.Click
+        If estado = estadoNuevoAlojamiento.nuevoCliente And Me.validarCamposClienteNuevoAlojamiento = True Then
+            Dim tablaCliente As New Data.DataTable
+            tablaCliente = acceso.query(Me.consultaClientes())
+            MessageBox.Show("Cliente registrado con éxito")
+        End If
+        If Me.validarCamposHospedajeNuevoAlojamiento = True And Me.validarCamposHabitacionNuevoAlojamiento = True Then
+            Dim tablaHospedaje As New Data.DataTable
+            tablaHospedaje = acceso.query(Me.consultaHospedaje())
+            MessageBox.Show("Hospedaje registrado con éxito")
+        Else
+            Exit Sub
+        End If
         Me.ocultarNuevoAlojamiento()
         Me.menu_Menu.Enabled = True
-        Me.txt_ape.Text = ""
-        Me.txt_doc.Text = ""
-        Me.dtp_fecNac.Value = Today.Date
-        Me.txt_nom.Text = ""
-        Me.txt_tel.Text = ""
-        Me.cmb_tipoDoc.Text = ""
-        Me.dtp_fecDes.Value = Today.Date
-        Me.dtp_fecHas.Value = Today.Date
-        Me.cmb_canPer.Text = ""
-        Me.cmb_tipHab.Text = ""
-        Me.chx_airAco.Checked = False
-        Me.chx_airAco.CheckState = CheckState.Unchecked
-        Me.chx_frigobar.Checked = False
-        Me.chx_frigobar.CheckState = CheckState.Unchecked
+        Me.cmd_nueAloDatCliLim_Click(sender, e)
+        Me.cmd_nueAloDatHosLim_Click(sender, e)
     End Sub
 
     Private Sub cmd_sigHos_Click(sender As Object, e As EventArgs) Handles cmd_sigHos.Click
@@ -658,6 +648,7 @@
         Me.chx_airAco.CheckState = CheckState.Unchecked
         Me.chx_frigobar.Checked = False
         Me.chx_frigobar.CheckState = CheckState.Unchecked
+        Me.grid_nueAlo.Rows.Clear()
     End Sub
 
     Private Sub cmd_busAloLim_Click(sender As Object, e As EventArgs) Handles cmd_busAloLim.Click
@@ -741,9 +732,19 @@
     Private Sub cmd_busCli_Click(sender As Object, e As EventArgs) Handles cmd_busCli.Click
         Me.buscarClienteNuevoAlojamiento()
     End Sub
-
     
     Private Sub grid_nueAlo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_nueAlo.CellContentClick
         Me.txt_habSelNro.Text = Me.grid_nueAlo.CurrentRow.Cells("clm_nroHabitacion").Value
+    End Sub
+    Private Sub txt_tel_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_tel.MouseClick
+        If Me.txt_tel.Text = "" Then
+            Me.txt_tel.SelectionStart = 0
+        End If
+    End Sub
+
+    Private Sub txt_preDia_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_preDia.MouseClick
+        If Me.txt_preDia.Text = "" Then
+            Me.txt_preDia.SelectionStart = 0
+        End If
     End Sub
 End Class

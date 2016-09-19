@@ -46,9 +46,9 @@ Partial Class menu
         Me.lbl_nueAlo = New System.Windows.Forms.Label()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
         Me.tab_aloNueDatCli = New System.Windows.Forms.TabPage()
+        Me.txt_tel = New System.Windows.Forms.MaskedTextBox()
         Me.dtp_fecNac = New System.Windows.Forms.DateTimePicker()
         Me.cmd_nueAloDatCliLim = New System.Windows.Forms.Button()
-        Me.txt_tel = New System.Windows.Forms.TextBox()
         Me.cmd_canCli = New System.Windows.Forms.Button()
         Me.cmd_sigCli = New System.Windows.Forms.Button()
         Me.cmd_busCli = New System.Windows.Forms.Button()
@@ -464,9 +464,9 @@ Partial Class menu
         '
         'tab_aloNueDatCli
         '
+        Me.tab_aloNueDatCli.Controls.Add(Me.txt_tel)
         Me.tab_aloNueDatCli.Controls.Add(Me.dtp_fecNac)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmd_nueAloDatCliLim)
-        Me.tab_aloNueDatCli.Controls.Add(Me.txt_tel)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmd_canCli)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmd_sigCli)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmd_busCli)
@@ -488,6 +488,14 @@ Partial Class menu
         Me.tab_aloNueDatCli.Text = "Datos del Cliente"
         Me.tab_aloNueDatCli.UseVisualStyleBackColor = True
         '
+        'txt_tel
+        '
+        Me.txt_tel.Location = New System.Drawing.Point(145, 120)
+        Me.txt_tel.Mask = "999999999"
+        Me.txt_tel.Name = "txt_tel"
+        Me.txt_tel.Size = New System.Drawing.Size(62, 22)
+        Me.txt_tel.TabIndex = 7
+        '
         'dtp_fecNac
         '
         Me.dtp_fecNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
@@ -504,13 +512,6 @@ Partial Class menu
         Me.cmd_nueAloDatCliLim.TabIndex = 8
         Me.cmd_nueAloDatCliLim.Text = "Limpiar"
         Me.cmd_nueAloDatCliLim.UseVisualStyleBackColor = True
-        '
-        'txt_tel
-        '
-        Me.txt_tel.Location = New System.Drawing.Point(145, 120)
-        Me.txt_tel.Name = "txt_tel"
-        Me.txt_tel.Size = New System.Drawing.Size(100, 22)
-        Me.txt_tel.TabIndex = 7
         '
         'cmd_canCli
         '
@@ -2694,7 +2695,6 @@ Partial Class menu
     Friend WithEvents tab_aloNue As System.Windows.Forms.TabControl
     Friend WithEvents tab_aloNueDatCli As System.Windows.Forms.TabPage
     Friend WithEvents tab_aloNueDatHos As System.Windows.Forms.TabPage
-    Friend WithEvents txt_tel As System.Windows.Forms.TextBox
     Friend WithEvents cmd_canCli As System.Windows.Forms.Button
     Friend WithEvents cmd_sigCli As System.Windows.Forms.Button
     Friend WithEvents cmd_busCli As System.Windows.Forms.Button
@@ -2927,5 +2927,6 @@ Partial Class menu
     Friend WithEvents clm_nroHabitacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_cantCamasNuevoAlojamiento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_cantBaños As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txt_tel As System.Windows.Forms.MaskedTextBox
 
 End Class

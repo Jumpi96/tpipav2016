@@ -45,6 +45,7 @@ Partial Class ABM_Habitación_X_Piso
         Me.cmd_limpiar = New System.Windows.Forms.Button()
         Me.cmd_modificar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
+        Me.cmd_actualizarGrilla = New System.Windows.Forms.Button()
         CType(Me.grid_habitacionPiso, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -253,11 +254,21 @@ Partial Class ABM_Habitación_X_Piso
         Me.cmd_cancelar.Text = "Cancelar"
         Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
+        'cmd_actualizarGrilla
+        '
+        Me.cmd_actualizarGrilla.Location = New System.Drawing.Point(12, 90)
+        Me.cmd_actualizarGrilla.Name = "cmd_actualizarGrilla"
+        Me.cmd_actualizarGrilla.Size = New System.Drawing.Size(87, 23)
+        Me.cmd_actualizarGrilla.TabIndex = 14
+        Me.cmd_actualizarGrilla.Text = "Actualizar Grilla"
+        Me.cmd_actualizarGrilla.UseVisualStyleBackColor = True
+        '
         'ABM_Habitación_X_Piso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(486, 427)
+        Me.Controls.Add(Me.cmd_actualizarGrilla)
         Me.Controls.Add(Me.cmd_cancelar)
         Me.Controls.Add(Me.cmd_modificar)
         Me.Controls.Add(Me.cmd_limpiar)
@@ -309,4 +320,5 @@ Partial Class ABM_Habitación_X_Piso
     Friend WithEvents clm_tipoHabitacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_fechaEmision As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
+    Friend WithEvents cmd_actualizarGrilla As System.Windows.Forms.Button
 End Class
