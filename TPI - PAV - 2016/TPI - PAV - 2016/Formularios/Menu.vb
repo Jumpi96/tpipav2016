@@ -751,4 +751,18 @@
             Me.txt_preDia.SelectionStart = 0
         End If
     End Sub
+
+    Private Sub tab_aloNueDatCli_Click(sender As Object, e As EventArgs) Handles tab_aloNueDatCli.Click
+        Me.cmd_atrAloSel_Click(sender, e)
+    End Sub
+
+    Private Sub tab_aloNueDatHos_Click(sender As Object, e As EventArgs) Handles tab_aloNueDatHos.Click
+        Me.cmd_sigCli_Click(sender, e)
+        Me.cam_atrHab_Click(sender, e)
+    End Sub
+
+    Private Sub tab_aloNueSelHab_Click(sender As Object, e As EventArgs) Handles tab_aloNueSelHab.Click
+        Me.cmd_sigCli_Click(sender, e)
+        Me.cmd_sigHos_Click(sender, e)
+    End Sub
 End Class
