@@ -403,6 +403,8 @@
         Me.menu_Menu.Enabled = True
         Me.cmd_nueAloDatCliLim_Click(sender, e)
         Me.cmd_nueAloDatHosLim_Click(sender, e)
+        Me.txt_habSelNro.Text = ""
+        Me.txt_preDia.Text = ""
     End Sub
 
     Private Sub cmd_sigHos_Click(sender As Object, e As EventArgs) Handles cmd_sigHos.Click
@@ -429,6 +431,8 @@
 
     Private Sub cam_atrHab_Click(sender As Object, e As EventArgs) Handles cam_atrHab.Click
         Me.tab_aloNue.SelectedTab = tab_aloNueDatHos
+        Me.txt_habSelNro.Text = ""
+        Me.txt_preDia.Text = ""
     End Sub
 
     Private Sub cmd_busAloDatCliSig_Click(sender As Object, e As EventArgs) Handles cmd_busAloDatCliSig.Click
@@ -682,18 +686,6 @@
         pnl_ordComSel.BringToFront()
     End Sub
 
-    Private Sub ABMAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAlojamientosToolStripMenuItem.Click
-        ABM_Alojamientos.Show()
-    End Sub
-
-    Private Sub ABMClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMClientesToolStripMenuItem.Click
-        ABM_Clientes.Show()
-    End Sub
-
-    Private Sub ABMTiposDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposDocumentosToolStripMenuItem.Click
-        ABM_TiposDocumentos.Show()
-    End Sub
-
     Private Sub cmd_nueOrdComFin_Click_1(sender As Object, e As EventArgs) Handles cmd_nueOrdComFin.Click
         Me.cmb_IDPro.Text = ""
         Me.txt_nomPro.Text = ""
@@ -716,18 +708,6 @@
         Me.cargarComboTipoHabitacion()
     End Sub
 
-    Private Sub ABMTiposHabitaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposHabitaciónToolStripMenuItem.Click
-        ABM_TiposHabitacion.Show()
-    End Sub
-
-    Private Sub ABMProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMProveedoresToolStripMenuItem.Click
-        ABM_Proveedores.Show()
-
-    End Sub
-
-    Private Sub ABMHabitaciónXPisoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMHabitaciónXPisoToolStripMenuItem.Click
-        ABM_Habitación_X_Piso.Show()
-    End Sub
 
     Private Sub cmd_busCli_Click(sender As Object, e As EventArgs) Handles cmd_busCli.Click
         Me.buscarClienteNuevoAlojamiento()
@@ -746,5 +726,51 @@
         If Me.txt_preDia.Text = "" Then
             Me.txt_preDia.SelectionStart = 0
         End If
+    End Sub
+
+    Private Sub tab_aloNueDatCli_Click(sender As Object, e As EventArgs) Handles tab_aloNueDatCli.Click
+        Me.cmd_atrAloSel_Click(sender, e)
+    End Sub
+
+    Private Sub tab_aloNueDatHos_Click(sender As Object, e As EventArgs) Handles tab_aloNueDatHos.Click
+        Me.cmd_sigCli_Click(sender, e)
+        Me.cam_atrHab_Click(sender, e)
+    End Sub
+
+    Private Sub tab_aloNueSelHab_Click(sender As Object, e As EventArgs) Handles tab_aloNueSelHab.Click
+        Me.cmd_sigCli_Click(sender, e)
+        Me.cmd_sigHos_Click(sender, e)
+    End Sub
+
+    Private Sub ABMTiposHabitaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposHabitaciónToolStripMenuItem.Click
+        ABM_TiposHabitacion.Show()
+    End Sub
+
+    Private Sub ABMProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMProveedoresToolStripMenuItem.Click
+        ABM_Proveedores.Show()
+    End Sub
+
+    Private Sub ABMHabitaciónXPisoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMHabitaciónXPisoToolStripMenuItem.Click
+        ABM_Habitación_X_Piso.Show()
+    End Sub
+
+    Private Sub ABMAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMAlojamientosToolStripMenuItem.Click
+        ABM_Alojamientos.Show()
+    End Sub
+
+    Private Sub ABMClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMClientesToolStripMenuItem.Click
+        ABM_Clientes.Show()
+    End Sub
+
+    Private Sub ABMTiposDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposDocumentosToolStripMenuItem.Click
+        ABM_TiposDocumentos.Show()
+    End Sub
+
+    Private Sub ABMServiciosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMServiciosToolStripMenuItem.Click
+        ABM_Servicios.Show()
+    End Sub
+
+    Private Sub ABMTiposCamaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposCamaToolStripMenuItem.Click
+        ABM_Tipos_Cama.Show()
     End Sub
 End Class
