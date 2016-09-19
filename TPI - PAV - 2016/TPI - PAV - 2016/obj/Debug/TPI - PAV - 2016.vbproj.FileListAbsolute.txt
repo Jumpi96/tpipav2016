@@ -89,4 +89,4 @@ C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipa
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Habitación_X_Piso.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Servicios.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipos_Cama.resources
-F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Articulos.resources
+F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Articulos.resources

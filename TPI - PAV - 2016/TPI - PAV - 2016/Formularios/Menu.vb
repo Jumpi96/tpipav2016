@@ -773,4 +773,8 @@
     Private Sub ABMTiposCamaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposCamaToolStripMenuItem.Click
         ABM_Tipos_Cama.Show()
     End Sub
+
+    Private Sub ABMArtículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMArtículosToolStripMenuItem.Click
+        ABM_Articulos.Show()
+    End Sub
 End Class

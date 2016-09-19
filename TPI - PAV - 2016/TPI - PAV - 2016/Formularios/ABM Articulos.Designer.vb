@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Articulos
+Partial Class ABM_Articulos
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -33,16 +33,16 @@ Partial Class Articulos
         Me.txt_precioUnitario = New System.Windows.Forms.MaskedTextBox()
         Me.cmb_proveedor = New System.Windows.Forms.ComboBox()
         Me.grid_grilla = New System.Windows.Forms.DataGridView()
-        Me.cmd_cancelar = New System.Windows.Forms.Button()
-        Me.cmd_registrar = New System.Windows.Forms.Button()
-        Me.cmd_limpiar = New System.Windows.Forms.Button()
-        Me.cmd_borrar = New System.Windows.Forms.Button()
         Me.idArticulo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precioUnitario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idProveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmd_cancelar = New System.Windows.Forms.Button()
+        Me.cmd_registrar = New System.Windows.Forms.Button()
+        Me.cmd_limpiar = New System.Windows.Forms.Button()
+        Me.cmd_borrar = New System.Windows.Forms.Button()
         CType(Me.grid_grilla, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -141,6 +141,38 @@ Partial Class Articulos
         Me.grid_grilla.Size = New System.Drawing.Size(365, 216)
         Me.grid_grilla.TabIndex = 9
         '
+        'idArticulo
+        '
+        Me.idArticulo.HeaderText = "Id"
+        Me.idArticulo.Name = "idArticulo"
+        Me.idArticulo.Width = 25
+        '
+        'nombre
+        '
+        Me.nombre.HeaderText = "Nombre"
+        Me.nombre.Name = "nombre"
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "Descripcion"
+        Me.descripcion.Name = "descripcion"
+        '
+        'precioUnitario
+        '
+        Me.precioUnitario.HeaderText = "Precio Unitario"
+        Me.precioUnitario.Name = "precioUnitario"
+        '
+        'stock
+        '
+        Me.stock.HeaderText = "Stock"
+        Me.stock.Name = "stock"
+        Me.stock.Width = 30
+        '
+        'idProveedor
+        '
+        Me.idProveedor.HeaderText = "Proveedor"
+        Me.idProveedor.Name = "idProveedor"
+        '
         'cmd_cancelar
         '
         Me.cmd_cancelar.Location = New System.Drawing.Point(302, 371)
@@ -176,38 +208,6 @@ Partial Class Articulos
         Me.cmd_borrar.TabIndex = 5
         Me.cmd_borrar.Text = "Borrar"
         Me.cmd_borrar.UseVisualStyleBackColor = True
-        '
-        'idArticulo
-        '
-        Me.idArticulo.HeaderText = "Id"
-        Me.idArticulo.Name = "idArticulo"
-        Me.idArticulo.Width = 25
-        '
-        'nombre
-        '
-        Me.nombre.HeaderText = "Nombre"
-        Me.nombre.Name = "nombre"
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "Descripcion"
-        Me.descripcion.Name = "descripcion"
-        '
-        'precioUnitario
-        '
-        Me.precioUnitario.HeaderText = "Precio Unitario"
-        Me.precioUnitario.Name = "precioUnitario"
-        '
-        'stock
-        '
-        Me.stock.HeaderText = "Stock"
-        Me.stock.Name = "stock"
-        Me.stock.Width = 30
-        '
-        'idProveedor
-        '
-        Me.idProveedor.HeaderText = "Proveedor"
-        Me.idProveedor.Name = "idProveedor"
         '
         'Articulos
         '
