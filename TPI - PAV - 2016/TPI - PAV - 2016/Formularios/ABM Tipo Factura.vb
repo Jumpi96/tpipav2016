@@ -8,7 +8,7 @@
 #Region "Subrutinas"
     Private Sub cargarGrilla()
         Me.grid_tiposFactura.Rows.Clear()
-        Dim sql As String = "SELECT * FROM TipoFactura"
+        Dim sql As String = "SELECT * FROM TiposFactura"
         Dim tabla As DataTable = acceso.query(sql)
 
         Dim i As Integer
@@ -22,17 +22,17 @@
 
     End Sub
     Private Sub Insertar()
-        Dim sql As String = "INSERT INTO TipoFactura (nombre, descripcion) " _
+        Dim sql As String = "INSERT INTO TiposFactura (nombre, descripcion) " _
                             & "VALUES ( '" & txt_nombre.Text & "', '" & txt_descripcion.Text & "')"
         acceso.nonQuery(sql)
-        MessageBox.Show("Se cargo exitosamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+        MessageBox.Show("Se cargó exitosamente.")
         Me.cargarGrilla()
 
     End Sub
     Private Sub Modificar()
-        Dim sql As String = "UPDATE CLIENTES SET nombre = '" & txt_nombre.Text & "', Descripcion = '" & txt_descripcion.Text & "'"
+        Dim sql As String = "UPDATE TiposFactura SET nombre = '" & txt_nombre.Text & "', Descripcion = '" & txt_descripcion.Text & "'"
         acceso.nonQuery(sql)
-        MessageBox.Show("Se modifico exitodamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+        MessageBox.Show("Se modificó exitodamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
     End Sub
 
 #End Region
@@ -51,7 +51,7 @@
         Return True
     End Function
     Private Function Validar_existencia() As Boolean
-        Dim sql As String = "SELECT * FROM TipoFactura WHERE nombre='" & txt_nombre.Text & "'"
+        Dim sql As String = "SELECT * FROM TiposFactura WHERE nombre='" & txt_nombre.Text & "'"
         Dim tabla As DataTable = acceso.query(sql)
         If tabla.Rows.Count() = 0 Then
             Return False
@@ -62,13 +62,14 @@
 #End Region
 #Region "Click"
     Private Sub ABM_Tipo_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        cargarGrilla()
+        cmd_borrar.Enabled = False
     End Sub
 
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
-        If Me.Validar() = False Then
+        If Me.Validar() Then
             If condicion_estado = estado.insertar Then
-                If Validar_existencia() = True Then
+                If Validar_existencia() = False Then
                     Me.Insertar()
                 Else
                     MessageBox.Show("Ya existe este tipo de factura")
@@ -83,21 +84,30 @@
     Private Sub cmd_limpiar_Click(sender As Object, e As EventArgs) Handles cmd_limpiar.Click
         txt_descripcion.Text = ""
         txt_nombre.Text = ""
+        cmd_borrar.Enabled = False
     End Sub
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
         Me.Close()
 
     End Sub
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-        Dim sql As String = "DELET * FROM TipoDocumento WHERE nombre= '" & txt_nombre.Text & "'"
-        Dim tabla As DataTable = acceso.query(sql)
-        MessageBox.Show("Se ha eliminado el tipo de Factura exitosamente")
-        Me.cmd_limpiar.PerformClick()
+        Try
+            Dim id As Integer = grid_tiposFactura.Rows(grid_tiposFactura.CurrentRow.Index).Cells(0).Value
+            Dim sql As String = "DELETE FROM TiposFactura WHERE idTipoFactura= " & id
+            acceso.nonQuery(sql)
+            MessageBox.Show("Se ha eliminado el tipo de Factura exitosamente")
+            Me.cmd_limpiar.PerformClick()
+            cargarGrilla()
+        Catch ex As OleDb.OleDbException
+            MessageBox.Show("No se puede eliminar por tener registros relacionados.", "Error")
+        End Try
+
     End Sub
     Private Sub grid_tipoFactura_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tiposFactura.CellContentDoubleClick
+
         Dim sql As String = ""
 
-        sql = "SELECT * FROM TipoFactura WHERE idTipoFactura = '" & Me.grid_tiposFactura.CurrentRow.Cells("c_idTipoFactura").Value & "'"
+        sql = "SELECT * FROM TiposFactura WHERE idTipoFactura = '" & Me.grid_tiposFactura.CurrentRow.Cells("c_idTipoFactura").Value & "'"
 
         Dim tabla As DataTable = acceso.query(sql)
 
@@ -116,6 +126,7 @@
 
 
         Me.condicion_estado = estado.modificar
+        cmd_borrar.Enabled = True
 
     End Sub
 #End Region
