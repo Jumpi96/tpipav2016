@@ -113,9 +113,10 @@ Partial Class ABM_Habitación_X_Piso
         '
         'dtp_fechaEmision
         '
+        Me.dtp_fechaEmision.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_fechaEmision.Location = New System.Drawing.Point(255, 38)
         Me.dtp_fechaEmision.Name = "dtp_fechaEmision"
-        Me.dtp_fechaEmision.Size = New System.Drawing.Size(200, 20)
+        Me.dtp_fechaEmision.Size = New System.Drawing.Size(80, 20)
         Me.dtp_fechaEmision.TabIndex = 5
         '
         'chb_frigoBar
@@ -277,6 +278,7 @@ Partial Class ABM_Habitación_X_Piso
         Me.Controls.Add(Me.lbl_baños)
         Me.Controls.Add(Me.lbl_camas)
         Me.Controls.Add(Me.lbl_nroHabitacion)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "ABM_Habitación_X_Piso"
         Me.Text = "ABM_Habitación_X_Piso"
         CType(Me.grid_habitacionPiso, System.ComponentModel.ISupportInitialize).EndInit()

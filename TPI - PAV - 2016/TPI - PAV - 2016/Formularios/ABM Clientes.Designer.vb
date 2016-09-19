@@ -34,7 +34,7 @@ Partial Class ABM_Clientes
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.dtpEstimada = New System.Windows.Forms.DateTimePicker()
         Me.lbl_telefono = New System.Windows.Forms.Label()
-        Me.txt_telefono = New System.Windows.Forms.TextBox()
+        Me.txt_telefono = New System.Windows.Forms.MaskedTextBox()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
         Me.cmd_registrar = New System.Windows.Forms.Button()
@@ -150,6 +150,7 @@ Partial Class ABM_Clientes
         'txt_telefono
         '
         Me.txt_telefono.Location = New System.Drawing.Point(120, 112)
+        Me.txt_telefono.Mask = "99999999999"
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(100, 20)
         Me.txt_telefono.TabIndex = 19
@@ -270,7 +271,7 @@ Partial Class ABM_Clientes
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents dtpEstimada As System.Windows.Forms.DateTimePicker
     Friend WithEvents lbl_telefono As System.Windows.Forms.Label
-    Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
+    Friend WithEvents txt_telefono As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cmd_limpiar As System.Windows.Forms.Button
     Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
     Friend WithEvents cmd_registrar As System.Windows.Forms.Button

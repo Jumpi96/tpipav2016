@@ -175,14 +175,19 @@
 
     'CLICK BORRAR
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-        Dim sentenciaSQL As String = "DELETE FROM TiposHabitacion WHERE idTipoHabitacion = " & Me.grid_tipoDoc.Rows(0).Cells("c_idHab").Value()
+        Try
+            Dim sentenciaSQL As String = "DELETE FROM TiposHabitacion WHERE idTipoHabitacion = " & Me.grid_tipoDoc.Rows(0).Cells("c_idHab").Value()
 
-        MessageBox.Show("Se ha eliminado el tipo de habitación satisfactoriamente")
+            accesoBD.nonQuery(sentenciaSQL)
 
-        accesoBD.nonQuery(sentenciaSQL)
+            MessageBox.Show("Se ha eliminado el tipo de habitación satisfactoriamente")
 
-        Me.cargar_grilla()
-        Me.cmd_limpiar.PerformClick()
+            Me.cargar_grilla()
+            Me.cmd_limpiar.PerformClick()
+        Catch ex As OleDb.OleDbException
+            MessageBox.Show("El registro no puede eliminarse por tener otros registros relacionados.")
+        End Try
+
     End Sub
 
 #End Region

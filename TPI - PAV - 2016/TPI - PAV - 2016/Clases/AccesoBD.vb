@@ -43,8 +43,8 @@
             Case "LAWEBSTORE-PC"
                 Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=LAWEBSTORE-PC\SQLSERVER2014;Integrated Security=SSPI;Initial Catalog=hotelShaky"
 
-                'Case "NOMBRE-COMPU-JUAMPI"
-                'Me.pCadenaConexion = "CADENA CONEXION MARCE"
+            Case "DESKTOP-2BQ04QL"
+                Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=DESKTOP-2BQ04QL;Integrated Security=SSPI;Initial Catalog=hotelShaky"
 
             Case "JULIETA"
                 Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=JULIETA\JULIETA;Integrated Security=SSPI;Initial Catalog=hotelShaky"
