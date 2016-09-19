@@ -73,13 +73,13 @@ Partial Class ABM_Tipos_Cama
         '
         Me.grid_grilla.AllowUserToAddRows = False
         Me.grid_grilla.AllowUserToDeleteRows = False
-        Me.grid_grilla.AllowUserToOrderColumns = True
         Me.grid_grilla.AllowUserToResizeColumns = False
         Me.grid_grilla.AllowUserToResizeRows = False
         Me.grid_grilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idTipoCama, Me.nombre, Me.descripcion})
         Me.grid_grilla.Location = New System.Drawing.Point(12, 71)
         Me.grid_grilla.Name = "grid_grilla"
+        Me.grid_grilla.ReadOnly = True
         Me.grid_grilla.Size = New System.Drawing.Size(365, 216)
         Me.grid_grilla.TabIndex = 4
         '
@@ -87,16 +87,19 @@ Partial Class ABM_Tipos_Cama
         '
         Me.idTipoCama.HeaderText = "ID Tipo"
         Me.idTipoCama.Name = "idTipoCama"
+        Me.idTipoCama.ReadOnly = True
         '
         'nombre
         '
         Me.nombre.HeaderText = "Nombre"
         Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
         '
         'descripcion
         '
         Me.descripcion.HeaderText = "Descripcion"
         Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
         '
         'cmd_cancelar
         '
