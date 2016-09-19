@@ -381,11 +381,11 @@ Partial Class menu
         '
         'ABMsToolStripMenuItem
         '
-<<<<<<< HEAD
+
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMTiposFacturaToolStripMenuItem})
-=======
+
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem})
->>>>>>> origin/nueva
+
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
         Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
@@ -2973,10 +2973,10 @@ Partial Class menu
     Friend WithEvents ABMArtículosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMServiciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMTiposCamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-<<<<<<< HEAD
+
     Friend WithEvents ABMTiposFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-=======
+
     Friend WithEvents ABMServiciosXAlojamientoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
->>>>>>> origin/nueva
+
 
 End Class

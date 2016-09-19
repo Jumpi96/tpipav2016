@@ -94,7 +94,7 @@
         MessageBox.Show("Se ha eliminado el tipo de Factura exitosamente")
         Me.cmd_limpiar.PerformClick()
     End Sub
-    Private Sub grid_tipoFactura_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_clientes.CellContentDoubleClick
+    Private Sub grid_tipoFactura_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tiposFactura.CellContentDoubleClick
         Dim sql As String = ""
 
         sql = "SELECT * FROM TipoFactura WHERE idTipoFactura = '" & Me.grid_tiposFactura.CurrentRow.Cells("c_idTipoFactura").Value & "'"

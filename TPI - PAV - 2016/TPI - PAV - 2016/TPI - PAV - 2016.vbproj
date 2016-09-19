@@ -85,11 +85,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\ABM Alojamientos.Designer.vb">
       <DependentUpon>ABM Alojamientos.vb</DependentUpon>
     </Compile>
@@ -120,17 +115,16 @@
     <Compile Include="Formularios\ABM Servicios.vb">
       <SubType>Form</SubType>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Formularios\ABM Tipo Factura.Designer.vb">
-      <DependentUpon>ABM Tipo Factura.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Formularios\ABM Tipo Factura.vb">
-=======
     <Compile Include="Formularios\ABM ServiciosXAlojamiento.Designer.vb">
       <DependentUpon>ABM ServiciosXAlojamiento.vb</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ABM ServiciosXAlojamiento.vb">
->>>>>>> origin/nueva
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM Tipo Factura.Designer.vb">
+      <DependentUpon>ABM Tipo Factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM Tipo Factura.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\ABM Tipos Cama.Designer.vb">
@@ -197,13 +191,11 @@
     <EmbeddedResource Include="Formularios\ABM Servicios.resx">
       <DependentUpon>ABM Servicios.vb</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Formularios\ABM Tipo Factura.resx">
-      <DependentUpon>ABM Tipo Factura.vb</DependentUpon>
-=======
     <EmbeddedResource Include="Formularios\ABM ServiciosXAlojamiento.resx">
       <DependentUpon>ABM ServiciosXAlojamiento.vb</DependentUpon>
->>>>>>> origin/nueva
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM Tipo Factura.resx">
+      <DependentUpon>ABM Tipo Factura.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Tipos Cama.resx">
       <DependentUpon>ABM Tipos Cama.vb</DependentUpon>
@@ -228,18 +220,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram1.cd" />
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
