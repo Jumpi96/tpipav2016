@@ -84,7 +84,7 @@
         sentenciaSQL &= "SET nombre = '" & Me.txt_nombre.Text & "'"
         sentenciaSQL &= " , apellido = '" & Me.txt_apellido.Text & "'"
         sentenciaSQL &= " , telefono = '" & Me.txt_telefono.Text & "'"
-        sentenciaSQL &= " , fechaNacimiento = CONVERT(datetime,'" & date_fechaNacimiento.Value.Date & "',103)"
+        sentenciaSQL &= " , fechaNacimiento = '" & Me.date_fechaNacimiento.Value.Date & "'"
         sentenciaSQL &= " WHERE nroDocumento = " & Me.txt_nroDoc.Text
         sentenciaSQL &= " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
 

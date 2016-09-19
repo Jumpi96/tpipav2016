@@ -285,13 +285,13 @@ Partial Class ABM_Habitación_X_Piso
         Me.Controls.Add(Me.chb_aireAcondicionado)
         Me.Controls.Add(Me.chb_frigoBar)
         Me.Controls.Add(Me.dtp_fechaEmision)
-        Me.Controls.Add(Me.cmb_tipoHabitacion)
         Me.Controls.Add(Me.lbl_personas)
         Me.Controls.Add(Me.lbl_tipoHabitacion)
         Me.Controls.Add(Me.lbl_fechaEmision)
         Me.Controls.Add(Me.lbl_baños)
         Me.Controls.Add(Me.lbl_camas)
         Me.Controls.Add(Me.lbl_nroHabitacion)
+        Me.Controls.Add(Me.cmb_tipoHabitacion)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "ABM_Habitación_X_Piso"
         Me.Text = "ABM_Habitación_X_Piso"
