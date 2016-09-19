@@ -403,6 +403,8 @@
         Me.menu_Menu.Enabled = True
         Me.cmd_nueAloDatCliLim_Click(sender, e)
         Me.cmd_nueAloDatHosLim_Click(sender, e)
+        Me.txt_habSelNro.Text = ""
+        Me.txt_preDia.Text = ""
     End Sub
 
     Private Sub cmd_sigHos_Click(sender As Object, e As EventArgs) Handles cmd_sigHos.Click
@@ -429,6 +431,8 @@
 
     Private Sub cam_atrHab_Click(sender As Object, e As EventArgs) Handles cam_atrHab.Click
         Me.tab_aloNue.SelectedTab = tab_aloNueDatHos
+        Me.txt_habSelNro.Text = ""
+        Me.txt_preDia.Text = ""
     End Sub
 
     Private Sub cmd_busAloDatCliSig_Click(sender As Object, e As EventArgs) Handles cmd_busAloDatCliSig.Click
