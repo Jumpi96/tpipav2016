@@ -11,19 +11,39 @@
         Dim sqlCargarGrilla As String = ""
         Dim tabla As New Data.DataTable
 
-        sqlCargarGrilla &= "SELECT HP.nroHabitacion, HP.cantCamas, HP.cantBaños "
-        sqlCargarGrilla &= "FROM HabitacionesXPiso HP JOIN Alojamientos A "
-        sqlCargarGrilla &= "ON HP.nroHabitacion = A.nroHabitacion "
-        sqlCargarGrilla &= "WHERE HP.cantMaxPersonas >= " & Me.cmb_canPer.SelectedText & " "
-        sqlCargarGrilla &= "AND A.fechaInicioAlojamiento NOT BETWEEN '" & Me.dtp_fecDes.Value.Date & "' AND '" & Me.dtp_fecHas.Value.Date & "' "
-        sqlCargarGrilla &= "AND A.fechaFinEstimadaalojamiento NOT BETWEEN '" & Me.dtp_fecDes.Value.Date & "' AND '" & Me.dtp_fecHas.Value.Date & "' "
-        sqlCargarGrilla &= "AND HP.idTipoHabitacion = '" & Me.cmb_tipHab.SelectedValue & "'"
+        
+        'If cmb_tipHab.SelectedText <> "Cualquiera" Then
+        '    sqlCargarGrilla &= " AND HP.idTipoHabitacion = '" & Me.cmb_tipHab.SelectedValue & "'"
+        'End If
+        'If Me.chx_airAco.CheckState = CheckState.Checked Then
+        '    sqlCargarGrilla &= " AND HP.aireAcondicionado = 1"
+        'End If
+        'If Me.chx_frigobar.CheckState = CheckState.Checked Then
+        '    sqlCargarGrilla &= " AND HP.frigobar = 1"
+        'End If
+        'sqlCargarGrilla &= " UNION "
+        sqlCargarGrilla &= "SELECT DISTINCT HP.nroHabitacion, HP.cantCamas, HP.cantBaños "
+        sqlCargarGrilla &= "FROM HabitacionesXPiso HP "
+        sqlCargarGrilla &= "WHERE HP.cantMaxPersonas >= '" & Me.cmb_canPer.SelectedItem & "'"
+        If cmb_tipHab.SelectedText <> "Cualquiera" Then
+            sqlCargarGrilla &= " AND HP.idTipoHabitacion = '" & Me.cmb_tipHab.SelectedValue & "'"
+        End If
         If Me.chx_airAco.CheckState = CheckState.Checked Then
             sqlCargarGrilla &= " AND HP.aireAcondicionado = 1"
         End If
         If Me.chx_frigobar.CheckState = CheckState.Checked Then
             sqlCargarGrilla &= " AND HP.frigobar = 1"
         End If
+        sqlCargarGrilla &= " EXCEPT "
+        sqlCargarGrilla &= "SELECT DISTINCT HP.nroHabitacion, HP.cantCamas, HP.cantBaños "
+        sqlCargarGrilla &= "FROM HabitacionesXPiso HP JOIN Alojamientos A "
+        sqlCargarGrilla &= "ON HP.nroHabitacion = A.nroHabitacion "
+        sqlCargarGrilla &= "WHERE 'A.fechaInicioAlojamiento' BETWEEN '" & Me.dtp_fecDes.Value.Date & "' AND '" & Me.dtp_fecHas.Value.Date & "' "
+        sqlCargarGrilla &= "AND 'A.fechaFinEstimadaalojamiento' BETWEEN '" & Me.dtp_fecDes.Value.Date & "' AND '" & Me.dtp_fecHas.Value.Date & "'"
+        'sqlCargarGrilla &= "AND (('A.fechaInicioAlojamiento' < '" & Me.dtp_fecDes.Value.Date & "' AND 'A.fechaFinEstimadaalojamiento' < '" & Me.dtp_fecDes.Value.Date & "') "
+        'sqlCargarGrilla &= "OR ('A.fechaInicioAlojamiento' > '" & Me.dtp_fecHas.Value.Date & "' AND 'A.fechaFinEstimadaalojamiento' > '" & Me.dtp_fecHas.Value.Date & "')) "
+        'sqlCargarGrilla &= "AND '" & Me.dtp_fecDes.Value.Date & "' BETWEEN 'A.fechaInicioAlojamiento' AND 'A.fechaFinEstimadaalojamiento' "
+        'sqlCargarGrilla &= "AND '" & Me.dtp_fecHas.Value.Date & "' BETWEEN 'A.fechaInicioAlojamiento' AND 'A.fechaFinEstimadaalojamiento'"
 
         tabla = acceso.query(sqlCargarGrilla)
 
@@ -35,6 +55,10 @@
             Me.grid_nueAlo.Rows(i).Cells("clm_cantCamasNuevoAlojamiento").Value = tabla.Rows(i)("cantCamas")
             Me.grid_nueAlo.Rows(i).Cells("clm_cantBaños").Value = tabla.Rows(i)("cantBaños")
         Next
+    End Sub
+
+    Private Sub grid_nueAlo_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_nueAlo.CellContentDoubleClick
+        Me.txt_habSelNro.Text = Me.grid_nueAlo.CurrentRow.Cells("clm_nroHabitacion").Value
     End Sub
 
     Private Function consultaClientes() As String
@@ -113,6 +137,8 @@
         cmb_tipHab.DataSource = tabla
         cmb_tipHab.ValueMember = "idTipoHabitacion"
         cmb_tipHab.DisplayMember = "nombre"
+
+        cmb_tipHab.Items.Add("Cualquiera")
     End Sub
 
     Private Sub cargarComboCantidadPersonas()
@@ -390,14 +416,9 @@
     End Sub
 
     Private Sub cmd_sigHos_Click(sender As Object, e As EventArgs) Handles cmd_sigHos.Click
-        If Me.validarCamposHospedajeNuevoAlojamiento Then
+        Me.grid_nueAlo.Rows.Clear()
+        If Me.validarCamposHospedajeNuevoAlojamiento = True Then
             Me.tab_aloNue.SelectedTab = tab_aloNueSelHab
-            Me.dtp_fecDes.Enabled = False
-            Me.dtp_fecHas.Enabled = False
-            Me.cmb_canPer.Enabled = False
-            Me.cmb_tipHab.Enabled = False
-            Me.chx_airAco.Enabled = False
-            Me.chx_frigobar.Enabled = False
             Me.cargarGrillaSeleccionHabitacion()
         End If
     End Sub
@@ -629,16 +650,10 @@
     End Sub
 
     Private Sub cmd_nueAloDatHosLim_Click(sender As Object, e As EventArgs) Handles cmd_nueAloDatHosLim.Click
-        Me.dtp_fecDes.Enabled = True
-        Me.dtp_fecHas.Enabled = True
-        Me.cmb_canPer.Enabled = True
-        Me.cmb_tipHab.Enabled = True
-        Me.chx_airAco.Enabled = True
-        Me.chx_frigobar.Enabled = True
         Me.dtp_fecDes.Value = Today.Date
         Me.dtp_fecHas.Value = Today.Date
-        Me.cmb_canPer.Text = ""
-        Me.cmb_tipHab.Text = ""
+        Me.cmb_canPer.SelectedIndex = -1
+        Me.cmb_tipHab.SelectedIndex = -1
         Me.chx_airAco.Checked = False
         Me.chx_airAco.CheckState = CheckState.Unchecked
         Me.chx_frigobar.Checked = False
@@ -725,5 +740,10 @@
 
     Private Sub cmd_busCli_Click(sender As Object, e As EventArgs) Handles cmd_busCli.Click
         Me.buscarClienteNuevoAlojamiento()
+    End Sub
+
+    
+    Private Sub grid_nueAlo_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_nueAlo.CellContentClick
+        Me.txt_habSelNro.Text = Me.grid_nueAlo.CurrentRow.Cells("clm_nroHabitacion").Value
     End Sub
 End Class

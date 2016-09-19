@@ -490,9 +490,10 @@ Partial Class menu
         '
         'dtp_fecNac
         '
+        Me.dtp_fecNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_fecNac.Location = New System.Drawing.Point(145, 92)
         Me.dtp_fecNac.Name = "dtp_fecNac"
-        Me.dtp_fecNac.Size = New System.Drawing.Size(200, 22)
+        Me.dtp_fecNac.Size = New System.Drawing.Size(90, 22)
         Me.dtp_fecNac.TabIndex = 6
         '
         'cmd_nueAloDatCliLim
@@ -647,23 +648,25 @@ Partial Class menu
         '
         'dtp_fecHas
         '
+        Me.dtp_fecHas.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_fecHas.Location = New System.Drawing.Point(153, 34)
         Me.dtp_fecHas.Name = "dtp_fecHas"
-        Me.dtp_fecHas.Size = New System.Drawing.Size(200, 22)
+        Me.dtp_fecHas.Size = New System.Drawing.Size(90, 22)
         Me.dtp_fecHas.TabIndex = 15
         '
         'dtp_fecDes
         '
+        Me.dtp_fecDes.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_fecDes.Location = New System.Drawing.Point(153, 4)
         Me.dtp_fecDes.Name = "dtp_fecDes"
-        Me.dtp_fecDes.Size = New System.Drawing.Size(200, 22)
+        Me.dtp_fecDes.Size = New System.Drawing.Size(90, 22)
         Me.dtp_fecDes.TabIndex = 14
         '
         'chx_frigobar
         '
         Me.chx_frigobar.AutoSize = True
         Me.chx_frigobar.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chx_frigobar.Location = New System.Drawing.Point(359, 34)
+        Me.chx_frigobar.Location = New System.Drawing.Point(249, 36)
         Me.chx_frigobar.Name = "chx_frigobar"
         Me.chx_frigobar.Size = New System.Drawing.Size(78, 20)
         Me.chx_frigobar.TabIndex = 6
@@ -674,7 +677,7 @@ Partial Class menu
         '
         Me.chx_airAco.AutoSize = True
         Me.chx_airAco.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chx_airAco.Location = New System.Drawing.Point(359, 6)
+        Me.chx_airAco.Location = New System.Drawing.Point(249, 8)
         Me.chx_airAco.Name = "chx_airAco"
         Me.chx_airAco.Size = New System.Drawing.Size(145, 20)
         Me.chx_airAco.TabIndex = 5
