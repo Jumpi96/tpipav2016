@@ -782,4 +782,10 @@
     Private Sub ABMArtículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMArtículosToolStripMenuItem.Click
         ABM_Articulos.Show()
     End Sub
+
+    Private Sub ABMTiposFacturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposFacturaToolStripMenuItem.Click
+        ABM_Tipo_Factura.Show()
+
+
+    End Sub
 End Class

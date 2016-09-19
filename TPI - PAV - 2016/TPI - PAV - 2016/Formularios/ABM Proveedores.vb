@@ -171,4 +171,8 @@
     '    acceso.nonQuery(sentenciaSQL)
     '    Me.cargarGrilla()
     'End Sub
+
+    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+
+    End Sub
 End Class

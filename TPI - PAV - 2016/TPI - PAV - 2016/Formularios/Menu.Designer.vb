@@ -268,6 +268,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ABMTiposFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -380,7 +381,11 @@ Partial Class menu
         '
         'ABMsToolStripMenuItem
         '
+<<<<<<< HEAD
+        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMTiposFacturaToolStripMenuItem})
+=======
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem})
+>>>>>>> origin/nueva
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
         Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
@@ -2638,6 +2643,12 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
+        'ABMTiposFacturaToolStripMenuItem
+        '
+        Me.ABMTiposFacturaToolStripMenuItem.Name = "ABMTiposFacturaToolStripMenuItem"
+        Me.ABMTiposFacturaToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMTiposFacturaToolStripMenuItem.Text = "ABM Tipos Factura"
+        '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2962,6 +2973,10 @@ Partial Class menu
     Friend WithEvents ABMArtículosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMServiciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMTiposCamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+<<<<<<< HEAD
+    Friend WithEvents ABMTiposFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+=======
     Friend WithEvents ABMServiciosXAlojamientoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+>>>>>>> origin/nueva
 
 End Class
