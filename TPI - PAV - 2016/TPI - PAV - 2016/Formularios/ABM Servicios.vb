@@ -191,4 +191,10 @@
 #End Region
 
 
+
+    Private Sub txt_precioUnitario_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_precioUnitario.MouseClick
+        If txt_precioUnitario.Text = "" Then
+            txt_precioUnitario.SelectionStart = 0
+        End If
+    End Sub
 End Class

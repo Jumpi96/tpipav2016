@@ -43,6 +43,7 @@ Partial Class menu
         Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposCamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMServiciosXAlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
@@ -380,75 +381,85 @@ Partial Class menu
         '
         'ABMsToolStripMenuItem
         '
+<<<<<<< HEAD
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMTiposFacturaToolStripMenuItem})
+=======
+        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem})
+>>>>>>> origin/nueva
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
-        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
         'ABMAlojamientosToolStripMenuItem
         '
         Me.ABMAlojamientosToolStripMenuItem.Name = "ABMAlojamientosToolStripMenuItem"
-        Me.ABMAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMAlojamientosToolStripMenuItem.Text = "ABM Alojamientos"
         '
         'ABMArtículosToolStripMenuItem
         '
         Me.ABMArtículosToolStripMenuItem.Name = "ABMArtículosToolStripMenuItem"
-        Me.ABMArtículosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMArtículosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMArtículosToolStripMenuItem.Text = "ABM Artículos"
         '
         'ABMClientesToolStripMenuItem
         '
         Me.ABMClientesToolStripMenuItem.Name = "ABMClientesToolStripMenuItem"
-        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMClientesToolStripMenuItem.Text = "ABM Clientes"
         '
         'ABMHabitaciónXPisoToolStripMenuItem
         '
         Me.ABMHabitaciónXPisoToolStripMenuItem.Name = "ABMHabitaciónXPisoToolStripMenuItem"
-        Me.ABMHabitaciónXPisoToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMHabitaciónXPisoToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMHabitaciónXPisoToolStripMenuItem.Text = "ABM Habitación X Piso"
         '
         'ABMProveedoresToolStripMenuItem
         '
         Me.ABMProveedoresToolStripMenuItem.Name = "ABMProveedoresToolStripMenuItem"
-        Me.ABMProveedoresToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMProveedoresToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMProveedoresToolStripMenuItem.Text = "ABM Proveedores"
         '
         'ABMServiciosToolStripMenuItem
         '
         Me.ABMServiciosToolStripMenuItem.Name = "ABMServiciosToolStripMenuItem"
-        Me.ABMServiciosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMServiciosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMServiciosToolStripMenuItem.Text = "ABM Servicios"
         '
         'ABMTiposDocumentosToolStripMenuItem
         '
         Me.ABMTiposDocumentosToolStripMenuItem.Name = "ABMTiposDocumentosToolStripMenuItem"
-        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
         '
         'ABMTiposCamaToolStripMenuItem
         '
         Me.ABMTiposCamaToolStripMenuItem.Name = "ABMTiposCamaToolStripMenuItem"
-        Me.ABMTiposCamaToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMTiposCamaToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMTiposCamaToolStripMenuItem.Text = "ABM Tipos Cama"
         '
         'ABMTiposHabitaciónToolStripMenuItem
         '
         Me.ABMTiposHabitaciónToolStripMenuItem.Name = "ABMTiposHabitaciónToolStripMenuItem"
-        Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
+        Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMTiposHabitaciónToolStripMenuItem.Text = "ABM Tipos Habitación"
+        '
+        'ABMServiciosXAlojamientoToolStripMenuItem
+        '
+        Me.ABMServiciosXAlojamientoToolStripMenuItem.Name = "ABMServiciosXAlojamientoToolStripMenuItem"
+        Me.ABMServiciosXAlojamientoToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMServiciosXAlojamientoToolStripMenuItem.Text = "ABM Servicios X Alojamiento"
         '
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'EstadísticasToolStripMenuItem
         '
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
-        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
         '
         'pnl_nueAlo
@@ -2654,6 +2665,9 @@ Partial Class menu
         Me.Controls.Add(Me.pnl_nueOrdCom)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(566, 330)
+        Me.MinimumSize = New System.Drawing.Size(566, 330)
         Me.Name = "menu"
         Me.Text = "Menu"
         Me.menu_Menu.ResumeLayout(False)
@@ -2959,6 +2973,10 @@ Partial Class menu
     Friend WithEvents ABMArtículosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMServiciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ABMTiposCamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+<<<<<<< HEAD
     Friend WithEvents ABMTiposFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+=======
+    Friend WithEvents ABMServiciosXAlojamientoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+>>>>>>> origin/nueva
 
 End Class

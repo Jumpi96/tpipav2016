@@ -59,8 +59,10 @@
     'INSERTAR CLIENTE
     Private Sub insertar()
         Dim sentenciaSQL As String = "INSERT INTO Clientes (apellido, nombre, nroDocumento, tipoDocumento, fechaNacimiento, telefono) " _
-           & "VALUES ('" & txt_apellido.Text & "', '" & txt_nombre.Text & "', " & txt_nroDoc.Text & ", '" & cmb_tipoDoc.SelectedValue & "', getDate(), " & txt_telefono.Text & ")"
-        '" & dtpEstimada.Value.Date & "' 
+           & "VALUES ('" & txt_apellido.Text & "', '" & txt_nombre.Text & "', " & txt_nroDoc.Text & ", '" & cmb_tipoDoc.SelectedValue & "', CONVERT(datetime,'" & date_fechaNacimiento.Value.Date & "',103) , '" & txt_telefono.Text & "')"
+        'cast('" & date_fechaNacimiento.Value.Date & "' as datetime)
+        'CONVERT(datetime,'" & date_fechaNacimiento.Value.Date & "',103)
+
         acceso.nonQuery(sentenciaSQL)
         MessageBox.Show("Se registró exitosamente.")
         Me.cargarGrilla(estadoBusqueda.todo)
@@ -82,7 +84,7 @@
         sentenciaSQL &= "SET nombre = '" & Me.txt_nombre.Text & "'"
         sentenciaSQL &= " , apellido = '" & Me.txt_apellido.Text & "'"
         sentenciaSQL &= " , telefono = '" & Me.txt_telefono.Text & "'"
-        sentenciaSQL &= " , fechaNacimiento = '" & Me.dtpEstimada.Value.Date & "'"
+        sentenciaSQL &= " , fechaNacimiento = '" & Me.date_fechaNacimiento.Value.Date & "'"
         sentenciaSQL &= " WHERE nroDocumento = " & Me.txt_nroDoc.Text
         sentenciaSQL &= " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
 
@@ -174,7 +176,7 @@
         Me.txt_nombre.Text = ""
         Me.txt_nroDoc.Text = ""
         Me.txt_telefono.Text = ""
-        Me.dtpEstimada.Value = Today
+        Me.date_fechaNacimiento.Value = Today
         Me.txt_nroDoc.Enabled = True
         Me.cmb_tipoDoc.Enabled = True
         Me.cargarGrilla(estadoBusqueda.todo)
@@ -224,7 +226,7 @@
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
         Me.cmb_tipoDoc.SelectedValue = tabla.Rows(0)("idTipoDocumento")
         Me.txt_telefono.Text = tabla.Rows(0)("telefono")
-        Me.dtpEstimada.Value = tabla.Rows(0)("fechaNacimiento")
+        Me.date_fechaNacimiento.Value = tabla.Rows(0)("fechaNacimiento")
 
 
         Me.cmb_tipoDoc.Enabled = False
@@ -248,6 +250,5 @@
     End Sub
 
 #End Region
-
 
 End Class
