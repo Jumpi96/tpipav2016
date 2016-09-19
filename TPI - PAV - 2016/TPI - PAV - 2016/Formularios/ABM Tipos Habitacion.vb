@@ -9,7 +9,7 @@
     Dim condicion_estado As estado = estado.insertar
 
     'LOAD
-    Private Sub ABM_TiposDocumentos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub ABM_TiposHabitacion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cmd_borrar.Enabled = False
         Me.cmd_borrar.Visible = False
         Me.cargar_grilla()

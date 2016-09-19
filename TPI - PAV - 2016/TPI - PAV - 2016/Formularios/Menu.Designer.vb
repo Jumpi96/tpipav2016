@@ -43,6 +43,7 @@ Partial Class menu
         Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposCamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMTiposFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMServiciosXAlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -268,7 +269,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ABMTiposFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMConsumicionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -381,13 +382,9 @@ Partial Class menu
         '
         'ABMsToolStripMenuItem
         '
-
-        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMTiposFacturaToolStripMenuItem})
-
-        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem})
-
+        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMTiposFacturaToolStripMenuItem, Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem, Me.ABMConsumicionToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
-        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
         'ABMAlojamientosToolStripMenuItem
@@ -444,6 +441,12 @@ Partial Class menu
         Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMTiposHabitaciónToolStripMenuItem.Text = "ABM Tipos Habitación"
         '
+        'ABMTiposFacturaToolStripMenuItem
+        '
+        Me.ABMTiposFacturaToolStripMenuItem.Name = "ABMTiposFacturaToolStripMenuItem"
+        Me.ABMTiposFacturaToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMTiposFacturaToolStripMenuItem.Text = "ABM Tipos Factura"
+        '
         'ABMServiciosXAlojamientoToolStripMenuItem
         '
         Me.ABMServiciosXAlojamientoToolStripMenuItem.Name = "ABMServiciosXAlojamientoToolStripMenuItem"
@@ -453,13 +456,13 @@ Partial Class menu
         'InformesToolStripMenuItem
         '
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'EstadísticasToolStripMenuItem
         '
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
-        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
         '
         'pnl_nueAlo
@@ -2643,18 +2646,18 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'ABMTiposFacturaToolStripMenuItem
+        'ABMConsumicionToolStripMenuItem
         '
-        Me.ABMTiposFacturaToolStripMenuItem.Name = "ABMTiposFacturaToolStripMenuItem"
-        Me.ABMTiposFacturaToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ABMTiposFacturaToolStripMenuItem.Text = "ABM Tipos Factura"
+        Me.ABMConsumicionToolStripMenuItem.Name = "ABMConsumicionToolStripMenuItem"
+        Me.ABMConsumicionToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMConsumicionToolStripMenuItem.Text = "ABM Consumicion"
         '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(546, 287)
+        Me.ClientSize = New System.Drawing.Size(546, 288)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnl_nueAlo)
@@ -2977,6 +2980,7 @@ Partial Class menu
     Friend WithEvents ABMTiposFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
     Friend WithEvents ABMServiciosXAlojamientoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ABMConsumicionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

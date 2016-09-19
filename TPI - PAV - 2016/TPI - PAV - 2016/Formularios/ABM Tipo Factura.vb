@@ -5,6 +5,11 @@
         modificar
     End Enum
     Dim condicion_estado As estado = estado.insertar
+
+    Private Sub ABM_Tipo_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarGrilla()
+
+    End Sub
 #Region "Subrutinas"
     Private Sub cargarGrilla()
         Me.grid_tiposFactura.Rows.Clear()
@@ -61,9 +66,7 @@
     End Function
 #End Region
 #Region "Click"
-    Private Sub ABM_Tipo_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
         If Me.Validar() = False Then
