@@ -114,6 +114,18 @@
     <Compile Include="Formularios\ABM Proveedores.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\ABM Servicios.Designer.vb">
+      <DependentUpon>ABM Servicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM Servicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ABM Tipos Cama.Designer.vb">
+      <DependentUpon>ABM Tipos Cama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM Tipos Cama.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\ABM Tipos Habitacion.Designer.vb">
       <DependentUpon>ABM Tipos Habitacion.vb</DependentUpon>
     </Compile>
@@ -128,6 +140,12 @@
     </Compile>
     <Compile Include="Clases\AccesoBD.vb" />
     <Compile Include="Clases\ConexionBD.vb" />
+    <Compile Include="Formularios\ABM Articulos.Designer.vb">
+      <DependentUpon>ABM Articulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM Articulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\Menu.Designer.vb">
       <DependentUpon>Menu.vb</DependentUpon>
     </Compile>
@@ -163,11 +181,20 @@
     <EmbeddedResource Include="Formularios\ABM Proveedores.resx">
       <DependentUpon>ABM Proveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM Servicios.resx">
+      <DependentUpon>ABM Servicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM Tipos Cama.resx">
+      <DependentUpon>ABM Tipos Cama.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Tipos Habitacion.resx">
       <DependentUpon>ABM Tipos Habitacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Tipos Documentos.resx">
       <DependentUpon>ABM Tipos Documentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM Articulos.resx">
+      <DependentUpon>ABM Articulos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>

@@ -79,3 +79,22 @@ C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipa
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Proveedores.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposHabitacion.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.menu.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.exe.config
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.exe
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.xml
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.pdb
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.exe
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.pdb
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\bin\Debug\TPI - PAV - 2016.xml
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Alojamientos.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Clientes.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Habitación_X_Piso.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Proveedores.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposHabitacion.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposDocumentos.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.menu.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Resources.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbproj.GenerateResource.Cache
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Servicios.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipos_Cama.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Articulos.resources

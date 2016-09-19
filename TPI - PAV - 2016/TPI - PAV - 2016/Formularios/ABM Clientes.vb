@@ -18,8 +18,8 @@
     Private Sub ABM_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargarCombo("TiposDocumento", "idTipoDocumento", "nombre", Me.cmb_tipoDoc)
         Me.cargarGrilla(estadoBusqueda.todo)
+        MessageBox.Show(Environment.MachineName)
     End Sub
-
 
 #Region "Subrutinas"
     'CARGAR COMBO

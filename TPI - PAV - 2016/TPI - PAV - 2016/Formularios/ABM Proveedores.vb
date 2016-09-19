@@ -51,7 +51,7 @@
         Dim sentenciaSQL As String = ""
         sentenciaSQL &= "UPDATE Proveedores "
         sentenciaSQL &= "SET correo = '" & Me.txt_correo.Text & "'"
-        sentenciaSQL &= " , telefono = " & Me.txt_telefono.Text
+        sentenciaSQL &= " , telefono = " & txt_telefono.Text
         sentenciaSQL &= " WHERE nombre = '" & Me.txt_nombre.Text & "'"
 
         acceso.nonQuery(sentenciaSQL)

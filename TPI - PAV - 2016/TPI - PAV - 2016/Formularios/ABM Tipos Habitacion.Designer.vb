@@ -25,15 +25,15 @@ Partial Class ABM_TiposHabitacion
         Me.cmd_guardar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
         Me.grid_tipoDoc = New System.Windows.Forms.DataGridView()
+        Me.c_idHab = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.c_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.c_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_nombre = New System.Windows.Forms.Label()
         Me.lbl_descripcion = New System.Windows.Forms.Label()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
         Me.cmd_borrar = New System.Windows.Forms.Button()
-        Me.c_idHab = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.c_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.c_descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.grid_tipoDoc, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -64,10 +64,28 @@ Partial Class ABM_TiposHabitacion
         Me.grid_tipoDoc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.c_idHab, Me.c_nombre, Me.c_descripcion})
         Me.grid_tipoDoc.Location = New System.Drawing.Point(12, 71)
         Me.grid_tipoDoc.Name = "grid_tipoDoc"
-        Me.grid_tipoDoc.ReadOnly = True
         Me.grid_tipoDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.grid_tipoDoc.Size = New System.Drawing.Size(365, 216)
         Me.grid_tipoDoc.TabIndex = 6
+        '
+        'c_idHab
+        '
+        Me.c_idHab.FillWeight = 200.0!
+        Me.c_idHab.HeaderText = "ID Tipo"
+        Me.c_idHab.Name = "c_idHab"
+        Me.c_idHab.Width = 50
+        '
+        'c_nombre
+        '
+        Me.c_nombre.HeaderText = "Nombre"
+        Me.c_nombre.Name = "c_nombre"
+        '
+        'c_descripcion
+        '
+        Me.c_descripcion.FillWeight = 90.0!
+        Me.c_descripcion.HeaderText = "Descripcion"
+        Me.c_descripcion.Name = "c_descripcion"
+        Me.c_descripcion.Width = 150
         '
         'lbl_nombre
         '
@@ -119,28 +137,6 @@ Partial Class ABM_TiposHabitacion
         Me.cmd_borrar.Text = "Borrar"
         Me.cmd_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.cmd_borrar.UseVisualStyleBackColor = True
-        '
-        'c_idHab
-        '
-        Me.c_idHab.FillWeight = 200.0!
-        Me.c_idHab.HeaderText = "ID Tipo"
-        Me.c_idHab.Name = "c_idHab"
-        Me.c_idHab.ReadOnly = True
-        Me.c_idHab.Width = 50
-        '
-        'c_nombre
-        '
-        Me.c_nombre.HeaderText = "Nombre"
-        Me.c_nombre.Name = "c_nombre"
-        Me.c_nombre.ReadOnly = True
-        '
-        'c_descripcion
-        '
-        Me.c_descripcion.FillWeight = 90.0!
-        Me.c_descripcion.HeaderText = "Descripcion"
-        Me.c_descripcion.Name = "c_descripcion"
-        Me.c_descripcion.ReadOnly = True
-        Me.c_descripcion.Width = 150
         '
         'ABM_TiposHabitacion
         '

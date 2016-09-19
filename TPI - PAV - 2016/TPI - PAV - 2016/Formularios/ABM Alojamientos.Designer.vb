@@ -236,7 +236,7 @@ Partial Class ABM_Alojamientos
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(11, 420)
+        Me.btnLimpiar.Location = New System.Drawing.Point(13, 396)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(75, 23)
         Me.btnLimpiar.TabIndex = 11

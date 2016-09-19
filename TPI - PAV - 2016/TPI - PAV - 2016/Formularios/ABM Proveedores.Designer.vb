@@ -27,7 +27,6 @@ Partial Class ABM_Proveedores
         Me.lbl_correo = New System.Windows.Forms.Label()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.txt_correo = New System.Windows.Forms.TextBox()
-        Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.cmd_borrar = New System.Windows.Forms.Button()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
@@ -37,6 +36,7 @@ Partial Class ABM_Proveedores
         Me.c_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.c_correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.c_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txt_telefono = New System.Windows.Forms.TextBox()
         CType(Me.grid_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -80,13 +80,6 @@ Partial Class ABM_Proveedores
         Me.txt_correo.Name = "txt_correo"
         Me.txt_correo.Size = New System.Drawing.Size(301, 20)
         Me.txt_correo.TabIndex = 4
-        '
-        'txt_telefono
-        '
-        Me.txt_telefono.Location = New System.Drawing.Point(72, 68)
-        Me.txt_telefono.Name = "txt_telefono"
-        Me.txt_telefono.Size = New System.Drawing.Size(301, 20)
-        Me.txt_telefono.TabIndex = 5
         '
         'cmd_borrar
         '
@@ -141,23 +134,34 @@ Partial Class ABM_Proveedores
         '
         Me.c_idProveedor.HeaderText = "ID"
         Me.c_idProveedor.Name = "c_idProveedor"
+        Me.c_idProveedor.ReadOnly = True
         Me.c_idProveedor.Width = 50
         '
         'c_nombre
         '
         Me.c_nombre.HeaderText = "Nombre"
         Me.c_nombre.Name = "c_nombre"
+        Me.c_nombre.ReadOnly = True
         '
         'c_correo
         '
         Me.c_correo.HeaderText = "Correo"
         Me.c_correo.Name = "c_correo"
+        Me.c_correo.ReadOnly = True
         '
         'c_telefono
         '
         Me.c_telefono.HeaderText = "Telefono"
         Me.c_telefono.Name = "c_telefono"
+        Me.c_telefono.ReadOnly = True
         Me.c_telefono.Width = 70
+        '
+        'txt_telefono
+        '
+        Me.txt_telefono.Location = New System.Drawing.Point(72, 68)
+        Me.txt_telefono.Name = "txt_telefono"
+        Me.txt_telefono.Size = New System.Drawing.Size(301, 20)
+        Me.txt_telefono.TabIndex = 5
         '
         'ABM_Proveedores
         '
@@ -187,7 +191,6 @@ Partial Class ABM_Proveedores
     Friend WithEvents lbl_correo As System.Windows.Forms.Label
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents txt_correo As System.Windows.Forms.TextBox
-    Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
     Friend WithEvents cmd_borrar As System.Windows.Forms.Button
     Friend WithEvents cmd_limpiar As System.Windows.Forms.Button
     Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
@@ -197,4 +200,5 @@ Partial Class ABM_Proveedores
     Friend WithEvents c_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents c_correo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents c_telefono As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
 End Class
