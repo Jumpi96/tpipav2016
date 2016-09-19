@@ -144,10 +144,13 @@ Partial Class ABM_Habitación_X_Piso
         '
         'grid_habitacionPiso
         '
+        Me.grid_habitacionPiso.AllowUserToAddRows = False
+        Me.grid_habitacionPiso.AllowUserToDeleteRows = False
         Me.grid_habitacionPiso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_habitacionPiso.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_nroHabitacion, Me.clm_tipoHabitacion, Me.clm_fechaEmision})
         Me.grid_habitacionPiso.Location = New System.Drawing.Point(12, 116)
         Me.grid_habitacionPiso.Name = "grid_habitacionPiso"
+        Me.grid_habitacionPiso.ReadOnly = True
         Me.grid_habitacionPiso.Size = New System.Drawing.Size(462, 274)
         Me.grid_habitacionPiso.TabIndex = 10
         '

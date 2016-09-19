@@ -64,6 +64,7 @@ Partial Class ABM_TiposHabitacion
         Me.grid_tipoDoc.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.c_idHab, Me.c_nombre, Me.c_descripcion})
         Me.grid_tipoDoc.Location = New System.Drawing.Point(12, 71)
         Me.grid_tipoDoc.Name = "grid_tipoDoc"
+        Me.grid_tipoDoc.ReadOnly = True
         Me.grid_tipoDoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.grid_tipoDoc.Size = New System.Drawing.Size(365, 216)
         Me.grid_tipoDoc.TabIndex = 6

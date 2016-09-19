@@ -81,6 +81,7 @@ Partial Class ABM_Servicios
         Me.grid_grilla.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idServicio, Me.nombre, Me.descripcion, Me.precioUnitario})
         Me.grid_grilla.Location = New System.Drawing.Point(11, 90)
         Me.grid_grilla.Name = "grid_grilla"
+        Me.grid_grilla.ReadOnly = True
         Me.grid_grilla.Size = New System.Drawing.Size(365, 216)
         Me.grid_grilla.TabIndex = 4
         '
@@ -88,22 +89,26 @@ Partial Class ABM_Servicios
         '
         Me.idServicio.HeaderText = "Id"
         Me.idServicio.Name = "idServicio"
+        Me.idServicio.ReadOnly = True
         Me.idServicio.Width = 25
         '
         'nombre
         '
         Me.nombre.HeaderText = "Nombre"
         Me.nombre.Name = "nombre"
+        Me.nombre.ReadOnly = True
         '
         'descripcion
         '
         Me.descripcion.HeaderText = "Descripcion"
         Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
         '
         'precioUnitario
         '
         Me.precioUnitario.HeaderText = "Precio Unitario"
         Me.precioUnitario.Name = "precioUnitario"
+        Me.precioUnitario.ReadOnly = True
         '
         'cmd_cancelar
         '
