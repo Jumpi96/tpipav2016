@@ -36,12 +36,18 @@
 
     End Sub
     Private Sub Modificar()
-        Dim sql As String = "UPDATE TiposFactura SET nombre = '" & txt_nombre.Text & "', Descripcion = '" & txt_descripcion.Text & "'"
-        acceso.nonQuery(sql)
+
+        Dim sentenciaSQL As String = ""
+        sentenciaSQL &= "UPDATE TiposFactura "
+        sentenciaSQL &= "SET descripcion = '" & Me.txt_descripcion.Text & "'"
+        sentenciaSQL &= " WHERE nombre = '" & Me.txt_nombre.Text & "'"
+
+        acceso.nonQuery(sentenciaSQL)
         MessageBox.Show("Se modificó exitodamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
     End Sub
-
 #End Region
+
+
 #Region "Funciones"
     Private Function Validar() As Boolean
         If txt_nombre.Text = "" Then
@@ -67,6 +73,7 @@
     End Function
 #End Region
 
+
 #Region "Click"
 
 
@@ -89,6 +96,10 @@
         txt_descripcion.Text = ""
         txt_nombre.Text = ""
         cmd_borrar.Enabled = False
+        condicion_estado = estado.insertar
+        cmd_guardar.Text = "Registrar"
+        txt_nombre.Enabled = True
+
     End Sub
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
         Me.Close()
@@ -116,22 +127,20 @@
         Dim tabla As DataTable = acceso.query(sql)
 
         If tabla.Rows.Count() = 0 Then
-            MessageBox.Show("La tipo de factura requerido no existe.")
+            MessageBox.Show("El tipo de factura requerido no existe.")
             Exit Sub
         End If
 
         Me.cmd_borrar.Enabled = True
-        'Me.cmd_borrar.Visible = True
+        Me.cmd_borrar.Visible = True
         Me.cmd_guardar.Text = "Modificar"
-
+        txt_nombre.Enabled = False
 
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
         Me.txt_descripcion.Text = tabla.Rows(0)("descripcion")
 
 
         Me.condicion_estado = estado.modificar
-        cmd_borrar.Enabled = True
-
     End Sub
 #End Region
 
