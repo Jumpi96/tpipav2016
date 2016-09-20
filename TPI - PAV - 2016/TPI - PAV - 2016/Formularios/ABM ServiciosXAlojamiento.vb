@@ -8,9 +8,10 @@
         Me.cmbServicios.Enabled = False
         Me.dgvServiciosXAloj.Enabled = False
         Me.btnBorrar.Enabled = False
+        Me.txt_servicioSeleccionado.ReadOnly = True
         idAlojamientoSub = -1
         idServicioSub = -1
-        MessageBox.Show(Today.Date)
+        'MessageBox.Show(Today.Date)
     End Sub
 
     Private Sub cargarCombo(ByVal nombre_tabla As String, ByVal pk As String, ByVal descripcion As String, ByRef combo As ComboBox)
@@ -183,7 +184,7 @@
             MessageBox.Show("Serviocio eliminado con éxito")
 
             Me.txt_servicioSeleccionado.Text = ""
-            idAlojamientoSub = -1
+            'idAlojamientoSub = -1
             idServicioSub = -1
 
             Me.cargarGrilla()
