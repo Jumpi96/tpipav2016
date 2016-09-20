@@ -27,6 +27,7 @@ Partial Class ABM_ServiciosXAlojamiento
         Me.dgvServiciosXAloj = New System.Windows.Forms.DataGridView()
         Me.Alojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Servicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idServicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cmbServicios = New System.Windows.Forms.ComboBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.lbl_servicios = New System.Windows.Forms.Label()
@@ -46,7 +47,6 @@ Partial Class ABM_ServiciosXAlojamiento
         Me.lbl_clienteAsociado = New System.Windows.Forms.Label()
         Me.lbl_servicioSeleccionado = New System.Windows.Forms.Label()
         Me.txt_servicioSeleccionado = New System.Windows.Forms.TextBox()
-        Me.idServicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvServiciosXAloj, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_cliente.SuspendLayout()
         Me.SuspendLayout()
@@ -80,7 +80,7 @@ Partial Class ABM_ServiciosXAlojamiento
         Me.dgvServiciosXAloj.Name = "dgvServiciosXAloj"
         Me.dgvServiciosXAloj.ReadOnly = True
         Me.dgvServiciosXAloj.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgvServiciosXAloj.Size = New System.Drawing.Size(341, 105)
+        Me.dgvServiciosXAloj.Size = New System.Drawing.Size(341, 191)
         Me.dgvServiciosXAloj.TabIndex = 4
         '
         'Alojamiento
@@ -95,6 +95,13 @@ Partial Class ABM_ServiciosXAlojamiento
         Me.Servicio.Name = "Servicio"
         Me.Servicio.ReadOnly = True
         Me.Servicio.Width = 150
+        '
+        'idServicio
+        '
+        Me.idServicio.HeaderText = "ID Servicio"
+        Me.idServicio.Name = "idServicio"
+        Me.idServicio.ReadOnly = True
+        Me.idServicio.Visible = False
         '
         'cmbServicios
         '
@@ -125,7 +132,7 @@ Partial Class ABM_ServiciosXAlojamiento
         '
         'btnLimpiar
         '
-        Me.btnLimpiar.Location = New System.Drawing.Point(8, 283)
+        Me.btnLimpiar.Location = New System.Drawing.Point(12, 369)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(75, 23)
         Me.btnLimpiar.TabIndex = 9
@@ -134,7 +141,7 @@ Partial Class ABM_ServiciosXAlojamiento
         '
         'btnBorrar
         '
-        Me.btnBorrar.Location = New System.Drawing.Point(122, 323)
+        Me.btnBorrar.Location = New System.Drawing.Point(122, 409)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(75, 23)
         Me.btnBorrar.TabIndex = 12
@@ -143,7 +150,7 @@ Partial Class ABM_ServiciosXAlojamiento
         '
         'btnCerrar
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(278, 283)
+        Me.btnCerrar.Location = New System.Drawing.Point(278, 369)
         Me.btnCerrar.Name = "btnCerrar"
         Me.btnCerrar.Size = New System.Drawing.Size(75, 23)
         Me.btnCerrar.TabIndex = 10
@@ -257,7 +264,7 @@ Partial Class ABM_ServiciosXAlojamiento
         'lbl_servicioSeleccionado
         '
         Me.lbl_servicioSeleccionado.AutoSize = True
-        Me.lbl_servicioSeleccionado.Location = New System.Drawing.Point(9, 309)
+        Me.lbl_servicioSeleccionado.Location = New System.Drawing.Point(9, 395)
         Me.lbl_servicioSeleccionado.Name = "lbl_servicioSeleccionado"
         Me.lbl_servicioSeleccionado.Size = New System.Drawing.Size(113, 13)
         Me.lbl_servicioSeleccionado.TabIndex = 10
@@ -265,23 +272,16 @@ Partial Class ABM_ServiciosXAlojamiento
         '
         'txt_servicioSeleccionado
         '
-        Me.txt_servicioSeleccionado.Location = New System.Drawing.Point(15, 325)
+        Me.txt_servicioSeleccionado.Location = New System.Drawing.Point(15, 411)
         Me.txt_servicioSeleccionado.Name = "txt_servicioSeleccionado"
         Me.txt_servicioSeleccionado.Size = New System.Drawing.Size(101, 20)
         Me.txt_servicioSeleccionado.TabIndex = 11
-        '
-        'idServicio
-        '
-        Me.idServicio.HeaderText = "ID Servicio"
-        Me.idServicio.Name = "idServicio"
-        Me.idServicio.ReadOnly = True
-        Me.idServicio.Visible = False
         '
         'ABM_ServiciosXAlojamiento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(367, 353)
+        Me.ClientSize = New System.Drawing.Size(367, 437)
         Me.Controls.Add(Me.txt_servicioSeleccionado)
         Me.Controls.Add(Me.lbl_servicioSeleccionado)
         Me.Controls.Add(Me.pnl_cliente)
