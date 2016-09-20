@@ -119,14 +119,18 @@
             Return False
         End If
         If txt_telefono.Text = "" Then
-            MessageBox.Show("Debe completar el campo Telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            MessageBox.Show("Debe completar el campo Teléfono.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             txt_telefono.Focus()
             Return False
         End If
         If cmb_tipoDoc.SelectedIndex = -1 Then
-            MessageBox.Show("Debe completar el campo Tipo de Documento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            MessageBox.Show("Debe completar el campo Tipo de Documento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             cmb_tipoDoc.Focus()
             Return False
+        End If
+        If date_fechaNacimiento.Value < Today Then
+            MessageBox.Show("La fecha de nacimiento no puede ser superior a la Fecha Actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
+            cmb_tipoDoc.Focus()
         End If
         Return True
     End Function

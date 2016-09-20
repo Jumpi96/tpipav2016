@@ -8,8 +8,9 @@
 
     Private Sub ABM_Tipo_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarGrilla()
-
+        cmd_borrar.Enabled = False
     End Sub
+
 #Region "Subrutinas"
     Private Sub cargarGrilla()
         Me.grid_tiposFactura.Rows.Clear()
@@ -65,15 +66,9 @@
         End If
     End Function
 #End Region
-#Region "Click"
-<<<<<<< HEAD
 
-=======
-    Private Sub ABM_Tipo_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        cargarGrilla()
-        cmd_borrar.Enabled = False
-    End Sub
->>>>>>> origin/nueva
+#Region "Click"
+
 
     Private Sub cmd_guardar_Click(sender As Object, e As EventArgs) Handles cmd_guardar.Click
         If Me.Validar() Then
