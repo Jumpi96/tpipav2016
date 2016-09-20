@@ -98,7 +98,6 @@ D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___
 D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipos_Cama.resources
 D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposHabitacion.resources
 D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_TiposDocumentos.resources
-D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Articulos.resources
 D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.menu.resources
 D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Resources.resources
 D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.vbproj.GenerateResource.Cache
@@ -111,14 +110,11 @@ F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Articulos.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Articulos.resources
 D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_ServiciosXAlojamiento.resources
->>>>>>> origin/nueva
-<<<<<<< HEAD
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Habitación_X_Piso.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Servicios.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipo_Factura.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipos_Cama.resources
 C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Articulos.resources
-=======
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_ServiciosXAlojamiento.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_ServiciosXAlojamiento.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipo_Factura.resources
@@ -126,3 +122,6 @@ C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipa
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Consumicion.resources
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipo_Factura.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Consumicion.resources
+D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Consumicion.resources
+D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Tipo_Factura.resources
+D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Articulos.resources

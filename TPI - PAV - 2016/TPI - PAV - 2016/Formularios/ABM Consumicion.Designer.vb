@@ -176,7 +176,7 @@ Partial Class ABM_Consumicion
         Me.txt_nroHabitacion.Mask = "99999"
         Me.txt_nroHabitacion.Name = "txt_nroHabitacion"
         Me.txt_nroHabitacion.Size = New System.Drawing.Size(40, 20)
-        Me.txt_nroHabitacion.TabIndex = 14
+        Me.txt_nroHabitacion.TabIndex = 0
         Me.txt_nroHabitacion.ValidatingType = GetType(Integer)
         '
         'cmd_cerrar
@@ -184,7 +184,7 @@ Partial Class ABM_Consumicion
         Me.cmd_cerrar.Location = New System.Drawing.Point(278, 390)
         Me.cmd_cerrar.Name = "cmd_cerrar"
         Me.cmd_cerrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cerrar.TabIndex = 23
+        Me.cmd_cerrar.TabIndex = 10
         Me.cmd_cerrar.Text = "Cerrar"
         Me.cmd_cerrar.UseVisualStyleBackColor = True
         '
@@ -193,7 +193,7 @@ Partial Class ABM_Consumicion
         Me.cmd_borrar.Location = New System.Drawing.Point(159, 437)
         Me.cmd_borrar.Name = "cmd_borrar"
         Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_borrar.TabIndex = 25
+        Me.cmd_borrar.TabIndex = 8
         Me.cmd_borrar.Text = "Borrar"
         Me.cmd_borrar.UseVisualStyleBackColor = True
         '
@@ -202,7 +202,7 @@ Partial Class ABM_Consumicion
         Me.cmd_limpiar.Location = New System.Drawing.Point(12, 390)
         Me.cmd_limpiar.Name = "cmd_limpiar"
         Me.cmd_limpiar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_limpiar.TabIndex = 21
+        Me.cmd_limpiar.TabIndex = 9
         Me.cmd_limpiar.Text = "Limpiar"
         Me.cmd_limpiar.UseVisualStyleBackColor = True
         '
@@ -220,7 +220,7 @@ Partial Class ABM_Consumicion
         Me.cmd_agregar.Location = New System.Drawing.Point(237, 165)
         Me.cmd_agregar.Name = "cmd_agregar"
         Me.cmd_agregar.Size = New System.Drawing.Size(75, 21)
-        Me.cmd_agregar.TabIndex = 19
+        Me.cmd_agregar.TabIndex = 5
         Me.cmd_agregar.Text = "Agregar"
         Me.cmd_agregar.UseVisualStyleBackColor = True
         '
@@ -231,7 +231,7 @@ Partial Class ABM_Consumicion
         Me.cmb_articulos.Location = New System.Drawing.Point(68, 139)
         Me.cmb_articulos.Name = "cmb_articulos"
         Me.cmb_articulos.Size = New System.Drawing.Size(160, 21)
-        Me.cmb_articulos.TabIndex = 18
+        Me.cmb_articulos.TabIndex = 2
         '
         'grid_articulos
         '
@@ -245,7 +245,7 @@ Partial Class ABM_Consumicion
         Me.grid_articulos.ReadOnly = True
         Me.grid_articulos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.grid_articulos.Size = New System.Drawing.Size(341, 191)
-        Me.grid_articulos.TabIndex = 16
+        Me.grid_articulos.TabIndex = 6
         '
         'clm_idAlojamiento
         '
@@ -291,7 +291,7 @@ Partial Class ABM_Consumicion
         Me.cmd_buscar.Location = New System.Drawing.Point(157, 4)
         Me.cmd_buscar.Name = "cmd_buscar"
         Me.cmd_buscar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_buscar.TabIndex = 15
+        Me.cmd_buscar.TabIndex = 1
         Me.cmd_buscar.Text = "Buscar"
         Me.cmd_buscar.UseVisualStyleBackColor = True
         '
@@ -310,7 +310,7 @@ Partial Class ABM_Consumicion
         Me.txt_cantidad.Mask = "99"
         Me.txt_cantidad.Name = "txt_cantidad"
         Me.txt_cantidad.Size = New System.Drawing.Size(23, 20)
-        Me.txt_cantidad.TabIndex = 26
+        Me.txt_cantidad.TabIndex = 3
         '
         'lbl_cantidad
         '
@@ -328,7 +328,7 @@ Partial Class ABM_Consumicion
         Me.chb_frigobar.Location = New System.Drawing.Point(164, 170)
         Me.chb_frigobar.Name = "chb_frigobar"
         Me.chb_frigobar.Size = New System.Drawing.Size(64, 17)
-        Me.chb_frigobar.TabIndex = 28
+        Me.chb_frigobar.TabIndex = 4
         Me.chb_frigobar.Text = "Frigobar"
         Me.chb_frigobar.UseVisualStyleBackColor = True
         '
@@ -347,7 +347,7 @@ Partial Class ABM_Consumicion
         Me.txt_cantidadBorrar.Mask = "99"
         Me.txt_cantidadBorrar.Name = "txt_cantidadBorrar"
         Me.txt_cantidadBorrar.Size = New System.Drawing.Size(23, 20)
-        Me.txt_cantidadBorrar.TabIndex = 29
+        Me.txt_cantidadBorrar.TabIndex = 7
         '
         'ABM_Consumicion
         '
@@ -372,8 +372,12 @@ Partial Class ABM_Consumicion
         Me.Controls.Add(Me.grid_articulos)
         Me.Controls.Add(Me.cmd_buscar)
         Me.Controls.Add(Me.lbl_nroHabitacion)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(383, 501)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(383, 501)
         Me.Name = "ABM_Consumicion"
-        Me.Text = "ABM_Consumicion"
+        Me.Text = "ABM Consumiciones"
         Me.pnl_cliente.ResumeLayout(False)
         Me.pnl_cliente.PerformLayout()
         CType(Me.grid_articulos, System.ComponentModel.ISupportInitialize).EndInit()

@@ -105,12 +105,13 @@
         sql &= "SELECT * FROM HabitacionesXPiso JOIN Alojamientos "
         sql &= "ON Alojamientos.nroHabitacion = HabitacionesXPiso.nroHabitacion "
         sql &= "JOIN Clientes ON Clientes.nroDocumento = Alojamientos.nroDoc AND clientes.tipoDocumento = Alojamientos.tipoDoc "
+        sql &= "JOIN TiposDocumento ON TiposDocumento.idTipoDocumento = Clientes.tipoDocumento "
         sql &= "WHERE CONVERT(date,GETDATE()) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
         sql &= "AND HabitacionesXPiso.nroHabitacion = '" & Me.txt_nroHabitacion.Text & "'"
 
         tabla = acceso.query(sql)
 
-        Me.txt_tipoDocumento.Text = tabla.Rows(0)("tipoDocumento")
+        Me.txt_tipoDocumento.Text = tabla.Rows(0)("nombre1")
         Me.txt_documento.Text = tabla.Rows(0)("nroDoc")
         Me.txt_apellido.Text = tabla.Rows(0)("apellido")
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
@@ -309,9 +310,10 @@
 
     Private Sub restaurarStock()
         Dim sql As String = ""
+        Dim cant As Integer = txt_cantidadBorrar.Text
 
         sql &= "UPDATE Articulos "
-        sql &= "SET stock = stock + " & cantidadSub & " "
+        sql &= "SET stock = stock + " & (cantidadSub - cant) & " "
         sql &= "WHERE idArticulo = " & idArticuloSub
 
         acceso.nonQuery(sql)
@@ -321,14 +323,26 @@
         Dim sql As String = ""
 
         If Me.validarBorrado() = True Then
-            sql &= "UPDATE Consumiciones "
-            sql &= "SET cantidad = cantidad - " & Me.txt_cantidadBorrar.Text
-            sql &= "WHERE idArticulo = '" & idArticuloSub & "' "
-            sql &= "AND idAlojamiento = '" & idAlojamientoSub & "' "
-            If frigobarSub = "SI" Then
-                sql &= "AND frigobar = 1"
-            ElseIf frigobarSub = "NO" Then
-                sql &= "AND frigobar = 0"
+            If txt_cantidadBorrar.Text = cantidadSub Then
+                sql &= "DELETE FROM Consumiciones "
+                sql &= "WHERE idArticulo = '" & idArticuloSub & "' "
+                sql &= "AND idAlojamiento = '" & idAlojamientoSub & "' "
+                If frigobarSub = "SI" Then
+                    sql &= "AND frigobar = 1"
+                ElseIf frigobarSub = "NO" Then
+                    sql &= "AND frigobar = 0"
+                End If
+            Else
+                sql &= "UPDATE Consumiciones "
+                sql &= "SET cantidad = cantidad - " & Me.txt_cantidadBorrar.Text
+                sql &= "WHERE idArticulo = '" & idArticuloSub & "' "
+                sql &= "AND idAlojamiento = '" & idAlojamientoSub & "' "
+                If frigobarSub = "SI" Then
+                    sql &= "AND frigobar = 1"
+                ElseIf frigobarSub = "NO" Then
+                    sql &= "AND frigobar = 0"
+                End If
+
             End If
 
             acceso.nonQuery(sql)
@@ -336,8 +350,8 @@
             MessageBox.Show("Consumición eliminada con éxito")
 
             Me.txt_articuloSeleccionado.Text = ""
-            idArticuloSub = -1
             Me.restaurarStock()
+            idArticuloSub = -1
             Me.txt_cantidadBorrar.Text = ""
             Me.cmd_borrar.Enabled = False
 
@@ -361,5 +375,9 @@
         If Me.txt_nroHabitacion.Text = "" Then
             Me.txt_nroHabitacion.SelectionStart = 0
         End If
+    End Sub
+
+    Private Sub cmd_cerrar_Click(sender As Object, e As EventArgs) Handles cmd_cerrar.Click
+        Me.Close()
     End Sub
 End Class

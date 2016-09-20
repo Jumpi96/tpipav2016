@@ -34,6 +34,7 @@ Partial Class menu
         Me.BuscarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.FuncionesAdministrativasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMTiposFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMAlojamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMArtículosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,8 +44,8 @@ Partial Class menu
         Me.ABMTiposDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposCamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMTiposHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ABMTiposFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ABMServiciosXAlojamientoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ABMConsumicionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
@@ -269,7 +270,6 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ABMConsumicionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -387,6 +387,12 @@ Partial Class menu
         Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
+        'ABMTiposFacturaToolStripMenuItem
+        '
+        Me.ABMTiposFacturaToolStripMenuItem.Name = "ABMTiposFacturaToolStripMenuItem"
+        Me.ABMTiposFacturaToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMTiposFacturaToolStripMenuItem.Text = "ABM Tipos Factura"
+        '
         'ABMAlojamientosToolStripMenuItem
         '
         Me.ABMAlojamientosToolStripMenuItem.Name = "ABMAlojamientosToolStripMenuItem"
@@ -441,17 +447,17 @@ Partial Class menu
         Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMTiposHabitaciónToolStripMenuItem.Text = "ABM Tipos Habitación"
         '
-        'ABMTiposFacturaToolStripMenuItem
-        '
-        Me.ABMTiposFacturaToolStripMenuItem.Name = "ABMTiposFacturaToolStripMenuItem"
-        Me.ABMTiposFacturaToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
-        Me.ABMTiposFacturaToolStripMenuItem.Text = "ABM Tipos Factura"
-        '
         'ABMServiciosXAlojamientoToolStripMenuItem
         '
         Me.ABMServiciosXAlojamientoToolStripMenuItem.Name = "ABMServiciosXAlojamientoToolStripMenuItem"
         Me.ABMServiciosXAlojamientoToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
         Me.ABMServiciosXAlojamientoToolStripMenuItem.Text = "ABM Servicios X Alojamiento"
+        '
+        'ABMConsumicionToolStripMenuItem
+        '
+        Me.ABMConsumicionToolStripMenuItem.Name = "ABMConsumicionToolStripMenuItem"
+        Me.ABMConsumicionToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMConsumicionToolStripMenuItem.Text = "ABM Consumiciones"
         '
         'InformesToolStripMenuItem
         '
@@ -2646,18 +2652,12 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'ABMConsumicionToolStripMenuItem
-        '
-        Me.ABMConsumicionToolStripMenuItem.Name = "ABMConsumicionToolStripMenuItem"
-        Me.ABMConsumicionToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
-        Me.ABMConsumicionToolStripMenuItem.Text = "ABM Consumicion"
-        '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(546, 288)
+        Me.ClientSize = New System.Drawing.Size(546, 287)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnl_nueAlo)

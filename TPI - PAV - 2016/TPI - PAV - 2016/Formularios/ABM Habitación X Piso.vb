@@ -1,6 +1,6 @@
 ﻿Public Class ABM_Habitación_X_Piso
     Dim acceso As AccesoBD = AccesoBD.instancia
-    Dim cadena_conexion As String = ConexionBD.Instancia.StringConexion
+    Dim cadena_conexion As String = AccesoBD.instancia.cadenaConexion
 
     Private Sub ABM_Habitación_X_Piso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargarComboTipoHabitacion()

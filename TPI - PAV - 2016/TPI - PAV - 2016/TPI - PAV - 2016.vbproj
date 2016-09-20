@@ -152,7 +152,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Clases\AccesoBD.vb" />
-    <Compile Include="Clases\ConexionBD.vb" />
     <Compile Include="Formularios\ABM Articulos.Designer.vb">
       <DependentUpon>ABM Articulos.vb</DependentUpon>
     </Compile>

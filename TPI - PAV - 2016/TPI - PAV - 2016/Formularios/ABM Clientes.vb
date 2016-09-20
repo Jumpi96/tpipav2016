@@ -1,6 +1,6 @@
 ﻿Public Class ABM_Clientes
     Dim acceso As AccesoBD = AccesoBD.instancia
-    Dim cadena_conexion As String = ConexionBD.Instancia.StringConexion
+    Dim cadena_conexion As String = AccesoBD.instancia.cadenaConexion
 
     Enum estado
         insertar
