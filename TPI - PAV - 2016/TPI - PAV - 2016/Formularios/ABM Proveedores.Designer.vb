@@ -27,7 +27,6 @@ Partial Class ABM_Proveedores
         Me.lbl_correo = New System.Windows.Forms.Label()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.txt_correo = New System.Windows.Forms.TextBox()
-        Me.cmd_borrar = New System.Windows.Forms.Button()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
         Me.cmd_guardar = New System.Windows.Forms.Button()
@@ -36,7 +35,7 @@ Partial Class ABM_Proveedores
         Me.c_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.c_correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.c_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_telefono = New System.Windows.Forms.TextBox()
+        Me.txt_telefono = New System.Windows.Forms.MaskedTextBox()
         CType(Me.grid_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -80,16 +79,6 @@ Partial Class ABM_Proveedores
         Me.txt_correo.Name = "txt_correo"
         Me.txt_correo.Size = New System.Drawing.Size(301, 20)
         Me.txt_correo.TabIndex = 4
-        '
-        'cmd_borrar
-        '
-        Me.cmd_borrar.Location = New System.Drawing.Point(12, 312)
-        Me.cmd_borrar.Name = "cmd_borrar"
-        Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_borrar.TabIndex = 31
-        Me.cmd_borrar.Text = "Borrar"
-        Me.cmd_borrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.cmd_borrar.UseVisualStyleBackColor = True
         '
         'cmd_limpiar
         '
@@ -159,6 +148,7 @@ Partial Class ABM_Proveedores
         'txt_telefono
         '
         Me.txt_telefono.Location = New System.Drawing.Point(72, 68)
+        Me.txt_telefono.Mask = "9999999999"
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(301, 20)
         Me.txt_telefono.TabIndex = 5
@@ -169,7 +159,6 @@ Partial Class ABM_Proveedores
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(388, 338)
         Me.Controls.Add(Me.grid_proveedores)
-        Me.Controls.Add(Me.cmd_borrar)
         Me.Controls.Add(Me.cmd_limpiar)
         Me.Controls.Add(Me.cmd_cancelar)
         Me.Controls.Add(Me.cmd_guardar)
@@ -180,7 +169,7 @@ Partial Class ABM_Proveedores
         Me.Controls.Add(Me.lbl_telefono)
         Me.Controls.Add(Me.lbl_nombre)
         Me.Name = "ABM_Proveedores"
-        Me.Text = "ABM_Proveedores"
+        Me.Text = "ABM Proveedores"
         CType(Me.grid_proveedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -191,7 +180,6 @@ Partial Class ABM_Proveedores
     Friend WithEvents lbl_correo As System.Windows.Forms.Label
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents txt_correo As System.Windows.Forms.TextBox
-    Friend WithEvents cmd_borrar As System.Windows.Forms.Button
     Friend WithEvents cmd_limpiar As System.Windows.Forms.Button
     Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
     Friend WithEvents cmd_guardar As System.Windows.Forms.Button
@@ -200,5 +188,5 @@ Partial Class ABM_Proveedores
     Friend WithEvents c_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents c_correo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents c_telefono As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
+    Friend WithEvents txt_telefono As System.Windows.Forms.MaskedTextBox
 End Class

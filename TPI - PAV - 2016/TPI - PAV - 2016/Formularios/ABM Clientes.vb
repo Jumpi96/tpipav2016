@@ -128,9 +128,10 @@
             cmb_tipoDoc.Focus()
             Return False
         End If
-        If date_fechaNacimiento.Value < Today Then
+        If date_fechaNacimiento.Value.CompareTo(Today) > 0 Then
             MessageBox.Show("La fecha de nacimiento no puede ser superior a la Fecha Actual.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop)
             cmb_tipoDoc.Focus()
+            Return False
         End If
         Return True
     End Function

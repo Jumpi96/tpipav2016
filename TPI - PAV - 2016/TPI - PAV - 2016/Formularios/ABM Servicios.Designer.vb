@@ -180,7 +180,7 @@ Partial Class ABM_Servicios
         Me.Controls.Add(Me.lbl_descripcion)
         Me.Controls.Add(Me.lbl_nombre)
         Me.Name = "ABM_Servicios"
-        Me.Text = "ABM_Servicios"
+        Me.Text = "ABM Servicios"
         CType(Me.grid_grilla, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

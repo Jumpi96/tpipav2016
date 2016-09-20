@@ -129,10 +129,10 @@
             & "', precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
         Else
             valueSalida = dtpSalida.Value
-            sentenciaSQL = "update alojamientos" & "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" _
-            & cmbTipoDoc.SelectedValue & ", nroHabitacion=" & txtHabitacion.Text & ", cantPersonas=" & txtAlojados _
-            & ", fechaInicioAlojamiento='" & dtpIngreso.Value & "',fechaFinEstimadaalojamiento='" & dtpEstimada.Value & "', fechaFinAlojamiento='" _
-             & valueSalida & "', precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
+            sentenciaSQL &= "update alojamientos " & "SET nroDoc=" & txtNroDoc.Text & ", tipoDoc=" & cmbTipoDoc.SelectedValue
+            sentenciaSQL &= ", nroHabitacion=" & txtHabitacion.Text & ", cantPersonas=" & txtAlojados.Text
+            sentenciaSQL &= ", fechaInicioAlojamiento='" & dtpIngreso.Value & "',fechaFinEstimadaalojamiento='" & dtpEstimada.Value & "', fechaFinAlojamiento='"
+            sentenciaSQL &= valueSalida & "', precioPorDia=" & txtPrecio.Text & " where idAlojamiento=" & idAlojamientoModificacion
         End If
 
         accesoBD.nonQuery(sentenciaSQL)
@@ -200,10 +200,18 @@
             End If
         End If
         'controlar fechas
-        If (dtpIngreso.Value > Today Or dtpEstimada.Value <= dtpIngreso.Value Or dtpSalida.Value <= dtpIngreso.Value Or dtpSalida.Value < dtpEstimada.Value) Then
-            MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
-            dtpIngreso.Focus()
-            Return False
+        If flagFechaSalida Then
+            If (dtpIngreso.Value > Today Or dtpEstimada.Value <= dtpIngreso.Value Or dtpSalida.Value <= dtpIngreso.Value Or dtpSalida.Value < dtpEstimada.Value) Then
+                MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
+                dtpIngreso.Focus()
+                Return False
+            End If
+        Else
+            If (dtpIngreso.Value > Today Or dtpEstimada.Value <= dtpIngreso.Value) Then
+                MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
+                dtpIngreso.Focus()
+                Return False
+            End If
         End If
         'controlar precio
         If (txtPrecio.Text < 0) Then

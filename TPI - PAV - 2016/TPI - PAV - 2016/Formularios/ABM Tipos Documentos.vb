@@ -192,6 +192,7 @@
             Me.cmd_limpiar.PerformClick()
         Catch ex As OleDb.OleDbException
             MessageBox.Show("El registro no puede eliminarse por tener otros registros relacionados.")
+            accesoBD.cerrar()
         End Try
     End Sub
 End Class

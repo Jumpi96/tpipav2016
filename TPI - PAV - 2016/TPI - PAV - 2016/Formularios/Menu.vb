@@ -86,7 +86,7 @@
         sqlHospedaje &= "VALUES (" & txt_doc.Text
         sqlHospedaje &= ",'" & cmb_tipoDoc.SelectedValue & "'"
         sqlHospedaje &= ",'" & txt_habSelNro.Text & "'"
-        sqlHospedaje &= ",'" & cmb_canPer.SelectedText & "'"
+        sqlHospedaje &= ",'" & cmb_canPer.SelectedItem & "'"
         sqlHospedaje &= ",'" & dtp_fecDes.Value.Date & "'"
         sqlHospedaje &= ",'" & dtp_fecHas.Value.Date & "'"
         sqlHospedaje &= ",'" & txt_preDia.Text & "')"

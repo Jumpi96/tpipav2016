@@ -149,6 +149,7 @@ Partial Class ABM_Habitación_X_Piso
         Me.grid_habitacionPiso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_habitacionPiso.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_nroHabitacion, Me.clm_tipoHabitacion, Me.clm_fechaEmision})
         Me.grid_habitacionPiso.Location = New System.Drawing.Point(12, 116)
+        Me.grid_habitacionPiso.MultiSelect = False
         Me.grid_habitacionPiso.Name = "grid_habitacionPiso"
         Me.grid_habitacionPiso.ReadOnly = True
         Me.grid_habitacionPiso.Size = New System.Drawing.Size(462, 274)
@@ -265,6 +266,7 @@ Partial Class ABM_Habitación_X_Piso
         Me.cmd_actualizarGrilla.TabIndex = 14
         Me.cmd_actualizarGrilla.Text = "Actualizar Grilla"
         Me.cmd_actualizarGrilla.UseVisualStyleBackColor = True
+        Me.cmd_actualizarGrilla.Visible = False
         '
         'ABM_Habitación_X_Piso
         '
@@ -292,7 +294,11 @@ Partial Class ABM_Habitación_X_Piso
         Me.Controls.Add(Me.lbl_camas)
         Me.Controls.Add(Me.lbl_nroHabitacion)
         Me.Controls.Add(Me.cmb_tipoHabitacion)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(502, 466)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(502, 466)
         Me.Name = "ABM_Habitación_X_Piso"
         Me.Text = "ABM_Habitación_X_Piso"
         CType(Me.grid_habitacionPiso, System.ComponentModel.ISupportInitialize).EndInit()

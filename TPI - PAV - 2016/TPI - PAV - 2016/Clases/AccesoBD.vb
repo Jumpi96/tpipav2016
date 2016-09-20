@@ -77,7 +77,7 @@
         Me.cerrar()
     End Sub
 
-    Private Sub cerrar()
+    Public Sub cerrar()
         Me.conexion.Close()
     End Sub
 

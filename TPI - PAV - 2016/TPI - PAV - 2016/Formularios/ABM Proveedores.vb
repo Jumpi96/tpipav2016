@@ -135,8 +135,6 @@
             Exit Sub
         End If
 
-        Me.cmd_borrar.Enabled = True
-        Me.cmd_borrar.Visible = True
         Me.cmd_guardar.Text = "Modificar"
         Me.txt_nombre.Enabled = False
 
@@ -172,7 +170,4 @@
     '    Me.cargarGrilla()
     'End Sub
 
-    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-
-    End Sub
 End Class
