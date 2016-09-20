@@ -49,8 +49,8 @@
             Case "JULIETA"
                 Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=JULIETA\JULIETA;Integrated Security=SSPI;Initial Catalog=hotelShaky"
 
-            Case "USUARIO-PC"
-                Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=USUARIO-PC\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=hotelShaky;Initial File Name=C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\BasedeDatosJu\hotelShaky.mdf"
+            Case "PC-CHICA"
+                Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=PC-CHICA\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=hotelShaky"
 
 
         End Select
