@@ -97,6 +97,12 @@
     <Compile Include="Formularios\ABM Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Formularios\ABM Consumicion.Designer.vb">
+      <DependentUpon>ABM Consumicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ABM Consumicion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\ABM Habitación X Piso.Designer.vb">
       <DependentUpon>ABM Habitación X Piso.vb</DependentUpon>
     </Compile>
@@ -181,6 +187,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Clientes.resx">
       <DependentUpon>ABM Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ABM Consumicion.resx">
+      <DependentUpon>ABM Consumicion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Habitación X Piso.resx">
       <DependentUpon>ABM Habitación X Piso.vb</DependentUpon>

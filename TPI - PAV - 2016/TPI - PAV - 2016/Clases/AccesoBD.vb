@@ -24,7 +24,7 @@
                 SyncLock sync
                     If _instancia Is Nothing Then
                         _instancia = New AccesoBD
-                        MessageBox.Show("La conexion a la Base de Datos se realizo correctamente.")
+                        'MessageBox.Show("La conexion a la Base de Datos se realizo correctamente.")
                     End If
                 End SyncLock
             End If

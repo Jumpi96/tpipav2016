@@ -788,4 +788,9 @@
 
 
     End Sub
+
+    Private Sub ABMConsumicionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMConsumicionToolStripMenuItem.Click
+        ABM_Consumicion.Show()
+
+    End Sub
 End Class

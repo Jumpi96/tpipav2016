@@ -73,11 +73,15 @@ Partial Class ABM_Tipo_Factura
         '
         Me.grid_tiposFactura.AllowUserToAddRows = False
         Me.grid_tiposFactura.AllowUserToDeleteRows = False
+        Me.grid_tiposFactura.AllowUserToResizeColumns = False
+        Me.grid_tiposFactura.AllowUserToResizeRows = False
         Me.grid_tiposFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_tiposFactura.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.c_idTipoFactura, Me.c_nombre, Me.c_descripcion})
         Me.grid_tiposFactura.Location = New System.Drawing.Point(12, 84)
+        Me.grid_tiposFactura.MultiSelect = False
         Me.grid_tiposFactura.Name = "grid_tiposFactura"
         Me.grid_tiposFactura.ReadOnly = True
+        Me.grid_tiposFactura.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.grid_tiposFactura.Size = New System.Drawing.Size(354, 246)
         Me.grid_tiposFactura.TabIndex = 4
         '
