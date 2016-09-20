@@ -262,4 +262,7 @@
         Me.cargarGrilla()
     End Sub
 
+    Private Sub txt_nroHabitacion_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_nroHabitacion.MaskInputRejected
+
+    End Sub
 End Class
