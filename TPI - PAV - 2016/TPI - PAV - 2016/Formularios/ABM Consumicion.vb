@@ -313,7 +313,7 @@
         Dim cant As Integer = txt_cantidadBorrar.Text
 
         sql &= "UPDATE Articulos "
-        sql &= "SET stock = stock + " & (cantidadSub - cant) & " "
+        sql &= "SET stock = stock + " & cant & " "
         sql &= "WHERE idArticulo = " & idArticuloSub
 
         acceso.nonQuery(sql)

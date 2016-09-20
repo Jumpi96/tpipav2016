@@ -382,7 +382,7 @@ Partial Class menu
         '
         'ABMsToolStripMenuItem
         '
-        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMTiposFacturaToolStripMenuItem, Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem, Me.ABMConsumicionToolStripMenuItem})
+        Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMConsumicionToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem, Me.ABMTiposFacturaToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
         Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
@@ -2657,7 +2657,7 @@ Partial Class menu
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(546, 287)
+        Me.ClientSize = New System.Drawing.Size(546, 288)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnl_nueAlo)

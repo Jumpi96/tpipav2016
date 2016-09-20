@@ -785,8 +785,6 @@
 
     Private Sub ABMTiposFacturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMTiposFacturaToolStripMenuItem.Click
         ABM_Tipo_Factura.Show()
-
-
     End Sub
 
     Private Sub ABMConsumicionToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ABMConsumicionToolStripMenuItem.Click
