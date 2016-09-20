@@ -158,7 +158,7 @@ Partial Class ABM_Tipo_Factura
         Me.Controls.Add(Me.lbl_descripcion)
         Me.Controls.Add(Me.lbl_nombre)
         Me.Name = "ABM_Tipo_Factura"
-        Me.Text = "ABM_Tipo_Factura"
+        Me.Text = "ABM Tipos Factura"
         CType(Me.grid_tiposFactura, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

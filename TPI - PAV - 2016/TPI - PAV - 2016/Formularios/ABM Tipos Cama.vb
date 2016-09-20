@@ -162,15 +162,19 @@
 
     'CLICK BORRAR
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+        Try
+            Dim sentenciaSQL As String = "DELETE FROM TiposCama WHERE idTipoCama= " & Me.grid_grilla.Rows(0).Cells("idTipoCama").Value
+            accesoBD.nonQuery(sentenciaSQL)
 
-        Dim sentenciaSQL As String = "DELETE FROM TiposCama WHERE idTipoCama= " & Me.grid_grilla.Rows(0).Cells("idTipoCama").Value
-        accesoBD.nonQuery(sentenciaSQL)
+            MessageBox.Show("Se ha eliminado el tipo de cama satisfactoriamente")
 
-        MessageBox.Show("Se ha eliminado el tipo de cama satisfactoriamente")
-
-        Me.cargarGrilla()
-        Me.cmd_limpiar.PerformClick()
-
+            Me.cargarGrilla()
+            Me.cmd_limpiar.PerformClick()
+        Catch ex As Exception
+            MessageBox.Show("No se puede eliminar por tener registros relacionados.")
+            accesoBD.cerrar()
+        End Try
+        
     End Sub
 #End Region
 

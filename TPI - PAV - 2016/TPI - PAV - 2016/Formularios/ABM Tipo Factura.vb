@@ -115,6 +115,7 @@
             cargarGrilla()
         Catch ex As OleDb.OleDbException
             MessageBox.Show("No se puede eliminar por tener registros relacionados.", "Error")
+            acceso.cerrar()
         End Try
 
     End Sub

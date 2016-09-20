@@ -180,13 +180,19 @@
     'CLICK BORRAR
 
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-        Dim sentenciaSQL As String = "DELETE FROM Servicios WHERE idServicio= " & Me.grid_grilla.Rows(0).Cells("idServicio").Value
+        Try
+            Dim sentenciaSQL As String = "DELETE FROM Servicios WHERE idServicio= " & Me.grid_grilla.Rows(0).Cells("idServicio").Value
 
-        accesoBD.nonQuery(sentenciaSQL)
+            accesoBD.nonQuery(sentenciaSQL)
 
-        MessageBox.Show("Se ha eliminado el servicio satisfactoriamente")
-        Me.cargar_grilla()
-        Me.cmd_limpiar.PerformClick()
+            MessageBox.Show("Se ha eliminado el servicio satisfactoriamente")
+            Me.cargar_grilla()
+            Me.cmd_limpiar.PerformClick()
+        Catch ex As OleDb.OleDbException
+            MessageBox.Show("No se puede eliminar por tener registros relacionados.", "Error")
+            accesoBD.cerrar()
+        End Try
+        
     End Sub
 #End Region
 
