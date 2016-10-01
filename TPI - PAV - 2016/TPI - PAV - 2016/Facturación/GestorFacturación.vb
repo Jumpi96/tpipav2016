@@ -1,14 +1,14 @@
 ﻿Public Class GestorFacturación
-    Dim accesoBD As New AccesoBD
+    Private accesoBD As New AccesoBD
     Private idAlojamiento As Integer
-    Private idTipoFactura As Integer
 
-    Sub New(ByVal a As Integer, ByVal tF As Integer)
+    Sub New(ByVal a As Integer)
         idAlojamiento = a
-        idTipoFactura = tF
     End Sub
 
-    Public Sub facturar()
+    Public Sub facturar(ByVal tF As Integer)
+        Dim idTipoFactura As Integer = tF
+
         'crear factura
         Dim sentencia As String = "INSERT INTO facturas (idAlojamiento,tipoFactura,fechaEmision)"
         sentencia &= "VALUES(" & idAlojamiento & "," & idTipoFactura & "," & Date.Today() & ")"
@@ -61,7 +61,6 @@
 
         sentencia = "UPDATE facturas SET total=" & tabla.Rows(0)(0).Value & " where idAlojamiento=" & idAlojamiento
 
-
         'imprimir factura
 
         sentencia = "SELECT nroFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
@@ -70,5 +69,21 @@
         Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
         imprFactura.ShowDialog()
 
+    End Sub
+
+    Public Function existeFactura() As Boolean
+        Dim sentencia As String = "SELECT * FROM facturas where idAlojamiento=" & idAlojamiento
+        Dim tabla As DataTable = accesoBD.query(sentencia)
+
+        Return tabla.Rows.Count() > 0
+    End Function
+
+    Public Sub leerFactura()
+        Dim sentencia As String = "SELECT nroFactura, tipoFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
+        Dim tabla As DataTable = accesoBD.query(sentencia)
+        Dim nro As Integer = tabla.Rows(0)(0).Value
+        Dim idTipoFactura As Integer = tabla.Rows(0)(1).Value
+        Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
+        imprFactura.ShowDialog()
     End Sub
 End Class
