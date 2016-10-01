@@ -34,7 +34,7 @@
 
 
     'CONSTRUCTOR
-    Private Sub New()
+    Public Sub New()
         Me.conexion = New OleDb.OleDbConnection
         Me.comando = New OleDb.OleDbCommand()
 

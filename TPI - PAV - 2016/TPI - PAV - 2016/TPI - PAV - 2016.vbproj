@@ -61,10 +61,13 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -85,6 +88,21 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet.vb">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Facturación\GestorFacturación.vb" />
+    <Compile Include="Facturación\Impresion Factura.Designer.vb">
+      <DependentUpon>Impresion Factura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturación\Impresion Factura.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Formularios\ABM Alojamientos.Designer.vb">
       <DependentUpon>ABM Alojamientos.vb</DependentUpon>
     </Compile>
@@ -181,6 +199,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Facturación\Factura.rdlc" />
+    <EmbeddedResource Include="Facturación\Impresion Factura.resx">
+      <DependentUpon>Impresion Factura.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ABM Alojamientos.resx">
       <DependentUpon>ABM Alojamientos.vb</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +250,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
