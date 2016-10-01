@@ -8,11 +8,16 @@
         idTipoFactura = tF
     End Sub
 
-    Private Sub facturar() 'As ??
+    Public Sub facturar()
         'crear factura
-        Dim sentencia As String = "UPDATE facturas SET idAlojamiento=" & idAlojamiento
-        sentencia &= ", tipoFactura=" & idTipoFactura & ", fechaEmision=" & Date.Today()
+        Dim sentencia As String = "INSERT INTO facturas (idAlojamiento,tipoFactura,fechaEmision)"
+        sentencia &= "VALUES(" & idAlojamiento & "," & idTipoFactura & "," & Date.Today() & ")"
 
+        accesoBD.nonQuery(sentencia)
+
+        'actualiza fecha fin alojamiento
+
+        sentencia = "UPDATE alojamientos SET fechaFinAlojamiento=" & Date.Today() & "where idAlojamiento=" & idAlojamiento
         accesoBD.nonQuery(sentencia)
 
         'crear detalles de factura
@@ -50,12 +55,20 @@
             accesoBD.nonQuery(sentencia)
         Next
 
+        'Suma el total de la factura y actualiza
+        sentencia = "SELECT SUM(subtotal) FROM DetallesXFactura WHERE idAlojamiento=" & idAlojamiento
+        Dim tabla As DataTable = accesoBD.query(sentencia)
+
+        sentencia = "UPDATE facturas SET total=" & tabla.Rows(0)(0).Value & " where idAlojamiento=" & idAlojamiento
+
+
         'imprimir factura
 
         sentencia = "SELECT nroFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
-        Dim tabla As DataTable = accesoBD.query(sentencia)
-        Dim imprFactura As New Impresion_Factura(tabla.Rows(0)(0).Value, idTipoFactura)
-        imprFactura.Show()
+        tabla = accesoBD.query(sentencia)
+        Dim nro As Integer = tabla.Rows(0)(0).Value
+        Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
+        imprFactura.ShowDialog()
 
     End Sub
 End Class

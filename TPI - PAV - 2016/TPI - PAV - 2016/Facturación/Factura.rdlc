@@ -292,8 +292,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>0.17639cm</Top>
         <Left>0.63183cm</Left>
-        <Height>1.34111cm</Height>
-        <Width>14.96597cm</Width>
+        <Height>1.34112cm</Height>
+        <Width>14.96596cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -318,7 +318,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@Cliente</Value>
+                  <Value>@ClienteNombre @ClienteApellido</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -329,7 +329,7 @@
           <Top>2.24578cm</Top>
           <Left>2.06467cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>5.75438cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -488,8 +488,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
-          <Top>2.24578cm</Top>
-          <Left>5.61481cm</Left>
+          <Top>2.28106cm</Top>
+          <Left>8.11481cm</Left>
           <Height>0.6cm</Height>
           <Width>5.17229cm</Width>
           <ZIndex>6</ZIndex>
@@ -755,7 +755,7 @@
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="Cliente">
+    <ReportParameter Name="ClienteNombre">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -788,6 +788,10 @@
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
     <ReportParameter Name="PrecioPorDia">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ClienteApellido">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
