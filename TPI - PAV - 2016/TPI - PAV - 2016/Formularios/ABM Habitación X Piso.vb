@@ -94,7 +94,7 @@
     Private Sub cargarComboTipoHabitacion()
         Dim tabla As New Data.DataTable
         Dim sql As String = ""
-        
+
         sql = "SELECT * FROM TiposHabitacion"
 
         tabla = acceso.query(sql)
