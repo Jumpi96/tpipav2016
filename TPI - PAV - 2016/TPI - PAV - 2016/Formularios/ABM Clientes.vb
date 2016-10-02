@@ -256,4 +256,7 @@
 
 #End Region
 
+    Private Sub grid_clientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_clientes.CellContentClick
+
+    End Sub
 End Class

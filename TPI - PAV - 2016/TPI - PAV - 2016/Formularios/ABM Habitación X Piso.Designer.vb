@@ -41,10 +41,8 @@ Partial Class ABM_Habitación_X_Piso
         Me.txt_baños = New System.Windows.Forms.MaskedTextBox()
         Me.txt_camas = New System.Windows.Forms.MaskedTextBox()
         Me.txt_nroHabitacion = New System.Windows.Forms.MaskedTextBox()
-        Me.cmd_salir = New System.Windows.Forms.Button()
-        Me.cmd_limpiar = New System.Windows.Forms.Button()
-        Me.cmd_modificar = New System.Windows.Forms.Button()
         Me.cmd_cancelar = New System.Windows.Forms.Button()
+        Me.cmd_limpiar = New System.Windows.Forms.Button()
         Me.cmd_actualizarGrilla = New System.Windows.Forms.Button()
         CType(Me.grid_habitacionPiso, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -220,14 +218,14 @@ Partial Class ABM_Habitación_X_Piso
         Me.txt_nroHabitacion.Size = New System.Drawing.Size(32, 20)
         Me.txt_nroHabitacion.TabIndex = 1
         '
-        'cmd_salir
+        'cmd_cancelar
         '
-        Me.cmd_salir.Location = New System.Drawing.Point(399, 396)
-        Me.cmd_salir.Name = "cmd_salir"
-        Me.cmd_salir.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_salir.TabIndex = 12
-        Me.cmd_salir.Text = "Salir"
-        Me.cmd_salir.UseVisualStyleBackColor = True
+        Me.cmd_cancelar.Location = New System.Drawing.Point(399, 396)
+        Me.cmd_cancelar.Name = "cmd_cancelar"
+        Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_cancelar.TabIndex = 12
+        Me.cmd_cancelar.Text = "Cancelar"
+        Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
         'cmd_limpiar
         '
@@ -237,26 +235,6 @@ Partial Class ABM_Habitación_X_Piso
         Me.cmd_limpiar.TabIndex = 9
         Me.cmd_limpiar.Text = "Limpiar"
         Me.cmd_limpiar.UseVisualStyleBackColor = True
-        '
-        'cmd_modificar
-        '
-        Me.cmd_modificar.Enabled = False
-        Me.cmd_modificar.Location = New System.Drawing.Point(237, 396)
-        Me.cmd_modificar.Name = "cmd_modificar"
-        Me.cmd_modificar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_modificar.TabIndex = 10
-        Me.cmd_modificar.Text = "Modificar"
-        Me.cmd_modificar.UseVisualStyleBackColor = True
-        '
-        'cmd_cancelar
-        '
-        Me.cmd_cancelar.Enabled = False
-        Me.cmd_cancelar.Location = New System.Drawing.Point(156, 396)
-        Me.cmd_cancelar.Name = "cmd_cancelar"
-        Me.cmd_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.cmd_cancelar.TabIndex = 13
-        Me.cmd_cancelar.Text = "Cancelar"
-        Me.cmd_cancelar.UseVisualStyleBackColor = True
         '
         'cmd_actualizarGrilla
         '
@@ -272,12 +250,10 @@ Partial Class ABM_Habitación_X_Piso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(486, 427)
+        Me.ClientSize = New System.Drawing.Size(486, 428)
         Me.Controls.Add(Me.cmd_actualizarGrilla)
-        Me.Controls.Add(Me.cmd_cancelar)
-        Me.Controls.Add(Me.cmd_modificar)
         Me.Controls.Add(Me.cmd_limpiar)
-        Me.Controls.Add(Me.cmd_salir)
+        Me.Controls.Add(Me.cmd_cancelar)
         Me.Controls.Add(Me.txt_nroHabitacion)
         Me.Controls.Add(Me.txt_camas)
         Me.Controls.Add(Me.txt_baños)
@@ -322,12 +298,10 @@ Partial Class ABM_Habitación_X_Piso
     Friend WithEvents txt_baños As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txt_camas As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txt_nroHabitacion As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents cmd_salir As System.Windows.Forms.Button
+    Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
     Friend WithEvents cmd_limpiar As System.Windows.Forms.Button
-    Friend WithEvents cmd_modificar As System.Windows.Forms.Button
     Friend WithEvents clm_nroHabitacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_tipoHabitacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_fechaEmision As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cmd_cancelar As System.Windows.Forms.Button
     Friend WithEvents cmd_actualizarGrilla As System.Windows.Forms.Button
 End Class
