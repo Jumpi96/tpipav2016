@@ -1,10 +1,12 @@
 ﻿Public Class ABM_Habitación_X_Piso
     Dim acceso As AccesoBD = AccesoBD.instancia
     Dim cadena_conexion As String = AccesoBD.instancia.cadenaConexion
+    Dim registrarModificar As Boolean = True
 
     Private Sub ABM_Habitación_X_Piso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargarComboTipoHabitacion()
         Me.cargarGrilla()
+
     End Sub
 
     Private Sub insertarHabitacionPiso()
@@ -118,14 +120,18 @@
     Private Sub cmd_registrar_Click(sender As Object, e As EventArgs) Handles cmd_registrar.Click
         If Me.validarCampos = True Then
             If Me.validarExistencia = True Then
-                Me.insertarHabitacionPiso()
-                Me.cmd_limpiar.PerformClick()
-                Me.cargarGrilla()
+                If Me.registrarModificar = True Then
+                    Me.insertarHabitacionPiso()
+                    Me.cmd_limpiar.PerformClick()
+                    Me.cargarGrilla()
+                ElseIf Me.registrarModificar = False Then
+                    Me.modificar()
+                End If
             End If
         End If
     End Sub
 
-    Private Sub cmd_salir_Click(sender As Object, e As EventArgs) Handles cmd_salir.Click
+    Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
         Me.Close()
     End Sub
 
@@ -138,6 +144,7 @@
         Me.chb_frigoBar.CheckState = CheckState.Unchecked
         Me.chb_aireAcondicionado.CheckState = CheckState.Unchecked
         Me.dtp_fechaEmision.Value = Today
+        Me.cargarGrilla()
     End Sub
 
     Private Sub txt_nroHabitacion_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_nroHabitacion.MouseClick
@@ -168,10 +175,6 @@
         Dim tabla As New Data.DataTable
         Dim sql As String = ""
 
-        cmd_cancelar.Enabled = True
-        cmd_modificar.Enabled = True
-        cmd_limpiar.Enabled = False
-        cmd_registrar.Enabled = False
         txt_nroHabitacion.ReadOnly = True
 
         sql &= "SELECT * FROM HabitacionesXPiso HP JOIN TiposHabitacion TH "
@@ -212,19 +215,12 @@
             Me.chb_aireAcondicionado.CheckState = CheckState.Checked
         End If
         Me.cmb_tipoHabitacion.SelectedValue = tabla.Rows(0)("idTipoHabitacion")
+
+        Me.cmd_registrar.Text = "Modificar"
+        Me.registrarModificar = False
     End Sub
 
-    Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
-        Me.cmd_limpiar_Click(sender, e)
-        Me.cmd_registrar.Enabled = True
-        Me.cmd_limpiar.Enabled = True
-        Me.cmd_modificar.Enabled = False
-        Me.cmd_cancelar.Enabled = False
-        Me.txt_nroHabitacion.ReadOnly = False
-        Me.cargarGrilla()
-    End Sub
-
-    Private Sub cmd_modificar_Click(sender As Object, e As EventArgs) Handles cmd_modificar.Click
+    Private Sub modificar()
         Dim sql As String = ""
 
         sql &= "UPDATE HabitacionesXPiso "
@@ -249,11 +245,9 @@
 
         MessageBox.Show("La habitación se modificó correctamente")
 
-        Me.cmd_limpiar_Click(sender, e)
+        Me.cmd_limpiar.PerformClick()
         Me.cmd_registrar.Enabled = True
         Me.cmd_limpiar.Enabled = True
-        Me.cmd_modificar.Enabled = False
-        Me.cmd_cancelar.Enabled = False
         Me.txt_nroHabitacion.ReadOnly = False
         Me.cargarGrilla()
     End Sub
@@ -263,6 +257,10 @@
     End Sub
 
     Private Sub txt_nroHabitacion_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_nroHabitacion.MaskInputRejected
+
+    End Sub
+
+    Private Sub grid_habitacionPiso_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_habitacionPiso.CellContentClick
 
     End Sub
 End Class
