@@ -18,6 +18,7 @@
     Private Sub ABM_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargarCombo("TiposDocumento", "idTipoDocumento", "nombre", Me.cmb_tipoDoc)
         Me.cargarGrilla(estadoBusqueda.todo)
+
     End Sub
 
 #Region "Subrutinas"
@@ -197,13 +198,21 @@
 
     'CLICK EN BORRAR
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-        Dim sql As String = "DELETE FROM Clientes WHERE nroDocumento = " & Me.txt_nroDoc.Text
-        sql &= " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
+        Try
+            Dim sentenciaSQL As String = "DELETE FROM Clientes WHERE nroDocumento = " & Me.txt_nroDoc.Text
+            sentenciaSQL &= " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
 
-        Dim tabla As DataTable = acceso.query(sql)
-        MessageBox.Show("Se ha eliminado el tipo de Documento Satisfactoriamente")
-        Me.cargarGrilla(estadoBusqueda.todo)
-        Me.cmd_limpiar.PerformClick()
+            acceso.nonQuery(sentenciaSQL)
+
+            MessageBox.Show("Se ha eliminado el cliente satisfactoriamente")
+
+            Me.cargarGrilla(estadoBusqueda.todo)
+            Me.cmd_limpiar.PerformClick()
+        Catch ex As OleDb.OleDbException
+
+            MessageBox.Show("El registro no puede eliminarse por tener otros registros relacionados.")
+            acceso.cerrar()
+        End Try
     End Sub
 
     'DOBLE CLICK SOBRE LA GRILLA
@@ -238,6 +247,9 @@
         Me.txt_nroDoc.Enabled = False
         Me.condicion_estado = estado.modificar
         Me.cmd_buscar.PerformClick()
+
+        Me.cmd_borrar.Enabled = True
+        Me.cmd_borrar.Visible = True
     End Sub
 
     'CLICK EN NRODOCUMENTO
@@ -256,7 +268,4 @@
 
 #End Region
 
-    Private Sub grid_clientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_clientes.CellContentClick
-
-    End Sub
 End Class
