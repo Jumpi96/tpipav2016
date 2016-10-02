@@ -6,7 +6,347 @@ TPI-PAV-2016
 </name>
 </assembly>
 <members>
-<member name="P:TPI___PAV___2016.My.Resources.Resources.ResourceManager">
+<member name="T:TPI___PAV___2016.DataSet.AlojamientosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ArticulosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ClientesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ConsumicionesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DetallesOrdenesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DetallesXFacturaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DireccionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.FacturasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.HabitacionesXPisoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.HabitacionXPisoXTipoCamaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OrdenesCompraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ProveedoresDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosXAlojamientoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposCamaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposDocumentoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposFacturaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposHabitacionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DataFacturasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.AlojamientosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ArticulosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ClientesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ConsumicionesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DetallesOrdenesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DetallesXFacturaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DireccionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.FacturasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.HabitacionesXPisoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.HabitacionXPisoXTipoCamaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OrdenesCompraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ProveedoresRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosXAlojamientoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposCamaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposDocumentoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposFacturaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposHabitacionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DataFacturasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.AlojamientosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ArticulosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ClientesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ConsumicionesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DetallesOrdenesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DetallesXFacturaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DireccionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.FacturasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.HabitacionesXPisoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.HabitacionXPisoXTipoCamaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OrdenesCompraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ProveedoresRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosXAlojamientoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposCamaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposDocumentoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposFacturaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.TiposHabitacionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.DataFacturasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.AlojamientosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ArticulosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ClientesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ConsumicionesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.DetallesOrdenesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.DetallesXFacturaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.DireccionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.FacturasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.HabitacionesXPisoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.HabitacionXPisoXTipoCamaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.OrdenesCompraTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ProveedoresTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ServiciosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ServiciosXAlojamientoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TiposCamaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TiposDocumentoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TiposFacturaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TiposHabitacionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.DataFacturasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(TPI___PAV___2016.DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(TPI___PAV___2016.DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(TPI___PAV___2016.DataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.UpdateAll(TPI___PAV___2016.DataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:TPI___PAV___2016.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
