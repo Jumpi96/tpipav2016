@@ -35,32 +35,37 @@
 
     Private Function validarCampos() As Boolean
         If txt_nroHabitacion.Text = "" Then
-            MessageBox.Show("No ha ingresado un número de habitación", "Error", MessageBoxButtons.OK)
+            MessageBox.Show("No ha ingresado un número de habitación.", "Error", MessageBoxButtons.OK)
             txt_nroHabitacion.Focus()
             Return False
         End If
         If txt_camas.Text = "" Then
-            MessageBox.Show("No ha ingresado una cantidad de camas", "Error", MessageBoxButtons.OK)
+            MessageBox.Show("No ha ingresado una cantidad de camas.", "Error", MessageBoxButtons.OK)
+            txt_camas.Focus()
+            Return False
+        End If
+        If txt_camas.Text = 0 Then
+            MessageBox.Show("La cantidad de camas no puede ser cero.", "Error", MessageBoxButtons.OK)
             txt_camas.Focus()
             Return False
         End If
         If txt_baños.Text = "" Then
-            MessageBox.Show("No ha ingresado una cantidad de baños", "Error", MessageBoxButtons.OK)
+            MessageBox.Show("No ha ingresado una cantidad de baños.", "Error", MessageBoxButtons.OK)
             txt_baños.Focus()
             Return False
         End If
-        If txt_camas.Text = "" Then
-            MessageBox.Show("No ha ingresado una cantidad de camas", "Error", MessageBoxButtons.OK)
-            txt_camas.Focus()
-            Return False
-        End If
         If cmb_tipoHabitacion.SelectedIndex = -1 Then
-            MessageBox.Show("No ha seleccionado ningún tipo de habitación", "Error", MessageBoxButtons.OK)
+            MessageBox.Show("No ha seleccionado ningún tipo de habitación.", "Error", MessageBoxButtons.OK)
             cmb_tipoHabitacion.Focus()
             Return False
         End If
         If txt_personas.Text = "" Then
-            MessageBox.Show("No ha ingresado una cantidad máxima de personas", "Error", MessageBoxButtons.OK)
+            MessageBox.Show("No ha ingresado una cantidad máxima de personas.", "Error", MessageBoxButtons.OK)
+            txt_personas.Focus()
+            Return False
+        End If
+        If txt_personas.Text = 0 Then
+            MessageBox.Show("La cantidad máxima de personas no puede ser cero.", "Error", MessageBoxButtons.OK)
             txt_personas.Focus()
             Return False
         End If
@@ -78,7 +83,7 @@
 
         For i = 0 To tabla.Rows.Count() - 1
             If txt_nroHabitacion.Text = tabla.Rows(i)("nroHabitacion") Then
-                MessageBox.Show("Habitación ya existente", "Error", MessageBoxButtons.OK)
+                MessageBox.Show("Habitación ya existente.", "Error", MessageBoxButtons.OK)
                 txt_nroHabitacion.Focus()
                 Return False
             End If
@@ -256,11 +261,4 @@
         Me.cargarGrilla()
     End Sub
 
-    Private Sub txt_nroHabitacion_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_nroHabitacion.MaskInputRejected
-
-    End Sub
-
-    Private Sub grid_habitacionPiso_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_habitacionPiso.CellContentClick
-
-    End Sub
 End Class
