@@ -52,7 +52,8 @@
             Case "PC-CHICA"
                 Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=PC-CHICA\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=hotelShaky"
 
-
+            Case "USUARIO-PC"
+                Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=USUARIO-PC\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=hotelShaky"
         End Select
     End Sub
 

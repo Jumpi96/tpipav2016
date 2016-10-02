@@ -6,7 +6,6 @@
     Private Sub ABM_Habitación_X_Piso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargarComboTipoHabitacion()
         Me.cargarGrilla()
-
     End Sub
 
     Private Sub insertarHabitacionPiso()
