@@ -145,12 +145,12 @@
         If flagFechaSalida = False Then
             sentenciaSQL = "insert into alojamientos(nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) " _
             & " values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text _
-            + "," & txtAlojados.Text & ",'" & dtpIngreso.Value.Date & "','" & dtpEstimada.Value.Date & "'," _
+            + "," & txtAlojados.Text & ", CONVERT(datetime,'" & dtpIngreso.Value.Date & "',103) , CONVERT(datetime,'" & dtpEstimada.Value.Date & "',103) ," _
             & txtPrecio.Text & ")"
         Else
             sentenciaSQL = "insert into alojamientos " +
             "values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text + "," & txtAlojados.Text _
-            & ",'" & dtpIngreso.Value.Date & "','" & dtpEstimada.Value.Date & "','" & dtpSalida.Value.Date & "'," & txtPrecio.Text & ")"
+            & ",CONVERT(datetime,'" & dtpIngreso.Value.Date & "',103), CONVERT(datetime,'" & dtpEstimada.Value.Date & "',103), CONVERT(datetime,'" & dtpSalida.Value.Date & "',103)," & txtPrecio.Text & ")"
         End If
 
         accesoBD.nonQuery(sentenciaSQL)
@@ -201,13 +201,13 @@
         End If
         'controlar fechas
         If flagFechaSalida Then
-            If (dtpIngreso.Value > Today Or dtpEstimada.Value <= dtpIngreso.Value Or dtpSalida.Value <= dtpIngreso.Value Or dtpSalida.Value < dtpEstimada.Value) Then
+            If (dtpIngreso.Value.Date > Date.Today Or dtpEstimada.Value <= dtpIngreso.Value Or dtpSalida.Value <= dtpIngreso.Value Or dtpSalida.Value < dtpEstimada.Value) Then
                 MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
                 dtpIngreso.Focus()
                 Return False
             End If
         Else
-            If (dtpIngreso.Value > Today Or dtpEstimada.Value <= dtpIngreso.Value) Then
+            If (dtpIngreso.Value.Date > Date.Today Or dtpEstimada.Value <= dtpIngreso.Value) Then
                 MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
                 dtpIngreso.Focus()
                 Return False

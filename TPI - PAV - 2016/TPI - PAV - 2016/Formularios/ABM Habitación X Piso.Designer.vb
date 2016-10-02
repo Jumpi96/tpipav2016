@@ -188,8 +188,8 @@ Partial Class ABM_Habitación_X_Piso
         '
         'txt_personas
         '
-        Me.txt_personas.Location = New System.Drawing.Point(307, 64)
-        Me.txt_personas.Mask = "9999"
+        Me.txt_personas.Location = New System.Drawing.Point(303, 64)
+        Me.txt_personas.Mask = "99"
         Me.txt_personas.Name = "txt_personas"
         Me.txt_personas.Size = New System.Drawing.Size(32, 20)
         Me.txt_personas.TabIndex = 6
@@ -205,7 +205,7 @@ Partial Class ABM_Habitación_X_Piso
         'txt_camas
         '
         Me.txt_camas.Location = New System.Drawing.Point(114, 38)
-        Me.txt_camas.Mask = "9999"
+        Me.txt_camas.Mask = "9"
         Me.txt_camas.Name = "txt_camas"
         Me.txt_camas.Size = New System.Drawing.Size(32, 20)
         Me.txt_camas.TabIndex = 2
