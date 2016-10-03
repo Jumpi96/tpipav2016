@@ -17,18 +17,18 @@
         Me.cmb_tipoCama2.SelectedIndex = 1
         Me.cmb_tipoCama3.SelectedIndex = 1
         Me.cmb_tipoCama4.SelectedIndex = 1
+        auxiliarTiposCamas(0) = 1
+        auxiliarTiposCamas(1) = 1
+        auxiliarTiposCamas(2) = 1
+        auxiliarTiposCamas(3) = 1
         Me.cargarGrilla()
         Me.txt_personas.ReadOnly = True
-        Me.pnl_tipoCama.Visible = False
         Me.cmd_atras.Enabled = False
         Me.cmb_tipoCama1.Enabled = False
         Me.cmb_tipoCama2.Enabled = False
         Me.cmb_tipoCama3.Enabled = False
         Me.cmb_tipoCama4.Enabled = False
-        auxiliarTiposCamas(0) = 1
-        auxiliarTiposCamas(1) = 1
-        auxiliarTiposCamas(2) = 1
-        auxiliarTiposCamas(3) = 1
+        Me.pnl_tipoCama.Visible = False
     End Sub
 
     Private Sub cmd_registrar_Click(sender As Object, e As EventArgs) Handles cmd_registrar.Click

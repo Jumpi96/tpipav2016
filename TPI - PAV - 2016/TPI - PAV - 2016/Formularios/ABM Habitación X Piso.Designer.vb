@@ -289,6 +289,7 @@ Partial Class ABM_Habitación_X_Piso
         Me.pnl_tipoCama.Name = "pnl_tipoCama"
         Me.pnl_tipoCama.Size = New System.Drawing.Size(220, 165)
         Me.pnl_tipoCama.TabIndex = 16
+        Me.pnl_tipoCama.Visible = False
         '
         'cmd_aceptar
         '

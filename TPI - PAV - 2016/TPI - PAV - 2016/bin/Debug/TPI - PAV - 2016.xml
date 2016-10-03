@@ -6,7 +6,20 @@ TPI-PAV-2016
 </name>
 </assembly>
 <members>
-<member name="T:TPI___PAV___2016.DataSet.AlojamientosDataTable">
+<member name="P:TPI___PAV___2016.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:TPI___PAV___2016.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:TPI___PAV___2016.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.AlojamientosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -345,19 +358,6 @@ Used to sort self-referenced table's rows
 </member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="P:TPI___PAV___2016.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:TPI___PAV___2016.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:TPI___PAV___2016.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
 </members>
