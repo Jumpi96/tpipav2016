@@ -11,13 +11,13 @@
 
         'crear factura
         Dim sentencia As String = "INSERT INTO facturas (idAlojamiento,tipoFactura,fechaEmision)"
-        sentencia &= "VALUES(" & idAlojamiento & "," & idTipoFactura & "," & Date.Today() & ")"
+        sentencia &= "VALUES(" & idAlojamiento & "," & idTipoFactura & ",'" & Date.Today() & "')"
 
         accesoBD.nonQuery(sentencia)
 
         'actualiza fecha fin alojamiento
 
-        sentencia = "UPDATE alojamientos SET fechaFinAlojamiento=" & Date.Today() & "where idAlojamiento=" & idAlojamiento
+        sentencia = "UPDATE alojamientos SET fechaFinAlojamiento='" & Date.Today() & "' where idAlojamiento=" & idAlojamiento
         accesoBD.nonQuery(sentencia)
 
         'crear detalles de factura
