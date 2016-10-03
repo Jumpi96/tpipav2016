@@ -18,7 +18,7 @@
         'actualiza fecha fin alojamiento
 
         sentencia = "UPDATE alojamientos SET fechaFinAlojamiento='" & Date.Today() & "' where idAlojamiento=" & idAlojamiento
-        accesoBD.nonQuery(sentencia)
+        'accesoBD.nonQuery(sentencia)
 
         'crear detalles de factura
         '    a partir de consumiciones
@@ -30,14 +30,19 @@
         sentencia &= " WHERE F.idAlojamiento=" & idAlojamiento
 
         consumiciones = accesoBD.query(sentencia)
+        Dim contador As Integer = 1
 
-        For i = 0 To consumiciones.Rows.Count()
-            sentencia = "INSERT INTO DetallesXFactura (nroFactura,tipoFactura,subtotal,idConsumicion,fechaEmision"
-            sentencia &= "VALUES(" & consumiciones.Rows(i)(0).Value & "," & consumiciones.Rows(i)(1).Value
-            sentencia &= "," & consumiciones.Rows(i)(2).Value & "," & consumiciones.Rows(i)(3).Value
-            sentencia &= "," & consumiciones.Rows(i)(4).Value
-            accesoBD.nonQuery(sentencia)
-        Next
+        If consumiciones.Rows.Count() > 0 Then
+            For i = 0 To consumiciones.Rows.Count() - 1
+                Dim fecha As Date = consumiciones.Rows(i)(4)
+                sentencia = "INSERT INTO DetallesXFactura (nroFactura,tipoFactura,subtotal,idConsumicion,fechaEmision,idRenglon) "
+                sentencia &= "VALUES(" & consumiciones.Rows(i)(0) & "," & consumiciones.Rows(i)(1)
+                sentencia &= "," & consumiciones.Rows(i)(2) & "," & consumiciones.Rows(i)(3)
+                sentencia &= ",'" & fecha.Date & "', " & (i + 1) & ")"
+                contador = contador + 1
+                accesoBD.nonQuery(sentencia)
+            Next
+        End If
 
         '    a partir de consumiciones
         Dim servicios As New DataTable
@@ -47,25 +52,37 @@
         sentencia &= " JOIN Servicios S ON C.idServicio=S.idServicio"
         sentencia &= " WHERE F.idAlojamiento=" & idAlojamiento
 
-        For i = 0 To consumiciones.Rows.Count()
-            sentencia = "INSERT INTO DetallesXFactura (nroFactura,tipoFactura,subtotal,idServicio,fechaEmision"
-            sentencia &= "VALUES(" & servicios.Rows(i)(0).Value & "," & servicios.Rows(i)(1).Value
-            sentencia &= "," & servicios.Rows(i)(2).Value & "," & servicios.Rows(i)(3).Value
-            sentencia &= "," & servicios.Rows(i)(4).Value
-            accesoBD.nonQuery(sentencia)
-        Next
+        servicios = accesoBD.query(sentencia)
+
+        If servicios.Rows.Count() > 0 Then
+            For i = 0 To servicios.Rows.Count() - 1
+                Dim fecha As Date = servicios.Rows(i)(4)
+                sentencia = "INSERT INTO DetallesXFactura (nroFactura,tipoFactura,subtotal,idServicio,fechaEmision,idRenglon)"
+                sentencia &= " VALUES(" & servicios.Rows(i)(0) & "," & servicios.Rows(i)(1)
+                sentencia &= "," & servicios.Rows(i)(2) & "," & servicios.Rows(i)(3)
+                sentencia &= ",'" & fecha.Date & "', " & (contador + 1) & ")"
+                contador = contador + 1
+                accesoBD.nonQuery(sentencia)
+            Next
+        End If
 
         'Suma el total de la factura y actualiza
-        sentencia = "SELECT SUM(subtotal) FROM DetallesXFactura WHERE idAlojamiento=" & idAlojamiento
+        sentencia = "SELECT SUM(D.subtotal) FROM DetallesXFactura D JOIN Facturas F ON D.nroFactura=F.nroFactura AND D.tipoFactura=F.tipoFactura WHERE F.idAlojamiento=" & idAlojamiento
         Dim tabla As DataTable = accesoBD.query(sentencia)
+        Dim subtotal As Double = tabla.Rows(0)(0)
+        sentencia = "SELECT DATEDIFF(day, fechaInicioAlojamiento, fechaFinAlojamiento), precioPorDia"
+        sentencia &= " from alojamientos where idAlojamiento=" & idAlojamiento
+        tabla = accesoBD.query(sentencia)
+        Dim costoAloj As Double = tabla.Rows(0)(0) * tabla.Rows(0)(1)
 
-        sentencia = "UPDATE facturas SET total=" & tabla.Rows(0)(0).Value & " where idAlojamiento=" & idAlojamiento
+        sentencia = "UPDATE facturas SET total=" & (subtotal + costoAloj) & " where idAlojamiento=" & idAlojamiento
+        accesoBD.nonQuery(sentencia)
 
         'imprimir factura
 
         sentencia = "SELECT nroFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
         tabla = accesoBD.query(sentencia)
-        Dim nro As Integer = tabla.Rows(0)(0).Value
+        Dim nro As Integer = tabla.Rows(0)(0)
         Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
         imprFactura.ShowDialog()
 
