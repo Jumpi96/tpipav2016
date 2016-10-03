@@ -199,7 +199,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Facturación\Factura.rdlc" />
+    <EmbeddedResource Include="Facturación\Factura.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Facturación\Impresion Factura.resx">
       <DependentUpon>Impresion Factura.vb</DependentUpon>
     </EmbeddedResource>

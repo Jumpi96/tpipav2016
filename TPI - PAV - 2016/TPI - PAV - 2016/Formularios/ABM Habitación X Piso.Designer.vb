@@ -44,7 +44,22 @@ Partial Class ABM_Habitación_X_Piso
         Me.cmd_cancelar = New System.Windows.Forms.Button()
         Me.cmd_limpiar = New System.Windows.Forms.Button()
         Me.cmd_actualizarGrilla = New System.Windows.Forms.Button()
+        Me.cmd_modificarTiposCama = New System.Windows.Forms.Button()
+        Me.pnl_tipoCama = New System.Windows.Forms.Panel()
+        Me.cmd_aceptar = New System.Windows.Forms.Button()
+        Me.cmd_atras = New System.Windows.Forms.Button()
+        Me.cmb_tipoCama4 = New System.Windows.Forms.ComboBox()
+        Me.cmb_tipoCama3 = New System.Windows.Forms.ComboBox()
+        Me.cmb_tipoCama2 = New System.Windows.Forms.ComboBox()
+        Me.cmb_tipoCama1 = New System.Windows.Forms.ComboBox()
+        Me.lbl_tiposCamas = New System.Windows.Forms.Label()
+        Me.lbl_listaCama4 = New System.Windows.Forms.Label()
+        Me.lbl_listaCama3 = New System.Windows.Forms.Label()
+        Me.lbl_listaCama2 = New System.Windows.Forms.Label()
+        Me.lbl_listaCama1 = New System.Windows.Forms.Label()
+        Me.lbl_listaCamas = New System.Windows.Forms.Label()
         CType(Me.grid_habitacionPiso, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_tipoCama.SuspendLayout()
         Me.SuspendLayout()
         '
         'lbl_nroHabitacion
@@ -246,11 +261,146 @@ Partial Class ABM_Habitación_X_Piso
         Me.cmd_actualizarGrilla.UseVisualStyleBackColor = True
         Me.cmd_actualizarGrilla.Visible = False
         '
+        'cmd_modificarTiposCama
+        '
+        Me.cmd_modificarTiposCama.Location = New System.Drawing.Point(341, 62)
+        Me.cmd_modificarTiposCama.Name = "cmd_modificarTiposCama"
+        Me.cmd_modificarTiposCama.Size = New System.Drawing.Size(133, 23)
+        Me.cmd_modificarTiposCama.TabIndex = 15
+        Me.cmd_modificarTiposCama.Text = "Modificar tipos de cama"
+        Me.cmd_modificarTiposCama.UseVisualStyleBackColor = True
+        '
+        'pnl_tipoCama
+        '
+        Me.pnl_tipoCama.BackColor = System.Drawing.Color.White
+        Me.pnl_tipoCama.Controls.Add(Me.cmd_aceptar)
+        Me.pnl_tipoCama.Controls.Add(Me.cmd_atras)
+        Me.pnl_tipoCama.Controls.Add(Me.cmb_tipoCama4)
+        Me.pnl_tipoCama.Controls.Add(Me.cmb_tipoCama3)
+        Me.pnl_tipoCama.Controls.Add(Me.cmb_tipoCama2)
+        Me.pnl_tipoCama.Controls.Add(Me.cmb_tipoCama1)
+        Me.pnl_tipoCama.Controls.Add(Me.lbl_tiposCamas)
+        Me.pnl_tipoCama.Controls.Add(Me.lbl_listaCama4)
+        Me.pnl_tipoCama.Controls.Add(Me.lbl_listaCama3)
+        Me.pnl_tipoCama.Controls.Add(Me.lbl_listaCama2)
+        Me.pnl_tipoCama.Controls.Add(Me.lbl_listaCama1)
+        Me.pnl_tipoCama.Controls.Add(Me.lbl_listaCamas)
+        Me.pnl_tipoCama.Location = New System.Drawing.Point(254, 92)
+        Me.pnl_tipoCama.Name = "pnl_tipoCama"
+        Me.pnl_tipoCama.Size = New System.Drawing.Size(220, 165)
+        Me.pnl_tipoCama.TabIndex = 16
+        '
+        'cmd_aceptar
+        '
+        Me.cmd_aceptar.Location = New System.Drawing.Point(140, 130)
+        Me.cmd_aceptar.Name = "cmd_aceptar"
+        Me.cmd_aceptar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_aceptar.TabIndex = 11
+        Me.cmd_aceptar.Text = "Aceptar"
+        Me.cmd_aceptar.UseVisualStyleBackColor = True
+        '
+        'cmd_atras
+        '
+        Me.cmd_atras.Location = New System.Drawing.Point(4, 130)
+        Me.cmd_atras.Name = "cmd_atras"
+        Me.cmd_atras.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_atras.TabIndex = 10
+        Me.cmd_atras.Text = "Atrás"
+        Me.cmd_atras.UseVisualStyleBackColor = True
+        '
+        'cmb_tipoCama4
+        '
+        Me.cmb_tipoCama4.FormattingEnabled = True
+        Me.cmb_tipoCama4.Location = New System.Drawing.Point(82, 103)
+        Me.cmb_tipoCama4.Name = "cmb_tipoCama4"
+        Me.cmb_tipoCama4.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_tipoCama4.TabIndex = 9
+        '
+        'cmb_tipoCama3
+        '
+        Me.cmb_tipoCama3.FormattingEnabled = True
+        Me.cmb_tipoCama3.Location = New System.Drawing.Point(81, 76)
+        Me.cmb_tipoCama3.Name = "cmb_tipoCama3"
+        Me.cmb_tipoCama3.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_tipoCama3.TabIndex = 8
+        '
+        'cmb_tipoCama2
+        '
+        Me.cmb_tipoCama2.FormattingEnabled = True
+        Me.cmb_tipoCama2.Location = New System.Drawing.Point(81, 49)
+        Me.cmb_tipoCama2.Name = "cmb_tipoCama2"
+        Me.cmb_tipoCama2.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_tipoCama2.TabIndex = 7
+        '
+        'cmb_tipoCama1
+        '
+        Me.cmb_tipoCama1.FormattingEnabled = True
+        Me.cmb_tipoCama1.Location = New System.Drawing.Point(81, 22)
+        Me.cmb_tipoCama1.Name = "cmb_tipoCama1"
+        Me.cmb_tipoCama1.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_tipoCama1.TabIndex = 6
+        '
+        'lbl_tiposCamas
+        '
+        Me.lbl_tiposCamas.AutoSize = True
+        Me.lbl_tiposCamas.Location = New System.Drawing.Point(67, 3)
+        Me.lbl_tiposCamas.Name = "lbl_tiposCamas"
+        Me.lbl_tiposCamas.Size = New System.Drawing.Size(58, 13)
+        Me.lbl_tiposCamas.TabIndex = 5
+        Me.lbl_tiposCamas.Text = "Tipo Cama"
+        '
+        'lbl_listaCama4
+        '
+        Me.lbl_listaCama4.AutoSize = True
+        Me.lbl_listaCama4.Location = New System.Drawing.Point(16, 106)
+        Me.lbl_listaCama4.Name = "lbl_listaCama4"
+        Me.lbl_listaCama4.Size = New System.Drawing.Size(43, 13)
+        Me.lbl_listaCama4.TabIndex = 4
+        Me.lbl_listaCama4.Text = "Cama 4"
+        '
+        'lbl_listaCama3
+        '
+        Me.lbl_listaCama3.AutoSize = True
+        Me.lbl_listaCama3.Location = New System.Drawing.Point(16, 79)
+        Me.lbl_listaCama3.Name = "lbl_listaCama3"
+        Me.lbl_listaCama3.Size = New System.Drawing.Size(43, 13)
+        Me.lbl_listaCama3.TabIndex = 3
+        Me.lbl_listaCama3.Text = "Cama 3"
+        '
+        'lbl_listaCama2
+        '
+        Me.lbl_listaCama2.AutoSize = True
+        Me.lbl_listaCama2.Location = New System.Drawing.Point(16, 52)
+        Me.lbl_listaCama2.Name = "lbl_listaCama2"
+        Me.lbl_listaCama2.Size = New System.Drawing.Size(43, 13)
+        Me.lbl_listaCama2.TabIndex = 2
+        Me.lbl_listaCama2.Text = "Cama 2"
+        '
+        'lbl_listaCama1
+        '
+        Me.lbl_listaCama1.AutoSize = True
+        Me.lbl_listaCama1.Location = New System.Drawing.Point(16, 25)
+        Me.lbl_listaCama1.Name = "lbl_listaCama1"
+        Me.lbl_listaCama1.Size = New System.Drawing.Size(43, 13)
+        Me.lbl_listaCama1.TabIndex = 1
+        Me.lbl_listaCama1.Text = "Cama 1"
+        '
+        'lbl_listaCamas
+        '
+        Me.lbl_listaCamas.AutoSize = True
+        Me.lbl_listaCamas.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_listaCamas.Name = "lbl_listaCamas"
+        Me.lbl_listaCamas.Size = New System.Drawing.Size(39, 13)
+        Me.lbl_listaCamas.TabIndex = 0
+        Me.lbl_listaCamas.Text = "Camas"
+        '
         'ABM_Habitación_X_Piso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(486, 428)
+        Me.Controls.Add(Me.pnl_tipoCama)
+        Me.Controls.Add(Me.cmd_modificarTiposCama)
         Me.Controls.Add(Me.cmd_actualizarGrilla)
         Me.Controls.Add(Me.cmd_limpiar)
         Me.Controls.Add(Me.cmd_cancelar)
@@ -278,6 +428,8 @@ Partial Class ABM_Habitación_X_Piso
         Me.Name = "ABM_Habitación_X_Piso"
         Me.Text = "ABM_Habitación_X_Piso"
         CType(Me.grid_habitacionPiso, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_tipoCama.ResumeLayout(False)
+        Me.pnl_tipoCama.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -304,4 +456,18 @@ Partial Class ABM_Habitación_X_Piso
     Friend WithEvents clm_tipoHabitacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents clm_fechaEmision As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cmd_actualizarGrilla As System.Windows.Forms.Button
+    Friend WithEvents cmd_modificarTiposCama As System.Windows.Forms.Button
+    Friend WithEvents pnl_tipoCama As System.Windows.Forms.Panel
+    Friend WithEvents cmd_atras As System.Windows.Forms.Button
+    Friend WithEvents cmb_tipoCama4 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmb_tipoCama3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmb_tipoCama2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cmb_tipoCama1 As System.Windows.Forms.ComboBox
+    Friend WithEvents lbl_tiposCamas As System.Windows.Forms.Label
+    Friend WithEvents lbl_listaCama4 As System.Windows.Forms.Label
+    Friend WithEvents lbl_listaCama3 As System.Windows.Forms.Label
+    Friend WithEvents lbl_listaCama2 As System.Windows.Forms.Label
+    Friend WithEvents lbl_listaCama1 As System.Windows.Forms.Label
+    Friend WithEvents lbl_listaCamas As System.Windows.Forms.Label
+    Friend WithEvents cmd_aceptar As System.Windows.Forms.Button
 End Class
