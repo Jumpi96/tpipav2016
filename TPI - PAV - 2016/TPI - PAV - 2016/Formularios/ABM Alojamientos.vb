@@ -12,6 +12,7 @@
         dtpEstimada.Value = Today.AddDays(1)
         dtpSalida.Format = DateTimePickerFormat.Custom
         dtpSalida.CustomFormat = "    "
+        dtpIngreso.Enabled = False
     End Sub
 
     Private Sub carga_combo(ByRef combo As ComboBox, ByRef datos As Data.DataTable, ByVal pk As String, ByVal descripcion As String)
@@ -79,7 +80,6 @@
             flagBusqDocumento = False
         End If
 
-        dtpIngreso.Enabled = True
         cmbTipoDoc.Enabled = True
         txtNroDoc.Enabled = True
         flagBusqDocumento = False
@@ -121,6 +121,12 @@
     Private Function guardar() As Boolean
         Dim sentenciaSQL As String = ""
         Dim valueSalida As String
+
+        Dim g As New GestorFacturación(idAlojamientoModificacion)
+        If g.existeFactura() Then
+            MessageBox.Show("No se puede modificar el alojamiento ya que fue facturado.")
+            Return False
+        End If
 
         If flagFechaSalida = False Then
             sentenciaSQL = "update alojamientos " & "SET nroDoc=" + txtNroDoc.Text + ", tipoDoc=" _
@@ -201,18 +207,33 @@
         End If
         'controlar fechas
         If flagFechaSalida Then
-            If (dtpIngreso.Value.Date > Date.Today Or dtpEstimada.Value <= dtpIngreso.Value Or dtpSalida.Value <= dtpIngreso.Value Or dtpSalida.Value < dtpEstimada.Value) Then
+            If (dtpEstimada.Value <= dtpIngreso.Value Or dtpSalida.Value <= dtpIngreso.Value Or dtpSalida.Value < dtpEstimada.Value) Then
                 MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
                 dtpIngreso.Focus()
                 Return False
             End If
         Else
-            If (dtpIngreso.Value.Date > Date.Today Or dtpEstimada.Value <= dtpIngreso.Value) Then
+            If (dtpEstimada.Value <= dtpIngreso.Value) Then
                 MessageBox.Show("Las fechas ingresadas no son válidas.", "Error", MessageBoxButtons.OK)
                 dtpIngreso.Focus()
                 Return False
             End If
         End If
+        'controlar si habitacion esta ocupada
+        Dim secuencia As String = "Select * From alojamientos where nroHabitacion=" & txtHabitacion.Text & " AND ((fechaInicioAlojamiento <= GETDATE() AND fechaFinAlojamiento >= GETDATE())OR(fechaInicioAlojamiento<=GETDATE() AND fechaFinAlojamiento IS NULL))"
+        tabla = accesoBD.query(secuencia)
+        If idAlojamientoModificacion = 0 Then
+            If (tabla.Rows.Count() > 0) Then
+                MessageBox.Show("La habitación esta ocupada en las fechas ingresadas.")
+                Return False
+            End If
+        Else
+            If (tabla.Rows.Count() > 1) Then
+                MessageBox.Show("La habitación esta ocupada en las fechas ingresadas.")
+                Return False
+            End If
+        End If
+        
         'controlar precio
         If (txtPrecio.Text < 0) Then
             MessageBox.Show("El precio por día no puede ser negativo.", "Error", MessageBoxButtons.OK)
@@ -270,4 +291,5 @@
         dtpSalida.Format = DateTimePickerFormat.Long
         flagFechaSalida = True
     End Sub
+
 End Class
