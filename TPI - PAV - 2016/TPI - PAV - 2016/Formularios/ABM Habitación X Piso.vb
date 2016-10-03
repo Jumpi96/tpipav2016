@@ -8,7 +8,7 @@
         noApretado
     End Enum
     Dim estado_aceptar As aceptar = aceptar.noApretado
-    Dim cantidadCamasAuxiliar As Integer
+    Dim cantidadCamasAuxiliar As Integer = 0
 
     Private Sub ABM_Habitación_X_Piso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargarComboTipoHabitacion()
@@ -73,7 +73,7 @@
             txt_nroHabitacion.Focus()
             Return False
         End If
-        Me.validarCamas()
+        Return Me.validarCamas()
         If txt_baños.Text = "" Then
             MessageBox.Show("No ha ingresado una cantidad de baños.", "Error", MessageBoxButtons.OK)
             txt_baños.Focus()
@@ -181,36 +181,43 @@
     Private Sub cmd_registrar_Click(sender As Object, e As EventArgs) Handles cmd_registrar.Click
         Me.cargarAuxiliarTiposCamas()
         If Me.validarCampos = True Then
+            Dim i As Integer
+            Dim cantidad As Integer
+            cantidad = Me.txt_camas.Text
             If Me.registrarModificar = True Then
-                Dim i As Integer
+                MessageBox.Show("Rama registrar")
                 If Me.validarExistencia = True Then
                     Me.insertarHabitacionPiso()
-                    Dim cantidad = Me.txt_camas.Text
                     For i = 0 To (cantidad - 1)
                         acceso.nonQuery(Me.insertarHabitacionPisoTipoCama(i))
                     Next
                     MessageBox.Show("Habitación registrada con éxito")
-                    Me.cmd_limpiar.PerformClick()
                     Me.cargarGrilla()
                 End If
             ElseIf Me.registrarModificar = False Then
-                Dim cantidad As Integer
-                cantidad = Me.txt_camas.Text
                 Me.modificarHabitacionPiso()
                 'If Me.estado_aceptar = aceptar.apretado Then
-                For i = 0 To (cantidad - 1)
-                    acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
-                Next
+                If cantidad < cantidadCamasAuxiliar Then
+                    For i = 0 To (cantidadCamasAuxiliar - 1)
+                        acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
+                    Next
+                Else
+                    For i = 0 To (cantidad - 1)
+                        acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
+                    Next
+                End If
+                
                 'End If
                 MessageBox.Show("La habitación se modificó correctamente")
             End If
+            auxiliarTiposCamas(0) = 1
+            auxiliarTiposCamas(1) = 1
+            auxiliarTiposCamas(2) = 1
+            auxiliarTiposCamas(3) = 1
+            estado_aceptar = aceptar.noApretado
+            Me.cantidadCamasAuxiliar = 0
+            Me.cmd_limpiar.PerformClick()
         End If
-        auxiliarTiposCamas(0) = 1
-        auxiliarTiposCamas(1) = 1
-        auxiliarTiposCamas(2) = 1
-        auxiliarTiposCamas(3) = 1
-        estado_aceptar = aceptar.noApretado
-        Me.cantidadCamasAuxiliar = 0
     End Sub
 
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
@@ -229,6 +236,8 @@
         Me.cargarGrilla()
         estado_aceptar = aceptar.noApretado
         Me.cantidadCamasAuxiliar = 0
+        Me.cmd_registrar.Text = "Registrar"
+        Me.registrarModificar = True
     End Sub
 
     Private Sub txt_nroHabitacion_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_nroHabitacion.MouseClick
@@ -319,7 +328,7 @@
 
         Me.cmd_registrar.Text = "Modificar"
         Me.registrarModificar = False
-        Me.cantidadCamasAuxiliar = Me.txt_camas.Text
+        Me.cantidadCamasAuxiliar = tabla.Rows(0)("cantCamas")
     End Sub
 
     Private Sub modificarHabitacionPiso()
@@ -344,8 +353,6 @@
         sql &= " WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text
 
         acceso.nonQuery(sql)
-
-        Me.cmd_limpiar.PerformClick()
         Me.cmd_registrar.Enabled = True
         Me.cmd_limpiar.Enabled = True
         Me.txt_nroHabitacion.ReadOnly = False
@@ -381,7 +388,7 @@
             If i < Me.cantidadCamasAuxiliar Then
                 sql &= Me.modificarHabitacionPisoTipoCama(i)
             Else
-                sql &= Me.insertarHabitacionPisoTipoCama(i)
+                Return Me.insertarHabitacionPisoTipoCama(i)
             End If
         ElseIf cantidad < Me.cantidadCamasAuxiliar Then
             If i < cantidad Then
@@ -510,6 +517,7 @@
         Me.setearCamposPanel(False)
         Me.pnl_tipoCama.Visible = False
         Me.cargarAuxiliarTiposCamas()
+        Me.calcularCantidadPersonas()
         estado_aceptar = aceptar.apretado
     End Sub
 
