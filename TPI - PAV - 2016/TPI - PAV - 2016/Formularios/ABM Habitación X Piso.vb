@@ -197,9 +197,11 @@
                 Dim cantidad As Integer
                 cantidad = Me.txt_camas.Text
                 Me.modificarHabitacionPiso()
+                'If Me.estado_aceptar = aceptar.apretado Then
                 For i = 0 To (cantidad - 1)
-                    Me.ABMHabitacionPisoTipoCama(i, cantidad)
+                    acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
                 Next
+                'End If
                 MessageBox.Show("La habitación se modificó correctamente")
             End If
         End If
@@ -208,6 +210,7 @@
         auxiliarTiposCamas(2) = 1
         auxiliarTiposCamas(3) = 1
         estado_aceptar = aceptar.noApretado
+        Me.cantidadCamasAuxiliar = 0
     End Sub
 
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
@@ -225,6 +228,7 @@
         Me.dtp_fechaEmision.Value = Today
         Me.cargarGrilla()
         estado_aceptar = aceptar.noApretado
+        Me.cantidadCamasAuxiliar = 0
     End Sub
 
     Private Sub txt_nroHabitacion_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_nroHabitacion.MouseClick
@@ -359,7 +363,7 @@
     Private Function modificarHabitacionPisoTipoCama(ByVal i As Integer) As String
         Dim sql As String = ""
         sql &= "UPDATE HabitacionXPisoXTipoCama "
-        sql &= "SET idTipoCama = " & (Me.auxiliarTiposCamas(i) + 1) & " "
+        sql &= "SET idTipoCama = " & Me.auxiliarTiposCamas(i) + 1 & " "
         Return sql
     End Function
 
@@ -369,7 +373,7 @@
         Return sql
     End Function
 
-    Private Sub ABMHabitacionPisoTipoCama(ByVal i As Integer, ByVal cantidad As Integer)
+    Private Function ABMHabitacionPisoTipoCama(ByVal i As Integer, ByVal cantidad As Integer) As String
         Dim sql As String = ""
         If cantidad = Me.cantidadCamasAuxiliar Then
             sql &= Me.modificarHabitacionPisoTipoCama(i)
@@ -386,9 +390,9 @@
                 sql &= Me.eliminarHabitacionPisoTipoCama()
             End If
         End If
-        sql &= "WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text & " AND nroCama = " & (i + 1)
-        acceso.nonQuery(sql)
-    End Sub
+        sql &= "WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text & " AND nroCama = " & i + 1
+        Return sql
+    End Function
 
     Private Sub cmd_actualizarGrilla_Click(sender As Object, e As EventArgs) Handles cmd_actualizarGrilla.Click
         Me.cargarGrilla()
