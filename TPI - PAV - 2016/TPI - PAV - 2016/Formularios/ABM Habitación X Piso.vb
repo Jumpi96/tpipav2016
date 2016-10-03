@@ -31,6 +31,55 @@
         auxiliarTiposCamas(3) = 1
     End Sub
 
+    Private Sub cmd_registrar_Click(sender As Object, e As EventArgs) Handles cmd_registrar.Click
+        Me.cargarAuxiliarTiposCamas()
+        If Me.validarCampos = True Then
+            Dim i As Integer
+            Dim cantidad As Integer
+            cantidad = Me.txt_camas.Text
+            If Me.registrarModificar = True Then
+                MessageBox.Show("Rama registrar")
+                If Me.validarExistencia = True Then
+                    Me.insertarHabitacionPiso()
+                    For i = 0 To (cantidad - 1)
+                        acceso.nonQuery(Me.insertarHabitacionPisoTipoCama(i))
+                    Next
+                    MessageBox.Show("Habitación registrada con éxito")
+                    Me.cargarGrilla()
+                End If
+            ElseIf Me.registrarModificar = False Then
+                Me.modificarHabitacionPiso()
+                'If Me.estado_aceptar = aceptar.apretado Then
+                If cantidad < cantidadCamasAuxiliar Then
+                    For i = 0 To (cantidadCamasAuxiliar - 1)
+                        acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
+                    Next
+                Else
+                    For i = 0 To (cantidad - 1)
+                        acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
+                    Next
+                End If
+
+                'End If
+                MessageBox.Show("La habitación se modificó correctamente")
+            End If
+            auxiliarTiposCamas(0) = 1
+            auxiliarTiposCamas(1) = 1
+            auxiliarTiposCamas(2) = 1
+            auxiliarTiposCamas(3) = 1
+            estado_aceptar = aceptar.noApretado
+            Me.cantidadCamasAuxiliar = 0
+            Me.cmd_limpiar.PerformClick()
+        End If
+    End Sub
+
+    Private Sub cargarAuxiliarTiposCamas()
+        auxiliarTiposCamas(0) = Me.cmb_tipoCama1.SelectedIndex
+        auxiliarTiposCamas(1) = Me.cmb_tipoCama2.SelectedIndex
+        auxiliarTiposCamas(2) = Me.cmb_tipoCama3.SelectedIndex
+        auxiliarTiposCamas(3) = Me.cmb_tipoCama4.SelectedIndex
+    End Sub
+
     Private Sub insertarHabitacionPiso()
         Dim sql As String = ""
         sql &= "INSERT INTO HabitacionesXPiso (nroHabitacion, cantCamas, aireAcondicionado, frigobar, fechaEmision, cantBaños, idTipoHabitacion, cantMaxPersonas) "
@@ -53,68 +102,33 @@
         acceso.nonQuery(sql)
     End Sub
 
-    Private Function validarCamas() As Boolean
-        If txt_camas.Text = "" Then
-            MessageBox.Show("No ha ingresado una cantidad de camas.", "Error", MessageBoxButtons.OK)
-            txt_camas.Focus()
-            Return False
-        End If
-        If txt_camas.Text < 2 Or txt_camas.Text > 4 Then
-            MessageBox.Show("Cantidad incorrecta de camas. Los valores aceptados van entre 2 y 4 inclusives.", "Error", MessageBoxButtons.OK)
-            txt_camas.Focus()
-            Return False
-        End If
-        Return True
-    End Function
-
-    Private Function validarCampos() As Boolean
-        If txt_nroHabitacion.Text = "" Then
-            MessageBox.Show("No ha ingresado un número de habitación.", "Error", MessageBoxButtons.OK)
-            txt_nroHabitacion.Focus()
-            Return False
-        End If
-        Return Me.validarCamas()
-        If txt_baños.Text = "" Then
-            MessageBox.Show("No ha ingresado una cantidad de baños.", "Error", MessageBoxButtons.OK)
-            txt_baños.Focus()
-            Return False
-        End If
-        If cmb_tipoHabitacion.SelectedIndex = -1 Then
-            MessageBox.Show("No ha seleccionado ningún tipo de habitación.", "Error", MessageBoxButtons.OK)
-            cmb_tipoHabitacion.Focus()
-            Return False
-        End If
-        If txt_personas.Text = "" Then
-            MessageBox.Show("No ha ingresado una cantidad máxima de personas.", "Error", MessageBoxButtons.OK)
-            txt_personas.Focus()
-            Return False
-        End If
-        If txt_personas.Text = 0 Then
-            MessageBox.Show("La cantidad máxima de personas no puede ser cero.", "Error", MessageBoxButtons.OK)
-            txt_personas.Focus()
-            Return False
-        End If
-        Return True
-    End Function
-
-    Private Function validarExistencia() As Boolean
-        Dim tabla As New Data.DataTable
+    Private Sub modificarHabitacionPiso()
         Dim sql As String = ""
-        sql = "SELECT nroHabitacion FROM HabitacionesXPiso"
 
-        tabla = acceso.query(sql)
+        sql &= "UPDATE HabitacionesXPiso "
+        sql &= "SET cantCamas = '" & Me.txt_camas.Text & "'"
+        If Me.chb_aireAcondicionado.CheckState = CheckState.Unchecked Then
+            sql &= ", aireAcondicionado = '" & 0 & "'"
+        ElseIf Me.chb_aireAcondicionado.CheckState = CheckState.Checked Then
+            sql &= ", aireAcondicionado = '" & 1 & "'"
+        End If
+        If Me.chb_frigoBar.CheckState = CheckState.Unchecked Then
+            sql &= ", frigobar = '" & 0 & "'"
+        ElseIf Me.chb_frigoBar.CheckState = CheckState.Checked Then
+            sql &= ", frigobar = '" & 1 & "'"
+        End If
+        sql &= ", fechaEmision = '" & Me.dtp_fechaEmision.Value.Date & "'"
+        sql &= ", cantBaños = '" & Me.txt_baños.Text & "'"
+        sql &= ", idTipoHabitacion = '" & Me.cmb_tipoHabitacion.SelectedValue & "'"
+        sql &= ", cantMaxPersonas = '" & Me.txt_personas.Text & "'"
+        sql &= " WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text
 
-        Dim i As Integer
-
-        For i = 0 To tabla.Rows.Count() - 1
-            If txt_nroHabitacion.Text = tabla.Rows(i)("nroHabitacion") Then
-                MessageBox.Show("Habitación ya existente.", "Error", MessageBoxButtons.OK)
-                txt_nroHabitacion.Focus()
-                Return False
-            End If
-        Next
-        Return True
-    End Function
+        acceso.nonQuery(sql)
+        Me.cmd_registrar.Enabled = True
+        Me.cmd_limpiar.Enabled = True
+        Me.txt_nroHabitacion.ReadOnly = False
+        Me.cargarGrilla()
+    End Sub
 
     Private Sub cargarComboTipoHabitacion()
         Dim tabla As New Data.DataTable
@@ -178,48 +192,6 @@
         Next
     End Sub
 
-    Private Sub cmd_registrar_Click(sender As Object, e As EventArgs) Handles cmd_registrar.Click
-        Me.cargarAuxiliarTiposCamas()
-        If Me.validarCampos = True Then
-            Dim i As Integer
-            Dim cantidad As Integer
-            cantidad = Me.txt_camas.Text
-            If Me.registrarModificar = True Then
-                MessageBox.Show("Rama registrar")
-                If Me.validarExistencia = True Then
-                    Me.insertarHabitacionPiso()
-                    For i = 0 To (cantidad - 1)
-                        acceso.nonQuery(Me.insertarHabitacionPisoTipoCama(i))
-                    Next
-                    MessageBox.Show("Habitación registrada con éxito")
-                    Me.cargarGrilla()
-                End If
-            ElseIf Me.registrarModificar = False Then
-                Me.modificarHabitacionPiso()
-                'If Me.estado_aceptar = aceptar.apretado Then
-                If cantidad < cantidadCamasAuxiliar Then
-                    For i = 0 To (cantidadCamasAuxiliar - 1)
-                        acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
-                    Next
-                Else
-                    For i = 0 To (cantidad - 1)
-                        acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
-                    Next
-                End If
-                
-                'End If
-                MessageBox.Show("La habitación se modificó correctamente")
-            End If
-            auxiliarTiposCamas(0) = 1
-            auxiliarTiposCamas(1) = 1
-            auxiliarTiposCamas(2) = 1
-            auxiliarTiposCamas(3) = 1
-            estado_aceptar = aceptar.noApretado
-            Me.cantidadCamasAuxiliar = 0
-            Me.cmd_limpiar.PerformClick()
-        End If
-    End Sub
-
     Private Sub cmd_cancelar_Click(sender As Object, e As EventArgs) Handles cmd_cancelar.Click
         Me.Close()
     End Sub
@@ -238,47 +210,6 @@
         Me.cantidadCamasAuxiliar = 0
         Me.cmd_registrar.Text = "Registrar"
         Me.registrarModificar = True
-    End Sub
-
-    Private Sub txt_nroHabitacion_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_nroHabitacion.MouseClick
-        If Me.txt_nroHabitacion.Text = "" Then
-            Me.txt_nroHabitacion.SelectionStart = 0
-        End If
-    End Sub
-
-    Private Sub txt_camas_LostFocus(sender As Object, e As EventArgs) Handles txt_camas.LostFocus
-        Me.cargarAuxiliarTiposCamas()
-        Me.calcularCantidadPersonas()
-    End Sub
-
-    Private Sub calcularCantidadPersonas()
-        Dim cantidad As Integer
-        cantidad = Me.txt_camas.Text
-        Dim i As Integer
-        For i = 0 To Me.txt_camas.Text - 1
-            If Me.auxiliarTiposCamas(i) = 0 Or Me.auxiliarTiposCamas(i) = 2 Then
-                cantidad = cantidad + 1
-            End If
-        Next
-        Me.txt_personas.Text = cantidad
-    End Sub
-
-    Private Sub txt_camas_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_camas.MouseClick
-        If Me.txt_camas.Text = "" Then
-            Me.txt_camas.SelectionStart = 0
-        End If
-    End Sub
-
-    Private Sub txt_baños_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_baños.MouseClick
-        If Me.txt_baños.Text = "" Then
-            Me.txt_baños.SelectionStart = 0
-        End If
-    End Sub
-
-    Private Sub txt_personas_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_personas.MouseClick
-        If Me.txt_personas.Text = "" Then
-            Me.txt_personas.SelectionStart = 0
-        End If
     End Sub
 
     Private Sub grid_habitacionPiso_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_habitacionPiso.CellContentDoubleClick
@@ -331,76 +262,6 @@
         Me.cantidadCamasAuxiliar = tabla.Rows(0)("cantCamas")
     End Sub
 
-    Private Sub modificarHabitacionPiso()
-        Dim sql As String = ""
-
-        sql &= "UPDATE HabitacionesXPiso "
-        sql &= "SET cantCamas = '" & Me.txt_camas.Text & "'"
-        If Me.chb_aireAcondicionado.CheckState = CheckState.Unchecked Then
-            sql &= ", aireAcondicionado = '" & 0 & "'"
-        ElseIf Me.chb_aireAcondicionado.CheckState = CheckState.Checked Then
-            sql &= ", aireAcondicionado = '" & 1 & "'"
-        End If
-        If Me.chb_frigoBar.CheckState = CheckState.Unchecked Then
-            sql &= ", frigobar = '" & 0 & "'"
-        ElseIf Me.chb_frigoBar.CheckState = CheckState.Checked Then
-            sql &= ", frigobar = '" & 1 & "'"
-        End If
-        sql &= ", fechaEmision = '" & Me.dtp_fechaEmision.Value.Date & "'"
-        sql &= ", cantBaños = '" & Me.txt_baños.Text & "'"
-        sql &= ", idTipoHabitacion = '" & Me.cmb_tipoHabitacion.SelectedValue & "'"
-        sql &= ", cantMaxPersonas = '" & Me.txt_personas.Text & "'"
-        sql &= " WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text
-
-        acceso.nonQuery(sql)
-        Me.cmd_registrar.Enabled = True
-        Me.cmd_limpiar.Enabled = True
-        Me.txt_nroHabitacion.ReadOnly = False
-        Me.cargarGrilla()
-    End Sub
-
-    Private Function insertarHabitacionPisoTipoCama(ByVal i As Integer) As String
-        Dim sql As String = ""
-        sql &= "INSERT INTO HabitacionXPisoXTipoCama "
-        sql &= "VALUES (" & Me.txt_nroHabitacion.Text & ", " & (i + 1)
-        sql &= ", " & (Me.auxiliarTiposCamas(i) + 1) & ") "
-        Return sql
-    End Function
-
-    Private Function modificarHabitacionPisoTipoCama(ByVal i As Integer) As String
-        Dim sql As String = ""
-        sql &= "UPDATE HabitacionXPisoXTipoCama "
-        sql &= "SET idTipoCama = " & Me.auxiliarTiposCamas(i) + 1 & " "
-        Return sql
-    End Function
-
-    Private Function eliminarHabitacionPisoTipoCama() As String
-        Dim sql As String = ""
-        sql &= "DELETE FROM HabitacionXPisoXTipoCama "
-        Return sql
-    End Function
-
-    Private Function ABMHabitacionPisoTipoCama(ByVal i As Integer, ByVal cantidad As Integer) As String
-        Dim sql As String = ""
-        If cantidad = Me.cantidadCamasAuxiliar Then
-            sql &= Me.modificarHabitacionPisoTipoCama(i)
-        ElseIf cantidad > Me.cantidadCamasAuxiliar Then
-            If i < Me.cantidadCamasAuxiliar Then
-                sql &= Me.modificarHabitacionPisoTipoCama(i)
-            Else
-                Return Me.insertarHabitacionPisoTipoCama(i)
-            End If
-        ElseIf cantidad < Me.cantidadCamasAuxiliar Then
-            If i < cantidad Then
-                sql &= Me.modificarHabitacionPisoTipoCama(i)
-            Else
-                sql &= Me.eliminarHabitacionPisoTipoCama()
-            End If
-        End If
-        sql &= "WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text & " AND nroCama = " & i + 1
-        Return sql
-    End Function
-
     Private Sub cmd_actualizarGrilla_Click(sender As Object, e As EventArgs) Handles cmd_actualizarGrilla.Click
         Me.cargarGrilla()
     End Sub
@@ -423,13 +284,6 @@
                 End If
             End If
         End If
-    End Sub
-
-    Private Sub cargarAuxiliarTiposCamas()
-        auxiliarTiposCamas(0) = Me.cmb_tipoCama1.SelectedIndex
-        auxiliarTiposCamas(1) = Me.cmb_tipoCama2.SelectedIndex
-        auxiliarTiposCamas(2) = Me.cmb_tipoCama3.SelectedIndex
-        auxiliarTiposCamas(3) = Me.cmb_tipoCama4.SelectedIndex
     End Sub
 
     Private Sub mostrarCamas()
@@ -548,11 +402,149 @@
         Me.grid_habitacionPiso.Enabled = b
     End Sub
 
-    Private Sub grid_habitacionPiso_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_habitacionPiso.CellContentClick
-
+    Private Sub txt_nroHabitacion_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_nroHabitacion.MouseClick
+        If Me.txt_nroHabitacion.Text = "" Then
+            Me.txt_nroHabitacion.SelectionStart = 0
+        End If
     End Sub
 
-    Private Sub txt_camas_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_camas.MaskInputRejected
-
+    Private Sub txt_camas_LostFocus(sender As Object, e As EventArgs) Handles txt_camas.LostFocus
+        Me.cargarAuxiliarTiposCamas()
+        Me.calcularCantidadPersonas()
     End Sub
+
+    Private Sub calcularCantidadPersonas()
+        Dim cantidad As Integer
+        cantidad = Me.txt_camas.Text
+        Dim i As Integer
+        For i = 0 To Me.txt_camas.Text - 1
+            If Me.auxiliarTiposCamas(i) = 0 Or Me.auxiliarTiposCamas(i) = 2 Then
+                cantidad = cantidad + 1
+            End If
+        Next
+        Me.txt_personas.Text = cantidad
+    End Sub
+
+    Private Sub txt_camas_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_camas.MouseClick
+        If Me.txt_camas.Text = "" Then
+            Me.txt_camas.SelectionStart = 0
+        End If
+    End Sub
+
+    Private Sub txt_baños_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_baños.MouseClick
+        If Me.txt_baños.Text = "" Then
+            Me.txt_baños.SelectionStart = 0
+        End If
+    End Sub
+
+    Private Sub txt_personas_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_personas.MouseClick
+        If Me.txt_personas.Text = "" Then
+            Me.txt_personas.SelectionStart = 0
+        End If
+    End Sub
+
+    Private Function validarCamas() As Boolean
+        If txt_camas.Text = "" Then
+            MessageBox.Show("No ha ingresado una cantidad de camas.", "Error", MessageBoxButtons.OK)
+            txt_camas.Focus()
+            Return False
+        End If
+        If txt_camas.Text < 2 Or txt_camas.Text > 4 Then
+            MessageBox.Show("Cantidad incorrecta de camas. Los valores aceptados van entre 2 y 4 inclusives.", "Error", MessageBoxButtons.OK)
+            txt_camas.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Function validarCampos() As Boolean
+        If txt_nroHabitacion.Text = "" Then
+            MessageBox.Show("No ha ingresado un número de habitación.", "Error", MessageBoxButtons.OK)
+            txt_nroHabitacion.Focus()
+            Return False
+        End If
+        Return Me.validarCamas()
+        If txt_baños.Text = "" Then
+            MessageBox.Show("No ha ingresado una cantidad de baños.", "Error", MessageBoxButtons.OK)
+            txt_baños.Focus()
+            Return False
+        End If
+        If cmb_tipoHabitacion.SelectedIndex = -1 Then
+            MessageBox.Show("No ha seleccionado ningún tipo de habitación.", "Error", MessageBoxButtons.OK)
+            cmb_tipoHabitacion.Focus()
+            Return False
+        End If
+        If txt_personas.Text = "" Then
+            MessageBox.Show("No ha ingresado una cantidad máxima de personas.", "Error", MessageBoxButtons.OK)
+            txt_personas.Focus()
+            Return False
+        End If
+        If txt_personas.Text = 0 Then
+            MessageBox.Show("La cantidad máxima de personas no puede ser cero.", "Error", MessageBoxButtons.OK)
+            txt_personas.Focus()
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Function validarExistencia() As Boolean
+        Dim tabla As New Data.DataTable
+        Dim sql As String = ""
+        sql = "SELECT nroHabitacion FROM HabitacionesXPiso"
+
+        tabla = acceso.query(sql)
+
+        Dim i As Integer
+
+        For i = 0 To tabla.Rows.Count() - 1
+            If txt_nroHabitacion.Text = tabla.Rows(i)("nroHabitacion") Then
+                MessageBox.Show("Habitación ya existente.", "Error", MessageBoxButtons.OK)
+                txt_nroHabitacion.Focus()
+                Return False
+            End If
+        Next
+        Return True
+    End Function
+
+    Private Function insertarHabitacionPisoTipoCama(ByVal i As Integer) As String
+        Dim sql As String = ""
+        sql &= "INSERT INTO HabitacionXPisoXTipoCama "
+        sql &= "VALUES (" & Me.txt_nroHabitacion.Text & ", " & (i + 1)
+        sql &= ", " & (Me.auxiliarTiposCamas(i) + 1) & ") "
+        Return sql
+    End Function
+
+    Private Function modificarHabitacionPisoTipoCama(ByVal i As Integer) As String
+        Dim sql As String = ""
+        sql &= "UPDATE HabitacionXPisoXTipoCama "
+        sql &= "SET idTipoCama = " & Me.auxiliarTiposCamas(i) + 1 & " "
+        Return sql
+    End Function
+
+    Private Function eliminarHabitacionPisoTipoCama() As String
+        Dim sql As String = ""
+        sql &= "DELETE FROM HabitacionXPisoXTipoCama "
+        Return sql
+    End Function
+
+    Private Function ABMHabitacionPisoTipoCama(ByVal i As Integer, ByVal cantidad As Integer) As String
+        Dim sql As String = ""
+        If cantidad = Me.cantidadCamasAuxiliar Then
+            sql &= Me.modificarHabitacionPisoTipoCama(i)
+        ElseIf cantidad > Me.cantidadCamasAuxiliar Then
+            If i < Me.cantidadCamasAuxiliar Then
+                sql &= Me.modificarHabitacionPisoTipoCama(i)
+            Else
+                Return Me.insertarHabitacionPisoTipoCama(i)
+            End If
+        ElseIf cantidad < Me.cantidadCamasAuxiliar Then
+            If i < cantidad Then
+                sql &= Me.modificarHabitacionPisoTipoCama(i)
+            Else
+                sql &= Me.eliminarHabitacionPisoTipoCama()
+            End If
+        End If
+        sql &= "WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text & " AND nroCama = " & i + 1
+        Return sql
+    End Function
 End Class
