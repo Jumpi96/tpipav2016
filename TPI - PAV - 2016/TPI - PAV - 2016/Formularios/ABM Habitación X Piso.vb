@@ -415,9 +415,15 @@
 
     Private Sub calcularCantidadPersonas()
         Dim cantidad As Integer
-        cantidad = Me.txt_camas.Text
+        'probando
+        If Me.txt_camas.Text = "" Then
+            cantidad = 0
+        Else
+            cantidad = Me.txt_camas.Text
+        End If
+
         Dim i As Integer
-        For i = 0 To Me.txt_camas.Text - 1
+        For i = 0 To cantidad - 1
             If Me.auxiliarTiposCamas(i) = 0 Or Me.auxiliarTiposCamas(i) = 2 Then
                 cantidad = cantidad + 1
             End If

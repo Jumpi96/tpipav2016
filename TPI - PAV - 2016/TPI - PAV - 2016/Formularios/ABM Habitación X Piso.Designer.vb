@@ -399,7 +399,7 @@ Partial Class ABM_Habitación_X_Piso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(486, 428)
+        Me.ClientSize = New System.Drawing.Size(486, 427)
         Me.Controls.Add(Me.pnl_tipoCama)
         Me.Controls.Add(Me.cmd_modificarTiposCama)
         Me.Controls.Add(Me.cmd_actualizarGrilla)
@@ -427,7 +427,7 @@ Partial Class ABM_Habitación_X_Piso
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(502, 466)
         Me.Name = "ABM_Habitación_X_Piso"
-        Me.Text = "ABM_Habitación_X_Piso"
+        Me.Text = "ABM Habitación X Piso"
         CType(Me.grid_habitacionPiso, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_tipoCama.ResumeLayout(False)
         Me.pnl_tipoCama.PerformLayout()
