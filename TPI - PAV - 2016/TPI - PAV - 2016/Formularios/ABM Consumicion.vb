@@ -86,7 +86,7 @@
 
         sql &= "SELECT * FROM HabitacionesXPiso JOIN Alojamientos "
         sql &= "ON HabitacionesXPiso.nroHabitacion = Alojamientos.nroHabitacion "
-        sql &= "WHERE CONVERT(date,GETDATE()) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
+        sql &= "WHERE CONVERT(date, GETDATE(), 103) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
         sql &= "AND HabitacionesXPiso.nroHabitacion = '" & Me.txt_nroHabitacion.Text & "'"
 
         tabla = acceso.query(sql)
@@ -106,7 +106,7 @@
         sql &= "ON Alojamientos.nroHabitacion = HabitacionesXPiso.nroHabitacion "
         sql &= "JOIN Clientes ON Clientes.nroDocumento = Alojamientos.nroDoc AND clientes.tipoDocumento = Alojamientos.tipoDoc "
         sql &= "JOIN TiposDocumento ON TiposDocumento.idTipoDocumento = Clientes.tipoDocumento "
-        sql &= "WHERE CONVERT(date,GETDATE()) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
+        sql &= "WHERE CONVERT(date, GETDATE(), 103) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
         sql &= "AND HabitacionesXPiso.nroHabitacion = '" & Me.txt_nroHabitacion.Text & "'"
 
         tabla = acceso.query(sql)
@@ -258,6 +258,7 @@
         Me.txt_cantidad.Text = ""
         Me.txt_articuloSeleccionado.Text = ""
         Me.cmb_articulos.Enabled = False
+        Me.cmb_articulos.SelectedIndex = -1
         Me.grid_articulos.Enabled = False
         Me.grid_articulos.Rows.Clear()
         Me.cmd_borrar.Enabled = False
@@ -379,5 +380,9 @@
 
     Private Sub cmd_cerrar_Click(sender As Object, e As EventArgs) Handles cmd_cerrar.Click
         Me.Close()
+    End Sub
+
+    Private Sub cmb_articulos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_articulos.SelectedIndexChanged
+
     End Sub
 End Class

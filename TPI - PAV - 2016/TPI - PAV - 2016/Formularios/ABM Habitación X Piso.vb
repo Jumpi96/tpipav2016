@@ -38,7 +38,6 @@
             Dim cantidad As Integer
             cantidad = Me.txt_camas.Text
             If Me.registrarModificar = True Then
-                MessageBox.Show("Rama registrar")
                 If Me.validarExistencia = True Then
                     Me.insertarHabitacionPiso()
                     For i = 0 To (cantidad - 1)
@@ -353,12 +352,7 @@
         Me.setearCamposABM(True)
         Me.setearCamposPanel(False)
         Me.pnl_tipoCama.Visible = False
-        If Me.registrarModificar = True Then
-            Me.cmb_tipoCama1.SelectedIndex = 1
-            Me.cmb_tipoCama2.SelectedIndex = 1
-            Me.cmb_tipoCama3.SelectedIndex = 1
-            Me.cmb_tipoCama4.SelectedIndex = 1
-        ElseIf Me.registrarModificar = False Then
+        If estado_aceptar = aceptar.apretado Then
             Me.cmb_tipoCama1.SelectedIndex = Me.auxiliarTiposCamas(0)
             Me.cmb_tipoCama2.SelectedIndex = Me.auxiliarTiposCamas(1)
             Me.cmb_tipoCama3.SelectedIndex = Me.auxiliarTiposCamas(2)
@@ -469,13 +463,15 @@
             txt_nroHabitacion.Focus()
             Return False
         End If
-        Return Me.validarCamas()
+        If Me.validarCamas() = False Then
+            Return False
+        End If
         If txt_baños.Text = "" Then
             MessageBox.Show("No ha ingresado una cantidad de baños.", "Error", MessageBoxButtons.OK)
             txt_baños.Focus()
             Return False
         End If
-        If cmb_tipoHabitacion.SelectedIndex = -1 Then
+        If cmb_tipoHabitacion.SelectedIndex < 0 Then
             MessageBox.Show("No ha seleccionado ningún tipo de habitación.", "Error", MessageBoxButtons.OK)
             cmb_tipoHabitacion.Focus()
             Return False
@@ -553,4 +549,8 @@
         sql &= "WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text & " AND nroCama = " & i + 1
         Return sql
     End Function
+
+    Private Sub txt_camas_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_camas.MaskInputRejected
+
+    End Sub
 End Class

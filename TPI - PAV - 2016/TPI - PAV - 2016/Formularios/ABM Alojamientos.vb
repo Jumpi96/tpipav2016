@@ -151,12 +151,12 @@
         If flagFechaSalida = False Then
             sentenciaSQL = "insert into alojamientos(nroDoc,tipoDoc,nroHabitacion,cantPersonas,fechaInicioAlojamiento,fechaFinEstimadaalojamiento,precioPorDia) " _
             & " values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text _
-            + "," & txtAlojados.Text & ", CONVERT(datetime,'" & dtpIngreso.Value.Date & "',103) , CONVERT(datetime,'" & dtpEstimada.Value.Date & "',103) ," _
+            + "," & txtAlojados.Text & ", CONVERT(date,'" & dtpIngreso.Value.Date & "',103) , CONVERT(date,'" & dtpEstimada.Value.Date & "',103) ," _
             & txtPrecio.Text & ")"
         Else
             sentenciaSQL = "insert into alojamientos " +
             "values(" + txtNroDoc.Text + "," & cmbTipoDoc.SelectedValue & "," + txtHabitacion.Text + "," & txtAlojados.Text _
-            & ",CONVERT(datetime,'" & dtpIngreso.Value.Date & "',103), CONVERT(datetime,'" & dtpEstimada.Value.Date & "',103), CONVERT(datetime,'" & dtpSalida.Value.Date & "',103)," & txtPrecio.Text & ")"
+            & ",CONVERT(date,'" & dtpIngreso.Value.Date & "',103), CONVERT(date,'" & dtpEstimada.Value.Date & "',103), CONVERT(date,'" & dtpSalida.Value.Date & "',103)," & txtPrecio.Text & ")"
         End If
 
         accesoBD.nonQuery(sentenciaSQL)
@@ -292,4 +292,15 @@
         flagFechaSalida = True
     End Sub
 
+    Private Sub txtHabitacion_MouseClick(sender As Object, e As MouseEventArgs) Handles txtHabitacion.MouseClick
+        If txtHabitacion.Text = "" Then
+            txtHabitacion.SelectionStart = 0
+        End If
+    End Sub
+
+    Private Sub txtPrecio_MouseClick(sender As Object, e As MouseEventArgs) Handles txtPrecio.MouseClick
+        If txtPrecio.Text = "" Then
+            txtPrecio.SelectionStart = 0
+        End If
+    End Sub
 End Class

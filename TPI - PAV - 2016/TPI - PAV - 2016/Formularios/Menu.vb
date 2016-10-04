@@ -704,8 +704,8 @@
     Private Sub menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.lbl_fechahora.Text = Today.Day & "/" & Today.Month & "/" & Today.Year
         Me.cargarComboTipoDoc()
-        Me.cargarComboCantidadPersonas()
-        Me.cargarComboTipoHabitacion()
+        'Me.cargarComboCantidadPersonas()
+        'Me.cargarComboTipoHabitacion()
     End Sub
 
 

@@ -58,7 +58,7 @@
 
         sql &= "SELECT * FROM HabitacionesXPiso JOIN Alojamientos "
         sql &= "ON HabitacionesXPiso.nroHabitacion = Alojamientos.nroHabitacion "
-        sql &= "WHERE CONVERT(date,GETDATE()) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
+        sql &= "WHERE CONVERT(date,GETDATE(),103) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
         sql &= "AND HabitacionesXPiso.nroHabitacion = '" & Me.txt_nroHabitacion.Text & "'"
 
         tabla = acceso.query(sql)
@@ -78,7 +78,7 @@
         sql &= "SELECT * FROM HabitacionesXPiso JOIN Alojamientos "
         sql &= "ON Alojamientos.nroHabitacion = HabitacionesXPiso.nroHabitacion "
         sql &= "JOIN Clientes ON Clientes.nroDocumento = Alojamientos.nroDoc AND clientes.tipoDocumento = Alojamientos.tipoDoc "
-        sql &= "WHERE CONVERT(date,GETDATE()) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
+        sql &= "WHERE CONVERT(date,GETDATE(),103) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
         sql &= "AND HabitacionesXPiso.nroHabitacion = '" & Me.txt_nroHabitacion.Text & "'"
 
         tabla = acceso.query(sql)
