@@ -10,6 +10,8 @@
     'LOAD FORM
     Private Sub ABM_Proveedores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarGrilla()
+        cmd_borrar.Visible = False
+
     End Sub
 
 
@@ -124,7 +126,7 @@
     End Sub
 
     'DOBLECLICK EN ELEMENTO DE LA GRILLA
-    Private Sub grid_proveedores_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_proveedores.CellContentDoubleClick
+    Private Sub grid_proveedores_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_proveedores.CellDoubleClick
         Dim sentenciaSQL As String = ""
 
         sentenciaSQL = "SELECT * FROM Proveedores WHERE nombre = '" & Me.grid_proveedores.CurrentRow.Cells("c_nombre").Value & "'"
@@ -137,12 +139,24 @@
 
         Me.cmd_guardar.Text = "Modificar"
         Me.txt_nombre.Enabled = False
+        Me.cmd_borrar.Visible = True
 
         Me.txt_nombre.Text = tabla.Rows(0)("nombre")
         Me.txt_correo.Text = tabla.Rows(0)("correo")
         Me.txt_telefono.Text = tabla.Rows(0)("telefono")
 
         Me.estadoInsercion = estado.modificar
+
+        Me.grid_proveedores.Rows.Clear()
+
+        Dim c As Integer = 0
+        For c = 0 To tabla.Rows.Count - 1
+            Me.grid_proveedores.Rows.Add()
+            Me.grid_proveedores.Rows(c).Cells("c_idProveedor").Value = tabla.Rows(c)("idProveedor")
+            Me.grid_proveedores.Rows(c).Cells("c_nombre").Value = tabla.Rows(c)("nombre")
+            Me.grid_proveedores.Rows(c).Cells("c_correo").Value = tabla.Rows(c)("correo")
+            Me.grid_proveedores.Rows(c).Cells("c_telefono").Value = tabla.Rows(c)("telefono")
+        Next
     End Sub
 
 
@@ -155,6 +169,7 @@
         Me.cmd_guardar.Text = "Guardar"
         Me.txt_nombre.Enabled = True
         Me.cargarGrilla()
+        cmd_borrar.Visible = False
     End Sub
 
     'CLICK EN CANCELAR
@@ -163,11 +178,19 @@
     End Sub
 #End Region
 
-    'Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-    '    Dim sentenciaSQL As String = "DELETE FROM Proveedores DBCC CHECKIDENT (Proveedores, RESEED, 0)"
+    Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
+        Try
+            Dim sentenciaSQL As String = "DELETE FROM Proveedores WHERE idProveedor = " & Me.grid_proveedores.Rows(0).Cells("c_idProveedor").Value
 
-    '    acceso.nonQuery(sentenciaSQL)
-    '    Me.cargarGrilla()
-    'End Sub
+            acceso.nonQuery(sentenciaSQL)
 
+            MessageBox.Show("Se ha eliminado el Proveedor satisfactoriamente")
+            Me.cargarGrilla()
+            Me.cmd_limpiar.PerformClick()
+
+        Catch ex As OleDb.OleDbException
+            MessageBox.Show("El registro no puede eliminarse por tener otros registros relacionados.")
+            acceso.cerrar()
+        End Try
+    End Sub
 End Class

@@ -126,7 +126,7 @@
     End Sub
 
     'DOBLE CLICK GRILLA
-    Private Sub grid_grilla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_grilla.CellContentClick
+    Private Sub grid_grilla_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_grilla.CellDoubleClick
 
         Dim sentenciaSQL As String = ""
         sentenciaSQL &= "SELECT * FROM Servicios WHERE idServicio = " & Me.grid_grilla.CurrentRow.Cells(0).Value
@@ -203,4 +203,6 @@
             txt_precioUnitario.SelectionStart = 0
         End If
     End Sub
+
+
 End Class

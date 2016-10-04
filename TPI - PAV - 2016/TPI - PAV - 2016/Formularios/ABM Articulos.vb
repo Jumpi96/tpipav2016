@@ -173,7 +173,7 @@
     End Sub
 
     'DOBLE CLICK GRILLA
-    Private Sub grid_grilla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_grilla.CellContentClick
+    Private Sub grid_grilla_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_grilla.CellDoubleClick
         Dim sentenciaSQL As String = ""
         sentenciaSQL &= "SELECT A.*, P.nombre as nombreProveedor FROM Articulos A JOIN Proveedores P ON A.idProveedor=P.idProveedor WHERE idArticulo = " & Me.grid_grilla.CurrentRow.Cells(0).Value
         Dim tabla As DataTable = accesoBD.query(sentenciaSQL)
@@ -211,13 +211,22 @@
 
     'CLICK BORRAR
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-        Dim sentenciaSQL As String = "DELETE FROM Articulos WHERE idArticulo= " & Me.grid_grilla.Rows(0).Cells("idArticulo").Value
+        Try
 
-        accesoBD.nonQuery(sentenciaSQL)
+            Dim sentenciaSQL As String = "DELETE FROM Articulos WHERE idArticulo= " & Me.grid_grilla.Rows(0).Cells("idArticulo").Value
 
-        MessageBox.Show("Se ha eliminado el Articulo satisfactoriamente")
-        Me.cargar_grilla()
-        Me.cmd_limpiar.PerformClick()
+            accesoBD.nonQuery(sentenciaSQL)
+
+            MessageBox.Show("Se ha eliminado el Articulo satisfactoriamente")
+            Me.cargar_grilla()
+            Me.cmd_limpiar.PerformClick()
+
+
+        Catch ex As OleDb.OleDbException
+
+            MessageBox.Show("El registro no puede eliminarse por tener otros registros relacionados.")
+            accesoBD.cerrar()
+        End Try
     End Sub
 
     'CLICK PRECIO UNITARIO
@@ -227,8 +236,4 @@
         End If
     End Sub
 #End Region
-
-
-
-
 End Class

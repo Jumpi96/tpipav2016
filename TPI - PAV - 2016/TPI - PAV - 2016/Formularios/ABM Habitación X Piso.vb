@@ -29,6 +29,9 @@
         Me.cmb_tipoCama3.Enabled = False
         Me.cmb_tipoCama4.Enabled = False
         Me.pnl_tipoCama.Visible = False
+        Me.dtp_fechaEmision.Value = Today
+        Me.dtp_fechaEmision.Enabled = False
+
     End Sub
 
     Private Sub cmd_registrar_Click(sender As Object, e As EventArgs) Handles cmd_registrar.Click
@@ -211,7 +214,7 @@
         Me.registrarModificar = True
     End Sub
 
-    Private Sub grid_habitacionPiso_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_habitacionPiso.CellContentDoubleClick
+    Private Sub grid_habitacionPiso_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_habitacionPiso.CellDoubleClick
         Dim tabla As New Data.DataTable
         Dim sql As String = ""
 
@@ -550,7 +553,5 @@
         Return sql
     End Function
 
-    Private Sub txt_camas_MaskInputRejected(sender As Object, e As MaskInputRejectedEventArgs) Handles txt_camas.MaskInputRejected
 
-    End Sub
 End Class

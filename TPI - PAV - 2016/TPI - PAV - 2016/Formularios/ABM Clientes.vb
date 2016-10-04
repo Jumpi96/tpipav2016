@@ -84,7 +84,7 @@
         sentenciaSQL &= "SET nombre = '" & Me.txt_nombre.Text & "'"
         sentenciaSQL &= " , apellido = '" & Me.txt_apellido.Text & "'"
         sentenciaSQL &= " , telefono = '" & Me.txt_telefono.Text & "'"
-        sentenciaSQL &= " , fechaNacimiento = '" & Me.date_fechaNacimiento.Value.Date & "'"
+        sentenciaSQL &= " , fechaNacimiento = CONVERT(date, '" & Me.date_fechaNacimiento.Value.Date & "' , 103) "
         sentenciaSQL &= " WHERE nroDocumento = " & Me.txt_nroDoc.Text
         sentenciaSQL &= " AND tipoDocumento = " & Me.cmb_tipoDoc.SelectedValue
 
@@ -215,7 +215,8 @@
     End Sub
 
     'DOBLE CLICK SOBRE LA GRILLA
-    Private Sub grid_clientes_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_clientes.CellContentDoubleClick
+
+    Private Sub grid_clientes_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_clientes.CellDoubleClick
         Dim sentenciaSQL As String = ""
 
         sentenciaSQL = "SELECT * FROM Clientes C JOIN TiposDocumento T ON  C.tipoDocumento = T.idTipoDocumento " _

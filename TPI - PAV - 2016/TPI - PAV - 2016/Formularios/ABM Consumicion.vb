@@ -321,43 +321,54 @@
     End Sub
 
     Private Sub cmd_borrar_Click(sender As Object, e As EventArgs) Handles cmd_borrar.Click
-        Dim sql As String = ""
 
-        If Me.validarBorrado() = True Then
-            If txt_cantidadBorrar.Text = cantidadSub Then
-                sql &= "DELETE FROM Consumiciones "
-                sql &= "WHERE idArticulo = '" & idArticuloSub & "' "
-                sql &= "AND idAlojamiento = '" & idAlojamientoSub & "' "
-                If frigobarSub = "SI" Then
-                    sql &= "AND frigobar = 1"
-                ElseIf frigobarSub = "NO" Then
-                    sql &= "AND frigobar = 0"
-                End If
-            Else
-                sql &= "UPDATE Consumiciones "
-                sql &= "SET cantidad = cantidad - " & Me.txt_cantidadBorrar.Text
-                sql &= "WHERE idArticulo = '" & idArticuloSub & "' "
-                sql &= "AND idAlojamiento = '" & idAlojamientoSub & "' "
-                If frigobarSub = "SI" Then
-                    sql &= "AND frigobar = 1"
-                ElseIf frigobarSub = "NO" Then
-                    sql &= "AND frigobar = 0"
+        Try
+
+            Dim sql As String = ""
+
+            If Me.validarBorrado() = True Then
+                If txt_cantidadBorrar.Text = cantidadSub Then
+                    sql &= "DELETE FROM Consumiciones "
+                    sql &= "WHERE idArticulo = '" & idArticuloSub & "' "
+                    sql &= "AND idAlojamiento = '" & idAlojamientoSub & "' "
+                    If frigobarSub = "SI" Then
+                        sql &= "AND frigobar = 1"
+                    ElseIf frigobarSub = "NO" Then
+                        sql &= "AND frigobar = 0"
+                    End If
+                Else
+                    sql &= "UPDATE Consumiciones "
+                    sql &= "SET cantidad = cantidad - " & Me.txt_cantidadBorrar.Text
+                    sql &= "WHERE idArticulo = '" & idArticuloSub & "' "
+                    sql &= "AND idAlojamiento = '" & idAlojamientoSub & "' "
+                    If frigobarSub = "SI" Then
+                        sql &= "AND frigobar = 1"
+                    ElseIf frigobarSub = "NO" Then
+                        sql &= "AND frigobar = 0"
+                    End If
+
                 End If
 
+                acceso.nonQuery(sql)
+
+                MessageBox.Show("Consumición eliminada con éxito")
+
+                Me.txt_articuloSeleccionado.Text = ""
+                Me.restaurarStock()
+                idArticuloSub = -1
+                Me.txt_cantidadBorrar.Text = ""
+                Me.cmd_borrar.Enabled = False
+
+                Me.cargarGrilla()
             End If
 
-            acceso.nonQuery(sql)
+        Catch ex As OleDb.OleDbException
 
-            MessageBox.Show("Consumición eliminada con éxito")
+            MessageBox.Show("El registro no puede eliminarse por tener otros registros relacionados.")
+            acceso.cerrar()
+        End Try
 
-            Me.txt_articuloSeleccionado.Text = ""
-            Me.restaurarStock()
-            idArticuloSub = -1
-            Me.txt_cantidadBorrar.Text = ""
-            Me.cmd_borrar.Enabled = False
 
-            Me.cargarGrilla()
-        End If
     End Sub
 
     Private Sub txt_cantidadBorrar_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_cantidadBorrar.MouseClick

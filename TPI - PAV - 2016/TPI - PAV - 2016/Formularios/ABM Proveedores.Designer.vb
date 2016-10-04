@@ -36,6 +36,7 @@ Partial Class ABM_Proveedores
         Me.c_correo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.c_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_telefono = New System.Windows.Forms.MaskedTextBox()
+        Me.cmd_borrar = New System.Windows.Forms.Button()
         CType(Me.grid_proveedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -153,11 +154,21 @@ Partial Class ABM_Proveedores
         Me.txt_telefono.Size = New System.Drawing.Size(301, 20)
         Me.txt_telefono.TabIndex = 5
         '
+        'cmd_borrar
+        '
+        Me.cmd_borrar.Location = New System.Drawing.Point(12, 312)
+        Me.cmd_borrar.Name = "cmd_borrar"
+        Me.cmd_borrar.Size = New System.Drawing.Size(75, 23)
+        Me.cmd_borrar.TabIndex = 33
+        Me.cmd_borrar.Text = "Borrar"
+        Me.cmd_borrar.UseVisualStyleBackColor = True
+        '
         'ABM_Proveedores
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(388, 338)
+        Me.Controls.Add(Me.cmd_borrar)
         Me.Controls.Add(Me.grid_proveedores)
         Me.Controls.Add(Me.cmd_limpiar)
         Me.Controls.Add(Me.cmd_cancelar)
@@ -189,4 +200,5 @@ Partial Class ABM_Proveedores
     Friend WithEvents c_correo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents c_telefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txt_telefono As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents cmd_borrar As System.Windows.Forms.Button
 End Class

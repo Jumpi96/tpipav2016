@@ -116,7 +116,7 @@
 
     'DOBLE CLICK GRILLA
 
-    Private Sub grid_grilla_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_grilla.CellContentClick
+    Private Sub grid_grilla_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_grilla.CellDoubleClick
         Dim sentenciaSQL As String = "SELECT * FROM TiposCama WHERE idTipoCama= " & Me.grid_grilla.CurrentRow.Cells(0).Value
         Dim tabla As DataTable = accesoBD.query(sentenciaSQL)
 
@@ -177,6 +177,4 @@
         
     End Sub
 #End Region
-
-    
 End Class

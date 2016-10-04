@@ -136,7 +136,7 @@
     End Sub
 
     'DOBLECLICK EN GRILLA
-    Private Sub grid_tipoDoc_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tipoDoc.CellContentDoubleClick
+    Private Sub grid_tipoDoc_CellDoubleClick1(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tipoDoc.CellDoubleClick
         Dim sentenciaSQL As String = ""
 
         sentenciaSQL = "SELECT * FROM TiposDocumento " _

@@ -9,6 +9,7 @@
     Private Sub ABM_Tipo_Factura_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarGrilla()
         cmd_borrar.Enabled = False
+        cmd_borrar.Visible = False
     End Sub
 
 #Region "Subrutinas"
@@ -96,6 +97,7 @@
         txt_descripcion.Text = ""
         txt_nombre.Text = ""
         cmd_borrar.Enabled = False
+        cmd_borrar.Visible = False
         condicion_estado = estado.insertar
         cmd_guardar.Text = "Registrar"
         txt_nombre.Enabled = True
@@ -119,7 +121,7 @@
         End Try
 
     End Sub
-    Private Sub grid_tipoFactura_CellContentDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tiposFactura.CellContentDoubleClick
+    Private Sub grid_tiposFactura_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_tiposFactura.CellDoubleClick
 
         Dim sql As String = ""
 
@@ -144,10 +146,4 @@
         Me.condicion_estado = estado.modificar
     End Sub
 #End Region
-
-   
-
-
-    
-    
 End Class
