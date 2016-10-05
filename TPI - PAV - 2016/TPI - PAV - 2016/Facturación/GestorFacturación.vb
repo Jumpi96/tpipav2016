@@ -18,7 +18,7 @@
         'actualiza fecha fin alojamiento
 
         sentencia = "UPDATE alojamientos SET fechaFinAlojamiento='" & Date.Today() & "' where idAlojamiento=" & idAlojamiento
-        'accesoBD.nonQuery(sentencia)
+        accesoBD.nonQuery(sentencia)
 
         'crear detalles de factura
         '    a partir de consumiciones
@@ -73,7 +73,9 @@
         sentencia = "SELECT DATEDIFF(day, fechaInicioAlojamiento, fechaFinAlojamiento), precioPorDia"
         sentencia &= " from alojamientos where idAlojamiento=" & idAlojamiento
         tabla = accesoBD.query(sentencia)
-        Dim costoAloj As Double = tabla.Rows(0)(0) * tabla.Rows(0)(1)
+        Dim precioDia As Double = tabla.Rows(0)(1)
+        Dim cantDias As Integer = tabla.Rows(0)(0)
+        Dim costoAloj As Double = precioDia * cantDias
 
         sentencia = "UPDATE facturas SET total=" & (subtotal + costoAloj) & " where idAlojamiento=" & idAlojamiento
         accesoBD.nonQuery(sentencia)
@@ -98,8 +100,8 @@
     Public Sub leerFactura()
         Dim sentencia As String = "SELECT nroFactura, tipoFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
         Dim tabla As DataTable = accesoBD.query(sentencia)
-        Dim nro As Integer = tabla.Rows(0)(0).Value
-        Dim idTipoFactura As Integer = tabla.Rows(0)(1).Value
+        Dim nro As Integer = tabla.Rows(0)(0)
+        Dim idTipoFactura As Integer = tabla.Rows(0)(1)
         Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
         imprFactura.ShowDialog()
     End Sub

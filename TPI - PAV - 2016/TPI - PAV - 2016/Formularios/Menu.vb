@@ -791,4 +791,5 @@
         ABM_Consumicion.Show()
 
     End Sub
+
 End Class

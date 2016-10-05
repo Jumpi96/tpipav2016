@@ -318,7 +318,15 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@ClienteNombre @ClienteApellido</Value>
+                  <Value>=Parameters!ClienteNombre.Value</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value xml:space="preserve"> </Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>=Parameters!ClienteApellido.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -347,7 +355,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@Fecha</Value>
+                  <Value>=Parameters!Fecha.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -377,7 +385,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@TipoFactura</Value>
+                  <Value>=Parameters!TipoFactura.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -407,7 +415,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@nroFactura</Value>
+                  <Value>=Parameters!NroFactura.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -467,7 +475,15 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@FechaInicio - @FechaFin</Value>
+                  <Value>=Parameters!FechaInicio.Value</Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value> - </Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>=Parameters!FechaFin.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -497,7 +513,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@Personas</Value>
+                  <Value>=Parameters!Personas.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -587,7 +603,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@PrecioPorDia</Value>
+                  <Value>=Parameters!PrecioPorDia.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -598,7 +614,7 @@
           <Top>3.02217cm</Top>
           <Left>8.94384cm</Left>
           <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Width>2.91246cm</Width>
           <ZIndex>9</ZIndex>
           <Style>
             <Border>
@@ -688,7 +704,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>@Total</Value>
+                  <Value>=Parameters!Total.Value</Value>
                   <Style />
                 </TextRun>
               </TextRuns>

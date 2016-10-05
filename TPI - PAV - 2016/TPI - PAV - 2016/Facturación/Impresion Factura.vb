@@ -9,23 +9,28 @@ Public Class Impresion_Factura
         Dim accesoBD As New AccesoBD
         Dim consulta As String = "SELECT Clientes.apellido, Clientes.nombre, Facturas.nroFactura,"
         consulta &= " Facturas.fechaEmision, Alojamientos.fechaFinAlojamiento, Alojamientos.fechaInicioAlojamiento,"
-        consulta &= " Alojamientos.cantPersonas, Alojamientos.precioPorDia, Facturas.total, TiposFactura.nombre"
-        consulta &= " AS Expr1 FROM TiposFactura INNER JOIN Facturas ON TiposFactura.idTipoFactura = Facturas.tipoFactura"
-        consulta &= " CROSS JOIN Clientes INNER JOIN Alojamientos ON Clientes.nroDocumento = Alojamientos.nroDoc"
-        consulta &= "AND Clientes.tipoDocumento = Alojamientos.tipoDoc WHERE Facturas.idFactura=" & idFactura
-        consulta &= " AND Facturas.idTipoFactura=" & idTipoFactura
+        consulta &= " Alojamientos.cantPersonas, Alojamientos.precioPorDia, Facturas.total, TiposFactura.nombre AS tipoFactura"
+        consulta &= " FROM TiposFactura JOIN Facturas ON TiposFactura.idTipoFactura = Facturas.tipoFactura JOIN Alojamientos"
+		consulta &= " ON Alojamientos.idAlojamiento=Facturas.idAlojamiento JOIN"
+        consulta &= " Clientes ON Clientes.nroDocumento=Alojamientos.nroDoc AND Clientes.tipoDocumento=Alojamientos.tipoDoc"
+        consulta &= " WHERE Facturas.nroFactura=" & idFactura
+        consulta &= " AND Facturas.tipoFactura=" & idTipoFactura
         Dim tabla As DataTable = accesoBD.query(consulta)
 
-        Dim apellido As String = tabla.Rows(0)(0).Value
-        Dim nombre As String = tabla.Rows(0)(1).Value
-        Dim nroFactura As String = tabla.Rows(0)(2).Value
-        Dim fecha As String = tabla.Rows(0)(3).Value
-        Dim fechaFin As String = tabla.Rows(0)(4).Value
-        Dim fechaInicio As String = tabla.Rows(0)(5).Value
-        Dim personas As String = tabla.Rows(0)(6).Value
-        Dim precioPorDia As String = tabla.Rows(0)(7).Value
-        Dim total As String = tabla.Rows(0)(8).Value
-        Dim tipoFactura As String = tabla.Rows(0)(9).Value
+        Dim apellido As String = tabla.Rows(0)(0)
+        Dim nombre As String = tabla.Rows(0)(1)
+        Dim nroFactura As String = tabla.Rows(0)(2)
+        While nroFactura.Length < 8
+            nroFactura = "0" + nroFactura
+        End While
+        nroFactura = "0001-" + nroFactura
+        Dim fecha As String = tabla.Rows(0)(3)
+        Dim fechaFin As String = tabla.Rows(0)(4)
+        Dim fechaInicio As String = tabla.Rows(0)(5)
+        Dim personas As String = tabla.Rows(0)(6)
+        Dim precioPorDia As String = tabla.Rows(0)(7)
+        Dim total As String = tabla.Rows(0)(8)
+        Dim tipoFactura As String = tabla.Rows(0)(9)
 
         Dim ap As ReportParameter = New ReportParameter("ClienteApellido", apellido)
         Dim no As ReportParameter = New ReportParameter("ClienteNombre", nombre)
@@ -39,7 +44,7 @@ Public Class Impresion_Factura
         Dim ti As ReportParameter = New ReportParameter("TipoFactura", tipoFactura)
 
         ReportViewer1.LocalReport.SetParameters(New ReportParameter() {ap, no, nf, fe, ff, fi, pe, pr, tot, ti})
-        Me.DataFacturasTableAdapter.Fill(Me.DataSet.DataFacturas, idFactura, idTipoFactura, idFactura, idTipoFactura)
+        Me.DataFacturasTableAdapter.Fill(Me.DataSet.DataFacturas, idTipoFactura, idFactura, idTipoFactura, idFactura)
 
         Me.ReportViewer1.RefreshReport()
     End Sub
