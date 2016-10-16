@@ -792,4 +792,7 @@
 
     End Sub
 
+    Private Sub FuncionesAdministrativasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FuncionesAdministrativasToolStripMenuItem.Click
+
+    End Sub
 End Class
