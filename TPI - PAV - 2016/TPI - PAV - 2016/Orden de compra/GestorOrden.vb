@@ -1,16 +1,24 @@
 ﻿Public Class GestorOrden
     Private accesoBD As New AccesoBD
-    Private idOrden As Integer
+    Private idOrden As Integer = 0 'El id de orden lo tenes que obtener despues de haberla insertado en la BD
+    Private tablaDetalles As DataTable
+    Private idProveedor As Integer
+    Private total As Double
 
-    Sub New(ByVal a As Integer)
-        idOrden = a
+    Sub New(ByVal t As DataTable, ByVal p As Integer, ByVal tot As Double)
+        tablaDetalles = t
+        idProveedor = p
+        total = tot
     End Sub
 
-    Public Sub ordenar(ByVal p As Integer)
-        Dim idProveedor As Integer = p
+    Sub New(ByVal id As Integer)
+        idOrden = id
+    End Sub
+
+    Public Sub ordenar()
 
         'crear orden
-        Dim sentencia As String = "INSERT INTO OrdenesCompra (idOrden,idProveedor,fechaEmision)"
+        Dim sentencia As String = "INSERT INTO OrdenesCompra (idOrden,idProveedor,fechaEmision)"  ' AGREGAR TOTAL
         sentencia &= "VALUES(" & idOrden & "," & idProveedor & ",'" & Date.Today() & "')"
 
         accesoBD.nonQuery(sentencia)
@@ -89,12 +97,20 @@
 
     End Sub
 
-    Public Function existeOrden() As Boolean
-        Dim sentencia As String = "SELECT * FROM facturas where idOrden=" & idOrden
-        Dim tabla As DataTable = accesoBD.query(sentencia)
-
-        Return tabla.Rows.Count() > 0
+    Public Function recibirOrden() As Boolean
+        If idOrden <> 0 Then
+            Dim sentencia As String = "UPDATE OrdenesCompra SET fechaRecepcion=GETDATE() WHERE idOrden=" + idOrden
+            accesoBD.nonQuery(sentencia)
+            actualizarStock()
+            Return True
+        Else
+            Return False
+        End If
     End Function
+
+    Private Sub actualizarStock()
+        'COMPLETAR
+    End Sub
 
     Public Sub leerOrden()
         'Dim sentencia As String = "SELECT nroFactura, tipoFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
