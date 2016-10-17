@@ -197,6 +197,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Orden de compra\GestorOrden.vb" />
+    <Compile Include="Orden de compra\Impresion Orden.Designer.vb">
+      <DependentUpon>Impresion Orden.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Orden de compra\Impresion Orden.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Facturación\Factura.rdlc">
@@ -250,6 +257,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Orden de compra\Impresion Orden.resx">
+      <DependentUpon>Impresion Orden.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Orden de compra\Orden.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DataSet.xsc">

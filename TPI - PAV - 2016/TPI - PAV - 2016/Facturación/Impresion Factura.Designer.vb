@@ -23,7 +23,7 @@ Partial Class Impresion_Factura
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource3 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.DataFacturasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
@@ -45,26 +45,30 @@ Partial Class Impresion_Factura
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.DataFacturasBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
+        Me.ReportViewer1.DocumentMapWidth = 1
+        ReportDataSource3.Name = "DataSet1"
+        ReportDataSource3.Value = Me.DataFacturasBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource3)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.Factura.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Location = New System.Drawing.Point(60, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(643, 517)
+        Me.ReportViewer1.Size = New System.Drawing.Size(523, 517)
         Me.ReportViewer1.TabIndex = 0
         '
         'DataFacturasTableAdapter
         '
         Me.DataFacturasTableAdapter.ClearBeforeFill = True
         '
-        'Impresion_Factur
+        'Impresion_Factura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(643, 517)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "Impresion_Factur"
+        Me.MaximumSize = New System.Drawing.Size(659, 556)
+        Me.MinimumSize = New System.Drawing.Size(659, 556)
+        Me.Name = "Impresion_Factura"
+        Me.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
         Me.Text = "Impresion_Factura"
         CType(Me.DataFacturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
