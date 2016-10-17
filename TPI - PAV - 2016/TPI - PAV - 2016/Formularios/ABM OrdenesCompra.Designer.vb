@@ -169,4 +169,14 @@ Partial Class ABM_OrdenesCompra
     Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PrecioUnitario As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents SubTotal As System.Windows.Forms.DataGridViewTextBoxColumn
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+        cargarCombo()
+
+        ' Add any initialization after the InitializeComponent() call.
+
+    End Sub
 End Class
