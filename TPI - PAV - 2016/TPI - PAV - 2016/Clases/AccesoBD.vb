@@ -134,8 +134,34 @@
                 Me.cerrar()
             End Try
         End If
+
         Return retorno
     End Function
+
+    Public Function transaction(ByVal sentenciasSQL As Collection) As String
+        Dim retorno As String = ""
+
+        Me.conectar(tipo_conexion.transaccion)
+        Me.comando.CommandType = CommandType.Text
+
+        Try
+            For Each collectionItem As Object In sentenciasSQL
+                Me.comando.CommandText = collectionItem.ToString
+                Me.comando.ExecuteNonQuery()
+            Next collectionItem
+
+            Me.transaccion.commit()
+
+        Catch ex As Exception
+            Me.transaccion.rollback()
+            retorno = ex.Message
+        Finally
+            Me.cerrar()
+        End Try
+
+        Return retorno
+    End Function
+
 
 
     Public Sub cerrar()
