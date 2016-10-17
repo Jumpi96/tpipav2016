@@ -6757,13 +6757,13 @@ Partial Public Class DataSet
     Partial Public Class DataFacturasDataTable
         Inherits Global.System.Data.TypedTableBase(Of DataFacturasRow)
         
-        Private columnsubtotal As Global.System.Data.DataColumn
-        
         Private columncantidad As Global.System.Data.DataColumn
         
         Private columnnombre As Global.System.Data.DataColumn
         
         Private columnprecioUnitario As Global.System.Data.DataColumn
+        
+        Private columnsubtotal As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -6802,14 +6802,6 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property subtotalColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnsubtotal
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property cantidadColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columncantidad
@@ -6829,6 +6821,14 @@ Partial Public Class DataSet
         Public ReadOnly Property precioUnitarioColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnprecioUnitario
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property subtotalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnsubtotal
             End Get
         End Property
         
@@ -6869,9 +6869,9 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddDataFacturasRow(ByVal subtotal As Double, ByVal cantidad As Integer, ByVal nombre As String, ByVal precioUnitario As Double) As DataFacturasRow
+        Public Overloads Function AddDataFacturasRow(ByVal cantidad As Integer, ByVal nombre As String, ByVal precioUnitario As Double, ByVal subtotal As Double) As DataFacturasRow
             Dim rowDataFacturasRow As DataFacturasRow = CType(Me.NewRow,DataFacturasRow)
-            Dim columnValuesArray() As Object = New Object() {subtotal, cantidad, nombre, precioUnitario}
+            Dim columnValuesArray() As Object = New Object() {cantidad, nombre, precioUnitario, subtotal}
             rowDataFacturasRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataFacturasRow)
             Return rowDataFacturasRow
@@ -6894,24 +6894,28 @@ Partial Public Class DataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnsubtotal = MyBase.Columns("subtotal")
             Me.columncantidad = MyBase.Columns("cantidad")
             Me.columnnombre = MyBase.Columns("nombre")
             Me.columnprecioUnitario = MyBase.Columns("precioUnitario")
+            Me.columnsubtotal = MyBase.Columns("subtotal")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnsubtotal = New Global.System.Data.DataColumn("subtotal", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnsubtotal)
             Me.columncantidad = New Global.System.Data.DataColumn("cantidad", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncantidad)
             Me.columnnombre = New Global.System.Data.DataColumn("nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombre)
             Me.columnprecioUnitario = New Global.System.Data.DataColumn("precioUnitario", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnprecioUnitario)
+            Me.columnsubtotal = New Global.System.Data.DataColumn("subtotal", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnsubtotal)
+            Me.columncantidad.ReadOnly = true
+            Me.columnnombre.ReadOnly = true
             Me.columnnombre.MaxLength = 30
+            Me.columnprecioUnitario.ReadOnly = true
+            Me.columnsubtotal.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8718,21 +8722,6 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property subtotal() As Double
-            Get
-                Try 
-                    Return CType(Me(Me.tableDataFacturas.subtotalColumn),Double)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'subtotal' in table 'DataFacturas' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableDataFacturas.subtotalColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property cantidad() As Integer
             Get
                 Try 
@@ -8778,15 +8767,18 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IssubtotalNull() As Boolean
-            Return Me.IsNull(Me.tableDataFacturas.subtotalColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetsubtotalNull()
-            Me(Me.tableDataFacturas.subtotalColumn) = Global.System.Convert.DBNull
-        End Sub
+        Public Property subtotal() As Double
+            Get
+                Try 
+                    Return CType(Me(Me.tableDataFacturas.subtotalColumn),Double)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'subtotal' in table 'DataFacturas' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDataFacturas.subtotalColumn) = value
+            End Set
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -8822,6 +8814,18 @@ Partial Public Class DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetprecioUnitarioNull()
             Me(Me.tableDataFacturas.precioUnitarioColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IssubtotalNull() As Boolean
+            Return Me.IsNull(Me.tableDataFacturas.subtotalColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetsubtotalNull()
+            Me(Me.tableDataFacturas.subtotalColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -15865,10 +15869,10 @@ Namespace DataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "DataFacturas"
-            tableMapping.ColumnMappings.Add("subtotal", "subtotal")
             tableMapping.ColumnMappings.Add("cantidad", "cantidad")
             tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("precioUnitario", "precioUnitario")
+            tableMapping.ColumnMappings.Add("subtotal", "subtotal")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -15886,33 +15890,43 @@ Namespace DataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        Consumiciones.cantidad, Articulos.nombre, Articulos.precioUnitario,"& _ 
-                " DetallesXFactura.subtotal"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            DetallesXFactura INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"       "& _ 
-                "                  Consumiciones ON DetallesXFactura.idConsumicion = Consumicione"& _ 
-                "s.idConsumicion INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Articulos ON Consumiciones."& _ 
-                "idArticulo = Articulos.idArticulo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (DetallesXFactura.tipoFactura = "& _ 
-                "?) AND (DetallesXFactura.nroFactura = ?)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"UNION"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT        1, Servicios.nomb"& _ 
-                "re, Servicios.precioUnitario, Servicios.precioUnitario"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Detalles"& _ 
-                "XFactura INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Servicios ON DetallesXFactura.idSe"& _ 
-                "rvicio = Servicios.idServicio"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (DetallesXFactura.tipoFactura = ?) A"& _ 
-                "ND (DetallesXFactura.nroFactura = ?)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY 2"
+            Me._commandCollection(0).CommandText = "SELECT DATEDIFF(day,Alojamientos.FechaInicioAlojamiento,Alojamientos.FechaFinAloj" & _
+                "amiento) AS cantidad,'Alojamiento' AS nombre,Alojamientos.precioPorDia AS precio" & _
+                "Unitario,Alojamientos.precioPorDia*DATEDIFF(day,Alojamientos.FechaInicioAlojamie" & _
+                "nto,Alojamientos.FechaFinAlojamiento) AS subtotal" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM Alojamientos JOIN Factur" & _
+                "as ON Alojamientos.IdAlojamiento=Facturas.idAlojamiento" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE Facturas.tipoFact" & _
+                "ura=? AND Facturas.nroFactura=?" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UNION" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT        Consumiciones.cantidad, Ar" & _
+                "ticulos.nombre, Articulos.precioUnitario, DetallesXFactura.subtotal" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM       " & _
+                "     DetallesXFactura INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                         Consumiciones ON Deta" & _
+                "llesXFactura.idConsumicion = Consumiciones.idConsumicion INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "           " & _
+                "              Articulos ON Consumiciones.idArticulo = Articulos.idArticulo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHER" & _
+                "E        (DetallesXFactura.tipoFactura = ?) AND (DetallesXFactura.nroFactura = ?" & _
+                ")" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "UNION" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "SELECT        1, Servicios.nombre, Servicios.precioUnitario, Servicios" & _
+                ".precioUnitario" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM            DetallesXFactura INNER JOIN" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "                  " & _
+                "       Servicios ON DetallesXFactura.idServicio = Servicios.idServicio" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "WHERE   " & _
+                "     (DetallesXFactura.tipoFactura = ?) AND (DetallesXFactura.nroFactura = ?)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "O" & _
+                "RDER BY nombre DESC" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param1", Global.System.Data.OleDb.OleDbType.[Integer], 4, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param2", Global.System.Data.OleDb.OleDbType.[Integer], 4, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param3", Global.System.Data.OleDb.OleDbType.[Integer], 4, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param4", Global.System.Data.OleDb.OleDbType.[Integer], 4, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param5", Global.System.Data.OleDb.OleDbType.[Integer], 4, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Param6", Global.System.Data.OleDb.OleDbType.[Integer], 4, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
-        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet.DataFacturasDataTable, ByVal Param1 As Integer, ByVal Param2 As Integer, ByVal Param3 As Integer, ByVal Param4 As Integer) As Integer
+        Public Overloads Overridable Function Fill(ByVal dataTable As DataSet.DataFacturasDataTable, ByVal Param1 As Integer, ByVal Param2 As Integer, ByVal Param3 As Integer, ByVal Param4 As Integer, ByVal Param5 As Integer, ByVal Param6 As Integer) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(Param1,Integer)
             Me.Adapter.SelectCommand.Parameters(1).Value = CType(Param2,Integer)
             Me.Adapter.SelectCommand.Parameters(2).Value = CType(Param3,Integer)
             Me.Adapter.SelectCommand.Parameters(3).Value = CType(Param4,Integer)
+            Me.Adapter.SelectCommand.Parameters(4).Value = CType(Param5,Integer)
+            Me.Adapter.SelectCommand.Parameters(5).Value = CType(Param6,Integer)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -15924,12 +15938,14 @@ Namespace DataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
-        Public Overloads Overridable Function GetData(ByVal Param1 As Integer, ByVal Param2 As Integer, ByVal Param3 As Integer, ByVal Param4 As Integer) As DataSet.DataFacturasDataTable
+        Public Overloads Overridable Function GetData(ByVal Param1 As Integer, ByVal Param2 As Integer, ByVal Param3 As Integer, ByVal Param4 As Integer, ByVal Param5 As Integer, ByVal Param6 As Integer) As DataSet.DataFacturasDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(Param1,Integer)
             Me.Adapter.SelectCommand.Parameters(1).Value = CType(Param2,Integer)
             Me.Adapter.SelectCommand.Parameters(2).Value = CType(Param3,Integer)
             Me.Adapter.SelectCommand.Parameters(3).Value = CType(Param4,Integer)
+            Me.Adapter.SelectCommand.Parameters(4).Value = CType(Param5,Integer)
+            Me.Adapter.SelectCommand.Parameters(5).Value = CType(Param6,Integer)
             Dim dataTable As DataSet.DataFacturasDataTable = New DataSet.DataFacturasDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable

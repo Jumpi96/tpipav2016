@@ -44,7 +44,7 @@ Public Class Impresion_Factura
         Dim ti As ReportParameter = New ReportParameter("TipoFactura", tipoFactura)
 
         ReportViewer1.LocalReport.SetParameters(New ReportParameter() {ap, no, nf, fe, ff, fi, pe, pr, tot, ti})
-        Me.DataFacturasTableAdapter.Fill(Me.DataSet.DataFacturas, idTipoFactura, idFactura, idTipoFactura, idFactura)
+        Me.DataFacturasTableAdapter.Fill(Me.DataSet.DataFacturas, idTipoFactura, idFactura, idTipoFactura, idFactura, idTipoFactura, idFactura)
 
         Me.ReportViewer1.RefreshReport()
     End Sub
