@@ -46,7 +46,7 @@
 
     Public Function recibirOrden() As Boolean
         If idOrden <> 0 Then
-            Dim sentencia As String = "UPDATE OrdenesCompra SET fechaRecepcion=GETDATE() WHERE idOrden=" + idOrden
+            Dim sentencia As String = "UPDATE OrdenesCompra SET fechaRecepcion=GETDATE() WHERE idOrden=" & idOrden
             accesoBD.nonQuery(sentencia)
             actualizarStock()
             Return True
@@ -67,17 +67,10 @@
         tablaArticulosCantidad = accesoBD.query(sentencia)
 
         If tablaArticulosCantidad.Rows.Count > 0 Then
-
             For i = 0 To tablaArticulosCantidad.Rows.Count() - 1
-
-                sentencia = "UPDATE articulos SET cantidad = cantidad + " & tablaArticulosCantidad.Rows(i)(1) & " WHERE idArticulo=" & tablaArticulosCantidad.Rows(i)(0)
+                sentencia = "UPDATE articulos SET stock = stock + " & tablaArticulosCantidad.Rows(i)(1) & " WHERE idArticulo=" & tablaArticulosCantidad.Rows(i)(0)
                 accesoBD.nonQuery(sentencia)
-
             Next
-
-            sentencia = "UPDATE OrdenesCompra SET fechaRecepcion='" & Date.Today() & "' where idOrden=" & idOrden
-            accesoBD.nonQuery(sentencia)
-
         End If
 
     End Sub

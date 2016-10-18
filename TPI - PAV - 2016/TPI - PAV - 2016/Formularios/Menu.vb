@@ -109,6 +109,25 @@
         cmb_tipDocBusAlo.DataSource = tabla
         cmb_tipDocBusAlo.ValueMember = "idTipoDocumento"
         cmb_tipDocBusAlo.DisplayMember = "nombre"
+
+    End Sub
+
+    Private Sub cargarCompoTipoFactura()
+        Dim tabla As New Data.DataTable
+        Dim sql As String = ""
+
+        sql = "SELECT * FROM TiposFactura"
+
+        tabla = acceso.query(sql)
+
+        cmbTipoFac.DataSource = tabla
+        cmbTipoFac.ValueMember = "idTipoFactura"
+        cmbTipoFac.DisplayMember = "nombre"
+
+        cmbTipoFac2.DataSource = tabla
+        cmbTipoFac2.ValueMember = "idTipoFactura"
+        cmbTipoFac2.DisplayMember = "nombre"
+
     End Sub
 
     Private Sub cargarComboTipoHabitacion()
@@ -281,6 +300,31 @@
         Me.pnl_busAlo.SendToBack()
     End Sub
 
+    Private Sub mostrarAdministrarOrdenes()
+        Me.pnlAdministrarOrdense.Visible = True
+        Me.pnlAdministrarOrdense.Enabled = True
+        Me.txtNroOrden.Focus()
+        Me.pnlAdministrarOrdense.BringToFront()
+    End Sub
+
+    Private Sub ocultarAdministrarOrdenes()
+        Me.pnlAdministrarOrdense.Visible = False
+        Me.pnlAdministrarOrdense.Enabled = False
+        Me.pnlAdministrarOrdense.SendToBack()
+    End Sub
+
+    Private Sub mostrarFacturacion()
+        Me.pnlFacturacion.Visible = True
+        Me.pnlFacturacion.Enabled = True
+        Me.pnlFacturacion.BringToFront()
+    End Sub
+
+    Private Sub ocultarFacturacion()
+        Me.pnlFacturacion.Visible = False
+        Me.pnlFacturacion.Enabled = False
+        Me.pnlFacturacion.SendToBack()
+    End Sub
+
     Private Sub mostrarBuscarAlojamiento()
         Me.pnl_busAlo.Visible = True
         Me.pnl_busAlo.Enabled = True
@@ -350,6 +394,8 @@
         Me.ocultarBuscarAlojamiento()
         Me.ocultarNuevaOrdenCompra()
         Me.ocultarBuscarOrdenCompra()
+        Me.ocultarAdministrarOrdenes()
+        Me.ocultarFacturacion()
         Me.ocultarAgregarArticulo()
         Me.ocultarAgregarServicio()
         Me.mostrarNuevoAlojamiento()
@@ -367,6 +413,8 @@
         Me.ocultarNuevaOrdenCompra()
         Me.ocultarBuscarOrdenCompra()
         Me.ocultarAgregarServicio()
+        Me.ocultarAdministrarOrdenes()
+        Me.ocultarFacturacion()
         Me.ocultarAgregarArticulo()
         Me.mostrarBuscarAlojamiento()
     End Sub
@@ -481,13 +529,8 @@
     End Sub
 
     Private Sub NuevaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaToolStripMenuItem.Click
-        Me.menu_Menu.Enabled = False
-        Me.ocultarNuevoAlojamiento()
-        Me.ocultarBuscarAlojamiento()
-        Me.ocultarBuscarOrdenCompra()
-        Me.ocultarAgregarServicio()
-        Me.ocultarAgregarArticulo()
-        Me.mostrarNuevaOrdenCompra()
+        ABM_OrdenesCompra.ShowDialog()
+        Me.cargarGrillaOrdenes()
     End Sub
 
     Private Sub cmd_nueOrdComAtr_Click(sender As Object, e As EventArgs) Handles cmd_nueOrdComAtr.Click
@@ -499,13 +542,16 @@
     End Sub
 
     Private Sub BuscarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BuscarToolStripMenuItem1.Click
-        Me.menu_Menu.Enabled = False
+        Me.menu_Menu.Enabled = True
         Me.ocultarNuevoAlojamiento()
         Me.ocultarBuscarAlojamiento()
         Me.ocultarNuevaOrdenCompra()
+        Me.ocultarBuscarOrdenCompra()
         Me.ocultarAgregarArticulo()
         Me.ocultarAgregarServicio()
-        Me.mostrarBuscarOrdenCompra()
+        Me.ocultarFacturacion()
+        Me.mostrarAdministrarOrdenes()
+        Me.cargarGrillaOrdenes()
     End Sub
 
     Private Sub cmd_busOrdComCan_Click(sender As Object, e As EventArgs) Handles cmd_busOrdComCan.Click
@@ -540,6 +586,8 @@
         Me.ocultarBuscarAlojamiento()
         Me.ocultarNuevaOrdenCompra()
         Me.ocultarBuscarOrdenCompra()
+        Me.ocultarAdministrarOrdenes()
+        Me.ocultarFacturacion()
         Me.ocultarAgregarServicio()
         Me.mostrarAgregarArticulo()
     End Sub
@@ -548,6 +596,8 @@
         Me.menu_Menu.Enabled = False
         Me.ocultarNuevoAlojamiento()
         Me.ocultarBuscarAlojamiento()
+        Me.ocultarAdministrarOrdenes()
+        Me.ocultarFacturacion()
         Me.ocultarNuevaOrdenCompra()
         Me.ocultarBuscarOrdenCompra()
         Me.ocultarAgregarArticulo()
@@ -704,6 +754,7 @@
     Private Sub menu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.lbl_fechahora.Text = Today.Day & "/" & Today.Month & "/" & Today.Year
         Me.cargarComboTipoDoc()
+        Me.cargarCompoTipoFactura()
         'Me.cargarComboCantidadPersonas()
         'Me.cargarComboTipoHabitacion()
     End Sub
@@ -793,6 +844,108 @@
     End Sub
 
     Private Sub FuncionesAdministrativasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FuncionesAdministrativasToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub btnBuscarOrden_Click(sender As Object, e As EventArgs) Handles btnBuscarOrden.Click
+        Dim consulta = "SELECT * FROM OrdenesCompra WHERE idOrden=" & txtNroOrden.Text
+        Dim tabla As DataTable = acceso.query(consulta)
+        If tabla.Rows.Count() <> 0 Then
+            Dim g As New GestorOrden(txtNroOrden.Text)
+            g.leerOrden()
+        Else
+            MessageBox.Show("El número ingresado no existe.", "Error")
+            txtNroOrden.Text = ""
+            txtNroOrden.Focus()
+        End If
+    End Sub
+
+    Private Sub cargarGrillaOrdenes()
+        Dim consulta = "SELECT O.idOrden, P.nombre, O.fechaEmision P FROM OrdenesCompra O JOIN Proveedores P "
+        consulta &= "ON O.idProveedor=P.idProveedor WHERE O.fechaRecepcion IS NULL"
+        Dim tabla As DataTable = acceso.query(consulta)
+
+        dgvOrdenes.Rows.Clear()
+        For i = 0 To tabla.Rows.Count() - 1
+            dgvOrdenes.Rows.Add(tabla.Rows(i)(0), tabla.Rows(i)(1), tabla.Rows(i)(2))
+        Next
+    End Sub
+
+    Private Sub btnActualizarStock_Click(sender As Object, e As EventArgs) Handles btnActualizarStock.Click
+        Dim nro As Integer = dgvOrdenes.SelectedRows(0).Cells(0).Value
+        Dim g As New GestorOrden(nro)
+        If g.recibirOrden() Then
+            MessageBox.Show("Se actualizó correctamente el stock", "Orden de Compra " & nro)
+            Me.cargarGrillaOrdenes()
+        Else
+            MessageBox.Show("No se pudo realizar la actualización", "Error")
+        End If
+
+    End Sub
+
+    Private Sub FacturarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacturarToolStripMenuItem.Click
+        Me.menu_Menu.Enabled = False
+        Me.ocultarNuevoAlojamiento()
+        Me.ocultarBuscarAlojamiento()
+        Me.ocultarNuevaOrdenCompra()
+        Me.ocultarAgregarArticulo()
+        Me.ocultarAgregarServicio()
+        Me.ocultarBuscarOrdenCompra()
+        Me.mostrarFacturacion()
+        Me.cargarGrillaFacturacion()
+    End Sub
+
+    Private Sub cargarGrillaFacturacion()
+        Dim consulta = "SELECT idAlojamiento, nroHabitacion, fechaInicioAlojamiento FROM Alojamientos A WHERE fechaFinAlojamiento IS NULL"
+        Dim tabla As DataTable = acceso.query(consulta)
+
+        dgvFacturacion.Rows.Clear()
+        For i = 0 To tabla.Rows.Count() - 1
+            dgvFacturacion.Rows.Add(tabla.Rows(i)(0), tabla.Rows(i)(1), tabla.Rows(i)(2))
+        Next
+    End Sub
+
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim nro As Integer
+        If Int32.TryParse(txtNroFactura.Text, nro) Then
+            Dim consulta = "SELECT idAlojamiento FROM Facturas WHERE nroFactura=" & txtNroFactura.Text & " AND tipoFactura=" & cmbTipoFac.SelectedValue
+            Dim tabla As DataTable = acceso.query(consulta)
+
+            If tabla.Rows.Count() <> 0 Then
+                Dim g As New GestorFacturación(tabla.Rows(0)(0))
+                g.leerFactura()
+            Else
+                MessageBox.Show("La factura ingresada no existe.", "Error")
+                txtNroFactura.Text = ""
+                txtNroFactura.Focus()
+            End If
+        Else
+            MessageBox.Show("El valor ingresado no es válido.", "Error")
+        End If
+
+        
+
+
+    End Sub
+
+    Private Sub btnFacturar_Click(sender As Object, e As EventArgs) Handles btnFacturar.Click
+        Dim nro As Integer = dgvOrdenes.SelectedRows(0).Cells(0).Value
+        Dim g As New GestorFacturación(nro)
+        g.facturar(cmbTipoFac2.SelectedValue)
+        cargarGrillaFacturacion()
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Public Sub New()
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
 
     End Sub
 End Class
