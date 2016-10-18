@@ -1,7 +1,7 @@
 ﻿Public Class ABM_Habitación_X_Piso
     Dim acceso As AccesoBD = AccesoBD.instancia
     Dim cadena_conexion As String = AccesoBD.instancia.cadenaConexion
-    Dim registrarModificar As Boolean = True
+    Dim registrarModificar As Boolean = True 'si es igual a true registra, si es igual a false modifica
     Dim auxiliarTiposCamas(4) As Integer
     Enum aceptar
         apretado
@@ -9,6 +9,7 @@
     End Enum
     Dim estado_aceptar As aceptar = aceptar.noApretado
     Dim cantidadCamasAuxiliar As Integer = 0
+    Dim coleccionTransaccion As New Collection
 
     Private Sub ABM_Habitación_X_Piso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.cargarComboTipoHabitacion()
@@ -42,35 +43,29 @@
             cantidad = Me.txt_camas.Text
             If Me.registrarModificar = True Then
                 If Me.validarExistencia = True Then
-                    Me.insertarHabitacionPiso()
+                    coleccionTransaccion.Add(Me.insertarHabitacionPiso())
                     For i = 0 To (cantidad - 1)
-                        acceso.nonQuery(Me.insertarHabitacionPisoTipoCama(i))
+                        coleccionTransaccion.Add(Me.insertarHabitacionPisoTipoCama(i))
                     Next
+                    acceso.transaction(coleccionTransaccion)
                     MessageBox.Show("Habitación registrada con éxito")
                     Me.cargarGrilla()
                 End If
             ElseIf Me.registrarModificar = False Then
-                Me.modificarHabitacionPiso()
-                'If Me.estado_aceptar = aceptar.apretado Then
+                coleccionTransaccion.Add(Me.modificarHabitacionPiso())
                 If cantidad < cantidadCamasAuxiliar Then
                     For i = 0 To (cantidadCamasAuxiliar - 1)
-                        acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
+                        coleccionTransaccion.Add(ABMHabitacionPisoTipoCama(i, cantidad))
                     Next
                 Else
                     For i = 0 To (cantidad - 1)
-                        acceso.nonQuery(ABMHabitacionPisoTipoCama(i, cantidad))
+                        coleccionTransaccion.Add(ABMHabitacionPisoTipoCama(i, cantidad))
                     Next
                 End If
-
-                'End If
+                acceso.transaction(coleccionTransaccion)
                 MessageBox.Show("La habitación se modificó correctamente")
             End If
-            auxiliarTiposCamas(0) = 1
-            auxiliarTiposCamas(1) = 1
-            auxiliarTiposCamas(2) = 1
-            auxiliarTiposCamas(3) = 1
-            estado_aceptar = aceptar.noApretado
-            Me.cantidadCamasAuxiliar = 0
+            
             Me.cmd_limpiar.PerformClick()
         End If
     End Sub
@@ -82,7 +77,7 @@
         auxiliarTiposCamas(3) = Me.cmb_tipoCama4.SelectedIndex
     End Sub
 
-    Private Sub insertarHabitacionPiso()
+    Private Function insertarHabitacionPiso() As String
         Dim sql As String = ""
         sql &= "INSERT INTO HabitacionesXPiso (nroHabitacion, cantCamas, aireAcondicionado, frigobar, fechaEmision, cantBaños, idTipoHabitacion, cantMaxPersonas) "
         sql &= "VALUES ('" & Me.txt_nroHabitacion.Text & "', '" & Me.txt_camas.Text & "'"
@@ -101,10 +96,10 @@
         sql &= ", '" & Me.cmb_tipoHabitacion.SelectedValue & "'"
         sql &= ", '" & Me.txt_personas.Text & "')"
 
-        acceso.nonQuery(sql)
-    End Sub
+        Return sql
+    End Function
 
-    Private Sub modificarHabitacionPiso()
+    Private Function modificarHabitacionPiso() As String
         Dim sql As String = ""
 
         sql &= "UPDATE HabitacionesXPiso "
@@ -125,12 +120,8 @@
         sql &= ", cantMaxPersonas = '" & Me.txt_personas.Text & "'"
         sql &= " WHERE nroHabitacion = " & Me.txt_nroHabitacion.Text
 
-        acceso.nonQuery(sql)
-        Me.cmd_registrar.Enabled = True
-        Me.cmd_limpiar.Enabled = True
-        Me.txt_nroHabitacion.ReadOnly = False
-        Me.cargarGrilla()
-    End Sub
+        Return sql
+    End Function
 
     Private Sub cargarComboTipoHabitacion()
         Dim tabla As New Data.DataTable
@@ -200,6 +191,9 @@
 
     Private Sub cmd_limpiar_Click(sender As Object, e As EventArgs) Handles cmd_limpiar.Click
         Me.txt_nroHabitacion.Text = ""
+
+        Me.txt_nroHabitacion.ReadOnly = False
+
         Me.txt_camas.Text = ""
         Me.txt_personas.Text = ""
         Me.txt_baños.Text = ""
@@ -211,7 +205,19 @@
         estado_aceptar = aceptar.noApretado
         Me.cantidadCamasAuxiliar = 0
         Me.cmd_registrar.Text = "Registrar"
+
+        Me.cmd_registrar.Enabled = True
+
         Me.registrarModificar = True
+
+        Me.cmd_limpiar.Enabled = True
+
+        auxiliarTiposCamas(0) = 1
+        auxiliarTiposCamas(1) = 1
+        auxiliarTiposCamas(2) = 1
+        auxiliarTiposCamas(3) = 1
+
+        coleccionTransaccion.Clear()
     End Sub
 
     Private Sub grid_habitacionPiso_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles grid_habitacionPiso.CellDoubleClick
