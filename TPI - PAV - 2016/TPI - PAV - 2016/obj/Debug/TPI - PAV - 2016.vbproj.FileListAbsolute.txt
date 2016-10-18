@@ -165,3 +165,5 @@ C:\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 201
 C:\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.xml
 C:\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 2016.pdb
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Impresion_Orden.resources
+C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_OrdenesCompra.resources
+C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Impresion_Orden.resources
