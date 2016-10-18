@@ -529,7 +529,8 @@
     End Sub
 
     Private Sub NuevaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevaToolStripMenuItem.Click
-        ABM_OrdenesCompra.ShowDialog()
+        Dim abm As New ABM_OrdenesCompra
+        abm.ShowDialog()
         Me.cargarGrillaOrdenes()
     End Sub
 
@@ -551,6 +552,7 @@
         Me.ocultarAgregarServicio()
         Me.ocultarFacturacion()
         Me.mostrarAdministrarOrdenes()
+        Me.btnActualizarStock.Focus()
         Me.cargarGrillaOrdenes()
     End Sub
 
@@ -865,9 +867,11 @@
         consulta &= "ON O.idProveedor=P.idProveedor WHERE O.fechaRecepcion IS NULL"
         Dim tabla As DataTable = acceso.query(consulta)
 
+        Dim fecha As Date
         dgvOrdenes.Rows.Clear()
         For i = 0 To tabla.Rows.Count() - 1
-            dgvOrdenes.Rows.Add(tabla.Rows(i)(0), tabla.Rows(i)(1), tabla.Rows(i)(2))
+            Fecha = tabla.Rows(i)(2)
+            dgvOrdenes.Rows.Add(tabla.Rows(i)(0), tabla.Rows(i)(1), fecha.ToShortDateString())
         Next
     End Sub
 
@@ -884,7 +888,7 @@
     End Sub
 
     Private Sub FacturarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FacturarToolStripMenuItem.Click
-        Me.menu_Menu.Enabled = False
+        Me.menu_Menu.Enabled = True
         Me.ocultarNuevoAlojamiento()
         Me.ocultarBuscarAlojamiento()
         Me.ocultarNuevaOrdenCompra()
@@ -892,6 +896,7 @@
         Me.ocultarAgregarServicio()
         Me.ocultarBuscarOrdenCompra()
         Me.mostrarFacturacion()
+        cmbTipoFac2.Focus()
         Me.cargarGrillaFacturacion()
     End Sub
 
@@ -900,8 +905,10 @@
         Dim tabla As DataTable = acceso.query(consulta)
 
         dgvFacturacion.Rows.Clear()
+        Dim fecha As Date
         For i = 0 To tabla.Rows.Count() - 1
-            dgvFacturacion.Rows.Add(tabla.Rows(i)(0), tabla.Rows(i)(1), tabla.Rows(i)(2))
+            fecha = tabla.Rows(i)(2)
+            dgvFacturacion.Rows.Add(tabla.Rows(i)(0), tabla.Rows(i)(1), fecha.ToShortDateString())
         Next
     End Sub
 
@@ -924,13 +931,11 @@
             MessageBox.Show("El valor ingresado no es válido.", "Error")
         End If
 
-        
-
 
     End Sub
 
     Private Sub btnFacturar_Click(sender As Object, e As EventArgs) Handles btnFacturar.Click
-        Dim nro As Integer = dgvOrdenes.SelectedRows(0).Cells(0).Value
+        Dim nro As Integer = dgvFacturacion.SelectedRows(0).Cells(0).Value
         Dim g As New GestorFacturación(nro)
         g.facturar(cmbTipoFac2.SelectedValue)
         cargarGrillaFacturacion()

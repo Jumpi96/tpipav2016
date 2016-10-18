@@ -56,22 +56,43 @@
     End Function
 
     Private Sub actualizarStock()
+        Dim transaction As OleDb.OleDbTransaction
+        Try
+            Dim conexion As New OleDb.OleDbConnection
+            Dim comando As New OleDb.OleDbCommand
 
-        Dim tablaArticulosCantidad As New DataTable
-        Dim sentencia As String = ""
+            conexion.ConnectionString = accesoBD.cadenaConexion
+            comando.CommandType = CommandType.Text
+            conexion.Open()
+            comando.Connection = conexion
+            transaction = conexion.BeginTransaction()
+            comando.Transaction = transaction
 
-        sentencia = "SELECT D.idArticulo, D.cantidad"
-        sentencia &= " FROM OrdenesCompra O JOIN DetallesOrdenes D ON O.idOrden = D.idOrden"
-        sentencia &= " WHERE O.idOrden=" & idOrden
+            Dim tablaArticulosCantidad As New DataTable
+            Dim sentencia As String = ""
 
-        tablaArticulosCantidad = accesoBD.query(sentencia)
+            sentencia = "SELECT D.idArticulo, D.cantidad"
+            sentencia &= " FROM OrdenesCompra O JOIN DetallesOrdenes D ON O.idOrden = D.idOrden"
+            sentencia &= " WHERE O.idOrden=" & idOrden
 
-        If tablaArticulosCantidad.Rows.Count > 0 Then
-            For i = 0 To tablaArticulosCantidad.Rows.Count() - 1
-                sentencia = "UPDATE articulos SET stock = stock + " & tablaArticulosCantidad.Rows(i)(1) & " WHERE idArticulo=" & tablaArticulosCantidad.Rows(i)(0)
-                accesoBD.nonQuery(sentencia)
-            Next
-        End If
+            tablaArticulosCantidad = accesoBD.query(sentencia)
+
+            If tablaArticulosCantidad.Rows.Count > 0 Then
+                For i = 0 To tablaArticulosCantidad.Rows.Count() - 1
+                    sentencia = "UPDATE articulos SET stock = stock + " & tablaArticulosCantidad.Rows(i)(1) & " WHERE idArticulo=" & tablaArticulosCantidad.Rows(i)(0)
+                    accesoBD.nonQuery(sentencia)
+                Next
+            End If
+            transaction.Commit()
+            conexion.Close()
+        Catch ex As Exception
+            Try
+                transaction.Rollback()
+            Catch ex2 As Exception
+
+            End Try
+        End Try
+        
 
     End Sub
 

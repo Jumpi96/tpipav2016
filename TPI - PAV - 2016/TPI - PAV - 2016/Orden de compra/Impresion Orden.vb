@@ -29,6 +29,7 @@ Public Class Impresion_Orden
         Me.DataOrdenesTableAdapter.Fill(Me.DataSet.DataOrdenes, idOrden)
 
         Me.ReportViewer1.RefreshReport()
+        Me.ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
     End Sub
 
     Public Sub New(ByVal idO As Integer)

@@ -50,31 +50,6 @@ Partial Class menu
         Me.InformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
-        Me.pnlAdministrarOrdense = New System.Windows.Forms.Panel()
-        Me.pnlFacturacion = New System.Windows.Forms.Panel()
-        Me.cmbTipoFac2 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.btnFacturar = New System.Windows.Forms.Button()
-        Me.dgvFacturacion = New System.Windows.Forms.DataGridView()
-        Me.IdAlojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txtNroFactura = New System.Windows.Forms.TextBox()
-        Me.cmbTipoFac = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btnActualizarStock = New System.Windows.Forms.Button()
-        Me.dgvOrdenes = New System.Windows.Forms.DataGridView()
-        Me.NroOrden = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btnBuscarOrden = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtNroOrden = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lbl_nueAlo = New System.Windows.Forms.Label()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
         Me.tab_aloNueDatCli = New System.Windows.Forms.TabPage()
         Me.txt_tel = New System.Windows.Forms.MaskedTextBox()
@@ -121,6 +96,32 @@ Partial Class menu
         Me.clm_cantBaños = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cam_atrHab = New System.Windows.Forms.Button()
         Me.cmd_aceHab = New System.Windows.Forms.Button()
+        Me.lbl_nueAlo = New System.Windows.Forms.Label()
+        Me.pnlAdministrarOrdense = New System.Windows.Forms.Panel()
+        Me.btnActualizarStock = New System.Windows.Forms.Button()
+        Me.dgvOrdenes = New System.Windows.Forms.DataGridView()
+        Me.NroOrden = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Proveedor = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.btnBuscarOrden = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtNroOrden = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.pnlFacturacion = New System.Windows.Forms.Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cmbTipoFac2 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnFacturar = New System.Windows.Forms.Button()
+        Me.dgvFacturacion = New System.Windows.Forms.DataGridView()
+        Me.IdAlojamiento = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Habitacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaInicio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txtNroFactura = New System.Windows.Forms.TextBox()
+        Me.cmbTipoFac = New System.Windows.Forms.ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.pnl_busAlo = New System.Windows.Forms.Panel()
         Me.lbl_busAlo = New System.Windows.Forms.Label()
         Me.tab_busAlo = New System.Windows.Forms.TabControl()
@@ -297,15 +298,15 @@ Partial Class menu
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
-        Me.pnlAdministrarOrdense.SuspendLayout()
-        Me.pnlFacturacion.SuspendLayout()
-        CType(Me.dgvFacturacion, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvOrdenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tab_aloNue.SuspendLayout()
         Me.tab_aloNueDatCli.SuspendLayout()
         Me.tab_aloNueDatHos.SuspendLayout()
         Me.tab_aloNueSelHab.SuspendLayout()
         CType(Me.grid_nueAlo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlAdministrarOrdense.SuspendLayout()
+        CType(Me.dgvOrdenes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlFacturacion.SuspendLayout()
+        CType(Me.dgvFacturacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_busAlo.SuspendLayout()
         Me.tab_busAlo.SuspendLayout()
         Me.tab_busAloAlo.SuspendLayout()
@@ -356,19 +357,19 @@ Partial Class menu
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'FacturarToolStripMenuItem
         '
         Me.FacturarToolStripMenuItem.Name = "FacturarToolStripMenuItem"
-        Me.FacturarToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.FacturarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.FacturarToolStripMenuItem.Text = "Facturar"
         '
         'ArtículosServiciosToolStripMenuItem
@@ -400,13 +401,13 @@ Partial Class menu
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.BuscarToolStripMenuItem1.Text = "Administrar"
         '
         'FuncionesAdministrativasToolStripMenuItem
@@ -517,241 +518,6 @@ Partial Class menu
         Me.pnl_nueAlo.Size = New System.Drawing.Size(532, 240)
         Me.pnl_nueAlo.TabIndex = 0
         Me.pnl_nueAlo.Visible = False
-        '
-        'pnlAdministrarOrdense
-        '
-        Me.pnlAdministrarOrdense.Controls.Add(Me.btnActualizarStock)
-        Me.pnlAdministrarOrdense.Controls.Add(Me.dgvOrdenes)
-        Me.pnlAdministrarOrdense.Controls.Add(Me.btnBuscarOrden)
-        Me.pnlAdministrarOrdense.Controls.Add(Me.Label3)
-        Me.pnlAdministrarOrdense.Controls.Add(Me.txtNroOrden)
-        Me.pnlAdministrarOrdense.Controls.Add(Me.Label2)
-        Me.pnlAdministrarOrdense.Controls.Add(Me.Label1)
-        Me.pnlAdministrarOrdense.Location = New System.Drawing.Point(12, 32)
-        Me.pnlAdministrarOrdense.Name = "pnlAdministrarOrdense"
-        Me.pnlAdministrarOrdense.Size = New System.Drawing.Size(523, 237)
-        Me.pnlAdministrarOrdense.TabIndex = 1
-        Me.pnlAdministrarOrdense.Visible = False
-        '
-        'pnlFacturacion
-        '
-        Me.pnlFacturacion.Controls.Add(Me.cmbTipoFac2)
-        Me.pnlFacturacion.Controls.Add(Me.Label6)
-        Me.pnlFacturacion.Controls.Add(Me.Label5)
-        Me.pnlFacturacion.Controls.Add(Me.Button1)
-        Me.pnlFacturacion.Controls.Add(Me.btnFacturar)
-        Me.pnlFacturacion.Controls.Add(Me.dgvFacturacion)
-        Me.pnlFacturacion.Controls.Add(Me.txtNroFactura)
-        Me.pnlFacturacion.Controls.Add(Me.cmbTipoFac)
-        Me.pnlFacturacion.Controls.Add(Me.Label4)
-        Me.pnlFacturacion.Location = New System.Drawing.Point(12, 32)
-        Me.pnlFacturacion.Name = "pnlFacturacion"
-        Me.pnlFacturacion.Size = New System.Drawing.Size(526, 234)
-        Me.pnlFacturacion.TabIndex = 9
-        Me.pnlFacturacion.Visible = False
-        '
-        'cmbTipoFac2
-        '
-        Me.cmbTipoFac2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTipoFac2.FormattingEnabled = True
-        Me.cmbTipoFac2.Location = New System.Drawing.Point(10, 196)
-        Me.cmbTipoFac2.Name = "cmbTipoFac2"
-        Me.cmbTipoFac2.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTipoFac2.TabIndex = 18
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(270, 75)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(66, 13)
-        Me.Label6.TabIndex = 17
-        Me.Label6.Text = "Nro. Factura"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(270, 48)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 13)
-        Me.Label5.TabIndex = 16
-        Me.Label5.Text = "Tipo Factura"
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(403, 98)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Buscar"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btnFacturar
-        '
-        Me.btnFacturar.Location = New System.Drawing.Point(168, 198)
-        Me.btnFacturar.Name = "btnFacturar"
-        Me.btnFacturar.Size = New System.Drawing.Size(75, 23)
-        Me.btnFacturar.TabIndex = 14
-        Me.btnFacturar.Text = "Facturar"
-        Me.btnFacturar.UseVisualStyleBackColor = True
-        '
-        'dgvFacturacion
-        '
-        Me.dgvFacturacion.AllowUserToAddRows = False
-        Me.dgvFacturacion.AllowUserToDeleteRows = False
-        Me.dgvFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvFacturacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdAlojamiento, Me.Habitacion, Me.FechaInicio})
-        Me.dgvFacturacion.Location = New System.Drawing.Point(7, 26)
-        Me.dgvFacturacion.Name = "dgvFacturacion"
-        Me.dgvFacturacion.ReadOnly = True
-        Me.dgvFacturacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvFacturacion.Size = New System.Drawing.Size(243, 164)
-        Me.dgvFacturacion.TabIndex = 13
-        '
-        'IdAlojamiento
-        '
-        Me.IdAlojamiento.HeaderText = "IdAlojamiento"
-        Me.IdAlojamiento.Name = "IdAlojamiento"
-        Me.IdAlojamiento.ReadOnly = True
-        Me.IdAlojamiento.Visible = False
-        '
-        'Habitacion
-        '
-        Me.Habitacion.HeaderText = "Habitacion"
-        Me.Habitacion.Name = "Habitacion"
-        Me.Habitacion.ReadOnly = True
-        '
-        'FechaInicio
-        '
-        Me.FechaInicio.HeaderText = "FechaInicio"
-        Me.FechaInicio.Name = "FechaInicio"
-        Me.FechaInicio.ReadOnly = True
-        Me.FechaInicio.Width = 80
-        '
-        'txtNroFactura
-        '
-        Me.txtNroFactura.Location = New System.Drawing.Point(340, 72)
-        Me.txtNroFactura.Name = "txtNroFactura"
-        Me.txtNroFactura.Size = New System.Drawing.Size(121, 20)
-        Me.txtNroFactura.TabIndex = 12
-        '
-        'cmbTipoFac
-        '
-        Me.cmbTipoFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmbTipoFac.FormattingEnabled = True
-        Me.cmbTipoFac.Location = New System.Drawing.Point(340, 43)
-        Me.cmbTipoFac.Name = "cmbTipoFac"
-        Me.cmbTipoFac.Size = New System.Drawing.Size(121, 21)
-        Me.cmbTipoFac.TabIndex = 11
-        '
-        'Label4
-        '
-        Me.Label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(11, 7)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(89, 16)
-        Me.Label4.TabIndex = 10
-        Me.Label4.Text = "Facturación"
-        '
-        'btnActualizarStock
-        '
-        Me.btnActualizarStock.Location = New System.Drawing.Point(110, 198)
-        Me.btnActualizarStock.Name = "btnActualizarStock"
-        Me.btnActualizarStock.Size = New System.Drawing.Size(110, 23)
-        Me.btnActualizarStock.TabIndex = 8
-        Me.btnActualizarStock.Text = "Actualizar stock"
-        Me.btnActualizarStock.UseVisualStyleBackColor = True
-        '
-        'dgvOrdenes
-        '
-        Me.dgvOrdenes.AllowUserToAddRows = False
-        Me.dgvOrdenes.AllowUserToDeleteRows = False
-        Me.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvOrdenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NroOrden, Me.Proveedor, Me.Fecha})
-        Me.dgvOrdenes.Location = New System.Drawing.Point(6, 47)
-        Me.dgvOrdenes.Name = "dgvOrdenes"
-        Me.dgvOrdenes.ReadOnly = True
-        Me.dgvOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvOrdenes.Size = New System.Drawing.Size(234, 145)
-        Me.dgvOrdenes.TabIndex = 7
-        '
-        'NroOrden
-        '
-        Me.NroOrden.HeaderText = "NroOrden"
-        Me.NroOrden.Name = "NroOrden"
-        Me.NroOrden.ReadOnly = True
-        Me.NroOrden.Visible = False
-        '
-        'Proveedor
-        '
-        Me.Proveedor.HeaderText = "Proveedor"
-        Me.Proveedor.Name = "Proveedor"
-        Me.Proveedor.ReadOnly = True
-        '
-        'Fecha
-        '
-        Me.Fecha.HeaderText = "Fecha"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.ReadOnly = True
-        Me.Fecha.Width = 80
-        '
-        'btnBuscarOrden
-        '
-        Me.btnBuscarOrden.Location = New System.Drawing.Point(443, 76)
-        Me.btnBuscarOrden.Name = "btnBuscarOrden"
-        Me.btnBuscarOrden.Size = New System.Drawing.Size(75, 23)
-        Me.btnBuscarOrden.TabIndex = 6
-        Me.btnBuscarOrden.Text = "Buscar"
-        Me.btnBuscarOrden.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(259, 81)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Nro. Orden"
-        '
-        'txtNroOrden
-        '
-        Me.txtNroOrden.Location = New System.Drawing.Point(327, 78)
-        Me.txtNroOrden.Name = "txtNroOrden"
-        Me.txtNroOrden.Size = New System.Drawing.Size(100, 20)
-        Me.txtNroOrden.TabIndex = 4
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(259, 28)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(178, 16)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Buscar orden de compra"
-        '
-        'Label1
-        '
-        Me.Label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 25)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(180, 16)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Recibir orden de compra"
-        '
-        'lbl_nueAlo
-        '
-        Me.lbl_nueAlo.AutoSize = True
-        Me.lbl_nueAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nueAlo.Location = New System.Drawing.Point(3, 3)
-        Me.lbl_nueAlo.Name = "lbl_nueAlo"
-        Me.lbl_nueAlo.Size = New System.Drawing.Size(139, 16)
-        Me.lbl_nueAlo.TabIndex = 0
-        Me.lbl_nueAlo.Text = "Nuevo Alojamiento"
         '
         'tab_aloNue
         '
@@ -1205,6 +971,252 @@ Partial Class menu
         Me.cmd_aceHab.Text = "Aceptar"
         Me.cmd_aceHab.UseVisualStyleBackColor = True
         '
+        'lbl_nueAlo
+        '
+        Me.lbl_nueAlo.AutoSize = True
+        Me.lbl_nueAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_nueAlo.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_nueAlo.Name = "lbl_nueAlo"
+        Me.lbl_nueAlo.Size = New System.Drawing.Size(142, 16)
+        Me.lbl_nueAlo.TabIndex = 0
+        Me.lbl_nueAlo.Text = "Nuevo Alojamiento"
+        '
+        'pnlAdministrarOrdense
+        '
+        Me.pnlAdministrarOrdense.Controls.Add(Me.btnActualizarStock)
+        Me.pnlAdministrarOrdense.Controls.Add(Me.dgvOrdenes)
+        Me.pnlAdministrarOrdense.Controls.Add(Me.btnBuscarOrden)
+        Me.pnlAdministrarOrdense.Controls.Add(Me.Label3)
+        Me.pnlAdministrarOrdense.Controls.Add(Me.txtNroOrden)
+        Me.pnlAdministrarOrdense.Controls.Add(Me.Label2)
+        Me.pnlAdministrarOrdense.Controls.Add(Me.Label1)
+        Me.pnlAdministrarOrdense.Location = New System.Drawing.Point(12, 32)
+        Me.pnlAdministrarOrdense.Name = "pnlAdministrarOrdense"
+        Me.pnlAdministrarOrdense.Size = New System.Drawing.Size(523, 237)
+        Me.pnlAdministrarOrdense.TabIndex = 1
+        Me.pnlAdministrarOrdense.Visible = False
+        '
+        'btnActualizarStock
+        '
+        Me.btnActualizarStock.Location = New System.Drawing.Point(110, 198)
+        Me.btnActualizarStock.Name = "btnActualizarStock"
+        Me.btnActualizarStock.Size = New System.Drawing.Size(110, 23)
+        Me.btnActualizarStock.TabIndex = 4
+        Me.btnActualizarStock.Text = "Actualizar stock"
+        Me.btnActualizarStock.UseVisualStyleBackColor = True
+        '
+        'dgvOrdenes
+        '
+        Me.dgvOrdenes.AllowUserToAddRows = False
+        Me.dgvOrdenes.AllowUserToDeleteRows = False
+        Me.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvOrdenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NroOrden, Me.Proveedor, Me.Fecha})
+        Me.dgvOrdenes.Location = New System.Drawing.Point(6, 47)
+        Me.dgvOrdenes.Name = "dgvOrdenes"
+        Me.dgvOrdenes.ReadOnly = True
+        Me.dgvOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvOrdenes.Size = New System.Drawing.Size(234, 145)
+        Me.dgvOrdenes.TabIndex = 7
+        '
+        'NroOrden
+        '
+        Me.NroOrden.HeaderText = "NroOrden"
+        Me.NroOrden.Name = "NroOrden"
+        Me.NroOrden.ReadOnly = True
+        Me.NroOrden.Visible = False
+        '
+        'Proveedor
+        '
+        Me.Proveedor.HeaderText = "Proveedor"
+        Me.Proveedor.Name = "Proveedor"
+        Me.Proveedor.ReadOnly = True
+        '
+        'Fecha
+        '
+        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.ReadOnly = True
+        Me.Fecha.Width = 80
+        '
+        'btnBuscarOrden
+        '
+        Me.btnBuscarOrden.Location = New System.Drawing.Point(443, 76)
+        Me.btnBuscarOrden.Name = "btnBuscarOrden"
+        Me.btnBuscarOrden.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscarOrden.TabIndex = 6
+        Me.btnBuscarOrden.Text = "Buscar"
+        Me.btnBuscarOrden.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(259, 81)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Nro. Orden"
+        '
+        'txtNroOrden
+        '
+        Me.txtNroOrden.Location = New System.Drawing.Point(327, 78)
+        Me.txtNroOrden.Name = "txtNroOrden"
+        Me.txtNroOrden.Size = New System.Drawing.Size(100, 20)
+        Me.txtNroOrden.TabIndex = 5
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(259, 28)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(182, 16)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Buscar orden de compra"
+        '
+        'Label1
+        '
+        Me.Label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(6, 25)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(184, 16)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Recibir orden de compra"
+        '
+        'pnlFacturacion
+        '
+        Me.pnlFacturacion.Controls.Add(Me.Label7)
+        Me.pnlFacturacion.Controls.Add(Me.cmbTipoFac2)
+        Me.pnlFacturacion.Controls.Add(Me.Label6)
+        Me.pnlFacturacion.Controls.Add(Me.Label5)
+        Me.pnlFacturacion.Controls.Add(Me.Button1)
+        Me.pnlFacturacion.Controls.Add(Me.btnFacturar)
+        Me.pnlFacturacion.Controls.Add(Me.dgvFacturacion)
+        Me.pnlFacturacion.Controls.Add(Me.txtNroFactura)
+        Me.pnlFacturacion.Controls.Add(Me.cmbTipoFac)
+        Me.pnlFacturacion.Controls.Add(Me.Label4)
+        Me.pnlFacturacion.Location = New System.Drawing.Point(12, 32)
+        Me.pnlFacturacion.Name = "pnlFacturacion"
+        Me.pnlFacturacion.Size = New System.Drawing.Size(526, 234)
+        Me.pnlFacturacion.TabIndex = 9
+        Me.pnlFacturacion.Visible = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(270, 9)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(109, 16)
+        Me.Label7.TabIndex = 19
+        Me.Label7.Text = "Buscar factura"
+        '
+        'cmbTipoFac2
+        '
+        Me.cmbTipoFac2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoFac2.FormattingEnabled = True
+        Me.cmbTipoFac2.Location = New System.Drawing.Point(121, 200)
+        Me.cmbTipoFac2.Name = "cmbTipoFac2"
+        Me.cmbTipoFac2.Size = New System.Drawing.Size(41, 21)
+        Me.cmbTipoFac2.TabIndex = 25
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(270, 75)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(66, 13)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "Nro. Factura"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(270, 48)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(67, 13)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "Tipo Factura"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(403, 98)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 29
+        Me.Button1.Text = "Buscar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btnFacturar
+        '
+        Me.btnFacturar.Location = New System.Drawing.Point(168, 198)
+        Me.btnFacturar.Name = "btnFacturar"
+        Me.btnFacturar.Size = New System.Drawing.Size(75, 23)
+        Me.btnFacturar.TabIndex = 26
+        Me.btnFacturar.Text = "Facturar"
+        Me.btnFacturar.UseVisualStyleBackColor = True
+        '
+        'dgvFacturacion
+        '
+        Me.dgvFacturacion.AllowUserToAddRows = False
+        Me.dgvFacturacion.AllowUserToDeleteRows = False
+        Me.dgvFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvFacturacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdAlojamiento, Me.Habitacion, Me.FechaInicio})
+        Me.dgvFacturacion.Location = New System.Drawing.Point(7, 26)
+        Me.dgvFacturacion.Name = "dgvFacturacion"
+        Me.dgvFacturacion.ReadOnly = True
+        Me.dgvFacturacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvFacturacion.Size = New System.Drawing.Size(243, 164)
+        Me.dgvFacturacion.TabIndex = 16
+        '
+        'IdAlojamiento
+        '
+        Me.IdAlojamiento.HeaderText = "IdAlojamiento"
+        Me.IdAlojamiento.Name = "IdAlojamiento"
+        Me.IdAlojamiento.ReadOnly = True
+        Me.IdAlojamiento.Visible = False
+        '
+        'Habitacion
+        '
+        Me.Habitacion.HeaderText = "Habitación"
+        Me.Habitacion.Name = "Habitacion"
+        Me.Habitacion.ReadOnly = True
+        Me.Habitacion.Width = 70
+        '
+        'FechaInicio
+        '
+        Me.FechaInicio.HeaderText = "Fecha Inicio"
+        Me.FechaInicio.Name = "FechaInicio"
+        Me.FechaInicio.ReadOnly = True
+        '
+        'txtNroFactura
+        '
+        Me.txtNroFactura.Location = New System.Drawing.Point(340, 72)
+        Me.txtNroFactura.Name = "txtNroFactura"
+        Me.txtNroFactura.Size = New System.Drawing.Size(121, 20)
+        Me.txtNroFactura.TabIndex = 28
+        '
+        'cmbTipoFac
+        '
+        Me.cmbTipoFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbTipoFac.FormattingEnabled = True
+        Me.cmbTipoFac.Location = New System.Drawing.Point(340, 43)
+        Me.cmbTipoFac.Name = "cmbTipoFac"
+        Me.cmbTipoFac.Size = New System.Drawing.Size(39, 21)
+        Me.cmbTipoFac.TabIndex = 27
+        '
+        'Label4
+        '
+        Me.Label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(11, 7)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(90, 16)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Facturación"
+        '
         'pnl_busAlo
         '
         Me.pnl_busAlo.Controls.Add(Me.lbl_busAlo)
@@ -1223,7 +1235,7 @@ Partial Class menu
         Me.lbl_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_busAlo.Location = New System.Drawing.Point(3, 3)
         Me.lbl_busAlo.Name = "lbl_busAlo"
-        Me.lbl_busAlo.Size = New System.Drawing.Size(142, 16)
+        Me.lbl_busAlo.Size = New System.Drawing.Size(145, 16)
         Me.lbl_busAlo.TabIndex = 0
         Me.lbl_busAlo.Text = "Buscar Alojamiento"
         '
@@ -1756,7 +1768,7 @@ Partial Class menu
         Me.lbl_ordCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_ordCom.Location = New System.Drawing.Point(3, 3)
         Me.lbl_ordCom.Name = "lbl_ordCom"
-        Me.lbl_ordCom.Size = New System.Drawing.Size(179, 16)
+        Me.lbl_ordCom.Size = New System.Drawing.Size(186, 16)
         Me.lbl_ordCom.TabIndex = 0
         Me.lbl_ordCom.Text = "Nueva Orden de Compra"
         '
@@ -2073,7 +2085,7 @@ Partial Class menu
         Me.lbl_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_busOrdCom.Location = New System.Drawing.Point(3, 3)
         Me.lbl_busOrdCom.Name = "lbl_busOrdCom"
-        Me.lbl_busOrdCom.Size = New System.Drawing.Size(182, 16)
+        Me.lbl_busOrdCom.Size = New System.Drawing.Size(189, 16)
         Me.lbl_busOrdCom.TabIndex = 0
         Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
         '
@@ -2710,7 +2722,7 @@ Partial Class menu
         Me.lbl_agrArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_agrArt.Location = New System.Drawing.Point(3, 3)
         Me.lbl_agrArt.Name = "lbl_agrArt"
-        Me.lbl_agrArt.Size = New System.Drawing.Size(111, 16)
+        Me.lbl_agrArt.Size = New System.Drawing.Size(115, 16)
         Me.lbl_agrArt.TabIndex = 0
         Me.lbl_agrArt.Text = "Cargar Artículo"
         '
@@ -2869,7 +2881,7 @@ Partial Class menu
         Me.lbl_agrSer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_agrSer.Location = New System.Drawing.Point(3, 3)
         Me.lbl_agrSer.Name = "lbl_agrSer"
-        Me.lbl_agrSer.Size = New System.Drawing.Size(116, 16)
+        Me.lbl_agrSer.Size = New System.Drawing.Size(120, 16)
         Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
@@ -2921,7 +2933,6 @@ Partial Class menu
         Me.ClientSize = New System.Drawing.Size(545, 285)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
-        Me.Controls.Add(Me.pnlAdministrarOrdense)
         Me.Controls.Add(Me.pnlFacturacion)
         Me.Controls.Add(Me.pnl_nueAlo)
         Me.Controls.Add(Me.pnl_busAlo)
@@ -2929,6 +2940,7 @@ Partial Class menu
         Me.Controls.Add(Me.pnl_agrArt)
         Me.Controls.Add(Me.pnl_busOrdCom)
         Me.Controls.Add(Me.pnl_nueOrdCom)
+        Me.Controls.Add(Me.pnlAdministrarOrdense)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
         Me.MaximizeBox = False
@@ -2940,12 +2952,6 @@ Partial Class menu
         Me.menu_Menu.PerformLayout()
         Me.pnl_nueAlo.ResumeLayout(False)
         Me.pnl_nueAlo.PerformLayout()
-        Me.pnlAdministrarOrdense.ResumeLayout(False)
-        Me.pnlAdministrarOrdense.PerformLayout()
-        Me.pnlFacturacion.ResumeLayout(False)
-        Me.pnlFacturacion.PerformLayout()
-        CType(Me.dgvFacturacion, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvOrdenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tab_aloNue.ResumeLayout(False)
         Me.tab_aloNueDatCli.ResumeLayout(False)
         Me.tab_aloNueDatCli.PerformLayout()
@@ -2954,6 +2960,12 @@ Partial Class menu
         Me.tab_aloNueSelHab.ResumeLayout(False)
         Me.tab_aloNueSelHab.PerformLayout()
         CType(Me.grid_nueAlo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlAdministrarOrdense.ResumeLayout(False)
+        Me.pnlAdministrarOrdense.PerformLayout()
+        CType(Me.dgvOrdenes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlFacturacion.ResumeLayout(False)
+        Me.pnlFacturacion.PerformLayout()
+        CType(Me.dgvFacturacion, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_busAlo.ResumeLayout(False)
         Me.pnl_busAlo.PerformLayout()
         Me.tab_busAlo.ResumeLayout(False)
@@ -3271,10 +3283,11 @@ Partial Class menu
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents cmbTipoFac2 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents IdAlojamiento As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Habitacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaInicio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cmbTipoFac2 As System.Windows.Forms.ComboBox
 
 
 End Class

@@ -47,6 +47,7 @@ Public Class Impresion_Factura
         Me.DataFacturasTableAdapter.Fill(Me.DataSet.DataFacturas, idTipoFactura, idFactura, idTipoFactura, idFactura, idTipoFactura, idFactura)
 
         Me.ReportViewer1.RefreshReport()
+        Me.ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
     End Sub
 
     Public Sub New(ByVal idFac As Integer, ByVal idTipoFac As Integer)
