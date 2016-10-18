@@ -7094,7 +7094,7 @@ Partial Public Class DataSet
         
         Private columnprecioUnitario As Global.System.Data.DataColumn
         
-        Private columntotal As Global.System.Data.DataColumn
+        Private columnsubtotal As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -7157,9 +7157,9 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property totalColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property subtotalColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columntotal
+                Return Me.columnsubtotal
             End Get
         End Property
         
@@ -7200,9 +7200,9 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddDataOrdenesRow(ByVal cantidad As Integer, ByVal nombre As String, ByVal precioUnitario As Double, ByVal total As Double) As DataOrdenesRow
+        Public Overloads Function AddDataOrdenesRow(ByVal cantidad As Integer, ByVal nombre As String, ByVal precioUnitario As Double, ByVal subtotal As Double) As DataOrdenesRow
             Dim rowDataOrdenesRow As DataOrdenesRow = CType(Me.NewRow,DataOrdenesRow)
-            Dim columnValuesArray() As Object = New Object() {cantidad, nombre, precioUnitario, total}
+            Dim columnValuesArray() As Object = New Object() {cantidad, nombre, precioUnitario, subtotal}
             rowDataOrdenesRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDataOrdenesRow)
             Return rowDataOrdenesRow
@@ -7228,7 +7228,7 @@ Partial Public Class DataSet
             Me.columncantidad = MyBase.Columns("cantidad")
             Me.columnnombre = MyBase.Columns("nombre")
             Me.columnprecioUnitario = MyBase.Columns("precioUnitario")
-            Me.columntotal = MyBase.Columns("total")
+            Me.columnsubtotal = MyBase.Columns("subtotal")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7240,13 +7240,12 @@ Partial Public Class DataSet
             MyBase.Columns.Add(Me.columnnombre)
             Me.columnprecioUnitario = New Global.System.Data.DataColumn("precioUnitario", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnprecioUnitario)
-            Me.columntotal = New Global.System.Data.DataColumn("total", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntotal)
+            Me.columnsubtotal = New Global.System.Data.DataColumn("subtotal", GetType(Double), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnsubtotal)
             Me.columncantidad.AllowDBNull = false
             Me.columnnombre.AllowDBNull = false
             Me.columnnombre.MaxLength = 30
             Me.columnprecioUnitario.AllowDBNull = false
-            Me.columntotal.ReadOnly = true
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9210,29 +9209,29 @@ Partial Public Class DataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property total() As Double
+        Public Property subtotal() As Double
             Get
                 Try 
-                    Return CType(Me(Me.tableDataOrdenes.totalColumn),Double)
+                    Return CType(Me(Me.tableDataOrdenes.subtotalColumn),Double)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'total' in table 'DataOrdenes' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'subtotal' in table 'DataOrdenes' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tableDataOrdenes.totalColumn) = value
+                Me(Me.tableDataOrdenes.subtotalColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IstotalNull() As Boolean
-            Return Me.IsNull(Me.tableDataOrdenes.totalColumn)
+        Public Function IssubtotalNull() As Boolean
+            Return Me.IsNull(Me.tableDataOrdenes.subtotalColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SettotalNull()
-            Me(Me.tableDataOrdenes.totalColumn) = Global.System.Convert.DBNull
+        Public Sub SetsubtotalNull()
+            Me(Me.tableDataOrdenes.subtotalColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -16525,7 +16524,7 @@ Namespace DataSetTableAdapters
             tableMapping.ColumnMappings.Add("cantidad", "cantidad")
             tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("precioUnitario", "precioUnitario")
-            tableMapping.ColumnMappings.Add("total", "total")
+            tableMapping.ColumnMappings.Add("subtotal", "subtotal")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -16544,11 +16543,10 @@ Namespace DataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        DetallesOrdenes.cantidad, Articulos.nombre, Articulos.precioUnitari"& _ 
-                "o, DetallesOrdenes.cantidad * Articulos.precioUnitario AS total"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM           "& _ 
-                " DetallesOrdenes INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         OrdenesCompra ON DetallesO"& _ 
-                "rdenes.idOrden = OrdenesCompra.idOrden INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Arti"& _ 
-                "culos ON DetallesOrdenes.idArticulo = Articulos.idArticulo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Detall"& _ 
-                "esOrdenes.idOrden = ?)"
+                "o, DetallesOrdenes.subtotal"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            DetallesOrdenes INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"       "& _ 
+                "                  OrdenesCompra ON DetallesOrdenes.idOrden = OrdenesCompra.idOrd"& _ 
+                "en INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Articulos ON DetallesOrdenes.idArticulo "& _ 
+                "= Articulos.idArticulo"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (DetallesOrdenes.idOrden = ?)"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(0).Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("idOrden", Global.System.Data.OleDb.OleDbType.[Integer], 4, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "idOrden", Global.System.Data.DataRowVersion.Current, false, Nothing))
         End Sub

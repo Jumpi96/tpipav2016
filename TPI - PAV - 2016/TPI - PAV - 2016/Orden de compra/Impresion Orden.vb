@@ -7,8 +7,8 @@ Public Class Impresion_Orden
 
         Dim accesoBD As New AccesoBD
         Dim consulta As String = "SELECT O.fechaEmision,O.total,P.nombre"
-        consulta &= "FROM OrdenesCompra O JOIN Proveedores P ON O.idProveedor=P.idProveedor"
-        consulta &= "WHERE idOrden=" + idOrden
+        consulta &= " FROM OrdenesCompra O JOIN Proveedores P ON O.idProveedor=P.idProveedor"
+        consulta &= " WHERE idOrden=" & idOrden
 
         Dim tabla As DataTable = accesoBD.query(consulta)
 

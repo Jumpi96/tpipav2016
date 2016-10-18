@@ -246,7 +246,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!total.Value</Value>
+                              <Value>=Fields!subtotal.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -576,8 +576,8 @@
           <DataField>precioUnitario</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
-        <Field Name="total">
-          <DataField>total</DataField>
+        <Field Name="subtotal">
+          <DataField>subtotal</DataField>
           <rd:TypeName>System.Double</rd:TypeName>
         </Field>
       </Fields>

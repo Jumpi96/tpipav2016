@@ -10,7 +10,6 @@
 
         tabla = acceso.query(sql)
 
-
         cmbProveedor.DataSource = tabla
         primerCambio = True
         cmbProveedor.ValueMember = "idProveedor"
@@ -20,12 +19,12 @@
 
     Private Sub cargarGrilla()
         Dim tabla As New Data.DataTable
-        Dim sql As String = "SELECT A.nombre, A.precioUnitario FROM Articulos A WHERE A.idProveedor=" & cmbProveedor.SelectedValue
+        Dim sql As String = "SELECT a.IdArticulo, A.nombre, A.precioUnitario FROM Articulos A WHERE A.idProveedor=" & cmbProveedor.SelectedValue
 
         tabla = acceso.query(sql)
 
         For i = 0 To tabla.Rows.Count() - 1
-            DataGridView1.Rows.Add(tabla.Rows(i)(0), 0, tabla.Rows(i)(1), 0)
+            DataGridView1.Rows.Add(tabla.Rows(i)(0), tabla.Rows(i)(1), 0, tabla.Rows(i)(2), 0)
         Next
     End Sub
 
@@ -53,17 +52,17 @@
     Private Sub DataGridView1_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellValidated
         If (e.RowIndex > -1) Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-            If row.Cells(1).Value <> "0" Then
+            If row.Cells(2).Value <> "0" Then
                 Dim cant As Integer
-                If Int32.TryParse(row.Cells(1).Value, cant) And cant >= 0 Then
-                    row.Cells(3).Value = cant * row.Cells(2).Value
+                If Int32.TryParse(row.Cells(2).Value, cant) And cant >= 0 Then
+                    row.Cells(4).Value = cant * row.Cells(3).Value
                 Else
                     MessageBox.Show("El valor ingresado no es válido.", "Error")
-                    DataGridView1.Rows(e.RowIndex).Cells(1).Value = 0
-                    DataGridView1.Rows(e.RowIndex).Cells(3).Value = 0
+                    DataGridView1.Rows(e.RowIndex).Cells(2).Value = 0
+                    DataGridView1.Rows(e.RowIndex).Cells(4).Value = 0
                 End If
             Else
-                DataGridView1.Rows(e.RowIndex).Cells(3).Value = 0
+                DataGridView1.Rows(e.RowIndex).Cells(4).Value = 0
             End If
             calcularTotal()
         End If
@@ -72,7 +71,7 @@
     Private Function calcularTotal() As Double
         Dim suma As Double = 0
         For i = 0 To DataGridView1.Rows.Count() - 1
-            suma = suma + DataGridView1.Rows(i).Cells(3).Value
+            suma = suma + DataGridView1.Rows(i).Cells(4).Value
         Next
         txtTotal.Text = "$ " & suma
         Return suma
@@ -90,16 +89,23 @@
     Private Sub emitir()
         If validar() Then
             Dim table As New DataTable
-            table.Columns.Add("Producto", Type.GetType("System.String"))
+            table.Columns.Add("Producto", Type.GetType("System.Int32"))
             table.Columns.Add("Cantidad", Type.GetType("System.Int32"))
-            table.Columns.Add("PrecioUnitario", Type.GetType("System.Double"))
             table.Columns.Add("Subtotal", Type.GetType("System.Double"))
+            Dim pr As Integer
+            Dim ca As Integer
+            Dim pu As Integer
+            Dim st As Integer
 
             For i = 0 To DataGridView1.Rows.Count() - 1
-                If DataGridView1.Rows(i).Cells(1).Value <> "0" Then
-                    table.Rows.Add(DataGridView1.Rows(i))
+                If DataGridView1.Rows(i).Cells(2).Value <> "0" Then
+                    pr = DataGridView1.Rows(i).Cells(0).Value
+                    ca = DataGridView1.Rows(i).Cells(2).Value
+                    st = DataGridView1.Rows(i).Cells(4).Value
+                    table.Rows.Add(pr, ca, st)
                 End If
             Next
+
             Dim ge As New GestorOrden(table, cmbProveedor.SelectedValue, calcularTotal())
             ge.ordenar()
             Me.Close()

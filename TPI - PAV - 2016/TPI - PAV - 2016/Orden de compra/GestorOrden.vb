@@ -5,7 +5,7 @@
     Private idProveedor As Integer
     Private total As Double
 
-    Sub New(ByVal t As DataTable, ByVal p As Integer, ByVal tot As Double)
+    Sub New(ByRef t As DataTable, ByVal p As Integer, ByVal tot As Double)
         tablaDetalles = t
         idProveedor = p
         total = tot
@@ -18,28 +18,30 @@
     Public Sub ordenar()
 
         'crear orden
-        Dim sentencia As String = "INSERT INTO OrdenesCompra (idOrden,idProveedor,fechaEmision)"  ' AGREGAR TOTAL
-        sentencia &= "VALUES(" & idOrden & "," & idProveedor & ",'" & Date.Today() & "')"
+        Dim sentencia As String = "INSERT INTO OrdenesCompra (idProveedor,fechaEmision,total)"
+        sentencia &= "VALUES(" & idProveedor & ",'" & Date.Today() & "'," & total & ")"
 
         accesoBD.nonQuery(sentencia)
+
+        'busca el nroOrden
+        sentencia = "SELECT top 1 idOrden FROM OrdenesCompra ORDER BY 1 DESC"
+        Dim tabla As DataTable = accesoBD.query(sentencia)
+        idOrden = tabla.Rows(0)(0)
 
         'crear detalles de ordenes
         '    a partir de articulos
         Dim contador As Integer = 1
-        For i = 0 To tablaDetalles.Rows.Count() - 1
 
-            sentencia = "INSERT INTO DetallesOrdenes (idOrden,idArticulo,cantidad,idRenglon)"
-            sentencia &= " VALUES(" & idOrden & "," & tablaDetalles.Rows(i)(1)
-            sentencia &= "," & tablaDetalles.Rows(i)(2) & "," & contador
+        For i = 0 To tablaDetalles.Rows.Count() - 1
+            sentencia = "INSERT INTO DetallesOrdenes (idOrden,idArticulo,cantidad,idRenglon,subtotal)"
+            sentencia &= " VALUES(" & idOrden & "," & tablaDetalles.Rows(i)(0)
+            sentencia &= "," & tablaDetalles.Rows(i)(1) & "," & contador & "," & tablaDetalles.Rows(i)(2) & ")"
             accesoBD.nonQuery(sentencia)
 
             contador = contador + 1
         Next
       
-
-        'imprimir orden todo tuyo Juan
-
-
+        leerOrden()
     End Sub
 
     Public Function recibirOrden() As Boolean
@@ -81,11 +83,7 @@
     End Sub
 
     Public Sub leerOrden()
-        'Dim sentencia As String = "SELECT nroFactura, tipoFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
-        'Dim tabla As DataTable = accesoBD.query(sentencia)
-        'Dim nro As Integer = tabla.Rows(0)(0)
-        'Dim idTipoFactura As Integer = tabla.Rows(0)(1)
-        'Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
-        'imprFactura.ShowDialog()
+        Dim n As New Impresion_Orden(idOrden)
+        n.ShowDialog()
     End Sub
 End Class

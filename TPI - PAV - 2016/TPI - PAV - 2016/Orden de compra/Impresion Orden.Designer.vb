@@ -24,21 +24,13 @@ Partial Class Impresion_Orden
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.DataFacturasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataFacturasTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.DataFacturasTableAdapter()
         Me.DataOrdenesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataOrdenesTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.DataOrdenesTableAdapter()
-        CType(Me.DataFacturasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataOrdenesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'DataFacturasBindingSource
-        '
-        Me.DataFacturasBindingSource.DataMember = "DataFacturas"
-        Me.DataFacturasBindingSource.DataSource = Me.DataSet
         '
         'DataSet
         '
@@ -49,17 +41,13 @@ Partial Class Impresion_Orden
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.DataFacturasBindingSource
+        ReportDataSource1.Value = Me.DataOrdenesBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.Factura.rdlc"
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.Orden.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(60, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(523, 517)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'DataFacturasTableAdapter
-        '
-        Me.DataFacturasTableAdapter.ClearBeforeFill = True
         '
         'DataOrdenesBindingSource
         '
@@ -81,16 +69,13 @@ Partial Class Impresion_Orden
         Me.Name = "Impresion_Orden"
         Me.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
         Me.Text = "Impresión de Orden de Compra"
-        CType(Me.DataFacturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataOrdenesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents DataFacturasBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataSet As TPI___PAV___2016.DataSet
-    Friend WithEvents DataFacturasTableAdapter As TPI___PAV___2016.DataSetTableAdapters.DataFacturasTableAdapter
     Friend WithEvents DataOrdenesBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataOrdenesTableAdapter As TPI___PAV___2016.DataSetTableAdapters.DataOrdenesTableAdapter
 End Class
