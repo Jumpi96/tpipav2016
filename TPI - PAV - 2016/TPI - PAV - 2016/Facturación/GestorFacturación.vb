@@ -13,11 +13,13 @@
         Dim sentencia As String = "INSERT INTO facturas (idAlojamiento,tipoFactura,fechaEmision)"
         sentencia &= "VALUES(" & idAlojamiento & "," & idTipoFactura & ",'" & Date.Today() & "')"
 
+        'accesoBD.transaction(sentencia, False)
         accesoBD.nonQuery(sentencia)
 
         'actualiza fecha fin alojamiento
 
         sentencia = "UPDATE alojamientos SET fechaFinAlojamiento='" & Date.Today() & "' where idAlojamiento=" & idAlojamiento
+        'accesoBD.transaction(sentencia, False)
         accesoBD.nonQuery(sentencia)
 
         'crear detalles de factura
@@ -40,6 +42,7 @@
                 sentencia &= "," & consumiciones.Rows(i)(2) & "," & consumiciones.Rows(i)(3)
                 sentencia &= ",'" & fecha.Date & "', " & (i + 1) & ")"
                 contador = contador + 1
+                'accesoBD.transaction(sentencia, False)
                 accesoBD.nonQuery(sentencia)
             Next
         End If
@@ -62,6 +65,7 @@
                 sentencia &= "," & servicios.Rows(i)(2) & "," & servicios.Rows(i)(3)
                 sentencia &= ",'" & fecha.Date & "', " & (contador + 1) & ")"
                 contador = contador + 1
+                'accesoBD.transaction(sentencia, False)
                 accesoBD.nonQuery(sentencia)
             Next
         End If
@@ -78,6 +82,7 @@
         Dim costoAloj As Double = precioDia * cantDias
 
         sentencia = "UPDATE facturas SET total=" & (subtotal + costoAloj) & " where idAlojamiento=" & idAlojamiento
+        'accesoBD.transaction(sentencia, True)
         accesoBD.nonQuery(sentencia)
 
         'imprimir factura

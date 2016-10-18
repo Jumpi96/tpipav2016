@@ -3,9 +3,7 @@
     Dim conexion As Object
     Dim comando As Object
     Dim transaccion As Object
-    Dim sentenciasTransaccionales As Collection
-
-
+    Dim finalizarTransaccion As finalizar_transaccion
     Private Shared _instancia As AccesoBD = Nothing
     Private Shared ReadOnly sync As New Object
 
@@ -14,6 +12,10 @@
         transaccion
     End Enum
 
+    Enum finalizar_transaccion
+        rollback
+        commit
+    End Enum
 
     'GETTER Y SETTER de cadena conexion
     Public Property cadenaConexion As String
@@ -45,7 +47,7 @@
     Public Sub New()
         Me.conexion = New OleDb.OleDbConnection
         Me.comando = New OleDb.OleDbCommand()
-
+        Me.finalizarTransaccion = finalizar_transaccion.commit
 
         Select Case Environment.MachineName
             Case "LAWEBSTORE-PC"
@@ -111,32 +113,60 @@
         Return retorno
     End Function
 
-    Public Function transaction(ByVal sentenciaSQL As String, ByVal commit As Boolean) As String
-        Dim retorno As String = ""
-        sentenciasTransaccionales.Add(sentenciaSQL)
+    'Public Function transaction(ByVal sentenciaSQL As String, ByVal commit As Boolean) As String
+    '    Dim retorno As String = ""
+    '    sentenciasTransaccionales.Add(sentenciaSQL)
 
-        If commit Then
+    '    If commit Then
+    '        Me.conectar(tipo_conexion.transaccion)
+    '        Me.comando.CommandType = CommandType.Text
+
+    '        Try
+    '            For Each collectionItem As Object In sentenciasTransaccionales
+    '                Me.comando.CommandText = collectionItem.ToString
+    '                Me.comando.ExecuteNonQuery()
+    '            Next collectionItem
+
+    '            Me.transaccion.commit()
+    '        Catch ex As Exception
+    '            Me.transaccion.rollback()
+    '            retorno = ex.Message
+    '        Finally
+    '            Me.sentenciasTransaccionales.Clear()
+    '            Me.cerrar()
+    '        End Try
+    '    End If
+
+    '    Return retorno
+    'End Function
+
+    Public Sub transaction(ByVal sentenciaSQL As String, ByVal commit As Boolean)
+        If finalizarTransaccion = finalizar_transaccion.commit Then
+
             Me.conectar(tipo_conexion.transaccion)
             Me.comando.CommandType = CommandType.Text
 
-            Try
-                For Each collectionItem As Object In sentenciasTransaccionales
-                    Me.comando.CommandText = collectionItem.ToString
-                    Me.comando.ExecuteNonQuery()
-                Next collectionItem
 
-                Me.transaccion.commit()
+            Try
+                Me.comando.CommandText = sentenciaSQL
+                Me.comando.ExecuteNonQuery()
             Catch ex As Exception
-                Me.transaccion.rollback()
-                retorno = ex.Message
-            Finally
-                Me.sentenciasTransaccionales.Clear()
-                Me.cerrar()
+                Me.finalizarTransaccion = finalizar_transaccion.rollback
+                MessageBox.Show(ex.Message)
             End Try
         End If
 
-        Return retorno
-    End Function
+        If commit Then
+            If finalizarTransaccion = finalizar_transaccion.commit Then
+                Me.transaccion.commit()
+            ElseIf finalizarTransaccion = finalizar_transaccion.rollback Then
+                Me.transaccion.rollback()
+            End If
+
+            Me.cerrar()
+        End If
+
+    End Sub
 
     Public Function transaction(ByVal sentenciasSQL As Collection) As String
         Dim retorno As String = ""
@@ -171,16 +201,15 @@
     Private Sub conectar(ByVal tipoConexion As tipo_conexion)
         If Me.conexion.State.ToString <> "Open" Then
 
-            Me.conexion.ConnectionString = Me.pCadenaConexion
+            Me.conexion.ConnectionString = Me.cadenaConexion
             Me.conexion.Open()
             Me.comando.Connection = Me.conexion
             Me.comando.CommandType() = CommandType.Text
 
             If tipoConexion = tipo_conexion.transaccion Then
-
                 Me.transaccion = Me.conexion.BeginTransaction()
                 Me.comando.Transaction = Me.transaccion
-
+                Me.finalizarTransaccion = finalizar_transaccion.commit
             End If
         End If
     End Sub
