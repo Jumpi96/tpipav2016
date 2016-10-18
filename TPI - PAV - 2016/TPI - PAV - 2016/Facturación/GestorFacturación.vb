@@ -97,38 +97,45 @@
 
             transaction.Commit()
             conexion.Close()
+
+            'Suma el total de la factura y actualiza
+            sentencia = "SELECT SUM(D.subtotal) FROM DetallesXFactura D JOIN Facturas F ON D.nroFactura=F.nroFactura AND D.tipoFactura=F.tipoFactura WHERE F.idAlojamiento=" & idAlojamiento
+            tabla = accesoBD.query(sentencia)
+            Dim subtotal As Double
+            If tabla.Rows.Count() > 0 Then
+                subtotal = tabla.Rows(0)(0)
+            Else
+                subtotal = 0
+            End If
+
+
+            sentencia = "SELECT DATEDIFF(day, fechaInicioAlojamiento, fechaFinAlojamiento), precioPorDia"
+            sentencia &= " from alojamientos where idAlojamiento=" & idAlojamiento
+            tabla = accesoBD.query(sentencia)
+            Dim precioDia As Double = tabla.Rows(0)(1)
+            Dim cantDias As Integer = tabla.Rows(0)(0)
+            Dim costoAloj As Double = precioDia * cantDias
+
+            sentencia = "UPDATE facturas SET total=" & (subtotal + costoAloj) & " where idAlojamiento=" & idAlojamiento
+            'accesoBD.transaction(sentencia, True)
+            accesoBD.nonQuery(sentencia)
+
+            'imprimir factura
+
+            sentencia = "SELECT nroFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
+            tabla = accesoBD.query(sentencia)
+            Dim nro As Integer = tabla.Rows(0)(0)
+            Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
+            imprFactura.ShowDialog()
         Catch ex As Exception
             Try
                 transaction.Rollback()
             Catch ex2 As Exception
 
             End Try
-
         End Try
 
-        'Suma el total de la factura y actualiza
-        sentencia = "SELECT SUM(D.subtotal) FROM DetallesXFactura D JOIN Facturas F ON D.nroFactura=F.nroFactura AND D.tipoFactura=F.tipoFactura WHERE F.idAlojamiento=" & idAlojamiento
-        tabla = accesoBD.query(sentencia)
-        Dim subtotal As Double = tabla.Rows(0)(0)
-
-        sentencia = "SELECT DATEDIFF(day, fechaInicioAlojamiento, fechaFinAlojamiento), precioPorDia"
-        sentencia &= " from alojamientos where idAlojamiento=" & idAlojamiento
-        tabla = accesoBD.query(sentencia)
-        Dim precioDia As Double = tabla.Rows(0)(1)
-        Dim cantDias As Integer = tabla.Rows(0)(0)
-        Dim costoAloj As Double = precioDia * cantDias
-
-        sentencia = "UPDATE facturas SET total=" & (subtotal + costoAloj) & " where idAlojamiento=" & idAlojamiento
-        'accesoBD.transaction(sentencia, True)
-        accesoBD.nonQuery(sentencia)
         
-        'imprimir factura
-
-        sentencia = "SELECT nroFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
-        tabla = accesoBD.query(sentencia)
-        Dim nro As Integer = tabla.Rows(0)(0)
-        Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
-        imprFactura.ShowDialog()
 
     End Sub
 
