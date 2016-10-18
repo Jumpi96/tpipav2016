@@ -22,6 +22,8 @@ Partial Class ABM_OrdenesCompra
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmbProveedor = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -82,6 +84,7 @@ Partial Class ABM_OrdenesCompra
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(119, 20)
         Me.txtTotal.TabIndex = 4
+        Me.txtTotal.Text = "$"
         '
         'btnEmitir
         '
@@ -116,23 +119,31 @@ Partial Class ABM_OrdenesCompra
         Me.Producto.HeaderText = "Producto"
         Me.Producto.Name = "Producto"
         Me.Producto.ReadOnly = True
+        Me.Producto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'Cantidad
         '
         Me.Cantidad.HeaderText = "Cantidad"
         Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'PrecioUnitario
         '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.PrecioUnitario.DefaultCellStyle = DataGridViewCellStyle3
         Me.PrecioUnitario.HeaderText = "Precio Unitario"
         Me.PrecioUnitario.Name = "PrecioUnitario"
         Me.PrecioUnitario.ReadOnly = True
+        Me.PrecioUnitario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'SubTotal
         '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter
+        Me.SubTotal.DefaultCellStyle = DataGridViewCellStyle4
         Me.SubTotal.HeaderText = "SubTotal"
         Me.SubTotal.Name = "SubTotal"
         Me.SubTotal.ReadOnly = True
+        Me.SubTotal.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
         'ABM_OrdenesCompra
         '
@@ -165,18 +176,19 @@ Partial Class ABM_OrdenesCompra
     Friend WithEvents btnEmitir As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnLimpiar As System.Windows.Forms.Button
-    Friend WithEvents Producto As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PrecioUnitario As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SubTotal As System.Windows.Forms.DataGridViewTextBoxColumn
 
     Public Sub New()
 
         ' This call is required by the designer.
         InitializeComponent()
         cargarCombo()
-
+        primerCambio = True
+        cmbProveedor.SelectedIndex = -1
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+    Friend WithEvents Producto As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PrecioUnitario As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SubTotal As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

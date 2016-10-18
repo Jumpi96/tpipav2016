@@ -44,6 +44,8 @@
         txtTotal.Text = ""
         cmbProveedor.Enabled = True
         cmbProveedor.Focus()
+        primerCambio = True
+        cmbProveedor.SelectedIndex = -1
         btnEmitir.Enabled = False
         DataGridView1.Rows.Clear()
     End Sub
@@ -51,29 +53,33 @@
     Private Sub DataGridView1_CellValidated(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellValidated
         If (e.RowIndex > -1) Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
-            If row.Cells(1).Value <> 0 Then
+            If row.Cells(1).Value <> "0" Then
                 Dim cant As Integer
                 If Int32.TryParse(row.Cells(1).Value, cant) And cant >= 0 Then
                     row.Cells(3).Value = cant * row.Cells(2).Value
-                    calcularTotal()
                 Else
                     MessageBox.Show("El valor ingresado no es válido.", "Error")
                     DataGridView1.Rows(e.RowIndex).Cells(1).Value = 0
+                    DataGridView1.Rows(e.RowIndex).Cells(3).Value = 0
                 End If
+            Else
+                DataGridView1.Rows(e.RowIndex).Cells(3).Value = 0
             End If
+            calcularTotal()
         End If
     End Sub
 
-    Private Sub calcularTotal()
+    Private Function calcularTotal() As Double
         Dim suma As Double = 0
         For i = 0 To DataGridView1.Rows.Count() - 1
             suma = suma + DataGridView1.Rows(i).Cells(3).Value
         Next
-        txtTotal.Text = suma
-    End Sub
+        txtTotal.Text = "$ " & suma
+        Return suma
+    End Function
 
     Private Function validar() As Boolean
-        If txtTotal.Text > 0 Then
+        If calcularTotal() > 0 Then
             Return True
         Else
             MessageBox.Show("No se puede emitir una orden de compra vacía.")
@@ -83,11 +89,29 @@
 
     Private Sub emitir()
         If validar() Then
-            Dim table As DataTable = DirectCast(DataGridView1.DataSource, DataTable)
-            Dim ge As New GestorOrden(table, cmbProveedor.SelectedValue,txtTotal.Text)
+            Dim table As New DataTable
+            table.Columns.Add("Producto", Type.GetType("System.String"))
+            table.Columns.Add("Cantidad", Type.GetType("System.Int32"))
+            table.Columns.Add("PrecioUnitario", Type.GetType("System.Double"))
+            table.Columns.Add("Subtotal", Type.GetType("System.Double"))
+
+            For i = 0 To DataGridView1.Rows.Count() - 1
+                If DataGridView1.Rows(i).Cells(1).Value <> "0" Then
+                    table.Rows.Add(DataGridView1.Rows(i))
+                End If
+            Next
+            Dim ge As New GestorOrden(table, cmbProveedor.SelectedValue, calcularTotal())
             ge.ordenar()
             Me.Close()
         End If
         
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.Close()
+    End Sub
+
+    Private Sub btnEmitir_Click(sender As Object, e As EventArgs) Handles btnEmitir.Click
+        Me.emitir()
     End Sub
 End Class
