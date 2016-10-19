@@ -11,16 +11,16 @@
         Dim sentencia As String
         Dim tabla As New DataTable
         Dim idTipoFactura As Integer = tF
-        Try
-            Dim conexion As New OleDb.OleDbConnection
-            Dim comando As New OleDb.OleDbCommand
-            conexion.ConnectionString = accesoBD.cadenaConexion
-            comando.CommandType = CommandType.Text
-            conexion.Open()
-            comando.Connection = conexion
-            transaction = conexion.BeginTransaction()
-            comando.Transaction = transaction
+        Dim conexion As New OleDb.OleDbConnection
+        Dim comando As New OleDb.OleDbCommand
+        conexion.ConnectionString = accesoBD.cadenaConexion
+        comando.CommandType = CommandType.Text
+        conexion.Open()
+        comando.Connection = conexion
+        transaction = conexion.BeginTransaction()
+        comando.Transaction = transaction
 
+        Try
             'crear factura
             sentencia = "INSERT INTO facturas (idAlojamiento,tipoFactura,fechaEmision)"
             sentencia &= "VALUES(" & idAlojamiento & "," & idTipoFactura & ",'" & Date.Today() & "')"
@@ -41,6 +41,7 @@
 
             'crear detalles de factura
             '    a partir de consumiciones
+            Dim subtotal As Double = 0
             Dim consumiciones As New DataTable
 
             sentencia = "SELECT F.nroFactura, F.tipoFactura, A.precioUnitario*C.cantidad, C.idConsumicion, GETDATE()"
@@ -61,6 +62,7 @@
                     sentencia &= "," & consumiciones.Rows(i)(2) & "," & consumiciones.Rows(i)(3)
                     sentencia &= ",'" & fecha.Date & "', " & (i + 1) & ")"
                     contador = contador + 1
+                    subtotal = subtotal + consumiciones.Rows(i)(2)
                     'accesoBD.transaction(sentencia, False)
                     comando.CommandText = sentencia
                     comando.ExecuteNonQuery()
@@ -88,6 +90,7 @@
                     sentencia &= "," & servicios.Rows(i)(2) & "," & servicios.Rows(i)(3)
                     sentencia &= ",'" & fecha.Date & "', " & (contador + 1) & ")"
                     contador = contador + 1
+                    subtotal = subtotal + servicios.Rows(i)(2)
                     'accesoBD.transaction(sentencia, False)
                     comando.CommandText = sentencia
                     comando.ExecuteNonQuery()
@@ -95,21 +98,7 @@
                 Next
             End If
 
-            transaction.Commit()
-            conexion.Close()
-
-            'Suma el total de la factura y actualiza
-            sentencia = "SELECT SUM(D.subtotal) FROM DetallesXFactura D JOIN Facturas F ON D.nroFactura=F.nroFactura AND D.tipoFactura=F.tipoFactura WHERE F.idAlojamiento=" & idAlojamiento
-            tabla = accesoBD.query(sentencia)
-            Dim subtotal As Double
-            If tabla.Rows.Count() > 0 Then
-                subtotal = tabla.Rows(0)(0)
-            Else
-                subtotal = 0
-            End If
-
-
-            sentencia = "SELECT DATEDIFF(day, fechaInicioAlojamiento, fechaFinAlojamiento), precioPorDia"
+            sentencia = "SELECT DATEDIFF(day, fechaInicioAlojamiento, GETDATE()), precioPorDia"
             sentencia &= " from alojamientos where idAlojamiento=" & idAlojamiento
             tabla = accesoBD.query(sentencia)
             Dim precioDia As Double = tabla.Rows(0)(1)
@@ -119,6 +108,9 @@
             sentencia = "UPDATE facturas SET total=" & (subtotal + costoAloj) & " where idAlojamiento=" & idAlojamiento
             'accesoBD.transaction(sentencia, True)
             accesoBD.nonQuery(sentencia)
+
+            transaction.Commit()
+            conexion.Close()
 
             'imprimir factura
 
@@ -130,8 +122,8 @@
         Catch ex As Exception
             Try
                 transaction.Rollback()
+                conexion.Close()
             Catch ex2 As Exception
-
             End Try
         End Try
 

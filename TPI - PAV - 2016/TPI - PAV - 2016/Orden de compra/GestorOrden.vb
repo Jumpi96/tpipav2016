@@ -30,18 +30,38 @@
 
         'crear detalles de ordenes
         '    a partir de articulos
-        Dim contador As Integer = 1
 
-        For i = 0 To tablaDetalles.Rows.Count() - 1
-            sentencia = "INSERT INTO DetallesOrdenes (idOrden,idArticulo,cantidad,idRenglon,subtotal)"
-            sentencia &= " VALUES(" & idOrden & "," & tablaDetalles.Rows(i)(0)
-            sentencia &= "," & tablaDetalles.Rows(i)(1) & "," & contador & "," & tablaDetalles.Rows(i)(2) & ")"
-            accesoBD.nonQuery(sentencia)
+        Dim transaction As OleDb.OleDbTransaction
+        Dim conexion As New OleDb.OleDbConnection
+        Dim comando As New OleDb.OleDbCommand
 
-            contador = contador + 1
-        Next
-      
-        leerOrden()
+        conexion.ConnectionString = accesoBD.cadenaConexion
+        comando.CommandType = CommandType.Text
+        conexion.Open()
+        comando.Connection = conexion
+        transaction = conexion.BeginTransaction()
+        comando.Transaction = transaction
+
+        Try
+            Dim contador As Integer = 1
+            For i = 0 To tablaDetalles.Rows.Count() - 1
+                sentencia = "INSERT INTO DetallesOrdenes (idOrden,idArticulo,cantidad,idRenglon,subtotal)"
+                sentencia &= " VALUES(" & idOrden & "," & tablaDetalles.Rows(i)(0)
+                sentencia &= "," & tablaDetalles.Rows(i)(1) & "," & contador & "," & tablaDetalles.Rows(i)(2) & ")"
+                accesoBD.nonQuery(sentencia)
+
+                contador = contador + 1
+            Next
+            transaction.Commit()
+            conexion.Close()
+            leerOrden()
+        Catch ex As Exception
+            transaction.Rollback()
+            conexion.Close()
+            accesoBD.nonQuery("DELETE FROM OrdenesCompra WHERE idOrden=" & tabla.Rows(0)(0))
+        End Try
+
+        
     End Sub
 
     Public Function recibirOrden() As Boolean
@@ -57,17 +77,17 @@
 
     Private Sub actualizarStock()
         Dim transaction As OleDb.OleDbTransaction
+        Dim conexion As New OleDb.OleDbConnection
+        Dim comando As New OleDb.OleDbCommand
+
+        conexion.ConnectionString = accesoBD.cadenaConexion
+        comando.CommandType = CommandType.Text
+        conexion.Open()
+        comando.Connection = conexion
+        transaction = conexion.BeginTransaction()
+        comando.Transaction = transaction
+
         Try
-            Dim conexion As New OleDb.OleDbConnection
-            Dim comando As New OleDb.OleDbCommand
-
-            conexion.ConnectionString = accesoBD.cadenaConexion
-            comando.CommandType = CommandType.Text
-            conexion.Open()
-            comando.Connection = conexion
-            transaction = conexion.BeginTransaction()
-            comando.Transaction = transaction
-
             Dim tablaArticulosCantidad As New DataTable
             Dim sentencia As String = ""
 
@@ -89,7 +109,6 @@
             Try
                 transaction.Rollback()
             Catch ex2 As Exception
-
             End Try
         End Try
         
