@@ -974,4 +974,9 @@
         FormListadoServicios.Show()
 
     End Sub
+
+    Private Sub ListadoDeHabitacionesConFrigobarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeHabitacionesConFrigobarToolStripMenuItem.Click
+        FormListadoHabitacionesConFrigo.Show()
+
+    End Sub
 End Class
