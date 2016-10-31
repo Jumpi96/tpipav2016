@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSlistados" targetNamespace="http://tempuri.org/DSlistados.xsd" xmlns:mstns="http://tempuri.org/DSlistados.xsd" xmlns="http://tempuri.org/DSlistados.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (MySettings)" PropertyReference="ApplicationSettings.WindowsApplication1.My.MySettings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSlistados" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSlistados" msprop:Generator_UserDSName="DSlistados">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="LISTA_ARTICULOS" msprop:Generator_TableClassName="LISTA_ARTICULOSDataTable" msprop:Generator_TableVarName="tableLISTA_ARTICULOS" msprop:Generator_TablePropName="LISTA_ARTICULOS" msprop:Generator_RowDeletingName="LISTA_ARTICULOSRowDeleting" msprop:Generator_RowChangingName="LISTA_ARTICULOSRowChanging" msprop:Generator_RowEvHandlerName="LISTA_ARTICULOSRowChangeEventHandler" msprop:Generator_RowDeletedName="LISTA_ARTICULOSRowDeleted" msprop:Generator_UserTableName="LISTA_ARTICULOS" msprop:Generator_RowChangedName="LISTA_ARTICULOSRowChanged" msprop:Generator_RowEvArgName="LISTA_ARTICULOSRowChangeEvent" msprop:Generator_RowClassName="LISTA_ARTICULOSRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID_ARTICULO" msprop:Generator_ColumnVarNameInTable="columnID_ARTICULO" msprop:Generator_ColumnPropNameInRow="ID_ARTICULO" msprop:Generator_ColumnPropNameInTable="ID_ARTICULOColumn" msprop:Generator_UserColumnName="ID_ARTICULO" type="xs:long" />
+              <xs:element name="N_ARTICULO" msprop:Generator_ColumnVarNameInTable="columnN_ARTICULO" msprop:Generator_ColumnPropNameInRow="N_ARTICULO" msprop:Generator_ColumnPropNameInTable="N_ARTICULOColumn" msprop:Generator_UserColumnName="N_ARTICULO" type="xs:string" minOccurs="0" />
+              <xs:element name="PRECIO" msprop:Generator_ColumnVarNameInTable="columnPRECIO" msprop:Generator_ColumnPropNameInRow="PRECIO" msprop:Generator_ColumnPropNameInTable="PRECIOColumn" msprop:Generator_UserColumnName="PRECIO" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LISTA_ARTICULOS" />
+      <xs:field xpath="mstns:ID_ARTICULO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
