@@ -109,6 +109,7 @@ Partial Class menu
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.pnlFacturacion = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cmbTipoFac2 = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -296,7 +297,10 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ListadoDeClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeConsumisionesActualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -358,19 +362,19 @@ Partial Class menu
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'FacturarToolStripMenuItem
         '
         Me.FacturarToolStripMenuItem.Name = "FacturarToolStripMenuItem"
-        Me.FacturarToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.FacturarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.FacturarToolStripMenuItem.Text = "Facturar"
         '
         'ArtículosServiciosToolStripMenuItem
@@ -402,13 +406,13 @@ Partial Class menu
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.BuscarToolStripMenuItem1.Text = "Administrar"
         '
         'FuncionesAdministrativasToolStripMenuItem
@@ -422,7 +426,7 @@ Partial Class menu
         '
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMConsumicionToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem, Me.ABMTiposFacturaToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
-        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
         'ABMAlojamientosToolStripMenuItem
@@ -499,14 +503,15 @@ Partial Class menu
         '
         'InformesToolStripMenuItem
         '
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'EstadísticasToolStripMenuItem
         '
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
-        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
         '
         'pnl_nueAlo
@@ -1103,6 +1108,15 @@ Partial Class menu
         Me.pnlFacturacion.Size = New System.Drawing.Size(526, 234)
         Me.pnlFacturacion.TabIndex = 9
         Me.pnlFacturacion.Visible = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(48, 203)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(67, 13)
+        Me.Label8.TabIndex = 30
+        Me.Label8.Text = "Tipo Factura"
         '
         'Label7
         '
@@ -2927,21 +2941,36 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'Label8
+        'ListadoDeClientesToolStripMenuItem
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(48, 203)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(67, 13)
-        Me.Label8.TabIndex = 30
-        Me.Label8.Text = "Tipo Factura"
+        Me.ListadoDeClientesToolStripMenuItem.Name = "ListadoDeClientesToolStripMenuItem"
+        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(280, 22)
+        Me.ListadoDeClientesToolStripMenuItem.Text = "Listado de Clientes"
+        '
+        'ListadoDeConsumisionesActualesToolStripMenuItem
+        '
+        Me.ListadoDeConsumisionesActualesToolStripMenuItem.Name = "ListadoDeConsumisionesActualesToolStripMenuItem"
+        Me.ListadoDeConsumisionesActualesToolStripMenuItem.Size = New System.Drawing.Size(280, 22)
+        Me.ListadoDeConsumisionesActualesToolStripMenuItem.Text = "Listado de Consumisiones Actuales"
+        '
+        'ListadoDeProveedoresToolStripMenuItem
+        '
+        Me.ListadoDeProveedoresToolStripMenuItem.Name = "ListadoDeProveedoresToolStripMenuItem"
+        Me.ListadoDeProveedoresToolStripMenuItem.Size = New System.Drawing.Size(280, 22)
+        Me.ListadoDeProveedoresToolStripMenuItem.Text = "Listado de Proveedores"
+        '
+        'ListadoDeServiciosToolStripMenuItem
+        '
+        Me.ListadoDeServiciosToolStripMenuItem.Name = "ListadoDeServiciosToolStripMenuItem"
+        Me.ListadoDeServiciosToolStripMenuItem.Size = New System.Drawing.Size(280, 22)
+        Me.ListadoDeServiciosToolStripMenuItem.Text = "Listado de Servicios"
         '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(545, 285)
+        Me.ClientSize = New System.Drawing.Size(545, 286)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnlFacturacion)
@@ -3300,6 +3329,10 @@ Partial Class menu
     Friend WithEvents Habitacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaInicio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents ListadoDeClientesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeConsumisionesActualesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeServiciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

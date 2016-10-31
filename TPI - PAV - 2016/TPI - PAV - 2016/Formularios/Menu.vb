@@ -953,4 +953,25 @@
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
+
+    Private Sub ListadoDeClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeClientesToolStripMenuItem.Click
+        FormListadoClientes.Show()
+
+
+    End Sub
+
+    Private Sub ListadoDeConsumisionesActualesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeConsumisionesActualesToolStripMenuItem.Click
+        FormListadoConsumicionesActuales.Show()
+
+    End Sub
+
+    Private Sub ListadoDeProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeProveedoresToolStripMenuItem.Click
+        FormListadoProveedores.Show()
+
+    End Sub
+
+    Private Sub ListadoDeServiciosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeServiciosToolStripMenuItem.Click
+        FormListadoServicios.Show()
+
+    End Sub
 End Class
