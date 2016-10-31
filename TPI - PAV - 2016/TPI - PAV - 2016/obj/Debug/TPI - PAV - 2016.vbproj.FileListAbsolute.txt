@@ -167,3 +167,10 @@ C:\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI - PAV - 201
 F:\Mauri\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Impresion_Orden.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_OrdenesCompra.resources
 C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Impresion_Orden.resources
+C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Impresion_Factura.resources
+C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_Consumicion.resources
+C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_OrdenesCompra.resources
+C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.ABM_ServiciosXAlojamiento.resources
+C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.Impresion_Orden.resources
+C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\RdlCompile.cache
+C:\Users\Gisela\Documents\UTN\2016\PAV\PAV-TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\RdlCompile.compiled

@@ -6,20 +6,7 @@ TPI-PAV-2016
 </name>
 </assembly>
 <members>
-<member name="P:TPI___PAV___2016.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:TPI___PAV___2016.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:TPI___PAV___2016.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
-</summary>
-</member><member name="T:TPI___PAV___2016.DataSet.AlojamientosDataTable">
+<member name="T:TPI___PAV___2016.DataSet.AlojamientosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -96,6 +83,14 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member><member name="T:TPI___PAV___2016.DataSet.DataOrdenesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ListadoClientesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ListadoConsumicionesActualesDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -179,6 +174,14 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ListadoClientesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ListadoConsumicionesActualesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:TPI___PAV___2016.DataSet.AlojamientosRowChangeEvent">
 	<summary>
 Row event argument class
@@ -256,6 +259,14 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:TPI___PAV___2016.DataSet.DataOrdenesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ListadoClientesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ListadoConsumicionesActualesRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -343,6 +354,14 @@ Represents the connection and commands used to retrieve and save data.
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ListadoClientesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ListadoConsumicionesActualesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
 </member><member name="M:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(TPI___PAV___2016.DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Update rows in top-down order.
@@ -374,6 +393,19 @@ Used to sort self-referenced table's rows
 </member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:TPI___PAV___2016.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:TPI___PAV___2016.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:TPI___PAV___2016.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
 </members>
