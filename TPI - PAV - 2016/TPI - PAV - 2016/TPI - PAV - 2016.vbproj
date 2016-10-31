@@ -188,6 +188,12 @@
     <Compile Include="Formularios\Menu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados\FormListadoConsumicionesDeFrigo.Designer.vb">
+      <DependentUpon>FormListadoConsumicionesDeFrigo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoConsumicionesDeFrigo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Listados\FormListadoHabitacionesConFrigo.Designer.vb">
       <DependentUpon>FormListadoHabitacionesConFrigo.vb</DependentUpon>
     </Compile>
@@ -290,6 +296,9 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoConsumicionesDeFrigo.resx">
+      <DependentUpon>FormListadoConsumicionesDeFrigo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\FormListadoHabitacionesConFrigo.resx">
       <DependentUpon>FormListadoHabitacionesConFrigo.vb</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +319,7 @@
     <EmbeddedResource Include="Listados\ListadoProveedores.rdlc" />
     <EmbeddedResource Include="Listados\ListadoServicios.rdlc" />
     <EmbeddedResource Include="Listados\ListadoHabitacionesConFrigo.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoConsumicionesDeFrigo.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
