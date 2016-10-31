@@ -188,6 +188,24 @@
     <Compile Include="Formularios\Menu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados\FormListadoClientes.Designer.vb">
+      <DependentUpon>FormListadoClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\FormListadoConsumicionesActuales.Designer.vb">
+      <DependentUpon>FormListadoConsumicionesActuales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoConsumicionesActuales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\FormListadoProveedores.Designer.vb">
+      <DependentUpon>FormListadoProveedores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -260,6 +278,18 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoClientes.resx">
+      <DependentUpon>FormListadoClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoConsumicionesActuales.resx">
+      <DependentUpon>FormListadoConsumicionesActuales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoProveedores.resx">
+      <DependentUpon>FormListadoProveedores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ListadoClientes.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoConsumicionesActuales.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoProveedores.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
