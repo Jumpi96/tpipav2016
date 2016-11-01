@@ -2,37 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Textbox Name="Textbox1">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Listado de Ordenes de Compra</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.11817cm</Top>
-        <Left>4.48617cm</Left>
-        <Height>0.6cm</Height>
-        <Width>9.1675cm</Width>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
@@ -43,10 +12,10 @@
               <Width>2.92333cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.05033cm</Width>
+              <Width>4.95533cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.4525cm</Width>
+              <Width>4.56375cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -223,7 +192,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>idOrden</rd:DefaultName>
@@ -253,7 +224,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>idProveedor</rd:DefaultName>
@@ -283,7 +256,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>fechaEmision</rd:DefaultName>
@@ -313,7 +288,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>fechaRecepcion</rd:DefaultName>
@@ -353,11 +330,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.86503cm</Top>
-        <Left>3.03953cm</Left>
+        <Top>0.42545cm</Top>
+        <Left>1.72751cm</Left>
         <Height>1.2cm</Height>
-        <Width>11.92616cm</Width>
-        <ZIndex>1</ZIndex>
+        <Width>14.94241cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -365,11 +341,88 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2.53333in</Height>
+    <Height>0.67916in</Height>
     <Style />
   </Body>
   <Width>7.14167in</Width>
   <Page>
+    <PageHeader>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Listado de Ordenes de Compra</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.9065cm</Top>
+          <Left>4.48617cm</Left>
+          <Height>0.6cm</Height>
+          <Width>9.1675cm</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>2.46944cm</Top>
+          <Height>0cm</Height>
+          <Width>18.13984cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>2.54cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Line Name="Line2">
+          <Top>0.04148cm</Top>
+          <Left>0.34396cm</Left>
+          <Height>0cm</Height>
+          <Width>18.13984cm</Width>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>

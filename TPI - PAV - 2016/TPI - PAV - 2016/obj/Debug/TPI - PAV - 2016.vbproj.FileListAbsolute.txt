@@ -187,3 +187,4 @@ C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.FormL
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.FormListadoServiciosActuales.resources
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.FormListadoTiposDocumento.resources
 C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.FormListadoFacturas.resources
+C:\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\obj\Debug\TPI___PAV___2016.FormListadoTipoCama.resources

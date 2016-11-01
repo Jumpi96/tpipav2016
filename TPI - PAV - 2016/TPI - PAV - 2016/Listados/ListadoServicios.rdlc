@@ -192,7 +192,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>idServicio</rd:DefaultName>
@@ -222,7 +224,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombre</rd:DefaultName>
@@ -252,7 +256,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>descripcion</rd:DefaultName>
@@ -282,7 +288,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>precioUnitario</rd:DefaultName>
@@ -322,7 +330,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.03528cm</Top>
+        <Top>0.17639cm</Top>
         <Height>1.2cm</Height>
         <Width>17.11411cm</Width>
         <Style>
@@ -332,10 +340,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.48633in</Height>
+    <Height>0.55925in</Height>
     <Style />
   </Body>
-  <Width>6.73784in</Width>
+  <Width>6.84201in</Width>
   <Page>
     <PageHeader>
       <Height>2.71349cm</Height>
@@ -384,6 +392,18 @@
             </Border>
           </Style>
         </Line>
+        <Line Name="Line3">
+          <Top>2.67821cm</Top>
+          <Left>0.26459cm</Left>
+          <Height>0cm</Height>
+          <Width>17.11411cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -396,15 +416,6 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Line Name="Line2">
-          <Height>0cm</Height>
-          <Width>17.11412cm</Width>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
         <Textbox Name="Textbox10">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -424,7 +435,6 @@
           <Left>14.08495cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -435,6 +445,18 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Line Name="Line2">
+          <Top>0.03528cm</Top>
+          <Left>0.00001cm</Left>
+          <Height>0cm</Height>
+          <Width>17.37869cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>

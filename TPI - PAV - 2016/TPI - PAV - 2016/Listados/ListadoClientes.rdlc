@@ -318,7 +318,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>apellido</rd:DefaultName>
@@ -351,7 +353,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombre</rd:DefaultName>
@@ -419,7 +423,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nroDocumento</rd:DefaultName>
@@ -453,7 +459,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -488,7 +494,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -567,8 +573,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
+        <Top>0.2646cm</Top>
+        <Left>0.35513cm</Left>
         <Height>1.2cm</Height>
-        <Width>15.97942cm</Width>
+        <Width>15.97941cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -576,10 +584,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.47939in</Height>
+    <Height>0.64606in</Height>
     <Style />
   </Body>
-  <Width>6.29111in</Width>
+  <Width>6.608in</Width>
   <Page>
     <PageHeader>
       <Height>2.76641cm</Height>
@@ -657,6 +665,17 @@
             </Border>
           </Style>
         </Line>
+        <Line Name="Line3">
+          <Top>2.73113cm</Top>
+          <Height>0cm</Height>
+          <Width>16.78433cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -670,10 +689,9 @@
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Line Name="Line2">
-          <Top>0cm</Top>
-          <Left>0.11701cm</Left>
+          <Top>0.07056cm</Top>
           <Height>0cm</Height>
-          <Width>15.86241cm</Width>
+          <Width>16.78433cm</Width>
           <Style>
             <Border>
               <Style>Solid</Style>
