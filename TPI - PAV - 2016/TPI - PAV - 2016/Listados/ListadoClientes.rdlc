@@ -12,19 +12,19 @@
               <Width>2.61699cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.61699cm</Width>
+              <Width>1.42636cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.61699cm</Width>
+              <Width>2.37886cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.61699cm</Width>
+              <Width>2.12956cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.61699cm</Width>
+              <Width>1.95553cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.61699cm</Width>
+              <Width>2.85512cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -154,7 +154,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>N° Documento</Value>
+                              <Value>Documento</Value>
                               <Style>
                                 <FontFamily>Tahoma</FontFamily>
                                 <FontSize>11pt</FontSize>
@@ -568,7 +568,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Height>1.2cm</Height>
-        <Width>18.31893cm</Width>
+        <Width>15.97942cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -579,7 +579,7 @@
     <Height>0.47939in</Height>
     <Style />
   </Body>
-  <Width>7.21218in</Width>
+  <Width>6.29111in</Width>
   <Page>
     <PageHeader>
       <Height>2.76641cm</Height>
@@ -632,7 +632,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Left>15.70192cm</Left>
+          <Left>13.47942cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <ZIndex>1</ZIndex>
@@ -649,7 +649,7 @@
         <Line Name="Line1">
           <Top>2.76641cm</Top>
           <Height>0cm</Height>
-          <Width>18.31893cm</Width>
+          <Width>15.97942cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
             <Border>
@@ -665,14 +665,15 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>2.54cm</Height>
+      <Height>2.83104cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Line Name="Line2">
+          <Top>0cm</Top>
           <Left>0.11701cm</Left>
           <Height>0cm</Height>
-          <Width>18.20192cm</Width>
+          <Width>15.86241cm</Width>
           <Style>
             <Border>
               <Style>Solid</Style>
