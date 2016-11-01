@@ -27,7 +27,12 @@ Partial Class FormListadoHabitacionesConFrigo
         Me.HabitacionesXPisoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.aire = New System.Windows.Forms.CheckBox()
+        Me.frigo = New System.Windows.Forms.CheckBox()
         Me.HabitacionesXPisoTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.HabitacionesXPisoTableAdapter()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.HabitacionesXPisoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,37 +49,94 @@ Partial Class FormListadoHabitacionesConFrigo
         '
         'ReportViewer1
         '
-        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.HabitacionesXPisoBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.ListadoHabitacionesConFrigo.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 71)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
-        Me.ReportViewer1.Size = New System.Drawing.Size(643, 517)
+        Me.ReportViewer1.Padding = New System.Windows.Forms.Padding(80, 0, 80, 0)
+        Me.ReportViewer1.Size = New System.Drawing.Size(857, 565)
         Me.ReportViewer1.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(575, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(130, 17)
+        Me.Label2.TabIndex = 2
+        Me.Label2.Text = "Aire Acondicionado"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(644, 38)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(61, 17)
+        Me.Label3.TabIndex = 3
+        Me.Label3.Text = "Frigobar"
+        '
+        'aire
+        '
+        Me.aire.AutoSize = True
+        Me.aire.Location = New System.Drawing.Point(712, 9)
+        Me.aire.Name = "aire"
+        Me.aire.Size = New System.Drawing.Size(18, 17)
+        Me.aire.TabIndex = 5
+        Me.aire.UseVisualStyleBackColor = True
+        '
+        'frigo
+        '
+        Me.frigo.AutoSize = True
+        Me.frigo.Location = New System.Drawing.Point(712, 38)
+        Me.frigo.Name = "frigo"
+        Me.frigo.Size = New System.Drawing.Size(18, 17)
+        Me.frigo.TabIndex = 6
+        Me.frigo.UseVisualStyleBackColor = True
         '
         'HabitacionesXPisoTableAdapter
         '
         Me.HabitacionesXPisoTableAdapter.ClearBeforeFill = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(751, 30)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(94, 34)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Imprimir"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FormListadoHabitacionesConFrigo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(643, 517)
+        Me.ClientSize = New System.Drawing.Size(857, 636)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.frigo)
+        Me.Controls.Add(Me.aire)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.MinimumSize = New System.Drawing.Size(659, 556)
+        Me.Margin = New System.Windows.Forms.Padding(4)
+        Me.MinimumSize = New System.Drawing.Size(873, 673)
         Me.Name = "FormListadoHabitacionesConFrigo"
         Me.Text = "Listado de habitaciones con frigobar"
         CType(Me.HabitacionesXPisoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents HabitacionesXPisoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataSet As TPI___PAV___2016.DataSet
     Friend WithEvents HabitacionesXPisoTableAdapter As TPI___PAV___2016.DataSetTableAdapters.HabitacionesXPisoTableAdapter
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents aire As System.Windows.Forms.CheckBox
+    Friend WithEvents frigo As System.Windows.Forms.CheckBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
