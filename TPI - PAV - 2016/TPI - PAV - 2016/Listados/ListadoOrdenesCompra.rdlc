@@ -12,10 +12,13 @@
               <Width>2.92333cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.95533cm</Width>
+              <Width>4.02929cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.56375cm</Width>
+              <Width>3.87763cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -174,6 +177,44 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox5">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Total</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
             <TablixRow>
@@ -307,12 +348,45 @@
                     </Textbox>
                   </CellContents>
                 </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="total">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!total.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>total</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
               </TablixCells>
             </TablixRow>
           </TablixRows>
         </TablixBody>
         <TablixColumnHierarchy>
           <TablixMembers>
+            <TablixMember />
             <TablixMember />
             <TablixMember />
             <TablixMember />
@@ -330,10 +404,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.42545cm</Top>
-        <Left>1.72751cm</Left>
+        <Top>0.10583cm</Top>
+        <Left>0.32342cm</Left>
         <Height>1.2cm</Height>
-        <Width>14.94241cm</Width>
+        <Width>15.83025cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -344,10 +418,10 @@
     <Height>0.67916in</Height>
     <Style />
   </Body>
-  <Width>7.14167in</Width>
+  <Width>6.48471in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>2.56646cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -385,7 +459,7 @@
         <Line Name="Line1">
           <Top>2.46944cm</Top>
           <Height>0cm</Height>
-          <Width>18.13984cm</Width>
+          <Width>16.15367cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -409,7 +483,7 @@
           <Top>0.04148cm</Top>
           <Left>0.34396cm</Left>
           <Height>0cm</Height>
-          <Width>18.13984cm</Width>
+          <Width>15.80971cm</Width>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -465,14 +539,18 @@
           <DataField>fechaRecepcion</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
+        <Field Name="total">
+          <DataField>total</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\lucho\OneDrive\Documentos\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\DataSet.xsd</rd:SchemaPath>
-        <rd:TableName>OrdenesCompra</rd:TableName>
+        <rd:SchemaPath>D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>OrdenesCompra1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>OrdenesCompraTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>OrdenesCompra1TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

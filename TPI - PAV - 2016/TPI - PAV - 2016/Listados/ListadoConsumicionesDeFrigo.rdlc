@@ -9,10 +9,10 @@
               <Width>3.42927cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.17229cm</Width>
+              <Width>2.72141cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.08859cm</Width>
+              <Width>3.94547cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.45485cm</Width>
@@ -332,7 +332,7 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>0.07056cm</Top>
         <Height>1.2cm</Height>
-        <Width>17.145cm</Width>
+        <Width>12.55099cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -343,7 +343,7 @@
     <Height>0.56272in</Height>
     <Style />
   </Body>
-  <Width>6.77467in</Width>
+  <Width>5.95175in</Width>
   <Page>
     <PageHeader>
       <Height>2.8987cm</Height>
@@ -385,7 +385,7 @@
           <Top>2.86342cm</Top>
           <Left>0.06266cm</Left>
           <Height>0cm</Height>
-          <Width>17.145cm</Width>
+          <Width>15.05479cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -421,7 +421,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox12</rd:DefaultName>
           <Top>1.30155cm</Top>
-          <Left>14.24813cm</Left>
+          <Left>12.61745cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>
@@ -437,7 +437,7 @@
         <Line Name="Line2">
           <Top>0.07056cm</Top>
           <Height>0cm</Height>
-          <Width>17.20766cm</Width>
+          <Width>15.11745cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
