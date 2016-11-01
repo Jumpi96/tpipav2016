@@ -21,10 +21,13 @@
               <Width>2.02375cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.14276cm</Width>
+              <Width>1.86489cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.15593cm</Width>
+              <Width>3.06338cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.865cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -207,6 +210,44 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox32</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox2">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Frigobar</Value>
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox2</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -454,6 +495,38 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="frigobar">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!frigobar.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>frigobar</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="aireAcondicionado">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -525,6 +598,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -539,8 +613,9 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.14111cm</Top>
+        <Left>0.29093cm</Left>
         <Height>1.70271cm</Height>
-        <Width>17.32052cm</Width>
+        <Width>18.8151cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -551,17 +626,17 @@
     <Height>0.74675in</Height>
     <Style />
   </Body>
-  <Width>6.8191in</Width>
+  <Width>7.66789in</Width>
   <Page>
     <PageHeader>
-      <Height>2.54cm</Height>
+      <Height>2.40771cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
         <Line Name="Line1">
-          <Top>2.54cm</Top>
+          <Top>2.36361cm</Top>
           <Height>0cm</Height>
-          <Width>17.32052cm</Width>
+          <Width>19.47645cm</Width>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -575,7 +650,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Listado de Habitaciones con Frigobar</Value>
+                  <Value>Listado de Habitaciones</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -585,8 +660,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.31974cm</Top>
-          <Left>4.18755cm</Left>
+          <Top>0.97578cm</Top>
+          <Left>5.85442cm</Left>
           <Height>0.6cm</Height>
           <Width>9.1675cm</Width>
           <ZIndex>1</ZIndex>
@@ -628,7 +703,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox34</rd:DefaultName>
           <Top>0.74592cm</Top>
-          <Left>13.56995cm</Left>
+          <Left>16.97645cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>
@@ -644,7 +719,7 @@
         <Line Name="Line2">
           <Top>0.03528cm</Top>
           <Height>0cm</Height>
-          <Width>17.32052cm</Width>
+          <Width>19.47645cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>

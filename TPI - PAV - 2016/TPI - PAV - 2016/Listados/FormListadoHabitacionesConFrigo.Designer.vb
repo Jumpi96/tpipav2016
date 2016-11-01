@@ -53,46 +53,49 @@ Partial Class FormListadoHabitacionesConFrigo
         ReportDataSource1.Value = Me.HabitacionesXPisoBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.ListadoHabitacionesConFrigo.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(0, 71)
-        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(4)
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 58)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Padding = New System.Windows.Forms.Padding(80, 0, 80, 0)
-        Me.ReportViewer1.Size = New System.Drawing.Size(857, 565)
+        Me.ReportViewer1.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
+        Me.ReportViewer1.Size = New System.Drawing.Size(643, 459)
         Me.ReportViewer1.TabIndex = 0
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(575, 9)
+        Me.Label2.Location = New System.Drawing.Point(431, 7)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(130, 17)
+        Me.Label2.Size = New System.Drawing.Size(99, 13)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Aire Acondicionado"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(644, 38)
+        Me.Label3.Location = New System.Drawing.Point(483, 31)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 17)
+        Me.Label3.Size = New System.Drawing.Size(45, 13)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Frigobar"
         '
         'aire
         '
         Me.aire.AutoSize = True
-        Me.aire.Location = New System.Drawing.Point(712, 9)
+        Me.aire.Location = New System.Drawing.Point(534, 7)
+        Me.aire.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.aire.Name = "aire"
-        Me.aire.Size = New System.Drawing.Size(18, 17)
+        Me.aire.Size = New System.Drawing.Size(15, 14)
         Me.aire.TabIndex = 5
         Me.aire.UseVisualStyleBackColor = True
         '
         'frigo
         '
         Me.frigo.AutoSize = True
-        Me.frigo.Location = New System.Drawing.Point(712, 38)
+        Me.frigo.Location = New System.Drawing.Point(534, 31)
+        Me.frigo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.frigo.Name = "frigo"
-        Me.frigo.Size = New System.Drawing.Size(18, 17)
+        Me.frigo.Size = New System.Drawing.Size(15, 14)
         Me.frigo.TabIndex = 6
         Me.frigo.UseVisualStyleBackColor = True
         '
@@ -102,28 +105,28 @@ Partial Class FormListadoHabitacionesConFrigo
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(751, 30)
+        Me.Button1.Location = New System.Drawing.Point(563, 24)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(94, 34)
+        Me.Button1.Size = New System.Drawing.Size(70, 28)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Imprimir"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'FormListadoHabitacionesConFrigo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(857, 636)
+        Me.ClientSize = New System.Drawing.Size(643, 517)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.frigo)
         Me.Controls.Add(Me.aire)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Margin = New System.Windows.Forms.Padding(4)
-        Me.MinimumSize = New System.Drawing.Size(873, 673)
+        Me.MinimumSize = New System.Drawing.Size(659, 554)
         Me.Name = "FormListadoHabitacionesConFrigo"
-        Me.Text = "Listado de habitaciones con frigobar"
+        Me.Text = "Listado de habitaciones "
         CType(Me.HabitacionesXPisoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
