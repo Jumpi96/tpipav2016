@@ -845,9 +845,6 @@
 
     End Sub
 
-    Private Sub FuncionesAdministrativasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FuncionesAdministrativasToolStripMenuItem.Click
-
-    End Sub
 
     Private Sub btnBuscarOrden_Click(sender As Object, e As EventArgs) Handles btnBuscarOrden.Click
         Dim consulta = "SELECT * FROM OrdenesCompra WHERE idOrden=" & txtNroOrden.Text
@@ -990,5 +987,13 @@
 
     Private Sub ListadoDeServiciosActualesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeServiciosActualesToolStripMenuItem.Click
         FormListadoServiciosActuales.Show()
+    End Sub
+
+    Private Sub ListadoDeOrdenesDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeOrdenesDeCompraToolStripMenuItem.Click
+        FormListadoOrdenesCompra.Show()
+    End Sub
+
+    Private Sub ListadoDeConsumicionesDeFrigobarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Click
+        FormListadoConsumicionesDeFrigo.Show()
     End Sub
 End Class

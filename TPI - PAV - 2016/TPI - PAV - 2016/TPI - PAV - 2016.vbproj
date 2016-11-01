@@ -194,24 +194,6 @@
     <Compile Include="Listados\FormListadoArticulos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\FormListadoConsumicionesDeFrigo.Designer.vb">
-      <DependentUpon>FormListadoConsumicionesDeFrigo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Listados\FormListadoConsumicionesDeFrigo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Listados\FormListadoHabitacionesConFrigo.Designer.vb">
-      <DependentUpon>FormListadoHabitacionesConFrigo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Listados\FormListadoHabitacionesConFrigo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Listados\FormListadoServicios.Designer.vb">
-      <DependentUpon>FormListadoServicios.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Listados\FormListadoServicios.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Listados\FormListadoClientes.Designer.vb">
       <DependentUpon>FormListadoClientes.vb</DependentUpon>
     </Compile>
@@ -224,10 +206,46 @@
     <Compile Include="Listados\FormListadoConsumicionesActuales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados\FormListadoConsumicionesDeFrigo.Designer.vb">
+      <DependentUpon>FormListadoConsumicionesDeFrigo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoConsumicionesDeFrigo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\FormListadoHabitaciones.Designer.vb">
+      <DependentUpon>FormListadoHabitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\FormListadoHabitacionesConFrigo.Designer.vb">
+      <DependentUpon>FormListadoHabitacionesConFrigo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoHabitacionesConFrigo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\FormListadoOrdenesCompra.Designer.vb">
+      <DependentUpon>FormListadoOrdenesCompra.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoOrdenesCompra.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Listados\FormListadoProveedores.Designer.vb">
       <DependentUpon>FormListadoProveedores.vb</DependentUpon>
     </Compile>
     <Compile Include="Listados\FormListadoProveedores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\FormListadoServicios.Designer.vb">
+      <DependentUpon>FormListadoServicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\FormListadoServiciosActuales.Designer.vb">
+      <DependentUpon>FormListadoServiciosActuales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoServiciosActuales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -305,31 +323,43 @@
     <EmbeddedResource Include="Listados\FormListadoArticulos.resx">
       <DependentUpon>FormListadoArticulos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\FormListadoConsumicionesDeFrigo.resx">
-      <DependentUpon>FormListadoConsumicionesDeFrigo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Listados\FormListadoHabitacionesConFrigo.resx">
-      <DependentUpon>FormListadoHabitacionesConFrigo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Listados\FormListadoServicios.resx">
-      <DependentUpon>FormListadoServicios.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Listados\FormListadoClientes.resx">
       <DependentUpon>FormListadoClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\FormListadoConsumicionesActuales.resx">
       <DependentUpon>FormListadoConsumicionesActuales.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoConsumicionesDeFrigo.resx">
+      <DependentUpon>FormListadoConsumicionesDeFrigo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoHabitaciones.resx">
+      <DependentUpon>FormListadoHabitaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoHabitacionesConFrigo.resx">
+      <DependentUpon>FormListadoHabitacionesConFrigo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoOrdenesCompra.resx">
+      <DependentUpon>FormListadoOrdenesCompra.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\FormListadoProveedores.resx">
       <DependentUpon>FormListadoProveedores.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoServicios.resx">
+      <DependentUpon>FormListadoServicios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoServiciosActuales.resx">
+      <DependentUpon>FormListadoServiciosActuales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ListadoArticulos.rdlc" />
     <EmbeddedResource Include="Listados\ListadoClientes.rdlc" />
     <EmbeddedResource Include="Listados\ListadoConsumicionesActuales.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoConsumicionesDeFrigo.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoHabitaciones.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoHabitacionesConFrigo.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Listados\ListadoProveedores.rdlc" />
     <EmbeddedResource Include="Listados\ListadoServicios.rdlc" />
-    <EmbeddedResource Include="Listados\ListadoHabitacionesConFrigo.rdlc" />
-    <EmbeddedResource Include="Listados\ListadoConsumicionesDeFrigo.rdlc" />
-    <EmbeddedResource Include="Listados\ListadoArticulos.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoServiciosActuales.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>

@@ -94,6 +94,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosActualesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:TPI___PAV___2016.DataSet.AlojamientosRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -182,6 +186,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosActualesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:TPI___PAV___2016.DataSet.AlojamientosRowChangeEvent">
 	<summary>
 Row event argument class
@@ -267,6 +275,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:TPI___PAV___2016.DataSet.ListadoConsumicionesActualesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ServiciosActualesRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -359,6 +371,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ListadoConsumicionesActualesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ServiciosActualesTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

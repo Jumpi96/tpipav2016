@@ -54,6 +54,9 @@ Partial Class menu
         Me.ListadoDeServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeServiciosActualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeOrdenesDeCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
@@ -303,7 +306,6 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ListadoDeServiciosActualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -409,13 +411,13 @@ Partial Class menu
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.BuscarToolStripMenuItem1.Text = "Administrar"
         '
         'FuncionesAdministrativasToolStripMenuItem
@@ -506,7 +508,7 @@ Partial Class menu
         '
         'InformesToolStripMenuItem
         '
-        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem})
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem, Me.ListadoDeOrdenesDeCompraToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
@@ -514,38 +516,56 @@ Partial Class menu
         'ListadoDeClientesToolStripMenuItem
         '
         Me.ListadoDeClientesToolStripMenuItem.Name = "ListadoDeClientesToolStripMenuItem"
-        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeClientesToolStripMenuItem.Text = "Listado de Clientes"
         '
         'ListadoDeConsumisionesActualesToolStripMenuItem
         '
         Me.ListadoDeConsumisionesActualesToolStripMenuItem.Name = "ListadoDeConsumisionesActualesToolStripMenuItem"
-        Me.ListadoDeConsumisionesActualesToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeConsumisionesActualesToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeConsumisionesActualesToolStripMenuItem.Text = "Listado de Consumisiones Actuales"
         '
         'ListadoDeProveedoresToolStripMenuItem
         '
         Me.ListadoDeProveedoresToolStripMenuItem.Name = "ListadoDeProveedoresToolStripMenuItem"
-        Me.ListadoDeProveedoresToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeProveedoresToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeProveedoresToolStripMenuItem.Text = "Listado de Proveedores"
         '
         'ListadoDeServiciosToolStripMenuItem
         '
         Me.ListadoDeServiciosToolStripMenuItem.Name = "ListadoDeServiciosToolStripMenuItem"
-        Me.ListadoDeServiciosToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeServiciosToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeServiciosToolStripMenuItem.Text = "Listado de Servicios"
         '
         'ListadoDeHabitacionesConFrigobarToolStripMenuItem
         '
         Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Name = "ListadoDeHabitacionesConFrigobarToolStripMenuItem"
-        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Text = "Listado de Habitaciones Con Frigobar"
         '
         'ListadoDeArticulosToolStripMenuItem
         '
         Me.ListadoDeArticulosToolStripMenuItem.Name = "ListadoDeArticulosToolStripMenuItem"
-        Me.ListadoDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeArticulosToolStripMenuItem.Text = "Listado de Articulos"
+        '
+        'ListadoDeServiciosActualesToolStripMenuItem
+        '
+        Me.ListadoDeServiciosActualesToolStripMenuItem.Name = "ListadoDeServiciosActualesToolStripMenuItem"
+        Me.ListadoDeServiciosActualesToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
+        Me.ListadoDeServiciosActualesToolStripMenuItem.Text = "Listado de Servicios Actuales"
+        '
+        'ListadoDeConsumicionesDeFrigobarToolStripMenuItem
+        '
+        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Name = "ListadoDeConsumicionesDeFrigobarToolStripMenuItem"
+        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
+        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Text = "Listado de Consumiciones de Frigobar"
+        '
+        'ListadoDeOrdenesDeCompraToolStripMenuItem
+        '
+        Me.ListadoDeOrdenesDeCompraToolStripMenuItem.Name = "ListadoDeOrdenesDeCompraToolStripMenuItem"
+        Me.ListadoDeOrdenesDeCompraToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
+        Me.ListadoDeOrdenesDeCompraToolStripMenuItem.Text = "Listado de Ordenes de Compra"
         '
         'EstadísticasToolStripMenuItem
         '
@@ -2980,12 +3000,6 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'ListadoDeServiciosActualesToolStripMenuItem
-        '
-        Me.ListadoDeServiciosActualesToolStripMenuItem.Name = "ListadoDeServiciosActualesToolStripMenuItem"
-        Me.ListadoDeServiciosActualesToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
-        Me.ListadoDeServiciosActualesToolStripMenuItem.Text = "Listado de Servicios Actuales"
-        '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3357,6 +3371,8 @@ Partial Class menu
     Friend WithEvents ListadoDeHabitacionesConFrigobarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeArticulosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeServiciosActualesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeConsumicionesDeFrigobarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeOrdenesDeCompraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class
