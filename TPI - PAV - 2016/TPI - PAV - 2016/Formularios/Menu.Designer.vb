@@ -57,6 +57,7 @@ Partial Class menu
         Me.ListadoDeServiciosActualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeOrdenesDeCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeTiposDeDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
@@ -306,7 +307,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ListadoDeTiposDeDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -509,7 +510,7 @@ Partial Class menu
         '
         'InformesToolStripMenuItem
         '
-        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem, Me.ListadoDeOrdenesDeCompraToolStripMenuItem, Me.ListadoDeTiposDeDocumentosToolStripMenuItem})
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem, Me.ListadoDeOrdenesDeCompraToolStripMenuItem, Me.ListadoDeTiposDeDocumentosToolStripMenuItem, Me.ListadoDeFacturasToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
@@ -567,6 +568,12 @@ Partial Class menu
         Me.ListadoDeOrdenesDeCompraToolStripMenuItem.Name = "ListadoDeOrdenesDeCompraToolStripMenuItem"
         Me.ListadoDeOrdenesDeCompraToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeOrdenesDeCompraToolStripMenuItem.Text = "Listado de Ordenes de Compra"
+        '
+        'ListadoDeTiposDeDocumentosToolStripMenuItem
+        '
+        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Name = "ListadoDeTiposDeDocumentosToolStripMenuItem"
+        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
+        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Text = "Listado de Tipos de Documentos"
         '
         'EstadísticasToolStripMenuItem
         '
@@ -3001,11 +3008,11 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'ListadoDeTiposDeDocumentosToolStripMenuItem
+        'ListadoDeFacturasToolStripMenuItem
         '
-        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Name = "ListadoDeTiposDeDocumentosToolStripMenuItem"
-        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
-        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Text = "Listado de Tipos de Documentos"
+        Me.ListadoDeFacturasToolStripMenuItem.Name = "ListadoDeFacturasToolStripMenuItem"
+        Me.ListadoDeFacturasToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
+        Me.ListadoDeFacturasToolStripMenuItem.Text = "Listado de Facturas"
         '
         'menu
         '
@@ -3381,6 +3388,7 @@ Partial Class menu
     Friend WithEvents ListadoDeConsumicionesDeFrigobarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeOrdenesDeCompraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeTiposDeDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeFacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class
