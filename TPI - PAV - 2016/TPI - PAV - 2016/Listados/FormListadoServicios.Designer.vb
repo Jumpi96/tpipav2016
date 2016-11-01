@@ -44,13 +44,16 @@ Partial Class FormListadoServicios
         '
         'ReportViewer1
         '
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.ServiciosBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.ListadoServicios.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(0, 0, 0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(642, 518)
+        Me.ReportViewer1.Padding = New System.Windows.Forms.Padding(60, 0, 60, 0)
+        Me.ReportViewer1.Size = New System.Drawing.Size(643, 517)
         Me.ReportViewer1.TabIndex = 0
         '
         'ServiciosTableAdapter
@@ -61,10 +64,11 @@ Partial Class FormListadoServicios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(643, 518)
+        Me.ClientSize = New System.Drawing.Size(643, 517)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.MinimumSize = New System.Drawing.Size(659, 556)
         Me.Name = "FormListadoServicios"
-        Me.Text = "Form1"
+        Me.Text = "Listado de servicios"
         CType(Me.ServiciosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

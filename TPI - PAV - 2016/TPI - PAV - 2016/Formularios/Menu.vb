@@ -983,4 +983,12 @@
     Private Sub ListadoDeArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeArticulosToolStripMenuItem.Click
         FormListadoArticulos.Show()
     End Sub
+
+    Private Sub ListadoDeStockToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub ListadoDeServiciosActualesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeServiciosActualesToolStripMenuItem.Click
+        FormListadoServiciosActuales.Show()
+    End Sub
 End Class
