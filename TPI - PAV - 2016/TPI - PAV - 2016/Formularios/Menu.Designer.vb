@@ -54,6 +54,7 @@ Partial Class menu
         Me.ListadoDeServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeServiciosActualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
@@ -303,7 +304,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ListadoDeServiciosActualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -351,7 +352,8 @@ Partial Class menu
         Me.menu_Menu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.ArtículosServiciosToolStripMenuItem, Me.ÓrdenesDeComprasToolStripMenuItem, Me.FuncionesAdministrativasToolStripMenuItem})
         Me.menu_Menu.Location = New System.Drawing.Point(0, 0)
         Me.menu_Menu.Name = "menu_Menu"
-        Me.menu_Menu.Size = New System.Drawing.Size(545, 25)
+        Me.menu_Menu.Padding = New System.Windows.Forms.Padding(8, 2, 0, 2)
+        Me.menu_Menu.Size = New System.Drawing.Size(724, 31)
         Me.menu_Menu.TabIndex = 0
         Me.menu_Menu.Text = "menu"
         '
@@ -359,198 +361,204 @@ Partial Class menu
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.BuscarToolStripMenuItem, Me.FacturarToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(95, 21)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(121, 27)
         Me.ToolStripMenuItem1.Text = "Alojamientos"
         '
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(147, 28)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(147, 28)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         '
         'FacturarToolStripMenuItem
         '
         Me.FacturarToolStripMenuItem.Name = "FacturarToolStripMenuItem"
-        Me.FacturarToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
+        Me.FacturarToolStripMenuItem.Size = New System.Drawing.Size(147, 28)
         Me.FacturarToolStripMenuItem.Text = "Facturar"
         '
         'ArtículosServiciosToolStripMenuItem
         '
         Me.ArtículosServiciosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AgrearArtículoToolStripMenuItem, Me.AgregarServicioToolStripMenuItem})
         Me.ArtículosServiciosToolStripMenuItem.Name = "ArtículosServiciosToolStripMenuItem"
-        Me.ArtículosServiciosToolStripMenuItem.Size = New System.Drawing.Size(126, 21)
+        Me.ArtículosServiciosToolStripMenuItem.Size = New System.Drawing.Size(160, 27)
         Me.ArtículosServiciosToolStripMenuItem.Text = "Artículos/Servicios"
         '
         'AgrearArtículoToolStripMenuItem
         '
         Me.AgrearArtículoToolStripMenuItem.Name = "AgrearArtículoToolStripMenuItem"
-        Me.AgrearArtículoToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.AgrearArtículoToolStripMenuItem.Size = New System.Drawing.Size(201, 28)
         Me.AgrearArtículoToolStripMenuItem.Text = "Cargar Artículo"
         '
         'AgregarServicioToolStripMenuItem
         '
         Me.AgregarServicioToolStripMenuItem.Name = "AgregarServicioToolStripMenuItem"
-        Me.AgregarServicioToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.AgregarServicioToolStripMenuItem.Size = New System.Drawing.Size(201, 28)
         Me.AgregarServicioToolStripMenuItem.Text = "Cargar Servicio"
         '
         'ÓrdenesDeComprasToolStripMenuItem
         '
         Me.ÓrdenesDeComprasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaToolStripMenuItem, Me.BuscarToolStripMenuItem1})
         Me.ÓrdenesDeComprasToolStripMenuItem.Name = "ÓrdenesDeComprasToolStripMenuItem"
-        Me.ÓrdenesDeComprasToolStripMenuItem.Size = New System.Drawing.Size(146, 21)
+        Me.ÓrdenesDeComprasToolStripMenuItem.Size = New System.Drawing.Size(183, 27)
         Me.ÓrdenesDeComprasToolStripMenuItem.Text = "Órdenes de Compras"
         '
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(174, 28)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(174, 28)
         Me.BuscarToolStripMenuItem1.Text = "Administrar"
         '
         'FuncionesAdministrativasToolStripMenuItem
         '
         Me.FuncionesAdministrativasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMsToolStripMenuItem, Me.InformesToolStripMenuItem, Me.EstadísticasToolStripMenuItem})
         Me.FuncionesAdministrativasToolStripMenuItem.Name = "FuncionesAdministrativasToolStripMenuItem"
-        Me.FuncionesAdministrativasToolStripMenuItem.Size = New System.Drawing.Size(169, 21)
+        Me.FuncionesAdministrativasToolStripMenuItem.Size = New System.Drawing.Size(219, 27)
         Me.FuncionesAdministrativasToolStripMenuItem.Text = "Funciones Administrativas"
         '
         'ABMsToolStripMenuItem
         '
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMConsumicionToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem, Me.ABMTiposFacturaToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
-        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
         'ABMAlojamientosToolStripMenuItem
         '
         Me.ABMAlojamientosToolStripMenuItem.Name = "ABMAlojamientosToolStripMenuItem"
-        Me.ABMAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMAlojamientosToolStripMenuItem.Text = "ABM Alojamientos"
         '
         'ABMArtículosToolStripMenuItem
         '
         Me.ABMArtículosToolStripMenuItem.Name = "ABMArtículosToolStripMenuItem"
-        Me.ABMArtículosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMArtículosToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMArtículosToolStripMenuItem.Text = "ABM Artículos"
         '
         'ABMClientesToolStripMenuItem
         '
         Me.ABMClientesToolStripMenuItem.Name = "ABMClientesToolStripMenuItem"
-        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMClientesToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMClientesToolStripMenuItem.Text = "ABM Clientes"
         '
         'ABMConsumicionToolStripMenuItem
         '
         Me.ABMConsumicionToolStripMenuItem.Name = "ABMConsumicionToolStripMenuItem"
-        Me.ABMConsumicionToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMConsumicionToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMConsumicionToolStripMenuItem.Text = "ABM Consumiciones"
         '
         'ABMHabitaciónXPisoToolStripMenuItem
         '
         Me.ABMHabitaciónXPisoToolStripMenuItem.Name = "ABMHabitaciónXPisoToolStripMenuItem"
-        Me.ABMHabitaciónXPisoToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMHabitaciónXPisoToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMHabitaciónXPisoToolStripMenuItem.Text = "ABM Habitación X Piso"
         '
         'ABMProveedoresToolStripMenuItem
         '
         Me.ABMProveedoresToolStripMenuItem.Name = "ABMProveedoresToolStripMenuItem"
-        Me.ABMProveedoresToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMProveedoresToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMProveedoresToolStripMenuItem.Text = "ABM Proveedores"
         '
         'ABMServiciosToolStripMenuItem
         '
         Me.ABMServiciosToolStripMenuItem.Name = "ABMServiciosToolStripMenuItem"
-        Me.ABMServiciosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMServiciosToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMServiciosToolStripMenuItem.Text = "ABM Servicios"
         '
         'ABMServiciosXAlojamientoToolStripMenuItem
         '
         Me.ABMServiciosXAlojamientoToolStripMenuItem.Name = "ABMServiciosXAlojamientoToolStripMenuItem"
-        Me.ABMServiciosXAlojamientoToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMServiciosXAlojamientoToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMServiciosXAlojamientoToolStripMenuItem.Text = "ABM Servicios X Alojamiento"
         '
         'ABMTiposFacturaToolStripMenuItem
         '
         Me.ABMTiposFacturaToolStripMenuItem.Name = "ABMTiposFacturaToolStripMenuItem"
-        Me.ABMTiposFacturaToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMTiposFacturaToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMTiposFacturaToolStripMenuItem.Text = "ABM Tipos Factura"
         '
         'ABMTiposCamaToolStripMenuItem
         '
         Me.ABMTiposCamaToolStripMenuItem.Name = "ABMTiposCamaToolStripMenuItem"
-        Me.ABMTiposCamaToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMTiposCamaToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMTiposCamaToolStripMenuItem.Text = "ABM Tipos Cama"
         '
         'ABMTiposDocumentosToolStripMenuItem
         '
         Me.ABMTiposDocumentosToolStripMenuItem.Name = "ABMTiposDocumentosToolStripMenuItem"
-        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMTiposDocumentosToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMTiposDocumentosToolStripMenuItem.Text = "ABM Tipos Documentos"
         '
         'ABMTiposHabitaciónToolStripMenuItem
         '
         Me.ABMTiposHabitaciónToolStripMenuItem.Name = "ABMTiposHabitaciónToolStripMenuItem"
-        Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(243, 22)
+        Me.ABMTiposHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(304, 28)
         Me.ABMTiposHabitaciónToolStripMenuItem.Text = "ABM Tipos Habitación"
         '
         'InformesToolStripMenuItem
         '
-        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem})
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeFacturasToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'ListadoDeClientesToolStripMenuItem
         '
         Me.ListadoDeClientesToolStripMenuItem.Name = "ListadoDeClientesToolStripMenuItem"
-        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeClientesToolStripMenuItem.Size = New System.Drawing.Size(371, 28)
         Me.ListadoDeClientesToolStripMenuItem.Text = "Listado de Clientes"
         '
         'ListadoDeConsumisionesActualesToolStripMenuItem
         '
         Me.ListadoDeConsumisionesActualesToolStripMenuItem.Name = "ListadoDeConsumisionesActualesToolStripMenuItem"
-        Me.ListadoDeConsumisionesActualesToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeConsumisionesActualesToolStripMenuItem.Size = New System.Drawing.Size(371, 28)
         Me.ListadoDeConsumisionesActualesToolStripMenuItem.Text = "Listado de Consumisiones Actuales"
         '
         'ListadoDeProveedoresToolStripMenuItem
         '
         Me.ListadoDeProveedoresToolStripMenuItem.Name = "ListadoDeProveedoresToolStripMenuItem"
-        Me.ListadoDeProveedoresToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeProveedoresToolStripMenuItem.Size = New System.Drawing.Size(371, 28)
         Me.ListadoDeProveedoresToolStripMenuItem.Text = "Listado de Proveedores"
         '
         'ListadoDeServiciosToolStripMenuItem
         '
         Me.ListadoDeServiciosToolStripMenuItem.Name = "ListadoDeServiciosToolStripMenuItem"
-        Me.ListadoDeServiciosToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeServiciosToolStripMenuItem.Size = New System.Drawing.Size(371, 28)
         Me.ListadoDeServiciosToolStripMenuItem.Text = "Listado de Servicios"
         '
         'ListadoDeHabitacionesConFrigobarToolStripMenuItem
         '
         Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Name = "ListadoDeHabitacionesConFrigobarToolStripMenuItem"
-        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Size = New System.Drawing.Size(371, 28)
         Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Text = "Listado de Habitaciones Con Frigobar"
         '
         'ListadoDeArticulosToolStripMenuItem
         '
         Me.ListadoDeArticulosToolStripMenuItem.Name = "ListadoDeArticulosToolStripMenuItem"
-        Me.ListadoDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(371, 28)
         Me.ListadoDeArticulosToolStripMenuItem.Text = "Listado de Articulos"
+        '
+        'ListadoDeServiciosActualesToolStripMenuItem
+        '
+        Me.ListadoDeServiciosActualesToolStripMenuItem.Name = "ListadoDeServiciosActualesToolStripMenuItem"
+        Me.ListadoDeServiciosActualesToolStripMenuItem.Size = New System.Drawing.Size(371, 28)
+        Me.ListadoDeServiciosActualesToolStripMenuItem.Text = "Listado de Servicios Actuales"
         '
         'EstadísticasToolStripMenuItem
         '
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
-        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(181, 28)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
         '
         'pnl_nueAlo
@@ -558,9 +566,10 @@ Partial Class menu
         Me.pnl_nueAlo.Controls.Add(Me.tab_aloNue)
         Me.pnl_nueAlo.Controls.Add(Me.lbl_nueAlo)
         Me.pnl_nueAlo.Enabled = False
-        Me.pnl_nueAlo.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_nueAlo.Location = New System.Drawing.Point(16, 34)
+        Me.pnl_nueAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_nueAlo.Name = "pnl_nueAlo"
-        Me.pnl_nueAlo.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_nueAlo.Size = New System.Drawing.Size(709, 295)
         Me.pnl_nueAlo.TabIndex = 0
         Me.pnl_nueAlo.Visible = False
         '
@@ -570,10 +579,11 @@ Partial Class menu
         Me.tab_aloNue.Controls.Add(Me.tab_aloNueDatHos)
         Me.tab_aloNue.Controls.Add(Me.tab_aloNueSelHab)
         Me.tab_aloNue.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tab_aloNue.Location = New System.Drawing.Point(6, 22)
+        Me.tab_aloNue.Location = New System.Drawing.Point(8, 27)
+        Me.tab_aloNue.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_aloNue.Name = "tab_aloNue"
         Me.tab_aloNue.SelectedIndex = 0
-        Me.tab_aloNue.Size = New System.Drawing.Size(522, 214)
+        Me.tab_aloNue.Size = New System.Drawing.Size(696, 263)
         Me.tab_aloNue.TabIndex = 0
         '
         'tab_aloNueDatCli
@@ -594,148 +604,165 @@ Partial Class menu
         Me.tab_aloNueDatCli.Controls.Add(Me.lbl_doc)
         Me.tab_aloNueDatCli.Controls.Add(Me.lbl_tipoDoc)
         Me.tab_aloNueDatCli.Controls.Add(Me.cmb_tipoDoc)
-        Me.tab_aloNueDatCli.Location = New System.Drawing.Point(4, 25)
+        Me.tab_aloNueDatCli.Location = New System.Drawing.Point(4, 29)
+        Me.tab_aloNueDatCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_aloNueDatCli.Name = "tab_aloNueDatCli"
-        Me.tab_aloNueDatCli.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_aloNueDatCli.Size = New System.Drawing.Size(514, 185)
+        Me.tab_aloNueDatCli.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_aloNueDatCli.Size = New System.Drawing.Size(688, 230)
         Me.tab_aloNueDatCli.TabIndex = 0
         Me.tab_aloNueDatCli.Text = "Datos del Cliente"
         Me.tab_aloNueDatCli.UseVisualStyleBackColor = True
         '
         'txt_tel
         '
-        Me.txt_tel.Location = New System.Drawing.Point(145, 120)
+        Me.txt_tel.Location = New System.Drawing.Point(193, 148)
+        Me.txt_tel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_tel.Mask = "999999999"
         Me.txt_tel.Name = "txt_tel"
-        Me.txt_tel.Size = New System.Drawing.Size(62, 22)
+        Me.txt_tel.Size = New System.Drawing.Size(81, 26)
         Me.txt_tel.TabIndex = 7
         '
         'dtp_fecNac
         '
         Me.dtp_fecNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecNac.Location = New System.Drawing.Point(145, 92)
+        Me.dtp_fecNac.Location = New System.Drawing.Point(193, 113)
+        Me.dtp_fecNac.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtp_fecNac.Name = "dtp_fecNac"
-        Me.dtp_fecNac.Size = New System.Drawing.Size(90, 22)
+        Me.dtp_fecNac.Size = New System.Drawing.Size(119, 26)
         Me.dtp_fecNac.TabIndex = 6
         '
         'cmd_nueAloDatCliLim
         '
-        Me.cmd_nueAloDatCliLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_nueAloDatCliLim.Location = New System.Drawing.Point(12, 180)
+        Me.cmd_nueAloDatCliLim.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueAloDatCliLim.Name = "cmd_nueAloDatCliLim"
-        Me.cmd_nueAloDatCliLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueAloDatCliLim.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueAloDatCliLim.TabIndex = 8
         Me.cmd_nueAloDatCliLim.Text = "Limpiar"
         Me.cmd_nueAloDatCliLim.UseVisualStyleBackColor = True
         '
         'cmd_canCli
         '
-        Me.cmd_canCli.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_canCli.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_canCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_canCli.Name = "cmd_canCli"
-        Me.cmd_canCli.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_canCli.Size = New System.Drawing.Size(96, 34)
         Me.cmd_canCli.TabIndex = 9
         Me.cmd_canCli.Text = "Cancelar"
         Me.cmd_canCli.UseVisualStyleBackColor = True
         '
         'cmd_sigCli
         '
-        Me.cmd_sigCli.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_sigCli.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_sigCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_sigCli.Name = "cmd_sigCli"
-        Me.cmd_sigCli.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_sigCli.Size = New System.Drawing.Size(96, 34)
         Me.cmd_sigCli.TabIndex = 10
         Me.cmd_sigCli.Text = "Siguiente"
         Me.cmd_sigCli.UseVisualStyleBackColor = True
         '
         'cmd_busCli
         '
-        Me.cmd_busCli.Location = New System.Drawing.Point(423, 6)
+        Me.cmd_busCli.Location = New System.Drawing.Point(564, 7)
+        Me.cmd_busCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busCli.Name = "cmd_busCli"
-        Me.cmd_busCli.Size = New System.Drawing.Size(58, 22)
+        Me.cmd_busCli.Size = New System.Drawing.Size(77, 27)
         Me.cmd_busCli.TabIndex = 3
         Me.cmd_busCli.Text = "Buscar"
         Me.cmd_busCli.UseVisualStyleBackColor = True
         '
         'txt_nom
         '
-        Me.txt_nom.Location = New System.Drawing.Point(145, 64)
+        Me.txt_nom.Location = New System.Drawing.Point(193, 79)
+        Me.txt_nom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nom.Name = "txt_nom"
-        Me.txt_nom.Size = New System.Drawing.Size(272, 22)
+        Me.txt_nom.Size = New System.Drawing.Size(361, 26)
         Me.txt_nom.TabIndex = 5
         '
         'txt_ape
         '
-        Me.txt_ape.Location = New System.Drawing.Point(145, 36)
+        Me.txt_ape.Location = New System.Drawing.Point(193, 44)
+        Me.txt_ape.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_ape.Name = "txt_ape"
-        Me.txt_ape.Size = New System.Drawing.Size(272, 22)
+        Me.txt_ape.Size = New System.Drawing.Size(361, 26)
         Me.txt_ape.TabIndex = 4
         '
         'txt_doc
         '
-        Me.txt_doc.Location = New System.Drawing.Point(355, 6)
+        Me.txt_doc.Location = New System.Drawing.Point(473, 7)
+        Me.txt_doc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_doc.Mask = "99999999"
         Me.txt_doc.Name = "txt_doc"
-        Me.txt_doc.Size = New System.Drawing.Size(62, 22)
+        Me.txt_doc.Size = New System.Drawing.Size(81, 26)
         Me.txt_doc.TabIndex = 2
         '
         'lbl_fecNac
         '
         Me.lbl_fecNac.AutoSize = True
-        Me.lbl_fecNac.Location = New System.Drawing.Point(6, 95)
+        Me.lbl_fecNac.Location = New System.Drawing.Point(8, 117)
+        Me.lbl_fecNac.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fecNac.Name = "lbl_fecNac"
-        Me.lbl_fecNac.Size = New System.Drawing.Size(133, 16)
+        Me.lbl_fecNac.Size = New System.Drawing.Size(164, 20)
         Me.lbl_fecNac.TabIndex = 35
         Me.lbl_fecNac.Text = "Fecha de nacimiento"
         '
         'lbl_sexo
         '
         Me.lbl_sexo.AutoSize = True
-        Me.lbl_sexo.Location = New System.Drawing.Point(77, 123)
+        Me.lbl_sexo.Location = New System.Drawing.Point(103, 151)
+        Me.lbl_sexo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_sexo.Name = "lbl_sexo"
-        Me.lbl_sexo.Size = New System.Drawing.Size(62, 16)
+        Me.lbl_sexo.Size = New System.Drawing.Size(73, 20)
         Me.lbl_sexo.TabIndex = 34
         Me.lbl_sexo.Text = "Teléfono"
         '
         'lbl_ape
         '
         Me.lbl_ape.AutoSize = True
-        Me.lbl_ape.Location = New System.Drawing.Point(81, 39)
+        Me.lbl_ape.Location = New System.Drawing.Point(108, 48)
+        Me.lbl_ape.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_ape.Name = "lbl_ape"
-        Me.lbl_ape.Size = New System.Drawing.Size(58, 16)
+        Me.lbl_ape.Size = New System.Drawing.Size(68, 20)
         Me.lbl_ape.TabIndex = 33
         Me.lbl_ape.Text = "Apellido"
         '
         'lbl_nom
         '
         Me.lbl_nom.AutoSize = True
-        Me.lbl_nom.Location = New System.Drawing.Point(82, 67)
+        Me.lbl_nom.Location = New System.Drawing.Point(109, 82)
+        Me.lbl_nom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nom.Name = "lbl_nom"
-        Me.lbl_nom.Size = New System.Drawing.Size(57, 16)
+        Me.lbl_nom.Size = New System.Drawing.Size(68, 20)
         Me.lbl_nom.TabIndex = 32
         Me.lbl_nom.Text = "Nombre"
         '
         'lbl_doc
         '
         Me.lbl_doc.AutoSize = True
-        Me.lbl_doc.Location = New System.Drawing.Point(272, 9)
+        Me.lbl_doc.Location = New System.Drawing.Point(363, 11)
+        Me.lbl_doc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_doc.Name = "lbl_doc"
-        Me.lbl_doc.Size = New System.Drawing.Size(77, 16)
+        Me.lbl_doc.Size = New System.Drawing.Size(95, 20)
         Me.lbl_doc.TabIndex = 31
         Me.lbl_doc.Text = "Documento"
         '
         'lbl_tipoDoc
         '
         Me.lbl_tipoDoc.AutoSize = True
-        Me.lbl_tipoDoc.Location = New System.Drawing.Point(33, 9)
+        Me.lbl_tipoDoc.Location = New System.Drawing.Point(44, 11)
+        Me.lbl_tipoDoc.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_tipoDoc.Name = "lbl_tipoDoc"
-        Me.lbl_tipoDoc.Size = New System.Drawing.Size(106, 16)
+        Me.lbl_tipoDoc.Size = New System.Drawing.Size(128, 20)
         Me.lbl_tipoDoc.TabIndex = 30
         Me.lbl_tipoDoc.Text = "Tipo documento"
         '
         'cmb_tipoDoc
         '
         Me.cmb_tipoDoc.FormattingEnabled = True
-        Me.cmb_tipoDoc.Location = New System.Drawing.Point(145, 6)
+        Me.cmb_tipoDoc.Location = New System.Drawing.Point(193, 7)
+        Me.cmb_tipoDoc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_tipoDoc.Name = "cmb_tipoDoc"
-        Me.cmb_tipoDoc.Size = New System.Drawing.Size(121, 24)
+        Me.cmb_tipoDoc.Size = New System.Drawing.Size(160, 28)
         Me.cmb_tipoDoc.TabIndex = 1
         '
         'tab_aloNueDatHos
@@ -753,10 +780,11 @@ Partial Class menu
         Me.tab_aloNueDatHos.Controls.Add(Me.lbl_canPer)
         Me.tab_aloNueDatHos.Controls.Add(Me.lbl_fecHas)
         Me.tab_aloNueDatHos.Controls.Add(Me.lbl_fecDes)
-        Me.tab_aloNueDatHos.Location = New System.Drawing.Point(4, 25)
+        Me.tab_aloNueDatHos.Location = New System.Drawing.Point(4, 29)
+        Me.tab_aloNueDatHos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_aloNueDatHos.Name = "tab_aloNueDatHos"
-        Me.tab_aloNueDatHos.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_aloNueDatHos.Size = New System.Drawing.Size(514, 185)
+        Me.tab_aloNueDatHos.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_aloNueDatHos.Size = New System.Drawing.Size(688, 230)
         Me.tab_aloNueDatHos.TabIndex = 1
         Me.tab_aloNueDatHos.Text = "Datos del Hospedaje"
         Me.tab_aloNueDatHos.UseVisualStyleBackColor = True
@@ -764,26 +792,29 @@ Partial Class menu
         'dtp_fecHas
         '
         Me.dtp_fecHas.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecHas.Location = New System.Drawing.Point(153, 34)
+        Me.dtp_fecHas.Location = New System.Drawing.Point(204, 42)
+        Me.dtp_fecHas.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtp_fecHas.Name = "dtp_fecHas"
-        Me.dtp_fecHas.Size = New System.Drawing.Size(90, 22)
+        Me.dtp_fecHas.Size = New System.Drawing.Size(119, 26)
         Me.dtp_fecHas.TabIndex = 15
         '
         'dtp_fecDes
         '
         Me.dtp_fecDes.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecDes.Location = New System.Drawing.Point(153, 4)
+        Me.dtp_fecDes.Location = New System.Drawing.Point(204, 5)
+        Me.dtp_fecDes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dtp_fecDes.Name = "dtp_fecDes"
-        Me.dtp_fecDes.Size = New System.Drawing.Size(90, 22)
+        Me.dtp_fecDes.Size = New System.Drawing.Size(119, 26)
         Me.dtp_fecDes.TabIndex = 14
         '
         'chx_frigobar
         '
         Me.chx_frigobar.AutoSize = True
         Me.chx_frigobar.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chx_frigobar.Location = New System.Drawing.Point(249, 36)
+        Me.chx_frigobar.Location = New System.Drawing.Point(332, 44)
+        Me.chx_frigobar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chx_frigobar.Name = "chx_frigobar"
-        Me.chx_frigobar.Size = New System.Drawing.Size(78, 20)
+        Me.chx_frigobar.Size = New System.Drawing.Size(93, 24)
         Me.chx_frigobar.TabIndex = 6
         Me.chx_frigobar.Text = "Frigobar"
         Me.chx_frigobar.UseVisualStyleBackColor = True
@@ -792,9 +823,10 @@ Partial Class menu
         '
         Me.chx_airAco.AutoSize = True
         Me.chx_airAco.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.chx_airAco.Location = New System.Drawing.Point(249, 8)
+        Me.chx_airAco.Location = New System.Drawing.Point(332, 10)
+        Me.chx_airAco.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chx_airAco.Name = "chx_airAco"
-        Me.chx_airAco.Size = New System.Drawing.Size(145, 20)
+        Me.chx_airAco.Size = New System.Drawing.Size(175, 24)
         Me.chx_airAco.TabIndex = 5
         Me.chx_airAco.Text = "Aire Acondicionado"
         Me.chx_airAco.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -802,27 +834,30 @@ Partial Class menu
         '
         'cmd_nueAloDatHosLim
         '
-        Me.cmd_nueAloDatHosLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_nueAloDatHosLim.Location = New System.Drawing.Point(12, 180)
+        Me.cmd_nueAloDatHosLim.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueAloDatHosLim.Name = "cmd_nueAloDatHosLim"
-        Me.cmd_nueAloDatHosLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueAloDatHosLim.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueAloDatHosLim.TabIndex = 7
         Me.cmd_nueAloDatHosLim.Text = "Limpiar"
         Me.cmd_nueAloDatHosLim.UseVisualStyleBackColor = True
         '
         'cmd_atrHos
         '
-        Me.cmd_atrHos.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_atrHos.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_atrHos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_atrHos.Name = "cmd_atrHos"
-        Me.cmd_atrHos.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_atrHos.Size = New System.Drawing.Size(96, 34)
         Me.cmd_atrHos.TabIndex = 8
         Me.cmd_atrHos.Text = "Atrás"
         Me.cmd_atrHos.UseVisualStyleBackColor = True
         '
         'cmd_sigHos
         '
-        Me.cmd_sigHos.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_sigHos.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_sigHos.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_sigHos.Name = "cmd_sigHos"
-        Me.cmd_sigHos.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_sigHos.Size = New System.Drawing.Size(96, 34)
         Me.cmd_sigHos.TabIndex = 9
         Me.cmd_sigHos.Text = "Siguiente"
         Me.cmd_sigHos.UseVisualStyleBackColor = True
@@ -830,52 +865,58 @@ Partial Class menu
         'cmb_tipHab
         '
         Me.cmb_tipHab.FormattingEnabled = True
-        Me.cmb_tipHab.Location = New System.Drawing.Point(153, 92)
+        Me.cmb_tipHab.Location = New System.Drawing.Point(204, 113)
+        Me.cmb_tipHab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_tipHab.Name = "cmb_tipHab"
-        Me.cmb_tipHab.Size = New System.Drawing.Size(111, 24)
+        Me.cmb_tipHab.Size = New System.Drawing.Size(147, 28)
         Me.cmb_tipHab.TabIndex = 4
         '
         'cmb_canPer
         '
         Me.cmb_canPer.FormattingEnabled = True
-        Me.cmb_canPer.Location = New System.Drawing.Point(153, 62)
+        Me.cmb_canPer.Location = New System.Drawing.Point(204, 76)
+        Me.cmb_canPer.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_canPer.Name = "cmb_canPer"
-        Me.cmb_canPer.Size = New System.Drawing.Size(50, 24)
+        Me.cmb_canPer.Size = New System.Drawing.Size(65, 28)
         Me.cmb_canPer.TabIndex = 3
         '
         'lbl_tipHab
         '
         Me.lbl_tipHab.AutoSize = True
-        Me.lbl_tipHab.Location = New System.Drawing.Point(24, 95)
+        Me.lbl_tipHab.Location = New System.Drawing.Point(32, 117)
+        Me.lbl_tipHab.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_tipHab.Name = "lbl_tipHab"
-        Me.lbl_tipHab.Size = New System.Drawing.Size(123, 16)
+        Me.lbl_tipHab.Size = New System.Drawing.Size(149, 20)
         Me.lbl_tipHab.TabIndex = 13
         Me.lbl_tipHab.Text = "Tipo de Habitación"
         '
         'lbl_canPer
         '
         Me.lbl_canPer.AutoSize = True
-        Me.lbl_canPer.Location = New System.Drawing.Point(6, 65)
+        Me.lbl_canPer.Location = New System.Drawing.Point(8, 80)
+        Me.lbl_canPer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_canPer.Name = "lbl_canPer"
-        Me.lbl_canPer.Size = New System.Drawing.Size(141, 16)
+        Me.lbl_canPer.Size = New System.Drawing.Size(172, 20)
         Me.lbl_canPer.TabIndex = 11
         Me.lbl_canPer.Text = "Cantidad de personas"
         '
         'lbl_fecHas
         '
         Me.lbl_fecHas.AutoSize = True
-        Me.lbl_fecHas.Location = New System.Drawing.Point(65, 37)
+        Me.lbl_fecHas.Location = New System.Drawing.Point(87, 46)
+        Me.lbl_fecHas.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fecHas.Name = "lbl_fecHas"
-        Me.lbl_fecHas.Size = New System.Drawing.Size(82, 16)
+        Me.lbl_fecHas.Size = New System.Drawing.Size(101, 20)
         Me.lbl_fecHas.TabIndex = 9
         Me.lbl_fecHas.Text = "Fecha hasta"
         '
         'lbl_fecDes
         '
         Me.lbl_fecDes.AutoSize = True
-        Me.lbl_fecDes.Location = New System.Drawing.Point(59, 9)
+        Me.lbl_fecDes.Location = New System.Drawing.Point(79, 11)
+        Me.lbl_fecDes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fecDes.Name = "lbl_fecDes"
-        Me.lbl_fecDes.Size = New System.Drawing.Size(88, 16)
+        Me.lbl_fecDes.Size = New System.Drawing.Size(105, 20)
         Me.lbl_fecDes.TabIndex = 8
         Me.lbl_fecDes.Text = "Fecha desde"
         '
@@ -891,10 +932,11 @@ Partial Class menu
         Me.tab_aloNueSelHab.Controls.Add(Me.grid_nueAlo)
         Me.tab_aloNueSelHab.Controls.Add(Me.cam_atrHab)
         Me.tab_aloNueSelHab.Controls.Add(Me.cmd_aceHab)
-        Me.tab_aloNueSelHab.Location = New System.Drawing.Point(4, 25)
+        Me.tab_aloNueSelHab.Location = New System.Drawing.Point(4, 29)
+        Me.tab_aloNueSelHab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_aloNueSelHab.Name = "tab_aloNueSelHab"
-        Me.tab_aloNueSelHab.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_aloNueSelHab.Size = New System.Drawing.Size(514, 185)
+        Me.tab_aloNueSelHab.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_aloNueSelHab.Size = New System.Drawing.Size(688, 230)
         Me.tab_aloNueSelHab.TabIndex = 2
         Me.tab_aloNueSelHab.Text = "Selección de Habitación"
         Me.tab_aloNueSelHab.UseVisualStyleBackColor = True
@@ -902,19 +944,21 @@ Partial Class menu
         'txt_preDia
         '
         Me.txt_preDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_preDia.Location = New System.Drawing.Point(189, 162)
+        Me.txt_preDia.Location = New System.Drawing.Point(252, 199)
+        Me.txt_preDia.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_preDia.Mask = "9999"
         Me.txt_preDia.Name = "txt_preDia"
-        Me.txt_preDia.Size = New System.Drawing.Size(35, 20)
+        Me.txt_preDia.Size = New System.Drawing.Size(45, 23)
         Me.txt_preDia.TabIndex = 10
         '
         'lbl_preDia
         '
         Me.lbl_preDia.AutoSize = True
         Me.lbl_preDia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_preDia.Location = New System.Drawing.Point(109, 165)
+        Me.lbl_preDia.Location = New System.Drawing.Point(145, 203)
+        Me.lbl_preDia.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_preDia.Name = "lbl_preDia"
-        Me.lbl_preDia.Size = New System.Drawing.Size(74, 13)
+        Me.lbl_preDia.Size = New System.Drawing.Size(96, 17)
         Me.lbl_preDia.TabIndex = 9
         Me.lbl_preDia.Text = "Precio por día"
         '
@@ -922,27 +966,30 @@ Partial Class menu
         '
         Me.lbl_nroHabSel.AutoSize = True
         Me.lbl_nroHabSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nroHabSel.Location = New System.Drawing.Point(3, 165)
+        Me.lbl_nroHabSel.Location = New System.Drawing.Point(4, 203)
+        Me.lbl_nroHabSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nroHabSel.Name = "lbl_nroHabSel"
-        Me.lbl_nroHabSel.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_nroHabSel.Size = New System.Drawing.Size(58, 17)
         Me.lbl_nroHabSel.TabIndex = 8
         Me.lbl_nroHabSel.Text = "Número"
         '
         'txt_habSelNro
         '
         Me.txt_habSelNro.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_habSelNro.Location = New System.Drawing.Point(53, 162)
+        Me.txt_habSelNro.Location = New System.Drawing.Point(71, 199)
+        Me.txt_habSelNro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_habSelNro.Name = "txt_habSelNro"
         Me.txt_habSelNro.ReadOnly = True
-        Me.txt_habSelNro.Size = New System.Drawing.Size(50, 20)
+        Me.txt_habSelNro.Size = New System.Drawing.Size(65, 23)
         Me.txt_habSelNro.TabIndex = 7
         '
         'lbl_habSel
         '
         Me.lbl_habSel.AutoSize = True
-        Me.lbl_habSel.Location = New System.Drawing.Point(3, 143)
+        Me.lbl_habSel.Location = New System.Drawing.Point(4, 176)
+        Me.lbl_habSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_habSel.Name = "lbl_habSel"
-        Me.lbl_habSel.Size = New System.Drawing.Size(160, 16)
+        Me.lbl_habSel.Size = New System.Drawing.Size(194, 20)
         Me.lbl_habSel.TabIndex = 6
         Me.lbl_habSel.Text = "Habitación Seleccionada"
         '
@@ -950,9 +997,10 @@ Partial Class menu
         '
         Me.lbl_selHab.AutoSize = True
         Me.lbl_selHab.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_selHab.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_selHab.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_selHab.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_selHab.Name = "lbl_selHab"
-        Me.lbl_selHab.Size = New System.Drawing.Size(155, 16)
+        Me.lbl_selHab.Size = New System.Drawing.Size(190, 20)
         Me.lbl_selHab.TabIndex = 5
         Me.lbl_selHab.Text = "Selección de Habitación"
         '
@@ -960,18 +1008,20 @@ Partial Class menu
         '
         Me.lbl_habDis.AutoSize = True
         Me.lbl_habDis.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_habDis.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_habDis.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_habDis.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_habDis.Name = "lbl_habDis"
-        Me.lbl_habDis.Size = New System.Drawing.Size(0, 16)
+        Me.lbl_habDis.Size = New System.Drawing.Size(0, 20)
         Me.lbl_habDis.TabIndex = 4
         '
         'grid_nueAlo
         '
         Me.grid_nueAlo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_nueAlo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_nroHabitacion, Me.clm_cantCamasNuevoAlojamiento, Me.clm_cantBaños})
-        Me.grid_nueAlo.Location = New System.Drawing.Point(6, 22)
+        Me.grid_nueAlo.Location = New System.Drawing.Point(8, 27)
+        Me.grid_nueAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grid_nueAlo.Name = "grid_nueAlo"
-        Me.grid_nueAlo.Size = New System.Drawing.Size(502, 118)
+        Me.grid_nueAlo.Size = New System.Drawing.Size(669, 145)
         Me.grid_nueAlo.TabIndex = 3
         '
         'clm_nroHabitacion
@@ -1000,18 +1050,20 @@ Partial Class menu
         '
         'cam_atrHab
         '
-        Me.cam_atrHab.Location = New System.Drawing.Point(331, 146)
+        Me.cam_atrHab.Location = New System.Drawing.Point(441, 180)
+        Me.cam_atrHab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cam_atrHab.Name = "cam_atrHab"
-        Me.cam_atrHab.Size = New System.Drawing.Size(72, 28)
+        Me.cam_atrHab.Size = New System.Drawing.Size(96, 34)
         Me.cam_atrHab.TabIndex = 1
         Me.cam_atrHab.Text = "Atrás"
         Me.cam_atrHab.UseVisualStyleBackColor = True
         '
         'cmd_aceHab
         '
-        Me.cmd_aceHab.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_aceHab.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_aceHab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_aceHab.Name = "cmd_aceHab"
-        Me.cmd_aceHab.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_aceHab.Size = New System.Drawing.Size(96, 34)
         Me.cmd_aceHab.TabIndex = 2
         Me.cmd_aceHab.Text = "Aceptar"
         Me.cmd_aceHab.UseVisualStyleBackColor = True
@@ -1020,9 +1072,10 @@ Partial Class menu
         '
         Me.lbl_nueAlo.AutoSize = True
         Me.lbl_nueAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nueAlo.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_nueAlo.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_nueAlo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nueAlo.Name = "lbl_nueAlo"
-        Me.lbl_nueAlo.Size = New System.Drawing.Size(139, 16)
+        Me.lbl_nueAlo.Size = New System.Drawing.Size(165, 20)
         Me.lbl_nueAlo.TabIndex = 0
         Me.lbl_nueAlo.Text = "Nuevo Alojamiento"
         '
@@ -1035,17 +1088,19 @@ Partial Class menu
         Me.pnlAdministrarOrdense.Controls.Add(Me.txtNroOrden)
         Me.pnlAdministrarOrdense.Controls.Add(Me.Label2)
         Me.pnlAdministrarOrdense.Controls.Add(Me.Label1)
-        Me.pnlAdministrarOrdense.Location = New System.Drawing.Point(12, 32)
+        Me.pnlAdministrarOrdense.Location = New System.Drawing.Point(16, 39)
+        Me.pnlAdministrarOrdense.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlAdministrarOrdense.Name = "pnlAdministrarOrdense"
-        Me.pnlAdministrarOrdense.Size = New System.Drawing.Size(523, 237)
+        Me.pnlAdministrarOrdense.Size = New System.Drawing.Size(697, 292)
         Me.pnlAdministrarOrdense.TabIndex = 1
         Me.pnlAdministrarOrdense.Visible = False
         '
         'btnActualizarStock
         '
-        Me.btnActualizarStock.Location = New System.Drawing.Point(110, 198)
+        Me.btnActualizarStock.Location = New System.Drawing.Point(147, 244)
+        Me.btnActualizarStock.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnActualizarStock.Name = "btnActualizarStock"
-        Me.btnActualizarStock.Size = New System.Drawing.Size(110, 23)
+        Me.btnActualizarStock.Size = New System.Drawing.Size(147, 28)
         Me.btnActualizarStock.TabIndex = 4
         Me.btnActualizarStock.Text = "Actualizar stock"
         Me.btnActualizarStock.UseVisualStyleBackColor = True
@@ -1056,11 +1111,12 @@ Partial Class menu
         Me.dgvOrdenes.AllowUserToDeleteRows = False
         Me.dgvOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvOrdenes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NroOrden, Me.Proveedor, Me.Fecha})
-        Me.dgvOrdenes.Location = New System.Drawing.Point(6, 47)
+        Me.dgvOrdenes.Location = New System.Drawing.Point(8, 58)
+        Me.dgvOrdenes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvOrdenes.Name = "dgvOrdenes"
         Me.dgvOrdenes.ReadOnly = True
         Me.dgvOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvOrdenes.Size = New System.Drawing.Size(234, 145)
+        Me.dgvOrdenes.Size = New System.Drawing.Size(312, 178)
         Me.dgvOrdenes.TabIndex = 7
         '
         'NroOrden
@@ -1085,9 +1141,10 @@ Partial Class menu
         '
         'btnBuscarOrden
         '
-        Me.btnBuscarOrden.Location = New System.Drawing.Point(443, 76)
+        Me.btnBuscarOrden.Location = New System.Drawing.Point(591, 94)
+        Me.btnBuscarOrden.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnBuscarOrden.Name = "btnBuscarOrden"
-        Me.btnBuscarOrden.Size = New System.Drawing.Size(75, 23)
+        Me.btnBuscarOrden.Size = New System.Drawing.Size(100, 28)
         Me.btnBuscarOrden.TabIndex = 6
         Me.btnBuscarOrden.Text = "Buscar"
         Me.btnBuscarOrden.UseVisualStyleBackColor = True
@@ -1095,26 +1152,29 @@ Partial Class menu
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(259, 81)
+        Me.Label3.Location = New System.Drawing.Point(345, 100)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 13)
+        Me.Label3.Size = New System.Drawing.Size(79, 17)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Nro. Orden"
         '
         'txtNroOrden
         '
-        Me.txtNroOrden.Location = New System.Drawing.Point(327, 78)
+        Me.txtNroOrden.Location = New System.Drawing.Point(436, 96)
+        Me.txtNroOrden.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNroOrden.Name = "txtNroOrden"
-        Me.txtNroOrden.Size = New System.Drawing.Size(100, 20)
+        Me.txtNroOrden.Size = New System.Drawing.Size(132, 22)
         Me.txtNroOrden.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(259, 28)
+        Me.Label2.Location = New System.Drawing.Point(345, 34)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(178, 16)
+        Me.Label2.Size = New System.Drawing.Size(216, 20)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Buscar orden de compra"
         '
@@ -1123,9 +1183,10 @@ Partial Class menu
         Me.Label1.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(6, 25)
+        Me.Label1.Location = New System.Drawing.Point(8, 31)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(180, 16)
+        Me.Label1.Size = New System.Drawing.Size(216, 20)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Recibir orden de compra"
         '
@@ -1142,18 +1203,20 @@ Partial Class menu
         Me.pnlFacturacion.Controls.Add(Me.txtNroFactura)
         Me.pnlFacturacion.Controls.Add(Me.cmbTipoFac)
         Me.pnlFacturacion.Controls.Add(Me.Label4)
-        Me.pnlFacturacion.Location = New System.Drawing.Point(12, 32)
+        Me.pnlFacturacion.Location = New System.Drawing.Point(16, 39)
+        Me.pnlFacturacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnlFacturacion.Name = "pnlFacturacion"
-        Me.pnlFacturacion.Size = New System.Drawing.Size(526, 234)
+        Me.pnlFacturacion.Size = New System.Drawing.Size(701, 288)
         Me.pnlFacturacion.TabIndex = 9
         Me.pnlFacturacion.Visible = False
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(48, 203)
+        Me.Label8.Location = New System.Drawing.Point(64, 250)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(67, 13)
+        Me.Label8.Size = New System.Drawing.Size(88, 17)
         Me.Label8.TabIndex = 30
         Me.Label8.Text = "Tipo Factura"
         '
@@ -1161,9 +1224,10 @@ Partial Class menu
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(270, 9)
+        Me.Label7.Location = New System.Drawing.Point(360, 11)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(107, 16)
+        Me.Label7.Size = New System.Drawing.Size(134, 20)
         Me.Label7.TabIndex = 19
         Me.Label7.Text = "Buscar factura"
         '
@@ -1171,43 +1235,48 @@ Partial Class menu
         '
         Me.cmbTipoFac2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTipoFac2.FormattingEnabled = True
-        Me.cmbTipoFac2.Location = New System.Drawing.Point(121, 200)
+        Me.cmbTipoFac2.Location = New System.Drawing.Point(161, 246)
+        Me.cmbTipoFac2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbTipoFac2.Name = "cmbTipoFac2"
-        Me.cmbTipoFac2.Size = New System.Drawing.Size(41, 21)
+        Me.cmbTipoFac2.Size = New System.Drawing.Size(53, 24)
         Me.cmbTipoFac2.TabIndex = 25
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(270, 75)
+        Me.Label6.Location = New System.Drawing.Point(360, 92)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(66, 13)
+        Me.Label6.Size = New System.Drawing.Size(87, 17)
         Me.Label6.TabIndex = 17
         Me.Label6.Text = "Nro. Factura"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(270, 48)
+        Me.Label5.Location = New System.Drawing.Point(360, 59)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 13)
+        Me.Label5.Size = New System.Drawing.Size(88, 17)
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Tipo Factura"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(403, 98)
+        Me.Button1.Location = New System.Drawing.Point(537, 121)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(100, 28)
         Me.Button1.TabIndex = 29
         Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'btnFacturar
         '
-        Me.btnFacturar.Location = New System.Drawing.Point(168, 198)
+        Me.btnFacturar.Location = New System.Drawing.Point(224, 244)
+        Me.btnFacturar.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnFacturar.Name = "btnFacturar"
-        Me.btnFacturar.Size = New System.Drawing.Size(75, 23)
+        Me.btnFacturar.Size = New System.Drawing.Size(100, 28)
         Me.btnFacturar.TabIndex = 26
         Me.btnFacturar.Text = "Facturar"
         Me.btnFacturar.UseVisualStyleBackColor = True
@@ -1218,11 +1287,12 @@ Partial Class menu
         Me.dgvFacturacion.AllowUserToDeleteRows = False
         Me.dgvFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvFacturacion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdAlojamiento, Me.Habitacion, Me.FechaInicio})
-        Me.dgvFacturacion.Location = New System.Drawing.Point(7, 26)
+        Me.dgvFacturacion.Location = New System.Drawing.Point(9, 32)
+        Me.dgvFacturacion.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.dgvFacturacion.Name = "dgvFacturacion"
         Me.dgvFacturacion.ReadOnly = True
         Me.dgvFacturacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvFacturacion.Size = New System.Drawing.Size(243, 164)
+        Me.dgvFacturacion.Size = New System.Drawing.Size(324, 202)
         Me.dgvFacturacion.TabIndex = 16
         '
         'IdAlojamiento
@@ -1247,18 +1317,20 @@ Partial Class menu
         '
         'txtNroFactura
         '
-        Me.txtNroFactura.Location = New System.Drawing.Point(340, 72)
+        Me.txtNroFactura.Location = New System.Drawing.Point(453, 89)
+        Me.txtNroFactura.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtNroFactura.Name = "txtNroFactura"
-        Me.txtNroFactura.Size = New System.Drawing.Size(121, 20)
+        Me.txtNroFactura.Size = New System.Drawing.Size(160, 22)
         Me.txtNroFactura.TabIndex = 28
         '
         'cmbTipoFac
         '
         Me.cmbTipoFac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTipoFac.FormattingEnabled = True
-        Me.cmbTipoFac.Location = New System.Drawing.Point(340, 43)
+        Me.cmbTipoFac.Location = New System.Drawing.Point(453, 53)
+        Me.cmbTipoFac.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmbTipoFac.Name = "cmbTipoFac"
-        Me.cmbTipoFac.Size = New System.Drawing.Size(39, 21)
+        Me.cmbTipoFac.Size = New System.Drawing.Size(51, 24)
         Me.cmbTipoFac.TabIndex = 27
         '
         'Label4
@@ -1266,9 +1338,10 @@ Partial Class menu
         Me.Label4.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(11, 7)
+        Me.Label4.Location = New System.Drawing.Point(15, 9)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(89, 16)
+        Me.Label4.Size = New System.Drawing.Size(108, 20)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Facturación"
         '
@@ -1278,9 +1351,10 @@ Partial Class menu
         Me.pnl_busAlo.Controls.Add(Me.tab_busAlo)
         Me.pnl_busAlo.Controls.Add(Me.pnl_busAloSel)
         Me.pnl_busAlo.Enabled = False
-        Me.pnl_busAlo.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_busAlo.Location = New System.Drawing.Point(16, 34)
+        Me.pnl_busAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_busAlo.Name = "pnl_busAlo"
-        Me.pnl_busAlo.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_busAlo.Size = New System.Drawing.Size(709, 295)
         Me.pnl_busAlo.TabIndex = 0
         Me.pnl_busAlo.Visible = False
         '
@@ -1288,9 +1362,10 @@ Partial Class menu
         '
         Me.lbl_busAlo.AutoSize = True
         Me.lbl_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_busAlo.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_busAlo.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_busAlo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_busAlo.Name = "lbl_busAlo"
-        Me.lbl_busAlo.Size = New System.Drawing.Size(142, 16)
+        Me.lbl_busAlo.Size = New System.Drawing.Size(173, 20)
         Me.lbl_busAlo.TabIndex = 0
         Me.lbl_busAlo.Text = "Buscar Alojamiento"
         '
@@ -1299,10 +1374,11 @@ Partial Class menu
         Me.tab_busAlo.Controls.Add(Me.tab_busAloAlo)
         Me.tab_busAlo.Controls.Add(Me.tab_busAloDatCli)
         Me.tab_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tab_busAlo.Location = New System.Drawing.Point(6, 22)
+        Me.tab_busAlo.Location = New System.Drawing.Point(8, 27)
+        Me.tab_busAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_busAlo.Name = "tab_busAlo"
         Me.tab_busAlo.SelectedIndex = 0
-        Me.tab_busAlo.Size = New System.Drawing.Size(522, 214)
+        Me.tab_busAlo.Size = New System.Drawing.Size(696, 263)
         Me.tab_busAlo.TabIndex = 0
         '
         'tab_busAloAlo
@@ -1311,37 +1387,41 @@ Partial Class menu
         Me.tab_busAloAlo.Controls.Add(Me.cmd_busAloAtr)
         Me.tab_busAloAlo.Controls.Add(Me.cmd_busAloFin)
         Me.tab_busAloAlo.Controls.Add(Me.grid_busAlo)
-        Me.tab_busAloAlo.Location = New System.Drawing.Point(4, 25)
+        Me.tab_busAloAlo.Location = New System.Drawing.Point(4, 29)
+        Me.tab_busAloAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_busAloAlo.Name = "tab_busAloAlo"
-        Me.tab_busAloAlo.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_busAloAlo.Size = New System.Drawing.Size(514, 185)
+        Me.tab_busAloAlo.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_busAloAlo.Size = New System.Drawing.Size(688, 230)
         Me.tab_busAloAlo.TabIndex = 1
         Me.tab_busAloAlo.Text = "Alojamientos"
         Me.tab_busAloAlo.UseVisualStyleBackColor = True
         '
         'cmd_clickEnGrilla
         '
-        Me.cmd_clickEnGrilla.Location = New System.Drawing.Point(7, 151)
+        Me.cmd_clickEnGrilla.Location = New System.Drawing.Point(9, 186)
+        Me.cmd_clickEnGrilla.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_clickEnGrilla.Name = "cmd_clickEnGrilla"
-        Me.cmd_clickEnGrilla.Size = New System.Drawing.Size(115, 23)
+        Me.cmd_clickEnGrilla.Size = New System.Drawing.Size(153, 28)
         Me.cmd_clickEnGrilla.TabIndex = 1
         Me.cmd_clickEnGrilla.Text = "Click en Grilla"
         Me.cmd_clickEnGrilla.UseVisualStyleBackColor = True
         '
         'cmd_busAloAtr
         '
-        Me.cmd_busAloAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busAloAtr.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_busAloAtr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busAloAtr.Name = "cmd_busAloAtr"
-        Me.cmd_busAloAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloAtr.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busAloAtr.TabIndex = 2
         Me.cmd_busAloAtr.Text = "Atrás"
         Me.cmd_busAloAtr.UseVisualStyleBackColor = True
         '
         'cmd_busAloFin
         '
-        Me.cmd_busAloFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busAloFin.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_busAloFin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busAloFin.Name = "cmd_busAloFin"
-        Me.cmd_busAloFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloFin.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busAloFin.TabIndex = 3
         Me.cmd_busAloFin.Text = "Finalizar"
         Me.cmd_busAloFin.UseVisualStyleBackColor = True
@@ -1350,9 +1430,10 @@ Partial Class menu
         '
         Me.grid_busAlo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_busAlo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_piso, Me.clm_hab, Me.clm_fecIni, Me.clm_fecHas})
-        Me.grid_busAlo.Location = New System.Drawing.Point(7, 6)
+        Me.grid_busAlo.Location = New System.Drawing.Point(9, 7)
+        Me.grid_busAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grid_busAlo.Name = "grid_busAlo"
-        Me.grid_busAlo.Size = New System.Drawing.Size(501, 136)
+        Me.grid_busAlo.Size = New System.Drawing.Size(668, 167)
         Me.grid_busAlo.TabIndex = 0
         '
         'clm_piso
@@ -1401,116 +1482,129 @@ Partial Class menu
         Me.tab_busAloDatCli.Controls.Add(Me.lbl_docBusAlo)
         Me.tab_busAloDatCli.Controls.Add(Me.lbl_tipDocBusAlo)
         Me.tab_busAloDatCli.Controls.Add(Me.cmb_tipDocBusAlo)
-        Me.tab_busAloDatCli.Location = New System.Drawing.Point(4, 25)
+        Me.tab_busAloDatCli.Location = New System.Drawing.Point(4, 29)
+        Me.tab_busAloDatCli.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_busAloDatCli.Name = "tab_busAloDatCli"
-        Me.tab_busAloDatCli.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_busAloDatCli.Size = New System.Drawing.Size(514, 185)
+        Me.tab_busAloDatCli.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_busAloDatCli.Size = New System.Drawing.Size(688, 230)
         Me.tab_busAloDatCli.TabIndex = 0
         Me.tab_busAloDatCli.Text = "Datos del Cliente"
         Me.tab_busAloDatCli.UseVisualStyleBackColor = True
         '
         'cmd_busAloLim
         '
-        Me.cmd_busAloLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_busAloLim.Location = New System.Drawing.Point(12, 180)
+        Me.cmd_busAloLim.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busAloLim.Name = "cmd_busAloLim"
-        Me.cmd_busAloLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloLim.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busAloLim.TabIndex = 6
         Me.cmd_busAloLim.Text = "Limpiar"
         Me.cmd_busAloLim.UseVisualStyleBackColor = True
         '
         'cmd_busAloCan
         '
-        Me.cmd_busAloCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busAloCan.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_busAloCan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busAloCan.Name = "cmd_busAloCan"
-        Me.cmd_busAloCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloCan.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busAloCan.TabIndex = 7
         Me.cmd_busAloCan.Text = "Cancelar"
         Me.cmd_busAloCan.UseVisualStyleBackColor = True
         '
         'cmd_busAloDatCliSig
         '
-        Me.cmd_busAloDatCliSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busAloDatCliSig.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_busAloDatCliSig.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busAloDatCliSig.Name = "cmd_busAloDatCliSig"
-        Me.cmd_busAloDatCliSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busAloDatCliSig.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busAloDatCliSig.TabIndex = 8
         Me.cmd_busAloDatCliSig.Text = "Siguiente"
         Me.cmd_busAloDatCliSig.UseVisualStyleBackColor = True
         '
         'cmd_busCliBusAlo
         '
-        Me.cmd_busCliBusAlo.Location = New System.Drawing.Point(423, 6)
+        Me.cmd_busCliBusAlo.Location = New System.Drawing.Point(564, 7)
+        Me.cmd_busCliBusAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busCliBusAlo.Name = "cmd_busCliBusAlo"
-        Me.cmd_busCliBusAlo.Size = New System.Drawing.Size(58, 22)
+        Me.cmd_busCliBusAlo.Size = New System.Drawing.Size(77, 27)
         Me.cmd_busCliBusAlo.TabIndex = 3
         Me.cmd_busCliBusAlo.Text = "Buscar"
         Me.cmd_busCliBusAlo.UseVisualStyleBackColor = True
         '
         'txt_nomBusAlo
         '
-        Me.txt_nomBusAlo.Location = New System.Drawing.Point(145, 64)
+        Me.txt_nomBusAlo.Location = New System.Drawing.Point(193, 79)
+        Me.txt_nomBusAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nomBusAlo.Name = "txt_nomBusAlo"
         Me.txt_nomBusAlo.ReadOnly = True
-        Me.txt_nomBusAlo.Size = New System.Drawing.Size(272, 22)
+        Me.txt_nomBusAlo.Size = New System.Drawing.Size(361, 26)
         Me.txt_nomBusAlo.TabIndex = 5
         '
         'txt_apeBusAlo
         '
-        Me.txt_apeBusAlo.Location = New System.Drawing.Point(145, 36)
+        Me.txt_apeBusAlo.Location = New System.Drawing.Point(193, 44)
+        Me.txt_apeBusAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_apeBusAlo.Name = "txt_apeBusAlo"
         Me.txt_apeBusAlo.ReadOnly = True
-        Me.txt_apeBusAlo.Size = New System.Drawing.Size(272, 22)
+        Me.txt_apeBusAlo.Size = New System.Drawing.Size(361, 26)
         Me.txt_apeBusAlo.TabIndex = 4
         '
         'txt_docBusAlo
         '
-        Me.txt_docBusAlo.Location = New System.Drawing.Point(355, 6)
+        Me.txt_docBusAlo.Location = New System.Drawing.Point(473, 7)
+        Me.txt_docBusAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_docBusAlo.Mask = "99999999"
         Me.txt_docBusAlo.Name = "txt_docBusAlo"
-        Me.txt_docBusAlo.Size = New System.Drawing.Size(62, 22)
+        Me.txt_docBusAlo.Size = New System.Drawing.Size(81, 26)
         Me.txt_docBusAlo.TabIndex = 2
         '
         'lbl_apeBusAlo
         '
         Me.lbl_apeBusAlo.AutoSize = True
-        Me.lbl_apeBusAlo.Location = New System.Drawing.Point(81, 39)
+        Me.lbl_apeBusAlo.Location = New System.Drawing.Point(108, 48)
+        Me.lbl_apeBusAlo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_apeBusAlo.Name = "lbl_apeBusAlo"
-        Me.lbl_apeBusAlo.Size = New System.Drawing.Size(58, 16)
+        Me.lbl_apeBusAlo.Size = New System.Drawing.Size(68, 20)
         Me.lbl_apeBusAlo.TabIndex = 42
         Me.lbl_apeBusAlo.Text = "Apellido"
         '
         'lbl_nomBusAlo
         '
         Me.lbl_nomBusAlo.AutoSize = True
-        Me.lbl_nomBusAlo.Location = New System.Drawing.Point(77, 67)
+        Me.lbl_nomBusAlo.Location = New System.Drawing.Point(103, 82)
+        Me.lbl_nomBusAlo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nomBusAlo.Name = "lbl_nomBusAlo"
-        Me.lbl_nomBusAlo.Size = New System.Drawing.Size(57, 16)
+        Me.lbl_nomBusAlo.Size = New System.Drawing.Size(68, 20)
         Me.lbl_nomBusAlo.TabIndex = 41
         Me.lbl_nomBusAlo.Text = "Nombre"
         '
         'lbl_docBusAlo
         '
         Me.lbl_docBusAlo.AutoSize = True
-        Me.lbl_docBusAlo.Location = New System.Drawing.Point(272, 9)
+        Me.lbl_docBusAlo.Location = New System.Drawing.Point(363, 11)
+        Me.lbl_docBusAlo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_docBusAlo.Name = "lbl_docBusAlo"
-        Me.lbl_docBusAlo.Size = New System.Drawing.Size(77, 16)
+        Me.lbl_docBusAlo.Size = New System.Drawing.Size(95, 20)
         Me.lbl_docBusAlo.TabIndex = 40
         Me.lbl_docBusAlo.Text = "Documento"
         '
         'lbl_tipDocBusAlo
         '
         Me.lbl_tipDocBusAlo.AutoSize = True
-        Me.lbl_tipDocBusAlo.Location = New System.Drawing.Point(33, 9)
+        Me.lbl_tipDocBusAlo.Location = New System.Drawing.Point(44, 11)
+        Me.lbl_tipDocBusAlo.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_tipDocBusAlo.Name = "lbl_tipDocBusAlo"
-        Me.lbl_tipDocBusAlo.Size = New System.Drawing.Size(106, 16)
+        Me.lbl_tipDocBusAlo.Size = New System.Drawing.Size(128, 20)
         Me.lbl_tipDocBusAlo.TabIndex = 39
         Me.lbl_tipDocBusAlo.Text = "Tipo documento"
         '
         'cmb_tipDocBusAlo
         '
         Me.cmb_tipDocBusAlo.FormattingEnabled = True
-        Me.cmb_tipDocBusAlo.Location = New System.Drawing.Point(145, 6)
+        Me.cmb_tipDocBusAlo.Location = New System.Drawing.Point(193, 7)
+        Me.cmb_tipDocBusAlo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_tipDocBusAlo.Name = "cmb_tipDocBusAlo"
-        Me.cmb_tipDocBusAlo.Size = New System.Drawing.Size(121, 24)
+        Me.cmb_tipDocBusAlo.Size = New System.Drawing.Size(160, 28)
         Me.cmb_tipDocBusAlo.TabIndex = 1
         '
         'pnl_busAloSel
@@ -1545,34 +1639,38 @@ Partial Class menu
         Me.pnl_busAloSel.Controls.Add(Me.lbl_IDAloSel)
         Me.pnl_busAloSel.Controls.Add(Me.lbl_aloSel)
         Me.pnl_busAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_busAloSel.Location = New System.Drawing.Point(6, 22)
+        Me.pnl_busAloSel.Location = New System.Drawing.Point(8, 27)
+        Me.pnl_busAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_busAloSel.Name = "pnl_busAloSel"
-        Me.pnl_busAloSel.Size = New System.Drawing.Size(522, 218)
+        Me.pnl_busAloSel.Size = New System.Drawing.Size(696, 268)
         Me.pnl_busAloSel.TabIndex = 1
         '
         'cmd_atrAloSel
         '
-        Me.cmd_atrAloSel.Location = New System.Drawing.Point(427, 91)
+        Me.cmd_atrAloSel.Location = New System.Drawing.Point(569, 112)
+        Me.cmd_atrAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_atrAloSel.Name = "cmd_atrAloSel"
-        Me.cmd_atrAloSel.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_atrAloSel.Size = New System.Drawing.Size(96, 34)
         Me.cmd_atrAloSel.TabIndex = 10
         Me.cmd_atrAloSel.Text = "Atrás"
         Me.cmd_atrAloSel.UseVisualStyleBackColor = True
         '
         'cmd_anuAloSel
         '
-        Me.cmd_anuAloSel.Location = New System.Drawing.Point(427, 57)
+        Me.cmd_anuAloSel.Location = New System.Drawing.Point(569, 70)
+        Me.cmd_anuAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_anuAloSel.Name = "cmd_anuAloSel"
-        Me.cmd_anuAloSel.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_anuAloSel.Size = New System.Drawing.Size(96, 34)
         Me.cmd_anuAloSel.TabIndex = 9
         Me.cmd_anuAloSel.Text = "Anular"
         Me.cmd_anuAloSel.UseVisualStyleBackColor = True
         '
         'cmd_modAloSel
         '
-        Me.cmd_modAloSel.Location = New System.Drawing.Point(427, 23)
+        Me.cmd_modAloSel.Location = New System.Drawing.Point(569, 28)
+        Me.cmd_modAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_modAloSel.Name = "cmd_modAloSel"
-        Me.cmd_modAloSel.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_modAloSel.Size = New System.Drawing.Size(96, 34)
         Me.cmd_modAloSel.TabIndex = 8
         Me.cmd_modAloSel.Text = "Modificar"
         Me.cmd_modAloSel.UseVisualStyleBackColor = True
@@ -1580,47 +1678,52 @@ Partial Class menu
         'txt_tipoDocAloSel
         '
         Me.txt_tipoDocAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tipoDocAloSel.Location = New System.Drawing.Point(102, 168)
+        Me.txt_tipoDocAloSel.Location = New System.Drawing.Point(136, 207)
+        Me.txt_tipoDocAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_tipoDocAloSel.Name = "txt_tipoDocAloSel"
         Me.txt_tipoDocAloSel.ReadOnly = True
-        Me.txt_tipoDocAloSel.Size = New System.Drawing.Size(95, 20)
+        Me.txt_tipoDocAloSel.Size = New System.Drawing.Size(125, 23)
         Me.txt_tipoDocAloSel.TabIndex = 11
         '
         'txt_apeAloSel
         '
         Me.txt_apeAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_apeAloSel.Location = New System.Drawing.Point(253, 195)
+        Me.txt_apeAloSel.Location = New System.Drawing.Point(337, 240)
+        Me.txt_apeAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_apeAloSel.Name = "txt_apeAloSel"
         Me.txt_apeAloSel.ReadOnly = True
-        Me.txt_apeAloSel.Size = New System.Drawing.Size(259, 20)
+        Me.txt_apeAloSel.Size = New System.Drawing.Size(344, 23)
         Me.txt_apeAloSel.TabIndex = 14
         '
         'txt_nomAloSel
         '
         Me.txt_nomAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nomAloSel.Location = New System.Drawing.Point(253, 168)
+        Me.txt_nomAloSel.Location = New System.Drawing.Point(337, 207)
+        Me.txt_nomAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nomAloSel.Name = "txt_nomAloSel"
         Me.txt_nomAloSel.ReadOnly = True
-        Me.txt_nomAloSel.Size = New System.Drawing.Size(259, 20)
+        Me.txt_nomAloSel.Size = New System.Drawing.Size(344, 23)
         Me.txt_nomAloSel.TabIndex = 13
         '
         'txt_docAloSel
         '
         Me.txt_docAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_docAloSel.Location = New System.Drawing.Point(102, 195)
+        Me.txt_docAloSel.Location = New System.Drawing.Point(136, 240)
+        Me.txt_docAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_docAloSel.Mask = "99999999"
         Me.txt_docAloSel.Name = "txt_docAloSel"
         Me.txt_docAloSel.ReadOnly = True
-        Me.txt_docAloSel.Size = New System.Drawing.Size(65, 20)
+        Me.txt_docAloSel.Size = New System.Drawing.Size(85, 23)
         Me.txt_docAloSel.TabIndex = 12
         '
         'lbl_nomAloSel
         '
         Me.lbl_nomAloSel.AutoSize = True
         Me.lbl_nomAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nomAloSel.Location = New System.Drawing.Point(203, 171)
+        Me.lbl_nomAloSel.Location = New System.Drawing.Point(271, 210)
+        Me.lbl_nomAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nomAloSel.Name = "lbl_nomAloSel"
-        Me.lbl_nomAloSel.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_nomAloSel.Size = New System.Drawing.Size(58, 17)
         Me.lbl_nomAloSel.TabIndex = 22
         Me.lbl_nomAloSel.Text = "Nombre"
         '
@@ -1628,9 +1731,10 @@ Partial Class menu
         '
         Me.lbl_apeAloSel.AutoSize = True
         Me.lbl_apeAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_apeAloSel.Location = New System.Drawing.Point(203, 197)
+        Me.lbl_apeAloSel.Location = New System.Drawing.Point(271, 242)
+        Me.lbl_apeAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_apeAloSel.Name = "lbl_apeAloSel"
-        Me.lbl_apeAloSel.Size = New System.Drawing.Size(44, 13)
+        Me.lbl_apeAloSel.Size = New System.Drawing.Size(58, 17)
         Me.lbl_apeAloSel.TabIndex = 21
         Me.lbl_apeAloSel.Text = "Apellido"
         '
@@ -1638,9 +1742,10 @@ Partial Class menu
         '
         Me.lbl_docAloSel.AutoSize = True
         Me.lbl_docAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_docAloSel.Location = New System.Drawing.Point(34, 198)
+        Me.lbl_docAloSel.Location = New System.Drawing.Point(45, 244)
+        Me.lbl_docAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_docAloSel.Name = "lbl_docAloSel"
-        Me.lbl_docAloSel.Size = New System.Drawing.Size(62, 13)
+        Me.lbl_docAloSel.Size = New System.Drawing.Size(80, 17)
         Me.lbl_docAloSel.TabIndex = 20
         Me.lbl_docAloSel.Text = "Documento"
         '
@@ -1648,150 +1753,167 @@ Partial Class menu
         '
         Me.lbl_tipoDocAloSel.AutoSize = True
         Me.lbl_tipoDocAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_tipoDocAloSel.Location = New System.Drawing.Point(10, 171)
+        Me.lbl_tipoDocAloSel.Location = New System.Drawing.Point(13, 210)
+        Me.lbl_tipoDocAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_tipoDocAloSel.Name = "lbl_tipoDocAloSel"
-        Me.lbl_tipoDocAloSel.Size = New System.Drawing.Size(86, 13)
+        Me.lbl_tipoDocAloSel.Size = New System.Drawing.Size(112, 17)
         Me.lbl_tipoDocAloSel.TabIndex = 19
         Me.lbl_tipoDocAloSel.Text = "Tipo Documento"
         '
         'pnl_sepAloSel
         '
         Me.pnl_sepAloSel.BackColor = System.Drawing.Color.DimGray
-        Me.pnl_sepAloSel.Location = New System.Drawing.Point(0, 135)
+        Me.pnl_sepAloSel.Location = New System.Drawing.Point(0, 166)
+        Me.pnl_sepAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_sepAloSel.Name = "pnl_sepAloSel"
-        Me.pnl_sepAloSel.Size = New System.Drawing.Size(522, 10)
+        Me.pnl_sepAloSel.Size = New System.Drawing.Size(696, 12)
         Me.pnl_sepAloSel.TabIndex = 18
         '
         'lbl_cliAsoAloSel
         '
         Me.lbl_cliAsoAloSel.AutoSize = True
         Me.lbl_cliAsoAloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_cliAsoAloSel.Location = New System.Drawing.Point(3, 148)
+        Me.lbl_cliAsoAloSel.Location = New System.Drawing.Point(4, 182)
+        Me.lbl_cliAsoAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_cliAsoAloSel.Name = "lbl_cliAsoAloSel"
-        Me.lbl_cliAsoAloSel.Size = New System.Drawing.Size(110, 16)
+        Me.lbl_cliAsoAloSel.Size = New System.Drawing.Size(135, 20)
         Me.lbl_cliAsoAloSel.TabIndex = 17
         Me.lbl_cliAsoAloSel.Text = "Cliente Asociado"
         '
         'txt_fecHasAloSel
         '
-        Me.txt_fecHasAloSel.Location = New System.Drawing.Point(311, 51)
+        Me.txt_fecHasAloSel.Location = New System.Drawing.Point(415, 63)
+        Me.txt_fecHasAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_fecHasAloSel.Mask = "00/00/0000"
         Me.txt_fecHasAloSel.Name = "txt_fecHasAloSel"
         Me.txt_fecHasAloSel.ReadOnly = True
-        Me.txt_fecHasAloSel.Size = New System.Drawing.Size(70, 22)
+        Me.txt_fecHasAloSel.Size = New System.Drawing.Size(92, 26)
         Me.txt_fecHasAloSel.TabIndex = 6
         Me.txt_fecHasAloSel.ValidatingType = GetType(Date)
         '
         'txt_fecDesAloSel
         '
-        Me.txt_fecDesAloSel.Location = New System.Drawing.Point(311, 23)
+        Me.txt_fecDesAloSel.Location = New System.Drawing.Point(415, 28)
+        Me.txt_fecDesAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_fecDesAloSel.Mask = "00/00/0000"
         Me.txt_fecDesAloSel.Name = "txt_fecDesAloSel"
         Me.txt_fecDesAloSel.ReadOnly = True
-        Me.txt_fecDesAloSel.Size = New System.Drawing.Size(70, 22)
+        Me.txt_fecDesAloSel.Size = New System.Drawing.Size(92, 26)
         Me.txt_fecDesAloSel.TabIndex = 5
         Me.txt_fecDesAloSel.ValidatingType = GetType(Date)
         '
         'txt_IDAloSel
         '
-        Me.txt_IDAloSel.Location = New System.Drawing.Point(158, 23)
+        Me.txt_IDAloSel.Location = New System.Drawing.Point(211, 28)
+        Me.txt_IDAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_IDAloSel.Name = "txt_IDAloSel"
         Me.txt_IDAloSel.ReadOnly = True
-        Me.txt_IDAloSel.Size = New System.Drawing.Size(51, 22)
+        Me.txt_IDAloSel.Size = New System.Drawing.Size(67, 26)
         Me.txt_IDAloSel.TabIndex = 1
         '
         'txt_preDiaAloSel
         '
-        Me.txt_preDiaAloSel.Location = New System.Drawing.Point(311, 79)
+        Me.txt_preDiaAloSel.Location = New System.Drawing.Point(415, 97)
+        Me.txt_preDiaAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_preDiaAloSel.Name = "txt_preDiaAloSel"
         Me.txt_preDiaAloSel.ReadOnly = True
-        Me.txt_preDiaAloSel.Size = New System.Drawing.Size(70, 22)
+        Me.txt_preDiaAloSel.Size = New System.Drawing.Size(92, 26)
         Me.txt_preDiaAloSel.TabIndex = 7
         '
         'txt_nroHabAloSel
         '
-        Me.txt_nroHabAloSel.Location = New System.Drawing.Point(158, 79)
+        Me.txt_nroHabAloSel.Location = New System.Drawing.Point(211, 97)
+        Me.txt_nroHabAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nroHabAloSel.Name = "txt_nroHabAloSel"
         Me.txt_nroHabAloSel.ReadOnly = True
-        Me.txt_nroHabAloSel.Size = New System.Drawing.Size(51, 22)
+        Me.txt_nroHabAloSel.Size = New System.Drawing.Size(67, 26)
         Me.txt_nroHabAloSel.TabIndex = 3
         '
         'txt_canPerAloSel
         '
-        Me.txt_canPerAloSel.Location = New System.Drawing.Point(158, 107)
+        Me.txt_canPerAloSel.Location = New System.Drawing.Point(211, 132)
+        Me.txt_canPerAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_canPerAloSel.Name = "txt_canPerAloSel"
         Me.txt_canPerAloSel.ReadOnly = True
-        Me.txt_canPerAloSel.Size = New System.Drawing.Size(51, 22)
+        Me.txt_canPerAloSel.Size = New System.Drawing.Size(67, 26)
         Me.txt_canPerAloSel.TabIndex = 4
         '
         'txt_nroPisoAloSel
         '
-        Me.txt_nroPisoAloSel.Location = New System.Drawing.Point(158, 51)
+        Me.txt_nroPisoAloSel.Location = New System.Drawing.Point(211, 63)
+        Me.txt_nroPisoAloSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nroPisoAloSel.Name = "txt_nroPisoAloSel"
         Me.txt_nroPisoAloSel.ReadOnly = True
-        Me.txt_nroPisoAloSel.Size = New System.Drawing.Size(51, 22)
+        Me.txt_nroPisoAloSel.Size = New System.Drawing.Size(67, 26)
         Me.txt_nroPisoAloSel.TabIndex = 2
         '
         'lbl_preDiaAloSel
         '
         Me.lbl_preDiaAloSel.AutoSize = True
-        Me.lbl_preDiaAloSel.Location = New System.Drawing.Point(215, 82)
+        Me.lbl_preDiaAloSel.Location = New System.Drawing.Point(287, 101)
+        Me.lbl_preDiaAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_preDiaAloSel.Name = "lbl_preDiaAloSel"
-        Me.lbl_preDiaAloSel.Size = New System.Drawing.Size(91, 16)
+        Me.lbl_preDiaAloSel.Size = New System.Drawing.Size(112, 20)
         Me.lbl_preDiaAloSel.TabIndex = 7
         Me.lbl_preDiaAloSel.Text = "Precio porDía"
         '
         'lbl_fecHasAloSel
         '
         Me.lbl_fecHasAloSel.AutoSize = True
-        Me.lbl_fecHasAloSel.Location = New System.Drawing.Point(220, 54)
+        Me.lbl_fecHasAloSel.Location = New System.Drawing.Point(293, 66)
+        Me.lbl_fecHasAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fecHasAloSel.Name = "lbl_fecHasAloSel"
-        Me.lbl_fecHasAloSel.Size = New System.Drawing.Size(85, 16)
+        Me.lbl_fecHasAloSel.Size = New System.Drawing.Size(105, 20)
         Me.lbl_fecHasAloSel.TabIndex = 6
         Me.lbl_fecHasAloSel.Text = "Fecha Hasta"
         '
         'lbl_fecDesAloSel
         '
         Me.lbl_fecDesAloSel.AutoSize = True
-        Me.lbl_fecDesAloSel.Location = New System.Drawing.Point(215, 26)
+        Me.lbl_fecDesAloSel.Location = New System.Drawing.Point(287, 32)
+        Me.lbl_fecDesAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fecDesAloSel.Name = "lbl_fecDesAloSel"
-        Me.lbl_fecDesAloSel.Size = New System.Drawing.Size(90, 16)
+        Me.lbl_fecDesAloSel.Size = New System.Drawing.Size(109, 20)
         Me.lbl_fecDesAloSel.TabIndex = 5
         Me.lbl_fecDesAloSel.Text = "Fecha Desde"
         '
         'lbl_canPerAloSel
         '
         Me.lbl_canPerAloSel.AutoSize = True
-        Me.lbl_canPerAloSel.Location = New System.Drawing.Point(10, 110)
+        Me.lbl_canPerAloSel.Location = New System.Drawing.Point(13, 135)
+        Me.lbl_canPerAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_canPerAloSel.Name = "lbl_canPerAloSel"
-        Me.lbl_canPerAloSel.Size = New System.Drawing.Size(142, 16)
+        Me.lbl_canPerAloSel.Size = New System.Drawing.Size(174, 20)
         Me.lbl_canPerAloSel.TabIndex = 4
         Me.lbl_canPerAloSel.Text = "Cantidad de Personas"
         '
         'lbl_nroHabAloSel
         '
         Me.lbl_nroHabAloSel.AutoSize = True
-        Me.lbl_nroHabAloSel.Location = New System.Drawing.Point(35, 82)
+        Me.lbl_nroHabAloSel.Location = New System.Drawing.Point(47, 101)
+        Me.lbl_nroHabAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nroHabAloSel.Name = "lbl_nroHabAloSel"
-        Me.lbl_nroHabAloSel.Size = New System.Drawing.Size(117, 16)
+        Me.lbl_nroHabAloSel.Size = New System.Drawing.Size(144, 20)
         Me.lbl_nroHabAloSel.TabIndex = 3
         Me.lbl_nroHabAloSel.Text = "Nro de Habitación"
         '
         'lbl_nroPisoAloSel
         '
         Me.lbl_nroPisoAloSel.AutoSize = True
-        Me.lbl_nroPisoAloSel.Location = New System.Drawing.Point(73, 54)
+        Me.lbl_nroPisoAloSel.Location = New System.Drawing.Point(97, 66)
+        Me.lbl_nroPisoAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nroPisoAloSel.Name = "lbl_nroPisoAloSel"
-        Me.lbl_nroPisoAloSel.Size = New System.Drawing.Size(79, 16)
+        Me.lbl_nroPisoAloSel.Size = New System.Drawing.Size(97, 20)
         Me.lbl_nroPisoAloSel.TabIndex = 2
         Me.lbl_nroPisoAloSel.Text = "Nro de Piso"
         '
         'lbl_IDAloSel
         '
         Me.lbl_IDAloSel.AutoSize = True
-        Me.lbl_IDAloSel.Location = New System.Drawing.Point(131, 26)
+        Me.lbl_IDAloSel.Location = New System.Drawing.Point(175, 32)
+        Me.lbl_IDAloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_IDAloSel.Name = "lbl_IDAloSel"
-        Me.lbl_IDAloSel.Size = New System.Drawing.Size(21, 16)
+        Me.lbl_IDAloSel.Size = New System.Drawing.Size(26, 20)
         Me.lbl_IDAloSel.TabIndex = 1
         Me.lbl_IDAloSel.Text = "ID"
         '
@@ -1799,9 +1921,10 @@ Partial Class menu
         '
         Me.lbl_aloSel.AutoSize = True
         Me.lbl_aloSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_aloSel.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_aloSel.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_aloSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_aloSel.Name = "lbl_aloSel"
-        Me.lbl_aloSel.Size = New System.Drawing.Size(164, 16)
+        Me.lbl_aloSel.Size = New System.Drawing.Size(199, 20)
         Me.lbl_aloSel.TabIndex = 0
         Me.lbl_aloSel.Text = "Alojamiento seleccionado"
         '
@@ -1811,9 +1934,10 @@ Partial Class menu
         Me.pnl_nueOrdCom.Controls.Add(Me.tab_nueOrdCom)
         Me.pnl_nueOrdCom.Enabled = False
         Me.pnl_nueOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_nueOrdCom.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_nueOrdCom.Location = New System.Drawing.Point(16, 34)
+        Me.pnl_nueOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_nueOrdCom.Name = "pnl_nueOrdCom"
-        Me.pnl_nueOrdCom.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_nueOrdCom.Size = New System.Drawing.Size(709, 295)
         Me.pnl_nueOrdCom.TabIndex = 0
         Me.pnl_nueOrdCom.Visible = False
         '
@@ -1821,9 +1945,10 @@ Partial Class menu
         '
         Me.lbl_ordCom.AutoSize = True
         Me.lbl_ordCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ordCom.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_ordCom.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_ordCom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_ordCom.Name = "lbl_ordCom"
-        Me.lbl_ordCom.Size = New System.Drawing.Size(179, 16)
+        Me.lbl_ordCom.Size = New System.Drawing.Size(215, 20)
         Me.lbl_ordCom.TabIndex = 0
         Me.lbl_ordCom.Text = "Nueva Orden de Compra"
         '
@@ -1832,10 +1957,11 @@ Partial Class menu
         Me.tab_nueOrdCom.Controls.Add(Me.tab_nueOrdComDatPro)
         Me.tab_nueOrdCom.Controls.Add(Me.tab_nueOrdComArt)
         Me.tab_nueOrdCom.Controls.Add(Me.tab_nueOrdComRes)
-        Me.tab_nueOrdCom.Location = New System.Drawing.Point(6, 22)
+        Me.tab_nueOrdCom.Location = New System.Drawing.Point(8, 27)
+        Me.tab_nueOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_nueOrdCom.Name = "tab_nueOrdCom"
         Me.tab_nueOrdCom.SelectedIndex = 0
-        Me.tab_nueOrdCom.Size = New System.Drawing.Size(522, 214)
+        Me.tab_nueOrdCom.Size = New System.Drawing.Size(696, 263)
         Me.tab_nueOrdCom.TabIndex = 0
         '
         'tab_nueOrdComDatPro
@@ -1852,115 +1978,128 @@ Partial Class menu
         Me.tab_nueOrdComDatPro.Controls.Add(Me.lbl_corPro)
         Me.tab_nueOrdComDatPro.Controls.Add(Me.lbl_nomPro)
         Me.tab_nueOrdComDatPro.Controls.Add(Me.lbl_IDPro)
-        Me.tab_nueOrdComDatPro.Location = New System.Drawing.Point(4, 25)
+        Me.tab_nueOrdComDatPro.Location = New System.Drawing.Point(4, 29)
+        Me.tab_nueOrdComDatPro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_nueOrdComDatPro.Name = "tab_nueOrdComDatPro"
-        Me.tab_nueOrdComDatPro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_nueOrdComDatPro.Size = New System.Drawing.Size(514, 185)
+        Me.tab_nueOrdComDatPro.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_nueOrdComDatPro.Size = New System.Drawing.Size(688, 230)
         Me.tab_nueOrdComDatPro.TabIndex = 0
         Me.tab_nueOrdComDatPro.Text = "Datos del Proveedor"
         Me.tab_nueOrdComDatPro.UseVisualStyleBackColor = True
         '
         'cmd_nueOrdComLim
         '
-        Me.cmd_nueOrdComLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_nueOrdComLim.Location = New System.Drawing.Point(12, 180)
+        Me.cmd_nueOrdComLim.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueOrdComLim.Name = "cmd_nueOrdComLim"
-        Me.cmd_nueOrdComLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComLim.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueOrdComLim.TabIndex = 6
         Me.cmd_nueOrdComLim.Text = "Limpiar"
         Me.cmd_nueOrdComLim.UseVisualStyleBackColor = True
         '
         'cmd_busPro
         '
-        Me.cmd_busPro.Location = New System.Drawing.Point(178, 6)
+        Me.cmd_busPro.Location = New System.Drawing.Point(237, 7)
+        Me.cmd_busPro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busPro.Name = "cmd_busPro"
-        Me.cmd_busPro.Size = New System.Drawing.Size(58, 22)
+        Me.cmd_busPro.Size = New System.Drawing.Size(77, 27)
         Me.cmd_busPro.TabIndex = 2
         Me.cmd_busPro.Text = "Buscar"
         Me.cmd_busPro.UseVisualStyleBackColor = True
         '
         'cmd_nueOrdComSig
         '
-        Me.cmd_nueOrdComSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_nueOrdComSig.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_nueOrdComSig.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueOrdComSig.Name = "cmd_nueOrdComSig"
-        Me.cmd_nueOrdComSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComSig.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueOrdComSig.TabIndex = 8
         Me.cmd_nueOrdComSig.Text = "Siguiente"
         Me.cmd_nueOrdComSig.UseVisualStyleBackColor = True
         '
         'cmd_nueOrdComCan
         '
-        Me.cmd_nueOrdComCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_nueOrdComCan.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_nueOrdComCan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueOrdComCan.Name = "cmd_nueOrdComCan"
-        Me.cmd_nueOrdComCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComCan.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueOrdComCan.TabIndex = 7
         Me.cmd_nueOrdComCan.Text = "Cancelar"
         Me.cmd_nueOrdComCan.UseVisualStyleBackColor = True
         '
         'txt_telPro
         '
-        Me.txt_telPro.Location = New System.Drawing.Point(100, 92)
+        Me.txt_telPro.Location = New System.Drawing.Point(133, 113)
+        Me.txt_telPro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_telPro.Name = "txt_telPro"
         Me.txt_telPro.ReadOnly = True
-        Me.txt_telPro.Size = New System.Drawing.Size(100, 22)
+        Me.txt_telPro.Size = New System.Drawing.Size(132, 26)
         Me.txt_telPro.TabIndex = 5
         '
         'txt_corPro
         '
-        Me.txt_corPro.Location = New System.Drawing.Point(100, 64)
+        Me.txt_corPro.Location = New System.Drawing.Point(133, 79)
+        Me.txt_corPro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_corPro.Name = "txt_corPro"
         Me.txt_corPro.ReadOnly = True
-        Me.txt_corPro.Size = New System.Drawing.Size(180, 22)
+        Me.txt_corPro.Size = New System.Drawing.Size(239, 26)
         Me.txt_corPro.TabIndex = 4
         '
         'txt_nomPro
         '
-        Me.txt_nomPro.Location = New System.Drawing.Point(100, 36)
+        Me.txt_nomPro.Location = New System.Drawing.Point(133, 44)
+        Me.txt_nomPro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nomPro.Name = "txt_nomPro"
         Me.txt_nomPro.ReadOnly = True
-        Me.txt_nomPro.Size = New System.Drawing.Size(272, 22)
+        Me.txt_nomPro.Size = New System.Drawing.Size(361, 26)
         Me.txt_nomPro.TabIndex = 3
         '
         'cmb_IDPro
         '
         Me.cmb_IDPro.FormattingEnabled = True
-        Me.cmb_IDPro.Location = New System.Drawing.Point(100, 6)
+        Me.cmb_IDPro.Location = New System.Drawing.Point(133, 7)
+        Me.cmb_IDPro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_IDPro.Name = "cmb_IDPro"
-        Me.cmb_IDPro.Size = New System.Drawing.Size(72, 24)
+        Me.cmb_IDPro.Size = New System.Drawing.Size(95, 28)
         Me.cmb_IDPro.TabIndex = 1
         '
         'lbl_telPro
         '
         Me.lbl_telPro.AutoSize = True
-        Me.lbl_telPro.Location = New System.Drawing.Point(32, 95)
+        Me.lbl_telPro.Location = New System.Drawing.Point(43, 117)
+        Me.lbl_telPro.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_telPro.Name = "lbl_telPro"
-        Me.lbl_telPro.Size = New System.Drawing.Size(62, 16)
+        Me.lbl_telPro.Size = New System.Drawing.Size(73, 20)
         Me.lbl_telPro.TabIndex = 3
         Me.lbl_telPro.Text = "Teléfono"
         '
         'lbl_corPro
         '
         Me.lbl_corPro.AutoSize = True
-        Me.lbl_corPro.Location = New System.Drawing.Point(45, 67)
+        Me.lbl_corPro.Location = New System.Drawing.Point(60, 82)
+        Me.lbl_corPro.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_corPro.Name = "lbl_corPro"
-        Me.lbl_corPro.Size = New System.Drawing.Size(49, 16)
+        Me.lbl_corPro.Size = New System.Drawing.Size(60, 20)
         Me.lbl_corPro.TabIndex = 2
         Me.lbl_corPro.Text = "Correo"
         '
         'lbl_nomPro
         '
         Me.lbl_nomPro.AutoSize = True
-        Me.lbl_nomPro.Location = New System.Drawing.Point(6, 39)
+        Me.lbl_nomPro.Location = New System.Drawing.Point(8, 48)
+        Me.lbl_nomPro.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nomPro.Name = "lbl_nomPro"
-        Me.lbl_nomPro.Size = New System.Drawing.Size(88, 16)
+        Me.lbl_nomPro.Size = New System.Drawing.Size(108, 20)
         Me.lbl_nomPro.TabIndex = 1
         Me.lbl_nomPro.Text = "Razón Social"
         '
         'lbl_IDPro
         '
         Me.lbl_IDPro.AutoSize = True
-        Me.lbl_IDPro.Location = New System.Drawing.Point(73, 9)
+        Me.lbl_IDPro.Location = New System.Drawing.Point(97, 11)
+        Me.lbl_IDPro.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_IDPro.Name = "lbl_IDPro"
-        Me.lbl_IDPro.Size = New System.Drawing.Size(21, 16)
+        Me.lbl_IDPro.Size = New System.Drawing.Size(26, 20)
         Me.lbl_IDPro.TabIndex = 0
         Me.lbl_IDPro.Text = "ID"
         '
@@ -1974,19 +2113,21 @@ Partial Class menu
         Me.tab_nueOrdComArt.Controls.Add(Me.grid_nueOrdCom)
         Me.tab_nueOrdComArt.Controls.Add(Me.cmd_nueOrdComAtr)
         Me.tab_nueOrdComArt.Controls.Add(Me.cmd_nueOrdComArtSig)
-        Me.tab_nueOrdComArt.Location = New System.Drawing.Point(4, 25)
+        Me.tab_nueOrdComArt.Location = New System.Drawing.Point(4, 29)
+        Me.tab_nueOrdComArt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_nueOrdComArt.Name = "tab_nueOrdComArt"
-        Me.tab_nueOrdComArt.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_nueOrdComArt.Size = New System.Drawing.Size(514, 185)
+        Me.tab_nueOrdComArt.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_nueOrdComArt.Size = New System.Drawing.Size(688, 230)
         Me.tab_nueOrdComArt.TabIndex = 1
         Me.tab_nueOrdComArt.Text = "Selección de Artículos"
         Me.tab_nueOrdComArt.UseVisualStyleBackColor = True
         '
         'cmd_nueOrdComAgr
         '
-        Me.cmd_nueOrdComAgr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_nueOrdComAgr.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_nueOrdComAgr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueOrdComAgr.Name = "cmd_nueOrdComAgr"
-        Me.cmd_nueOrdComAgr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComAgr.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueOrdComAgr.TabIndex = 4
         Me.cmd_nueOrdComAgr.Text = "Agregar"
         Me.cmd_nueOrdComAgr.UseVisualStyleBackColor = True
@@ -1994,36 +2135,40 @@ Partial Class menu
         'txt_nueOrdComArtFilDes
         '
         Me.txt_nueOrdComArtFilDes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nueOrdComArtFilDes.Location = New System.Drawing.Point(121, 158)
+        Me.txt_nueOrdComArtFilDes.Location = New System.Drawing.Point(161, 194)
+        Me.txt_nueOrdComArtFilDes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nueOrdComArtFilDes.Name = "txt_nueOrdComArtFilDes"
-        Me.txt_nueOrdComArtFilDes.Size = New System.Drawing.Size(105, 20)
+        Me.txt_nueOrdComArtFilDes.Size = New System.Drawing.Size(139, 23)
         Me.txt_nueOrdComArtFilDes.TabIndex = 2
         '
         'lbl_nueOrdComArtFilDes
         '
         Me.lbl_nueOrdComArtFilDes.AutoSize = True
         Me.lbl_nueOrdComArtFilDes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nueOrdComArtFilDes.Location = New System.Drawing.Point(6, 161)
+        Me.lbl_nueOrdComArtFilDes.Location = New System.Drawing.Point(8, 198)
+        Me.lbl_nueOrdComArtFilDes.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nueOrdComArtFilDes.Name = "lbl_nueOrdComArtFilDes"
-        Me.lbl_nueOrdComArtFilDes.Size = New System.Drawing.Size(109, 13)
+        Me.lbl_nueOrdComArtFilDes.Size = New System.Drawing.Size(147, 17)
         Me.lbl_nueOrdComArtFilDes.TabIndex = 22
         Me.lbl_nueOrdComArtFilDes.Text = "Filtrar por Descripción"
         '
         'txt_nueOrdComArtFilID
         '
         Me.txt_nueOrdComArtFilID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nueOrdComArtFilID.Location = New System.Drawing.Point(121, 132)
+        Me.txt_nueOrdComArtFilID.Location = New System.Drawing.Point(161, 162)
+        Me.txt_nueOrdComArtFilID.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nueOrdComArtFilID.Name = "txt_nueOrdComArtFilID"
-        Me.txt_nueOrdComArtFilID.Size = New System.Drawing.Size(50, 20)
+        Me.txt_nueOrdComArtFilID.Size = New System.Drawing.Size(65, 23)
         Me.txt_nueOrdComArtFilID.TabIndex = 1
         '
         'lbl_nueOrdComArtFilID
         '
         Me.lbl_nueOrdComArtFilID.AutoSize = True
         Me.lbl_nueOrdComArtFilID.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nueOrdComArtFilID.Location = New System.Drawing.Point(51, 135)
+        Me.lbl_nueOrdComArtFilID.Location = New System.Drawing.Point(68, 166)
+        Me.lbl_nueOrdComArtFilID.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nueOrdComArtFilID.Name = "lbl_nueOrdComArtFilID"
-        Me.lbl_nueOrdComArtFilID.Size = New System.Drawing.Size(64, 13)
+        Me.lbl_nueOrdComArtFilID.Size = New System.Drawing.Size(86, 17)
         Me.lbl_nueOrdComArtFilID.TabIndex = 20
         Me.lbl_nueOrdComArtFilID.Text = "Filtrar por ID"
         '
@@ -2031,9 +2176,10 @@ Partial Class menu
         '
         Me.grid_nueOrdCom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_nueOrdCom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_ID, Me.clm_des, Me.clm_preUni, Me.clm_cant, Me.clm_preTot})
-        Me.grid_nueOrdCom.Location = New System.Drawing.Point(7, 6)
+        Me.grid_nueOrdCom.Location = New System.Drawing.Point(9, 7)
+        Me.grid_nueOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grid_nueOrdCom.Name = "grid_nueOrdCom"
-        Me.grid_nueOrdCom.Size = New System.Drawing.Size(501, 121)
+        Me.grid_nueOrdCom.Size = New System.Drawing.Size(668, 149)
         Me.grid_nueOrdCom.TabIndex = 0
         '
         'clm_ID
@@ -2076,18 +2222,20 @@ Partial Class menu
         '
         'cmd_nueOrdComAtr
         '
-        Me.cmd_nueOrdComAtr.Location = New System.Drawing.Point(253, 146)
+        Me.cmd_nueOrdComAtr.Location = New System.Drawing.Point(337, 180)
+        Me.cmd_nueOrdComAtr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueOrdComAtr.Name = "cmd_nueOrdComAtr"
-        Me.cmd_nueOrdComAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComAtr.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueOrdComAtr.TabIndex = 3
         Me.cmd_nueOrdComAtr.Text = "Atrás"
         Me.cmd_nueOrdComAtr.UseVisualStyleBackColor = True
         '
         'cmd_nueOrdComArtSig
         '
-        Me.cmd_nueOrdComArtSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_nueOrdComArtSig.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_nueOrdComArtSig.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueOrdComArtSig.Name = "cmd_nueOrdComArtSig"
-        Me.cmd_nueOrdComArtSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComArtSig.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueOrdComArtSig.TabIndex = 5
         Me.cmd_nueOrdComArtSig.Text = "Siguiente"
         Me.cmd_nueOrdComArtSig.UseVisualStyleBackColor = True
@@ -2096,28 +2244,31 @@ Partial Class menu
         '
         Me.tab_nueOrdComRes.Controls.Add(Me.cmd_nueOrdComResAtr)
         Me.tab_nueOrdComRes.Controls.Add(Me.cmd_nueOrdComFin)
-        Me.tab_nueOrdComRes.Location = New System.Drawing.Point(4, 25)
+        Me.tab_nueOrdComRes.Location = New System.Drawing.Point(4, 29)
+        Me.tab_nueOrdComRes.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_nueOrdComRes.Name = "tab_nueOrdComRes"
-        Me.tab_nueOrdComRes.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_nueOrdComRes.Size = New System.Drawing.Size(514, 185)
+        Me.tab_nueOrdComRes.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_nueOrdComRes.Size = New System.Drawing.Size(688, 230)
         Me.tab_nueOrdComRes.TabIndex = 2
         Me.tab_nueOrdComRes.Text = "Resumen"
         Me.tab_nueOrdComRes.UseVisualStyleBackColor = True
         '
         'cmd_nueOrdComResAtr
         '
-        Me.cmd_nueOrdComResAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_nueOrdComResAtr.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_nueOrdComResAtr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueOrdComResAtr.Name = "cmd_nueOrdComResAtr"
-        Me.cmd_nueOrdComResAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComResAtr.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueOrdComResAtr.TabIndex = 1
         Me.cmd_nueOrdComResAtr.Text = "Atrás"
         Me.cmd_nueOrdComResAtr.UseVisualStyleBackColor = True
         '
         'cmd_nueOrdComFin
         '
-        Me.cmd_nueOrdComFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_nueOrdComFin.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_nueOrdComFin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_nueOrdComFin.Name = "cmd_nueOrdComFin"
-        Me.cmd_nueOrdComFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_nueOrdComFin.Size = New System.Drawing.Size(96, 34)
         Me.cmd_nueOrdComFin.TabIndex = 2
         Me.cmd_nueOrdComFin.Text = "Finalizar"
         Me.cmd_nueOrdComFin.UseVisualStyleBackColor = True
@@ -2128,9 +2279,10 @@ Partial Class menu
         Me.pnl_busOrdCom.Controls.Add(Me.tab_busOrdCom)
         Me.pnl_busOrdCom.Controls.Add(Me.pnl_ordComSel)
         Me.pnl_busOrdCom.Enabled = False
-        Me.pnl_busOrdCom.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_busOrdCom.Location = New System.Drawing.Point(16, 34)
+        Me.pnl_busOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_busOrdCom.Name = "pnl_busOrdCom"
-        Me.pnl_busOrdCom.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_busOrdCom.Size = New System.Drawing.Size(709, 295)
         Me.pnl_busOrdCom.TabIndex = 0
         Me.pnl_busOrdCom.Visible = False
         '
@@ -2138,9 +2290,10 @@ Partial Class menu
         '
         Me.lbl_busOrdCom.AutoSize = True
         Me.lbl_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_busOrdCom.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_busOrdCom.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_busOrdCom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_busOrdCom.Name = "lbl_busOrdCom"
-        Me.lbl_busOrdCom.Size = New System.Drawing.Size(182, 16)
+        Me.lbl_busOrdCom.Size = New System.Drawing.Size(223, 20)
         Me.lbl_busOrdCom.TabIndex = 0
         Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
         '
@@ -2149,10 +2302,11 @@ Partial Class menu
         Me.tab_busOrdCom.Controls.Add(Me.tab_busOrdComDatPro)
         Me.tab_busOrdCom.Controls.Add(Me.tab_busOrdComOrdCom)
         Me.tab_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tab_busOrdCom.Location = New System.Drawing.Point(6, 22)
+        Me.tab_busOrdCom.Location = New System.Drawing.Point(8, 27)
+        Me.tab_busOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_busOrdCom.Name = "tab_busOrdCom"
         Me.tab_busOrdCom.SelectedIndex = 0
-        Me.tab_busOrdCom.Size = New System.Drawing.Size(522, 214)
+        Me.tab_busOrdCom.Size = New System.Drawing.Size(696, 263)
         Me.tab_busOrdCom.TabIndex = 0
         '
         'tab_busOrdComDatPro
@@ -2169,37 +2323,41 @@ Partial Class menu
         Me.tab_busOrdComDatPro.Controls.Add(Me.lbl_corProBusOrdCom)
         Me.tab_busOrdComDatPro.Controls.Add(Me.lbl_nomProBusOrdCom)
         Me.tab_busOrdComDatPro.Controls.Add(Me.lbl_IDProBusOrdCom)
-        Me.tab_busOrdComDatPro.Location = New System.Drawing.Point(4, 25)
+        Me.tab_busOrdComDatPro.Location = New System.Drawing.Point(4, 29)
+        Me.tab_busOrdComDatPro.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_busOrdComDatPro.Name = "tab_busOrdComDatPro"
-        Me.tab_busOrdComDatPro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_busOrdComDatPro.Size = New System.Drawing.Size(514, 185)
+        Me.tab_busOrdComDatPro.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_busOrdComDatPro.Size = New System.Drawing.Size(688, 230)
         Me.tab_busOrdComDatPro.TabIndex = 0
         Me.tab_busOrdComDatPro.Text = "Datos del Proveedor"
         Me.tab_busOrdComDatPro.UseVisualStyleBackColor = True
         '
         'cmd_busOrdComLim
         '
-        Me.cmd_busOrdComLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_busOrdComLim.Location = New System.Drawing.Point(12, 180)
+        Me.cmd_busOrdComLim.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busOrdComLim.Name = "cmd_busOrdComLim"
-        Me.cmd_busOrdComLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComLim.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busOrdComLim.TabIndex = 6
         Me.cmd_busOrdComLim.Text = "Limpiar"
         Me.cmd_busOrdComLim.UseVisualStyleBackColor = True
         '
         'cmd_busOrdComSig
         '
-        Me.cmd_busOrdComSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busOrdComSig.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_busOrdComSig.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busOrdComSig.Name = "cmd_busOrdComSig"
-        Me.cmd_busOrdComSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComSig.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busOrdComSig.TabIndex = 8
         Me.cmd_busOrdComSig.Text = "Siguiente"
         Me.cmd_busOrdComSig.UseVisualStyleBackColor = True
         '
         'cmd_busOrdComCan
         '
-        Me.cmd_busOrdComCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busOrdComCan.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_busOrdComCan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busOrdComCan.Name = "cmd_busOrdComCan"
-        Me.cmd_busOrdComCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComCan.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busOrdComCan.TabIndex = 7
         Me.cmd_busOrdComCan.Text = "Cancelar"
         Me.cmd_busOrdComCan.UseVisualStyleBackColor = True
@@ -2207,9 +2365,10 @@ Partial Class menu
         'cmd_busOrdCom
         '
         Me.cmd_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmd_busOrdCom.Location = New System.Drawing.Point(178, 6)
+        Me.cmd_busOrdCom.Location = New System.Drawing.Point(237, 7)
+        Me.cmd_busOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busOrdCom.Name = "cmd_busOrdCom"
-        Me.cmd_busOrdCom.Size = New System.Drawing.Size(58, 22)
+        Me.cmd_busOrdCom.Size = New System.Drawing.Size(77, 27)
         Me.cmd_busOrdCom.TabIndex = 2
         Me.cmd_busOrdCom.Text = "Buscar"
         Me.cmd_busOrdCom.UseVisualStyleBackColor = True
@@ -2217,46 +2376,51 @@ Partial Class menu
         'txt_telProBusOrdCom
         '
         Me.txt_telProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_telProBusOrdCom.Location = New System.Drawing.Point(100, 92)
+        Me.txt_telProBusOrdCom.Location = New System.Drawing.Point(133, 113)
+        Me.txt_telProBusOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_telProBusOrdCom.Name = "txt_telProBusOrdCom"
         Me.txt_telProBusOrdCom.ReadOnly = True
-        Me.txt_telProBusOrdCom.Size = New System.Drawing.Size(100, 22)
+        Me.txt_telProBusOrdCom.Size = New System.Drawing.Size(132, 26)
         Me.txt_telProBusOrdCom.TabIndex = 5
         '
         'txt_corProBusOrdCom
         '
         Me.txt_corProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_corProBusOrdCom.Location = New System.Drawing.Point(100, 64)
+        Me.txt_corProBusOrdCom.Location = New System.Drawing.Point(133, 79)
+        Me.txt_corProBusOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_corProBusOrdCom.Name = "txt_corProBusOrdCom"
         Me.txt_corProBusOrdCom.ReadOnly = True
-        Me.txt_corProBusOrdCom.Size = New System.Drawing.Size(180, 22)
+        Me.txt_corProBusOrdCom.Size = New System.Drawing.Size(239, 26)
         Me.txt_corProBusOrdCom.TabIndex = 4
         '
         'txt_nomProBusOrdCom
         '
         Me.txt_nomProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nomProBusOrdCom.Location = New System.Drawing.Point(100, 36)
+        Me.txt_nomProBusOrdCom.Location = New System.Drawing.Point(133, 44)
+        Me.txt_nomProBusOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nomProBusOrdCom.Name = "txt_nomProBusOrdCom"
         Me.txt_nomProBusOrdCom.ReadOnly = True
-        Me.txt_nomProBusOrdCom.Size = New System.Drawing.Size(272, 22)
+        Me.txt_nomProBusOrdCom.Size = New System.Drawing.Size(361, 26)
         Me.txt_nomProBusOrdCom.TabIndex = 3
         '
         'cmb_IDProBusOrdCom
         '
         Me.cmb_IDProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_IDProBusOrdCom.FormattingEnabled = True
-        Me.cmb_IDProBusOrdCom.Location = New System.Drawing.Point(100, 6)
+        Me.cmb_IDProBusOrdCom.Location = New System.Drawing.Point(133, 7)
+        Me.cmb_IDProBusOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_IDProBusOrdCom.Name = "cmb_IDProBusOrdCom"
-        Me.cmb_IDProBusOrdCom.Size = New System.Drawing.Size(72, 24)
+        Me.cmb_IDProBusOrdCom.Size = New System.Drawing.Size(95, 28)
         Me.cmb_IDProBusOrdCom.TabIndex = 1
         '
         'lbl_telProBusOrdCom
         '
         Me.lbl_telProBusOrdCom.AutoSize = True
         Me.lbl_telProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_telProBusOrdCom.Location = New System.Drawing.Point(32, 95)
+        Me.lbl_telProBusOrdCom.Location = New System.Drawing.Point(43, 117)
+        Me.lbl_telProBusOrdCom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_telProBusOrdCom.Name = "lbl_telProBusOrdCom"
-        Me.lbl_telProBusOrdCom.Size = New System.Drawing.Size(62, 16)
+        Me.lbl_telProBusOrdCom.Size = New System.Drawing.Size(73, 20)
         Me.lbl_telProBusOrdCom.TabIndex = 30
         Me.lbl_telProBusOrdCom.Text = "Teléfono"
         '
@@ -2264,9 +2428,10 @@ Partial Class menu
         '
         Me.lbl_corProBusOrdCom.AutoSize = True
         Me.lbl_corProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_corProBusOrdCom.Location = New System.Drawing.Point(45, 67)
+        Me.lbl_corProBusOrdCom.Location = New System.Drawing.Point(60, 82)
+        Me.lbl_corProBusOrdCom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_corProBusOrdCom.Name = "lbl_corProBusOrdCom"
-        Me.lbl_corProBusOrdCom.Size = New System.Drawing.Size(49, 16)
+        Me.lbl_corProBusOrdCom.Size = New System.Drawing.Size(60, 20)
         Me.lbl_corProBusOrdCom.TabIndex = 30
         Me.lbl_corProBusOrdCom.Text = "Correo"
         '
@@ -2274,9 +2439,10 @@ Partial Class menu
         '
         Me.lbl_nomProBusOrdCom.AutoSize = True
         Me.lbl_nomProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nomProBusOrdCom.Location = New System.Drawing.Point(6, 39)
+        Me.lbl_nomProBusOrdCom.Location = New System.Drawing.Point(8, 48)
+        Me.lbl_nomProBusOrdCom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nomProBusOrdCom.Name = "lbl_nomProBusOrdCom"
-        Me.lbl_nomProBusOrdCom.Size = New System.Drawing.Size(88, 16)
+        Me.lbl_nomProBusOrdCom.Size = New System.Drawing.Size(108, 20)
         Me.lbl_nomProBusOrdCom.TabIndex = 30
         Me.lbl_nomProBusOrdCom.Text = "Razón Social"
         '
@@ -2284,9 +2450,10 @@ Partial Class menu
         '
         Me.lbl_IDProBusOrdCom.AutoSize = True
         Me.lbl_IDProBusOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_IDProBusOrdCom.Location = New System.Drawing.Point(73, 9)
+        Me.lbl_IDProBusOrdCom.Location = New System.Drawing.Point(97, 11)
+        Me.lbl_IDProBusOrdCom.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_IDProBusOrdCom.Name = "lbl_IDProBusOrdCom"
-        Me.lbl_IDProBusOrdCom.Size = New System.Drawing.Size(21, 16)
+        Me.lbl_IDProBusOrdCom.Size = New System.Drawing.Size(26, 20)
         Me.lbl_IDProBusOrdCom.TabIndex = 30
         Me.lbl_IDProBusOrdCom.Text = "ID"
         '
@@ -2296,19 +2463,21 @@ Partial Class menu
         Me.tab_busOrdComOrdCom.Controls.Add(Me.grid_busOrdCom)
         Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComAtr)
         Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComFin)
-        Me.tab_busOrdComOrdCom.Location = New System.Drawing.Point(4, 25)
+        Me.tab_busOrdComOrdCom.Location = New System.Drawing.Point(4, 29)
+        Me.tab_busOrdComOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_busOrdComOrdCom.Name = "tab_busOrdComOrdCom"
-        Me.tab_busOrdComOrdCom.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_busOrdComOrdCom.Size = New System.Drawing.Size(514, 185)
+        Me.tab_busOrdComOrdCom.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_busOrdComOrdCom.Size = New System.Drawing.Size(688, 230)
         Me.tab_busOrdComOrdCom.TabIndex = 1
         Me.tab_busOrdComOrdCom.Text = "Ordenes de Compra"
         Me.tab_busOrdComOrdCom.UseVisualStyleBackColor = True
         '
         'cmd_clickEnGrillaOrdenDeCompra
         '
-        Me.cmd_clickEnGrillaOrdenDeCompra.Location = New System.Drawing.Point(7, 151)
+        Me.cmd_clickEnGrillaOrdenDeCompra.Location = New System.Drawing.Point(9, 186)
+        Me.cmd_clickEnGrillaOrdenDeCompra.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_clickEnGrillaOrdenDeCompra.Name = "cmd_clickEnGrillaOrdenDeCompra"
-        Me.cmd_clickEnGrillaOrdenDeCompra.Size = New System.Drawing.Size(115, 23)
+        Me.cmd_clickEnGrillaOrdenDeCompra.Size = New System.Drawing.Size(153, 28)
         Me.cmd_clickEnGrillaOrdenDeCompra.TabIndex = 3
         Me.cmd_clickEnGrillaOrdenDeCompra.Text = "Click en grilla"
         Me.cmd_clickEnGrillaOrdenDeCompra.UseVisualStyleBackColor = True
@@ -2317,9 +2486,10 @@ Partial Class menu
         '
         Me.grid_busOrdCom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_busOrdCom.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.clm_IDOrdCom, Me.clm_IDPro, Me.clm_fecEmi, Me.clm_fecRec})
-        Me.grid_busOrdCom.Location = New System.Drawing.Point(7, 6)
+        Me.grid_busOrdCom.Location = New System.Drawing.Point(9, 7)
+        Me.grid_busOrdCom.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grid_busOrdCom.Name = "grid_busOrdCom"
-        Me.grid_busOrdCom.Size = New System.Drawing.Size(501, 136)
+        Me.grid_busOrdCom.Size = New System.Drawing.Size(668, 167)
         Me.grid_busOrdCom.TabIndex = 0
         '
         'clm_IDOrdCom
@@ -2356,18 +2526,20 @@ Partial Class menu
         '
         'cmd_busOrdComAtr
         '
-        Me.cmd_busOrdComAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_busOrdComAtr.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_busOrdComAtr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busOrdComAtr.Name = "cmd_busOrdComAtr"
-        Me.cmd_busOrdComAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComAtr.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busOrdComAtr.TabIndex = 1
         Me.cmd_busOrdComAtr.Text = "Atrás"
         Me.cmd_busOrdComAtr.UseVisualStyleBackColor = True
         '
         'cmd_busOrdComFin
         '
-        Me.cmd_busOrdComFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_busOrdComFin.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_busOrdComFin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busOrdComFin.Name = "cmd_busOrdComFin"
-        Me.cmd_busOrdComFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busOrdComFin.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busOrdComFin.TabIndex = 2
         Me.cmd_busOrdComFin.Text = "Finalizar"
         Me.cmd_busOrdComFin.UseVisualStyleBackColor = True
@@ -2397,18 +2569,20 @@ Partial Class menu
         Me.pnl_ordComSel.Controls.Add(Me.lbl_IDOrdComSel)
         Me.pnl_ordComSel.Controls.Add(Me.lbl_ordComSel)
         Me.pnl_ordComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.pnl_ordComSel.Location = New System.Drawing.Point(6, 22)
+        Me.pnl_ordComSel.Location = New System.Drawing.Point(8, 27)
+        Me.pnl_ordComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_ordComSel.Name = "pnl_ordComSel"
-        Me.pnl_ordComSel.Size = New System.Drawing.Size(522, 218)
+        Me.pnl_ordComSel.Size = New System.Drawing.Size(696, 268)
         Me.pnl_ordComSel.TabIndex = 2
         '
         'grid_ordComSel
         '
         Me.grid_ordComSel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid_ordComSel.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cln_renOrdComSel, Me.clm_artOrdComSel, Me.clm_canArtOrdComSel})
-        Me.grid_ordComSel.Location = New System.Drawing.Point(206, 23)
+        Me.grid_ordComSel.Location = New System.Drawing.Point(275, 28)
+        Me.grid_ordComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.grid_ordComSel.Name = "grid_ordComSel"
-        Me.grid_ordComSel.Size = New System.Drawing.Size(215, 96)
+        Me.grid_ordComSel.Size = New System.Drawing.Size(287, 118)
         Me.grid_ordComSel.TabIndex = 23
         '
         'cln_renOrdComSel
@@ -2437,27 +2611,30 @@ Partial Class menu
         '
         'cmd_atrOrdComSel
         '
-        Me.cmd_atrOrdComSel.Location = New System.Drawing.Point(427, 91)
+        Me.cmd_atrOrdComSel.Location = New System.Drawing.Point(569, 112)
+        Me.cmd_atrOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_atrOrdComSel.Name = "cmd_atrOrdComSel"
-        Me.cmd_atrOrdComSel.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_atrOrdComSel.Size = New System.Drawing.Size(96, 34)
         Me.cmd_atrOrdComSel.TabIndex = 10
         Me.cmd_atrOrdComSel.Text = "Atrás"
         Me.cmd_atrOrdComSel.UseVisualStyleBackColor = True
         '
         'cmd_anuOrdComSel
         '
-        Me.cmd_anuOrdComSel.Location = New System.Drawing.Point(427, 57)
+        Me.cmd_anuOrdComSel.Location = New System.Drawing.Point(569, 70)
+        Me.cmd_anuOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_anuOrdComSel.Name = "cmd_anuOrdComSel"
-        Me.cmd_anuOrdComSel.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_anuOrdComSel.Size = New System.Drawing.Size(96, 34)
         Me.cmd_anuOrdComSel.TabIndex = 9
         Me.cmd_anuOrdComSel.Text = "Anular"
         Me.cmd_anuOrdComSel.UseVisualStyleBackColor = True
         '
         'cmd_modBusOrdComSel
         '
-        Me.cmd_modBusOrdComSel.Location = New System.Drawing.Point(427, 23)
+        Me.cmd_modBusOrdComSel.Location = New System.Drawing.Point(569, 28)
+        Me.cmd_modBusOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_modBusOrdComSel.Name = "cmd_modBusOrdComSel"
-        Me.cmd_modBusOrdComSel.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_modBusOrdComSel.Size = New System.Drawing.Size(96, 34)
         Me.cmd_modBusOrdComSel.TabIndex = 8
         Me.cmd_modBusOrdComSel.Text = "Modificar"
         Me.cmd_modBusOrdComSel.UseVisualStyleBackColor = True
@@ -2465,47 +2642,52 @@ Partial Class menu
         'txt_IDProAsoOrdComSel
         '
         Me.txt_IDProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_IDProAsoOrdComSel.Location = New System.Drawing.Point(65, 168)
+        Me.txt_IDProAsoOrdComSel.Location = New System.Drawing.Point(87, 207)
+        Me.txt_IDProAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_IDProAsoOrdComSel.Name = "txt_IDProAsoOrdComSel"
         Me.txt_IDProAsoOrdComSel.ReadOnly = True
-        Me.txt_IDProAsoOrdComSel.Size = New System.Drawing.Size(87, 20)
+        Me.txt_IDProAsoOrdComSel.Size = New System.Drawing.Size(115, 23)
         Me.txt_IDProAsoOrdComSel.TabIndex = 11
         '
         'txt_corProAsoOrdComSel
         '
         Me.txt_corProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_corProAsoOrdComSel.Location = New System.Drawing.Point(240, 194)
+        Me.txt_corProAsoOrdComSel.Location = New System.Drawing.Point(320, 239)
+        Me.txt_corProAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_corProAsoOrdComSel.Name = "txt_corProAsoOrdComSel"
         Me.txt_corProAsoOrdComSel.ReadOnly = True
-        Me.txt_corProAsoOrdComSel.Size = New System.Drawing.Size(140, 20)
+        Me.txt_corProAsoOrdComSel.Size = New System.Drawing.Size(185, 23)
         Me.txt_corProAsoOrdComSel.TabIndex = 14
         '
         'txt_nomProAsoOrdComSel
         '
         Me.txt_nomProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nomProAsoOrdComSel.Location = New System.Drawing.Point(240, 168)
+        Me.txt_nomProAsoOrdComSel.Location = New System.Drawing.Point(320, 207)
+        Me.txt_nomProAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_nomProAsoOrdComSel.Name = "txt_nomProAsoOrdComSel"
         Me.txt_nomProAsoOrdComSel.ReadOnly = True
-        Me.txt_nomProAsoOrdComSel.Size = New System.Drawing.Size(259, 20)
+        Me.txt_nomProAsoOrdComSel.Size = New System.Drawing.Size(344, 23)
         Me.txt_nomProAsoOrdComSel.TabIndex = 13
         '
         'txt_telProAsoOrdComSel
         '
         Me.txt_telProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_telProAsoOrdComSel.Location = New System.Drawing.Point(65, 194)
+        Me.txt_telProAsoOrdComSel.Location = New System.Drawing.Point(87, 239)
+        Me.txt_telProAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_telProAsoOrdComSel.Mask = "99999999"
         Me.txt_telProAsoOrdComSel.Name = "txt_telProAsoOrdComSel"
         Me.txt_telProAsoOrdComSel.ReadOnly = True
-        Me.txt_telProAsoOrdComSel.Size = New System.Drawing.Size(87, 20)
+        Me.txt_telProAsoOrdComSel.Size = New System.Drawing.Size(115, 23)
         Me.txt_telProAsoOrdComSel.TabIndex = 12
         '
         'lbl_nomProAsoOrdComSel
         '
         Me.lbl_nomProAsoOrdComSel.AutoSize = True
         Me.lbl_nomProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nomProAsoOrdComSel.Location = New System.Drawing.Point(164, 171)
+        Me.lbl_nomProAsoOrdComSel.Location = New System.Drawing.Point(219, 210)
+        Me.lbl_nomProAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nomProAsoOrdComSel.Name = "lbl_nomProAsoOrdComSel"
-        Me.lbl_nomProAsoOrdComSel.Size = New System.Drawing.Size(70, 13)
+        Me.lbl_nomProAsoOrdComSel.Size = New System.Drawing.Size(91, 17)
         Me.lbl_nomProAsoOrdComSel.TabIndex = 22
         Me.lbl_nomProAsoOrdComSel.Text = "Razón Social"
         '
@@ -2513,9 +2695,10 @@ Partial Class menu
         '
         Me.lbl_corProAsoOrdComSel.AutoSize = True
         Me.lbl_corProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_corProAsoOrdComSel.Location = New System.Drawing.Point(196, 198)
+        Me.lbl_corProAsoOrdComSel.Location = New System.Drawing.Point(261, 244)
+        Me.lbl_corProAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_corProAsoOrdComSel.Name = "lbl_corProAsoOrdComSel"
-        Me.lbl_corProAsoOrdComSel.Size = New System.Drawing.Size(38, 13)
+        Me.lbl_corProAsoOrdComSel.Size = New System.Drawing.Size(51, 17)
         Me.lbl_corProAsoOrdComSel.TabIndex = 21
         Me.lbl_corProAsoOrdComSel.Text = "Correo"
         '
@@ -2523,9 +2706,10 @@ Partial Class menu
         '
         Me.lbl_telProAsoOrdComSel.AutoSize = True
         Me.lbl_telProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_telProAsoOrdComSel.Location = New System.Drawing.Point(10, 198)
+        Me.lbl_telProAsoOrdComSel.Location = New System.Drawing.Point(13, 244)
+        Me.lbl_telProAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_telProAsoOrdComSel.Name = "lbl_telProAsoOrdComSel"
-        Me.lbl_telProAsoOrdComSel.Size = New System.Drawing.Size(49, 13)
+        Me.lbl_telProAsoOrdComSel.Size = New System.Drawing.Size(64, 17)
         Me.lbl_telProAsoOrdComSel.TabIndex = 20
         Me.lbl_telProAsoOrdComSel.Text = "Teléfono"
         '
@@ -2533,82 +2717,91 @@ Partial Class menu
         '
         Me.lbl_IDProAsoOrdComSel.AutoSize = True
         Me.lbl_IDProAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_IDProAsoOrdComSel.Location = New System.Drawing.Point(41, 171)
+        Me.lbl_IDProAsoOrdComSel.Location = New System.Drawing.Point(55, 210)
+        Me.lbl_IDProAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_IDProAsoOrdComSel.Name = "lbl_IDProAsoOrdComSel"
-        Me.lbl_IDProAsoOrdComSel.Size = New System.Drawing.Size(18, 13)
+        Me.lbl_IDProAsoOrdComSel.Size = New System.Drawing.Size(21, 17)
         Me.lbl_IDProAsoOrdComSel.TabIndex = 19
         Me.lbl_IDProAsoOrdComSel.Text = "ID"
         '
         'pnl_sepOrdComSel
         '
         Me.pnl_sepOrdComSel.BackColor = System.Drawing.Color.DimGray
-        Me.pnl_sepOrdComSel.Location = New System.Drawing.Point(0, 135)
+        Me.pnl_sepOrdComSel.Location = New System.Drawing.Point(0, 166)
+        Me.pnl_sepOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_sepOrdComSel.Name = "pnl_sepOrdComSel"
-        Me.pnl_sepOrdComSel.Size = New System.Drawing.Size(522, 10)
+        Me.pnl_sepOrdComSel.Size = New System.Drawing.Size(696, 12)
         Me.pnl_sepOrdComSel.TabIndex = 18
         '
         'lbl_proAsoOrdComSel
         '
         Me.lbl_proAsoOrdComSel.AutoSize = True
         Me.lbl_proAsoOrdComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_proAsoOrdComSel.Location = New System.Drawing.Point(3, 148)
+        Me.lbl_proAsoOrdComSel.Location = New System.Drawing.Point(4, 182)
+        Me.lbl_proAsoOrdComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_proAsoOrdComSel.Name = "lbl_proAsoOrdComSel"
-        Me.lbl_proAsoOrdComSel.Size = New System.Drawing.Size(133, 16)
+        Me.lbl_proAsoOrdComSel.Size = New System.Drawing.Size(159, 20)
         Me.lbl_proAsoOrdComSel.TabIndex = 17
         Me.lbl_proAsoOrdComSel.Text = "Proveedor Asociado"
         '
         'MaskedTextBox2
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(128, 79)
+        Me.MaskedTextBox2.Location = New System.Drawing.Point(171, 97)
+        Me.MaskedTextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaskedTextBox2.Mask = "00/00/0000"
         Me.MaskedTextBox2.Name = "MaskedTextBox2"
         Me.MaskedTextBox2.ReadOnly = True
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(70, 22)
+        Me.MaskedTextBox2.Size = New System.Drawing.Size(92, 26)
         Me.MaskedTextBox2.TabIndex = 6
         Me.MaskedTextBox2.ValidatingType = GetType(Date)
         '
         'MaskedTextBox3
         '
-        Me.MaskedTextBox3.Location = New System.Drawing.Point(127, 51)
+        Me.MaskedTextBox3.Location = New System.Drawing.Point(169, 63)
+        Me.MaskedTextBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaskedTextBox3.Mask = "00/00/0000"
         Me.MaskedTextBox3.Name = "MaskedTextBox3"
         Me.MaskedTextBox3.ReadOnly = True
-        Me.MaskedTextBox3.Size = New System.Drawing.Size(70, 22)
+        Me.MaskedTextBox3.Size = New System.Drawing.Size(92, 26)
         Me.MaskedTextBox3.TabIndex = 5
         Me.MaskedTextBox3.ValidatingType = GetType(Date)
         '
         'txt_IDOrdComSel
         '
-        Me.txt_IDOrdComSel.Location = New System.Drawing.Point(128, 23)
+        Me.txt_IDOrdComSel.Location = New System.Drawing.Point(171, 28)
+        Me.txt_IDOrdComSel.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_IDOrdComSel.Name = "txt_IDOrdComSel"
         Me.txt_IDOrdComSel.ReadOnly = True
-        Me.txt_IDOrdComSel.Size = New System.Drawing.Size(51, 22)
+        Me.txt_IDOrdComSel.Size = New System.Drawing.Size(67, 26)
         Me.txt_IDOrdComSel.TabIndex = 1
         '
         'lbl_fecRecOrdComSel
         '
         Me.lbl_fecRecOrdComSel.AutoSize = True
-        Me.lbl_fecRecOrdComSel.Location = New System.Drawing.Point(7, 82)
+        Me.lbl_fecRecOrdComSel.Location = New System.Drawing.Point(9, 101)
+        Me.lbl_fecRecOrdComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fecRecOrdComSel.Name = "lbl_fecRecOrdComSel"
-        Me.lbl_fecRecOrdComSel.Size = New System.Drawing.Size(115, 16)
+        Me.lbl_fecRecOrdComSel.Size = New System.Drawing.Size(139, 20)
         Me.lbl_fecRecOrdComSel.TabIndex = 6
         Me.lbl_fecRecOrdComSel.Text = "Fecha Recepción"
         '
         'lbl_fecEmiOrdComSel
         '
         Me.lbl_fecEmiOrdComSel.AutoSize = True
-        Me.lbl_fecEmiOrdComSel.Location = New System.Drawing.Point(25, 54)
+        Me.lbl_fecEmiOrdComSel.Location = New System.Drawing.Point(33, 66)
+        Me.lbl_fecEmiOrdComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fecEmiOrdComSel.Name = "lbl_fecEmiOrdComSel"
-        Me.lbl_fecEmiOrdComSel.Size = New System.Drawing.Size(97, 16)
+        Me.lbl_fecEmiOrdComSel.Size = New System.Drawing.Size(120, 20)
         Me.lbl_fecEmiOrdComSel.TabIndex = 5
         Me.lbl_fecEmiOrdComSel.Text = "Fecha Emisión"
         '
         'lbl_IDOrdComSel
         '
         Me.lbl_IDOrdComSel.AutoSize = True
-        Me.lbl_IDOrdComSel.Location = New System.Drawing.Point(101, 26)
+        Me.lbl_IDOrdComSel.Location = New System.Drawing.Point(135, 32)
+        Me.lbl_IDOrdComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_IDOrdComSel.Name = "lbl_IDOrdComSel"
-        Me.lbl_IDOrdComSel.Size = New System.Drawing.Size(21, 16)
+        Me.lbl_IDOrdComSel.Size = New System.Drawing.Size(26, 20)
         Me.lbl_IDOrdComSel.TabIndex = 1
         Me.lbl_IDOrdComSel.Text = "ID"
         '
@@ -2616,9 +2809,10 @@ Partial Class menu
         '
         Me.lbl_ordComSel.AutoSize = True
         Me.lbl_ordComSel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ordComSel.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_ordComSel.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_ordComSel.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_ordComSel.Name = "lbl_ordComSel"
-        Me.lbl_ordComSel.Size = New System.Drawing.Size(200, 16)
+        Me.lbl_ordComSel.Size = New System.Drawing.Size(244, 20)
         Me.lbl_ordComSel.TabIndex = 0
         Me.lbl_ordComSel.Text = "Orden de compra Seleccionada"
         '
@@ -2627,9 +2821,10 @@ Partial Class menu
         Me.pnl_agrArt.Controls.Add(Me.tab_carArt)
         Me.pnl_agrArt.Controls.Add(Me.lbl_agrArt)
         Me.pnl_agrArt.Enabled = False
-        Me.pnl_agrArt.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_agrArt.Location = New System.Drawing.Point(16, 34)
+        Me.pnl_agrArt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_agrArt.Name = "pnl_agrArt"
-        Me.pnl_agrArt.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_agrArt.Size = New System.Drawing.Size(709, 295)
         Me.pnl_agrArt.TabIndex = 0
         Me.pnl_agrArt.Visible = False
         '
@@ -2638,10 +2833,11 @@ Partial Class menu
         Me.tab_carArt.Controls.Add(Me.tab_carArtHab)
         Me.tab_carArt.Controls.Add(Me.tab_carArtArt)
         Me.tab_carArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tab_carArt.Location = New System.Drawing.Point(6, 22)
+        Me.tab_carArt.Location = New System.Drawing.Point(8, 27)
+        Me.tab_carArt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_carArt.Name = "tab_carArt"
         Me.tab_carArt.SelectedIndex = 0
-        Me.tab_carArt.Size = New System.Drawing.Size(522, 214)
+        Me.tab_carArt.Size = New System.Drawing.Size(696, 263)
         Me.tab_carArt.TabIndex = 1
         '
         'tab_carArtHab
@@ -2655,89 +2851,99 @@ Partial Class menu
         Me.tab_carArtHab.Controls.Add(Me.lbl_cliAsoCarArt)
         Me.tab_carArtHab.Controls.Add(Me.lbl_nroHabCarArt)
         Me.tab_carArtHab.Controls.Add(Me.lbl_nroPisoCarArt)
-        Me.tab_carArtHab.Location = New System.Drawing.Point(4, 25)
+        Me.tab_carArtHab.Location = New System.Drawing.Point(4, 29)
+        Me.tab_carArtHab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_carArtHab.Name = "tab_carArtHab"
-        Me.tab_carArtHab.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_carArtHab.Size = New System.Drawing.Size(514, 185)
+        Me.tab_carArtHab.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_carArtHab.Size = New System.Drawing.Size(688, 230)
         Me.tab_carArtHab.TabIndex = 0
         Me.tab_carArtHab.Text = "Habitación"
         Me.tab_carArtHab.UseVisualStyleBackColor = True
         '
         'cmd_busArtLim
         '
-        Me.cmd_busArtLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_busArtLim.Location = New System.Drawing.Point(12, 180)
+        Me.cmd_busArtLim.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_busArtLim.Name = "cmd_busArtLim"
-        Me.cmd_busArtLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_busArtLim.Size = New System.Drawing.Size(96, 34)
         Me.cmd_busArtLim.TabIndex = 4
         Me.cmd_busArtLim.Text = "Limpiar"
         Me.cmd_busArtLim.UseVisualStyleBackColor = True
         '
         'cmd_carArtCan
         '
-        Me.cmd_carArtCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carArtCan.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_carArtCan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carArtCan.Name = "cmd_carArtCan"
-        Me.cmd_carArtCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carArtCan.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carArtCan.TabIndex = 5
         Me.cmd_carArtCan.Text = "Cancelar"
         Me.cmd_carArtCan.UseVisualStyleBackColor = True
         '
         'cmd_carArtSig
         '
-        Me.cmd_carArtSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carArtSig.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_carArtSig.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carArtSig.Name = "cmd_carArtSig"
-        Me.cmd_carArtSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carArtSig.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carArtSig.TabIndex = 6
         Me.cmd_carArtSig.Text = "Siguiente"
         Me.cmd_carArtSig.UseVisualStyleBackColor = True
         '
         'txt_cliAsoCarArt
         '
-        Me.txt_cliAsoCarArt.Location = New System.Drawing.Point(129, 66)
+        Me.txt_cliAsoCarArt.Location = New System.Drawing.Point(172, 81)
+        Me.txt_cliAsoCarArt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_cliAsoCarArt.Name = "txt_cliAsoCarArt"
         Me.txt_cliAsoCarArt.ReadOnly = True
-        Me.txt_cliAsoCarArt.Size = New System.Drawing.Size(272, 22)
+        Me.txt_cliAsoCarArt.Size = New System.Drawing.Size(361, 26)
         Me.txt_cliAsoCarArt.TabIndex = 3
         '
         'cmb_nroHabCarArt
         '
         Me.cmb_nroHabCarArt.FormattingEnabled = True
-        Me.cmb_nroHabCarArt.Location = New System.Drawing.Point(129, 36)
+        Me.cmb_nroHabCarArt.Location = New System.Drawing.Point(172, 44)
+        Me.cmb_nroHabCarArt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_nroHabCarArt.Name = "cmb_nroHabCarArt"
-        Me.cmb_nroHabCarArt.Size = New System.Drawing.Size(61, 24)
+        Me.cmb_nroHabCarArt.Size = New System.Drawing.Size(80, 28)
         Me.cmb_nroHabCarArt.TabIndex = 2
         '
         'cmb_nroPisoCarArt
         '
         Me.cmb_nroPisoCarArt.FormattingEnabled = True
-        Me.cmb_nroPisoCarArt.Location = New System.Drawing.Point(129, 6)
+        Me.cmb_nroPisoCarArt.Location = New System.Drawing.Point(172, 7)
+        Me.cmb_nroPisoCarArt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_nroPisoCarArt.Name = "cmb_nroPisoCarArt"
-        Me.cmb_nroPisoCarArt.Size = New System.Drawing.Size(61, 24)
+        Me.cmb_nroPisoCarArt.Size = New System.Drawing.Size(80, 28)
         Me.cmb_nroPisoCarArt.TabIndex = 1
         '
         'lbl_cliAsoCarArt
         '
         Me.lbl_cliAsoCarArt.AutoSize = True
-        Me.lbl_cliAsoCarArt.Location = New System.Drawing.Point(13, 69)
+        Me.lbl_cliAsoCarArt.Location = New System.Drawing.Point(17, 85)
+        Me.lbl_cliAsoCarArt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_cliAsoCarArt.Name = "lbl_cliAsoCarArt"
-        Me.lbl_cliAsoCarArt.Size = New System.Drawing.Size(110, 16)
+        Me.lbl_cliAsoCarArt.Size = New System.Drawing.Size(135, 20)
         Me.lbl_cliAsoCarArt.TabIndex = 45
         Me.lbl_cliAsoCarArt.Text = "Cliente Asociado"
         '
         'lbl_nroHabCarArt
         '
         Me.lbl_nroHabCarArt.AutoSize = True
-        Me.lbl_nroHabCarArt.Location = New System.Drawing.Point(6, 39)
+        Me.lbl_nroHabCarArt.Location = New System.Drawing.Point(8, 48)
+        Me.lbl_nroHabCarArt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nroHabCarArt.Name = "lbl_nroHabCarArt"
-        Me.lbl_nroHabCarArt.Size = New System.Drawing.Size(117, 16)
+        Me.lbl_nroHabCarArt.Size = New System.Drawing.Size(144, 20)
         Me.lbl_nroHabCarArt.TabIndex = 43
         Me.lbl_nroHabCarArt.Text = "Nro de Habitación"
         '
         'lbl_nroPisoCarArt
         '
         Me.lbl_nroPisoCarArt.AutoSize = True
-        Me.lbl_nroPisoCarArt.Location = New System.Drawing.Point(44, 9)
+        Me.lbl_nroPisoCarArt.Location = New System.Drawing.Point(59, 11)
+        Me.lbl_nroPisoCarArt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nroPisoCarArt.Name = "lbl_nroPisoCarArt"
-        Me.lbl_nroPisoCarArt.Size = New System.Drawing.Size(79, 16)
+        Me.lbl_nroPisoCarArt.Size = New System.Drawing.Size(97, 20)
         Me.lbl_nroPisoCarArt.TabIndex = 41
         Me.lbl_nroPisoCarArt.Text = "Nro de Piso"
         '
@@ -2745,28 +2951,31 @@ Partial Class menu
         '
         Me.tab_carArtArt.Controls.Add(Me.cmd_carArtFin)
         Me.tab_carArtArt.Controls.Add(Me.cmd_carArtAtr)
-        Me.tab_carArtArt.Location = New System.Drawing.Point(4, 25)
+        Me.tab_carArtArt.Location = New System.Drawing.Point(4, 29)
+        Me.tab_carArtArt.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_carArtArt.Name = "tab_carArtArt"
-        Me.tab_carArtArt.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_carArtArt.Size = New System.Drawing.Size(514, 185)
+        Me.tab_carArtArt.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_carArtArt.Size = New System.Drawing.Size(688, 230)
         Me.tab_carArtArt.TabIndex = 1
         Me.tab_carArtArt.Text = "Artículos"
         Me.tab_carArtArt.UseVisualStyleBackColor = True
         '
         'cmd_carArtFin
         '
-        Me.cmd_carArtFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carArtFin.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_carArtFin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carArtFin.Name = "cmd_carArtFin"
-        Me.cmd_carArtFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carArtFin.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carArtFin.TabIndex = 2
         Me.cmd_carArtFin.Text = "Finalizar"
         Me.cmd_carArtFin.UseVisualStyleBackColor = True
         '
         'cmd_carArtAtr
         '
-        Me.cmd_carArtAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carArtAtr.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_carArtAtr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carArtAtr.Name = "cmd_carArtAtr"
-        Me.cmd_carArtAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carArtAtr.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carArtAtr.TabIndex = 1
         Me.cmd_carArtAtr.Text = "Atrás"
         Me.cmd_carArtAtr.UseVisualStyleBackColor = True
@@ -2775,9 +2984,10 @@ Partial Class menu
         '
         Me.lbl_agrArt.AutoSize = True
         Me.lbl_agrArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_agrArt.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_agrArt.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_agrArt.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_agrArt.Name = "lbl_agrArt"
-        Me.lbl_agrArt.Size = New System.Drawing.Size(111, 16)
+        Me.lbl_agrArt.Size = New System.Drawing.Size(137, 20)
         Me.lbl_agrArt.TabIndex = 0
         Me.lbl_agrArt.Text = "Cargar Artículo"
         '
@@ -2786,9 +2996,10 @@ Partial Class menu
         Me.pnl_agrServ.Controls.Add(Me.tab_carServ)
         Me.pnl_agrServ.Controls.Add(Me.lbl_agrSer)
         Me.pnl_agrServ.Enabled = False
-        Me.pnl_agrServ.Location = New System.Drawing.Point(12, 28)
+        Me.pnl_agrServ.Location = New System.Drawing.Point(16, 34)
+        Me.pnl_agrServ.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.pnl_agrServ.Name = "pnl_agrServ"
-        Me.pnl_agrServ.Size = New System.Drawing.Size(532, 240)
+        Me.pnl_agrServ.Size = New System.Drawing.Size(709, 295)
         Me.pnl_agrServ.TabIndex = 0
         Me.pnl_agrServ.Visible = False
         '
@@ -2797,10 +3008,11 @@ Partial Class menu
         Me.tab_carServ.Controls.Add(Me.tab_carServHab)
         Me.tab_carServ.Controls.Add(Me.tab_carServServ)
         Me.tab_carServ.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tab_carServ.Location = New System.Drawing.Point(6, 22)
+        Me.tab_carServ.Location = New System.Drawing.Point(8, 27)
+        Me.tab_carServ.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_carServ.Name = "tab_carServ"
         Me.tab_carServ.SelectedIndex = 0
-        Me.tab_carServ.Size = New System.Drawing.Size(522, 214)
+        Me.tab_carServ.Size = New System.Drawing.Size(696, 263)
         Me.tab_carServ.TabIndex = 0
         '
         'tab_carServHab
@@ -2814,89 +3026,99 @@ Partial Class menu
         Me.tab_carServHab.Controls.Add(Me.lbl_cliAso)
         Me.tab_carServHab.Controls.Add(Me.lbl_nroHab)
         Me.tab_carServHab.Controls.Add(Me.lbl_nroPiso)
-        Me.tab_carServHab.Location = New System.Drawing.Point(4, 25)
+        Me.tab_carServHab.Location = New System.Drawing.Point(4, 29)
+        Me.tab_carServHab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_carServHab.Name = "tab_carServHab"
-        Me.tab_carServHab.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_carServHab.Size = New System.Drawing.Size(514, 185)
+        Me.tab_carServHab.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_carServHab.Size = New System.Drawing.Size(688, 230)
         Me.tab_carServHab.TabIndex = 0
         Me.tab_carServHab.Text = "Habitación"
         Me.tab_carServHab.UseVisualStyleBackColor = True
         '
         'cmd_carSerHabLim
         '
-        Me.cmd_carSerHabLim.Location = New System.Drawing.Point(9, 146)
+        Me.cmd_carSerHabLim.Location = New System.Drawing.Point(12, 180)
+        Me.cmd_carSerHabLim.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carSerHabLim.Name = "cmd_carSerHabLim"
-        Me.cmd_carSerHabLim.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carSerHabLim.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carSerHabLim.TabIndex = 4
         Me.cmd_carSerHabLim.Text = "Limpiar"
         Me.cmd_carSerHabLim.UseVisualStyleBackColor = True
         '
         'cmd_carServCan
         '
-        Me.cmd_carServCan.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carServCan.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_carServCan.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carServCan.Name = "cmd_carServCan"
-        Me.cmd_carServCan.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServCan.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carServCan.TabIndex = 5
         Me.cmd_carServCan.Text = "Cancelar"
         Me.cmd_carServCan.UseVisualStyleBackColor = True
         '
         'cmd_carServSig
         '
-        Me.cmd_carServSig.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carServSig.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_carServSig.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carServSig.Name = "cmd_carServSig"
-        Me.cmd_carServSig.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServSig.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carServSig.TabIndex = 6
         Me.cmd_carServSig.Text = "Siguiente"
         Me.cmd_carServSig.UseVisualStyleBackColor = True
         '
         'txt_cliAso
         '
-        Me.txt_cliAso.Location = New System.Drawing.Point(129, 66)
+        Me.txt_cliAso.Location = New System.Drawing.Point(172, 81)
+        Me.txt_cliAso.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txt_cliAso.Name = "txt_cliAso"
         Me.txt_cliAso.ReadOnly = True
-        Me.txt_cliAso.Size = New System.Drawing.Size(272, 22)
+        Me.txt_cliAso.Size = New System.Drawing.Size(361, 26)
         Me.txt_cliAso.TabIndex = 3
         '
         'cmb_nroHab
         '
         Me.cmb_nroHab.FormattingEnabled = True
-        Me.cmb_nroHab.Location = New System.Drawing.Point(129, 36)
+        Me.cmb_nroHab.Location = New System.Drawing.Point(172, 44)
+        Me.cmb_nroHab.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_nroHab.Name = "cmb_nroHab"
-        Me.cmb_nroHab.Size = New System.Drawing.Size(61, 24)
+        Me.cmb_nroHab.Size = New System.Drawing.Size(80, 28)
         Me.cmb_nroHab.TabIndex = 2
         '
         'cmb_nroPiso
         '
         Me.cmb_nroPiso.FormattingEnabled = True
-        Me.cmb_nroPiso.Location = New System.Drawing.Point(129, 6)
+        Me.cmb_nroPiso.Location = New System.Drawing.Point(172, 7)
+        Me.cmb_nroPiso.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmb_nroPiso.Name = "cmb_nroPiso"
-        Me.cmb_nroPiso.Size = New System.Drawing.Size(61, 24)
+        Me.cmb_nroPiso.Size = New System.Drawing.Size(80, 28)
         Me.cmb_nroPiso.TabIndex = 1
         '
         'lbl_cliAso
         '
         Me.lbl_cliAso.AutoSize = True
-        Me.lbl_cliAso.Location = New System.Drawing.Point(13, 69)
+        Me.lbl_cliAso.Location = New System.Drawing.Point(17, 85)
+        Me.lbl_cliAso.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_cliAso.Name = "lbl_cliAso"
-        Me.lbl_cliAso.Size = New System.Drawing.Size(110, 16)
+        Me.lbl_cliAso.Size = New System.Drawing.Size(135, 20)
         Me.lbl_cliAso.TabIndex = 2
         Me.lbl_cliAso.Text = "Cliente Asociado"
         '
         'lbl_nroHab
         '
         Me.lbl_nroHab.AutoSize = True
-        Me.lbl_nroHab.Location = New System.Drawing.Point(6, 39)
+        Me.lbl_nroHab.Location = New System.Drawing.Point(8, 48)
+        Me.lbl_nroHab.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nroHab.Name = "lbl_nroHab"
-        Me.lbl_nroHab.Size = New System.Drawing.Size(117, 16)
+        Me.lbl_nroHab.Size = New System.Drawing.Size(144, 20)
         Me.lbl_nroHab.TabIndex = 1
         Me.lbl_nroHab.Text = "Nro de Habitación"
         '
         'lbl_nroPiso
         '
         Me.lbl_nroPiso.AutoSize = True
-        Me.lbl_nroPiso.Location = New System.Drawing.Point(44, 9)
+        Me.lbl_nroPiso.Location = New System.Drawing.Point(59, 11)
+        Me.lbl_nroPiso.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_nroPiso.Name = "lbl_nroPiso"
-        Me.lbl_nroPiso.Size = New System.Drawing.Size(79, 16)
+        Me.lbl_nroPiso.Size = New System.Drawing.Size(97, 20)
         Me.lbl_nroPiso.TabIndex = 0
         Me.lbl_nroPiso.Text = "Nro de Piso"
         '
@@ -2904,28 +3126,31 @@ Partial Class menu
         '
         Me.tab_carServServ.Controls.Add(Me.cmd_carServAtr)
         Me.tab_carServServ.Controls.Add(Me.cmd_carSerFin)
-        Me.tab_carServServ.Location = New System.Drawing.Point(4, 25)
+        Me.tab_carServServ.Location = New System.Drawing.Point(4, 29)
+        Me.tab_carServServ.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.tab_carServServ.Name = "tab_carServServ"
-        Me.tab_carServServ.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_carServServ.Size = New System.Drawing.Size(514, 185)
+        Me.tab_carServServ.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.tab_carServServ.Size = New System.Drawing.Size(688, 230)
         Me.tab_carServServ.TabIndex = 1
         Me.tab_carServServ.Text = "Servicios"
         Me.tab_carServServ.UseVisualStyleBackColor = True
         '
         'cmd_carServAtr
         '
-        Me.cmd_carServAtr.Location = New System.Drawing.Point(331, 146)
+        Me.cmd_carServAtr.Location = New System.Drawing.Point(441, 180)
+        Me.cmd_carServAtr.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carServAtr.Name = "cmd_carServAtr"
-        Me.cmd_carServAtr.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carServAtr.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carServAtr.TabIndex = 1
         Me.cmd_carServAtr.Text = "Atrás"
         Me.cmd_carServAtr.UseVisualStyleBackColor = True
         '
         'cmd_carSerFin
         '
-        Me.cmd_carSerFin.Location = New System.Drawing.Point(409, 146)
+        Me.cmd_carSerFin.Location = New System.Drawing.Point(545, 180)
+        Me.cmd_carSerFin.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.cmd_carSerFin.Name = "cmd_carSerFin"
-        Me.cmd_carSerFin.Size = New System.Drawing.Size(72, 28)
+        Me.cmd_carSerFin.Size = New System.Drawing.Size(96, 34)
         Me.cmd_carSerFin.TabIndex = 2
         Me.cmd_carSerFin.Text = "Finalizar"
         Me.cmd_carSerFin.UseVisualStyleBackColor = True
@@ -2934,18 +3159,20 @@ Partial Class menu
         '
         Me.lbl_agrSer.AutoSize = True
         Me.lbl_agrSer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_agrSer.Location = New System.Drawing.Point(3, 3)
+        Me.lbl_agrSer.Location = New System.Drawing.Point(4, 4)
+        Me.lbl_agrSer.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_agrSer.Name = "lbl_agrSer"
-        Me.lbl_agrSer.Size = New System.Drawing.Size(116, 16)
+        Me.lbl_agrSer.Size = New System.Drawing.Size(140, 20)
         Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
         'lbl_fechahora
         '
         Me.lbl_fechahora.AutoSize = True
-        Me.lbl_fechahora.Location = New System.Drawing.Point(351, 271)
+        Me.lbl_fechahora.Location = New System.Drawing.Point(468, 334)
+        Me.lbl_fechahora.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lbl_fechahora.Name = "lbl_fechahora"
-        Me.lbl_fechahora.Size = New System.Drawing.Size(0, 13)
+        Me.lbl_fechahora.Size = New System.Drawing.Size(0, 17)
         Me.lbl_fechahora.TabIndex = 1
         '
         'clm_capacidad
@@ -2980,18 +3207,18 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'ListadoDeServiciosActualesToolStripMenuItem
+        'ListadoDeFacturasToolStripMenuItem
         '
-        Me.ListadoDeServiciosActualesToolStripMenuItem.Name = "ListadoDeServiciosActualesToolStripMenuItem"
-        Me.ListadoDeServiciosActualesToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
-        Me.ListadoDeServiciosActualesToolStripMenuItem.Text = "Listado de Servicios Actuales"
+        Me.ListadoDeFacturasToolStripMenuItem.Name = "ListadoDeFacturasToolStripMenuItem"
+        Me.ListadoDeFacturasToolStripMenuItem.Size = New System.Drawing.Size(371, 28)
+        Me.ListadoDeFacturasToolStripMenuItem.Text = "Listado de Facturas"
         '
         'menu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(545, 285)
+        Me.ClientSize = New System.Drawing.Size(724, 341)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnlFacturacion)
@@ -3004,9 +3231,10 @@ Partial Class menu
         Me.Controls.Add(Me.pnlAdministrarOrdense)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.MainMenuStrip = Me.menu_Menu
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(565, 328)
-        Me.MinimumSize = New System.Drawing.Size(565, 328)
+        Me.MaximumSize = New System.Drawing.Size(746, 392)
+        Me.MinimumSize = New System.Drawing.Size(746, 392)
         Me.Name = "menu"
         Me.Text = "Menu"
         Me.menu_Menu.ResumeLayout(False)
@@ -3357,6 +3585,7 @@ Partial Class menu
     Friend WithEvents ListadoDeHabitacionesConFrigobarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeArticulosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeServiciosActualesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeFacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

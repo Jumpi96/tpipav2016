@@ -991,4 +991,9 @@
     Private Sub ListadoDeServiciosActualesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeServiciosActualesToolStripMenuItem.Click
         FormListadoServiciosActuales.Show()
     End Sub
+
+    Private Sub ListadoDeFacturasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeFacturasToolStripMenuItem.Click
+        FormListadoFacturas.Show()
+
+    End Sub
 End Class
