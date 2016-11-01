@@ -24,13 +24,23 @@ Partial Class FormListadoServicios
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ServiciosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DataSet = New TPI___PAV___2016.DataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ServiciosTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.ServiciosTableAdapter()
-        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ServiciosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ServiciosBindingSource
+        '
+        Me.ServiciosBindingSource.DataMember = "Servicios"
+        Me.ServiciosBindingSource.DataSource = Me.DataSet
+        '
+        'DataSet
+        '
+        Me.DataSet.DataSetName = "DataSet"
+        Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
@@ -42,16 +52,6 @@ Partial Class FormListadoServicios
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(642, 518)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'DataSet
-        '
-        Me.DataSet.DataSetName = "DataSet"
-        Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'ServiciosBindingSource
-        '
-        Me.ServiciosBindingSource.DataMember = "Servicios"
-        Me.ServiciosBindingSource.DataSource = Me.DataSet
         '
         'ServiciosTableAdapter
         '
@@ -65,8 +65,8 @@ Partial Class FormListadoServicios
         Me.Controls.Add(Me.ReportViewer1)
         Me.Name = "FormListadoServicios"
         Me.Text = "Form1"
-        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ServiciosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

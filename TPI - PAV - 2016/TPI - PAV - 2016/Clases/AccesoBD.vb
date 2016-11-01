@@ -57,7 +57,7 @@
                 Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=DESKTOP-2BQ04QL;Integrated Security=SSPI;Initial Catalog=hotelShaky"
 
             Case "JULIETA"
-                Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=JULIETA\JULIETA1;Integrated Security=SSPI;Initial Catalog=hotelShaky"
+                Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=julieta\julieta2;Integrated Security=SSPI;Initial Catalog=hotelShaky"
 
             Case "USUARIO-PC"
                 Me.pCadenaConexion = "Provider=SQLNCLI11;Data Source=USUARIO-PC\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=hotelShaky"

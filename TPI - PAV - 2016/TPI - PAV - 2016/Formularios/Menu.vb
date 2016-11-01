@@ -979,4 +979,8 @@
         FormListadoHabitacionesConFrigo.Show()
 
     End Sub
+
+    Private Sub ListadoDeArticulosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeArticulosToolStripMenuItem.Click
+        FormListadoArticulos.Show()
+    End Sub
 End Class

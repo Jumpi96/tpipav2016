@@ -52,6 +52,7 @@ Partial Class menu
         Me.ListadoDeConsumisionesActualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
@@ -301,7 +302,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -504,7 +505,7 @@ Partial Class menu
         '
         'InformesToolStripMenuItem
         '
-        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem})
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
@@ -532,6 +533,12 @@ Partial Class menu
         Me.ListadoDeServiciosToolStripMenuItem.Name = "ListadoDeServiciosToolStripMenuItem"
         Me.ListadoDeServiciosToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
         Me.ListadoDeServiciosToolStripMenuItem.Text = "Listado de Servicios"
+        '
+        'ListadoDeHabitacionesConFrigobarToolStripMenuItem
+        '
+        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Name = "ListadoDeHabitacionesConFrigobarToolStripMenuItem"
+        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Text = "Listado de Habitaciones Con Frigobar"
         '
         'EstadísticasToolStripMenuItem
         '
@@ -2966,18 +2973,18 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'ListadoDeHabitacionesConFrigobarToolStripMenuItem
+        'ListadoDeArticulosToolStripMenuItem
         '
-        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Name = "ListadoDeHabitacionesConFrigobarToolStripMenuItem"
-        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
-        Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem.Text = "Listado de Habitaciones Con Frigobar"
+        Me.ListadoDeArticulosToolStripMenuItem.Name = "ListadoDeArticulosToolStripMenuItem"
+        Me.ListadoDeArticulosToolStripMenuItem.Size = New System.Drawing.Size(297, 22)
+        Me.ListadoDeArticulosToolStripMenuItem.Text = "Listado de Articulos"
         '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(545, 286)
+        Me.ClientSize = New System.Drawing.Size(545, 285)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnlFacturacion)
@@ -3341,6 +3348,7 @@ Partial Class menu
     Friend WithEvents ListadoDeProveedoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeServiciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeHabitacionesConFrigobarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeArticulosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class
