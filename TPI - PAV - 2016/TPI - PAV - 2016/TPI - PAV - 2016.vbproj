@@ -248,6 +248,12 @@
     <Compile Include="Listados\FormListadoServiciosActuales.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados\FormListadoTipoCama.Designer.vb">
+      <DependentUpon>FormListadoTipoCama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\FormListadoTipoCama.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Listados\FormListadoTiposDocumento.Designer.vb">
       <DependentUpon>FormListadoTiposDocumento.vb</DependentUpon>
     </Compile>
@@ -356,6 +362,9 @@
     <EmbeddedResource Include="Listados\FormListadoServiciosActuales.resx">
       <DependentUpon>FormListadoServiciosActuales.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\FormListadoTipoCama.resx">
+      <DependentUpon>FormListadoTipoCama.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\FormListadoTiposDocumento.resx">
       <DependentUpon>FormListadoTiposDocumento.vb</DependentUpon>
     </EmbeddedResource>
@@ -369,6 +378,7 @@
     <EmbeddedResource Include="Listados\ListadoProveedores.rdlc" />
     <EmbeddedResource Include="Listados\ListadoServicios.rdlc" />
     <EmbeddedResource Include="Listados\ListadoServiciosActuales.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoTiposCama.rdlc" />
     <EmbeddedResource Include="Listados\ListadoTiposDocumento.rdlc" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

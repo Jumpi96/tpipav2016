@@ -271,7 +271,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cliente</rd:DefaultName>
@@ -304,7 +306,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombre</rd:DefaultName>
@@ -337,7 +341,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>precioUnitario</rd:DefaultName>
@@ -370,7 +376,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Expr1</rd:DefaultName>
@@ -420,7 +428,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.47244in</Height>
+    <Height>0.53494in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -513,7 +521,8 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Line Name="Line1">
+        <Line Name="Line3">
+          <Top>0.01764cm</Top>
           <Height>0cm</Height>
           <Width>16.51cm</Width>
           <Style>
