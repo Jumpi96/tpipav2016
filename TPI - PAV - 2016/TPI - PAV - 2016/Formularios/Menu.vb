@@ -1008,4 +1008,8 @@
     Private Sub ListadoDeTiposDeCamaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeTiposDeCamaToolStripMenuItem.Click
         FormListadoTipoCama.Show()
     End Sub
+
+    Private Sub ListadoDeOrdenesDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeOrdenesDeCompraToolStripMenuItem.Click
+        FormListadoOrdenesCompra.Show()
+    End Sub
 End Class

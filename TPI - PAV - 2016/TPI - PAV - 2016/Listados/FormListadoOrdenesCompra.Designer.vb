@@ -26,10 +26,13 @@ Partial Class FormListadoOrdenesCompra
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.OrdenesCompraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New TPI___PAV___2016.DataSet()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.OrdenesCompraTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.OrdenesCompraTableAdapter()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.OrdenesCompra1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.OrdenesCompra1TableAdapter = New TPI___PAV___2016.DataSetTableAdapters.OrdenesCompra1TableAdapter()
         CType(Me.OrdenesCompraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OrdenesCompra1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OrdenesCompraBindingSource
@@ -42,22 +45,30 @@ Partial Class FormListadoOrdenesCompra
         Me.DataSet.DataSetName = "DataSet"
         Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'OrdenesCompraTableAdapter
+        '
+        Me.OrdenesCompraTableAdapter.ClearBeforeFill = True
+        '
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
         ReportDataSource1.Name = "DataSet1"
-        ReportDataSource1.Value = Me.OrdenesCompraBindingSource
+        ReportDataSource1.Value = Me.OrdenesCompra1BindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.ListadoOrdenesCompra.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
-        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(643, 517)
         Me.ReportViewer1.TabIndex = 0
         '
-        'OrdenesCompraTableAdapter
+        'OrdenesCompra1BindingSource
         '
-        Me.OrdenesCompraTableAdapter.ClearBeforeFill = True
+        Me.OrdenesCompra1BindingSource.DataMember = "OrdenesCompra1"
+        Me.OrdenesCompra1BindingSource.DataSource = Me.DataSet
+        '
+        'OrdenesCompra1TableAdapter
+        '
+        Me.OrdenesCompra1TableAdapter.ClearBeforeFill = True
         '
         'FormListadoOrdenesCompra
         '
@@ -65,17 +76,20 @@ Partial Class FormListadoOrdenesCompra
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(643, 517)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(659, 556)
         Me.Name = "FormListadoOrdenesCompra"
         Me.Text = "Form1"
         CType(Me.OrdenesCompraBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OrdenesCompra1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents OrdenesCompraBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DataSet As TPI___PAV___2016.DataSet
     Friend WithEvents OrdenesCompraTableAdapter As TPI___PAV___2016.DataSetTableAdapters.OrdenesCompraTableAdapter
+    Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents OrdenesCompra1BindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents OrdenesCompra1TableAdapter As TPI___PAV___2016.DataSetTableAdapters.OrdenesCompra1TableAdapter
 End Class

@@ -23,13 +23,13 @@ Partial Class FormListadoFacturas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.FacturasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.FacturasTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.FacturasTableAdapter()
         Me.btnBuscarPorDoc = New System.Windows.Forms.Button()
-        Me.txtNroDoc = New System.Windows.Forms.TextBox()
+        Me.txtNroDoc = New System.Windows.Forms.MaskedTextBox()
         Me.cmbTipoDoc = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -49,12 +49,12 @@ Partial Class FormListadoFacturas
         '
         'ReportViewer1
         '
-        ReportDataSource2.Name = "DataSet1"
-        ReportDataSource2.Value = Me.FacturasBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "DataSet1"
+        ReportDataSource1.Value = Me.FacturasBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.ListadoFacturas.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(2, 88)
-        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ReportViewer1.Margin = New System.Windows.Forms.Padding(2)
         Me.ReportViewer1.Name = "ReportViewer1"
         Me.ReportViewer1.Size = New System.Drawing.Size(640, 425)
         Me.ReportViewer1.TabIndex = 0
@@ -75,6 +75,7 @@ Partial Class FormListadoFacturas
         'txtNroDoc
         '
         Me.txtNroDoc.Location = New System.Drawing.Point(72, 38)
+        Me.txtNroDoc.Mask = "999999999"
         Me.txtNroDoc.Name = "txtNroDoc"
         Me.txtNroDoc.Size = New System.Drawing.Size(138, 20)
         Me.txtNroDoc.TabIndex = 12
@@ -117,7 +118,7 @@ Partial Class FormListadoFacturas
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FormListadoFacturas"
         Me.Text = "Listado de Facturas"
         CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -131,7 +132,7 @@ Partial Class FormListadoFacturas
     Friend WithEvents DataSet As TPI___PAV___2016.DataSet
     Friend WithEvents FacturasTableAdapter As TPI___PAV___2016.DataSetTableAdapters.FacturasTableAdapter
     Friend WithEvents btnBuscarPorDoc As System.Windows.Forms.Button
-    Friend WithEvents txtNroDoc As System.Windows.Forms.TextBox
+    Friend WithEvents txtNroDoc As System.Windows.Forms.MaskedTextBox
     Friend WithEvents cmbTipoDoc As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
