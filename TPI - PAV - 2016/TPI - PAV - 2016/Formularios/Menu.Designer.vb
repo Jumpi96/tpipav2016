@@ -414,13 +414,13 @@ Partial Class menu
         'NuevaToolStripMenuItem
         '
         Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
-        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
         'BuscarToolStripMenuItem1
         '
         Me.BuscarToolStripMenuItem1.Name = "BuscarToolStripMenuItem1"
-        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem1.Size = New System.Drawing.Size(143, 22)
         Me.BuscarToolStripMenuItem1.Text = "Administrar"
         '
         'FuncionesAdministrativasToolStripMenuItem
@@ -511,7 +511,7 @@ Partial Class menu
         '
         'InformesToolStripMenuItem
         '
-        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem, Me.ListadoDeOrdenesDeCompraToolStripMenuItem, Me.ListadoDeTiposDeDocumentosToolStripMenuItem, Me.ListadoDeFacturasToolStripMenuItem, Me.ListadoDeTiposDeCamaToolStripMenuItem})
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeOrdenesDeCompraToolStripMenuItem, Me.ListadoDeTiposDeDocumentosToolStripMenuItem, Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem, Me.ListadoDeFacturasToolStripMenuItem, Me.ListadoDeTiposDeCamaToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"

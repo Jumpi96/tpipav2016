@@ -6,7 +6,6 @@ Public Class FormListadoHabitacionesConFrigo
 
         Me.impresion()
         Me.ReportViewer1.RefreshReport()
-        Me.ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
     End Sub
     Private Sub impresion()
 

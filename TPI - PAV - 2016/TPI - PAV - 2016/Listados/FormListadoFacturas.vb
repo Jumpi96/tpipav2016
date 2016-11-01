@@ -1,4 +1,6 @@
-﻿Public Class FormListadoFacturas
+﻿Imports Microsoft.Reporting.WinForms
+
+Public Class FormListadoFacturas
     Dim accesoBD As AccesoBD = accesoBD.instancia
     Dim flagBusqDocumento As Integer
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -6,6 +8,7 @@
         carga_combo(Me.cmbTipoDoc, Me.leo_tabla("TiposDocumento"), "idTipoDocumento", "nombre")
         imprimir()
         Me.ReportViewer1.RefreshReport()
+        Me.ReportViewer1.SetDisplayMode(DisplayMode.PrintLayout)
     End Sub
     Private Function leo_tabla(ByVal nombre_tabla As String) As Data.DataTable
         Return accesoBD.query("select * from " + nombre_tabla)

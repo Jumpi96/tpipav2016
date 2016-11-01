@@ -119,6 +119,7 @@ Partial Class FormListadoFacturas
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ReportViewer1)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximumSize = New System.Drawing.Size(659, 556)
         Me.Name = "FormListadoFacturas"
         Me.Text = "Listado de Facturas"
         CType(Me.FacturasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
