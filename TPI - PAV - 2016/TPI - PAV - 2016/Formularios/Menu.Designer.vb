@@ -306,6 +306,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ListadoDeTiposDeDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -508,7 +509,7 @@ Partial Class menu
         '
         'InformesToolStripMenuItem
         '
-        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem, Me.ListadoDeOrdenesDeCompraToolStripMenuItem})
+        Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem, Me.ListadoDeOrdenesDeCompraToolStripMenuItem, Me.ListadoDeTiposDeDocumentosToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
         Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
@@ -3000,6 +3001,12 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
+        'ListadoDeTiposDeDocumentosToolStripMenuItem
+        '
+        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Name = "ListadoDeTiposDeDocumentosToolStripMenuItem"
+        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
+        Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Text = "Listado de Tipos de Documentos"
+        '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3373,6 +3380,7 @@ Partial Class menu
     Friend WithEvents ListadoDeServiciosActualesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeConsumicionesDeFrigobarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeOrdenesDeCompraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoDeTiposDeDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

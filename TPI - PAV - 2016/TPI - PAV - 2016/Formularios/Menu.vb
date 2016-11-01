@@ -996,4 +996,8 @@
     Private Sub ListadoDeConsumicionesDeFrigobarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Click
         FormListadoConsumicionesDeFrigo.Show()
     End Sub
+
+    Private Sub ListadoDeTiposDeDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeTiposDeDocumentosToolStripMenuItem.Click
+        FormListadoTiposDocumento.Show()
+    End Sub
 End Class
