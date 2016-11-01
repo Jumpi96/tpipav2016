@@ -212,10 +212,10 @@
     <Compile Include="Listados\FormListadoConsumicionesDeFrigo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\FormListadoHabitaciones.Designer.vb">
-      <DependentUpon>FormListadoHabitaciones.vb</DependentUpon>
+    <Compile Include="Listados\FormListadoFacturas.Designer.vb">
+      <DependentUpon>FormListadoFacturas.vb</DependentUpon>
     </Compile>
-    <Compile Include="Listados\FormListadoHabitaciones.vb">
+    <Compile Include="Listados\FormListadoFacturas.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Listados\FormListadoHabitacionesConFrigo.Designer.vb">
@@ -338,8 +338,8 @@
     <EmbeddedResource Include="Listados\FormListadoConsumicionesDeFrigo.resx">
       <DependentUpon>FormListadoConsumicionesDeFrigo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\FormListadoHabitaciones.resx">
-      <DependentUpon>FormListadoHabitaciones.vb</DependentUpon>
+    <EmbeddedResource Include="Listados\FormListadoFacturas.resx">
+      <DependentUpon>FormListadoFacturas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\FormListadoHabitacionesConFrigo.resx">
       <DependentUpon>FormListadoHabitacionesConFrigo.vb</DependentUpon>
@@ -363,7 +363,7 @@
     <EmbeddedResource Include="Listados\ListadoClientes.rdlc" />
     <EmbeddedResource Include="Listados\ListadoConsumicionesActuales.rdlc" />
     <EmbeddedResource Include="Listados\ListadoConsumicionesDeFrigo.rdlc" />
-    <EmbeddedResource Include="Listados\ListadoHabitaciones.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoFacturas.rdlc" />
     <EmbeddedResource Include="Listados\ListadoHabitacionesConFrigo.rdlc" />
     <EmbeddedResource Include="Listados\ListadoOrdenesCompra.rdlc" />
     <EmbeddedResource Include="Listados\ListadoProveedores.rdlc" />

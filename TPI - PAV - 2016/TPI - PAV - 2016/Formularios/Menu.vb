@@ -1000,4 +1000,8 @@
     Private Sub ListadoDeTiposDeDocumentosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeTiposDeDocumentosToolStripMenuItem.Click
         FormListadoTiposDocumento.Show()
     End Sub
+
+    Private Sub ListadoDeFacturasToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles ListadoDeFacturasToolStripMenuItem.Click
+        FormListadoFacturas.Show()
+    End Sub
 End Class
