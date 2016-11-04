@@ -55,9 +55,9 @@ Partial Class menu
         Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeArticulosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeServiciosActualesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeOrdenesDeCompraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeTiposDeDocumentosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeFacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoDeTiposDeCamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -309,6 +309,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ConsumoDeArtículosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -558,12 +559,6 @@ Partial Class menu
         Me.ListadoDeServiciosActualesToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeServiciosActualesToolStripMenuItem.Text = "Listado de Servicios Actuales"
         '
-        'ListadoDeConsumicionesDeFrigobarToolStripMenuItem
-        '
-        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Name = "ListadoDeConsumicionesDeFrigobarToolStripMenuItem"
-        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
-        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Text = "Listado de Consumiciones de Frigobar"
-        '
         'ListadoDeOrdenesDeCompraToolStripMenuItem
         '
         Me.ListadoDeOrdenesDeCompraToolStripMenuItem.Name = "ListadoDeOrdenesDeCompraToolStripMenuItem"
@@ -575,6 +570,12 @@ Partial Class menu
         Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Name = "ListadoDeTiposDeDocumentosToolStripMenuItem"
         Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
         Me.ListadoDeTiposDeDocumentosToolStripMenuItem.Text = "Listado de Tipos de Documentos"
+        '
+        'ListadoDeConsumicionesDeFrigobarToolStripMenuItem
+        '
+        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Name = "ListadoDeConsumicionesDeFrigobarToolStripMenuItem"
+        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Size = New System.Drawing.Size(301, 22)
+        Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem.Text = "Listado de Consumiciones de Frigobar"
         '
         'ListadoDeFacturasToolStripMenuItem
         '
@@ -590,6 +591,7 @@ Partial Class menu
         '
         'EstadísticasToolStripMenuItem
         '
+        Me.EstadísticasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsumoDeArtículosToolStripMenuItem})
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
         Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
@@ -1063,7 +1065,7 @@ Partial Class menu
         Me.lbl_nueAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_nueAlo.Location = New System.Drawing.Point(3, 3)
         Me.lbl_nueAlo.Name = "lbl_nueAlo"
-        Me.lbl_nueAlo.Size = New System.Drawing.Size(139, 16)
+        Me.lbl_nueAlo.Size = New System.Drawing.Size(142, 16)
         Me.lbl_nueAlo.TabIndex = 0
         Me.lbl_nueAlo.Text = "Nuevo Alojamiento"
         '
@@ -1155,7 +1157,7 @@ Partial Class menu
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(259, 28)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(178, 16)
+        Me.Label2.Size = New System.Drawing.Size(182, 16)
         Me.Label2.TabIndex = 3
         Me.Label2.Text = "Buscar orden de compra"
         '
@@ -1166,7 +1168,7 @@ Partial Class menu
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(6, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(180, 16)
+        Me.Label1.Size = New System.Drawing.Size(184, 16)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Recibir orden de compra"
         '
@@ -1204,7 +1206,7 @@ Partial Class menu
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(270, 9)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(107, 16)
+        Me.Label7.Size = New System.Drawing.Size(109, 16)
         Me.Label7.TabIndex = 19
         Me.Label7.Text = "Buscar factura"
         '
@@ -1309,7 +1311,7 @@ Partial Class menu
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(11, 7)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(89, 16)
+        Me.Label4.Size = New System.Drawing.Size(90, 16)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Facturación"
         '
@@ -1331,7 +1333,7 @@ Partial Class menu
         Me.lbl_busAlo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_busAlo.Location = New System.Drawing.Point(3, 3)
         Me.lbl_busAlo.Name = "lbl_busAlo"
-        Me.lbl_busAlo.Size = New System.Drawing.Size(142, 16)
+        Me.lbl_busAlo.Size = New System.Drawing.Size(145, 16)
         Me.lbl_busAlo.TabIndex = 0
         Me.lbl_busAlo.Text = "Buscar Alojamiento"
         '
@@ -1864,7 +1866,7 @@ Partial Class menu
         Me.lbl_ordCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_ordCom.Location = New System.Drawing.Point(3, 3)
         Me.lbl_ordCom.Name = "lbl_ordCom"
-        Me.lbl_ordCom.Size = New System.Drawing.Size(179, 16)
+        Me.lbl_ordCom.Size = New System.Drawing.Size(186, 16)
         Me.lbl_ordCom.TabIndex = 0
         Me.lbl_ordCom.Text = "Nueva Orden de Compra"
         '
@@ -2181,7 +2183,7 @@ Partial Class menu
         Me.lbl_busOrdCom.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_busOrdCom.Location = New System.Drawing.Point(3, 3)
         Me.lbl_busOrdCom.Name = "lbl_busOrdCom"
-        Me.lbl_busOrdCom.Size = New System.Drawing.Size(182, 16)
+        Me.lbl_busOrdCom.Size = New System.Drawing.Size(189, 16)
         Me.lbl_busOrdCom.TabIndex = 0
         Me.lbl_busOrdCom.Text = "Buscar Orden de Compra"
         '
@@ -2818,7 +2820,7 @@ Partial Class menu
         Me.lbl_agrArt.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_agrArt.Location = New System.Drawing.Point(3, 3)
         Me.lbl_agrArt.Name = "lbl_agrArt"
-        Me.lbl_agrArt.Size = New System.Drawing.Size(111, 16)
+        Me.lbl_agrArt.Size = New System.Drawing.Size(115, 16)
         Me.lbl_agrArt.TabIndex = 0
         Me.lbl_agrArt.Text = "Cargar Artículo"
         '
@@ -2977,7 +2979,7 @@ Partial Class menu
         Me.lbl_agrSer.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_agrSer.Location = New System.Drawing.Point(3, 3)
         Me.lbl_agrSer.Name = "lbl_agrSer"
-        Me.lbl_agrSer.Size = New System.Drawing.Size(116, 16)
+        Me.lbl_agrSer.Size = New System.Drawing.Size(120, 16)
         Me.lbl_agrSer.TabIndex = 0
         Me.lbl_agrSer.Text = "Cargar Servicio"
         '
@@ -3020,6 +3022,12 @@ Partial Class menu
         Me.cln_nroPisoHabSel.ReadOnly = True
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
+        '
+        'ConsumoDeArtículosToolStripMenuItem
+        '
+        Me.ConsumoDeArtículosToolStripMenuItem.Name = "ConsumoDeArtículosToolStripMenuItem"
+        Me.ConsumoDeArtículosToolStripMenuItem.Size = New System.Drawing.Size(203, 22)
+        Me.ConsumoDeArtículosToolStripMenuItem.Text = "Consumo de artículos"
         '
         'menu
         '
@@ -3397,6 +3405,7 @@ Partial Class menu
     Friend WithEvents ListadoDeTiposDeDocumentosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeFacturasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoDeTiposDeCamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsumoDeArtículosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

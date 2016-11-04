@@ -1012,4 +1012,8 @@
     Private Sub ListadoDeOrdenesDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoDeOrdenesDeCompraToolStripMenuItem.Click
         FormListadoOrdenesCompra.Show()
     End Sub
+
+    Private Sub ConsumoDeArtículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsumoDeArtículosToolStripMenuItem.Click
+        FormConsumoArticulos.Show()
+    End Sub
 End Class

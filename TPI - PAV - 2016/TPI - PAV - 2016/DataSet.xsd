@@ -1274,6 +1274,27 @@ From ordenescompra</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ArticulosConsumoTableAdapter" GeneratorDataComponentClassName="ArticulosConsumoTableAdapter" Name="ArticulosConsumo" UserDataComponentName="ArticulosConsumoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="hotelShaky.dbo.Articulos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Articulos.nombre, SUM(Consumiciones.cantidad) AS cant
+FROM            Consumiciones INNER JOIN
+                         Articulos ON Consumiciones.idArticulo = Articulos.idArticulo
+GROUP BY Articulos.nombre
+ORDER BY cant DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="cant" DataSetColumn="cant" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1724,6 +1745,20 @@ From ordenescompra</CommandText>
               <xs:element name="fechaEmision" msprop:Generator_ColumnVarNameInTable="columnfechaEmision" msprop:Generator_ColumnPropNameInRow="fechaEmision" msprop:Generator_ColumnPropNameInTable="fechaEmisionColumn" msprop:Generator_UserColumnName="fechaEmision" type="xs:dateTime" />
               <xs:element name="fechaRecepcion" msprop:Generator_ColumnVarNameInTable="columnfechaRecepcion" msprop:Generator_ColumnPropNameInRow="fechaRecepcion" msprop:Generator_ColumnPropNameInTable="fechaRecepcionColumn" msprop:Generator_UserColumnName="fechaRecepcion" type="xs:dateTime" minOccurs="0" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ArticulosConsumo" msprop:Generator_TableClassName="ArticulosConsumoDataTable" msprop:Generator_TableVarName="tableArticulosConsumo" msprop:Generator_RowChangedName="ArticulosConsumoRowChanged" msprop:Generator_TablePropName="ArticulosConsumo" msprop:Generator_RowDeletingName="ArticulosConsumoRowDeleting" msprop:Generator_RowChangingName="ArticulosConsumoRowChanging" msprop:Generator_RowEvHandlerName="ArticulosConsumoRowChangeEventHandler" msprop:Generator_RowDeletedName="ArticulosConsumoRowDeleted" msprop:Generator_RowClassName="ArticulosConsumoRow" msprop:Generator_UserTableName="ArticulosConsumo" msprop:Generator_RowEvArgName="ArticulosConsumoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cant" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columncant" msprop:Generator_ColumnPropNameInRow="cant" msprop:Generator_ColumnPropNameInTable="cantColumn" msprop:Generator_UserColumnName="cant" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
