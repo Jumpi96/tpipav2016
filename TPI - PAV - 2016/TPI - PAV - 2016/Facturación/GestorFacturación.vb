@@ -13,6 +13,7 @@
         Dim idTipoFactura As Integer = tF
         Dim conexion As New OleDb.OleDbConnection
         Dim comando As New OleDb.OleDbCommand
+        Dim subtotal As Double
         conexion.ConnectionString = accesoBD.cadenaConexion
         comando.CommandType = CommandType.Text
         conexion.Open()
@@ -41,7 +42,7 @@
 
             'crear detalles de factura
             '    a partir de consumiciones
-            Dim subtotal As Double = 0
+            subtotal = 0
             Dim consumiciones As New DataTable
 
             sentencia = "SELECT F.nroFactura, F.tipoFactura, A.precioUnitario*C.cantidad, C.idConsumicion, GETDATE()"
@@ -98,27 +99,30 @@
                 Next
             End If
 
-            sentencia = "SELECT DATEDIFF(day, fechaInicioAlojamiento, GETDATE()), precioPorDia"
-            sentencia &= " from alojamientos where idAlojamiento=" & idAlojamiento
-            tabla = accesoBD.query(sentencia)
-            Dim precioDia As Double = tabla.Rows(0)(1)
-            Dim cantDias As Integer = tabla.Rows(0)(0)
-            Dim costoAloj As Double = precioDia * cantDias
-
-            sentencia = "UPDATE facturas SET total=" & (subtotal + costoAloj) & " where idAlojamiento=" & idAlojamiento
-            'accesoBD.transaction(sentencia, True)
-            accesoBD.nonQuery(sentencia)
 
             transaction.Commit()
             conexion.Close()
+            Try
+                sentencia = "SELECT DATEDIFF(day, fechaInicioAlojamiento, GETDATE()), precioPorDia"
+                sentencia &= " from alojamientos where idAlojamiento=" & idAlojamiento
+                Dim precio As New DataTable
+                precio = accesoBD.query(sentencia)
+                Dim precioDia As Double = precio.Rows(0)(1)
+                Dim cantDias As Integer = precio.Rows(0)(0)
+                Dim costoAloj As Double = precioDia * cantDias
 
-            'imprimir factura
+                sentencia = "UPDATE facturas SET total=" & (subtotal + costoAloj) & " where idAlojamiento=" & idAlojamiento
+                'accesoBD.transaction(sentencia, True)
+                accesoBD.nonQuery(sentencia)
 
-            sentencia = "SELECT nroFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
-            tabla = accesoBD.query(sentencia)
-            Dim nro As Integer = tabla.Rows(0)(0)
-            Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
-            imprFactura.ShowDialog()
+                sentencia = "SELECT nroFactura FROM Facturas WHERE idAlojamiento=" & idAlojamiento
+                tabla = accesoBD.query(sentencia)
+                Dim nro As Integer = tabla.Rows(0)(0)
+                Dim imprFactura As New Impresion_Factura(nro, idTipoFactura)
+                imprFactura.ShowDialog()
+            Catch ex As Exception
+
+            End Try
         Catch ex As Exception
             Try
                 transaction.Rollback()
@@ -126,8 +130,6 @@
             Catch ex2 As Exception
             End Try
         End Try
-
-        
 
     End Sub
 

@@ -86,7 +86,7 @@
 
         sql &= "SELECT * FROM HabitacionesXPiso JOIN Alojamientos "
         sql &= "ON HabitacionesXPiso.nroHabitacion = Alojamientos.nroHabitacion "
-        sql &= "WHERE CONVERT(date, GETDATE(), 103) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
+        sql &= "WHERE fechafinAlojamiento IS NULL "
         sql &= "AND HabitacionesXPiso.nroHabitacion = '" & Me.txt_nroHabitacion.Text & "'"
 
         tabla = acceso.query(sql)
@@ -106,7 +106,7 @@
         sql &= "ON Alojamientos.nroHabitacion = HabitacionesXPiso.nroHabitacion "
         sql &= "JOIN Clientes ON Clientes.nroDocumento = Alojamientos.nroDoc AND clientes.tipoDocumento = Alojamientos.tipoDoc "
         sql &= "JOIN TiposDocumento ON TiposDocumento.idTipoDocumento = Clientes.tipoDocumento "
-        sql &= "WHERE CONVERT(date, GETDATE(), 103) BETWEEN fechaInicioAlojamiento AND fechaFinEstimadaAlojamiento "
+        sql &= "WHERE fechaFinAlojamiento IS NULL " 'Cambio porque por esto no cargaba los alojamientos actuales bien
         sql &= "AND HabitacionesXPiso.nroHabitacion = '" & Me.txt_nroHabitacion.Text & "'"
 
         tabla = acceso.query(sql)
