@@ -30,6 +30,7 @@ Partial Class FormListadoServiciosActuales
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ServiciosActualesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ServiciosActualesTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.ServiciosActualesTableAdapter()
+        Me.ServiciosActualesTableAdapter.Connection.ConnectionString = AccesoBD.instancia.cadenaConexion
         CType(Me.ListadoConsumicionesActualesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ServiciosActualesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
