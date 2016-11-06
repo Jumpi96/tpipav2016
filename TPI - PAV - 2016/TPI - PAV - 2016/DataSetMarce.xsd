@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetMarce" targetNamespace="http://tempuri.org/DataSetMarce.xsd" xmlns:mstns="http://tempuri.org/DataSetMarce.xsd" xmlns="http://tempuri.org/DataSetMarce.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (MySettings)" PropertyReference="ApplicationSettings.TPI___PAV___2016.My.MySettings.GlobalReference.Default.ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TablaClientesRegularesTableAdapter" GeneratorDataComponentClassName="TablaClientesRegularesTableAdapter" Name="TablaClientesRegulares" UserDataComponentName="TablaClientesRegularesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT C.nombre AS nombreCliente, C.apellido, C.nroDocumento, C.tipoDocumento, T.nombre AS nombreDocumento, COUNT(A.idAlojamiento) AS Cantidad
+FROM Clientes C JOIN TiposDocumento T ON C.tipoDocumento = T.idTipoDocumento
+JOIN Alojamientos A ON C.nroDocumento = A.nroDoc AND C.tipoDocumento = A.tipoDoc
+GROUP BY C.nombre, C.apellido, C.nroDocumento, C.tipoDocumento, T.nombre</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombreCliente" DataSetColumn="nombreCliente" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="nroDocumento" DataSetColumn="nroDocumento" />
+              <Mapping SourceColumn="tipoDocumento" DataSetColumn="tipoDocumento" />
+              <Mapping SourceColumn="nombreDocumento" DataSetColumn="nombreDocumento" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetMarce" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetMarce" msprop:Generator_UserDSName="DataSetMarce">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TablaClientesRegulares" msprop:Generator_TableClassName="TablaClientesRegularesDataTable" msprop:Generator_TableVarName="tableTablaClientesRegulares" msprop:Generator_TablePropName="TablaClientesRegulares" msprop:Generator_RowDeletingName="TablaClientesRegularesRowDeleting" msprop:Generator_RowChangingName="TablaClientesRegularesRowChanging" msprop:Generator_RowEvHandlerName="TablaClientesRegularesRowChangeEventHandler" msprop:Generator_RowDeletedName="TablaClientesRegularesRowDeleted" msprop:Generator_UserTableName="TablaClientesRegulares" msprop:Generator_RowChangedName="TablaClientesRegularesRowChanged" msprop:Generator_RowEvArgName="TablaClientesRegularesRowChangeEvent" msprop:Generator_RowClassName="TablaClientesRegularesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombreCliente" msprop:Generator_ColumnVarNameInTable="columnnombreCliente" msprop:Generator_ColumnPropNameInRow="nombreCliente" msprop:Generator_ColumnPropNameInTable="nombreClienteColumn" msprop:Generator_UserColumnName="nombreCliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nroDocumento" msprop:Generator_ColumnVarNameInTable="columnnroDocumento" msprop:Generator_ColumnPropNameInRow="nroDocumento" msprop:Generator_ColumnPropNameInTable="nroDocumentoColumn" msprop:Generator_UserColumnName="nroDocumento" type="xs:int" />
+              <xs:element name="tipoDocumento" msprop:Generator_ColumnVarNameInTable="columntipoDocumento" msprop:Generator_ColumnPropNameInRow="tipoDocumento" msprop:Generator_ColumnPropNameInTable="tipoDocumentoColumn" msprop:Generator_UserColumnName="tipoDocumento" type="xs:int" />
+              <xs:element name="nombreDocumento" msprop:Generator_ColumnVarNameInTable="columnnombreDocumento" msprop:Generator_ColumnPropNameInRow="nombreDocumento" msprop:Generator_ColumnPropNameInTable="nombreDocumentoColumn" msprop:Generator_UserColumnName="nombreDocumento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TablaClientesRegulares" />
+      <xs:field xpath="mstns:nroDocumento" />
+      <xs:field xpath="mstns:tipoDocumento" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
