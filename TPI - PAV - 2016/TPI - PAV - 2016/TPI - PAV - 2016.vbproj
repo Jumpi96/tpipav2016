@@ -96,6 +96,12 @@
     <Compile Include="DataSet.vb">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Estadísticas\FormConsumoArticulos.Designer.vb">
+      <DependentUpon>FormConsumoArticulos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormConsumoArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Facturación\GestorFacturación.vb" />
     <Compile Include="Facturación\Impresion Factura.Designer.vb">
       <DependentUpon>Impresion Factura.vb</DependentUpon>
@@ -284,6 +290,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Estadísticas\EstadisticaConsumoArticulos.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FormConsumoArticulos.resx">
+      <DependentUpon>FormConsumoArticulos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Facturación\Factura.rdlc">
       <SubType>Designer</SubType>
     </EmbeddedResource>
