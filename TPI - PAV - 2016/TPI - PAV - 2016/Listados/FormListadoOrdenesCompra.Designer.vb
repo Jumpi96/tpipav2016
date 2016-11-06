@@ -27,9 +27,11 @@ Partial Class FormListadoOrdenesCompra
         Me.OrdenesCompraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.OrdenesCompraTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.OrdenesCompraTableAdapter()
+        Me.OrdenesCompraTableAdapter.Connection.ConnectionString = AccesoBD.instancia.cadenaConexion
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.OrdenesCompra1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OrdenesCompra1TableAdapter = New TPI___PAV___2016.DataSetTableAdapters.OrdenesCompra1TableAdapter()
+        Me.OrdenesCompra1TableAdapter.Connection.ConnectionString = AccesoBD.instancia.cadenaConexion
         CType(Me.OrdenesCompraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OrdenesCompra1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()

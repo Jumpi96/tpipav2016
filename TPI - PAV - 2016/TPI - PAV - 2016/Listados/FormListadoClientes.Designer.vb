@@ -28,6 +28,7 @@ Partial Class FormListadoClientes
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ListadoClientesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListadoClientesTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.ListadoClientesTableAdapter()
+        Me.ListadoClientesTableAdapter.Connection.ConnectionString = AccesoBD.instancia.cadenaConexion
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ListadoClientesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()

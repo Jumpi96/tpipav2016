@@ -28,6 +28,7 @@ Partial Class Impresion_Orden
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.DataOrdenesTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.DataOrdenesTableAdapter()
+        Me.DataOrdenesTableAdapter.Connection.ConnectionString = AccesoBD.instancia.cadenaConexion
         CType(Me.DataOrdenesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()

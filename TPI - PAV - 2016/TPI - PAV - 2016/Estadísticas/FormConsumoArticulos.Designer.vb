@@ -28,6 +28,7 @@ Partial Class FormConsumoArticulos
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ArticulosConsumoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ArticulosConsumoTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.ArticulosConsumoTableAdapter()
+        Me.ArticulosConsumoTableAdapter.Connection.ConnectionString = AccesoBD.instancia.cadenaConexion
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ArticulosConsumoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()

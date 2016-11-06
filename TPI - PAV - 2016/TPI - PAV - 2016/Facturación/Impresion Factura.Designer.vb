@@ -28,6 +28,7 @@ Partial Class Impresion_Factura
         Me.DataSet = New TPI___PAV___2016.DataSet()
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.DataFacturasTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.DataFacturasTableAdapter()
+        Me.DataFacturasTableAdapter.Connection.ConnectionString = AccesoBD.instancia.cadenaConexion
         CType(Me.DataFacturasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
