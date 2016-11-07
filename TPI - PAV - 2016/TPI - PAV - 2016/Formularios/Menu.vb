@@ -1037,4 +1037,8 @@
     Private Sub ProveedoresContactadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresContactadosToolStripMenuItem.Click
         FormProveedoresContactados.Show()
     End Sub
+
+    Private Sub OcupaciónMensualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OcupaciónMensualToolStripMenuItem.Click
+        FormOcupacionMensual.Show()
+    End Sub
 End Class

@@ -63,6 +63,10 @@ Partial Class menu
         Me.EstadísticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsumoDeArtículosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HabitacionesPorTipoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesRegularesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TiposDeFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresContactadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
         Me.tab_aloNueDatCli = New System.Windows.Forms.TabPage()
@@ -311,10 +315,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ClientesRegularesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TiposDeFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ProveedoresContactadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OcupaciónMensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -598,7 +599,7 @@ Partial Class menu
         '
         'EstadísticasToolStripMenuItem
         '
-        Me.EstadísticasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsumoDeArtículosToolStripMenuItem, Me.HabitacionesPorTipoToolStripMenuItem, Me.ClientesRegularesToolStripMenuItem, Me.ServiciosToolStripMenuItem, Me.TiposDeFacturaToolStripMenuItem, Me.ProveedoresContactadosToolStripMenuItem})
+        Me.EstadísticasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsumoDeArtículosToolStripMenuItem, Me.HabitacionesPorTipoToolStripMenuItem, Me.ClientesRegularesToolStripMenuItem, Me.ServiciosToolStripMenuItem, Me.TiposDeFacturaToolStripMenuItem, Me.ProveedoresContactadosToolStripMenuItem, Me.OcupaciónMensualToolStripMenuItem})
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
         Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
@@ -614,6 +615,30 @@ Partial Class menu
         Me.HabitacionesPorTipoToolStripMenuItem.Name = "HabitacionesPorTipoToolStripMenuItem"
         Me.HabitacionesPorTipoToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.HabitacionesPorTipoToolStripMenuItem.Text = "Tipos de Habitaciones"
+        '
+        'ClientesRegularesToolStripMenuItem
+        '
+        Me.ClientesRegularesToolStripMenuItem.Name = "ClientesRegularesToolStripMenuItem"
+        Me.ClientesRegularesToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.ClientesRegularesToolStripMenuItem.Text = "Clientes regulares"
+        '
+        'ServiciosToolStripMenuItem
+        '
+        Me.ServiciosToolStripMenuItem.Name = "ServiciosToolStripMenuItem"
+        Me.ServiciosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.ServiciosToolStripMenuItem.Text = "Servicios"
+        '
+        'TiposDeFacturaToolStripMenuItem
+        '
+        Me.TiposDeFacturaToolStripMenuItem.Name = "TiposDeFacturaToolStripMenuItem"
+        Me.TiposDeFacturaToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.TiposDeFacturaToolStripMenuItem.Text = "Tipos de Factura"
+        '
+        'ProveedoresContactadosToolStripMenuItem
+        '
+        Me.ProveedoresContactadosToolStripMenuItem.Name = "ProveedoresContactadosToolStripMenuItem"
+        Me.ProveedoresContactadosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.ProveedoresContactadosToolStripMenuItem.Text = "Proveedores contactados"
         '
         'pnl_nueAlo
         '
@@ -3042,29 +3067,11 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'ClientesRegularesToolStripMenuItem
+        'OcupaciónMensualToolStripMenuItem
         '
-        Me.ClientesRegularesToolStripMenuItem.Name = "ClientesRegularesToolStripMenuItem"
-        Me.ClientesRegularesToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
-        Me.ClientesRegularesToolStripMenuItem.Text = "Clientes regulares"
-        '
-        'ServiciosToolStripMenuItem
-        '
-        Me.ServiciosToolStripMenuItem.Name = "ServiciosToolStripMenuItem"
-        Me.ServiciosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
-        Me.ServiciosToolStripMenuItem.Text = "Servicios"
-        '
-        'TiposDeFacturaToolStripMenuItem
-        '
-        Me.TiposDeFacturaToolStripMenuItem.Name = "TiposDeFacturaToolStripMenuItem"
-        Me.TiposDeFacturaToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
-        Me.TiposDeFacturaToolStripMenuItem.Text = "Tipos de Factura"
-        '
-        'ProveedoresContactadosToolStripMenuItem
-        '
-        Me.ProveedoresContactadosToolStripMenuItem.Name = "ProveedoresContactadosToolStripMenuItem"
-        Me.ProveedoresContactadosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
-        Me.ProveedoresContactadosToolStripMenuItem.Text = "Proveedores contactados"
+        Me.OcupaciónMensualToolStripMenuItem.Name = "OcupaciónMensualToolStripMenuItem"
+        Me.OcupaciónMensualToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.OcupaciónMensualToolStripMenuItem.Text = "Ocupación mensual"
         '
         'menu
         '
@@ -3448,6 +3455,7 @@ Partial Class menu
     Friend WithEvents ServiciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TiposDeFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProveedoresContactadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents OcupaciónMensualToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

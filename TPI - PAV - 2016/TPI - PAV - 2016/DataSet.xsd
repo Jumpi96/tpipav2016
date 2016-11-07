@@ -1069,7 +1069,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataFacturasTableAdapter" GeneratorDataComponentClassName="DataFacturasTableAdapter" Name="DataFacturas" UserDataComponentName="DataFacturasTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="hotelShaky.dbo.Alojamientos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT DATEDIFF(day,Alojamientos.FechaInicioAlojamiento,Alojamientos.FechaFinAlojamiento) AS cantidad,'Alojamiento' AS nombre,Alojamientos.precioPorDia AS precioUnitario,Alojamientos.precioPorDia*DATEDIFF(day,Alojamientos.FechaInicioAlojamiento,Alojamientos.FechaFinAlojamiento) AS subtotal
@@ -1110,7 +1110,7 @@ ORDER BY nombre DESC
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataOrdenesTableAdapter" GeneratorDataComponentClassName="DataOrdenesTableAdapter" Name="DataOrdenes" UserDataComponentName="DataOrdenesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        DetallesOrdenes.cantidad, Articulos.nombre, Articulos.precioUnitario, DetallesOrdenes.subtotal
@@ -1135,7 +1135,7 @@ WHERE        (DetallesOrdenes.idOrden = ?)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListadoClientesTableAdapter" GeneratorDataComponentClassName="ListadoClientesTableAdapter" Name="ListadoClientes" UserDataComponentName="ListadoClientesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Clientes.apellido, Clientes.nombre, TiposDocumento.nombre AS tipoDoc, Clientes.nroDocumento, CONVERT(varchar(10), Clientes.fechaNacimiento, 103) AS Expr1, Clientes.telefono, 
@@ -1162,7 +1162,7 @@ GROUP BY Clientes.apellido, Clientes.nombre, Clientes.nroDocumento, TiposDocumen
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListadoConsumicionesActualesTableAdapter" GeneratorDataComponentClassName="ListadoConsumicionesActualesTableAdapter" Name="ListadoConsumicionesActuales" UserDataComponentName="ListadoConsumicionesActualesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT        Alojamientos.idAlojamiento, Clientes.apellido + ', ' + Clientes.nombre AS Cliente, Articulos.nombre, Articulos.precioUnitario, SUM(Consumiciones.cantidad) AS Expr1
@@ -1188,7 +1188,7 @@ GROUP BY Alojamientos.idAlojamiento, Clientes.apellido, Clientes.nombre, Articul
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ServiciosActualesTableAdapter" GeneratorDataComponentClassName="ServiciosActualesTableAdapter" Name="ServiciosActuales" UserDataComponentName="ServiciosActualesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Alojamientos.idAlojamiento, Clientes.apellido + ', ' + Clientes.nombre AS Cliente, Servicios.nombre, Servicios.precioUnitario
@@ -1212,7 +1212,7 @@ WHERE        (Alojamientos.fechaFinAlojamiento IS NULL)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdenesCompra1TableAdapter" GeneratorDataComponentClassName="OrdenesCompra1TableAdapter" Name="OrdenesCompra1" UserDataComponentName="OrdenesCompra1TableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="hotelShaky.dbo.OrdenesCompra" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [ordenescompra] WHERE (([idOrden] = ?) AND ([idProveedor] = ?) AND ([fechaEmision] = ?) AND ((? = 1 AND [fechaRecepcion] IS NULL) OR ([fechaRecepcion] = ?)) AND ((? = 1 AND [total] IS NULL) OR ([total] = ?)))</CommandText>
@@ -1276,7 +1276,7 @@ From ordenescompra</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ArticulosConsumoTableAdapter" GeneratorDataComponentClassName="ArticulosConsumoTableAdapter" Name="ArticulosConsumo" UserDataComponentName="ArticulosConsumoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectName="hotelShaky.dbo.Articulos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Articulos.nombre, SUM(Consumiciones.cantidad) AS cant
@@ -1292,6 +1292,28 @@ ORDER BY cant DESC</CommandText>
             <Mappings>
               <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
               <Mapping SourceColumn="cant" DataSetColumn="cant" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OcupacionMensualTableAdapter" GeneratorDataComponentClassName="OcupacionMensualTableAdapter" Name="OcupacionMensual" UserDataComponentName="OcupacionMensualTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SQLNCLI11.DESKTOP-2BQ04QL.hotelShaky" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        MONTH(fechaInicioAlojamiento) AS Mes, COUNT(fechaInicioAlojamiento) AS Cantidad
+FROM            Alojamientos
+WHERE        (YEAR(fechaInicioAlojamiento) = ?)
+GROUP BY fechaInicioAlojamiento</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Decimal" Direction="Input" ParameterName="Param1" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Mes" DataSetColumn="Mes" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1791,6 +1813,14 @@ ORDER BY cant DESC</CommandText>
             <xs:sequence>
               <xs:element name="NOMBRE" msprop:Generator_ColumnVarNameInTable="columnNOMBRE" msprop:Generator_ColumnPropNameInRow="NOMBRE" msprop:Generator_ColumnPropNameInTable="NOMBREColumn" msprop:Generator_UserColumnName="NOMBRE" type="xs:string" minOccurs="0" />
               <xs:element name="TOTAL" msprop:Generator_ColumnVarNameInTable="columnTOTAL" msprop:Generator_ColumnPropNameInRow="TOTAL" msprop:Generator_ColumnPropNameInTable="TOTALColumn" msprop:Generator_UserColumnName="TOTAL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OcupacionMensual" msprop:Generator_TableClassName="OcupacionMensualDataTable" msprop:Generator_TableVarName="tableOcupacionMensual" msprop:Generator_RowChangedName="OcupacionMensualRowChanged" msprop:Generator_TablePropName="OcupacionMensual" msprop:Generator_RowDeletingName="OcupacionMensualRowDeleting" msprop:Generator_RowChangingName="OcupacionMensualRowChanging" msprop:Generator_RowEvHandlerName="OcupacionMensualRowChangeEventHandler" msprop:Generator_RowDeletedName="OcupacionMensualRowDeleted" msprop:Generator_RowClassName="OcupacionMensualRow" msprop:Generator_UserTableName="OcupacionMensual" msprop:Generator_RowEvArgName="OcupacionMensualRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Mes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMes" msprop:Generator_ColumnPropNameInRow="Mes" msprop:Generator_ColumnPropNameInTable="MesColumn" msprop:Generator_UserColumnName="Mes" type="xs:int" minOccurs="0" />
+              <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

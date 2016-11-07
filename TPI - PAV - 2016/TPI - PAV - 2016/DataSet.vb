@@ -1,4 +1,8 @@
 ﻿Partial Class DataSet
+    Partial Class OcupacionMensualDataTable
+
+    End Class
+
     Partial Class EstadisticaTipoHabitacionesDataTable
 
         Private Sub EstadisticaTipoHabitacionesDataTable_EstadisticaTipoHabitacionesRowChanging(sender As Object, e As EstadisticaTipoHabitacionesRowChangeEvent) Handles Me.EstadisticaTipoHabitacionesRowChanging
@@ -23,5 +27,7 @@
     End Class
 
 End Class
+
+
 
 

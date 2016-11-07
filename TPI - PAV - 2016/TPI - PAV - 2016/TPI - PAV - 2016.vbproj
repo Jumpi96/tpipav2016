@@ -102,6 +102,12 @@
     <Compile Include="DataSetMarce.vb">
       <DependentUpon>DataSetMarce.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Estadísticas\FormOcupacionMensual.Designer.vb">
+      <DependentUpon>FormOcupacionMensual.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormOcupacionMensual.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estadísticas\FormServicios.Designer.vb">
       <DependentUpon>FormServicios.vb</DependentUpon>
     </Compile>
@@ -328,11 +334,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Estadísticas\EstadisticaClientesRegulares.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaConsumoArticulos.rdlc" />
+    <EmbeddedResource Include="Estadísticas\EstadisticaOcupacionMensual.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaServicios.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoFacturasEmitidas.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoHabitacion.rdlc" />
     <EmbeddedResource Include="Estadísticas\FormClientesRegulares.resx">
       <DependentUpon>FormClientesRegulares.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\FormOcupacionMensual.resx">
+      <DependentUpon>FormOcupacionMensual.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\FormConsumoArticulos.resx">
       <DependentUpon>FormConsumoArticulos.vb</DependentUpon>

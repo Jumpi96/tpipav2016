@@ -41,6 +41,7 @@ Partial Class FormClientesRegulares
         Me.DataSetMarce = New TPI___PAV___2016.DataSetMarce()
         Me.TablaClientesRegularesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TablaClientesRegularesTableAdapter = New TPI___PAV___2016.DataSetMarceTableAdapters.TablaClientesRegularesTableAdapter()
+        Me.TablaClientesRegularesTableAdapter.Connection.ConnectionString = accesoBD.cadenaConexion
         CType(Me.DataSetMarce, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TablaClientesRegularesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
