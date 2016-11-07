@@ -96,6 +96,24 @@
     <Compile Include="DataSet.vb">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Estadísticas\FormTipoFacturasEmitidas.Designer.vb">
+      <DependentUpon>FormTipoFacturasEmitidas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormTipoFacturasEmitidas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FormProveedoresContactados.Designer.vb">
+      <DependentUpon>FormProveedoresContactados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormProveedoresContactados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FormClientesRegulares.Designer.vb">
+      <DependentUpon>FormClientesRegulares.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormClientesRegulares.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estadísticas\FormConsumoArticulos.Designer.vb">
       <DependentUpon>FormConsumoArticulos.vb</DependentUpon>
     </Compile>
@@ -290,9 +308,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Estadísticas\EstadisticaClientesRegulares.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaConsumoArticulos.rdlc" />
+    <EmbeddedResource Include="Estadísticas\EstadisticaTipoFacturasEmitidas.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FormClientesRegulares.resx">
+      <DependentUpon>FormClientesRegulares.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\FormConsumoArticulos.resx">
       <DependentUpon>FormConsumoArticulos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\EstadisticaProveedoresContactados.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FormTipoFacturasEmitidas.resx">
+      <DependentUpon>FormTipoFacturasEmitidas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\FormProveedoresContactados.resx">
+      <DependentUpon>FormProveedoresContactados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturación\Factura.rdlc">
       <SubType>Designer</SubType>
