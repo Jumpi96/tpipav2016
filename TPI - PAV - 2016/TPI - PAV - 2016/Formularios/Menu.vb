@@ -1016,4 +1016,9 @@
     Private Sub ConsumoDeArtículosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ConsumoDeArtículosToolStripMenuItem.Click
         FormConsumoArticulos.Show()
     End Sub
+
+    Private Sub HabitacionesPorTipoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HabitacionesPorTipoToolStripMenuItem.Click
+        FormTipoHabitacion.Show()
+
+    End Sub
 End Class
