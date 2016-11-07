@@ -96,11 +96,19 @@
     <Compile Include="DataSet.vb">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetMarce.Designer.vb">
-      <DependentUpon>DataSetMarce.vb</DependentUpon>
+    <Compile Include="DataSetMarcelo.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetMarcelo.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetMarce.vb">
-      <DependentUpon>DataSetMarce.xsd</DependentUpon>
+    <Compile Include="DataSetMarcelo.vb">
+      <DependentUpon>DataSetMarcelo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormClientesRecurrentes.Designer.vb">
+      <DependentUpon>FormClientesRecurrentes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormClientesRecurrentes.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Estadísticas\FormServicios.Designer.vb">
       <DependentUpon>FormServicios.vb</DependentUpon>
@@ -118,12 +126,6 @@
       <DependentUpon>FormProveedoresContactados.vb</DependentUpon>
     </Compile>
     <Compile Include="Estadísticas\FormProveedoresContactados.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Estadísticas\FormClientesRegulares.Designer.vb">
-      <DependentUpon>FormClientesRegulares.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Estadísticas\FormClientesRegulares.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Estadísticas\FormConsumoArticulos.Designer.vb">
@@ -326,13 +328,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Estadísticas\EstadisticaClientesRegulares.rdlc" />
+    <EmbeddedResource Include="Estadísticas\EstadisticaClientesRecurrentes.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaConsumoArticulos.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaServicios.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoFacturasEmitidas.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoHabitacion.rdlc" />
-    <EmbeddedResource Include="Estadísticas\FormClientesRegulares.resx">
-      <DependentUpon>FormClientesRegulares.vb</DependentUpon>
+    <EmbeddedResource Include="Estadísticas\FormClientesRecurrentes.resx">
+      <DependentUpon>FormClientesRecurrentes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\FormConsumoArticulos.resx">
       <DependentUpon>FormConsumoArticulos.vb</DependentUpon>
@@ -469,12 +471,16 @@
     <None Include="DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="DataSetMarce.xsc">
-      <DependentUpon>DataSetMarce.xsd</DependentUpon>
+    <None Include="DataSetMarcelo.xsc">
+      <DependentUpon>DataSetMarcelo.xsd</DependentUpon>
     </None>
-    <None Include="DataSetMarce.xsd" />
-    <None Include="DataSetMarce.xss">
-      <DependentUpon>DataSetMarce.xsd</DependentUpon>
+    <None Include="DataSetMarcelo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetMarcelo.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSetMarcelo.xss">
+      <DependentUpon>DataSetMarcelo.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
