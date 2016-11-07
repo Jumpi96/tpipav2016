@@ -33,7 +33,7 @@
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Count(Fields!TOTAL.Value)</Y>
+                    <Y>=Sum(Fields!TOTAL.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
