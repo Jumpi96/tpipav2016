@@ -96,6 +96,18 @@
     <Compile Include="DataSet.vb">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetMarce.Designer.vb">
+      <DependentUpon>DataSetMarce.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetMarce.vb">
+      <DependentUpon>DataSetMarce.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormServicios.Designer.vb">
+      <DependentUpon>FormServicios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormServicios.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estadísticas\FormTipoFacturasEmitidas.Designer.vb">
       <DependentUpon>FormTipoFacturasEmitidas.vb</DependentUpon>
     </Compile>
@@ -118,6 +130,12 @@
       <DependentUpon>FormConsumoArticulos.vb</DependentUpon>
     </Compile>
     <Compile Include="Estadísticas\FormConsumoArticulos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadísticas\FormTipoHabitacion.Designer.vb">
+      <DependentUpon>FormTipoHabitacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormTipoHabitacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Facturación\GestorFacturación.vb" />
@@ -310,7 +328,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Estadísticas\EstadisticaClientesRegulares.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaConsumoArticulos.rdlc" />
+    <EmbeddedResource Include="Estadísticas\EstadisticaServicios.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoFacturasEmitidas.rdlc" />
+    <EmbeddedResource Include="Estadísticas\EstadisticaTipoHabitacion.rdlc" />
     <EmbeddedResource Include="Estadísticas\FormClientesRegulares.resx">
       <DependentUpon>FormClientesRegulares.vb</DependentUpon>
     </EmbeddedResource>
@@ -318,11 +338,17 @@
       <DependentUpon>FormConsumoArticulos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\EstadisticaProveedoresContactados.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FormServicios.resx">
+      <DependentUpon>FormServicios.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\FormTipoFacturasEmitidas.resx">
       <DependentUpon>FormTipoFacturasEmitidas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\FormProveedoresContactados.resx">
       <DependentUpon>FormProveedoresContactados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\FormTipoHabitacion.resx">
+      <DependentUpon>FormTipoHabitacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturación\Factura.rdlc">
       <SubType>Designer</SubType>
@@ -442,6 +468,13 @@
     </None>
     <None Include="DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMarce.xsc">
+      <DependentUpon>DataSetMarce.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetMarce.xsd" />
+    <None Include="DataSetMarce.xss">
+      <DependentUpon>DataSetMarce.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>

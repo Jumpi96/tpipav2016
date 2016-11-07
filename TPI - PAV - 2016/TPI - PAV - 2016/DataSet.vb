@@ -5,12 +5,12 @@
 
         End Sub
 
-        Private Sub EstadisticaTipoHabitacionesDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
-            If (e.Column.ColumnName = Me.NUMEROColumn.ColumnName) Then
-                'Add user code here
-            End If
+        'Private Sub EstadisticaTipoHabitacionesDataTable_ColumnChanging(sender As Object, e As DataColumnChangeEventArgs) Handles Me.ColumnChanging
+        '   If (e.Column.ColumnName = Me.NUMEROColumn.ColumnName) Then
+        'Add user code here
+        '  End If
 
-        End Sub
+        'End Sub
 
     End Class
 
