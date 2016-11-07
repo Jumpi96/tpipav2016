@@ -20,12 +20,12 @@ Option Explicit On
  Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
  Global.System.ComponentModel.ToolboxItem(true),  _
  Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema"),  _
- Global.System.Xml.Serialization.XmlRootAttribute("DataSetMarce"),  _
+ Global.System.Xml.Serialization.XmlRootAttribute("DataSetMarcelo"),  _
  Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")>  _
-Partial Public Class DataSetMarce
+Partial Public Class DataSetMarcelo
     Inherits Global.System.Data.DataSet
     
-    Private tableTablaClientesRegulares As TablaClientesRegularesDataTable
+    Private tableTablaEstadisticaClientesRecurrentes As TablaEstadisticaClientesRecurrentesDataTable
 
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
 
@@ -56,8 +56,8 @@ Partial Public Class DataSetMarce
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("TablaClientesRegulares")) Is Nothing) Then
-                MyBase.Tables.Add(New TablaClientesRegularesDataTable(ds.Tables("TablaClientesRegulares")))
+            If (Not (ds.Tables("TablaEstadisticaClientesRecurrentes")) Is Nothing) Then
+                MyBase.Tables.Add(New TablaEstadisticaClientesRecurrentesDataTable(ds.Tables("TablaEstadisticaClientesRecurrentes")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +80,9 @@ Partial Public Class DataSetMarce
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
      Global.System.ComponentModel.Browsable(False), _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)> _
-    Public ReadOnly Property TablaClientesRegulares() As TablaClientesRegularesDataTable
+    Public ReadOnly Property TablaEstadisticaClientesRecurrentes() As TablaEstadisticaClientesRecurrentesDataTable
         Get
-            Return Me.tableTablaClientesRegulares
+            Return Me.tableTablaEstadisticaClientesRecurrentes
         End Get
     End Property
 
@@ -128,7 +128,7 @@ Partial Public Class DataSetMarce
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
     Public Overrides Function Clone() As Global.System.Data.DataSet
-        Dim cln As DataSetMarce = CType(MyBase.Clone, DataSetMarce)
+        Dim cln As DataSetMarcelo = CType(MyBase.Clone, DataSetMarcelo)
         cln.InitVars()
         cln.SchemaSerializationMode = Me.SchemaSerializationMode
         Return cln
@@ -153,8 +153,8 @@ Partial Public Class DataSetMarce
             Me.Reset()
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("TablaClientesRegulares")) Is Nothing) Then
-                MyBase.Tables.Add(New TablaClientesRegularesDataTable(ds.Tables("TablaClientesRegulares")))
+            If (Not (ds.Tables("TablaEstadisticaClientesRecurrentes")) Is Nothing) Then
+                MyBase.Tables.Add(New TablaEstadisticaClientesRecurrentesDataTable(ds.Tables("TablaEstadisticaClientesRecurrentes")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +188,10 @@ Partial Public Class DataSetMarce
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tableTablaClientesRegulares = CType(MyBase.Tables("TablaClientesRegulares"), TablaClientesRegularesDataTable)
+        Me.tableTablaEstadisticaClientesRecurrentes = CType(MyBase.Tables("TablaEstadisticaClientesRecurrentes"), TablaEstadisticaClientesRecurrentesDataTable)
         If (initTable = True) Then
-            If (Not (Me.tableTablaClientesRegulares) Is Nothing) Then
-                Me.tableTablaClientesRegulares.InitVars()
+            If (Not (Me.tableTablaEstadisticaClientesRecurrentes) Is Nothing) Then
+                Me.tableTablaEstadisticaClientesRecurrentes.InitVars()
             End If
         End If
     End Sub
@@ -199,18 +199,18 @@ Partial Public Class DataSetMarce
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
     Private Sub InitClass()
-        Me.DataSetName = "DataSetMarce"
+        Me.DataSetName = "DataSetMarcelo"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/DataSetMarce.xsd"
+        Me.Namespace = "http://tempuri.org/DataSetMarcelo.xsd"
         Me.EnforceConstraints = True
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tableTablaClientesRegulares = New TablaClientesRegularesDataTable()
-        MyBase.Tables.Add(Me.tableTablaClientesRegulares)
+        Me.tableTablaEstadisticaClientesRecurrentes = New TablaEstadisticaClientesRecurrentesDataTable()
+        MyBase.Tables.Add(Me.tableTablaEstadisticaClientesRecurrentes)
     End Sub
 
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-    Private Function ShouldSerializeTablaClientesRegulares() As Boolean
+    Private Function ShouldSerializeTablaEstadisticaClientesRecurrentes() As Boolean
         Return False
     End Function
 
@@ -225,7 +225,7 @@ Partial Public Class DataSetMarce
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
     Public Shared Function GetTypedDataSetSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-        Dim ds As DataSetMarce = New DataSetMarce()
+        Dim ds As DataSetMarcelo = New DataSetMarcelo()
         Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
         Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
         Dim any As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
@@ -273,25 +273,23 @@ Partial Public Class DataSetMarce
     End Function
 
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-    Public Delegate Sub TablaClientesRegularesRowChangeEventHandler(ByVal sender As Object, ByVal e As TablaClientesRegularesRowChangeEvent)
+    Public Delegate Sub TablaEstadisticaClientesRecurrentesRowChangeEventHandler(ByVal sender As Object, ByVal e As TablaEstadisticaClientesRecurrentesRowChangeEvent)
 
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(), _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")> _
-    Partial Public Class TablaClientesRegularesDataTable
-        Inherits Global.System.Data.TypedTableBase(Of TablaClientesRegularesRow)
+    Partial Public Class TablaEstadisticaClientesRecurrentesDataTable
+        Inherits Global.System.Data.TypedTableBase(Of TablaEstadisticaClientesRecurrentesRow)
 
         Private columnnombreCliente As Global.System.Data.DataColumn
 
-        Private columnapellido As Global.System.Data.DataColumn
-
-        Private columnnroDocumento As Global.System.Data.DataColumn
-
-        Private columntipoDocumento As Global.System.Data.DataColumn
+        Private columnApellido As Global.System.Data.DataColumn
 
         Private columnnombreDocumento As Global.System.Data.DataColumn
+
+        Private columnnumeroDocumento As Global.System.Data.DataColumn
 
         Private columnCantidad As Global.System.Data.DataColumn
 
@@ -299,7 +297,7 @@ Partial Public Class DataSetMarce
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
             MyBase.New()
-            Me.TableName = "TablaClientesRegulares"
+            Me.TableName = "TablaEstadisticaClientesRecurrentes"
             Me.BeginInit()
             Me.InitClass()
             Me.EndInit()
@@ -340,25 +338,9 @@ Partial Public Class DataSetMarce
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property apellidoColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property ApellidoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnapellido
-            End Get
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property nroDocumentoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnroDocumento
-            End Get
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property tipoDocumentoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columntipoDocumento
+                Return Me.columnApellido
             End Get
         End Property
 
@@ -367,6 +349,14 @@ Partial Public Class DataSetMarce
         Public ReadOnly Property nombreDocumentoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnnombreDocumento
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numeroDocumentoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumeroDocumento
             End Get
         End Property
 
@@ -389,50 +379,44 @@ Partial Public Class DataSetMarce
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Default Public ReadOnly Property Item(ByVal index As Integer) As TablaClientesRegularesRow
+        Default Public ReadOnly Property Item(ByVal index As Integer) As TablaEstadisticaClientesRecurrentesRow
             Get
-                Return CType(Me.Rows(index), TablaClientesRegularesRow)
+                Return CType(Me.Rows(index), TablaEstadisticaClientesRecurrentesRow)
             End Get
         End Property
 
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Event TablaClientesRegularesRowChanging As TablaClientesRegularesRowChangeEventHandler
+        Public Event TablaEstadisticaClientesRecurrentesRowChanging As TablaEstadisticaClientesRecurrentesRowChangeEventHandler
 
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Event TablaClientesRegularesRowChanged As TablaClientesRegularesRowChangeEventHandler
+        Public Event TablaEstadisticaClientesRecurrentesRowChanged As TablaEstadisticaClientesRecurrentesRowChangeEventHandler
 
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Event TablaClientesRegularesRowDeleting As TablaClientesRegularesRowChangeEventHandler
+        Public Event TablaEstadisticaClientesRecurrentesRowDeleting As TablaEstadisticaClientesRecurrentesRowChangeEventHandler
 
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Event TablaClientesRegularesRowDeleted As TablaClientesRegularesRowChangeEventHandler
+        Public Event TablaEstadisticaClientesRecurrentesRowDeleted As TablaEstadisticaClientesRecurrentesRowChangeEventHandler
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Sub AddTablaClientesRegularesRow(ByVal row As TablaClientesRegularesRow)
+        Public Overloads Sub AddTablaEstadisticaClientesRecurrentesRow(ByVal row As TablaEstadisticaClientesRecurrentesRow)
             Me.Rows.Add(row)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddTablaClientesRegularesRow(ByVal nombreCliente As String, ByVal apellido As String, ByVal nroDocumento As Integer, ByVal tipoDocumento As Integer, ByVal nombreDocumento As String, ByVal Cantidad As Integer) As TablaClientesRegularesRow
-            Dim rowTablaClientesRegularesRow As TablaClientesRegularesRow = CType(Me.NewRow, TablaClientesRegularesRow)
-            Dim columnValuesArray() As Object = New Object() {nombreCliente, apellido, nroDocumento, tipoDocumento, nombreDocumento, Cantidad}
-            rowTablaClientesRegularesRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowTablaClientesRegularesRow)
-            Return rowTablaClientesRegularesRow
-        End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function FindBynroDocumentotipoDocumento(ByVal nroDocumento As Integer, ByVal tipoDocumento As Integer) As TablaClientesRegularesRow
-            Return CType(Me.Rows.Find(New Object() {nroDocumento, tipoDocumento}), TablaClientesRegularesRow)
+        Public Overloads Function AddTablaEstadisticaClientesRecurrentesRow(ByVal nombreCliente As String, ByVal Apellido As String, ByVal nombreDocumento As String, ByVal numeroDocumento As Integer, ByVal Cantidad As Integer) As TablaEstadisticaClientesRecurrentesRow
+            Dim rowTablaEstadisticaClientesRecurrentesRow As TablaEstadisticaClientesRecurrentesRow = CType(Me.NewRow, TablaEstadisticaClientesRecurrentesRow)
+            Dim columnValuesArray() As Object = New Object() {nombreCliente, Apellido, nombreDocumento, numeroDocumento, Cantidad}
+            rowTablaEstadisticaClientesRecurrentesRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowTablaEstadisticaClientesRecurrentesRow)
+            Return rowTablaEstadisticaClientesRecurrentesRow
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As TablaClientesRegularesDataTable = CType(MyBase.Clone, TablaClientesRegularesDataTable)
+            Dim cln As TablaEstadisticaClientesRecurrentesDataTable = CType(MyBase.Clone, TablaEstadisticaClientesRecurrentesDataTable)
             cln.InitVars()
             Return cln
         End Function
@@ -440,17 +424,16 @@ Partial Public Class DataSetMarce
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New TablaClientesRegularesDataTable()
+            Return New TablaEstadisticaClientesRecurrentesDataTable()
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Sub InitVars()
             Me.columnnombreCliente = MyBase.Columns("nombreCliente")
-            Me.columnapellido = MyBase.Columns("apellido")
-            Me.columnnroDocumento = MyBase.Columns("nroDocumento")
-            Me.columntipoDocumento = MyBase.Columns("tipoDocumento")
+            Me.columnApellido = MyBase.Columns("Apellido")
             Me.columnnombreDocumento = MyBase.Columns("nombreDocumento")
+            Me.columnnumeroDocumento = MyBase.Columns("numeroDocumento")
             Me.columnCantidad = MyBase.Columns("Cantidad")
         End Sub
 
@@ -459,52 +442,48 @@ Partial Public Class DataSetMarce
         Private Sub InitClass()
             Me.columnnombreCliente = New Global.System.Data.DataColumn("nombreCliente", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombreCliente)
-            Me.columnapellido = New Global.System.Data.DataColumn("apellido", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnapellido)
-            Me.columnnroDocumento = New Global.System.Data.DataColumn("nroDocumento", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnroDocumento)
-            Me.columntipoDocumento = New Global.System.Data.DataColumn("tipoDocumento", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columntipoDocumento)
+            Me.columnApellido = New Global.System.Data.DataColumn("Apellido", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnApellido)
             Me.columnnombreDocumento = New Global.System.Data.DataColumn("nombreDocumento", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnnombreDocumento)
+            Me.columnnumeroDocumento = New Global.System.Data.DataColumn("numeroDocumento", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumeroDocumento)
             Me.columnCantidad = New Global.System.Data.DataColumn("Cantidad", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCantidad)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnnroDocumento, Me.columntipoDocumento}, True))
             Me.columnnombreCliente.AllowDBNull = False
             Me.columnnombreCliente.MaxLength = 30
-            Me.columnapellido.AllowDBNull = False
-            Me.columnapellido.MaxLength = 30
-            Me.columnnroDocumento.AllowDBNull = False
-            Me.columntipoDocumento.AllowDBNull = False
+            Me.columnApellido.AllowDBNull = False
+            Me.columnApellido.MaxLength = 30
             Me.columnnombreDocumento.AllowDBNull = False
             Me.columnnombreDocumento.MaxLength = 30
+            Me.columnnumeroDocumento.AllowDBNull = False
             Me.columnCantidad.ReadOnly = True
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function NewTablaClientesRegularesRow() As TablaClientesRegularesRow
-            Return CType(Me.NewRow, TablaClientesRegularesRow)
+        Public Function NewTablaEstadisticaClientesRecurrentesRow() As TablaEstadisticaClientesRecurrentesRow
+            Return CType(Me.NewRow, TablaEstadisticaClientesRecurrentesRow)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New TablaClientesRegularesRow(builder)
+            Return New TablaEstadisticaClientesRecurrentesRow(builder)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(TablaClientesRegularesRow)
+            Return GetType(TablaEstadisticaClientesRecurrentesRow)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.TablaClientesRegularesRowChangedEvent) Is Nothing) Then
-                RaiseEvent TablaClientesRegularesRowChanged(Me, New TablaClientesRegularesRowChangeEvent(CType(e.Row, TablaClientesRegularesRow), e.Action))
+            If (Not (Me.TablaEstadisticaClientesRecurrentesRowChangedEvent) Is Nothing) Then
+                RaiseEvent TablaEstadisticaClientesRecurrentesRowChanged(Me, New TablaEstadisticaClientesRecurrentesRowChangeEvent(CType(e.Row, TablaEstadisticaClientesRecurrentesRow), e.Action))
             End If
         End Sub
 
@@ -512,8 +491,8 @@ Partial Public Class DataSetMarce
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.TablaClientesRegularesRowChangingEvent) Is Nothing) Then
-                RaiseEvent TablaClientesRegularesRowChanging(Me, New TablaClientesRegularesRowChangeEvent(CType(e.Row, TablaClientesRegularesRow), e.Action))
+            If (Not (Me.TablaEstadisticaClientesRecurrentesRowChangingEvent) Is Nothing) Then
+                RaiseEvent TablaEstadisticaClientesRecurrentesRowChanging(Me, New TablaEstadisticaClientesRecurrentesRowChangeEvent(CType(e.Row, TablaEstadisticaClientesRecurrentesRow), e.Action))
             End If
         End Sub
 
@@ -521,8 +500,8 @@ Partial Public Class DataSetMarce
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.TablaClientesRegularesRowDeletedEvent) Is Nothing) Then
-                RaiseEvent TablaClientesRegularesRowDeleted(Me, New TablaClientesRegularesRowChangeEvent(CType(e.Row, TablaClientesRegularesRow), e.Action))
+            If (Not (Me.TablaEstadisticaClientesRecurrentesRowDeletedEvent) Is Nothing) Then
+                RaiseEvent TablaEstadisticaClientesRecurrentesRowDeleted(Me, New TablaEstadisticaClientesRecurrentesRowChangeEvent(CType(e.Row, TablaEstadisticaClientesRecurrentesRow), e.Action))
             End If
         End Sub
 
@@ -530,14 +509,14 @@ Partial Public Class DataSetMarce
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.TablaClientesRegularesRowDeletingEvent) Is Nothing) Then
-                RaiseEvent TablaClientesRegularesRowDeleting(Me, New TablaClientesRegularesRowChangeEvent(CType(e.Row, TablaClientesRegularesRow), e.Action))
+            If (Not (Me.TablaEstadisticaClientesRecurrentesRowDeletingEvent) Is Nothing) Then
+                RaiseEvent TablaEstadisticaClientesRecurrentesRowDeleting(Me, New TablaEstadisticaClientesRecurrentesRowChangeEvent(CType(e.Row, TablaEstadisticaClientesRecurrentesRow), e.Action))
             End If
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub RemoveTablaClientesRegularesRow(ByVal row As TablaClientesRegularesRow)
+        Public Sub RemoveTablaEstadisticaClientesRecurrentesRow(ByVal row As TablaEstadisticaClientesRecurrentesRow)
             Me.Rows.Remove(row)
         End Sub
 
@@ -546,7 +525,7 @@ Partial Public Class DataSetMarce
         Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
             Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
             Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As DataSetMarce = New DataSetMarce()
+            Dim ds As DataSetMarcelo = New DataSetMarcelo()
             Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
             any1.Namespace = "http://www.w3.org/2001/XMLSchema"
             any1.MinOccurs = New Decimal(0)
@@ -564,7 +543,7 @@ Partial Public Class DataSetMarce
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "TablaClientesRegularesDataTable"
+            attribute2.FixedValue = "TablaEstadisticaClientesRecurrentesDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -611,59 +590,37 @@ Partial Public Class DataSetMarce
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class TablaClientesRegularesRow
+    Partial Public Class TablaEstadisticaClientesRecurrentesRow
         Inherits Global.System.Data.DataRow
 
-        Private tableTablaClientesRegulares As TablaClientesRegularesDataTable
+        Private tableTablaEstadisticaClientesRecurrentes As TablaEstadisticaClientesRecurrentesDataTable
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tableTablaClientesRegulares = CType(Me.Table, TablaClientesRegularesDataTable)
+            Me.tableTablaEstadisticaClientesRecurrentes = CType(Me.Table, TablaEstadisticaClientesRecurrentesDataTable)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Property nombreCliente() As String
             Get
-                Return CType(Me(Me.tableTablaClientesRegulares.nombreClienteColumn), String)
+                Return CType(Me(Me.tableTablaEstadisticaClientesRecurrentes.nombreClienteColumn), String)
             End Get
             Set(value As String)
-                Me(Me.tableTablaClientesRegulares.nombreClienteColumn) = value
+                Me(Me.tableTablaEstadisticaClientesRecurrentes.nombreClienteColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property apellido() As String
+        Public Property Apellido() As String
             Get
-                Return CType(Me(Me.tableTablaClientesRegulares.apellidoColumn), String)
+                Return CType(Me(Me.tableTablaEstadisticaClientesRecurrentes.ApellidoColumn), String)
             End Get
             Set(value As String)
-                Me(Me.tableTablaClientesRegulares.apellidoColumn) = value
-            End Set
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property nroDocumento() As Integer
-            Get
-                Return CType(Me(Me.tableTablaClientesRegulares.nroDocumentoColumn), Integer)
-            End Get
-            Set(value As Integer)
-                Me(Me.tableTablaClientesRegulares.nroDocumentoColumn) = value
-            End Set
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property tipoDocumento() As Integer
-            Get
-                Return CType(Me(Me.tableTablaClientesRegulares.tipoDocumentoColumn), Integer)
-            End Get
-            Set(value As Integer)
-                Me(Me.tableTablaClientesRegulares.tipoDocumentoColumn) = value
+                Me(Me.tableTablaEstadisticaClientesRecurrentes.ApellidoColumn) = value
             End Set
         End Property
 
@@ -671,10 +628,21 @@ Partial Public Class DataSetMarce
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Property nombreDocumento() As String
             Get
-                Return CType(Me(Me.tableTablaClientesRegulares.nombreDocumentoColumn), String)
+                Return CType(Me(Me.tableTablaEstadisticaClientesRecurrentes.nombreDocumentoColumn), String)
             End Get
             Set(value As String)
-                Me(Me.tableTablaClientesRegulares.nombreDocumentoColumn) = value
+                Me(Me.tableTablaEstadisticaClientesRecurrentes.nombreDocumentoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numeroDocumento() As Integer
+            Get
+                Return CType(Me(Me.tableTablaEstadisticaClientesRecurrentes.numeroDocumentoColumn), Integer)
+            End Get
+            Set(value As Integer)
+                Me(Me.tableTablaEstadisticaClientesRecurrentes.numeroDocumentoColumn) = value
             End Set
         End Property
 
@@ -683,27 +651,27 @@ Partial Public Class DataSetMarce
         Public Property Cantidad() As Integer
             Get
                 Try
-                    Return CType(Me(Me.tableTablaClientesRegulares.CantidadColumn), Integer)
+                    Return CType(Me(Me.tableTablaEstadisticaClientesRecurrentes.CantidadColumn), Integer)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Cantidad' de la tabla 'TablaClientesRegulares' es DBNull." & _
-                            "", e)
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'Cantidad' de la tabla 'TablaEstadisticaClientesRecurrente" & _
+                            "s' es DBNull.", e)
                 End Try
             End Get
             Set(value As Integer)
-                Me(Me.tableTablaClientesRegulares.CantidadColumn) = value
+                Me(Me.tableTablaEstadisticaClientesRecurrentes.CantidadColumn) = value
             End Set
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsCantidadNull() As Boolean
-            Return Me.IsNull(Me.tableTablaClientesRegulares.CantidadColumn)
+            Return Me.IsNull(Me.tableTablaEstadisticaClientesRecurrentes.CantidadColumn)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetCantidadNull()
-            Me(Me.tableTablaClientesRegulares.CantidadColumn) = Global.System.Convert.DBNull
+            Me(Me.tableTablaEstadisticaClientesRecurrentes.CantidadColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
@@ -711,16 +679,16 @@ Partial Public Class DataSetMarce
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-    Public Class TablaClientesRegularesRowChangeEvent
+    Public Class TablaEstadisticaClientesRecurrentesRowChangeEvent
         Inherits Global.System.EventArgs
 
-        Private eventRow As TablaClientesRegularesRow
+        Private eventRow As TablaEstadisticaClientesRecurrentesRow
 
         Private eventAction As Global.System.Data.DataRowAction
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub New(ByVal row As TablaClientesRegularesRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As TablaEstadisticaClientesRecurrentesRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New()
             Me.eventRow = row
             Me.eventAction = action
@@ -728,7 +696,7 @@ Partial Public Class DataSetMarce
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property Row() As TablaClientesRegularesRow
+        Public ReadOnly Property Row() As TablaEstadisticaClientesRecurrentesRow
             Get
                 Return Me.eventRow
             End Get
@@ -744,7 +712,7 @@ Partial Public Class DataSetMarce
     End Class
 End Class
 
-Namespace DataSetMarceTableAdapters
+Namespace DataSetMarceloTableAdapters
 
     '''<summary>
     '''Represents the connection and commands used to retrieve and save data.
@@ -755,7 +723,7 @@ Namespace DataSetMarceTableAdapters
      Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" & _
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"), _
      Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")> _
-    Partial Public Class TablaClientesRegularesTableAdapter
+    Partial Public Class TablaEstadisticaClientesRecurrentesTableAdapter
         Inherits Global.System.ComponentModel.Component
 
         Private WithEvents _adapter As Global.System.Data.OleDb.OleDbDataAdapter
@@ -872,12 +840,11 @@ Namespace DataSetMarceTableAdapters
             Me._adapter = New Global.System.Data.OleDb.OleDbDataAdapter()
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
-            tableMapping.DataSetTable = "TablaClientesRegulares"
+            tableMapping.DataSetTable = "TablaEstadisticaClientesRecurrentes"
             tableMapping.ColumnMappings.Add("nombreCliente", "nombreCliente")
-            tableMapping.ColumnMappings.Add("apellido", "apellido")
-            tableMapping.ColumnMappings.Add("nroDocumento", "nroDocumento")
-            tableMapping.ColumnMappings.Add("tipoDocumento", "tipoDocumento")
+            tableMapping.ColumnMappings.Add("Apellido", "Apellido")
             tableMapping.ColumnMappings.Add("nombreDocumento", "nombreDocumento")
+            tableMapping.ColumnMappings.Add("numeroDocumento", "numeroDocumento")
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
@@ -895,11 +862,11 @@ Namespace DataSetMarceTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT C.nombre AS nombreCliente, C.apellido, C.nroDocumento, C.tipoDocumento, T." & _
-                "nombre AS nombreDocumento, COUNT(A.idAlojamiento) AS Cantidad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM Clientes C J" & _
-                "OIN TiposDocumento T ON C.tipoDocumento = T.idTipoDocumento" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "JOIN Alojamientos A" & _
-                " ON C.nroDocumento = A.nroDoc AND C.tipoDocumento = A.tipoDoc" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "GROUP BY C.nombre" & _
-                ", C.apellido, C.nroDocumento, C.tipoDocumento, T.nombre"
+            Me._commandCollection(0).CommandText = "SELECT C.nombre AS nombreCliente, C.apellido AS Apellido,  T.nombre AS nombreDocu" & _
+                "mento, C.nroDocumento AS numeroDocumento, COUNT(A.idAlojamiento) AS Cantidad" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FR" & _
+                "OM Clientes C JOIN TiposDocumento T on C.tipoDocumento = T.idTipoDocumento" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "JOIN" & _
+                " Alojamientos A ON C.nroDocumento = A.nroDoc AND C.tipoDocumento = A.tipoDoc" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "GR" & _
+                "OUP BY C.nombre, C.apellido, T.nombre, C.nroDocumento"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
 
@@ -907,7 +874,7 @@ Namespace DataSetMarceTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, True)> _
-        Public Overridable Overloads Function Fill(ByVal dataTable As DataSetMarce.TablaClientesRegularesDataTable) As Integer
+        Public Overridable Overloads Function Fill(ByVal dataTable As DataSetMarcelo.TablaEstadisticaClientesRecurrentesDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
             If (Me.ClearBeforeFill = True) Then
                 dataTable.Clear()
@@ -920,9 +887,9 @@ Namespace DataSetMarceTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"), _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], True)> _
-        Public Overridable Overloads Function GetData() As DataSetMarce.TablaClientesRegularesDataTable
+        Public Overridable Overloads Function GetData() As DataSetMarcelo.TablaEstadisticaClientesRecurrentesDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
-            Dim dataTable As DataSetMarce.TablaClientesRegularesDataTable = New DataSetMarce.TablaClientesRegularesDataTable()
+            Dim dataTable As DataSetMarcelo.TablaEstadisticaClientesRecurrentesDataTable = New DataSetMarcelo.TablaEstadisticaClientesRecurrentesDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
         End Function
@@ -997,7 +964,7 @@ Namespace DataSetMarceTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetMarce, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateUpdatedRows(ByVal dataSet As DataSetMarcelo, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow), ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1007,7 +974,7 @@ Namespace DataSetMarceTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Private Function UpdateInsertedRows(ByVal dataSet As DataSetMarce, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateInsertedRows(ByVal dataSet As DataSetMarcelo, ByVal allAddedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1017,7 +984,7 @@ Namespace DataSetMarceTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Private Function UpdateDeletedRows(ByVal dataSet As DataSetMarce, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
+        Private Function UpdateDeletedRows(ByVal dataSet As DataSetMarcelo, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
             Return result
         End Function
@@ -1053,7 +1020,7 @@ Namespace DataSetMarceTableAdapters
         '''</summary>
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overridable Function UpdateAll(ByVal dataSet As DataSetMarce) As Integer
+        Public Overridable Function UpdateAll(ByVal dataSet As DataSetMarcelo) As Integer
             If (dataSet Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("dataSet")
             End If

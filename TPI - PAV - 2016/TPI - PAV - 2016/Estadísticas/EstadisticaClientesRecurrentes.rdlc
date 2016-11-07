@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Estadistica de Clientes Regulares</Value>
+                <Value>Estadística de clientes recurrentes</Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -20,9 +20,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>6.66432cm</Left>
-        <Height>0.97042cm</Height>
-        <Width>10.38458cm</Width>
+        <Left>8.27828cm</Left>
+        <Height>0.99688cm</Height>
+        <Width>10.64917cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -33,7 +33,7 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox12">
+      <Textbox Name="Textbox2">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
@@ -50,10 +50,10 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>1.00224cm</Top>
-        <Height>0.75847cm</Height>
-        <Width>2.1825cm</Width>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>0.99688cm</Top>
+        <Height>0.67938cm</Height>
+        <Width>2.5cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -65,23 +65,23 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Tablix Name="Tablix4">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.84937cm</Width>
+              <Width>4.41029cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>4.24625cm</Width>
+              <Width>4.41029cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.57937cm</Width>
+              <Width>2.97454cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.29375cm</Width>
+              <Width>3.59008cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>1.738cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -90,7 +90,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox31">
+                    <Textbox Name="Textbox3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -98,13 +98,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox31</rd:DefaultName>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -120,7 +124,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox33">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -128,13 +132,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Apellido</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox33</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -150,21 +158,25 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox35">
+                    <Textbox Name="Textbox7">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tipo ocumento</Value>
-                              <Style />
+                              <Value>Tipo documento</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox35</rd:DefaultName>
+                      <rd:DefaultName>Textbox7</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -180,7 +192,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox37">
+                    <Textbox Name="Textbox9">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -188,13 +200,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Número documento</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox37</rd:DefaultName>
+                      <rd:DefaultName>Textbox9</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -210,7 +226,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox39">
+                    <Textbox Name="Textbox11">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -218,13 +234,17 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Cantidad</Value>
-                              <Style />
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox39</rd:DefaultName>
+                      <rd:DefaultName>Textbox11</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -275,21 +295,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="apellido">
+                    <Textbox Name="Apellido">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!apellido.Value</Value>
+                              <Value>=Fields!Apellido.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>apellido</rd:DefaultName>
+                      <rd:DefaultName>Apellido</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -335,21 +355,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nroDocumento">
+                    <Textbox Name="numeroDocumento">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nroDocumento.Value</Value>
+                              <Value>=Fields!numeroDocumento.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nroDocumento</rd:DefaultName>
+                      <rd:DefaultName>numeroDocumento</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -416,10 +436,10 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>ListaClientesRegulares</DataSetName>
-        <Top>1.79599cm</Top>
+        <DataSetName>ListadoClientesRecurrentes</DataSetName>
+        <Top>1.67625cm</Top>
         <Height>1.2cm</Height>
-        <Width>16.46875cm</Width>
+        <Width>17.12321cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -427,23 +447,23 @@
           </Border>
         </Style>
       </Tablix>
-      <Chart Name="Chart3">
+      <Chart Name="Chart1">
         <ChartCategoryHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Group Name="Chart3_CategoryGroup">
+              <Group Name="Chart1_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!apellido.Value</GroupExpression>
+                  <GroupExpression>=Fields!Apellido.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!apellido.Value</Value>
+                  <Value>=Fields!Apellido.Value</Value>
                 </SortExpression>
               </SortExpressions>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart3_CategoryGroup1">
+                  <Group Name="Chart1_CategoryGroup1">
                     <GroupExpressions>
                       <GroupExpression>=Fields!nombreCliente.Value</GroupExpression>
                     </GroupExpressions>
@@ -456,7 +476,7 @@
                   <Label>=Fields!nombreCliente.Value</Label>
                 </ChartMember>
               </ChartMembers>
-              <Label>=Fields!apellido.Value</Label>
+              <Label>=Fields!Apellido.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
@@ -704,11 +724,11 @@
             <VerticalAlign>Top</VerticalAlign>
           </Style>
         </ChartNoDataMessage>
-        <DataSetName>ListaClientesRegulares</DataSetName>
-        <Top>1.79599cm</Top>
-        <Left>16.64514cm</Left>
-        <Height>9.18422cm</Height>
-        <Width>11.28354cm</Width>
+        <DataSetName>ListadoClientesRecurrentes</DataSetName>
+        <Top>1.67625cm</Top>
+        <Left>17.2996cm</Left>
+        <Height>8.88062cm</Height>
+        <Width>11.54973cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -720,10 +740,10 @@
         </Style>
       </Chart>
     </ReportItems>
-    <Height>4.32292in</Height>
+    <Height>4.15625in</Height>
     <Style />
   </Body>
-  <Width>10.99554in</Width>
+  <Width>11.358in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
@@ -736,18 +756,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DataSetMarce">
+    <DataSource Name="DataSetMarcelo">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>65eb8df1-bdc8-49c2-8fb7-0dac1c19ff62</rd:DataSourceID>
+      <rd:DataSourceID>8958f2b1-30e5-47d9-84e6-dc92f36cdabc</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ListaClientesRegulares">
+    <DataSet Name="ListadoClientesRecurrentes">
       <Query>
-        <DataSourceName>DataSetMarce</DataSourceName>
+        <DataSourceName>DataSetMarcelo</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -755,37 +775,37 @@
           <DataField>nombreCliente</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="apellido">
-          <DataField>apellido</DataField>
+        <Field Name="Apellido">
+          <DataField>Apellido</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="nroDocumento">
-          <DataField>nroDocumento</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="tipoDocumento">
-          <DataField>tipoDocumento</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="nombreDocumento">
           <DataField>nombreDocumento</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="numeroDocumento">
+          <DataField>numeroDocumento</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
         <Field Name="Cantidad">
           <DataField>Cantidad</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="idTipoDocumento">
+          <DataField>idTipoDocumento</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DataSetMarce</rd:DataSetName>
-        <rd:SchemaPath>C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\DataSetMarce.xsd</rd:SchemaPath>
-        <rd:TableName>TablaClientesRegulares</rd:TableName>
+        <rd:DataSetName>DataSetMarcelo</rd:DataSetName>
+        <rd:SchemaPath>C:\Marcelo\Facultad\3º año\Programación de aplicaciones visuales\github\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\DataSetMarcelo.xsd</rd:SchemaPath>
+        <rd:TableName>TablaEstadisticaClientesRecurrentes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>TablaClientesRegularesTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>TablaEstadisticaClientesRecurrentesTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>ad3c3b49-3c65-4d34-ad78-8db3ffdfb480</rd:ReportID>
+  <rd:ReportID>12d052a6-1e53-4d30-98b6-728401eeca44</rd:ReportID>
 </Report>
