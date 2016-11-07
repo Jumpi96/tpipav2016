@@ -1021,4 +1021,20 @@
         FormTipoHabitacion.Show()
 
     End Sub
+
+    Private Sub ClientesRegularesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesRegularesToolStripMenuItem.Click
+        FormClientesRegulares.Show()
+    End Sub
+
+    Private Sub ServiciosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServiciosToolStripMenuItem.Click
+        FormServicios.Show()
+    End Sub
+
+    Private Sub TiposDeFacturaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposDeFacturaToolStripMenuItem.Click
+        FormTipoFacturasEmitidas.Show()
+    End Sub
+
+    Private Sub ProveedoresContactadosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresContactadosToolStripMenuItem.Click
+        FormProveedoresContactados.Show()
+    End Sub
 End Class

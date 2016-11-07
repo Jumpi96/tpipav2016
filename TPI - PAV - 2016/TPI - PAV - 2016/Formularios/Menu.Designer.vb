@@ -311,6 +311,10 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ClientesRegularesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TiposDeFacturaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresContactadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -378,7 +382,7 @@ Partial Class menu
         'BuscarToolStripMenuItem
         '
         Me.BuscarToolStripMenuItem.Name = "BuscarToolStripMenuItem"
-        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarToolStripMenuItem.Size = New System.Drawing.Size(123, 22)
         Me.BuscarToolStripMenuItem.Text = "Buscar"
         Me.BuscarToolStripMenuItem.Visible = False
         '
@@ -438,7 +442,7 @@ Partial Class menu
         '
         Me.ABMsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ABMAlojamientosToolStripMenuItem, Me.ABMArtículosToolStripMenuItem, Me.ABMClientesToolStripMenuItem, Me.ABMConsumicionToolStripMenuItem, Me.ABMHabitaciónXPisoToolStripMenuItem, Me.ABMProveedoresToolStripMenuItem, Me.ABMServiciosToolStripMenuItem, Me.ABMServiciosXAlojamientoToolStripMenuItem, Me.ABMTiposFacturaToolStripMenuItem, Me.ABMTiposCamaToolStripMenuItem, Me.ABMTiposDocumentosToolStripMenuItem, Me.ABMTiposHabitaciónToolStripMenuItem})
         Me.ABMsToolStripMenuItem.Name = "ABMsToolStripMenuItem"
-        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.ABMsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ABMsToolStripMenuItem.Text = "ABMs"
         '
         'ABMAlojamientosToolStripMenuItem
@@ -517,7 +521,7 @@ Partial Class menu
         '
         Me.InformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListadoDeClientesToolStripMenuItem, Me.ListadoDeConsumisionesActualesToolStripMenuItem, Me.ListadoDeProveedoresToolStripMenuItem, Me.ListadoDeServiciosToolStripMenuItem, Me.ListadoDeHabitacionesConFrigobarToolStripMenuItem, Me.ListadoDeArticulosToolStripMenuItem, Me.ListadoDeServiciosActualesToolStripMenuItem, Me.ListadoDeOrdenesDeCompraToolStripMenuItem, Me.ListadoDeTiposDeDocumentosToolStripMenuItem, Me.ListadoDeConsumicionesDeFrigobarToolStripMenuItem, Me.ListadoDeFacturasToolStripMenuItem, Me.ListadoDeTiposDeCamaToolStripMenuItem})
         Me.InformesToolStripMenuItem.Name = "InformesToolStripMenuItem"
-        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.InformesToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.InformesToolStripMenuItem.Text = "Informes"
         '
         'ListadoDeClientesToolStripMenuItem
@@ -594,21 +598,21 @@ Partial Class menu
         '
         'EstadísticasToolStripMenuItem
         '
-        Me.EstadísticasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsumoDeArtículosToolStripMenuItem, Me.HabitacionesPorTipoToolStripMenuItem})
+        Me.EstadísticasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsumoDeArtículosToolStripMenuItem, Me.HabitacionesPorTipoToolStripMenuItem, Me.ClientesRegularesToolStripMenuItem, Me.ServiciosToolStripMenuItem, Me.TiposDeFacturaToolStripMenuItem, Me.ProveedoresContactadosToolStripMenuItem})
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
-        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
         '
         'ConsumoDeArtículosToolStripMenuItem
         '
         Me.ConsumoDeArtículosToolStripMenuItem.Name = "ConsumoDeArtículosToolStripMenuItem"
-        Me.ConsumoDeArtículosToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.ConsumoDeArtículosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.ConsumoDeArtículosToolStripMenuItem.Text = "Consumo de artículos"
         '
         'HabitacionesPorTipoToolStripMenuItem
         '
         Me.HabitacionesPorTipoToolStripMenuItem.Name = "HabitacionesPorTipoToolStripMenuItem"
-        Me.HabitacionesPorTipoToolStripMenuItem.Size = New System.Drawing.Size(206, 22)
+        Me.HabitacionesPorTipoToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
         Me.HabitacionesPorTipoToolStripMenuItem.Text = "Tipos de Habitaciones"
         '
         'pnl_nueAlo
@@ -654,7 +658,7 @@ Partial Class menu
         Me.tab_aloNueDatCli.Controls.Add(Me.cmb_tipoDoc)
         Me.tab_aloNueDatCli.Location = New System.Drawing.Point(4, 25)
         Me.tab_aloNueDatCli.Name = "tab_aloNueDatCli"
-        Me.tab_aloNueDatCli.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_aloNueDatCli.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_aloNueDatCli.Size = New System.Drawing.Size(514, 185)
         Me.tab_aloNueDatCli.TabIndex = 0
         Me.tab_aloNueDatCli.Text = "Datos del Cliente"
@@ -813,7 +817,7 @@ Partial Class menu
         Me.tab_aloNueDatHos.Controls.Add(Me.lbl_fecDes)
         Me.tab_aloNueDatHos.Location = New System.Drawing.Point(4, 25)
         Me.tab_aloNueDatHos.Name = "tab_aloNueDatHos"
-        Me.tab_aloNueDatHos.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_aloNueDatHos.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_aloNueDatHos.Size = New System.Drawing.Size(514, 185)
         Me.tab_aloNueDatHos.TabIndex = 1
         Me.tab_aloNueDatHos.Text = "Datos del Hospedaje"
@@ -951,7 +955,7 @@ Partial Class menu
         Me.tab_aloNueSelHab.Controls.Add(Me.cmd_aceHab)
         Me.tab_aloNueSelHab.Location = New System.Drawing.Point(4, 25)
         Me.tab_aloNueSelHab.Name = "tab_aloNueSelHab"
-        Me.tab_aloNueSelHab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_aloNueSelHab.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_aloNueSelHab.Size = New System.Drawing.Size(514, 185)
         Me.tab_aloNueSelHab.TabIndex = 2
         Me.tab_aloNueSelHab.Text = "Selección de Habitación"
@@ -1371,7 +1375,7 @@ Partial Class menu
         Me.tab_busAloAlo.Controls.Add(Me.grid_busAlo)
         Me.tab_busAloAlo.Location = New System.Drawing.Point(4, 25)
         Me.tab_busAloAlo.Name = "tab_busAloAlo"
-        Me.tab_busAloAlo.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_busAloAlo.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_busAloAlo.Size = New System.Drawing.Size(514, 185)
         Me.tab_busAloAlo.TabIndex = 1
         Me.tab_busAloAlo.Text = "Alojamientos"
@@ -1461,7 +1465,7 @@ Partial Class menu
         Me.tab_busAloDatCli.Controls.Add(Me.cmb_tipDocBusAlo)
         Me.tab_busAloDatCli.Location = New System.Drawing.Point(4, 25)
         Me.tab_busAloDatCli.Name = "tab_busAloDatCli"
-        Me.tab_busAloDatCli.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_busAloDatCli.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_busAloDatCli.Size = New System.Drawing.Size(514, 185)
         Me.tab_busAloDatCli.TabIndex = 0
         Me.tab_busAloDatCli.Text = "Datos del Cliente"
@@ -1912,7 +1916,7 @@ Partial Class menu
         Me.tab_nueOrdComDatPro.Controls.Add(Me.lbl_IDPro)
         Me.tab_nueOrdComDatPro.Location = New System.Drawing.Point(4, 25)
         Me.tab_nueOrdComDatPro.Name = "tab_nueOrdComDatPro"
-        Me.tab_nueOrdComDatPro.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_nueOrdComDatPro.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_nueOrdComDatPro.Size = New System.Drawing.Size(514, 185)
         Me.tab_nueOrdComDatPro.TabIndex = 0
         Me.tab_nueOrdComDatPro.Text = "Datos del Proveedor"
@@ -2034,7 +2038,7 @@ Partial Class menu
         Me.tab_nueOrdComArt.Controls.Add(Me.cmd_nueOrdComArtSig)
         Me.tab_nueOrdComArt.Location = New System.Drawing.Point(4, 25)
         Me.tab_nueOrdComArt.Name = "tab_nueOrdComArt"
-        Me.tab_nueOrdComArt.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_nueOrdComArt.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_nueOrdComArt.Size = New System.Drawing.Size(514, 185)
         Me.tab_nueOrdComArt.TabIndex = 1
         Me.tab_nueOrdComArt.Text = "Selección de Artículos"
@@ -2156,7 +2160,7 @@ Partial Class menu
         Me.tab_nueOrdComRes.Controls.Add(Me.cmd_nueOrdComFin)
         Me.tab_nueOrdComRes.Location = New System.Drawing.Point(4, 25)
         Me.tab_nueOrdComRes.Name = "tab_nueOrdComRes"
-        Me.tab_nueOrdComRes.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_nueOrdComRes.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_nueOrdComRes.Size = New System.Drawing.Size(514, 185)
         Me.tab_nueOrdComRes.TabIndex = 2
         Me.tab_nueOrdComRes.Text = "Resumen"
@@ -2229,7 +2233,7 @@ Partial Class menu
         Me.tab_busOrdComDatPro.Controls.Add(Me.lbl_IDProBusOrdCom)
         Me.tab_busOrdComDatPro.Location = New System.Drawing.Point(4, 25)
         Me.tab_busOrdComDatPro.Name = "tab_busOrdComDatPro"
-        Me.tab_busOrdComDatPro.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_busOrdComDatPro.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_busOrdComDatPro.Size = New System.Drawing.Size(514, 185)
         Me.tab_busOrdComDatPro.TabIndex = 0
         Me.tab_busOrdComDatPro.Text = "Datos del Proveedor"
@@ -2356,7 +2360,7 @@ Partial Class menu
         Me.tab_busOrdComOrdCom.Controls.Add(Me.cmd_busOrdComFin)
         Me.tab_busOrdComOrdCom.Location = New System.Drawing.Point(4, 25)
         Me.tab_busOrdComOrdCom.Name = "tab_busOrdComOrdCom"
-        Me.tab_busOrdComOrdCom.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_busOrdComOrdCom.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_busOrdComOrdCom.Size = New System.Drawing.Size(514, 185)
         Me.tab_busOrdComOrdCom.TabIndex = 1
         Me.tab_busOrdComOrdCom.Text = "Ordenes de Compra"
@@ -2715,7 +2719,7 @@ Partial Class menu
         Me.tab_carArtHab.Controls.Add(Me.lbl_nroPisoCarArt)
         Me.tab_carArtHab.Location = New System.Drawing.Point(4, 25)
         Me.tab_carArtHab.Name = "tab_carArtHab"
-        Me.tab_carArtHab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_carArtHab.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_carArtHab.Size = New System.Drawing.Size(514, 185)
         Me.tab_carArtHab.TabIndex = 0
         Me.tab_carArtHab.Text = "Habitación"
@@ -2805,7 +2809,7 @@ Partial Class menu
         Me.tab_carArtArt.Controls.Add(Me.cmd_carArtAtr)
         Me.tab_carArtArt.Location = New System.Drawing.Point(4, 25)
         Me.tab_carArtArt.Name = "tab_carArtArt"
-        Me.tab_carArtArt.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_carArtArt.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_carArtArt.Size = New System.Drawing.Size(514, 185)
         Me.tab_carArtArt.TabIndex = 1
         Me.tab_carArtArt.Text = "Artículos"
@@ -2874,7 +2878,7 @@ Partial Class menu
         Me.tab_carServHab.Controls.Add(Me.lbl_nroPiso)
         Me.tab_carServHab.Location = New System.Drawing.Point(4, 25)
         Me.tab_carServHab.Name = "tab_carServHab"
-        Me.tab_carServHab.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_carServHab.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_carServHab.Size = New System.Drawing.Size(514, 185)
         Me.tab_carServHab.TabIndex = 0
         Me.tab_carServHab.Text = "Habitación"
@@ -2964,7 +2968,7 @@ Partial Class menu
         Me.tab_carServServ.Controls.Add(Me.cmd_carSerFin)
         Me.tab_carServServ.Location = New System.Drawing.Point(4, 25)
         Me.tab_carServServ.Name = "tab_carServServ"
-        Me.tab_carServServ.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.tab_carServServ.Padding = New System.Windows.Forms.Padding(3)
         Me.tab_carServServ.Size = New System.Drawing.Size(514, 185)
         Me.tab_carServServ.TabIndex = 1
         Me.tab_carServServ.Text = "Servicios"
@@ -3037,6 +3041,30 @@ Partial Class menu
         Me.cln_nroPisoHabSel.ReadOnly = True
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
+        '
+        'ClientesRegularesToolStripMenuItem
+        '
+        Me.ClientesRegularesToolStripMenuItem.Name = "ClientesRegularesToolStripMenuItem"
+        Me.ClientesRegularesToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.ClientesRegularesToolStripMenuItem.Text = "Clientes regulares"
+        '
+        'ServiciosToolStripMenuItem
+        '
+        Me.ServiciosToolStripMenuItem.Name = "ServiciosToolStripMenuItem"
+        Me.ServiciosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.ServiciosToolStripMenuItem.Text = "Servicios"
+        '
+        'TiposDeFacturaToolStripMenuItem
+        '
+        Me.TiposDeFacturaToolStripMenuItem.Name = "TiposDeFacturaToolStripMenuItem"
+        Me.TiposDeFacturaToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.TiposDeFacturaToolStripMenuItem.Text = "Tipos de Factura"
+        '
+        'ProveedoresContactadosToolStripMenuItem
+        '
+        Me.ProveedoresContactadosToolStripMenuItem.Name = "ProveedoresContactadosToolStripMenuItem"
+        Me.ProveedoresContactadosToolStripMenuItem.Size = New System.Drawing.Size(225, 22)
+        Me.ProveedoresContactadosToolStripMenuItem.Text = "Proveedores contactados"
         '
         'menu
         '
@@ -3416,6 +3444,10 @@ Partial Class menu
     Friend WithEvents ListadoDeTiposDeCamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsumoDeArtículosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HabitacionesPorTipoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ClientesRegularesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ServiciosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TiposDeFacturaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ProveedoresContactadosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class
