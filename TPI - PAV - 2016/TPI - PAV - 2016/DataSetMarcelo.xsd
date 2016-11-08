@@ -69,6 +69,25 @@ GROUP BY T.nombre</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TablaHabitacionesMasUsadasTableAdapter" GeneratorDataComponentClassName="TablaHabitacionesMasUsadasTableAdapter" Name="TablaHabitacionesMasUsadas" UserDataComponentName="TablaHabitacionesMasUsadasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectName="hotelShaky.dbo.HabitacionesXPiso" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT H.nroHabitacion AS numeroHabitacion, COUNT(*) AS Cantidad
+FROM Alojamientos A JOIN HabitacionesXPiso H ON A.nroHabitacion = H.nroHabitacion
+GROUP BY H.nroHabitacion</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="numeroHabitacion" DataSetColumn="numeroHabitacion" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -77,7 +96,7 @@ GROUP BY T.nombre</CommandText>
   <xs:element name="DataSetMarcelo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetMarcelo" msprop:Generator_UserDSName="DataSetMarcelo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TablaEstadisticaClientesRecurrentes" msprop:Generator_TableClassName="TablaEstadisticaClientesRecurrentesDataTable" msprop:Generator_TableVarName="tableTablaEstadisticaClientesRecurrentes" msprop:Generator_RowChangedName="TablaEstadisticaClientesRecurrentesRowChanged" msprop:Generator_TablePropName="TablaEstadisticaClientesRecurrentes" msprop:Generator_RowDeletingName="TablaEstadisticaClientesRecurrentesRowDeleting" msprop:Generator_RowChangingName="TablaEstadisticaClientesRecurrentesRowChanging" msprop:Generator_RowEvHandlerName="TablaEstadisticaClientesRecurrentesRowChangeEventHandler" msprop:Generator_RowDeletedName="TablaEstadisticaClientesRecurrentesRowDeleted" msprop:Generator_RowClassName="TablaEstadisticaClientesRecurrentesRow" msprop:Generator_UserTableName="TablaEstadisticaClientesRecurrentes" msprop:Generator_RowEvArgName="TablaEstadisticaClientesRecurrentesRowChangeEvent">
+        <xs:element name="TablaEstadisticaClientesRecurrentes" msprop:Generator_TableClassName="TablaEstadisticaClientesRecurrentesDataTable" msprop:Generator_TableVarName="tableTablaEstadisticaClientesRecurrentes" msprop:Generator_TablePropName="TablaEstadisticaClientesRecurrentes" msprop:Generator_RowDeletingName="TablaEstadisticaClientesRecurrentesRowDeleting" msprop:Generator_RowChangingName="TablaEstadisticaClientesRecurrentesRowChanging" msprop:Generator_RowEvHandlerName="TablaEstadisticaClientesRecurrentesRowChangeEventHandler" msprop:Generator_RowDeletedName="TablaEstadisticaClientesRecurrentesRowDeleted" msprop:Generator_UserTableName="TablaEstadisticaClientesRecurrentes" msprop:Generator_RowChangedName="TablaEstadisticaClientesRecurrentesRowChanged" msprop:Generator_RowEvArgName="TablaEstadisticaClientesRecurrentesRowChangeEvent" msprop:Generator_RowClassName="TablaEstadisticaClientesRecurrentesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombreCliente" msprop:Generator_ColumnVarNameInTable="columnnombreCliente" msprop:Generator_ColumnPropNameInRow="nombreCliente" msprop:Generator_ColumnPropNameInTable="nombreClienteColumn" msprop:Generator_UserColumnName="nombreCliente">
@@ -106,7 +125,7 @@ GROUP BY T.nombre</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TabalaEstadisticaEdadesUsuales" msprop:Generator_TableClassName="TabalaEstadisticaEdadesUsualesDataTable" msprop:Generator_TableVarName="tableTabalaEstadisticaEdadesUsuales" msprop:Generator_TablePropName="TabalaEstadisticaEdadesUsuales" msprop:Generator_RowDeletingName="TabalaEstadisticaEdadesUsualesRowDeleting" msprop:Generator_RowChangingName="TabalaEstadisticaEdadesUsualesRowChanging" msprop:Generator_RowEvHandlerName="TabalaEstadisticaEdadesUsualesRowChangeEventHandler" msprop:Generator_RowDeletedName="TabalaEstadisticaEdadesUsualesRowDeleted" msprop:Generator_UserTableName="TabalaEstadisticaEdadesUsuales" msprop:Generator_RowChangedName="TabalaEstadisticaEdadesUsualesRowChanged" msprop:Generator_RowEvArgName="TabalaEstadisticaEdadesUsualesRowChangeEvent" msprop:Generator_RowClassName="TabalaEstadisticaEdadesUsualesRow">
+        <xs:element name="TabalaEstadisticaEdadesUsuales" msprop:Generator_TableClassName="TabalaEstadisticaEdadesUsualesDataTable" msprop:Generator_TableVarName="tableTabalaEstadisticaEdadesUsuales" msprop:Generator_RowChangedName="TabalaEstadisticaEdadesUsualesRowChanged" msprop:Generator_TablePropName="TabalaEstadisticaEdadesUsuales" msprop:Generator_RowDeletingName="TabalaEstadisticaEdadesUsualesRowDeleting" msprop:Generator_RowChangingName="TabalaEstadisticaEdadesUsualesRowChanging" msprop:Generator_RowEvHandlerName="TabalaEstadisticaEdadesUsualesRowChangeEventHandler" msprop:Generator_RowDeletedName="TabalaEstadisticaEdadesUsualesRowDeleted" msprop:Generator_RowClassName="TabalaEstadisticaEdadesUsualesRow" msprop:Generator_UserTableName="TabalaEstadisticaEdadesUsuales" msprop:Generator_RowEvArgName="TabalaEstadisticaEdadesUsualesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Edad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEdad" msprop:Generator_ColumnPropNameInRow="Edad" msprop:Generator_ColumnPropNameInTable="EdadColumn" msprop:Generator_UserColumnName="Edad" type="xs:int" minOccurs="0" />
@@ -114,7 +133,7 @@ GROUP BY T.nombre</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TiposCama" msprop:Generator_TableClassName="TiposCamaDataTable" msprop:Generator_TableVarName="tableTiposCama" msprop:Generator_TablePropName="TiposCama" msprop:Generator_RowDeletingName="TiposCamaRowDeleting" msprop:Generator_RowChangingName="TiposCamaRowChanging" msprop:Generator_RowEvHandlerName="TiposCamaRowChangeEventHandler" msprop:Generator_RowDeletedName="TiposCamaRowDeleted" msprop:Generator_UserTableName="TiposCama" msprop:Generator_RowChangedName="TiposCamaRowChanged" msprop:Generator_RowEvArgName="TiposCamaRowChangeEvent" msprop:Generator_RowClassName="TiposCamaRow">
+        <xs:element name="TiposCama" msprop:Generator_TableClassName="TiposCamaDataTable" msprop:Generator_TableVarName="tableTiposCama" msprop:Generator_RowChangedName="TiposCamaRowChanged" msprop:Generator_TablePropName="TiposCama" msprop:Generator_RowDeletingName="TiposCamaRowDeleting" msprop:Generator_RowChangingName="TiposCamaRowChanging" msprop:Generator_RowEvHandlerName="TiposCamaRowChangeEventHandler" msprop:Generator_RowDeletedName="TiposCamaRowDeleted" msprop:Generator_RowClassName="TiposCamaRow" msprop:Generator_UserTableName="TiposCama" msprop:Generator_RowEvArgName="TiposCamaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="tipoCama" msprop:Generator_ColumnVarNameInTable="columntipoCama" msprop:Generator_ColumnPropNameInRow="tipoCama" msprop:Generator_ColumnPropNameInTable="tipoCamaColumn" msprop:Generator_UserColumnName="tipoCama">
@@ -128,7 +147,19 @@ GROUP BY T.nombre</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="TablaHabitacionesMasUsadas" msprop:Generator_TableClassName="TablaHabitacionesMasUsadasDataTable" msprop:Generator_TableVarName="tableTablaHabitacionesMasUsadas" msprop:Generator_TablePropName="TablaHabitacionesMasUsadas" msprop:Generator_RowDeletingName="TablaHabitacionesMasUsadasRowDeleting" msprop:Generator_RowChangingName="TablaHabitacionesMasUsadasRowChanging" msprop:Generator_RowEvHandlerName="TablaHabitacionesMasUsadasRowChangeEventHandler" msprop:Generator_RowDeletedName="TablaHabitacionesMasUsadasRowDeleted" msprop:Generator_UserTableName="TablaHabitacionesMasUsadas" msprop:Generator_RowChangedName="TablaHabitacionesMasUsadasRowChanged" msprop:Generator_RowEvArgName="TablaHabitacionesMasUsadasRowChangeEvent" msprop:Generator_RowClassName="TablaHabitacionesMasUsadasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numeroHabitacion" msprop:Generator_ColumnVarNameInTable="columnnumeroHabitacion" msprop:Generator_ColumnPropNameInRow="numeroHabitacion" msprop:Generator_ColumnPropNameInTable="numeroHabitacionColumn" msprop:Generator_UserColumnName="numeroHabitacion" type="xs:int" />
+              <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TablaHabitacionesMasUsadas" />
+      <xs:field xpath="mstns:numeroHabitacion" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

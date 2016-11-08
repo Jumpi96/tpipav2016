@@ -104,6 +104,12 @@
     <Compile Include="DataSetMarcelo.vb">
       <DependentUpon>DataSetMarcelo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Estadísticas\FormHabitacionesMasUsadas.Designer.vb">
+      <DependentUpon>FormHabitacionesMasUsadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormHabitacionesMasUsadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estadísticas\FormCantidadMaxima.Designer.vb">
       <DependentUpon>FormCantidadMaxima.vb</DependentUpon>
     </Compile>
@@ -363,6 +369,10 @@
     <EmbeddedResource Include="Estadísticas\EstadisticaConsumoArticulos.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaDuracionAlojamientos.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaEdadesUsuales.rdlc" />
+    <EmbeddedResource Include="Estadísticas\EstadisticaHabitacionesMasUsadas.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FormHabitacionesMasUsadas.resx">
+      <DependentUpon>FormHabitacionesMasUsadas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\EstadisticaOcupacionMensual.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaServicios.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoFacturasEmitidas.rdlc" />

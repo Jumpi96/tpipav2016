@@ -1053,4 +1053,12 @@
     Private Sub TiposCamaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposCamaToolStripMenuItem.Click
         FormEstadisticaTiposCama.Show()
     End Sub
+
+    Private Sub EdadesRegularesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EdadesRegularesToolStripMenuItem.Click
+        FormEdadesUsuales.Show()
+    End Sub
+
+    Private Sub HabitacionesMasUsadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HabitacionesMasUsadasToolStripMenuItem.Click
+        FormHabitacionesMasUsadas.Show()
+    End Sub
 End Class
