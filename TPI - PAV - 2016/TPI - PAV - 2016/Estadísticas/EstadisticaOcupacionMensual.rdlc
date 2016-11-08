@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Estadistica de Ocupación Mensual - </Value>
+                <Value>Estadística de Ocupación Mensual - </Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -23,17 +23,19 @@
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.53695cm</Top>
-        <Left>1.70467cm</Left>
-        <Height>0.97042cm</Height>
-        <Width>15.49104cm</Width>
+        <Top>0.45216cm</Top>
+        <Left>2.94485cm</Left>
+        <Height>0.83812cm</Height>
+        <Width>15.51927cm</Width>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -76,6 +78,8 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -253,9 +257,6 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
-            <ChartThreeDProperties>
-              <Enabled>true</Enabled>
-            </ChartThreeDProperties>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
@@ -278,10 +279,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.54224cm</Top>
-        <Left>3.03953cm</Left>
-        <Height>5cm</Height>
-        <Width>7.5cm</Width>
+        <Top>2.16641cm</Top>
+        <Left>0.84349cm</Left>
+        <Height>7.29871cm</Height>
+        <Width>14.49475cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -298,7 +299,7 @@
             <TablixCornerRow>
               <TablixCornerCell>
                 <CellContents>
-                  <Textbox Name="Textbox7">
+                  <Textbox Name="Textbox11">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -306,18 +307,26 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Mes</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox7</rd:DefaultName>
+                    <rd:DefaultName>Textbox10</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -332,7 +341,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>2.71167cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -352,7 +361,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -384,7 +395,7 @@
               <TablixHeader>
                 <Size>0.6cm</Size>
                 <CellContents>
-                  <Textbox Name="Textbox5">
+                  <Textbox Name="Textbox12">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -392,18 +403,26 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Alojamientos</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox5</rd:DefaultName>
+                    <rd:DefaultName>Textbox10</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -442,7 +461,9 @@
                             <Style />
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>Mes</rd:DefaultName>
@@ -463,10 +484,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>4.41537cm</Top>
-        <Left>13.46412cm</Left>
+        <Top>2.16641cm</Top>
+        <Left>15.96412cm</Left>
         <Height>1.2cm</Height>
-        <Width>5cm</Width>
+        <Width>5.21167cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -475,10 +496,10 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>3.65475in</Height>
+    <Height>4.14434in</Height>
     <Style />
   </Body>
-  <Width>7.88901in</Width>
+  <Width>8.55567in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

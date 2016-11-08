@@ -47,7 +47,6 @@
                   <DataElementOutput>Output</DataElementOutput>
                 </ChartDataPoint>
               </ChartDataPoints>
-              <Subtype>PercentStacked</Subtype>
               <Style />
               <ChartEmptyPoints>
                 <Style />
@@ -75,7 +74,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption>Nombres</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -150,7 +149,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption>Veces Contratado</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -217,9 +216,6 @@
                 </ChartAxisScaleBreak>
               </ChartAxis>
             </ChartValueAxes>
-            <ChartThreeDProperties>
-              <Enabled>true</Enabled>
-            </ChartThreeDProperties>
             <Style>
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
@@ -243,17 +239,6 @@
             <ColumnSeparatorColor>Black</ColumnSeparatorColor>
           </ChartLegend>
         </ChartLegends>
-        <ChartTitles>
-          <ChartTitle Name="Default">
-            <Caption />
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontWeight>Bold</FontWeight>
-              <TextAlign>General</TextAlign>
-              <VerticalAlign>Top</VerticalAlign>
-            </Style>
-          </ChartTitle>
-        </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
           <Style>
@@ -271,10 +256,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.84903cm</Top>
-        <Left>1.11337cm</Left>
-        <Height>9.46617cm</Height>
-        <Width>9.93417cm</Width>
+        <Top>2.21403cm</Top>
+        <Left>0.53129cm</Left>
+        <Height>7.27225cm</Height>
+        <Width>14.49475cm</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -296,11 +281,11 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.89633cm</Height>
+              <Height>1.18737cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox1">
+                    <Textbox Name="Textbox11">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -308,18 +293,26 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Nombre</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -330,7 +323,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox3">
+                    <Textbox Name="Textbox12">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -338,18 +331,42 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Veces Contratado</Value>
-                              <Style />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value />
+                              <Style>
+                                <FontFamily>Tahoma</FontFamily>
+                                <FontSize>11pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                                <Color>White</Color>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>#4c68a2</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -376,7 +393,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NOMBRE</rd:DefaultName>
@@ -406,7 +425,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>TOTAL</rd:DefaultName>
@@ -444,9 +465,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.84903cm</Top>
-        <Left>14.35026cm</Left>
-        <Height>1.49633cm</Height>
+        <Top>2.21403cm</Top>
+        <Left>15.46151cm</Left>
+        <Height>1.78737cm</Height>
         <Width>5cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -455,14 +476,14 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox5">
+      <Textbox Name="Textbox6">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Estadística Tipos de Habitaciones</Value>
+                <Value>Estadística de Tipos de Habitaciones</Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -475,14 +496,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>0.75502cm</Top>
-        <Left>3.48943cm</Left>
+        <Top>0.49979cm</Top>
+        <Left>3.10607cm</Left>
         <Height>0.83812cm</Height>
-        <Width>13.36083cm</Width>
+        <Width>15.51927cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -491,10 +512,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>6.16667in</Height>
+    <Height>4.14434in</Height>
     <Style />
   </Body>
-  <Width>8.68304in</Width>
+  <Width>8.55567in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>

@@ -37,6 +37,8 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -147,7 +149,7 @@
                   <FontSize>8pt</FontSize>
                 </Style>
                 <ChartAxisTitle>
-                  <Caption>Axis Title</Caption>
+                  <Caption>Días</Caption>
                   <Style>
                     <FontSize>8pt</FontSize>
                   </Style>
@@ -254,10 +256,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.26682cm</Top>
-        <Left>1.74307cm</Left>
-        <Height>5cm</Height>
-        <Width>7.5cm</Width>
+        <Top>1.79599cm</Top>
+        <Left>0.63182cm</Left>
+        <Height>7.29871cm</Height>
+        <Width>14.49475cm</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -273,7 +275,7 @@
             <TablixCornerRow>
               <TablixCornerCell>
                 <CellContents>
-                  <Textbox Name="Textbox8">
+                  <Textbox Name="Textbox11">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -281,18 +283,26 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Días</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox8</rd:DefaultName>
+                    <rd:DefaultName>Textbox10</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -327,7 +337,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Cantidad</rd:DefaultName>
@@ -359,7 +371,7 @@
               <TablixHeader>
                 <Size>0.6cm</Size>
                 <CellContents>
-                  <Textbox Name="Textbox6">
+                  <Textbox Name="Textbox12">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -367,18 +379,26 @@
                         <TextRuns>
                           <TextRun>
                             <Value>Cantidad</Value>
-                            <Style />
+                            <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
+                              <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
+                            </Style>
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox6</rd:DefaultName>
+                    <rd:DefaultName>Textbox10</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -417,7 +437,9 @@
                             <Style />
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>Dias</rd:DefaultName>
@@ -438,8 +460,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>3.30412cm</Top>
-        <Left>10.50078cm</Left>
+        <Top>1.79599cm</Top>
+        <Left>15.80917cm</Left>
         <Height>1.2cm</Height>
         <Width>5cm</Width>
         <ZIndex>1</ZIndex>
@@ -449,29 +471,34 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox9">
+      <Textbox Name="Textbox7">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Estadística de duración de alojamientos</Value>
-                <Style />
+                <Value>Estadística de Duración de Alojamientos</Value>
+                <Style>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox9</rd:DefaultName>
-        <Top>0.28787cm</Top>
-        <Left>4.5212cm</Left>
-        <Height>0.6cm</Height>
-        <Width>8.47958cm</Width>
+        <rd:DefaultName>Textbox5</rd:DefaultName>
+        <Top>0.25231cm</Top>
+        <Left>3.71594cm</Left>
+        <Height>0.83812cm</Height>
+        <Width>15.51927cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -480,10 +507,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.01934in</Height>
+    <Height>4.14434in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>8.55567in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
