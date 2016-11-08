@@ -7,9 +7,9 @@
 
     Private Sub imprimir()
         Dim sql As String = ""
-        sql = "SELECT cantMaxPersonas AS CANTIDADMAX, COUNT(nroHabitacion) AS TOTAL FROM HabitacionesXPiso  GROUP BY nroHabitacion, cantMaxPersonas "
+        sql = "SELECT cantMaxPersonas AS CANTIDADMAX, COUNT(nroHabitacion) AS TOTAL FROM HabitacionesXPiso  GROUP BY cantMaxPersonas "
         Dim tabla As DataTable = accesoBD.query(sql)
-        Me.EstadisitcaCantMaxBindingSource.DataSource = tabla
+        Me.EstadisticaMaximaBindingSource.DataSource = tabla
     End Sub
 
 End Class

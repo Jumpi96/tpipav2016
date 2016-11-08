@@ -8,32 +8,32 @@
             <ChartMember>
               <Group Name="Chart5_CategoryGroup">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!cantMaxPersonas.Value</GroupExpression>
+                  <GroupExpression>=Fields!CANTIDADMAX.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!cantMaxPersonas.Value</Value>
+                  <Value>=Fields!CANTIDADMAX.Value</Value>
                 </SortExpression>
               </SortExpressions>
-              <Label>=Fields!cantMaxPersonas.Value</Label>
+              <Label>=Fields!CANTIDADMAX.Value</Label>
             </ChartMember>
           </ChartMembers>
         </ChartCategoryHierarchy>
         <ChartSeriesHierarchy>
           <ChartMembers>
             <ChartMember>
-              <Label>nro Habitacion</Label>
+              <Label>TOTAL</Label>
             </ChartMember>
           </ChartMembers>
         </ChartSeriesHierarchy>
         <ChartData>
           <ChartSeriesCollection>
-            <ChartSeries Name="nroHabitacion">
+            <ChartSeries Name="TOTAL">
               <ChartDataPoints>
                 <ChartDataPoint>
                   <ChartDataPointValues>
-                    <Y>=Sum(Fields!nroHabitacion.Value)</Y>
+                    <Y>=Sum(Fields!TOTAL.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
@@ -220,35 +220,6 @@
             </Style>
           </ChartArea>
         </ChartAreas>
-        <ChartLegends>
-          <ChartLegend Name="Default">
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontSize>8pt</FontSize>
-            </Style>
-            <ChartLegendTitle>
-              <Caption />
-              <Style>
-                <FontSize>8pt</FontSize>
-                <FontWeight>Bold</FontWeight>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </ChartLegendTitle>
-            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-          </ChartLegend>
-        </ChartLegends>
-        <ChartTitles>
-          <ChartTitle Name="Default">
-            <Caption />
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontWeight>Bold</FontWeight>
-              <TextAlign>General</TextAlign>
-              <VerticalAlign>Top</VerticalAlign>
-            </Style>
-          </ChartTitle>
-        </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
           <Style>
@@ -395,21 +366,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="cantMaxPersonas">
+                    <Textbox Name="CANTIDADMAX">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!cantMaxPersonas.Value</Value>
+                              <Value>=Fields!CANTIDADMAX.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>cantMaxPersonas</rd:DefaultName>
+                      <rd:DefaultName>CANTIDADMAX</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -425,21 +396,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nroHabitacion">
+                    <Textbox Name="TOTAL">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nroHabitacion.Value</Value>
+                              <Value>=Fields!TOTAL.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nroHabitacion</rd:DefaultName>
+                      <rd:DefaultName>TOTAL</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -517,46 +488,22 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="nroHabitacion">
-          <DataField>nroHabitacion</DataField>
+        <Field Name="CANTIDADMAX">
+          <DataField>CANTIDADMAX</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="cantCamas">
-          <DataField>cantCamas</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="aireAcondicionado">
-          <DataField>aireAcondicionado</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="frigobar">
-          <DataField>frigobar</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="fechaEmision">
-          <DataField>fechaEmision</DataField>
-          <rd:TypeName>System.DateTime</rd:TypeName>
-        </Field>
-        <Field Name="cantBaños">
-          <DataField>cantBaños</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="idTipoHabitacion">
-          <DataField>idTipoHabitacion</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="cantMaxPersonas">
-          <DataField>cantMaxPersonas</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="TOTAL">
+          <DataField>TOTAL</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\lucho\Documents\GitHub\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\DataSet.xsd</rd:SchemaPath>
-        <rd:TableName>HabitacionesXPiso</rd:TableName>
-        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
-        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>HabitacionesXPisoTableAdapter</rd:TableAdapterName>
+        <rd:SchemaPath>D:\Facultad\PAV\TP\tpipav2016\TPI - PAV - 2016\TPI - PAV - 2016\DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>EstadisticaMaxima</rd:TableName>
+        <rd:TableAdapterFillMethod />
+        <rd:TableAdapterGetDataMethod />
+        <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

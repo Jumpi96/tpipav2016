@@ -104,6 +104,12 @@
     <Compile Include="DataSetMarcelo.vb">
       <DependentUpon>DataSetMarcelo.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Estadísticas\FormCantidadMaxima.Designer.vb">
+      <DependentUpon>FormCantidadMaxima.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormCantidadMaxima.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estadísticas\FormClientesRecurrentes.Designer.vb">
       <DependentUpon>FormClientesRecurrentes.vb</DependentUpon>
     </Compile>
@@ -340,6 +346,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Estadísticas\EstadisiticaCantidadMaxima.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaClientesRecurrentes.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaConsumoArticulos.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaDuracionAlojamientos.rdlc" />
@@ -347,6 +354,9 @@
     <EmbeddedResource Include="Estadísticas\EstadisticaServicios.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoFacturasEmitidas.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoHabitacion.rdlc" />
+    <EmbeddedResource Include="Estadísticas\FormCantidadMaxima.resx">
+      <DependentUpon>FormCantidadMaxima.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\FormClientesRecurrentes.resx">
       <DependentUpon>FormClientesRecurrentes.vb</DependentUpon>
     </EmbeddedResource>

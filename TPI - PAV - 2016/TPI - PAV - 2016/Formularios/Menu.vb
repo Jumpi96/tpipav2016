@@ -1045,4 +1045,8 @@
     Private Sub DuraciónDeAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DuraciónDeAlojamientosToolStripMenuItem.Click
         FormDuracionAlojamientos.Show()
     End Sub
+
+    Private Sub CantidadMáximaPorHabitaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CantidadMáximaPorHabitaciónToolStripMenuItem.Click
+        FormCantidadMaxima.Show()
+    End Sub
 End Class

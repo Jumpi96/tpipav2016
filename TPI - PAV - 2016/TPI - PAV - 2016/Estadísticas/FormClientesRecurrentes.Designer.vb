@@ -42,6 +42,7 @@ Partial Class FormClientesRecurrentes
         Me.btn_aplicarFiltros = New System.Windows.Forms.Button()
         Me.btn_limpiar = New System.Windows.Forms.Button()
         Me.TablaEstadisticaClientesRecurrentesTableAdapter = New TPI___PAV___2016.DataSetMarceloTableAdapters.TablaEstadisticaClientesRecurrentesTableAdapter()
+        Me.TablaEstadisticaClientesRecurrentesTableAdapter.Connection.ConnectionString = accesoBD.cadenaConexion
         CType(Me.TablaEstadisticaClientesRecurrentesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataSetMarcelo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
