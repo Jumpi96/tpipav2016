@@ -37,6 +37,8 @@
                   </ChartDataPointValues>
                   <ChartDataLabel>
                     <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
                   </ChartDataLabel>
                   <Style />
                   <ChartMarker>
@@ -259,10 +261,10 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.50495cm</Top>
-        <Left>1.21391cm</Left>
-        <Height>5cm</Height>
-        <Width>7.5cm</Width>
+        <Top>1.86599cm</Top>
+        <Left>0.47308cm</Left>
+        <Height>7.27225cm</Height>
+        <Width>14.49475cm</Width>
         <Style>
           <Border>
             <Color>LightGrey</Color>
@@ -278,7 +280,7 @@
             <TablixCornerRow>
               <TablixCornerCell>
                 <CellContents>
-                  <Textbox Name="Textbox4">
+                  <Textbox Name="Textbox11">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -287,7 +289,10 @@
                           <TextRun>
                             <Value>Artículo</Value>
                             <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
                               <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -296,12 +301,13 @@
                         </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox4</rd:DefaultName>
+                    <rd:DefaultName>Textbox10</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -370,7 +376,7 @@
               <TablixHeader>
                 <Size>0.6cm</Size>
                 <CellContents>
-                  <Textbox Name="Textbox2">
+                  <Textbox Name="Textbox12">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
@@ -379,7 +385,10 @@
                           <TextRun>
                             <Value>Cantidad</Value>
                             <Style>
+                              <FontFamily>Tahoma</FontFamily>
+                              <FontSize>11pt</FontSize>
                               <FontWeight>Bold</FontWeight>
+                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -388,12 +397,13 @@
                         </Style>
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox2</rd:DefaultName>
+                    <rd:DefaultName>Textbox10</rd:DefaultName>
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
                         <Style>Solid</Style>
                       </Border>
+                      <BackgroundColor>#4c68a2</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -419,7 +429,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>3.71708cm</Size>
+                <Size>2.65875cm</Size>
                 <CellContents>
                   <Textbox Name="nombre">
                     <CanGrow>true</CanGrow>
@@ -432,7 +442,9 @@
                             <Style />
                           </TextRun>
                         </TextRuns>
-                        <Style />
+                        <Style>
+                          <TextAlign>Center</TextAlign>
+                        </Style>
                       </Paragraph>
                     </Paragraphs>
                     <rd:DefaultName>nombre</rd:DefaultName>
@@ -453,10 +465,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.50495cm</Top>
-        <Left>9.73349cm</Left>
+        <Top>1.86599cm</Top>
+        <Left>15.69984cm</Left>
         <Height>1.2cm</Height>
-        <Width>6.24354cm</Width>
+        <Width>5.18521cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -464,14 +476,14 @@
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox5">
+      <Textbox Name="Textbox6">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Estadística de consumo de artículos</Value>
+                <Value>Estadística de Consumo de Artículos</Value>
                 <Style>
                   <FontSize>18pt</FontSize>
                   <FontWeight>Bold</FontWeight>
@@ -484,14 +496,14 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>0.34078cm</Top>
-        <Left>2.6162cm</Left>
+        <Top>0.49044cm</Top>
+        <Left>3.48933cm</Left>
         <Height>0.83812cm</Height>
-        <Width>13.36083cm</Width>
+        <Width>15.51927cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -500,10 +512,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.561in</Height>
+    <Height>4.14434in</Height>
     <Style />
   </Body>
-  <Width>6.84225in</Width>
+  <Width>8.55567in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
