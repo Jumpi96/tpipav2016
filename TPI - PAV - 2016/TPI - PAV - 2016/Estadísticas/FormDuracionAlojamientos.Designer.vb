@@ -24,27 +24,31 @@ Partial Class FormDuracionAlojamientos
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ArticulosConsumoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EstadisticaDuracionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DataSet = New TPI___PAV___2016.DataSet()
+        Me.ArticulosConsumoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.ArticulosConsumoTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.ArticulosConsumoTableAdapter()
-        Me.EstadisticaDuracionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.EstadisticaDuracionTableAdapter = New TPI___PAV___2016.DataSetTableAdapters.EstadisticaDuracionTableAdapter()
-        Me.EstadisticaDuracionTableAdapter.Connection.ConnectionString = AccesoBD.instancia.cadenaConexion
-        CType(Me.ArticulosConsumoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.EstadisticaDuracionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ArticulosConsumoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'ArticulosConsumoBindingSource
+        'EstadisticaDuracionBindingSource
         '
-        Me.ArticulosConsumoBindingSource.DataMember = "ArticulosConsumo"
-        Me.ArticulosConsumoBindingSource.DataSource = Me.DataSet
+        Me.EstadisticaDuracionBindingSource.DataMember = "EstadisticaDuracion"
+        Me.EstadisticaDuracionBindingSource.DataSource = Me.DataSet
         '
         'DataSet
         '
         Me.DataSet.DataSetName = "DataSet"
         Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'ArticulosConsumoBindingSource
+        '
+        Me.ArticulosConsumoBindingSource.DataMember = "ArticulosConsumo"
+        Me.ArticulosConsumoBindingSource.DataSource = Me.DataSet
         '
         'ReportViewer1
         '
@@ -63,23 +67,22 @@ Partial Class FormDuracionAlojamientos
         '
         Me.ArticulosConsumoTableAdapter.ClearBeforeFill = True
         '
-        'EstadisticaDuracionBindingSource
+        'EstadisticaDuracionTableAdapter
         '
-        Me.EstadisticaDuracionBindingSource.DataMember = "EstadisticaDuracion"
-        Me.EstadisticaDuracionBindingSource.DataSource = Me.DataSet
+        Me.EstadisticaDuracionTableAdapter.ClearBeforeFill = True
         '
-        'FormConsumoArticulos
+        'FormDuracionAlojamientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(643, 517)
         Me.Controls.Add(Me.ReportViewer1)
         Me.MinimumSize = New System.Drawing.Size(659, 556)
-        Me.Name = "FormConsumoArticulos"
-        Me.Text = "Estadística de consumo de artículos"
-        CType(Me.ArticulosConsumoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "FormDuracionAlojamientos"
+        Me.Text = "Estadística de duración de alojamientos"
         CType(Me.EstadisticaDuracionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ArticulosConsumoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

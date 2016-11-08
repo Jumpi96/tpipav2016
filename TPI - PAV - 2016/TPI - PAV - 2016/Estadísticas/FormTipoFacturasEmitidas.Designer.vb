@@ -36,13 +36,14 @@ Partial Class FormTipoFacturasEmitidas
         '
         'ReportViewer1
         '
+        Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom
         ReportDataSource1.Name = "DataSet1"
         ReportDataSource1.Value = Me.ESTADISTICAFACTURASEMITIDASBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.EstadisticaFacturasEmitidas.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(1, 45)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TPI___PAV___2016.EstadisticaTipoFacturasEmitidas.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(0, 39)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(641, 473)
+        Me.ReportViewer1.Size = New System.Drawing.Size(643, 479)
         Me.ReportViewer1.TabIndex = 0
         '
         'Button1
@@ -82,7 +83,7 @@ Partial Class FormTipoFacturasEmitidas
         Me.DataSet.DataSetName = "DataSet"
         Me.DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'FormFacturasEmitidas
+        'FormTipoFacturasEmitidas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -91,7 +92,8 @@ Partial Class FormTipoFacturasEmitidas
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_cantidad)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "FormFacturasEmitidas"
+        Me.MaximumSize = New System.Drawing.Size(659, 557)
+        Me.Name = "FormTipoFacturasEmitidas"
         Me.Text = "FormFacturasEmitidas"
         CType(Me.ESTADISTICAFACTURASEMITIDASBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataSet, System.ComponentModel.ISupportInitialize).EndInit()

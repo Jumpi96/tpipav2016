@@ -9,7 +9,7 @@
     Private Sub imprimirEstadistica()
 
         Dim sql As String = ""
-        sql = "SELECT P.NOMBRE AS nombreProveedor, COUNT(O.IdOrden) AS cantidad FROM PROVEEDORES P JOIN OrdenesCompra O ON P.idProveedor= O.idProveedor GROUP BY P.idProveedor "
+        sql = "SELECT P.NOMBRE AS nombreProveedor, COUNT(O.IdOrden) AS cantidad FROM PROVEEDORES P JOIN OrdenesCompra O ON P.idProveedor= O.idProveedor GROUP BY P.idProveedor,P.nombre "
         Dim tabla As DataTable = accesoBD.query(sql)
         Me.ESTADISTICAPROVEEDORESBindingSource.DataSource = tabla
 

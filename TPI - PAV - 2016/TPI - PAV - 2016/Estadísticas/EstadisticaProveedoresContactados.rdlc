@@ -36,7 +36,9 @@
                     <Y>=Sum(Fields!cantidad.Value)</Y>
                   </ChartDataPointValues>
                   <ChartDataLabel>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                     <UseValueAsLabel>true</UseValueAsLabel>
                     <Visible>true</Visible>
                   </ChartDataLabel>
@@ -451,8 +453,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.92829cm</Top>
-        <Left>15.3162cm</Left>
+        <Top>9.81287cm</Top>
+        <Left>4.54766cm</Left>
         <Height>1.2cm</Height>
         <Width>5.87313cm</Width>
         <ZIndex>1</ZIndex>
@@ -483,9 +485,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
         <Top>0.50508cm</Top>
-        <Left>3.6817cm</Left>
+        <Left>0.49954cm</Left>
         <Height>0.83812cm</Height>
-        <Width>15.51927cm</Width>
+        <Width>14.49475cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -498,10 +500,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>4.14434in</Height>
+    <Height>4.99851in</Height>
     <Style />
   </Body>
-  <Width>8.55717in</Width>
+  <Width>6.203in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
