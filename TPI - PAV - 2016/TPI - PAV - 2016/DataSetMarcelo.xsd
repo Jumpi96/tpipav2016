@@ -30,6 +30,26 @@ GROUP BY C.nombre, C.apellido, T.nombre, C.nroDocumento</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TabalaEstadisticaEdadesUsualesTableAdapter" GeneratorDataComponentClassName="TabalaEstadisticaEdadesUsualesTableAdapter" Name="TabalaEstadisticaEdadesUsuales" UserDataComponentName="TabalaEstadisticaEdadesUsualesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT YEAR(GETDATE()) - YEAR(C.fechaNacimiento) AS Edad, COUNT(*) AS Cantidad
+FROM Clientes C
+GROUP BY YEAR(C.fechaNacimiento)
+ORDER BY 1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Edad" DataSetColumn="Edad" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -63,6 +83,14 @@ GROUP BY C.nombre, C.apellido, T.nombre, C.nroDocumento</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="numeroDocumento" msprop:Generator_ColumnVarNameInTable="columnnumeroDocumento" msprop:Generator_ColumnPropNameInRow="numeroDocumento" msprop:Generator_ColumnPropNameInTable="numeroDocumentoColumn" msprop:Generator_UserColumnName="numeroDocumento" type="xs:int" />
+              <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TabalaEstadisticaEdadesUsuales" msprop:Generator_TableClassName="TabalaEstadisticaEdadesUsualesDataTable" msprop:Generator_TableVarName="tableTabalaEstadisticaEdadesUsuales" msprop:Generator_RowChangedName="TabalaEstadisticaEdadesUsualesRowChanged" msprop:Generator_TablePropName="TabalaEstadisticaEdadesUsuales" msprop:Generator_RowDeletingName="TabalaEstadisticaEdadesUsualesRowDeleting" msprop:Generator_RowChangingName="TabalaEstadisticaEdadesUsualesRowChanging" msprop:Generator_RowEvHandlerName="TabalaEstadisticaEdadesUsualesRowChangeEventHandler" msprop:Generator_RowDeletedName="TabalaEstadisticaEdadesUsualesRowDeleted" msprop:Generator_RowClassName="TabalaEstadisticaEdadesUsualesRow" msprop:Generator_UserTableName="TabalaEstadisticaEdadesUsuales" msprop:Generator_RowEvArgName="TabalaEstadisticaEdadesUsualesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Edad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnEdad" msprop:Generator_ColumnPropNameInRow="Edad" msprop:Generator_ColumnPropNameInTable="EdadColumn" msprop:Generator_UserColumnName="Edad" type="xs:int" minOccurs="0" />
               <xs:element name="Cantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

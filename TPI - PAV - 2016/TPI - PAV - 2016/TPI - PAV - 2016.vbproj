@@ -122,6 +122,12 @@
     <Compile Include="Estadísticas\FormDuracionAlojamientos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Estadísticas\FormEdadesUsuales.Designer.vb">
+      <DependentUpon>FormEdadesUsuales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Estadísticas\FormEdadesUsuales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Estadísticas\FormOcupacionMensual.Designer.vb">
       <DependentUpon>FormOcupacionMensual.vb</DependentUpon>
     </Compile>
@@ -350,6 +356,7 @@
     <EmbeddedResource Include="Estadísticas\EstadisticaClientesRecurrentes.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaConsumoArticulos.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaDuracionAlojamientos.rdlc" />
+    <EmbeddedResource Include="Estadísticas\EstadisticaEdadesUsuales.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaOcupacionMensual.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaServicios.rdlc" />
     <EmbeddedResource Include="Estadísticas\EstadisticaTipoFacturasEmitidas.rdlc" />
@@ -362,6 +369,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\FormDuracionAlojamientos.resx">
       <DependentUpon>FormDuracionAlojamientos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadísticas\FormEdadesUsuales.resx">
+      <DependentUpon>FormEdadesUsuales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadísticas\FormOcupacionMensual.resx">
       <DependentUpon>FormOcupacionMensual.vb</DependentUpon>

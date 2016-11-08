@@ -6,7 +6,88 @@ TPI-PAV-2016
 </name>
 </assembly>
 <members>
-<member name="T:TPI___PAV___2016.DataSet.AlojamientosDataTable">
+<member name="T:TPI___PAV___2016.DataSetMarcelo.TablaEstadisticaClientesRecurrentesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo.TabalaEstadisticaEdadesUsualesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo.TablaEstadisticaClientesRecurrentesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo.TabalaEstadisticaEdadesUsualesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo.TablaEstadisticaClientesRecurrentesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo.TabalaEstadisticaEdadesUsualesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarceloTableAdapters.TablaEstadisticaClientesRecurrentesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarceloTableAdapters.TabalaEstadisticaEdadesUsualesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetMarceloTableAdapters.TableAdapterManager.UpdateUpdatedRows(TPI___PAV___2016.DataSetMarcelo,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetMarceloTableAdapters.TableAdapterManager.UpdateInsertedRows(TPI___PAV___2016.DataSetMarcelo,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetMarceloTableAdapters.TableAdapterManager.UpdateDeletedRows(TPI___PAV___2016.DataSetMarcelo,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetMarceloTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:TPI___PAV___2016.DataSetMarceloTableAdapters.TableAdapterManager.UpdateAll(TPI___PAV___2016.DataSetMarcelo)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarceloTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarceloTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarceloTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:TPI___PAV___2016.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:TPI___PAV___2016.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:TPI___PAV___2016.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.AlojamientosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -95,6 +176,42 @@ Represents the strongly named DataTable class.
 Represents the strongly named DataTable class.
 </summary>
 </member><member name="T:TPI___PAV___2016.DataSet.ServiciosActualesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OrdenesCompra1DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ArticulosConsumoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OcupacionMensualDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaDuracionDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ESTADISTICAPROVEEDORESDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ESTADISTICAFACTURASEMITIDASDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaTipoHabitacionesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisiticaServiciosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaMaximaDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -190,6 +307,42 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OrdenesCompra1Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ArticulosConsumoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OcupacionMensualRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaDuracionRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ESTADISTICAPROVEEDORESRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ESTADISTICAFACTURASEMITIDASRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaTipoHabitacionesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisiticaServiciosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaMaximaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:TPI___PAV___2016.DataSet.AlojamientosRowChangeEvent">
 	<summary>
 Row event argument class
@@ -279,6 +432,42 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:TPI___PAV___2016.DataSet.ServiciosActualesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OrdenesCompra1RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ArticulosConsumoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.OcupacionMensualRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaDuracionRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ESTADISTICAPROVEEDORESRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.ESTADISTICAFACTURASEMITIDASRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaTipoHabitacionesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisiticaServiciosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSet.EstadisticaMaximaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -378,6 +567,22 @@ Represents the connection and commands used to retrieve and save data.
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.OrdenesCompra1TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.ArticulosConsumoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.OcupacionMensualTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetTableAdapters.EstadisticaDuracionTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
 </member><member name="M:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(TPI___PAV___2016.DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Update rows in top-down order.
@@ -409,19 +614,6 @@ Used to sort self-referenced table's rows
 </member><member name="T:TPI___PAV___2016.DataSetTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="P:TPI___PAV___2016.My.Resources.Resources.ResourceManager">
-	<summary>
-  Returns the cached ResourceManager instance used by this class.
-</summary>
-</member><member name="P:TPI___PAV___2016.My.Resources.Resources.Culture">
-	<summary>
-  Overrides the current thread's CurrentUICulture property for all
-  resource lookups using this strongly typed resource class.
-</summary>
-</member><member name="T:TPI___PAV___2016.My.Resources.Resources">
-	<summary>
-  A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
 </members>
