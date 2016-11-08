@@ -69,6 +69,7 @@ Partial Class menu
         Me.ProveedoresContactadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OcupaciónMensualToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DuraciónDeAlojamientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CantidadMáximaPorHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_nueAlo = New System.Windows.Forms.Panel()
         Me.tab_aloNue = New System.Windows.Forms.TabControl()
         Me.tab_aloNueDatCli = New System.Windows.Forms.TabPage()
@@ -317,7 +318,7 @@ Partial Class menu
         Me.clm_cantCamas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.clm_nroHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cln_nroPisoHabSel = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadMáximaPorHabitaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TiposCamaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.menu_Menu.SuspendLayout()
         Me.pnl_nueAlo.SuspendLayout()
         Me.tab_aloNue.SuspendLayout()
@@ -601,7 +602,7 @@ Partial Class menu
         '
         'EstadísticasToolStripMenuItem
         '
-        Me.EstadísticasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsumoDeArtículosToolStripMenuItem, Me.HabitacionesPorTipoToolStripMenuItem, Me.ClientesRegularesToolStripMenuItem, Me.ServiciosToolStripMenuItem, Me.TiposDeFacturaToolStripMenuItem, Me.ProveedoresContactadosToolStripMenuItem, Me.OcupaciónMensualToolStripMenuItem, Me.DuraciónDeAlojamientosToolStripMenuItem, Me.CantidadMáximaPorHabitaciónToolStripMenuItem})
+        Me.EstadísticasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConsumoDeArtículosToolStripMenuItem, Me.HabitacionesPorTipoToolStripMenuItem, Me.ClientesRegularesToolStripMenuItem, Me.ServiciosToolStripMenuItem, Me.TiposDeFacturaToolStripMenuItem, Me.ProveedoresContactadosToolStripMenuItem, Me.OcupaciónMensualToolStripMenuItem, Me.DuraciónDeAlojamientosToolStripMenuItem, Me.CantidadMáximaPorHabitaciónToolStripMenuItem, Me.TiposCamaToolStripMenuItem})
         Me.EstadísticasToolStripMenuItem.Name = "EstadísticasToolStripMenuItem"
         Me.EstadísticasToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EstadísticasToolStripMenuItem.Text = "Estadísticas"
@@ -653,6 +654,12 @@ Partial Class menu
         Me.DuraciónDeAlojamientosToolStripMenuItem.Name = "DuraciónDeAlojamientosToolStripMenuItem"
         Me.DuraciónDeAlojamientosToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
         Me.DuraciónDeAlojamientosToolStripMenuItem.Text = "Duración de alojamientos"
+        '
+        'CantidadMáximaPorHabitaciónToolStripMenuItem
+        '
+        Me.CantidadMáximaPorHabitaciónToolStripMenuItem.Name = "CantidadMáximaPorHabitaciónToolStripMenuItem"
+        Me.CantidadMáximaPorHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.CantidadMáximaPorHabitaciónToolStripMenuItem.Text = "Cantidad máxima por habitación"
         '
         'pnl_nueAlo
         '
@@ -3081,18 +3088,18 @@ Partial Class menu
         Me.cln_nroPisoHabSel.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
         Me.cln_nroPisoHabSel.Width = 120
         '
-        'CantidadMáximaPorHabitaciónToolStripMenuItem
+        'TiposCamaToolStripMenuItem
         '
-        Me.CantidadMáximaPorHabitaciónToolStripMenuItem.Name = "CantidadMáximaPorHabitaciónToolStripMenuItem"
-        Me.CantidadMáximaPorHabitaciónToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
-        Me.CantidadMáximaPorHabitaciónToolStripMenuItem.Text = "Cantidad máxima por habitación"
+        Me.TiposCamaToolStripMenuItem.Name = "TiposCamaToolStripMenuItem"
+        Me.TiposCamaToolStripMenuItem.Size = New System.Drawing.Size(266, 22)
+        Me.TiposCamaToolStripMenuItem.Text = "Tipos cama"
         '
         'menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(544, 284)
+        Me.ClientSize = New System.Drawing.Size(544, 285)
         Me.Controls.Add(Me.lbl_fechahora)
         Me.Controls.Add(Me.menu_Menu)
         Me.Controls.Add(Me.pnlFacturacion)
@@ -3472,6 +3479,7 @@ Partial Class menu
     Friend WithEvents OcupaciónMensualToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DuraciónDeAlojamientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CantidadMáximaPorHabitaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TiposCamaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

@@ -1049,4 +1049,8 @@
     Private Sub CantidadMáximaPorHabitaciónToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CantidadMáximaPorHabitaciónToolStripMenuItem.Click
         FormCantidadMaxima.Show()
     End Sub
+
+    Private Sub TiposCamaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TiposCamaToolStripMenuItem.Click
+        FormEstadisticaTiposCama.Show()
+    End Sub
 End Class

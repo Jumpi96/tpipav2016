@@ -14,6 +14,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo.TiposCamaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:TPI___PAV___2016.DataSetMarcelo.TablaEstadisticaClientesRecurrentesRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -22,11 +26,19 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo.TiposCamaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:TPI___PAV___2016.DataSetMarcelo.TablaEstadisticaClientesRecurrentesRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:TPI___PAV___2016.DataSetMarcelo.TabalaEstadisticaEdadesUsualesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarcelo.TiposCamaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -39,6 +51,10 @@ Represents a strongly typed in-memory cache of data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:TPI___PAV___2016.DataSetMarceloTableAdapters.TabalaEstadisticaEdadesUsualesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:TPI___PAV___2016.DataSetMarceloTableAdapters.TiposCamaTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
