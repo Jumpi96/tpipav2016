@@ -1,25 +1,41 @@
 ﻿Public Class FormEdadesUsuales
-    Dim accesoBD As AccesoBD = AccesoBD.instancia
+    Dim accesoBD As AccesoBD = accesoBD.instancia
+    Dim cargado As Boolean = False
+
     Private Sub FormEdadesUsuales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'DataSetMarcelo.TabalaEstadisticaEdadesUsuales' Puede moverla o quitarla según sea necesario.
+
+
         Me.TabalaEstadisticaEdadesUsualesTableAdapter.Fill(Me.DataSetMarcelo.TabalaEstadisticaEdadesUsuales)
-        Me.cargarCombo()
+
+        Me.cargarCombo(cmb_edadesDesde, False)
+
+        Me.cmb_edadesHasta.Enabled = False
         Me.ReportViewer1.RefreshReport()
     End Sub
 
-    Private Sub cargarCombo()
+    Private Sub cargarCombo(ByRef combo As ComboBox, ByVal hasta As Boolean)
         Dim tabla As Data.DataTable = Me.TabalaEstadisticaEdadesUsualesTableAdapter.GetData
 
-        cmb_edadesDesde.DataSource = tabla
-        cmb_edadesDesde.ValueMember = "Edad"
-        cmb_edadesDesde.DisplayMember = "Edad"
+        If hasta And cargado Then
 
-        cmb_edadesHasta.DataSource = tabla
-        cmb_edadesHasta.ValueMember = "Edad"
-        cmb_edadesHasta.DisplayMember = "Edad"
+            combo.DataSource = tabla.Select("Edad >= " + Me.cmb_edadesDesde.SelectedValue.ToString)
+        Else
+            combo.DataSource = tabla
+        End If
 
-        Me.cmb_edadesDesde.SelectedIndex = -1
-        Me.cmb_edadesHasta.SelectedIndex = -1
+        combo.ValueMember = "Edad"
+        combo.DisplayMember = "Edad"
+
+        If cargado = False Then
+            Me.cmb_edadesDesde.SelectedIndex = -1
+            Me.cmb_edadesHasta.SelectedIndex = -1
+        End If
+        
+
+
+        cargado = True
+
     End Sub
 
     Private Sub txt_cantidad_MouseClick(sender As Object, e As MouseEventArgs) Handles txt_cantidad.MouseClick
@@ -30,8 +46,11 @@
 
     Private Sub btn_limpiar_Click(sender As Object, e As EventArgs) Handles btn_limpiar.Click
         Me.txt_cantidad.Text = ""
+        cargado = False
+        Me.cmb_edadesHasta.Enabled = False
         Me.cmb_edadesDesde.SelectedIndex = -1
         Me.cmb_edadesHasta.SelectedIndex = -1
+        cargado = True
         Me.TabalaEstadisticaEdadesUsualesBindingSource.DataSource = Me.TabalaEstadisticaEdadesUsualesTableAdapter.GetData
         Me.ReportViewer1.RefreshReport()
     End Sub
@@ -56,30 +75,13 @@
         Me.ReportViewer1.RefreshReport()
     End Sub
 
-    Private Sub cmb_edadesHasta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_edadesHasta.SelectedIndexChanged
-        If Me.cmb_edadesDesde.SelectedIndex <> -1 Then
-            If Me.cmb_edadesDesde.SelectedIndex < Me.cmb_edadesHasta.SelectedIndex Then
-                Me.cmb_edadesDesde.SelectedIndex = Me.cmb_edadesHasta.SelectedIndex
-            End If
-        Else
-            Me.cmb_edadesDesde.SelectedIndex = -1
-        End If
-    End Sub
-
-    Private Sub cmb_edadesHasta_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cmb_edadesHasta.SelectionChangeCommitted
-        
-    End Sub
-
     Private Sub cmb_edadesDesde_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_edadesDesde.SelectedIndexChanged
-        If Me.cmb_edadesHasta.SelectedIndex <> -1 Then
-            If Me.cmb_edadesHasta.SelectedIndex > Me.cmb_edadesDesde.SelectedIndex Then
-                Me.cmb_edadesHasta.SelectedIndex = Me.cmb_edadesDesde.SelectedIndex
-            End If
-            Me.cmb_edadesHasta.SelectedIndex = -1
+        If cargado Then
+            Me.cmb_edadesHasta.Enabled = True
+
+            cargarCombo(Me.cmb_edadesHasta, True)
         End If
     End Sub
 
-    Private Sub cmb_edadesDesde_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles cmb_edadesDesde.SelectionChangeCommitted
-        
-    End Sub
+
 End Class
