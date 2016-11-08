@@ -1041,4 +1041,8 @@
     Private Sub OcupaciónMensualToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OcupaciónMensualToolStripMenuItem.Click
         FormOcupacionMensual.Show()
     End Sub
+
+    Private Sub DuraciónDeAlojamientosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DuraciónDeAlojamientosToolStripMenuItem.Click
+        FormDuracionAlojamientos.Show()
+    End Sub
 End Class
