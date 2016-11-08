@@ -1023,7 +1023,7 @@
     End Sub
 
     Private Sub ClientesRegularesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesRegularesToolStripMenuItem.Click
-        FormClientesRegulares.Show()
+        FormClientesRecurrentes.Show()
     End Sub
 
     Private Sub ServiciosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ServiciosToolStripMenuItem.Click
